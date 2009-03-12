@@ -79,7 +79,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <HintPath>..\..\..\..\..\Desktop\SQLite-1.0.60.0-binaries\bin\System.Data.SQLite.DLL</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
