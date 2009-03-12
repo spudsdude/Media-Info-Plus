@@ -6011,7 +6011,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(348, 323)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(352, 327)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -7534,8 +7534,8 @@ Me.ksctvtoolbar.Orientation = System.Windows.Forms.Orientation.Horizontal
 'ksctvtoolbar.Panel1
 '
 Me.ksctvtoolbar.Panel1.Controls.Add(Me.klblTvShowName)
-Me.ksctvtoolbar.Size = New System.Drawing.Size(808, 90)
-Me.ksctvtoolbar.SplitterDistance = 42
+Me.ksctvtoolbar.Size = New System.Drawing.Size(150, 100)
+Me.ksctvtoolbar.SplitterDistance = 46
 Me.ksctvtoolbar.SplitterWidth = 0
 Me.ksctvtoolbar.TabIndex = 115
 '
@@ -7545,7 +7545,7 @@ Me.klblTvShowName.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblTvShowName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
 Me.klblTvShowName.Location = New System.Drawing.Point(0, 0)
 Me.klblTvShowName.Name = "klblTvShowName"
-Me.klblTvShowName.Size = New System.Drawing.Size(808, 43)
+Me.klblTvShowName.Size = New System.Drawing.Size(150, 43)
 Me.klblTvShowName.TabIndex = 16
 Me.klblTvShowName.Text = "Click on ' Load TV Shows ' to start. Initially this may take a long time to downl"& _ 
     "oad everything."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"If more then 1 match is found, you will be prompted to select t"& _ 
