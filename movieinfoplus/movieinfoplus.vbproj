@@ -74,7 +74,7 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.10.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL" />
     <Reference Include="miplibfc, Version=1.0.1.2800, Culture=neutral, PublicKeyToken=8be0b0a92da598ee, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Projects\freecoversapi\freecoversapi\bin\Release\miplibfc.dll</HintPath>
+      <HintPath>Resources\miplibfc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -92,7 +92,10 @@
     <Reference Include="taglib-sharp, Version=1.9.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
       <HintPath>Resources\taglib-sharp-1.9.75474-net20\Release\taglib-sharp.dll</HintPath>
     </Reference>
-    <Reference Include="UltraID3Lib, Version=0.9.6.6, Culture=neutral, PublicKeyToken=b32e96509f79ae07, processorArchitecture=MSIL" />
+    <Reference Include="UltraID3Lib, Version=0.9.6.6, Culture=neutral, PublicKeyToken=b32e96509f79ae07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\UltraID3Lib.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -531,7 +534,6 @@
     <None Include="Resources\mymovies.jpg" />
     <None Include="Resources\myshows.jpg" />
     <None Include="Resources\mytunes.jpg" />
-    <None Include="Resources\mediamanagerprosplash.jpg" />
     <None Include="Resources\precachestarting.jpg" />
     <None Include="Resources\refresh.jpg" />
     <EmbeddedResource Include="Resources\stereo.png" />
