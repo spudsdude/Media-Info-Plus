@@ -2926,7 +2926,7 @@ Me.tpWNS.Controls.Add(Me.pbwns36)
 Me.tpWNS.Location = New System.Drawing.Point(4, 25)
 Me.tpWNS.Name = "tpWNS"
 Me.tpWNS.Padding = New System.Windows.Forms.Padding(3)
-Me.tpWNS.Size = New System.Drawing.Size(786, 788)
+Me.tpWNS.Size = New System.Drawing.Size(786, 517)
 Me.tpWNS.TabIndex = 1
 Me.tpWNS.Text = "No Style"
 Me.tpWNS.UseVisualStyleBackColor = true
@@ -3413,7 +3413,7 @@ Me.tpWRS.Controls.Add(Me.pbwrs35)
 Me.tpWRS.Controls.Add(Me.pbwrs36)
 Me.tpWRS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRS.Name = "tpWRS"
-Me.tpWRS.Size = New System.Drawing.Size(786, 788)
+Me.tpWRS.Size = New System.Drawing.Size(786, 517)
 Me.tpWRS.TabIndex = 2
 Me.tpWRS.Text = "Rounded Shadow"
 Me.tpWRS.UseVisualStyleBackColor = true
@@ -3895,7 +3895,7 @@ Me.tpWRSS.Controls.Add(Me.pbwrsscan35)
 Me.tpWRSS.Controls.Add(Me.pbwrsscan36)
 Me.tpWRSS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSS.Name = "tpWRSS"
-Me.tpWRSS.Size = New System.Drawing.Size(786, 788)
+Me.tpWRSS.Size = New System.Drawing.Size(786, 517)
 Me.tpWRSS.TabIndex = 4
 Me.tpWRSS.Text = "Rounded Shadow Scanlines"
 '
@@ -5965,6 +5965,7 @@ Me.btnPrecache.Location = New System.Drawing.Point(123, 0)
 Me.btnPrecache.Name = "btnPrecache"
 Me.btnPrecache.Size = New System.Drawing.Size(90, 36)
 Me.btnPrecache.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.arrow_small
+Me.btnPrecache.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft
 Me.btnPrecache.TabIndex = 42
 Me.btnPrecache.Text = "&Precache"
 Me.btnPrecache.Values.ExtraText = ""
@@ -6107,7 +6108,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(332, 307)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(336, 311)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '

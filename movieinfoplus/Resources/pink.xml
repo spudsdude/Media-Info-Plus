@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<!--Created by exporting the settings of a KryptonPalette instance.-->
+<!--For more information about Krypton visit www.ComponentFactory.com-->
+<!--WARNING: Modifying this file may render it invalid for importing.-->
+<KryptonPalette Version="12" Generated="Monday, 09 February 2009, 14:18">
+  <Properties>
+    <ButtonStyles>
+      <ButtonCommon>
+        <StateCommon>
+          <Border>
+            <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+            <Width Type="Int" Value="1" />
+            <Rounding Type="Int" Value="2" />
+          </Border>
+        </StateCommon>
+      </ButtonCommon>
+      <ButtonStandalone>
+        <StateCommon>
+          <Content>
+            <ShortText>
+              <Color1 Type="Color" Value="Purple" />
+              <Color2 Type="Color" Value="64, 0, 64" />
+            </ShortText>
+          </Content>
+        </StateCommon>
+      </ButtonStandalone>
+    </ButtonStyles>
+    <Common>
+      <StateCommon>
+        <Back>
+          <Color1 Type="Color" Value="PeachPuff" />
+          <Color2 Type="Color" Value="Fuchsia" />
+          <ColorAngle Type="Single" Value="60" />
+        </Back>
+        <Border>
+          <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+          <Color1 Type="Color" Value="DarkOrange" />
+          <Color2 Type="Color" Value="Violet" />
+          <ColorStyle Type="PaletteColorStyle" Value="Linear50" />
+          <ColorAngle Type="Single" Value="60" />
+          <Width Type="Int" Value="2" />
+          <Rounding Type="Int" Value="7" />
+        </Border>
+      </StateCommon>
+    </Common>
+    <HeaderStyles>
+      <HeaderCustom1>
+        <StateDisabled>
+          <Content>
+            <ShortText>
+              <Font Type="Font" Value="Comic Sans MS, 9.75pt" />
+            </ShortText>
+            <Padding Type="Padding" Value="0, 0, 0, 0" />
+          </Content>
+        </StateDisabled>
+        <StateNormal>
+          <Content>
+            <ShortText>
+              <Font Type="Font" Value="Comic Sans MS, 9.75pt" />
+              <Color1 Type="Color" Value="Purple" />
+            </ShortText>
+            <Padding Type="Padding" Value="0, 0, 0, 0" />
+          </Content>
+        </StateNormal>
+      </HeaderCustom1>
+    </HeaderStyles>
+    <InputControlStyles>
+      <InputControlCommon>
+        <StateCommon>
+          <Border>
+            <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+            <Width Type="Int" Value="0" />
+            <Rounding Type="Int" Value="2" />
+          </Border>
+        </StateCommon>
+        <StateActive>
+          <Border>
+            <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+            <Width Type="Int" Value="0" />
+            <Rounding Type="Int" Value="2" />
+          </Border>
+        </StateActive>
+      </InputControlCommon>
+    </InputControlStyles>
+    <LabelStyles>
+      <LabelCustom1>
+        <StateCommon>
+          <ShortText>
+            <Font Type="Font" Value="Comic Sans MS, 12pt" />
+            <Color1 Type="Color" Value="Black" />
+            <Color2 Type="Color" Value="Indigo" />
+            <ColorAngle Type="Single" Value="60" />
+          </ShortText>
+          <LongText>
+            <Font Type="Font" Value="Comic Sans MS, 12pt" />
+            <Color1 Type="Color" Value="Black" />
+            <Color2 Type="Color" Value="Goldenrod" />
+          </LongText>
+        </StateCommon>
+      </LabelCustom1>
+    </LabelStyles>
+    <PanelStyles>
+      <PanelAlternate>
+        <StateCommon>
+          <Color1 Type="Color" Value="Thistle" />
+          <Color2 Type="Color" Value="Black" />
+          <ColorStyle Type="PaletteColorStyle" Value="Linear" />
+          <ColorAngle Type="Single" Value="60" />
+        </StateCommon>
+      </PanelAlternate>
+      <PanelCustom1>
+        <StateCommon>
+          <Color1 Type="Color" Value="Thistle" />
+          <Color2 Type="Color" Value="Black" />
+          <ColorStyle Type="PaletteColorStyle" Value="Linear" />
+          <ColorAngle Type="Single" Value="60" />
+        </StateCommon>
+      </PanelCustom1>
+    </PanelStyles>
+    <BasePaletteMode Type="PaletteMode" Value="Sparkle - Purple" />
+  </Properties>
+  <Images />
+</KryptonPalette>

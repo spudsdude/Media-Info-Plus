@@ -1,0 +1,43 @@
+hide file level items (optional in settings)
+Movie Folder Check.. rename items, make it simpler
+Application Mode -> ?
+Settings -> break it out more, explain what they do
+Music -> need to edit id3 tags on songs, this is key
+
+Music classes
+music
+musiccollection - arraylist (public)
+
+musicartist 
+- contains 
+list - musictitles List(of musictitles)
+fanartimage - 
+posterimage - 
+Band history - rtb (or blob)
+Music style and influences - rtb
+Criticism and controversy
+Band members
+ - Current
+ - Former
+Discography
+Awards
+offical website- LL URL
+
+musictitles - contains tracks List(of music)
+Year
+Title
+
+AIFF, WAV/WAVE, MP2, MP3, AAC, AACplus, AC3, DTS, ALAC, AMR, FLAC, Monkey's Audio (APE), RealAudio, SHN, WavPack, MPC/Musepack/Mpeg+, Speex, Vorbis and WMA
+
+
+
+Supported Extensions
+2 digit
+.wv
+
+3 digit 
+.aif, .wav, .mp2, .mp3, .aac, .m4a, .m4b, .m4p, .m4v, .m4r, .3gp, .mp4, .m4a, .amr, .ape, .ram, .shn, .wv, .mpc, .mp+, .mpp, .spx, .ogg, .oga, .wma
+
+4 digit
+.aiff, .aifc, .flac
+

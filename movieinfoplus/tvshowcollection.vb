@@ -1710,7 +1710,7 @@ Public Class tvshowcollection
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
             'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
-            Dim dlobj As New mip.dlobject
+            Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
             maincollection.currenttvshowdownloadlist.Add(dlobj)
@@ -1742,7 +1742,7 @@ Public Class tvshowcollection
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
             'maincollection.lblCurItem.Visible = True
-            Dim dlobj As New mip.dlobject
+            Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
             maincollection.currenttvshowdownloadlist.Add(dlobj)
@@ -1773,7 +1773,7 @@ Public Class tvshowcollection
     Private Sub mgettvseasonbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
-            Dim dlobj As New mip.dlobject
+            Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
             maincollection.currenttvshowdownloadlist.Add(dlobj)
@@ -1806,7 +1806,7 @@ Public Class tvshowcollection
     Private Sub mgettvseriesbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
-            Dim dlobj As New mip.dlobject
+            Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
             maincollection.currenttvshowdownloadlist.Add(dlobj)
@@ -1841,7 +1841,7 @@ Public Class tvshowcollection
     Private Sub mgettvepisodeimages(ByRef tmepisode As tvdblangEpisode, ByRef selectedshow As String, ByRef switchpath As String)
 
         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmepisode.Filename
-        Dim dlobj As New mip.dlobject
+        Dim dlobj As New miplibfc.mip.dlobject
         dlobj.URL = curmirror + "/banners/" + tmepisode.Filename
         dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
         maincollection.currenttvshowdownloadlist.Add(dlobj)

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--Created by exporting the settings of a KryptonPalette instance.-->
+<!--For more information about Krypton visit www.ComponentFactory.com-->
+<!--WARNING: Modifying this file may render it invalid for importing.-->
+<KryptonPalette Version="12" Generated="Monday, 09 February 2009, 12:06">
+  <Properties>
+    <ButtonStyles>
+      <ButtonCommon>
+        <StateCommon>
+          <Border>
+            <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+            <Width Type="Int" Value="1" />
+            <Rounding Type="Int" Value="2" />
+          </Border>
+        </StateCommon>
+      </ButtonCommon>
+    </ButtonStyles>
+    <Common>
+      <StateCommon>
+        <Border>
+          <DrawBorders Type="PaletteDrawBorders" Value="Top,Bottom,Left,Right" />
+          <Color1 Type="Color" Value="Silver" />
+          <Color2 Type="Color" Value="Black" />
+          <ColorStyle Type="PaletteColorStyle" Value="Linear50" />
+          <ColorAngle Type="Single" Value="60" />
+          <Width Type="Int" Value="2" />
+          <Rounding Type="Int" Value="7" />
+        </Border>
+      </StateCommon>
+    </Common>
+    <BasePaletteMode Type="PaletteMode" Value="Sparkle - Orange" />
+  </Properties>
+  <Images />
+</KryptonPalette>

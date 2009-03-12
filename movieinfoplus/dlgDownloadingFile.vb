@@ -33,27 +33,27 @@ Public Class dlgDownloadingFile
 
     End Sub
 #Region "Thread 1 Delegates"
-    Delegate Sub changelabelsSafe(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Delegate Sub changelabelsSafe(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
     Delegate Sub logSafe(ByVal text As Int32)
     Delegate Sub logSafeClear()
 #End Region
 #Region "Thread 2 Delegates"
-    Delegate Sub changelabelsSafe2(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Delegate Sub changelabelsSafe2(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
     Delegate Sub logSafe2(ByVal text As Int32)
     Delegate Sub logSafeClear2()
 #End Region
 #Region "Thread 3 Delegates"
-    Delegate Sub changelabelsSafe3(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Delegate Sub changelabelsSafe3(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
     Delegate Sub logSafe3(ByVal text As Int32)
     Delegate Sub logSafeClear3()
 #End Region
 #Region "Thread 4 Delegates"
-    Delegate Sub changelabelsSafe4(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Delegate Sub changelabelsSafe4(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
     Delegate Sub logSafe4(ByVal text As Int32)
     Delegate Sub logSafeClear4()
 #End Region
 #Region "Thread 5 Delegates"
-    Delegate Sub changelabelsSafe5(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Delegate Sub changelabelsSafe5(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
     Delegate Sub logSafe5(ByVal text As Int32)
     Delegate Sub logSafeClear5()
 #End Region
@@ -73,7 +73,7 @@ Public Class dlgDownloadingFile
     Private Sub logClear()
         rtbLog.Text = ""
     End Sub
-    Private Sub changelabels(ByVal item As mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
+    Private Sub changelabels(ByVal item As miplibfc.mip.dlobject, ByVal curitemcounter As String, ByVal counter As String)
         Me.downloaderlblSpeed.Text = "Currently downloading item " + curitemcounter.ToString + " of " + counter.ToString
 
         'Me.pbar.MarqueeAnimationSpeed = 20
@@ -99,7 +99,7 @@ Public Class dlgDownloadingFile
     Private Sub logClear2()
         rtbLog2.Text = ""
     End Sub
-    Private Sub changelabels2(ByVal item2 As mip.dlobject, ByVal curitemcounter2 As String, ByVal counter2 As String)
+    Private Sub changelabels2(ByVal item2 As miplibfc.mip.dlobject, ByVal curitemcounter2 As String, ByVal counter2 As String)
         Me.downloaderlblSpeed2.Text = "Currently downloading item " + curitemcounter2.ToString + " of " + counter2.ToString
 
         'Me.pbar.MarqueeAnimationSpeed = 20
@@ -126,7 +126,7 @@ Public Class dlgDownloadingFile
     Private Sub logClear3()
         rtbLog3.Text = ""
     End Sub
-    Private Sub changelabels3(ByVal item3 As mip.dlobject, ByVal curitemcounter3 As String, ByVal counter3 As String)
+    Private Sub changelabels3(ByVal item3 As miplibfc.mip.dlobject, ByVal curitemcounter3 As String, ByVal counter3 As String)
         Me.downloaderlblSpeed3.Text = "Currently downloading item " + curitemcounter3.ToString + " of " + counter3.ToString
 
         'Me.pbar.MarqueeAnimationSpeed = 20
@@ -152,7 +152,7 @@ Public Class dlgDownloadingFile
     Private Sub logClear4()
         rtbLog4.Text = ""
     End Sub
-    Private Sub changelabels4(ByVal item4 As mip.dlobject, ByVal curitemcounter4 As String, ByVal counter4 As String)
+    Private Sub changelabels4(ByVal item4 As miplibfc.mip.dlobject, ByVal curitemcounter4 As String, ByVal counter4 As String)
         Me.downloaderlblSpeed4.Text = "Currently downloading item " + curitemcounter4.ToString + " of " + counter4.ToString
 
         'Me.pbar.MarqueeAnimationSpeed = 20
@@ -178,7 +178,7 @@ Public Class dlgDownloadingFile
     Private Sub logClear5()
         rtbLog5.Text = ""
     End Sub
-    Private Sub changelabels5(ByVal item5 As mip.dlobject, ByVal curitemcounter5 As String, ByVal counter5 As String)
+    Private Sub changelabels5(ByVal item5 As miplibfc.mip.dlobject, ByVal curitemcounter5 As String, ByVal counter5 As String)
         Me.downloaderlblSpeed5.Text = "Currently downloading item " + curitemcounter5.ToString + " of " + counter5.ToString
 
         'Me.pbar.MarqueeAnimationSpeed = 20
@@ -533,7 +533,7 @@ Public Class dlgDownloadingFile
         Try
 
 
-            For Each item As mip.dlobject In downloadlist_t1
+            For Each item As miplibfc.mip.dlobject In downloadlist_t1
                 bwmutlidownload.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -582,7 +582,7 @@ Public Class dlgDownloadingFile
 
                 End If
             Next
-            Dim itemF As New mip.dlobject
+            Dim itemF As New miplibfc.mip.dlobject
             itemF.URL = "COMPLETED"
             itemF.Destination = "COMPLETED"
             bwmutlidownload.ReportProgress(curitemcounter, itemF)
@@ -594,8 +594,8 @@ Public Class dlgDownloadingFile
     Private Sub bwmutlidownload_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwmutlidownload.ProgressChanged
         Try
             downloaderpbar.Value = e.ProgressPercentage
-            Dim item5 As mip.dlobject
-            item5 = CType(e.UserState, mip.dlobject)
+            Dim item5 As miplibfc.mip.dlobject
+            item5 = CType(e.UserState, miplibfc.mip.dlobject)
             Me.downloaderlblSpeed.Text = "Currently downloading item " + e.ProgressPercentage.ToString + " of " + downloadlist_t1.Count.ToString
             Me.downloadertxtFileName.Text = item5.URL
             Me.downloaderlblSavingFileTo.Text = item5.Destination
@@ -621,7 +621,7 @@ Public Class dlgDownloadingFile
             Dim curitemcounter As Integer = 0
 
 
-            For Each item As mip.dlobject In downloadlist_t2
+            For Each item As miplibfc.mip.dlobject In downloadlist_t2
                 bwmutlidownload2.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -670,7 +670,7 @@ Public Class dlgDownloadingFile
 
                 End If
             Next
-            Dim itemF As New mip.dlobject
+            Dim itemF As New miplibfc.mip.dlobject
             itemF.URL = "COMPLETED"
             itemF.Destination = "COMPLETED"
             bwmutlidownload2.ReportProgress(curitemcounter, itemF)
@@ -704,8 +704,8 @@ Public Class dlgDownloadingFile
     Private Sub bwmutlidownload2_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwmutlidownload2.ProgressChanged
         Try
             downloaderpbar2.Value = e.ProgressPercentage
-            Dim item5 As mip.dlobject
-            item5 = CType(e.UserState, mip.dlobject)
+            Dim item5 As miplibfc.mip.dlobject
+            item5 = CType(e.UserState, miplibfc.mip.dlobject)
             Me.downloaderlblSpeed2.Text = "Currently downloading item " + e.ProgressPercentage.ToString + " of " + downloadlist_t2.Count.ToString
             Me.downloadertxtFileName2.Text = item5.URL
             Me.downloaderlblSavingFileTo2.Text = item5.Destination
@@ -730,7 +730,7 @@ Public Class dlgDownloadingFile
             counter = downloadlist_t3.Count
             Dim curitemcounter As Integer = 0
 
-            For Each item As mip.dlobject In downloadlist_t3
+            For Each item As miplibfc.mip.dlobject In downloadlist_t3
                 bwmutlidownload3.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -779,7 +779,7 @@ Public Class dlgDownloadingFile
 
                 End If
             Next
-            Dim itemF As New mip.dlobject
+            Dim itemF As New miplibfc.mip.dlobject
             itemF.URL = "COMPLETED"
             itemF.Destination = "COMPLETED"
             bwmutlidownload3.ReportProgress(curitemcounter, itemF)
@@ -791,8 +791,8 @@ Public Class dlgDownloadingFile
     Private Sub bwmutlidownload3_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwmutlidownload3.ProgressChanged
         Try
             downloaderpbar3.Value = e.ProgressPercentage
-            Dim item5 As mip.dlobject
-            item5 = CType(e.UserState, mip.dlobject)
+            Dim item5 As miplibfc.mip.dlobject
+            item5 = CType(e.UserState, miplibfc.mip.dlobject)
             Me.downloaderlblSpeed3.Text = "Currently downloading item " + e.ProgressPercentage.ToString + " of " + downloadlist_t3.Count.ToString
             Me.downloadertxtFileName3.Text = item5.URL
             Me.downloaderlblSavingFileTo3.Text = item5.Destination
@@ -817,7 +817,7 @@ Public Class dlgDownloadingFile
             counter = downloadlist_t4.Count
             Dim curitemcounter As Integer = 0
 
-            For Each item As mip.dlobject In downloadlist_t4
+            For Each item As miplibfc.mip.dlobject In downloadlist_t4
                 bwmutlidownload4.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -866,7 +866,7 @@ Public Class dlgDownloadingFile
 
                 End If
             Next
-            Dim itemF As New mip.dlobject
+            Dim itemF As New miplibfc.mip.dlobject
             itemF.URL = "COMPLETED"
             itemF.Destination = "COMPLETED"
             bwmutlidownload4.ReportProgress(curitemcounter, itemF)
@@ -878,8 +878,8 @@ Public Class dlgDownloadingFile
     Private Sub bwmutlidownload4_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwmutlidownload4.ProgressChanged
         Try
             downloaderpbar4.Value = e.ProgressPercentage
-            Dim item5 As mip.dlobject
-            item5 = CType(e.UserState, mip.dlobject)
+            Dim item5 As miplibfc.mip.dlobject
+            item5 = CType(e.UserState, miplibfc.mip.dlobject)
             Me.downloaderlblSpeed4.Text = "Currently downloading item " + e.ProgressPercentage.ToString + " of " + downloadlist_t4.Count.ToString
             Me.downloadertxtFileName4.Text = item5.URL
             Me.downloaderlblSavingFileTo4.Text = item5.Destination
@@ -904,7 +904,7 @@ Public Class dlgDownloadingFile
             counter = downloadlist_t5.Count
             Dim curitemcounter As Integer = 0
 
-            For Each item As mip.dlobject In downloadlist_t5
+            For Each item As miplibfc.mip.dlobject In downloadlist_t5
                 bwmutlidownload5.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -954,7 +954,7 @@ Public Class dlgDownloadingFile
 
                 End If
             Next
-            Dim itemF As New mip.dlobject
+            Dim itemF As New miplibfc.mip.dlobject
             itemF.URL = "COMPLETED"
             itemF.Destination = "COMPLETED"
             bwmutlidownload5.ReportProgress(curitemcounter, itemF)
@@ -966,8 +966,8 @@ Public Class dlgDownloadingFile
     Private Sub bwmutlidownload5_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwmutlidownload5.ProgressChanged
         Try
             downloaderpbar5.Value = e.ProgressPercentage
-            Dim item5 As mip.dlobject
-            item5 = CType(e.UserState, mip.dlobject)
+            Dim item5 As miplibfc.mip.dlobject
+            item5 = CType(e.UserState, miplibfc.mip.dlobject)
             Me.downloaderlblSpeed5.Text = "Currently downloading item " + e.ProgressPercentage.ToString + " of " + downloadlist_t5.Count.ToString
             Dim dltext As String = item5.URL
             If item5.hideurl Then dltext = item5.misc

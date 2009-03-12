@@ -111,7 +111,7 @@ Public Class maincollection
     'myRootTabs' = Nothing
     'bwDisplayMovieData()
     Private Sub addtodownloadlist(ByRef whichdownloadlist As ArrayList, ByVal url As String, ByVal destination_file_fullpath As String, ByVal extratext As String)
-        Dim newdownloadobject As New mip.dlobject
+        Dim newdownloadobject As New miplibfc.mip.dlobject
         newdownloadobject.URL = url
         newdownloadobject.Destination = destination_file_fullpath
         newdownloadobject.misc = extratext
@@ -119,7 +119,7 @@ Public Class maincollection
         whichdownloadlist.Add(newdownloadobject)
     End Sub
     Private Sub addtodownloadlist(ByRef whatmovie As movie, ByVal url As String, ByVal destination_file_fullpath As String, ByVal extratext As String)
-        Dim newdownloadobject As New mip.dlobject
+        Dim newdownloadobject As New miplibfc.mip.dlobject
         newdownloadobject.URL = url
         newdownloadobject.Destination = destination_file_fullpath
         newdownloadobject.misc = extratext
@@ -19471,7 +19471,7 @@ Public Class maincollection
                     imagestoload.Add(curimagefullpath)
                     If Not File.Exists(curimagefullpath) Then
                         'add file to download list
-                        Dim curdownload As New mip.dlobject
+                        Dim curdownload As New miplibfc.mip.dlobject
                         curdownload.URL = imagename
                         curdownload.Destination = curimagefullpath 'rconf.cachefolder + "fcdn\5\" + getfilefromurlpath_fcdn(imagename)
                         currentalbum.pdownloadlist.Add(curdownload)
@@ -23807,7 +23807,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "front", 4, 0, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23817,7 +23817,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "back", 4, 1, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23827,7 +23827,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "cd", 4, 2, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23837,7 +23837,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "cd2", 4, 3, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23847,7 +23847,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "cd3", 4, 4, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23857,7 +23857,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "cd4", 4, 5, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23867,7 +23867,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "inlay", 4, 7, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23877,7 +23877,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(4, searchstring, "inside", 4, 6, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentalbum.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23888,7 +23888,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "front", 15, 0, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23898,7 +23898,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "back", 15, 1, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23908,7 +23908,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "cd", 15, 2, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23918,7 +23918,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "cd2", 15, 3, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23928,7 +23928,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "cd3", 15, 4, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23938,7 +23938,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "cd4", 15, 5, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23948,7 +23948,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "inlay", 15, 7, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -23958,7 +23958,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(15, searchstring, "inside", 15, 6, False, substring) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then gvcurtvseason.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24025,7 +24025,7 @@ Public Class maincollection
         getfcdn_tvshow_inlay(lbTvShowPicker.Text, False, , "Season " + curseasonas1or2digitid)
         'download items
         If Not gvcurtvseason.pdownloadlist.Count = Nothing And Not gvcurtvseason.pdownloadlist.Count = 0 Then
-            
+
             'dlgDownloadingFile.downloadertxtFileName.Text = url
             'dlgDownloadingFile.whereToSave = folder + tfanartfilename
             dlgDownloadingFile.downloadingmutliimages = True
@@ -24533,7 +24533,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "front", 1, 0) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24543,7 +24543,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "back", 1, 1) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24553,7 +24553,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd", 1, 2) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24563,7 +24563,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd2", 1, 3) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24573,7 +24573,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd3", 1, 4) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24583,7 +24583,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd4", 1, 5) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24593,7 +24593,7 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inlay", 1, 7) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
@@ -24603,12 +24603,12 @@ Public Class maincollection
         Dim newfcdn As New freecoversdotnet.Rsp
         newfcdn.parentdirname = rconf.basefolder
         Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inside", 1, 6) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
-        For Each curdlobj As mip.dlobject In dllist
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
             If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
             If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
         Next
 
-        
+
     End Sub
 
     Private Sub showfcdn_movie_front()
