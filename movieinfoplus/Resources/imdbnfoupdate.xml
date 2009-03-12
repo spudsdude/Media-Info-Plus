@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <pcbGetFanart>false</pcbGetFanart>
+  <pcbSaveNFO>true</pcbSaveNFO>
+  <pcbOverwriteNFO>true</pcbOverwriteNFO>
+  <pcbGenTBN>false</pcbGenTBN>
+  <pworkoffline>true</pworkoffline>
+  <pclbPaths>
+    <anyType xsi:type="xsd:string"></anyType>
+  </pclbPaths>
+  <pcbMaxIconPerStyle>1</pcbMaxIconPerStyle>
+  <pcbMaxIconsToDisplay>1</pcbMaxIconsToDisplay>
+  <pcboxType>2</pcboxType>
+  <pcbGetIMDBInfo>true</pcbGetIMDBInfo>
+  <pcbDownloadPoster>false</pcbDownloadPoster>
+  <pcbf1s0>false</pcbf1s0>
+  <pcbf1s3>false</pcbf1s3>
+  <pcbf1s9>false</pcbf1s9>
+  <pcbf2s0>false</pcbf2s0>
+  <pcbf2s2>false</pcbf2s2>
+  <pcbf2s8>false</pcbf2s8>
+  <pcbf2s10>false</pcbf2s10>
+  <pcbf3s0>false</pcbf3s0>
+  <pcbFilterCustom1></pcbFilterCustom1>
+  <pcbFilterCustom2></pcbFilterCustom2>
+  <pcbFilterCustom3></pcbFilterCustom3>
+  <pcbFilterCustom4></pcbFilterCustom4>
+  <pcbFilterCustom5></pcbFilterCustom5>
+  <pcbFilter1080p>true</pcbFilter1080p>
+  <pcbFilter720p>true</pcbFilter720p>
+  <pcbFilterAvi>true</pcbFilterAvi>
+  <pcbFilterBluRay>true</pcbFilterBluRay>
+  <pcbFilterDivx>true</pcbFilterDivx>
+  <pcbFilterDVD>true</pcbFilterDVD>
+  <pcbFilterH264>true</pcbFilterH264>
+  <pcbFilterHidef>true</pcbFilterHidef>
+  <pcbFilterLq>true</pcbFilterLq>
+  <pcbFilterXvid>true</pcbFilterXvid>
+</configuration>

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="moviesDataSet" targetNamespace="http://tempuri.org/moviesDataSet.xsd" xmlns:mstns="http://tempuri.org/moviesDataSet.xsd" xmlns="http://tempuri.org/moviesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="moviesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="moviesConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.movieinfoplus.My.MySettings.GlobalReference.Default.moviesConnectionString" Provider="System.Data.SQLite" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="moviesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="moviesDataSet" msprop:Generator_DataSetName="moviesDataSet" msprop:EnableTableAdapterManager="True">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="imdb" msprop:Generator_UserTableName="imdb" msprop:Generator_RowDeletedName="imdbRowDeleted" msprop:Generator_TableClassName="imdbDataTable" msprop:Generator_RowChangedName="imdbRowChanged" msprop:Generator_RowClassName="imdbRow" msprop:Generator_RowChangingName="imdbRowChanging" msprop:Generator_RowEvArgName="imdbRowChangeEvent" msprop:Generator_RowEvHandlerName="imdbRowChangeEventHandler" msprop:Generator_TablePropName="imdb" msprop:Generator_TableVarName="tableimdb" msprop:Generator_RowDeletingName="imdbRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Year" msprop:Generator_UserColumnName="Year" msprop:Generator_ColumnPropNameInRow="Year" msprop:Generator_ColumnVarNameInTable="columnYear" msprop:Generator_ColumnPropNameInTable="YearColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="IMDBID" msprop:Generator_UserColumnName="IMDBID" msprop:Generator_ColumnPropNameInRow="IMDBID" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnIMDBID" msprop:Generator_ColumnPropNameInTable="IMDBIDColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AltTitle" msprop:Generator_UserColumnName="AltTitle" msprop:Generator_ColumnPropNameInRow="AltTitle" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnAltTitle" msprop:Generator_ColumnPropNameInTable="AltTitleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlotSummary" msprop:Generator_UserColumnName="PlotSummary" msprop:Generator_ColumnPropNameInRow="PlotSummary" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnPlotSummary" msprop:Generator_ColumnPropNameInTable="PlotSummaryColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plot" msprop:Generator_UserColumnName="Plot" msprop:Generator_ColumnPropNameInRow="Plot" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnPlot" msprop:Generator_ColumnPropNameInTable="PlotColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8192" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Runtime" msprop:Generator_UserColumnName="Runtime" msprop:Generator_ColumnPropNameInRow="Runtime" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnRuntime" msprop:Generator_ColumnPropNameInTable="RuntimeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tagline" msprop:Generator_UserColumnName="Tagline" msprop:Generator_ColumnPropNameInRow="Tagline" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnTagline" msprop:Generator_ColumnPropNameInTable="TaglineColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Genre" msprop:Generator_UserColumnName="Genre" msprop:Generator_ColumnPropNameInRow="Genre" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnGenre" msprop:Generator_ColumnPropNameInTable="GenreColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1024" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Director" msprop:Generator_UserColumnName="Director" msprop:Generator_ColumnPropNameInRow="Director" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnDirector" msprop:Generator_ColumnPropNameInTable="DirectorColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Outline" msprop:Generator_UserColumnName="Outline" msprop:Generator_ColumnPropNameInRow="Outline" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnOutline" msprop:Generator_ColumnPropNameInTable="OutlineColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Votes" msprop:Generator_UserColumnName="Votes" msprop:Generator_ColumnPropNameInRow="Votes" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnVotes" msprop:Generator_ColumnPropNameInTable="VotesColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Studio" msprop:Generator_UserColumnName="Studio" msprop:Generator_ColumnPropNameInRow="Studio" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnStudio" msprop:Generator_ColumnPropNameInTable="StudioColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mpaa" msprop:Generator_UserColumnName="Mpaa" msprop:Generator_ColumnPropNameInRow="Mpaa" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnMpaa" msprop:Generator_ColumnPropNameInTable="MpaaColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rating" msprop:Generator_UserColumnName="Rating" msprop:Generator_ColumnPropNameInRow="Rating" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnRating" msprop:Generator_ColumnPropNameInTable="RatingColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="uid" msprop:Generator_UserColumnName="uid" msprop:Generator_ColumnPropNameInRow="uid" msprop:Generator_ColumnVarNameInTable="columnuid" msprop:Generator_ColumnPropNameInTable="uidColumn" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblActors" msprop:Generator_UserTableName="tblActors" msprop:Generator_RowDeletedName="tblActorsRowDeleted" msprop:Generator_TableClassName="tblActorsDataTable" msprop:Generator_RowChangedName="tblActorsRowChanged" msprop:Generator_RowClassName="tblActorsRow" msprop:Generator_RowChangingName="tblActorsRowChanging" msprop:Generator_RowEvArgName="tblActorsRowChangeEvent" msprop:Generator_RowEvHandlerName="tblActorsRowChangeEventHandler" msprop:Generator_TablePropName="tblActors" msprop:Generator_TableVarName="tabletblActors" msprop:Generator_RowDeletingName="tblActorsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IMDBID" msprop:Generator_UserColumnName="IMDBID" msprop:Generator_ColumnPropNameInRow="IMDBID" msprop:Generator_ColumnVarNameInTable="columnIMDBID" msprop:Generator_ColumnPropNameInTable="IMDBIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Role" msprop:Generator_UserColumnName="Role" msprop:Generator_ColumnPropNameInRow="Role" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnRole" msprop:Generator_ColumnPropNameInTable="RoleColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Thumb" msprop:Generator_UserColumnName="Thumb" msprop:Generator_ColumnPropNameInRow="Thumb" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnThumb" msprop:Generator_ColumnPropNameInTable="ThumbColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2056" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:imdb" />
+      <xs:field xpath="mstns:uid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

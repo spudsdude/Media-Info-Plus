@@ -1,0 +1,659 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26EF0B6C-B3C3-4661-99AE-1A7540CABC4E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>movieinfoplus.My.MyApplication</StartupObject>
+    <RootNamespace>movieinfoplus</RootNamespace>
+    <AssemblyName>mediainfoplus</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>mip2.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>B15EC6A4D7DBB2EEFF8A8ECA6BF4796FC71EEBC2</ManifestCertificateThumbprint>
+    <ManifestKeyFile>movieinfoplus_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <TargetZone>LocalIntranet</TargetZone>
+    <PublishUrl>c:\deploy\movieinfoplus\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>MovieInfoPlus</ProductName>
+    <PublisherName>MDI</PublisherName>
+    <CreateWebPageOnPublish>false</CreateWebPageOnPublish>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>2237</ApplicationRevision>
+    <ApplicationVersion>1.0.0.2237</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MovieInfoPlusKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\..\..\..\..\..\..\Program Files\movieinfoplus\</OutputPath>
+    <DocumentationFile>mediainfoplus.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>Full</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\..\Program Files\movieinfoplus\</OutputPath>
+    <DocumentationFile>mediainfoplus.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.10.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL" />
+    <Reference Include="miplibfc, Version=1.0.1.2800, Culture=neutral, PublicKeyToken=8be0b0a92da598ee, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Projects\freecoversapi\freecoversapi\bin\Release\miplibfc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.60.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <HintPath>..\..\..\..\..\Desktop\SQLite-1.0.60.0-binaries\bin\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabControlEX, Version=0.0.3216.38616, Culture=neutral, PublicKeyToken=1db242dc828e4b4e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\TabControlEX.dll</HintPath>
+    </Reference>
+    <Reference Include="taglib-sharp, Version=1.9.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>Resources\taglib-sharp-1.9.75474-net20\Release\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UltraID3Lib, Version=0.9.6.6, Culture=neutral, PublicKeyToken=b32e96509f79ae07, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addcustomimages.Designer.vb">
+      <DependentUpon>addcustomimages.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addcustomimages.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="autopilotdialog.Designer.vb">
+      <DependentUpon>autopilotdialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autopilotdialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="autorundialog.Designer.vb">
+      <DependentUpon>autorundialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="autorundialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="crypto.vb" />
+    <Compile Include="dlbPreviewPrintMediaImage.Designer.vb">
+      <DependentUpon>dlbPreviewPrintMediaImage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlbPreviewPrintMediaImage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgConfiguration.Designer.vb">
+      <DependentUpon>dlgConfiguration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgConfiguration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMessageboxOK.Designer.vb">
+      <DependentUpon>dlgMessageboxOK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMessageboxOK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMISave.Designer.vb">
+      <DependentUpon>dlgMISave.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMISave.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgModifyCurrentAlbum.Designer.vb">
+      <DependentUpon>dlgModifyCurrentAlbum.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgModifyCurrentAlbum.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMusicSortWizard.Designer.vb">
+      <DependentUpon>dlgMusicSortWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMusicSortWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPreCacheStarting.Designer.vb">
+      <DependentUpon>dlgPreCacheStarting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPreCacheStarting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlobject.vb" />
+    <Compile Include="icStudio.vb" />
+    <Compile Include="dlgMovieStudioSelect.Designer.vb">
+      <DependentUpon>dlgMovieStudioSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMovieStudioSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createtvdbdebugfromlog.Designer.vb">
+      <DependentUpon>createtvdbdebugfromlog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="createtvdbdebugfromlog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="currenticon2display.Designer.vb">
+      <DependentUpon>currenticon2display.vb</DependentUpon>
+    </Compile>
+    <Compile Include="currenticon2display.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogMovieSelect.Designer.vb">
+      <DependentUpon>dialogMovieSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dialogMovieSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dialogTvShowSelect.Designer.vb">
+      <DependentUpon>dialogTvShowSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dialogTvShowSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgCurrentIconUsed2.Designer.vb">
+      <DependentUpon>dlgCurrentIconUsed2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgCurrentIconUsed2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgDownloadingFile.Designer.vb">
+      <DependentUpon>dlgDownloadingFile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgDownloadingFile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMovieDebug.Designer.vb">
+      <DependentUpon>dlgMovieDebug.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMovieDebug.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgMovieGenreSelect.Designer.vb">
+      <DependentUpon>dlgMovieGenreSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgMovieGenreSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgTagIconSelection.Designer.vb">
+      <DependentUpon>dlgTagIconSelection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgTagIconSelection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgTVShowCurStatus.Designer.vb">
+      <DependentUpon>dlgTVShowCurStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgTVShowCurStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Explorer1.Designer.vb">
+      <DependentUpon>Explorer1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Explorer1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GettingStartedWizard.Designer.vb">
+      <DependentUpon>GettingStartedWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GettingStartedWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="icGenre.vb" />
+    <Compile Include="linkedimage.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="maincollection.Designer.vb">
+      <DependentUpon>maincollection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="maincollection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InitialConfig.Designer.vb">
+      <DependentUpon>InitialConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InitialConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MediaInfo.vb" />
+    <Compile Include="movie2.vb" />
+    <Compile Include="moviesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>moviesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="moviesDataSet.vb">
+      <DependentUpon>moviesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MovieSerializer.vb" />
+    <Compile Include="music.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="mymovies.Designer.vb">
+      <DependentUpon>mymovies.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mymovies.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nicecover.vb" />
+    <Compile Include="parseimdb.Designer.vb">
+      <DependentUpon>parseimdb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="parseimdb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\resource_extractor.Designer.vb">
+      <DependentUpon>resource_extractor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\resource_extractor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="saveaswhaticontype.Designer.vb">
+      <DependentUpon>saveaswhaticontype.vb</DependentUpon>
+    </Compile>
+    <Compile Include="saveaswhaticontype.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="selectMovie.Designer.vb">
+      <DependentUpon>selectMovie.vb</DependentUpon>
+    </Compile>
+    <Compile Include="selectMovie.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="specialfolder.vb" />
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sqlDataADO.vb" />
+    <Compile Include="ssprecaching.Designer.vb">
+      <DependentUpon>ssprecaching.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ssprecaching.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testandstaging.Designer.vb">
+      <DependentUpon>testandstaging.vb</DependentUpon>
+    </Compile>
+    <Compile Include="testandstaging.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="themoviedb.backdrops.vb" />
+    <Compile Include="themoviedb.posters.vb" />
+    <Compile Include="thetvdbBanner.vb" />
+    <Compile Include="thetvdbData.vb" />
+    <Compile Include="thetvdbDataSerializer.vb" />
+    <Compile Include="thetvdbEpisode.vb" />
+    <Compile Include="thetvdbMirror.vb" />
+    <Compile Include="thetvdbMirrors.vb" />
+    <Compile Include="thetvdbMirrorsSerializer.vb" />
+    <Compile Include="thetvdbSeries.vb" />
+    <Compile Include="threaders.vb" />
+    <Compile Include="tmdbv2.vb" />
+    <Compile Include="tvdbActor.vb" />
+    <Compile Include="tvdb_lang_data.vb" />
+    <Compile Include="tvdb_lang_Episode.vb" />
+    <Compile Include="tvdb_lang_Series.vb" />
+    <Compile Include="tvshowcollection.vb">
+    </Compile>
+    <Compile Include="xbmcEpisodedetails.vb" />
+    <Compile Include="xbmcMediaInfo.vb" />
+    <Compile Include="xbmcTvSeries.vb" />
+    <Compile Include="xbmcTvshow.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mip2.ico" />
+    <Content Include="miplogonew2 copy.ico" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="mip_splash_jive_actual.png" />
+    <None Include="mip_splash_jive.jpg" />
+    <Content Include="movieinfoplus.ico" />
+    <EmbeddedResource Include="autopilotdialog.resx">
+      <DependentUpon>autopilotdialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlbPreviewPrintMediaImage.resx">
+      <DependentUpon>dlbPreviewPrintMediaImage.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgConfiguration.resx">
+      <DependentUpon>dlgConfiguration.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMessageboxOK.resx">
+      <DependentUpon>dlgMessageboxOK.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMISave.resx">
+      <DependentUpon>dlgMISave.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgModifyCurrentAlbum.resx">
+      <DependentUpon>dlgModifyCurrentAlbum.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMovieStudioSelect.resx">
+      <DependentUpon>dlgMovieStudioSelect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createtvdbdebugfromlog.resx">
+      <DependentUpon>createtvdbdebugfromlog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="currenticon2display.resx">
+      <DependentUpon>currenticon2display.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogMovieSelect.resx">
+      <DependentUpon>dialogMovieSelect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dialogTvShowSelect.resx">
+      <DependentUpon>dialogTvShowSelect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgCurrentIconUsed2.resx">
+      <DependentUpon>dlgCurrentIconUsed2.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgDownloadingFile.resx">
+      <DependentUpon>dlgDownloadingFile.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMovieDebug.resx">
+      <DependentUpon>dlgMovieDebug.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMovieGenreSelect.resx">
+      <DependentUpon>dlgMovieGenreSelect.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgMusicSortWizard.resx">
+      <DependentUpon>dlgMusicSortWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgPreCacheStarting.resx">
+      <DependentUpon>dlgPreCacheStarting.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgTagIconSelection.resx">
+      <DependentUpon>dlgTagIconSelection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgTVShowCurStatus.resx">
+      <DependentUpon>dlgTVShowCurStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Explorer1.resx">
+      <DependentUpon>Explorer1.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GettingStartedWizard.resx">
+      <DependentUpon>GettingStartedWizard.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maincollection.resx">
+      <DependentUpon>maincollection.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="mymovies.resx">
+      <DependentUpon>mymovies.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\imdbnfoupdate.xml" />
+    <None Include="app.config" />
+    <None Include="ImageMagick.rar" />
+    <None Include="MovieInfoPlusKey.snk" />
+    <None Include="moviesDataSet.xsc">
+      <DependentUpon>moviesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="moviesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>moviesDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="moviesDataSet.xss">
+      <DependentUpon>moviesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\bspb1.jpg" />
+    <None Include="Resources\f2s0.jpg" />
+    <None Include="Resources\f2s2.jpg" />
+    <None Include="Resources\f2s8.jpg" />
+    <None Include="Resources\f2s10.jpg" />
+    <EmbeddedResource Include="Resources\green_check.png">
+    </EmbeddedResource>
+    <None Include="Resources\green_check.jpg" />
+    <None Include="Resources\green_check_gainsboro.jpg" />
+    <EmbeddedResource Include="Resources\emptystar.png" />
+    <EmbeddedResource Include="Resources\fullstar.png" />
+    <EmbeddedResource Include="Resources\halfstar.png" />
+    <EmbeddedResource Include="Resources\arrow_small.png" />
+    <None Include="Resources\impawards.JPG" />
+    <EmbeddedResource Include="Resources\7za.exe" />
+    <EmbeddedResource Include="Resources\7zip_license.txt" />
+    <None Include="Resources\imp.jpg" />
+    <None Include="Resources\front.jpg" />
+    <None Include="Resources\folder_32x32.png" />
+    <None Include="Resources\imdb_32x32.png" />
+    <None Include="Resources\imdb_32x25.png" />
+    <Content Include="Resources\license_unrar.txt" />
+    <None Include="Resources\paypal.png" />
+    <None Include="Resources\tmdb_32x25.png" />
+    <None Include="Resources\mymovies.jpg" />
+    <None Include="Resources\myshows.jpg" />
+    <None Include="Resources\mytunes.jpg" />
+    <None Include="Resources\mediamanagerprosplash.jpg" />
+    <None Include="Resources\precachestarting.jpg" />
+    <None Include="Resources\refresh.jpg" />
+    <EmbeddedResource Include="Resources\stereo.png" />
+    <None Include="Resources\tag.jpeg" />
+    <EmbeddedResource Include="Resources\small_movieroll_icon.png" />
+    <EmbeddedResource Include="Resources\update_refresh_32x32.png" />
+    <EmbeddedResource Include="Resources\search_32x32.png" />
+    <EmbeddedResource Include="Resources\tv_icon32x32.png" />
+    <None Include="Resources\tv_icon.png" />
+    <EmbeddedResource Include="Resources\update-shows.png">
+    </EmbeddedResource>
+    <None Include="Resources\tv_wide_example.jpg" />
+    <None Include="Resources\tvbgExample.jpg" />
+    <EmbeddedResource Include="Resources\tvbgExample2.jpg">
+    </EmbeddedResource>
+    <None Include="Resources\questionmark_gainsboro.jpb.jpg" />
+    <EmbeddedResource Include="Resources\questionmark.png">
+    </EmbeddedResource>
+    <None Include="Resources\red_x_gainsboro.jpg" />
+    <None Include="Resources\red_x.jpg" />
+    <EmbeddedResource Include="Resources\red_x.png" />
+    <None Include="Resources\spb1.jpg" />
+    <None Include="Resources\poster.jpg" />
+    <None Include="Resources\tpb1.jpg" />
+    <EmbeddedResource Include="autorundialog.resx">
+      <DependentUpon>autorundialog.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UnRAR.exe" />
+    <EmbeddedResource Include="Resources\wget.exe" />
+    <EmbeddedResource Include="Resources\posterxmls.rar">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\imdbcache.rar" />
+    <None Include="Resources\wget.bmp" />
+    <None Include="My Project\app.manifest" />
+    <EmbeddedResource Include="InitialConfig.resx">
+      <DependentUpon>InitialConfig.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parseimdb.resx">
+      <DependentUpon>parseimdb.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ph.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\resource_extractor.resx">
+      <DependentUpon>resource_extractor.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="saveaswhaticontype.resx">
+      <DependentUpon>saveaswhaticontype.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="selectMovie.resx">
+      <DependentUpon>selectMovie.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ssprecaching.resx">
+      <DependentUpon>ssprecaching.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testandstaging.resx">
+      <DependentUpon>testandstaging.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="movieinfoplus_TemporaryKey.pfx" />
+    <None Include="Resources\bluebar.png" />
+    <None Include="Resources\bookmark-resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+    <Folder Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
