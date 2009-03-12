@@ -134,16 +134,16 @@ Public Class maincollection
         tcMain.Enabled = False
         gbAppMode.Enabled = False
         gbDisplay.Enabled = False
-        btnReadFolder.Enabled = False
-        btnAutoPilot.Enabled = False
-        btnAutoPilot.Visible = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
         kgMovieOrTVShow.Enabled = False
         kgMyMovieInfoPicker.Enabled = False
         btnPrev.Enabled = False
         btnNext.Enabled = False
         btnShowMovieInfo.Enabled = False
-        btnPrecache.Enabled = False
-        btnPrecache.Visible = False
+        tsbMoviesPreCache.Enabled = False
+        '        btnPrecache.Visible = False
         lblPCWorking.Visible = True
 
         prgThread.Value = 0
@@ -680,17 +680,17 @@ Public Class maincollection
         validatefoldercontents()
 
         'turn controls back on
-            btnPrecache.Enabled = True
-            btnPrecache.Visible = True
+        tsbMoviesPreCache.Enabled = True
+        tsbMoviesPreCache.Visible = True
             btnCancelPC.Enabled = False
             btnCancelPC.Visible = False
             prgThread.Visible = False
             tcMain.Enabled = True
             gbAppMode.Enabled = True
             gbDisplay.Enabled = True
-            btnReadFolder.Enabled = True
-            btnAutoPilot.Enabled = True
-            btnAutoPilot.Visible = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        'tsbMoviesAutoPilot.Visible = True
             lblPCWorking.Visible = False
             lbMyMovies.Enabled = True
             kgMovieOrTVShow.Enabled = True
@@ -1588,7 +1588,7 @@ Public Class maincollection
         'End While
 
     End Sub
-    Private Sub ReadFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReadFolder.Click
+    Private Sub tsbMoviesLoadMovies_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesLoadMovies.Click
         bwloadfolderdata()
 
         'readfolderdatafordropdown()
@@ -1915,7 +1915,7 @@ Public Class maincollection
         Me.pbar1.Visible = False
         'Me.ReadFolder.Visible = False
         Me.btnShowMovieInfo.Enabled = True
-        Me.btnPrecache.Visible = True
+        'Me.btnPrecache.Visible = True
         'readfolderdatafordropdown2()
     End Sub
     Private Sub readnfo(ByRef tempmovie As movie)
@@ -2247,7 +2247,7 @@ Public Class maincollection
         'Me.showposter = True
         'fwdbackbuttons()
     End Sub
-    Private Sub btnAutoPilot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAutoPilot.Click
+    Private Sub tsbMoviesAutoPilot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesAutoPilot.Click
         autopilotdialog.ShowDialog()
         'Dim total As Integer = cbox1.Items.Count - 1
         'Dim cou As Integer = 0
@@ -6653,21 +6653,21 @@ Public Class maincollection
         End If
         If Me.messageprompts Then
             If fanarttotal = 0 Then
-                tpFanart.Text = "Fanart"
+                tpFanart.Text = "Backgounds"
             Else
-                tpFanart.Text = "Fanart (" & fanarttotal.ToString & ")"
+                tpFanart.Text = "Backgounds (" & fanarttotal.ToString & ")"
             End If
 
             If postertotal = 0 Then
-                tpTallImages.Text = "Tall Images"
+                tpTallImages.Text = "Posters"
             Else
-                tpTallImages.Text = "Tall Images (" & postertotal.ToString & ")"
+                tpTallImages.Text = "Posters (" & postertotal.ToString & ")"
             End If
 
             If iconsboxshottotal = 0 Then
-                tpmipf.Text = "Icons and Box Shots"
+                tpmipf.Text = "Wide Images / 3D Boxes"
             Else
-                tpmipf.Text = "Icons and Box Shots (" & iconsboxshottotal.ToString & ")"
+                tpmipf.Text = "Wide Images / 3D Boxes (" & iconsboxshottotal.ToString & ")"
             End If
         End If
 
@@ -9537,7 +9537,7 @@ Public Class maincollection
                                 If cmmode = "movie" Then
                                 addtodownloadlist(currentmovie, sname, checklocal, currentmovie.pmoviename + ": MediaIcons.org image- " + " - Format: " + format + " : Style: " + style)
                                 ElseIf cmmode = "tv" Then
-                                addtodownloadlist(currenttvshowdownloadlist, sname, checklocal, currentmovie.pmoviename + ": MediaIcons.org image- " + " - Format: " + format + " : Style: " + style)
+                                addtodownloadlist(currenttvshowdownloadlist, sname, checklocal, currenttvshowname + ": MediaIcons.org image- " + " - Format: " + format + " : Style: " + style)
                                 End If
                             Catch ex As Exception
                                 Debug.Print(ex.ToString)
@@ -11576,7 +11576,7 @@ Public Class maincollection
         lblPbar.Text = lblPbar.Text + " ___ "
         'If Me.messageprompts Then Me.gbDisplay.Refresh()
     End Sub
-    Private Sub btnPrecache_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrecache.Click
+    Private Sub tsbMoviesPrecache_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesPreCache.Click
         'cacheicons()
         bwprecachenow()
     End Sub
@@ -16753,9 +16753,9 @@ Public Class maincollection
         tcMain.Enabled = False
         gbAppMode.Enabled = False
         gbDisplay.Enabled = False
-        btnReadFolder.Enabled = False
-        btnAutoPilot.Enabled = False
-        btnAutoPilot.Visible = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
         kgMovieOrTVShow.Enabled = False
         kgMyMovieInfoPicker.Enabled = False
         btnPrev.Enabled = False
@@ -16765,8 +16765,8 @@ Public Class maincollection
         prgThread.Value = 0
         prgThread.Maximum = 3000
         prgThread.Visible = True
-        btnPrecache.Enabled = False
-        btnPrecache.Visible = False
+        tsbMoviesPreCache.Enabled = False
+        'btnPrecache.Visible = False
         lblPCWorking.Visible = True
 
         bwUpdatePosters = New System.ComponentModel.BackgroundWorker
@@ -17546,9 +17546,9 @@ Public Class maincollection
         tcMain.Enabled = False
         gbAppMode.Enabled = False
         gbDisplay.Enabled = False
-        btnReadFolder.Enabled = False
-        btnAutoPilot.Enabled = False
-        btnAutoPilot.Visible = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
         kgMovieOrTVShow.Enabled = False
         kgMyMovieInfoPicker.Enabled = False
         btnPrev.Enabled = False
@@ -17577,8 +17577,8 @@ Public Class maincollection
         'totaltoprocess = lbMyMovies.Items.Count - 1
         'set max number 
         prgThread.Visible = True
-        btnPrecache.Enabled = False
-        btnPrecache.Visible = False
+        tsbMoviesPreCache.Enabled = False
+        ' btnPrecache.Visible = False
         'btnCancelPC.Enabled = True
         'btnCancelPC.Visible = True
         lblPCWorking.Visible = True
@@ -17592,17 +17592,17 @@ Public Class maincollection
         lbMyMovies.ValueMember = "Index"
         lbMyMovies.DisplayMember = "Name"
 
-        btnPrecache.Enabled = True
-        btnPrecache.Visible = True
+        tsbMoviesPreCache.Enabled = True
+        'btnPrecache.Visible = True
         btnCancelPC.Enabled = False
         btnCancelPC.Visible = False
         prgThread.Visible = False
         tcMain.Enabled = True
         gbAppMode.Enabled = True
         gbDisplay.Enabled = True
-        btnReadFolder.Enabled = True
-        btnAutoPilot.Enabled = True
-        btnAutoPilot.Visible = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        ' btnAutoPilot.Visible = True
         lblPCWorking.Visible = False
         lbMyMovies.Enabled = True
         kgMovieOrTVShow.Enabled = True
@@ -17699,9 +17699,9 @@ Public Class maincollection
         tcMain.Enabled = False
         gbAppMode.Enabled = False
         gbDisplay.Enabled = False
-        btnReadFolder.Enabled = False
-        btnAutoPilot.Enabled = False
-        btnAutoPilot.Visible = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
         kgMovieOrTVShow.Enabled = False
         kgMyMovieInfoPicker.Enabled = False
         btnPrev.Enabled = False
@@ -17735,8 +17735,8 @@ Public Class maincollection
         'totaltoprocess = lbMyMovies.Items.Count - 1
         'set max number 
         prgThread.Visible = True
-        btnPrecache.Enabled = False
-        btnPrecache.Visible = False
+        tsbMoviesPreCache.Enabled = False
+        'btnPrecache.Visible = False
         'btnCancelPC.Enabled = True
         'btnCancelPC.Visible = True
         lblPCWorking.Visible = True
@@ -17750,17 +17750,17 @@ Public Class maincollection
         lbMyMovies.ValueMember = "Index"
         lbMyMovies.DisplayMember = "Name"
 
-        btnPrecache.Enabled = True
-        btnPrecache.Visible = True
+        tsbMoviesPreCache.Enabled = True
+        'btnPrecache.Visible = True
         btnCancelPC.Enabled = False
         btnCancelPC.Visible = False
         prgThread.Visible = False
         tcMain.Enabled = True
         gbAppMode.Enabled = True
         gbDisplay.Enabled = True
-        btnReadFolder.Enabled = True
-        btnAutoPilot.Enabled = True
-        btnAutoPilot.Visible = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        'btnAutoPilot.Visible = True
         lblPCWorking.Visible = False
         lbMyMovies.Enabled = True
         kgMovieOrTVShow.Enabled = True
@@ -17868,9 +17868,9 @@ Public Class maincollection
         tcMain.Enabled = False
         gbAppMode.Enabled = False
         gbDisplay.Enabled = False
-        btnReadFolder.Enabled = False
-        btnAutoPilot.Enabled = False
-        btnAutoPilot.Visible = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
         btnPrev.Enabled = False
         btnNext.Enabled = False
         btnShowMovieInfo.Enabled = False
@@ -17893,8 +17893,8 @@ Public Class maincollection
         pcmaxDisplayedIcons = rconf.pcbMaxIconsToDisplay
         pcMaxIconPerStyle = rconf.pcbMaxIconPerStyle
         prgThread.Visible = True
-        btnPrecache.Enabled = False
-        btnPrecache.Visible = False
+        tsbMoviesPreCache.Enabled = False
+        'btnPrecache.Visible = False
         btnCancelPC.Enabled = True
         btnCancelPC.Visible = True
         'lblPbar.Text = ""
@@ -17928,17 +17928,17 @@ Public Class maincollection
             dlgDownloadingFile.ShowDialog()
 
         End If
-        btnPrecache.Enabled = True
-        btnPrecache.Visible = True
+        tsbMoviesPreCache.Enabled = True
+        'btnPrecache.Visible = True
         btnCancelPC.Enabled = False
         btnCancelPC.Visible = False
         prgThread.Visible = False
         tcMain.Enabled = True
         gbAppMode.Enabled = True
         gbDisplay.Enabled = True
-        btnReadFolder.Enabled = True
-        btnAutoPilot.Enabled = True
-        btnAutoPilot.Visible = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        'btnAutoPilot.Visible = True
         lblPCWorking.Visible = False
         lbMyMovies.Enabled = True
 
@@ -18763,12 +18763,13 @@ Public Class maincollection
     '    toolTip1.SetToolTip(llIMDBID, "Open IMDB Page for this Movie")
     '    toolTip1.Active = True
     'End Sub
-    Private Sub pbrefreshimdb_Hover(ByVal sender As Object, ByVal e As System.EventArgs) Handles pbrefreshimdb.MouseHover
+    Private Sub kbtnMoviesChangeIMDBid_Hover(ByVal sender As Object, ByVal e As System.EventArgs) Handles kbtnMoviesChangeIMDBid.MouseHover
         'display tooltip
         Dim toolTip1 As ToolTip = New ToolTip(Me.components)
         'Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(selectedicon.AccessibleName)
-        toolTip1.SetToolTip(pbrefreshimdb, "Save New IMDB ID and Reload the IMDB datafor this Movie")
+        toolTip1.SetToolTip(kbtnMoviesChangeIMDBid, "Change the IMDB ID for this Movie" + vbNewLine + "Enter the new IMDB ID and click this button to change the movie data.") 'Save New IMDB ID and Reload the IMDB datafor this Movie")
         toolTip1.Active = True
+
     End Sub
     Private Sub llOpenTVDBPage_LinkClicked(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbShowsOpenTVDBPage.Click 'LinkClicked
         If gvcurrenttvshow.Id Is Nothing Then Exit Sub
@@ -18904,6 +18905,7 @@ Public Class maincollection
         'fubared do not use this
         Select Case cmmode
             Case "tv"
+                curtvshowiconsettinglbl.Visible = True
                 tpcm.Text = ""
                 tpcm.Enabled = False
                 tpMusic.Text = ""
@@ -18915,8 +18917,8 @@ Public Class maincollection
                 tptv.Enabled = True
                 tptv.Text = "Shows"
 
-                kgTvButtons.Visible = True
-                kgMovieButtons.Visible = False
+                'kgTvButtons.Visible = True
+                'kgMovieButtons.Visible = False
                 tpIMPPosters.Text = "TV Show Posters"
                 tpTMDBPosters.Text = "Season Specific Posters"
                 tpIMPPosters.Enabled = False
@@ -18947,6 +18949,7 @@ Public Class maincollection
                 'TabControl2.Refresh()
 
             Case "movie"
+                curtvshowiconsettinglbl.Visible = False
                 tptv.Text = ""
                 tptv.Enabled = False
                 tpMusic.Text = ""
@@ -18955,8 +18958,8 @@ Public Class maincollection
                 tpPosters.Text = ""
                 tpcm.Enabled = True
                 tpcm.Text = "Movie"
-                kgTvButtons.Visible = False
-                kgMovieButtons.Visible = True
+                'kgTvButtons.Visible = False
+                'kgMovieButtons.Visible = True
                 kgMoviesNavLeft.Visible = True
                 kgTVNavLeft.Visible = False
 
@@ -18976,7 +18979,7 @@ Public Class maincollection
                 tpmipf.Text = "Wide Images / 3D Boxes"
 
                 tpTallImages.Enabled = True
-                tpTallImages.Text = "Tall Images"
+                tpTallImages.Text = "Posters"
 
                 tpTVWideIcons.Enabled = False
                 tpTVWideIcons.Text = ""
@@ -18996,6 +18999,7 @@ Public Class maincollection
                 tcMain.SelectTab("tpcm")
                 'TabControl2.Refresh()
             Case "music"
+                curtvshowiconsettinglbl.Visible = False
                 tpmmn.Enabled = False
                 tpmmn.Text = ""
                 tpmipf.Enabled = False
@@ -19016,8 +19020,8 @@ Public Class maincollection
                 cmmode = "music"
                 kscRightBottomPart.Panel2Collapsed = True
                 kscLeftBottomPart.Panel2Collapsed = True
-                kgTvButtons.Visible = False
-                kgMovieButtons.Visible = False
+                'kgTvButtons.Visible = False
+                'kgMovieButtons.Visible = False
             Case "initial"
                 tcRootBackup.TabPages.Insert(tcRootBackup.TabPages.Count, tcMain.TabPages("tptv"))
                 'tcRootBackup.TabPages.Insert(tcRootBackup.TabPages.Count, tcMain.TabPages("tpmn"))
@@ -20234,7 +20238,7 @@ Public Class maincollection
     '    Me.tpFanart.Refresh()
     'End Sub
 
-    Private Sub kbtnTVReadFolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnTVReadFolder.Click
+    Private Sub tsbShowsLoadShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbShowsLoadShows.Click
         'dlgPreCacheStarting.ShowDialog()
         'Exit Sub
 
@@ -26802,7 +26806,7 @@ Public Class maincollection
         End If
         Return retstr
     End Function
-    Private Sub kbtnTVUpdateShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnTVUpdateShows.Click
+    Private Sub tsbShowsUpdateShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbShowsUpdateShows.Click
         If lbTvShowPicker.Items.Count = 0 Then Exit Sub
 
         Dim tvshc As New tvshowcollection
@@ -27054,17 +27058,17 @@ Public Class maincollection
     End Sub
 
     Private Sub bwUpdatePosters_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwUpdatePosters.RunWorkerCompleted
-        btnPrecache.Enabled = True
-        btnPrecache.Visible = True
+        tsbMoviesPreCache.Enabled = True
+        'btnPrecache.Visible = True
         btnCancelPC.Enabled = False
         btnCancelPC.Visible = False
         prgThread.Visible = False
         tcMain.Enabled = True
         gbAppMode.Enabled = True
         gbDisplay.Enabled = True
-        btnReadFolder.Enabled = True
-        btnAutoPilot.Enabled = True
-        btnAutoPilot.Visible = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        'btnAutoPilot.Visible = True
         lblPCWorking.Visible = False
         lbMyMovies.Enabled = True
         kgMovieOrTVShow.Enabled = True
@@ -27492,7 +27496,7 @@ Public Class maincollection
         ' savecip(pbNiceCovers1)
     End Sub
 
-    Private Sub kbtnPrecacheTVShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnPrecacheTVShows.Click
+    Private Sub kbtnPrecacheTVShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim tshows As New tvshowcollection
         Dim swatch As New Stopwatch
         'swatch.Start()
@@ -27618,7 +27622,7 @@ Public Class maincollection
 
     End Sub
 
-    Private Sub pbrefreshimdb_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbrefreshimdb.Click
+    Private Sub kbtnMoviesChangeIMDBid_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnMoviesChangeIMDBid.Click
         If currentmovie Is Nothing Then Exit Sub
 
         Dim curnonfochangprompt As Boolean = rconf.pcbNoNfoChangePrompt
@@ -28623,7 +28627,7 @@ Public Class maincollection
 #End Region
 
 
-    Private Sub btnRefreshMovieMediaInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRefreshMovieMediaInfo.Click
+    Private Sub bshgRefreshMovieMediaInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgRefreshMovieMediaInfo.Click
         If Not currentmovie Is Nothing Then
             getmoviemediainfo_bw()
         End If
@@ -29615,7 +29619,7 @@ Public Class maincollection
     End Sub
 
 
-    Private Sub tsbMoviesDonate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesDonate.Click
+    Private Sub tsbMainDonate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMainDonate.Click
         'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3835885
         System.Diagnostics.Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3835885")
     End Sub
@@ -29625,6 +29629,8 @@ Public Class maincollection
         If currentmovie.tmdbid = "" Then Exit Sub
         System.Diagnostics.Process.Start("http://www.themoviedb.org/movie/" & currentmovie.tmdbid)
     End Sub
+
+
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"

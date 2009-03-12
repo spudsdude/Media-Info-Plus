@@ -147,6 +147,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSavingFileTo.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSavingFileTo.Location = New System.Drawing.Point(29, 54)
         Me.downloaderlblSavingFileTo.Name = "downloaderlblSavingFileTo"
+        Me.downloaderlblSavingFileTo.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSavingFileTo.Size = New System.Drawing.Size(52, 16)
         Me.downloaderlblSavingFileTo.TabIndex = 8
         Me.downloaderlblSavingFileTo.Text = "Save to:"
@@ -159,6 +160,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSpeed.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSpeed.Location = New System.Drawing.Point(29, 73)
         Me.downloaderlblSpeed.Name = "downloaderlblSpeed"
+        Me.downloaderlblSpeed.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSpeed.Size = New System.Drawing.Size(43, 16)
         Me.downloaderlblSpeed.TabIndex = 4
         Me.downloaderlblSpeed.Text = "Speed"
@@ -171,6 +173,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileDownloading.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileDownloading.Location = New System.Drawing.Point(29, 35)
         Me.downloaderlblFileDownloading.Name = "downloaderlblFileDownloading"
+        Me.downloaderlblFileDownloading.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileDownloading.Size = New System.Drawing.Size(79, 16)
         Me.downloaderlblFileDownloading.TabIndex = 7
         Me.downloaderlblFileDownloading.Text = "Downloading:"
@@ -183,6 +186,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileSize.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileSize.Location = New System.Drawing.Point(29, 77)
         Me.downloaderlblFileSize.Name = "downloaderlblFileSize"
+        Me.downloaderlblFileSize.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileSize.Size = New System.Drawing.Size(57, 16)
         Me.downloaderlblFileSize.TabIndex = 5
         Me.downloaderlblFileSize.Text = "File Size:"
@@ -218,6 +222,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileDownloading2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileDownloading2.Location = New System.Drawing.Point(31, 132)
         Me.downloaderlblFileDownloading2.Name = "downloaderlblFileDownloading2"
+        Me.downloaderlblFileDownloading2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileDownloading2.Size = New System.Drawing.Size(79, 16)
         Me.downloaderlblFileDownloading2.TabIndex = 12
         Me.downloaderlblFileDownloading2.Text = "Downloading:"
@@ -230,6 +235,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSavingFileTo2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSavingFileTo2.Location = New System.Drawing.Point(31, 149)
         Me.downloaderlblSavingFileTo2.Name = "downloaderlblSavingFileTo2"
+        Me.downloaderlblSavingFileTo2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSavingFileTo2.Size = New System.Drawing.Size(52, 16)
         Me.downloaderlblSavingFileTo2.TabIndex = 13
         Me.downloaderlblSavingFileTo2.Text = "Save to:"
@@ -242,6 +248,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSpeed2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSpeed2.Location = New System.Drawing.Point(31, 170)
         Me.downloaderlblSpeed2.Name = "downloaderlblSpeed2"
+        Me.downloaderlblSpeed2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSpeed2.Size = New System.Drawing.Size(43, 16)
         Me.downloaderlblSpeed2.TabIndex = 14
         Me.downloaderlblSpeed2.Text = "Speed"
@@ -254,6 +261,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileSize2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileSize2.Location = New System.Drawing.Point(31, 171)
         Me.downloaderlblFileSize2.Name = "downloaderlblFileSize2"
+        Me.downloaderlblFileSize2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileSize2.Size = New System.Drawing.Size(57, 16)
         Me.downloaderlblFileSize2.TabIndex = 15
         Me.downloaderlblFileSize2.Text = "File Size:"
@@ -320,6 +328,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileSize3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileSize3.Location = New System.Drawing.Point(28, 273)
         Me.downloaderlblFileSize3.Name = "downloaderlblFileSize3"
+        Me.downloaderlblFileSize3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileSize3.Size = New System.Drawing.Size(57, 16)
         Me.downloaderlblFileSize3.TabIndex = 22
         Me.downloaderlblFileSize3.Text = "File Size:"
@@ -333,6 +342,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSpeed3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSpeed3.Location = New System.Drawing.Point(28, 271)
         Me.downloaderlblSpeed3.Name = "downloaderlblSpeed3"
+        Me.downloaderlblSpeed3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSpeed3.Size = New System.Drawing.Size(43, 16)
         Me.downloaderlblSpeed3.TabIndex = 21
         Me.downloaderlblSpeed3.Text = "Speed"
@@ -345,6 +355,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSavingFileTo3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSavingFileTo3.Location = New System.Drawing.Point(28, 252)
         Me.downloaderlblSavingFileTo3.Name = "downloaderlblSavingFileTo3"
+        Me.downloaderlblSavingFileTo3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSavingFileTo3.Size = New System.Drawing.Size(52, 16)
         Me.downloaderlblSavingFileTo3.TabIndex = 20
         Me.downloaderlblSavingFileTo3.Text = "Save to:"
@@ -357,6 +368,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileDownloading3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileDownloading3.Location = New System.Drawing.Point(28, 234)
         Me.downloaderlblFileDownloading3.Name = "downloaderlblFileDownloading3"
+        Me.downloaderlblFileDownloading3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileDownloading3.Size = New System.Drawing.Size(79, 16)
         Me.downloaderlblFileDownloading3.TabIndex = 19
         Me.downloaderlblFileDownloading3.Text = "Downloading:"
@@ -397,6 +409,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileSize4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileSize4.Location = New System.Drawing.Point(29, 377)
         Me.downloaderlblFileSize4.Name = "downloaderlblFileSize4"
+        Me.downloaderlblFileSize4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileSize4.Size = New System.Drawing.Size(57, 16)
         Me.downloaderlblFileSize4.TabIndex = 29
         Me.downloaderlblFileSize4.Text = "File Size:"
@@ -410,6 +423,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSpeed4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSpeed4.Location = New System.Drawing.Point(29, 374)
         Me.downloaderlblSpeed4.Name = "downloaderlblSpeed4"
+        Me.downloaderlblSpeed4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSpeed4.Size = New System.Drawing.Size(43, 16)
         Me.downloaderlblSpeed4.TabIndex = 28
         Me.downloaderlblSpeed4.Text = "Speed"
@@ -422,6 +436,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSavingFileTo4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSavingFileTo4.Location = New System.Drawing.Point(29, 356)
         Me.downloaderlblSavingFileTo4.Name = "downloaderlblSavingFileTo4"
+        Me.downloaderlblSavingFileTo4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSavingFileTo4.Size = New System.Drawing.Size(52, 16)
         Me.downloaderlblSavingFileTo4.TabIndex = 27
         Me.downloaderlblSavingFileTo4.Text = "Save to:"
@@ -434,6 +449,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileDownloading4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileDownloading4.Location = New System.Drawing.Point(29, 337)
         Me.downloaderlblFileDownloading4.Name = "downloaderlblFileDownloading4"
+        Me.downloaderlblFileDownloading4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileDownloading4.Size = New System.Drawing.Size(79, 16)
         Me.downloaderlblFileDownloading4.TabIndex = 26
         Me.downloaderlblFileDownloading4.Text = "Downloading:"
@@ -474,6 +490,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileSize5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileSize5.Location = New System.Drawing.Point(31, 477)
         Me.downloaderlblFileSize5.Name = "downloaderlblFileSize5"
+        Me.downloaderlblFileSize5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileSize5.Size = New System.Drawing.Size(57, 16)
         Me.downloaderlblFileSize5.TabIndex = 36
         Me.downloaderlblFileSize5.Text = "File Size:"
@@ -487,6 +504,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSpeed5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSpeed5.Location = New System.Drawing.Point(31, 474)
         Me.downloaderlblSpeed5.Name = "downloaderlblSpeed5"
+        Me.downloaderlblSpeed5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSpeed5.Size = New System.Drawing.Size(43, 16)
         Me.downloaderlblSpeed5.TabIndex = 35
         Me.downloaderlblSpeed5.Text = "Speed"
@@ -499,6 +517,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblSavingFileTo5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblSavingFileTo5.Location = New System.Drawing.Point(31, 456)
         Me.downloaderlblSavingFileTo5.Name = "downloaderlblSavingFileTo5"
+        Me.downloaderlblSavingFileTo5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblSavingFileTo5.Size = New System.Drawing.Size(52, 16)
         Me.downloaderlblSavingFileTo5.TabIndex = 34
         Me.downloaderlblSavingFileTo5.Text = "Save to:"
@@ -511,6 +530,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblFileDownloading5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblFileDownloading5.Location = New System.Drawing.Point(31, 437)
         Me.downloaderlblFileDownloading5.Name = "downloaderlblFileDownloading5"
+        Me.downloaderlblFileDownloading5.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.downloaderlblFileDownloading5.Size = New System.Drawing.Size(79, 16)
         Me.downloaderlblFileDownloading5.TabIndex = 33
         Me.downloaderlblFileDownloading5.Text = "Downloading:"

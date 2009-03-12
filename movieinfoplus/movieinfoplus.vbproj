@@ -529,6 +529,7 @@
     <None Include="Resources\imdb_32x32.png" />
     <None Include="Resources\imdb_32x25.png" />
     <Content Include="Resources\license_unrar.txt" />
+    <None Include="Resources\refresh24.jpg" />
     <None Include="Resources\paypal.png" />
     <None Include="Resources\tmdb_32x25.png" />
     <None Include="Resources\mymovies.jpg" />

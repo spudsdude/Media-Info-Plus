@@ -312,6 +312,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property refresh24() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("refresh24", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property search_32x32() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("search_32x32", resourceCulture)

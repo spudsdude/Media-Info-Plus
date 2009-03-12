@@ -124,6 +124,9 @@
   <data name="tpb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tpb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="halfstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\halfstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="precachestarting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\precachestarting.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,8 +139,8 @@
   <data name="tmdb_32x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tmdb_32x25.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tvbgExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tvbgExample.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fullstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mytunes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mytunes.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,14 @@
   <data name="mymovies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mymovies.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paypal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="f2s10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\f2s10.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bspb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bspb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="spb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +199,8 @@
   <data name="small_movieroll_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\small_movieroll_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ph.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mip_splash_jive_actual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\mip_splash_jive_actual.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,17 +208,14 @@
   <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="movieinfoplus_ap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\movieinfoplus_ap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="poster" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\poster.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="imdb_32x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imdb_32x25.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="myshows" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\myshows.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mip_splash_jive" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\mip_splash_jive.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,23 +232,23 @@
   <data name="red_x_gainsboro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_x_gainsboro.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ph" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ph.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="f2s10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\f2s10.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tv_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tv_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fullstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fullstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tvbgExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tvbgExample.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imp.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bspb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bspb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_small.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imdb_32x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imdb_32x25.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="movieinfoplus_ap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\movieinfoplus_ap.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="questionmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\questionmark.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +256,8 @@
   <data name="front" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\front.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="halfstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\halfstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mip_splash_jive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\mip_splash_jive.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="impawards" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\impawards.JPG;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,7 +268,7 @@
   <data name="tvbgExample2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tvbgExample2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paypal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh24.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
