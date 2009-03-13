@@ -163,7 +163,6 @@ Partial Class dlgConfiguration
         Me.tvgs_episode_overwrite_nfo = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.klblTVEpisodesSection = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tvgs_cb_episode_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-        Me.klblTVShowSettingsMainLbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.kgSettingsTvSeasonBanners = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.klbltvseasonwhatstylelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tvgs_combobox_season_banners_download_type = New ComponentFactory.Krypton.Toolkit.KryptonComboBox
@@ -250,7 +249,7 @@ Partial Class dlgConfiguration
         Me.klblMusicMI = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.cbmusic_createAlbumNfo = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbmusic_createArtistnfo = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-        Me.KryptonGroup1 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.kgTunesTunes = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.btnMusicBrowseForFolder = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.tbFolderMusic = New System.Windows.Forms.TextBox
         Me.btnMusicClearFolderList = New ComponentFactory.Krypton.Toolkit.KryptonButton
@@ -379,10 +378,10 @@ Partial Class dlgConfiguration
         CType(Me.kgMusicMI.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgMusicMI.Panel.SuspendLayout()
         Me.kgMusicMI.SuspendLayout()
-        CType(Me.KryptonGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KryptonGroup1.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.KryptonGroup1.Panel.SuspendLayout()
-        Me.KryptonGroup1.SuspendLayout()
+        CType(Me.kgTunesTunes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kgTunesTunes.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kgTunesTunes.Panel.SuspendLayout()
+        Me.kgTunesTunes.SuspendLayout()
         Me.tpSettingsTvShows.SuspendLayout()
         CType(Me.kgTvshowpaths, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgTvshowpaths.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -409,7 +408,7 @@ Partial Class dlgConfiguration
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Cancel_Button, 1, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(982, 780)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(796, 654)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -438,7 +437,7 @@ Partial Class dlgConfiguration
         'kgMovieSettings
         '
         Me.kgMovieSettings.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMovieSettings.Location = New System.Drawing.Point(682, 6)
+        Me.kgMovieSettings.Location = New System.Drawing.Point(1, 906)
         Me.kgMovieSettings.Name = "kgMovieSettings"
         '
         'kgMovieSettings.Panel
@@ -455,7 +454,7 @@ Partial Class dlgConfiguration
         Me.kgMovieSettings.Panel.Controls.Add(Me.klblPosterSizefolderjpg)
         Me.kgMovieSettings.Panel.Controls.Add(Me.knudPosterHeightfolderjpg)
         Me.kgMovieSettings.Panel.Controls.Add(Me.knudPosterHeightTBN)
-        Me.kgMovieSettings.Size = New System.Drawing.Size(278, 355)
+        Me.kgMovieSettings.Size = New System.Drawing.Size(740, 147)
         Me.kgMovieSettings.StateCommon.Border.Color1 = System.Drawing.Color.Silver
         Me.kgMovieSettings.StateCommon.Border.Color2 = System.Drawing.Color.Black
         Me.kgMovieSettings.StateCommon.Border.ColorAngle = 60.0!
@@ -471,7 +470,7 @@ Partial Class dlgConfiguration
         '
         Me.btnProcessAll.Enabled = False
         Me.btnProcessAll.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProcessAll.Location = New System.Drawing.Point(37, 282)
+        Me.btnProcessAll.Location = New System.Drawing.Point(2, 97)
         Me.btnProcessAll.Name = "btnProcessAll"
         Me.btnProcessAll.Size = New System.Drawing.Size(190, 60)
         Me.btnProcessAll.TabIndex = 50
@@ -490,7 +489,7 @@ Partial Class dlgConfiguration
         Me.lblMoviesMisc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblMoviesMisc.Location = New System.Drawing.Point(0, 0)
         Me.lblMoviesMisc.Name = "lblMoviesMisc"
-        Me.lblMoviesMisc.Size = New System.Drawing.Size(268, 24)
+        Me.lblMoviesMisc.Size = New System.Drawing.Size(730, 24)
         Me.lblMoviesMisc.TabIndex = 90
         Me.lblMoviesMisc.Text = "Misc. Options"
         Me.lblMoviesMisc.Values.ExtraText = ""
@@ -514,7 +513,7 @@ Partial Class dlgConfiguration
         Me.cbcopyplotsummaryifnoplot.Checked = True
         Me.cbcopyplotsummaryifnoplot.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbcopyplotsummaryifnoplot.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbcopyplotsummaryifnoplot.Location = New System.Drawing.Point(7, 165)
+        Me.cbcopyplotsummaryifnoplot.Location = New System.Drawing.Point(234, 96)
         Me.cbcopyplotsummaryifnoplot.Name = "cbcopyplotsummaryifnoplot"
         Me.cbcopyplotsummaryifnoplot.Size = New System.Drawing.Size(200, 16)
         Me.cbcopyplotsummaryifnoplot.TabIndex = 5
@@ -538,7 +537,7 @@ Partial Class dlgConfiguration
         'klblPosterSizeMovieTBN
         '
         Me.klblPosterSizeMovieTBN.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblPosterSizeMovieTBN.Location = New System.Drawing.Point(66, 239)
+        Me.klblPosterSizeMovieTBN.Location = New System.Drawing.Point(544, 76)
         Me.klblPosterSizeMovieTBN.Name = "klblPosterSizeMovieTBN"
         Me.klblPosterSizeMovieTBN.Size = New System.Drawing.Size(163, 16)
         Me.klblPosterSizeMovieTBN.TabIndex = 89
@@ -551,7 +550,7 @@ Partial Class dlgConfiguration
         '
         Me.knudframeratio.DecimalPlaces = 6
         Me.knudframeratio.Increment = New Decimal(New Integer() {1, 0, 0, 393216})
-        Me.knudframeratio.Location = New System.Drawing.Point(87, 315)
+        Me.knudframeratio.Location = New System.Drawing.Point(234, 122)
         Me.knudframeratio.Maximum = New Decimal(New Integer() {12, 0, 0, 65536})
         Me.knudframeratio.Name = "knudframeratio"
         Me.knudframeratio.Size = New System.Drawing.Size(120, 23)
@@ -561,7 +560,7 @@ Partial Class dlgConfiguration
         'cbnopromptfornewposters
         '
         Me.cbnopromptfornewposters.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbnopromptfornewposters.Location = New System.Drawing.Point(7, 135)
+        Me.cbnopromptfornewposters.Location = New System.Drawing.Point(234, 62)
         Me.cbnopromptfornewposters.Name = "cbnopromptfornewposters"
         Me.cbnopromptfornewposters.Size = New System.Drawing.Size(214, 16)
         Me.cbnopromptfornewposters.TabIndex = 3
@@ -575,7 +574,7 @@ Partial Class dlgConfiguration
         Me.cbShowFanart.Checked = True
         Me.cbShowFanart.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbShowFanart.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbShowFanart.Location = New System.Drawing.Point(7, 105)
+        Me.cbShowFanart.Location = New System.Drawing.Point(234, 32)
         Me.cbShowFanart.Name = "cbShowFanart"
         Me.cbShowFanart.Size = New System.Drawing.Size(240, 16)
         Me.cbShowFanart.TabIndex = 76
@@ -587,7 +586,7 @@ Partial Class dlgConfiguration
         'klblPosterSizefolderjpg
         '
         Me.klblPosterSizefolderjpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblPosterSizefolderjpg.Location = New System.Drawing.Point(66, 200)
+        Me.klblPosterSizefolderjpg.Location = New System.Drawing.Point(544, 37)
         Me.klblPosterSizefolderjpg.Name = "klblPosterSizefolderjpg"
         Me.klblPosterSizefolderjpg.Size = New System.Drawing.Size(166, 16)
         Me.klblPosterSizefolderjpg.TabIndex = 88
@@ -599,7 +598,7 @@ Partial Class dlgConfiguration
         'knudPosterHeightfolderjpg
         '
         Me.knudPosterHeightfolderjpg.Increment = New Decimal(New Integer() {25, 0, 0, 0})
-        Me.knudPosterHeightfolderjpg.Location = New System.Drawing.Point(2, 195)
+        Me.knudPosterHeightfolderjpg.Location = New System.Drawing.Point(480, 32)
         Me.knudPosterHeightfolderjpg.Maximum = New Decimal(New Integer() {1500, 0, 0, 0})
         Me.knudPosterHeightfolderjpg.Name = "knudPosterHeightfolderjpg"
         Me.knudPosterHeightfolderjpg.Size = New System.Drawing.Size(63, 23)
@@ -608,7 +607,7 @@ Partial Class dlgConfiguration
         'knudPosterHeightTBN
         '
         Me.knudPosterHeightTBN.Increment = New Decimal(New Integer() {25, 0, 0, 0})
-        Me.knudPosterHeightTBN.Location = New System.Drawing.Point(2, 234)
+        Me.knudPosterHeightTBN.Location = New System.Drawing.Point(480, 71)
         Me.knudPosterHeightTBN.Maximum = New Decimal(New Integer() {1500, 0, 0, 0})
         Me.knudPosterHeightTBN.Name = "knudPosterHeightTBN"
         Me.knudPosterHeightTBN.Size = New System.Drawing.Size(63, 23)
@@ -627,7 +626,7 @@ Partial Class dlgConfiguration
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbautocreatemovienametbn)
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbautocreatemovietbn)
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbautocreatefolderjpg)
-        Me.kgAutomaticGenerationSettings.Size = New System.Drawing.Size(513, 183)
+        Me.kgAutomaticGenerationSettings.Size = New System.Drawing.Size(278, 183)
         Me.kgAutomaticGenerationSettings.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgAutomaticGenerationSettings.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgAutomaticGenerationSettings.StateCommon.Border.ColorAngle = 60.0!
@@ -645,7 +644,7 @@ Partial Class dlgConfiguration
         Me.lblMovieScanningOptions.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblMovieScanningOptions.Location = New System.Drawing.Point(0, 0)
         Me.lblMovieScanningOptions.Name = "lblMovieScanningOptions"
-        Me.lblMovieScanningOptions.Size = New System.Drawing.Size(503, 24)
+        Me.lblMovieScanningOptions.Size = New System.Drawing.Size(268, 24)
         Me.lblMovieScanningOptions.TabIndex = 6
         Me.lblMovieScanningOptions.Text = "Scanning Options"
         Me.lblMovieScanningOptions.Values.ExtraText = ""
@@ -657,7 +656,7 @@ Partial Class dlgConfiguration
         Me.cbscanformoviemediainformation.Checked = True
         Me.cbscanformoviemediainformation.CheckState = System.Windows.Forms.CheckState.Checked
         Me.cbscanformoviemediainformation.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbscanformoviemediainformation.Location = New System.Drawing.Point(274, 44)
+        Me.cbscanformoviemediainformation.Location = New System.Drawing.Point(3, 123)
         Me.cbscanformoviemediainformation.Name = "cbscanformoviemediainformation"
         Me.cbscanformoviemediainformation.Size = New System.Drawing.Size(192, 16)
         Me.cbscanformoviemediainformation.TabIndex = 4
@@ -932,12 +931,12 @@ Partial Class dlgConfiguration
         '
         'kgMovieDownloadOptions.Panel
         '
+        Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.kgMoviesMI)
         Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.lblMovieDLO)
         Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.kgMoviesDownloadGeneral)
         Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.kgMovieBackgrounds)
         Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.kgMoviesDownloadPosters)
-        Me.kgMovieDownloadOptions.Panel.Controls.Add(Me.kgMoviesMI)
-        Me.kgMovieDownloadOptions.Size = New System.Drawing.Size(970, 208)
+        Me.kgMovieDownloadOptions.Size = New System.Drawing.Size(740, 312)
         Me.kgMovieDownloadOptions.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -949,7 +948,7 @@ Partial Class dlgConfiguration
         Me.lblMovieDLO.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblMovieDLO.Location = New System.Drawing.Point(0, 0)
         Me.lblMovieDLO.Name = "lblMovieDLO"
-        Me.lblMovieDLO.Size = New System.Drawing.Size(964, 24)
+        Me.lblMovieDLO.Size = New System.Drawing.Size(734, 24)
         Me.lblMovieDLO.TabIndex = 98
         Me.lblMovieDLO.Text = "Movie Download Options"
         Me.lblMovieDLO.Values.ExtraText = ""
@@ -1015,7 +1014,7 @@ Partial Class dlgConfiguration
         'kgMovieBackgrounds
         '
         Me.kgMovieBackgrounds.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMovieBackgrounds.Location = New System.Drawing.Point(202, 28)
+        Me.kgMovieBackgrounds.Location = New System.Drawing.Point(223, 28)
         Me.kgMovieBackgrounds.Name = "kgMovieBackgrounds"
         '
         'kgMovieBackgrounds.Panel
@@ -1055,7 +1054,7 @@ Partial Class dlgConfiguration
         'kgMoviesDownloadPosters
         '
         Me.kgMoviesDownloadPosters.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMoviesDownloadPosters.Location = New System.Drawing.Point(393, 28)
+        Me.kgMoviesDownloadPosters.Location = New System.Drawing.Point(438, 28)
         Me.kgMoviesDownloadPosters.Name = "kgMoviesDownloadPosters"
         '
         'kgMoviesDownloadPosters.Panel
@@ -1138,7 +1137,7 @@ Partial Class dlgConfiguration
         'kgMoviesMI
         '
         Me.kgMoviesMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMoviesMI.Location = New System.Drawing.Point(678, 28)
+        Me.kgMoviesMI.Location = New System.Drawing.Point(2, 199)
         Me.kgMoviesMI.Name = "kgMoviesMI"
         '
         'kgMoviesMI.Panel
@@ -1152,13 +1151,13 @@ Partial Class dlgConfiguration
         Me.kgMoviesMI.Panel.Controls.Add(Me.getMediaImagesMoviesBack)
         Me.kgMoviesMI.Panel.Controls.Add(Me.getMediaImagesMoviesFront)
         Me.kgMoviesMI.Panel.Controls.Add(Me.KryptonLabel5)
-        Me.kgMoviesMI.Size = New System.Drawing.Size(268, 165)
+        Me.kgMoviesMI.Size = New System.Drawing.Size(726, 97)
         Me.kgMoviesMI.TabIndex = 94
         '
         'getMediaImagesMoviesInsert
         '
         Me.getMediaImagesMoviesInsert.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesInsert.Location = New System.Drawing.Point(151, 109)
+        Me.getMediaImagesMoviesInsert.Location = New System.Drawing.Point(420, 59)
         Me.getMediaImagesMoviesInsert.Name = "getMediaImagesMoviesInsert"
         Me.getMediaImagesMoviesInsert.Size = New System.Drawing.Size(78, 16)
         Me.getMediaImagesMoviesInsert.TabIndex = 8
@@ -1170,7 +1169,7 @@ Partial Class dlgConfiguration
         'getMediaImagesMoviesInlay
         '
         Me.getMediaImagesMoviesInlay.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesInlay.Location = New System.Drawing.Point(151, 84)
+        Me.getMediaImagesMoviesInlay.Location = New System.Drawing.Point(420, 34)
         Me.getMediaImagesMoviesInlay.Name = "getMediaImagesMoviesInlay"
         Me.getMediaImagesMoviesInlay.Size = New System.Drawing.Size(74, 16)
         Me.getMediaImagesMoviesInlay.TabIndex = 7
@@ -1182,7 +1181,7 @@ Partial Class dlgConfiguration
         'getMediaImagesMoviesCD4
         '
         Me.getMediaImagesMoviesCD4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesCD4.Location = New System.Drawing.Point(151, 59)
+        Me.getMediaImagesMoviesCD4.Location = New System.Drawing.Point(284, 59)
         Me.getMediaImagesMoviesCD4.Name = "getMediaImagesMoviesCD4"
         Me.getMediaImagesMoviesCD4.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesMoviesCD4.TabIndex = 6
@@ -1194,7 +1193,7 @@ Partial Class dlgConfiguration
         'getMediaImagesMoviesCD3
         '
         Me.getMediaImagesMoviesCD3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesCD3.Location = New System.Drawing.Point(151, 34)
+        Me.getMediaImagesMoviesCD3.Location = New System.Drawing.Point(284, 34)
         Me.getMediaImagesMoviesCD3.Name = "getMediaImagesMoviesCD3"
         Me.getMediaImagesMoviesCD3.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesMoviesCD3.TabIndex = 5
@@ -1206,7 +1205,7 @@ Partial Class dlgConfiguration
         'getMediaImagesMoviesCD2
         '
         Me.getMediaImagesMoviesCD2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesCD2.Location = New System.Drawing.Point(7, 115)
+        Me.getMediaImagesMoviesCD2.Location = New System.Drawing.Point(146, 61)
         Me.getMediaImagesMoviesCD2.Name = "getMediaImagesMoviesCD2"
         Me.getMediaImagesMoviesCD2.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesMoviesCD2.TabIndex = 4
@@ -1218,7 +1217,7 @@ Partial Class dlgConfiguration
         'getMediaImagesMoviesCD1
         '
         Me.getMediaImagesMoviesCD1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesMoviesCD1.Location = New System.Drawing.Point(7, 88)
+        Me.getMediaImagesMoviesCD1.Location = New System.Drawing.Point(146, 34)
         Me.getMediaImagesMoviesCD1.Name = "getMediaImagesMoviesCD1"
         Me.getMediaImagesMoviesCD1.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesMoviesCD1.TabIndex = 3
@@ -1257,7 +1256,7 @@ Partial Class dlgConfiguration
         Me.KryptonLabel5.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.KryptonLabel5.Location = New System.Drawing.Point(0, 0)
         Me.KryptonLabel5.Name = "KryptonLabel5"
-        Me.KryptonLabel5.Size = New System.Drawing.Size(262, 24)
+        Me.KryptonLabel5.Size = New System.Drawing.Size(720, 24)
         Me.KryptonLabel5.TabIndex = 0
         Me.KryptonLabel5.Text = "Media Images"
         Me.KryptonLabel5.Values.ExtraText = ""
@@ -1297,7 +1296,7 @@ Partial Class dlgConfiguration
         Me.kgNameFilter.Panel.Controls.Add(Me.tbCustomFilter5)
         Me.kgNameFilter.Panel.Controls.Add(Me.tbCustomFilter4)
         Me.kgNameFilter.Panel.Controls.Add(Me.cbFilterCustom1)
-        Me.kgNameFilter.Size = New System.Drawing.Size(940, 380)
+        Me.kgNameFilter.Size = New System.Drawing.Size(727, 380)
         Me.kgNameFilter.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgNameFilter.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgNameFilter.StateCommon.Border.ColorAngle = 60.0!
@@ -1315,7 +1314,7 @@ Partial Class dlgConfiguration
         Me.lblFolderLevelNameFilters.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblFolderLevelNameFilters.Location = New System.Drawing.Point(0, 0)
         Me.lblFolderLevelNameFilters.Name = "lblFolderLevelNameFilters"
-        Me.lblFolderLevelNameFilters.Size = New System.Drawing.Size(930, 24)
+        Me.lblFolderLevelNameFilters.Size = New System.Drawing.Size(717, 24)
         Me.lblFolderLevelNameFilters.TabIndex = 71
         Me.lblFolderLevelNameFilters.Text = "Folder Level Name Filters"
         Me.lblFolderLevelNameFilters.Values.ExtraText = ""
@@ -1937,7 +1936,7 @@ Partial Class dlgConfiguration
         '
         Me.btnsaveconfig.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnsaveconfig.ForeColor = System.Drawing.Color.Black
-        Me.btnsaveconfig.Location = New System.Drawing.Point(332, 11)
+        Me.btnsaveconfig.Location = New System.Drawing.Point(232, 3)
         Me.btnsaveconfig.Name = "btnsaveconfig"
         Me.btnsaveconfig.Size = New System.Drawing.Size(375, 39)
         Me.btnsaveconfig.TabIndex = 63
@@ -1957,7 +1956,6 @@ Partial Class dlgConfiguration
         '
         'kgTVShowSettings.Panel
         '
-        Me.kgTVShowSettings.Panel.Controls.Add(Me.kgShowsMI)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.lblCustomRegX)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.tbTvRegex1)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.lbltv_curlang)
@@ -1965,10 +1963,9 @@ Partial Class dlgConfiguration
         Me.kgTVShowSettings.Panel.Controls.Add(Me.cbtv_showwgetwindows)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.kgTVGlobalSettings)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.kgSettingsTvEpisode)
-        Me.kgTVShowSettings.Panel.Controls.Add(Me.klblTVShowSettingsMainLbl)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.kgSettingsTvSeasonBanners)
         Me.kgTVShowSettings.Panel.Controls.Add(Me.kgSettingsTvShow)
-        Me.kgTVShowSettings.Size = New System.Drawing.Size(988, 448)
+        Me.kgTVShowSettings.Size = New System.Drawing.Size(793, 435)
         Me.kgTVShowSettings.StateCommon.Border.Color1 = System.Drawing.Color.Silver
         Me.kgTVShowSettings.StateCommon.Border.Color2 = System.Drawing.Color.Black
         Me.kgTVShowSettings.StateCommon.Border.ColorAngle = 60.0!
@@ -1983,7 +1980,7 @@ Partial Class dlgConfiguration
         'kgShowsMI
         '
         Me.kgShowsMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgShowsMI.Location = New System.Drawing.Point(795, 109)
+        Me.kgShowsMI.Location = New System.Drawing.Point(4, 438)
         Me.kgShowsMI.Name = "kgShowsMI"
         '
         'kgShowsMI.Panel
@@ -1997,13 +1994,13 @@ Partial Class dlgConfiguration
         Me.kgShowsMI.Panel.Controls.Add(Me.getMediaImagesShowsBack)
         Me.kgShowsMI.Panel.Controls.Add(Me.getMediaImagesShowsFront)
         Me.kgShowsMI.Panel.Controls.Add(Me.KryptonLabel7)
-        Me.kgShowsMI.Size = New System.Drawing.Size(171, 290)
+        Me.kgShowsMI.Size = New System.Drawing.Size(788, 95)
         Me.kgShowsMI.TabIndex = 95
         '
         'getMediaImagesShowsInsert
         '
         Me.getMediaImagesShowsInsert.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsInsert.Location = New System.Drawing.Point(7, 219)
+        Me.getMediaImagesShowsInsert.Location = New System.Drawing.Point(413, 59)
         Me.getMediaImagesShowsInsert.Name = "getMediaImagesShowsInsert"
         Me.getMediaImagesShowsInsert.Size = New System.Drawing.Size(78, 16)
         Me.getMediaImagesShowsInsert.TabIndex = 8
@@ -2015,7 +2012,7 @@ Partial Class dlgConfiguration
         'getMediaImagesShowsInlay
         '
         Me.getMediaImagesShowsInlay.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsInlay.Location = New System.Drawing.Point(7, 194)
+        Me.getMediaImagesShowsInlay.Location = New System.Drawing.Point(413, 34)
         Me.getMediaImagesShowsInlay.Name = "getMediaImagesShowsInlay"
         Me.getMediaImagesShowsInlay.Size = New System.Drawing.Size(74, 16)
         Me.getMediaImagesShowsInlay.TabIndex = 7
@@ -2027,7 +2024,7 @@ Partial Class dlgConfiguration
         'getMediaImagesShowsCD4
         '
         Me.getMediaImagesShowsCD4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsCD4.Location = New System.Drawing.Point(7, 169)
+        Me.getMediaImagesShowsCD4.Location = New System.Drawing.Point(279, 59)
         Me.getMediaImagesShowsCD4.Name = "getMediaImagesShowsCD4"
         Me.getMediaImagesShowsCD4.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesShowsCD4.TabIndex = 6
@@ -2039,7 +2036,7 @@ Partial Class dlgConfiguration
         'getMediaImagesShowsCD3
         '
         Me.getMediaImagesShowsCD3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsCD3.Location = New System.Drawing.Point(7, 144)
+        Me.getMediaImagesShowsCD3.Location = New System.Drawing.Point(279, 34)
         Me.getMediaImagesShowsCD3.Name = "getMediaImagesShowsCD3"
         Me.getMediaImagesShowsCD3.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesShowsCD3.TabIndex = 5
@@ -2051,7 +2048,7 @@ Partial Class dlgConfiguration
         'getMediaImagesShowsCD2
         '
         Me.getMediaImagesShowsCD2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsCD2.Location = New System.Drawing.Point(7, 115)
+        Me.getMediaImagesShowsCD2.Location = New System.Drawing.Point(143, 61)
         Me.getMediaImagesShowsCD2.Name = "getMediaImagesShowsCD2"
         Me.getMediaImagesShowsCD2.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesShowsCD2.TabIndex = 4
@@ -2063,7 +2060,7 @@ Partial Class dlgConfiguration
         'getMediaImagesShowsCD1
         '
         Me.getMediaImagesShowsCD1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.getMediaImagesShowsCD1.Location = New System.Drawing.Point(7, 88)
+        Me.getMediaImagesShowsCD1.Location = New System.Drawing.Point(143, 34)
         Me.getMediaImagesShowsCD1.Name = "getMediaImagesShowsCD1"
         Me.getMediaImagesShowsCD1.Size = New System.Drawing.Size(106, 16)
         Me.getMediaImagesShowsCD1.TabIndex = 3
@@ -2102,7 +2099,7 @@ Partial Class dlgConfiguration
         Me.KryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.KryptonLabel7.Location = New System.Drawing.Point(0, 0)
         Me.KryptonLabel7.Name = "KryptonLabel7"
-        Me.KryptonLabel7.Size = New System.Drawing.Size(165, 24)
+        Me.KryptonLabel7.Size = New System.Drawing.Size(782, 24)
         Me.KryptonLabel7.TabIndex = 0
         Me.KryptonLabel7.Text = "Media Images"
         Me.KryptonLabel7.Values.ExtraText = ""
@@ -2111,7 +2108,7 @@ Partial Class dlgConfiguration
         '
         'lblCustomRegX
         '
-        Me.lblCustomRegX.Location = New System.Drawing.Point(456, 11)
+        Me.lblCustomRegX.Location = New System.Drawing.Point(456, 3)
         Me.lblCustomRegX.Name = "lblCustomRegX"
         Me.lblCustomRegX.Size = New System.Drawing.Size(85, 16)
         Me.lblCustomRegX.TabIndex = 83
@@ -2122,14 +2119,14 @@ Partial Class dlgConfiguration
         '
         'tbTvRegex1
         '
-        Me.tbTvRegex1.Location = New System.Drawing.Point(545, 7)
+        Me.tbTvRegex1.Location = New System.Drawing.Point(545, -1)
         Me.tbTvRegex1.Name = "tbTvRegex1"
         Me.tbTvRegex1.Size = New System.Drawing.Size(217, 24)
         Me.tbTvRegex1.TabIndex = 82
         '
         'lbltv_curlang
         '
-        Me.lbltv_curlang.Location = New System.Drawing.Point(512, 70)
+        Me.lbltv_curlang.Location = New System.Drawing.Point(512, 62)
         Me.lbltv_curlang.Name = "lbltv_curlang"
         Me.lbltv_curlang.Size = New System.Drawing.Size(109, 16)
         Me.lbltv_curlang.TabIndex = 81
@@ -2143,7 +2140,7 @@ Partial Class dlgConfiguration
         Me.cbtv_lang.DropDownWidth = 41
         Me.cbtv_lang.FormattingEnabled = False
         Me.cbtv_lang.Items.AddRange(New Object() {"da", "fi", "nl", "de", "it", "es", "fr", "pl", "hu", "el", "tr", "ru", "he", "ja", "pt", "zh", "cs", "sl", "hr", "en", "sv", "no"})
-        Me.cbtv_lang.Location = New System.Drawing.Point(450, 67)
+        Me.cbtv_lang.Location = New System.Drawing.Point(450, 59)
         Me.cbtv_lang.Name = "cbtv_lang"
         Me.cbtv_lang.Size = New System.Drawing.Size(56, 24)
         Me.cbtv_lang.TabIndex = 80
@@ -2153,7 +2150,7 @@ Partial Class dlgConfiguration
         '
         Me.cbtv_showwgetwindows.Checked = True
         Me.cbtv_showwgetwindows.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbtv_showwgetwindows.Location = New System.Drawing.Point(466, 41)
+        Me.cbtv_showwgetwindows.Location = New System.Drawing.Point(466, 33)
         Me.cbtv_showwgetwindows.Name = "cbtv_showwgetwindows"
         Me.cbtv_showwgetwindows.Size = New System.Drawing.Size(249, 16)
         Me.cbtv_showwgetwindows.TabIndex = 79
@@ -2164,7 +2161,7 @@ Partial Class dlgConfiguration
         '
         'kgTVGlobalSettings
         '
-        Me.kgTVGlobalSettings.Location = New System.Drawing.Point(0, 15)
+        Me.kgTVGlobalSettings.Location = New System.Drawing.Point(0, 7)
         Me.kgTVGlobalSettings.Name = "kgTVGlobalSettings"
         '
         'kgTVGlobalSettings.Panel
@@ -2233,7 +2230,7 @@ Partial Class dlgConfiguration
         '
         'kgSettingsTvEpisode
         '
-        Me.kgSettingsTvEpisode.Location = New System.Drawing.Point(427, 327)
+        Me.kgSettingsTvEpisode.Location = New System.Drawing.Point(427, 319)
         Me.kgSettingsTvEpisode.Name = "kgSettingsTvEpisode"
         '
         'kgSettingsTvEpisode.Panel
@@ -2301,21 +2298,9 @@ Partial Class dlgConfiguration
         Me.tvgs_cb_episode_download.Values.Image = Nothing
         Me.tvgs_cb_episode_download.Values.Text = "Download TV Episode Thumbs"
         '
-        'klblTVShowSettingsMainLbl
-        '
-        Me.klblTVShowSettingsMainLbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblTVShowSettingsMainLbl.Location = New System.Drawing.Point(310, -1)
-        Me.klblTVShowSettingsMainLbl.Name = "klblTVShowSettingsMainLbl"
-        Me.klblTVShowSettingsMainLbl.Size = New System.Drawing.Size(100, 16)
-        Me.klblTVShowSettingsMainLbl.TabIndex = 14
-        Me.klblTVShowSettingsMainLbl.Text = "TV Show Settings"
-        Me.klblTVShowSettingsMainLbl.Values.ExtraText = ""
-        Me.klblTVShowSettingsMainLbl.Values.Image = Nothing
-        Me.klblTVShowSettingsMainLbl.Values.Text = "TV Show Settings"
-        '
         'kgSettingsTvSeasonBanners
         '
-        Me.kgSettingsTvSeasonBanners.Location = New System.Drawing.Point(426, 101)
+        Me.kgSettingsTvSeasonBanners.Location = New System.Drawing.Point(426, 93)
         Me.kgSettingsTvSeasonBanners.Name = "kgSettingsTvSeasonBanners"
         '
         'kgSettingsTvSeasonBanners.Panel
@@ -2468,7 +2453,7 @@ Partial Class dlgConfiguration
         '
         'kgSettingsTvShow
         '
-        Me.kgSettingsTvShow.Location = New System.Drawing.Point(-3, 99)
+        Me.kgSettingsTvShow.Location = New System.Drawing.Point(-3, 91)
         Me.kgSettingsTvShow.Name = "kgSettingsTvShow"
         '
         'kgSettingsTvShow.Panel
@@ -2720,8 +2705,8 @@ Partial Class dlgConfiguration
         Me.tcSettings.ForeColor = System.Drawing.Color.White
         Me.tcSettings.Location = New System.Drawing.Point(0, 0)
         Me.tcSettings.Name = "tcSettings"
-        Me.tcSettings.SelectedIndex = 0
-        Me.tcSettings.Size = New System.Drawing.Size(1007, 735)
+        Me.tcSettings.SelectedIndex = 1
+        Me.tcSettings.Size = New System.Drawing.Size(821, 618)
         Me.tcSettings.TabIndex = 88
         Me.tcSettings.UseVisualStyles = False
         '
@@ -2734,7 +2719,7 @@ Partial Class dlgConfiguration
         Me.tpSettingsGeneral.Location = New System.Drawing.Point(4, 25)
         Me.tpSettingsGeneral.Name = "tpSettingsGeneral"
         Me.tpSettingsGeneral.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpSettingsGeneral.Size = New System.Drawing.Size(999, 706)
+        Me.tpSettingsGeneral.Size = New System.Drawing.Size(813, 589)
         Me.tpSettingsGeneral.TabIndex = 0
         Me.tpSettingsGeneral.Text = "General"
         Me.tpSettingsGeneral.UseVisualStyleBackColor = True
@@ -2742,14 +2727,14 @@ Partial Class dlgConfiguration
         'kgGeneralMisc
         '
         Me.kgGeneralMisc.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgGeneralMisc.Location = New System.Drawing.Point(659, 6)
+        Me.kgGeneralMisc.Location = New System.Drawing.Point(393, 302)
         Me.kgGeneralMisc.Name = "kgGeneralMisc"
         '
         'kgGeneralMisc.Panel
         '
         Me.kgGeneralMisc.Panel.Controls.Add(Me.lblGeneralMisc)
         Me.kgGeneralMisc.Panel.Controls.Add(Me.cbGoogleImageSearchPop)
-        Me.kgGeneralMisc.Size = New System.Drawing.Size(255, 290)
+        Me.kgGeneralMisc.Size = New System.Drawing.Size(255, 152)
         Me.kgGeneralMisc.TabIndex = 86
         '
         'lblGeneralMisc
@@ -2768,7 +2753,7 @@ Partial Class dlgConfiguration
         'kgGeneralProxy
         '
         Me.kgGeneralProxy.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgGeneralProxy.Location = New System.Drawing.Point(6, 324)
+        Me.kgGeneralProxy.Location = New System.Drawing.Point(6, 305)
         Me.kgGeneralProxy.Name = "kgGeneralProxy"
         '
         'kgGeneralProxy.Panel
@@ -2780,16 +2765,16 @@ Partial Class dlgConfiguration
         Me.kgGeneralProxy.Panel.Controls.Add(Me.tbProxyIP)
         Me.kgGeneralProxy.Panel.Controls.Add(Me.cbUseProxyServer)
         Me.kgGeneralProxy.Panel.Controls.Add(Me.lblGeneralProxy)
-        Me.kgGeneralProxy.Size = New System.Drawing.Size(340, 137)
+        Me.kgGeneralProxy.Size = New System.Drawing.Size(381, 152)
         Me.kgGeneralProxy.TabIndex = 85
         Me.kgGeneralProxy.Visible = False
         '
         'lblIPv4Only
         '
         Me.lblIPv4Only.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lblIPv4Only.Location = New System.Drawing.Point(0, 115)
+        Me.lblIPv4Only.Location = New System.Drawing.Point(0, 130)
         Me.lblIPv4Only.Name = "lblIPv4Only"
-        Me.lblIPv4Only.Size = New System.Drawing.Size(334, 16)
+        Me.lblIPv4Only.Size = New System.Drawing.Size(375, 16)
         Me.lblIPv4Only.TabIndex = 6
         Me.lblIPv4Only.Text = "Note: IP address must be IPv4, IPv6 is not supported" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lblIPv4Only.Values.ExtraText = ""
@@ -2859,7 +2844,7 @@ Partial Class dlgConfiguration
         Me.lblGeneralProxy.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblGeneralProxy.Location = New System.Drawing.Point(0, 0)
         Me.lblGeneralProxy.Name = "lblGeneralProxy"
-        Me.lblGeneralProxy.Size = New System.Drawing.Size(334, 24)
+        Me.lblGeneralProxy.Size = New System.Drawing.Size(375, 24)
         Me.lblGeneralProxy.TabIndex = 0
         Me.lblGeneralProxy.Text = "Proxy Options"
         Me.lblGeneralProxy.Values.ExtraText = ""
@@ -2869,15 +2854,15 @@ Partial Class dlgConfiguration
         'tpSettingsMovies
         '
         Me.tpSettingsMovies.AutoScroll = True
+        Me.tpSettingsMovies.Controls.Add(Me.kgMovieSettings)
         Me.tpSettingsMovies.Controls.Add(Me.kgMoviesNameFilters)
         Me.tpSettingsMovies.Controls.Add(Me.kgMovieFileOptions)
         Me.tpSettingsMovies.Controls.Add(Me.kgMovieDownloadOptions)
         Me.tpSettingsMovies.Controls.Add(Me.kgMovieFolderSelect)
-        Me.tpSettingsMovies.Controls.Add(Me.kgMovieSettings)
         Me.tpSettingsMovies.Location = New System.Drawing.Point(4, 25)
         Me.tpSettingsMovies.Name = "tpSettingsMovies"
         Me.tpSettingsMovies.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpSettingsMovies.Size = New System.Drawing.Size(999, 706)
+        Me.tpSettingsMovies.Size = New System.Drawing.Size(813, 589)
         Me.tpSettingsMovies.TabIndex = 1
         Me.tpSettingsMovies.Text = "Movies"
         Me.tpSettingsMovies.UseVisualStyleBackColor = True
@@ -2885,7 +2870,7 @@ Partial Class dlgConfiguration
         'kgMoviesNameFilters
         '
         Me.kgMoviesNameFilters.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-        Me.kgMoviesNameFilters.Location = New System.Drawing.Point(1, 797)
+        Me.kgMoviesNameFilters.Location = New System.Drawing.Point(1, 1059)
         Me.kgMoviesNameFilters.Name = "kgMoviesNameFilters"
         '
         'kgMoviesNameFilters.Panel
@@ -2893,7 +2878,7 @@ Partial Class dlgConfiguration
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.kgFileLevelFilterOptions)
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.lblMoviesNameFilterl)
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.kgNameFilter)
-        Me.kgMoviesNameFilters.Size = New System.Drawing.Size(965, 527)
+        Me.kgMoviesNameFilters.Size = New System.Drawing.Size(740, 527)
         Me.kgMoviesNameFilters.TabIndex = 87
         '
         'kgFileLevelFilterOptions
@@ -2906,7 +2891,7 @@ Partial Class dlgConfiguration
         '
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.KryptonLabel6)
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.lblMoviesFileLevelFilterOptions)
-        Me.kgFileLevelFilterOptions.Size = New System.Drawing.Size(938, 77)
+        Me.kgFileLevelFilterOptions.Size = New System.Drawing.Size(725, 77)
         Me.kgFileLevelFilterOptions.TabIndex = 1
         '
         'KryptonLabel6
@@ -2926,7 +2911,7 @@ Partial Class dlgConfiguration
         Me.lblMoviesFileLevelFilterOptions.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblMoviesFileLevelFilterOptions.Location = New System.Drawing.Point(0, 0)
         Me.lblMoviesFileLevelFilterOptions.Name = "lblMoviesFileLevelFilterOptions"
-        Me.lblMoviesFileLevelFilterOptions.Size = New System.Drawing.Size(932, 24)
+        Me.lblMoviesFileLevelFilterOptions.Size = New System.Drawing.Size(719, 24)
         Me.lblMoviesFileLevelFilterOptions.TabIndex = 0
         Me.lblMoviesFileLevelFilterOptions.Text = "File Level Filter Options"
         Me.lblMoviesFileLevelFilterOptions.Values.ExtraText = ""
@@ -2939,7 +2924,7 @@ Partial Class dlgConfiguration
         Me.lblMoviesNameFilterl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblMoviesNameFilterl.Location = New System.Drawing.Point(0, 0)
         Me.lblMoviesNameFilterl.Name = "lblMoviesNameFilterl"
-        Me.lblMoviesNameFilterl.Size = New System.Drawing.Size(959, 24)
+        Me.lblMoviesNameFilterl.Size = New System.Drawing.Size(734, 24)
         Me.lblMoviesNameFilterl.TabIndex = 0
         Me.lblMoviesNameFilterl.Text = "Name Filters"
         Me.lblMoviesNameFilterl.Values.ExtraText = ""
@@ -2957,7 +2942,7 @@ Partial Class dlgConfiguration
         Me.kgMovieFileOptions.Panel.Controls.Add(Me.lblFCASOMovies)
         Me.kgMovieFileOptions.Panel.Controls.Add(Me.kgNFOFANARTsettings)
         Me.kgMovieFileOptions.Panel.Controls.Add(Me.kgAutomaticGenerationSettings)
-        Me.kgMovieFileOptions.Size = New System.Drawing.Size(973, 216)
+        Me.kgMovieFileOptions.Size = New System.Drawing.Size(740, 216)
         Me.kgMovieFileOptions.TabIndex = 86
         '
         'lblFCASOMovies
@@ -2966,7 +2951,7 @@ Partial Class dlgConfiguration
         Me.lblFCASOMovies.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.lblFCASOMovies.Location = New System.Drawing.Point(0, 0)
         Me.lblFCASOMovies.Name = "lblFCASOMovies"
-        Me.lblFCASOMovies.Size = New System.Drawing.Size(967, 24)
+        Me.lblFCASOMovies.Size = New System.Drawing.Size(734, 24)
         Me.lblFCASOMovies.TabIndex = 86
         Me.lblFCASOMovies.Text = "File Creation and Scanning Options"
         Me.lblFCASOMovies.Values.ExtraText = ""
@@ -2998,7 +2983,7 @@ Partial Class dlgConfiguration
         Me.kgMovieFolderSelect.Panel.Controls.Add(Me.btnMoviesAddFolderByPath)
         Me.kgMovieFolderSelect.Panel.Controls.Add(Me.clbPaths)
         Me.kgMovieFolderSelect.Panel.Controls.Add(Me.klMovieFolderGroup)
-        Me.kgMovieFolderSelect.Size = New System.Drawing.Size(675, 365)
+        Me.kgMovieFolderSelect.Size = New System.Drawing.Size(740, 365)
         Me.kgMovieFolderSelect.TabIndex = 83
         '
         'lblFolderNameForMovieName
@@ -3220,7 +3205,7 @@ Partial Class dlgConfiguration
         Me.klMovieFolderGroup.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.klMovieFolderGroup.Location = New System.Drawing.Point(0, 0)
         Me.klMovieFolderGroup.Name = "klMovieFolderGroup"
-        Me.klMovieFolderGroup.Size = New System.Drawing.Size(669, 24)
+        Me.klMovieFolderGroup.Size = New System.Drawing.Size(734, 24)
         Me.klMovieFolderGroup.TabIndex = 46
         Me.klMovieFolderGroup.Text = "Movie Folder Locations - Select the root Movie Folders"
         Me.klMovieFolderGroup.Values.ExtraText = ""
@@ -3234,10 +3219,10 @@ Partial Class dlgConfiguration
         Me.tpSettingsMusic.Controls.Add(Me.kgMusicMI)
         Me.tpSettingsMusic.Controls.Add(Me.cbmusic_createAlbumNfo)
         Me.tpSettingsMusic.Controls.Add(Me.cbmusic_createArtistnfo)
-        Me.tpSettingsMusic.Controls.Add(Me.KryptonGroup1)
+        Me.tpSettingsMusic.Controls.Add(Me.kgTunesTunes)
         Me.tpSettingsMusic.Location = New System.Drawing.Point(4, 25)
         Me.tpSettingsMusic.Name = "tpSettingsMusic"
-        Me.tpSettingsMusic.Size = New System.Drawing.Size(999, 706)
+        Me.tpSettingsMusic.Size = New System.Drawing.Size(762, 706)
         Me.tpSettingsMusic.TabIndex = 3
         Me.tpSettingsMusic.Text = "Tunes"
         Me.tpSettingsMusic.UseVisualStyleBackColor = True
@@ -3245,7 +3230,7 @@ Partial Class dlgConfiguration
         'lblTunesWHat
         '
         Me.lblTunesWHat.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
-        Me.lblTunesWHat.Location = New System.Drawing.Point(710, 83)
+        Me.lblTunesWHat.Location = New System.Drawing.Point(328, 21)
         Me.lblTunesWHat.Name = "lblTunesWHat"
         Me.lblTunesWHat.Size = New System.Drawing.Size(131, 24)
         Me.lblTunesWHat.TabIndex = 94
@@ -3257,14 +3242,14 @@ Partial Class dlgConfiguration
         'kgMusicAlbumArt
         '
         Me.kgMusicAlbumArt.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMusicAlbumArt.Location = New System.Drawing.Point(443, 80)
+        Me.kgMusicAlbumArt.Location = New System.Drawing.Point(398, 69)
         Me.kgMusicAlbumArt.Name = "kgMusicAlbumArt"
         '
         'kgMusicAlbumArt.Panel
         '
         Me.kgMusicAlbumArt.Panel.Controls.Add(Me.cbMusicGetAlbumArt)
         Me.kgMusicAlbumArt.Panel.Controls.Add(Me.lblMusicAlbumArt)
-        Me.kgMusicAlbumArt.Size = New System.Drawing.Size(150, 150)
+        Me.kgMusicAlbumArt.Size = New System.Drawing.Size(150, 161)
         Me.kgMusicAlbumArt.TabIndex = 93
         '
         'cbMusicGetAlbumArt
@@ -3295,7 +3280,7 @@ Partial Class dlgConfiguration
         'kgMusicMI
         '
         Me.kgMusicMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgMusicMI.Location = New System.Drawing.Point(23, 80)
+        Me.kgMusicMI.Location = New System.Drawing.Point(7, 68)
         Me.kgMusicMI.Name = "kgMusicMI"
         '
         'kgMusicMI.Panel
@@ -3449,22 +3434,22 @@ Partial Class dlgConfiguration
         Me.cbmusic_createArtistnfo.Values.Text = "Create Artist Information file for XBMC (artist.nfo)"
         Me.cbmusic_createArtistnfo.Visible = False
         '
-        'KryptonGroup1
+        'kgTunesTunes
         '
-        Me.KryptonGroup1.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.KryptonGroup1.Location = New System.Drawing.Point(17, 307)
-        Me.KryptonGroup1.Name = "KryptonGroup1"
+        Me.kgTunesTunes.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
+        Me.kgTunesTunes.Location = New System.Drawing.Point(6, 247)
+        Me.kgTunesTunes.Name = "kgTunesTunes"
         '
-        'KryptonGroup1.Panel
+        'kgTunesTunes.Panel
         '
-        Me.KryptonGroup1.Panel.Controls.Add(Me.btnMusicBrowseForFolder)
-        Me.KryptonGroup1.Panel.Controls.Add(Me.tbFolderMusic)
-        Me.KryptonGroup1.Panel.Controls.Add(Me.btnMusicClearFolderList)
-        Me.KryptonGroup1.Panel.Controls.Add(Me.btnMusicAddFolderByPath)
-        Me.KryptonGroup1.Panel.Controls.Add(Me.clbPathsMusic)
-        Me.KryptonGroup1.Panel.Controls.Add(Me.KryptonLabel1)
-        Me.KryptonGroup1.Size = New System.Drawing.Size(686, 308)
-        Me.KryptonGroup1.TabIndex = 89
+        Me.kgTunesTunes.Panel.Controls.Add(Me.btnMusicBrowseForFolder)
+        Me.kgTunesTunes.Panel.Controls.Add(Me.tbFolderMusic)
+        Me.kgTunesTunes.Panel.Controls.Add(Me.btnMusicClearFolderList)
+        Me.kgTunesTunes.Panel.Controls.Add(Me.btnMusicAddFolderByPath)
+        Me.kgTunesTunes.Panel.Controls.Add(Me.clbPathsMusic)
+        Me.kgTunesTunes.Panel.Controls.Add(Me.KryptonLabel1)
+        Me.kgTunesTunes.Size = New System.Drawing.Size(686, 308)
+        Me.kgTunesTunes.TabIndex = 89
         '
         'btnMusicBrowseForFolder
         '
@@ -3549,12 +3534,12 @@ Partial Class dlgConfiguration
         'tpSettingsTvShows
         '
         Me.tpSettingsTvShows.AutoScroll = True
-        Me.tpSettingsTvShows.Controls.Add(Me.klblRemoveatvshow1)
+        Me.tpSettingsTvShows.Controls.Add(Me.kgShowsMI)
         Me.tpSettingsTvShows.Controls.Add(Me.kgTvshowpaths)
         Me.tpSettingsTvShows.Controls.Add(Me.kgTVShowSettings)
         Me.tpSettingsTvShows.Location = New System.Drawing.Point(4, 25)
         Me.tpSettingsTvShows.Name = "tpSettingsTvShows"
-        Me.tpSettingsTvShows.Size = New System.Drawing.Size(999, 706)
+        Me.tpSettingsTvShows.Size = New System.Drawing.Size(813, 589)
         Me.tpSettingsTvShows.TabIndex = 2
         Me.tpSettingsTvShows.Text = "Shows"
         Me.tpSettingsTvShows.UseVisualStyleBackColor = True
@@ -3562,30 +3547,31 @@ Partial Class dlgConfiguration
         'klblRemoveatvshow1
         '
         Me.klblRemoveatvshow1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblRemoveatvshow1.Location = New System.Drawing.Point(813, 548)
+        Me.klblRemoveatvshow1.Location = New System.Drawing.Point(259, 172)
         Me.klblRemoveatvshow1.Name = "klblRemoveatvshow1"
-        Me.klblRemoveatvshow1.Size = New System.Drawing.Size(134, 41)
+        Me.klblRemoveatvshow1.Size = New System.Drawing.Size(247, 16)
         Me.klblRemoveatvshow1.TabIndex = 92
-        Me.klblRemoveatvshow1.Text = "To remove a Tv Show" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Highlight and Right Click" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the mouse"
+        Me.klblRemoveatvshow1.Text = "To remove a Tv Show Highlight and Right Click" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.klblRemoveatvshow1.Values.ExtraText = ""
         Me.klblRemoveatvshow1.Values.Image = Nothing
-        Me.klblRemoveatvshow1.Values.Text = "To remove a Tv Show" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Highlight and Right Click" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "the mouse"
+        Me.klblRemoveatvshow1.Values.Text = "To remove a Tv Show Highlight and Right Click" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'kgTvshowpaths
         '
         Me.kgTvshowpaths.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgTvshowpaths.Location = New System.Drawing.Point(5, 457)
+        Me.kgTvshowpaths.Location = New System.Drawing.Point(5, 534)
         Me.kgTvshowpaths.Name = "kgTvshowpaths"
         '
         'kgTvshowpaths.Panel
         '
         Me.kgTvshowpaths.Panel.Controls.Add(Me.btnTVBrowse)
+        Me.kgTvshowpaths.Panel.Controls.Add(Me.klblRemoveatvshow1)
         Me.kgTvshowpaths.Panel.Controls.Add(Me.tbTVPath)
         Me.kgTvshowpaths.Panel.Controls.Add(Me.btnTVClearList)
         Me.kgTvshowpaths.Panel.Controls.Add(Me.btnTVAddPath)
         Me.kgTvshowpaths.Panel.Controls.Add(Me.lbTVShows)
         Me.kgTvshowpaths.Panel.Controls.Add(Me.klbTVShowFolders)
-        Me.kgTvshowpaths.Size = New System.Drawing.Size(780, 246)
+        Me.kgTvshowpaths.Size = New System.Drawing.Size(785, 200)
         Me.kgTvshowpaths.TabIndex = 88
         '
         'btnTVBrowse
@@ -3653,7 +3639,7 @@ Partial Class dlgConfiguration
         Me.lbTVShows.FormattingEnabled = True
         Me.lbTVShows.Location = New System.Drawing.Point(5, 57)
         Me.lbTVShows.Name = "lbTVShows"
-        Me.lbTVShows.Size = New System.Drawing.Size(755, 169)
+        Me.lbTVShows.Size = New System.Drawing.Size(755, 109)
         Me.lbTVShows.TabIndex = 47
         '
         'klbTVShowFolders
@@ -3771,8 +3757,8 @@ Partial Class dlgConfiguration
         'kscMainSettings.Panel2
         '
         Me.kscMainSettings.Panel2.Controls.Add(Me.btnsaveconfig)
-        Me.kscMainSettings.Size = New System.Drawing.Size(1007, 793)
-        Me.kscMainSettings.SplitterDistance = 735
+        Me.kscMainSettings.Size = New System.Drawing.Size(821, 667)
+        Me.kscMainSettings.SplitterDistance = 618
         Me.kscMainSettings.TabIndex = 89
         '
         'dlgConfiguration
@@ -3782,7 +3768,7 @@ Partial Class dlgConfiguration
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(1007, 793)
+        Me.ClientSize = New System.Drawing.Size(821, 667)
         Me.Controls.Add(Me.kscMainSettings)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -3923,13 +3909,12 @@ Partial Class dlgConfiguration
         Me.kgMusicMI.Panel.PerformLayout()
         CType(Me.kgMusicMI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgMusicMI.ResumeLayout(False)
-        CType(Me.KryptonGroup1.Panel, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.KryptonGroup1.Panel.ResumeLayout(False)
-        Me.KryptonGroup1.Panel.PerformLayout()
-        CType(Me.KryptonGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.KryptonGroup1.ResumeLayout(False)
+        CType(Me.kgTunesTunes.Panel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgTunesTunes.Panel.ResumeLayout(False)
+        Me.kgTunesTunes.Panel.PerformLayout()
+        CType(Me.kgTunesTunes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgTunesTunes.ResumeLayout(False)
         Me.tpSettingsTvShows.ResumeLayout(False)
-        Me.tpSettingsTvShows.PerformLayout()
         CType(Me.kgTvshowpaths.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgTvshowpaths.Panel.ResumeLayout(False)
         Me.kgTvshowpaths.Panel.PerformLayout()
@@ -4052,7 +4037,6 @@ Partial Class dlgConfiguration
     Friend WithEvents tvgs_episode_overwrite_nfo As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
     Friend WithEvents klblTVEpisodesSection As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents tvgs_cb_episode_download As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-    Friend WithEvents klblTVShowSettingsMainLbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents kgSettingsTvSeasonBanners As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents klbltvseasonwhatstylelbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents tvgs_combobox_season_banners_download_type As ComponentFactory.Krypton.Toolkit.KryptonComboBox
@@ -4121,7 +4105,7 @@ Partial Class dlgConfiguration
     Friend WithEvents lbTVShows As System.Windows.Forms.CheckedListBox
     Friend WithEvents klbTVShowFolders As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
-    Friend WithEvents KryptonGroup1 As ComponentFactory.Krypton.Toolkit.KryptonGroup
+    Friend WithEvents kgTunesTunes As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents btnMusicBrowseForFolder As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents tbFolderMusic As System.Windows.Forms.TextBox
     Friend WithEvents btnMusicClearFolderList As ComponentFactory.Krypton.Toolkit.KryptonButton
