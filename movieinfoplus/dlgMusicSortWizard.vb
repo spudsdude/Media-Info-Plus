@@ -429,16 +429,32 @@ Public Class dlgMusicSortWizard
                     If Not cbRenameMusicFiles.Checked Then
                         thenewfilename = theoldfilename
                     End If
-                    If thenewfilename.Length >= 260 Then 'shorten name when required (max is 260 per file)
-                        Dim firstpart As String = Strings.Left(thenewfilename, 255)
+                    Dim pathlen As Integer = addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album)).Length + 1
+                    Dim maxsize As Integer = 259
+                    maxsize = maxsize - pathlen
+
+                    If thenewfilename.Length >= maxsize Then 'shorten name when required (max is 260 per file)
+                        Dim firstpart As String = Strings.Left(thenewfilename, maxsize - 5)
                         Dim lastpart As String = Strings.Right(thenewfilename, 5)
                         thenewfilename = firstpart + lastpart
                     End If
+                    Dim newfilename As String = addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album) + "\" + thenewfilename)
+                    If newfilename.Length >= 260 Then
+                        Debug.Print("too damn long")
+                        MsgBox("The name is too long")
+                        Exit Sub
+                    End If
+                    If pathlen > 248 Then
+                        MsgBox("new path is too long for your file system, Put your music into a folder that similar to c:\music")
+                        Exit Sub
+                    End If
+
+
                     bwStartSorting.ReportProgress(curcount, vbNewLine + "Current File: " + getfilefrompath(musicfile) + vbNewLine + "New file: " + thenewfilename)
                     'Debug.Print("Copying From: " + theoldfilename + " TO: " + thenewfilename)
                     'If curmusicitem.Album = "Unknown" Or curmusicitem.Artist = "Unknown" Then
                     If Not curmusicitem.Artist = "" Then
-                        File.Copy(curmusicitem.Filename, addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album) + "\" + thenewfilename), True)
+                        File.Copy(curmusicitem.Filename, newfilename, True)
                         If Not File.Exists(addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album) + "\" + "folder.jpg")) Then
                             getimagefromid3tagSaveLocal(addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album) + "\" + thenewfilename), addfiletofolder(destdir, cleanname(curmusicitem.Artist) + "\" + cleanname(curmusicitem.Album) + "\" + "folder.jpg"))
                         End If

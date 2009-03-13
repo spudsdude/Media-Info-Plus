@@ -5908,7 +5908,7 @@ Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(9, 4)
-Me.tcMain.SelectedIndex = 1
+Me.tcMain.SelectedIndex = 2
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
 Me.tcMain.Size = New System.Drawing.Size(822, 922)
 Me.tcMain.TabColor = System.Drawing.Color.Black
@@ -6011,7 +6011,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(352, 327)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(356, 331)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -9297,8 +9297,8 @@ Me.tsbLoadMyMusic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.
 Me.tsbLoadMyMusic.Image = CType(resources.GetObject("tsbLoadMyMusic.Image"),System.Drawing.Image)
 Me.tsbLoadMyMusic.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbLoadMyMusic.Name = "tsbLoadMyMusic"
-Me.tsbLoadMyMusic.Size = New System.Drawing.Size(83, 22)
-Me.tsbLoadMyMusic.Text = "Load My Music"
+Me.tsbLoadMyMusic.Size = New System.Drawing.Size(85, 22)
+Me.tsbLoadMyMusic.Text = "Load My Tunes"
 '
 'ToolStripSeparator9
 '

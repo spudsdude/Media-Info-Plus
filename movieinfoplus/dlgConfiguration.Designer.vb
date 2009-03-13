@@ -111,6 +111,8 @@ Partial Class dlgConfiguration
         Me.tbCustomFilter4 = New System.Windows.Forms.TextBox
         Me.cbFilterCustom1 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.kgTQQIconsGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.lblGMaxCached = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.lblGQuality = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.cbf3s0 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.klblTQQIconsLbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.cbf1s9 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -195,6 +197,8 @@ Partial Class dlgConfiguration
         Me.klbltvMaxNumberOfPostersToDownload = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tcSettings = New Dotnetrix.Controls.TabControlEX
         Me.tpSettingsGeneral = New Dotnetrix.Controls.TabPageEX
+        Me.kgGeneralMisc = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.lblGeneralMisc = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.kgGeneralProxy = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.lblIPv4Only = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.lblProxyPort = New ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -230,6 +234,7 @@ Partial Class dlgConfiguration
         Me.clbPaths = New System.Windows.Forms.CheckedListBox
         Me.klMovieFolderGroup = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tpSettingsMusic = New Dotnetrix.Controls.TabPageEX
+        Me.lblTunesWHat = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.kgMusicAlbumArt = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.cbMusicGetAlbumArt = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.lblMusicAlbumArt = New ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -340,6 +345,10 @@ Partial Class dlgConfiguration
         Me.kgSettingsTvShow.SuspendLayout()
         Me.tcSettings.SuspendLayout()
         Me.tpSettingsGeneral.SuspendLayout()
+        CType(Me.kgGeneralMisc, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kgGeneralMisc.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kgGeneralMisc.Panel.SuspendLayout()
+        Me.kgGeneralMisc.SuspendLayout()
         CType(Me.kgGeneralProxy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgGeneralProxy.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgGeneralProxy.Panel.SuspendLayout()
@@ -1590,6 +1599,8 @@ Partial Class dlgConfiguration
         '
         'kgTQQIconsGroup.Panel
         '
+        Me.kgTQQIconsGroup.Panel.Controls.Add(Me.lblGMaxCached)
+        Me.kgTQQIconsGroup.Panel.Controls.Add(Me.lblGQuality)
         Me.kgTQQIconsGroup.Panel.Controls.Add(Me.cbf3s0)
         Me.kgTQQIconsGroup.Panel.Controls.Add(Me.klblTQQIconsLbl)
         Me.kgTQQIconsGroup.Panel.Controls.Add(Me.cbf1s9)
@@ -1608,6 +1619,28 @@ Partial Class dlgConfiguration
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
         Me.kgTQQIconsGroup.TabIndex = 84
+        '
+        'lblGMaxCached
+        '
+        Me.lblGMaxCached.Location = New System.Drawing.Point(184, 216)
+        Me.lblGMaxCached.Name = "lblGMaxCached"
+        Me.lblGMaxCached.Size = New System.Drawing.Size(170, 16)
+        Me.lblGMaxCached.TabIndex = 64
+        Me.lblGMaxCached.Text = "Max Number of Cached Images"
+        Me.lblGMaxCached.Values.ExtraText = ""
+        Me.lblGMaxCached.Values.Image = Nothing
+        Me.lblGMaxCached.Values.Text = "Max Number of Cached Images"
+        '
+        'lblGQuality
+        '
+        Me.lblGQuality.Location = New System.Drawing.Point(119, 185)
+        Me.lblGQuality.Name = "lblGQuality"
+        Me.lblGQuality.Size = New System.Drawing.Size(93, 16)
+        Me.lblGQuality.TabIndex = 63
+        Me.lblGQuality.Text = "Quality of Image"
+        Me.lblGQuality.Values.ExtraText = ""
+        Me.lblGQuality.Values.Image = Nothing
+        Me.lblGQuality.Values.Text = "Quality of Image"
         '
         'cbf3s0
         '
@@ -1678,7 +1711,7 @@ Partial Class dlgConfiguration
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(204, 248)
+        Me.Label1.Location = New System.Drawing.Point(70, 252)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(114, 16)
         Me.Label1.TabIndex = 26
@@ -1717,7 +1750,7 @@ Partial Class dlgConfiguration
         '
         Me.cbMaxIconsToDisplay.FormattingEnabled = True
         Me.cbMaxIconsToDisplay.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100"})
-        Me.cbMaxIconsToDisplay.Location = New System.Drawing.Point(147, 243)
+        Me.cbMaxIconsToDisplay.Location = New System.Drawing.Point(13, 247)
         Me.cbMaxIconsToDisplay.Name = "cbMaxIconsToDisplay"
         Me.cbMaxIconsToDisplay.Size = New System.Drawing.Size(54, 21)
         Me.cbMaxIconsToDisplay.TabIndex = 36
@@ -1728,7 +1761,7 @@ Partial Class dlgConfiguration
         Me.cbMaxIconPerStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbMaxIconPerStyle.FormattingEnabled = True
         Me.cbMaxIconPerStyle.Items.AddRange(New Object() {"Cache 1 Icon Per Type", "Cache 2 Icons Per Type", "Cache 3 Icons Per Type", "Cache 4 Icons Per Type", "Cache 5 Icons Per Type", "Cache 6 Icons Per Type", "Cache 7 Icons Per Type", "Cache 8 Icons Per Type", "Cache 9 Icons Per Type", "Cache 10 Icons Per Type", "Cache 11 Icons Per Type", "Cache 12 Icons Per Type", "Cache 13 Icons Per Type", "Cache 14 Icons Per Type", "Cache 15 Icons Per Type", "Cache 16 Icons Per Type", "Cache 17 Icons Per Type", "Cache 18 Icons Per Type", "Cache 19 Icons Per Type", "Cache 20 Icons Per Type", "Cache 21 Icons Per Type", "Cache 22 Icons Per Type", "Cache 23 Icons Per Type", "Cache 24 Icons Per Type", "Cache 25 Icons Per Type", "Cache 26 Icons Per Type", "Cache 27 Icons Per Type", "Cache 28 Icons Per Type", "Cache 29 Icons Per Type", "Cache 30 Icons Per Type", "Cache 31 Icon Per Type", "Cache 32 Icons Per Type", "Cache 33 Icons Per Type", "Cache 34 Icons Per Type", "Cache 35 Icons Per Type", "Cache 36 Icons Per Type", "Cache 37 Icons Per Type", "Cache 38 Icons Per Type", "Cache 39 Icons Per Type", "Cache 40 Icons Per Type", "Cache 41 Icon Per Type", "Cache 42 Icons Per Type", "Cache 43 Icons Per Type", "Cache 44 Icons Per Type", "Cache 45 Icons Per Type", "Cache 46 Icons Per Type", "Cache 47 Icons Per Type", "Cache 48 Icons Per Type", "Cache 49 Icons Per Type", "Cache 50 Icons Per Type", "Cache 51 Icon Per Type", "Cache 52 Icons Per Type", "Cache 53 Icons Per Type", "Cache 54 Icons Per Type", "Cache 55 Icons Per Type", "Cache 56 Icons Per Type", "Cache 57 Icons Per Type", "Cache 58 Icons Per Type", "Cache 59 Icons Per Type", "Cache 60 Icons Per Type", "Cache 61 Icon Per Type", "Cache 62 Icons Per Type", "Cache 63 Icons Per Type", "Cache 64 Icons Per Type", "Cache 65 Icons Per Type", "Cache 66 Icons Per Type", "Cache 67 Icons Per Type", "Cache 68 Icons Per Type", "Cache 69 Icons Per Type", "Cache 70 Icons Per Type", "Cache 71 Icon Per Type", "Cache 72 Icons Per Type", "Cache 73 Icons Per Type", "Cache 74 Icons Per Type", "Cache 75 Icons Per Type", "Cache 76 Icons Per Type", "Cache 77 Icons Per Type", "Cache 78 Icons Per Type", "Cache 79 Icons Per Type", "Cache 80 Icons Per Type", "Cache 81 Icon Per Type", "Cache 82 Icons Per Type", "Cache 83 Icons Per Type", "Cache 84 Icons Per Type", "Cache 85 Icons Per Type", "Cache 86 Icons Per Type", "Cache 87 Icons Per Type", "Cache 88 Icons Per Type", "Cache 89 Icons Per Type", "Cache 90 Icons Per Type", "Cache 91 Icon Per Type", "Cache 92 Icons Per Type", "Cache 93 Icons Per Type", "Cache 94 Icons Per Type", "Cache 95 Icons Per Type", "Cache 96 Icons Per Type", "Cache 97 Icons Per Type", "Cache 98 Icons Per Type", "Cache 99 Icons Per Type", "Cache 100 Icons Per Type"})
-        Me.cbMaxIconPerStyle.Location = New System.Drawing.Point(147, 212)
+        Me.cbMaxIconPerStyle.Location = New System.Drawing.Point(13, 216)
         Me.cbMaxIconPerStyle.Name = "cbMaxIconPerStyle"
         Me.cbMaxIconPerStyle.Size = New System.Drawing.Size(165, 21)
         Me.cbMaxIconPerStyle.TabIndex = 58
@@ -1752,7 +1785,7 @@ Partial Class dlgConfiguration
         Me.cbDlFormat.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbDlFormat.FormattingEnabled = True
         Me.cbDlFormat.Items.AddRange(New Object() {"Low Quality", "Medium Quality", "Highest Quality"})
-        Me.cbDlFormat.Location = New System.Drawing.Point(147, 181)
+        Me.cbDlFormat.Location = New System.Drawing.Point(13, 185)
         Me.cbDlFormat.Name = "cbDlFormat"
         Me.cbDlFormat.Size = New System.Drawing.Size(100, 21)
         Me.cbDlFormat.TabIndex = 59
@@ -1787,7 +1820,7 @@ Partial Class dlgConfiguration
         Me.kgColorSelect.Panel.Controls.Add(Me.krbColorSilver)
         Me.kgColorSelect.Panel.Controls.Add(Me.krbColorBlue)
         Me.kgColorSelect.Panel.Controls.Add(Me.krbColorBlack)
-        Me.kgColorSelect.Size = New System.Drawing.Size(196, 204)
+        Me.kgColorSelect.Size = New System.Drawing.Size(196, 290)
         Me.kgColorSelect.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -1891,7 +1924,7 @@ Partial Class dlgConfiguration
         'cbGoogleImageSearchPop
         '
         Me.cbGoogleImageSearchPop.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbGoogleImageSearchPop.Location = New System.Drawing.Point(459, 221)
+        Me.cbGoogleImageSearchPop.Location = New System.Drawing.Point(3, 26)
         Me.cbGoogleImageSearchPop.Name = "cbGoogleImageSearchPop"
         Me.cbGoogleImageSearchPop.Size = New System.Drawing.Size(194, 29)
         Me.cbGoogleImageSearchPop.TabIndex = 75
@@ -2694,9 +2727,9 @@ Partial Class dlgConfiguration
         '
         'tpSettingsGeneral
         '
+        Me.tpSettingsGeneral.Controls.Add(Me.kgGeneralMisc)
         Me.tpSettingsGeneral.Controls.Add(Me.kgGeneralProxy)
         Me.tpSettingsGeneral.Controls.Add(Me.kgTQQIconsGroup)
-        Me.tpSettingsGeneral.Controls.Add(Me.cbGoogleImageSearchPop)
         Me.tpSettingsGeneral.Controls.Add(Me.kgColorSelect)
         Me.tpSettingsGeneral.Location = New System.Drawing.Point(4, 25)
         Me.tpSettingsGeneral.Name = "tpSettingsGeneral"
@@ -2705,6 +2738,32 @@ Partial Class dlgConfiguration
         Me.tpSettingsGeneral.TabIndex = 0
         Me.tpSettingsGeneral.Text = "General"
         Me.tpSettingsGeneral.UseVisualStyleBackColor = True
+        '
+        'kgGeneralMisc
+        '
+        Me.kgGeneralMisc.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
+        Me.kgGeneralMisc.Location = New System.Drawing.Point(659, 6)
+        Me.kgGeneralMisc.Name = "kgGeneralMisc"
+        '
+        'kgGeneralMisc.Panel
+        '
+        Me.kgGeneralMisc.Panel.Controls.Add(Me.lblGeneralMisc)
+        Me.kgGeneralMisc.Panel.Controls.Add(Me.cbGoogleImageSearchPop)
+        Me.kgGeneralMisc.Size = New System.Drawing.Size(255, 290)
+        Me.kgGeneralMisc.TabIndex = 86
+        '
+        'lblGeneralMisc
+        '
+        Me.lblGeneralMisc.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lblGeneralMisc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+        Me.lblGeneralMisc.Location = New System.Drawing.Point(0, 0)
+        Me.lblGeneralMisc.Name = "lblGeneralMisc"
+        Me.lblGeneralMisc.Size = New System.Drawing.Size(249, 24)
+        Me.lblGeneralMisc.TabIndex = 76
+        Me.lblGeneralMisc.Text = "Misc Options"
+        Me.lblGeneralMisc.Values.ExtraText = ""
+        Me.lblGeneralMisc.Values.Image = Nothing
+        Me.lblGeneralMisc.Values.Text = "Misc Options"
         '
         'kgGeneralProxy
         '
@@ -3170,6 +3229,7 @@ Partial Class dlgConfiguration
         '
         'tpSettingsMusic
         '
+        Me.tpSettingsMusic.Controls.Add(Me.lblTunesWHat)
         Me.tpSettingsMusic.Controls.Add(Me.kgMusicAlbumArt)
         Me.tpSettingsMusic.Controls.Add(Me.kgMusicMI)
         Me.tpSettingsMusic.Controls.Add(Me.cbmusic_createAlbumNfo)
@@ -3179,8 +3239,20 @@ Partial Class dlgConfiguration
         Me.tpSettingsMusic.Name = "tpSettingsMusic"
         Me.tpSettingsMusic.Size = New System.Drawing.Size(999, 706)
         Me.tpSettingsMusic.TabIndex = 3
-        Me.tpSettingsMusic.Text = "Music"
+        Me.tpSettingsMusic.Text = "Tunes"
         Me.tpSettingsMusic.UseVisualStyleBackColor = True
+        '
+        'lblTunesWHat
+        '
+        Me.lblTunesWHat.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+        Me.lblTunesWHat.Location = New System.Drawing.Point(710, 83)
+        Me.lblTunesWHat.Name = "lblTunesWHat"
+        Me.lblTunesWHat.Size = New System.Drawing.Size(131, 24)
+        Me.lblTunesWHat.TabIndex = 94
+        Me.lblTunesWHat.Text = "Tunes = Music"
+        Me.lblTunesWHat.Values.ExtraText = ""
+        Me.lblTunesWHat.Values.Image = Nothing
+        Me.lblTunesWHat.Values.Text = "Tunes = Music"
         '
         'kgMusicAlbumArt
         '
@@ -3467,12 +3539,12 @@ Partial Class dlgConfiguration
         Me.KryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
         Me.KryptonLabel1.Location = New System.Drawing.Point(1, 4)
         Me.KryptonLabel1.Name = "KryptonLabel1"
-        Me.KryptonLabel1.Size = New System.Drawing.Size(455, 24)
+        Me.KryptonLabel1.Size = New System.Drawing.Size(475, 24)
         Me.KryptonLabel1.TabIndex = 46
-        Me.KryptonLabel1.Text = "Music - Select the folder(s) where you have your music"
+        Me.KryptonLabel1.Text = "Tunes - Select the folder(s) where you have your tunes at"
         Me.KryptonLabel1.Values.ExtraText = ""
         Me.KryptonLabel1.Values.Image = Nothing
-        Me.KryptonLabel1.Values.Text = "Music - Select the folder(s) where you have your music"
+        Me.KryptonLabel1.Values.Text = "Tunes - Select the folder(s) where you have your tunes at"
         '
         'tpSettingsTvShows
         '
@@ -3484,7 +3556,7 @@ Partial Class dlgConfiguration
         Me.tpSettingsTvShows.Name = "tpSettingsTvShows"
         Me.tpSettingsTvShows.Size = New System.Drawing.Size(999, 706)
         Me.tpSettingsTvShows.TabIndex = 2
-        Me.tpSettingsTvShows.Text = "TV Shows"
+        Me.tpSettingsTvShows.Text = "Shows"
         Me.tpSettingsTvShows.UseVisualStyleBackColor = True
         '
         'klblRemoveatvshow1
@@ -3808,7 +3880,11 @@ Partial Class dlgConfiguration
         Me.kgSettingsTvShow.ResumeLayout(False)
         Me.tcSettings.ResumeLayout(False)
         Me.tpSettingsGeneral.ResumeLayout(False)
-        Me.tpSettingsGeneral.PerformLayout()
+        CType(Me.kgGeneralMisc.Panel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgGeneralMisc.Panel.ResumeLayout(False)
+        Me.kgGeneralMisc.Panel.PerformLayout()
+        CType(Me.kgGeneralMisc, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgGeneralMisc.ResumeLayout(False)
         CType(Me.kgGeneralProxy.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgGeneralProxy.Panel.ResumeLayout(False)
         Me.kgGeneralProxy.Panel.PerformLayout()
@@ -4119,5 +4195,10 @@ Partial Class dlgConfiguration
     Friend WithEvents kgMusicAlbumArt As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents lblMusicAlbumArt As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents cbMusicGetAlbumArt As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents lblTunesWHat As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblGMaxCached As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblGQuality As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents kgGeneralMisc As ComponentFactory.Krypton.Toolkit.KryptonGroup
+    Friend WithEvents lblGeneralMisc As ComponentFactory.Krypton.Toolkit.KryptonLabel
 
 End Class

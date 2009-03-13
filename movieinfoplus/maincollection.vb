@@ -2128,6 +2128,11 @@ Public Class maincollection
 
     End Sub
     Private Sub setlookandfeel()
+        Try
+            setguicolor(rconf.guicolor)
+        Catch ex As Exception
+            setguicolor("silver")
+        End Try
 
         'If Not toolSparkle.Checked Then
         'kManager.GlobalPaletteMode = PaletteModeManager.SparkleBlue
@@ -2139,7 +2144,7 @@ Public Class maincollection
         '    'toolSystem.Checked = menuSystem.Checked = False
         'End If
     End Sub
-  
+   
     Private Sub btnShowMovieInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowMovieInfo.Click
         pcmaxDisplayedIcons = rconf.pcbMaxIconsToDisplay
         pcMaxIconPerStyle = rconf.pcbMaxIconPerStyle
@@ -18902,7 +18907,7 @@ Public Class maincollection
     End Sub
 
     Private Sub setMode()
-        'fubared do not use this
+
         Select Case cmmode
             Case "tv"
                 curtvshowiconsettinglbl.Visible = True
@@ -19428,15 +19433,17 @@ Public Class maincollection
         If Not currentalbum.pdownloadlist Is Nothing Then currentalbum.pdownloadlist.Clear()
         'gvcurrenttvseasonpath = addfiletofolder(curtvshowpath, rconf.pseasonfoldername & curseasonas1or2digitid)
         'Dim vcurrenttvseasonsearchstr As String = lbTvShowPicker.Text & "+" & "Season%20" + curseasonas1or2digitid
-        If cbAllowIconSelection.Checked Then
-            getfcdn_music_front(lbmusicArtist.Text, False, , lbmusicAlbums.Text) 'vcurrenttvseasonsearchstr)
-            getfcdn_music_back(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_cd1(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_cd2(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_cd3(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_cd4(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_insert(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-            getfcdn_music_inlay(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
+        Dim searchnameArtist As String = cleanmusicnameforsearch(lbmusicArtist.Text)
+        Dim searchnameAlbums As String = cleanmusicnameforsearch(lbmusicAlbums.Text)
+        If cbAllowIconSelection.Checked And rbem.Checked Then
+            getfcdn_music_front(searchnameArtist, False, , searchnameAlbums) 'vcurrenttvseasonsearchstr)
+            getfcdn_music_back(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_cd1(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_cd2(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_cd3(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_cd4(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_insert(searchnameArtist, False, , searchnameAlbums)
+            getfcdn_music_inlay(lbmusicArtist.Text, False, , searchnameAlbums)
 
             ''download items
             'If Not currentalbum.pdownloadlist.Count = Nothing And Not currentalbum.pdownloadlist.Count = 0 Then
@@ -19482,7 +19489,7 @@ Public Class maincollection
                     End If
                 Next
                 'asdf()
-               
+
                 If Not currentalbum.pdownloadlist.Count = 0 Then
                     dlgDownloadingFile.downloadingmutliimages = True
                     dlgDownloadingFile.downloadlist = currentalbum.pdownloadlist
@@ -19498,17 +19505,25 @@ Public Class maincollection
             End If
             'display media images
             If cbAllowIconSelection.Checked Then
-                showfcdn_music_front(lbmusicArtist.Text, False, , lbmusicAlbums.Text) 'vcurrenttvseasonsearchstr)
-                showfcdn_music_Back(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_cd1(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_cd2(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_cd3(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_cd4(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_insert(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
-                showfcdn_music_inlay(lbmusicArtist.Text, False, , lbmusicAlbums.Text)
+                showfcdn_music_front(searchnameArtist, False, , searchnameAlbums) 'vcurrenttvseasonsearchstr)
+                showfcdn_music_Back(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_cd1(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_cd2(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_cd3(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_cd4(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_insert(searchnameArtist, False, , searchnameAlbums)
+                showfcdn_music_inlay(searchnameArtist, False, , searchnameAlbums)
             End If
         End If
     End Sub
+
+    Private Function cleanmusicnameforsearch(ByVal texttoclean As String) As String
+        Dim restr As String
+        restr = Strings.Replace(texttoclean, "'", "")
+        restr = Strings.Replace(texttoclean, "&", "")
+        restr = Strings.Replace(texttoclean, "@", "")
+        Return restr
+    End Function
     Private Sub lbmusicSongs_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbmusicSongs.Click
         If lbmusicSongs.SelectedValue Is Nothing Then Exit Sub
         pbMusic_CurSongImage.Image = Nothing
@@ -26828,25 +26843,32 @@ Public Class maincollection
 
 
     Public Sub setguicolor(ByRef vcolor As String)
+
         Select Case vcolor
             Case "black"
                 kManager.GlobalPalette = kpalette
-                rconf.guicolor = "black"
+                'rconf.guicolor = "black"
             Case "silver"
                 kManager.GlobalPalette = kpaletteSilver
-                rconf.guicolor = "silver"
-            Case "hazel"
-                kManager.GlobalPalette = kpaletteHazel
-                rconf.guicolor = "hazel"
+                'rconf.guicolor = "silver"
+            Case "bling"
+                kManager.GlobalPalette = kpaletteDucks
+                'rconf.guicolor = "bling"
             Case "blue"
                 kManager.GlobalPalette = kpaletteBlue
-                rconf.guicolor = "blue"
+                'rconf.guicolor = "blue"
+            Case "pink"
+                kManager.GlobalPalette = kPalettePink
+                'rconf.guicolor = "pink"
+            Case "green"
+                kManager.GlobalPalette = kPaletteGreen
+                'rconf.guicolor = "green"
+            Case "pro"
+                kManager.GlobalPalette = kPaletteSystem
+                'rconf.guicolor = "pro"
             Case Else
                 'do nothing
         End Select
-
-
-
     End Sub
 
 
@@ -29520,7 +29542,7 @@ Public Class maincollection
                 Catch ex22 As Exception
 
                 End Try
-                
+
                 '            End If
                 'Debug.Print("workin")
                 '        Loop While fStream Is Nothing

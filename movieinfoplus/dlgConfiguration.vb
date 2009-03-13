@@ -1320,4 +1320,7 @@ Public Class dlgConfiguration
     Private Sub cbMusicGetAlbumArt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.CheckedChanged
         rconf.pgetMusicAlbumArt = cbMusicGetAlbumArt.Checked
     End Sub
+
+
+
 End Class

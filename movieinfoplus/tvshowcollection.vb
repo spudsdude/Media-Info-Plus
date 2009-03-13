@@ -233,7 +233,8 @@ Public Class tvshowcollection
             'maincollection.lbTVShows.SelectedIndex = showcount
             Dim showfullpathname As String = tvshowarray(showcount).ToString
             Dim fnPeices1() As String = showfullpathname.ToString.Split(CChar("\"))
-            Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+            Dim tfname As String = Strings.Replace(fnPeices1(fnPeices1.Length - 1), "_", " ")
+            tfname = Strings.Replace(tfname, ".", " ")
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + vbNewLine + "-----------------------------------------"
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Processing: " + tfname
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-----------------------------------------"
