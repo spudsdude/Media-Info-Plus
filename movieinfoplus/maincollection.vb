@@ -53,7 +53,7 @@ Public Class maincollection
     Public tbloftvshows As New DataTable
     Public pclog As StreamWriter
     Public pclogging As Boolean = False
-    Public rconf As New configuration
+    Public Shared rconf As New configuration
     Public movies As New ArrayList
     Public sinmiString As String = ""
 
@@ -1396,10 +1396,10 @@ Public Class maincollection
     End Function
     Public Shared Function SavePhotoFromUrl2(ByVal url As String, ByVal filename As String, Optional ByVal precacheing As Boolean = False) As String
         If precacheing Then
-            Dim curconf As New configuration
-            curconf.getconfig("config", True)
+            'Dim curconf As New configuration
+            'curconf.getconfig("config", True)
             'use wget hidden
-            Dim binfilelocal As String = curconf.wgetfolder + "wget.exe"
+            Dim binfilelocal As String = rconf.wgetfolder + "wget.exe"
             Dim pro1fa As System.Diagnostics.Process = New System.Diagnostics.Process()
             pro1fa.StartInfo.FileName = binfilelocal
             pro1fa.StartInfo.Arguments = """" + url + """" + " -O " + """" + filename + """"
@@ -1688,6 +1688,11 @@ Public Class maincollection
     End Function
     Private Function namefilter(ByVal moviename As String) As String
         Dim filteredname As String = ""
+
+        If rconf.pcbFilterUnderscoreDot Then
+            moviename = Strings.Replace(moviename, "_", " ")
+            moviename = Strings.Replace(moviename, ".", " ")
+        End If
 
         If rconf.pcbFilter1080p Then
             moviename = Strings.Replace(moviename, " (1080p)", "")
@@ -2020,17 +2025,17 @@ Public Class maincollection
         'pro1.WaitForExit()
         kscLeftNavMain.Panel2Collapsed = True
         kscRightBottomPart.Panel2Collapsed = True
-        setlookandfeel()
-        'Control.CheckForIllegalCrossThreadCalls = False
-        Dim loadconfig As New configuration
-        If Not Directory.Exists(loadconfig.basefolder) Then Directory.CreateDirectory(loadconfig.basefolder)
+
+        'Dim loadconfig As New configuration
+        If Not Directory.Exists(rconf.basefolder) Then Directory.CreateDirectory(rconf.basefolder)
         If Not File.Exists(rconf.basefolder + "config.xml") Then
             Me.Hide()
             'SplashScreen1.Hide()
             GettingStartedWizard.ShowDialog()
         End If
-        rconf = loadconfig.getconfig()
+        rconf = rconf.getconfig()
         tso_auto_addtoablumonnewart.Checked = rconf.ptso_auto_addtoablumonnewart
+        setlookandfeel()
         'Try
         '    Debug.Print("getting all movie data")
         '    parseimdb.sqlGetAllMovies(allmovieslist)
@@ -2131,7 +2136,7 @@ Public Class maincollection
         Try
             setguicolor(rconf.guicolor)
         Catch ex As Exception
-            setguicolor("silver")
+            setguicolor("bling")
         End Try
 
         'If Not toolSparkle.Checked Then
@@ -6675,6 +6680,8 @@ Public Class maincollection
                 tpmipf.Text = "Wide Images / 3D Boxes (" & iconsboxshottotal.ToString & ")"
             End If
         End If
+        'check for video_ts, if found, check md5 on images, recopy if needed
+        If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
 
 
 
@@ -6695,6 +6702,199 @@ Public Class maincollection
             End Try
         End If
     End Sub
+
+    Private Sub checkVideoTSforcurrentmovie()
+        If currentmovie Is Nothing Then Exit Sub
+        If Directory.Exists(addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS")) Then
+            Dim curMovieNFO As String = addfiletofolder(currentmovie.getmoviepath, "movie.nfo")
+            Dim curFolderjpg As String = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
+            Dim curMovieTBN As String = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
+            'Dim curMovienameTBN As String = addfiletofolder(currentmovie.getmoviepath, currentmovie.getmoviename & ".tbn")
+            Dim curFanart As String = addfiletofolder(currentmovie.getmoviepath, "fanart.jpg")
+            Dim curFanartMN As String = addfiletofolder(currentmovie.getmoviepath, currentmovie.getmoviename & "-fanart.jpg")
+
+            Dim curVTSMovieNFO As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & "movie.nfo")
+            Dim curVTSFolderjpg As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & "folder.jpg")
+            Dim curVTSMovieTBN As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & "movie.tbn")
+            'Dim curVTSMovienameTBN As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & currentmovie.getmoviename & ".tbn")
+            Dim curVTSFanart As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & "fanart.jpg")
+            'Dim curVTSFanartMN As String = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\" & currentmovie.getmoviename & "-fanart.jpg")
+
+
+            Dim curfile As String
+            Dim curVTS As String
+
+            curfile = curMovieNFO
+            curVTS = curVTSMovieNFO
+            If File.Exists(curVTS) Then
+                If File.Exists(curfile) Then
+                    'check hash
+                    Dim curhash As String
+                    Dim curVTShash As String
+                    Dim curh1 As New crypto
+                    Dim curh2 As New crypto
+                    curhash = curh1.GenerateHash(curfile)
+                    curVTShash = curh2.GenerateHash(curVTS)
+                    If Not curhash = curVTShash Then
+                        Try
+                            File.SetAttributes(curVTS, FileAttributes.Normal)
+                            File.Delete(curVTS)
+                        Catch ex As Exception
+
+                        End Try
+                        File.Copy(curfile, curVTS, True)
+                    End If
+                End If
+
+            Else
+                'copy
+                If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            End If
+
+            'folder jpg
+            curfile = curFolderjpg
+            curVTS = curVTSFolderjpg
+            If File.Exists(curVTS) Then
+                If File.Exists(curfile) Then
+                    'check hash
+                    Dim curhash As String
+                    Dim curVTShash As String
+                    Dim curh1 As New crypto
+                    Dim curh2 As New crypto
+                    curhash = curh1.GenerateHash(curfile)
+                    curVTShash = curh2.GenerateHash(curVTS)
+                    If Not curhash = curVTShash Then
+                        Try
+                            File.SetAttributes(curVTS, FileAttributes.Normal)
+                            File.Delete(curVTS)
+                        Catch ex As Exception
+
+                        End Try
+                        File.Copy(curfile, curVTS, True)
+                    End If
+                End If
+            Else
+                'copy
+                If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            End If
+
+            'movietbn
+            curfile = curMovieTBN
+            curVTS = curVTSMovieTBN
+            If File.Exists(curVTS) Then
+                If File.Exists(curfile) Then
+                    'check hash
+                    Dim curhash As String
+                    Dim curVTShash As String
+                    Dim curh1 As New crypto
+                    Dim curh2 As New crypto
+                    curhash = curh1.GenerateHash(curfile)
+                    curVTShash = curh2.GenerateHash(curVTS)
+                    If Not curhash = curVTShash Then
+                        Try
+                            File.SetAttributes(curVTS, FileAttributes.Normal)
+                            File.Delete(curVTS)
+                        Catch ex As Exception
+
+                        End Try
+                        File.Copy(curfile, curVTS, True)
+                    End If
+                End If
+            Else
+                'copy
+                If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            End If
+
+            ''movienametbn
+            'curfile = curMovienameTBN
+            'curVTS = curVTSMovienameTBN
+            'If File.Exists(curVTS) Then
+            '    If File.Exists(curfile) Then
+            '        'check hash
+            '        Dim curhash As String
+            '        Dim curVTShash As String
+            '        Dim curh1 As New crypto
+            '        Dim curh2 As New crypto
+            '        curhash = curh1.GenerateHash(curfile)
+            '        curVTShash = curh2.GenerateHash(curVTS)
+            '        If Not curhash = curVTShash Then
+            '            Try
+            '                File.SetAttributes(curVTS, FileAttributes.Normal)
+            '                File.Delete(curVTS)
+            '            Catch ex As Exception
+
+            '            End Try
+            '            File.Copy(curfile, curVTS, True)
+            '        End If
+            '    End If
+            'Else
+            '    'copy
+            '    If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            'End If
+
+            'curVTSFanart
+            curfile = curFanart
+            curVTS = curVTSFanart
+            If File.Exists(curVTS) Then
+                If File.Exists(curfile) Then
+                    'check hash
+                    Dim curhash As String
+                    Dim curVTShash As String
+                    Dim curh1 As New crypto
+                    Dim curh2 As New crypto
+                    curhash = curh1.GenerateHash(curfile)
+                    curVTShash = curh2.GenerateHash(curVTS)
+                    If Not curhash = curVTShash Then
+                        Try
+                            File.SetAttributes(curVTS, FileAttributes.Normal)
+                            File.Delete(curVTS)
+                        Catch ex As Exception
+
+                        End Try
+                        File.Copy(curfile, curVTS, True)
+                    End If
+                End If
+            Else
+                'copy
+                If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            End If
+            'special handler for fanart
+            If Not File.Exists(curVTS) And File.Exists(curFanartMN) Then
+                File.Copy(curFanartMN, curVTS)
+            End If
+
+
+            ''curVTSFanartMN
+            'curfile = curFanartMN
+            'curVTS = curVTSFanartMN
+            'If File.Exists(curVTS) Then
+            '    If File.Exists(curfile) Then
+            '        'check hash
+            '        Dim curhash As String
+            '        Dim curVTShash As String
+            '        Dim curh1 As New crypto
+            '        Dim curh2 As New crypto
+            '        curhash = curh1.GenerateHash(curfile)
+            '        curVTShash = curh2.GenerateHash(curVTS)
+            '        If Not curhash = curVTShash Then
+            '            Try
+            '                File.SetAttributes(curVTS, FileAttributes.Normal)
+            '                File.Delete(curVTS)
+            '            Catch ex As Exception
+
+            '            End Try
+            '            File.Copy(curfile, curVTS, True)
+            '        End If
+            '    End If
+            'Else
+            '    'copy
+            '    If File.Exists(curfile) Then File.Copy(curfile, curVTS)
+            'End If
+
+            End If
+
+    End Sub
+
     Private Sub getdefaultfolderjpg(ByRef currentmovie As movie, Optional ByVal autopilotrunningnow As Boolean = False)
         'first we look for folder.jpg (if it's enabled in the settings) and we are not in filemode
         Dim nowhavefolderjpg As Boolean = False
@@ -13771,6 +13971,13 @@ Public Class maincollection
         'fanartpb1.Load()
         'tcMain.Refresh()
         tcMain.SelectTab(0)
+        'check for video_ts, if found, check md5 on images, recopy if needed
+        Try
+            If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
+        Catch ex As Exception
+
+        End Try
+
         validatefoldercontents()
     End Sub
     Private Sub savecfatvshow(ByRef selectedicon As PictureBox) 'save current fanart for the tv show
@@ -13949,6 +14156,15 @@ Public Class maincollection
             Debug.Print(ex.ToString)
             Exit Sub
         End Try
+
+        'check for video_ts, if found, check md5 on images, recopy if needed
+        Try
+            If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
+        Catch ex As Exception
+
+        End Try
+
+
 
         If savefolderjpg And Not moviemode = "file" Then 'refresh all as start point may have shifted
             showfolderjpginmainwindow(cmpath, False)
@@ -14451,6 +14667,13 @@ Public Class maincollection
             Exit Sub
         End Try
 
+        'check for video_ts, if found, check md5 on images, recopy if needed
+        Try
+            If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
+        Catch ex As Exception
+
+        End Try
+
         If savefolderjpg And Not moviemode = "file" Then 'refresh all as start point may have shifted
             showfolderjpginmainwindow(cmpath, False)
             showtbninmainwindow(cmpath, False)
@@ -14564,6 +14787,13 @@ Public Class maincollection
         Catch ex As Exception
             MessageBox.Show("Unable to save the icons, check permissions on the files in the movie folder", "Saving poster icons failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
+        End Try
+
+        'check for video_ts, if found, check md5 on images, recopy if needed
+        Try
+            If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
+        Catch ex As Exception
+
         End Try
 
         If savefolderjpg And Not moviemode = "file" Then 'refresh all as start point may have shifted
@@ -17815,6 +18045,14 @@ Public Class maincollection
                 newmovie.setmoviepath(name)
                 'read nfo if it's there
                 readnfo(newmovie)
+                'check for video_ts (backwards compat)
+                currentmovie = newmovie
+                Try
+                    checkVideoTSforcurrentmovie()
+                Catch ex As Exception
+                    MsgBox("Failed for automatic fix for VIDEO_TS data" & ex.ToString)
+                End Try
+
                 dtIDA.LoadDataRow(New Object() {newmovie.getmoviepath, cleanname, currentindex}, True)
                 'add movie to array - change this so that we can display them in a different sort order
                 movies.Add(newmovie)
@@ -31618,6 +31856,22 @@ Public Property [Actors]() As List(Of Actor)
         If filename = "" Then Exit Sub 'no name found when parsing filename, so we exit
 
         nm.writeMovXML(nfonamepath, filename)
+        'check for video_ts, copy file if there's a VIDEO_TS folder inside
+        If Not tmovie.pfilemode And Directory.Exists(nfonamepath + "VIDEO_TS") Then
+            Try
+                If File.Exists(nfonamepath + "VIDEO_TS\" + filename) Then
+                    File.Delete(nfonamepath + "VIDEO_TS\" + filename)
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
+                nm.writeMovXML(nfonamepath + "VIDEO_TS\", filename)
+            Catch ex As Exception
+
+            End Try
+
+        End If
         'get rid of temp movie
         nm = Nothing
 
@@ -32062,6 +32316,7 @@ Public Class configuration
     Private cbnopromptfornewposters As Boolean
     Private cbscanformoviemediainformation As Boolean
     Private cbcopyplotsummaryifnoplot As Boolean
+    Private cbFilterUnderscoreDot As Boolean
     Private ptype As String = ".jpg"
     Private p_element_guicolor As String = "black"
 
@@ -32550,6 +32805,14 @@ Public Class configuration
             combolTVCheckForNewTVShowData = value
         End Set
     End Property
+    Property pcbFilterUnderscoreDot() As Boolean
+        Get
+            Return cbFilterUnderscoreDot
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterUnderscoreDot = value
+        End Set
+    End Property
     Property pcbIgnoreparans() As Boolean
         Get
             Return cbIgnoreparans
@@ -32626,7 +32889,7 @@ Public Class configuration
     Private tv_zprivatevalue_tvshow_wideicon_download_boolean As Boolean
     Private tv_zprivatevalue_tvshow_wideicon_download_maxnumber_integer As Integer
     Private tv_zprivatevalue_tvshow_nfo_overwrite_boolean As Boolean
-
+    Private tv_zprivatevalue_langoverride As Boolean
     Private tv_zprivatevalue_season_banners_download_boolean As Boolean
     Private tv_zprivatevalue_season_banners_download_maxnumber_integer As Integer
     Private tv_zprivatevalue_season_banners_download_type_string As String
@@ -32642,7 +32905,14 @@ Public Class configuration
 
     Private tv_zprivatevalue_usewgetforimages As Boolean '= True
     Private tv_zprivatevalue_wgetsleepinmilliseconds As Integer '= 100
-
+    Property pcbtvlangoverride() As Boolean
+        Get
+            Return tv_zprivatevalue_langoverride
+        End Get
+        Set(ByVal value As Boolean)
+            tv_zprivatevalue_langoverride = value
+        End Set
+    End Property
 
     Property pgetMediaImagesShows() As Boolean
         Get
@@ -33021,7 +33291,7 @@ Public Class configuration
     End Sub
     Public Function getconfig() As configuration
         Dim xmlfile As String = "config"
-        Dim serializer As New XmlSerializer(me.GetType) '(Me.GetType())
+        Dim serializer As New XmlSerializer(Me.GetType)
         Dim gRconf As configuration
         Try
             Dim gROReader As New StreamReader(maincollection.rconf.basefolder + xmlfile + ".xml")

@@ -537,6 +537,9 @@ Public Class dlgConfiguration
             cbGetIMDBInfo.Checked = trconf.pcbGetIMDBInfo
             cbGetFanart.Checked = trconf.pcbGetFanart
             cbIgnoreparans.Checked = rconf.pcbIgnoreparans
+            cbFilterUnderscoreDot.Checked = rconf.pcbFilterUnderscoreDot
+            cbtvlangoverridebanners.Checked = rconf.pcbtvlangoverride
+
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
                 maincollection.dltype = "med"
@@ -1309,18 +1312,25 @@ Public Class dlgConfiguration
         setguicolor("pink")
     End Sub
 
-    Private Sub krbColorGreen_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorGreen.CheckedChanged
+    Private Sub krbColorGreen_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorGreen.Click
         setguicolor("green")
     End Sub
 
-    Private Sub krbColorPro_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorPro.CheckedChanged
+    Private Sub krbColorPro_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorPro.Click
         setguicolor("pro")
     End Sub
 
-    Private Sub cbMusicGetAlbumArt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.CheckedChanged
+    Private Sub cbMusicGetAlbumArt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.Click
         rconf.pgetMusicAlbumArt = cbMusicGetAlbumArt.Checked
     End Sub
 
 
 
+    Private Sub cbFilterUnderscoreDot_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterUnderscoreDot.Click
+        rconf.pcbFilterUnderscoreDot = cbFilterUnderscoreDot.Checked
+    End Sub
+
+    Private Sub pcb_tv_langoverridebanners_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbtvlangoverridebanners.Click
+        rconf.pcbtvlangoverride = cbtvlangoverridebanners.Checked
+    End Sub
 End Class

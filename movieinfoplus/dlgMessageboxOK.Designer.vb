@@ -30,7 +30,6 @@ Partial Class dlgMessageboxOK
         Me.kscTop = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
         Me.kgFiles = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.dgFiles = New ComponentFactory.Krypton.Toolkit.KryptonDataGridView
-        Me.lblrescanrequired = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.TVShow = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
         Me.FileLocation = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
         Me.curfilename = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
@@ -39,6 +38,7 @@ Partial Class dlgMessageboxOK
         Me.season = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
         Me.Episode = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
         Me.Multipart = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewTextBoxColumn
+        Me.lblrescanrequired = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         CType(Me.kgdlgMain, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgdlgMain.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgdlgMain.Panel.SuspendLayout()
@@ -66,7 +66,7 @@ Partial Class dlgMessageboxOK
         '
         Me.btnOk.Location = New System.Drawing.Point(397, 4)
         Me.btnOk.Name = "btnOk"
-        Me.btnOk.Size = New System.Drawing.Size(90, 30)
+        Me.btnOk.Size = New System.Drawing.Size(90, 41)
         Me.btnOk.TabIndex = 1
         Me.btnOk.Text = "OK"
         Me.btnOk.Values.ExtraText = ""
@@ -95,7 +95,7 @@ Partial Class dlgMessageboxOK
         Me.message.Location = New System.Drawing.Point(0, 0)
         Me.message.Name = "message"
         Me.message.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
-        Me.message.Size = New System.Drawing.Size(932, 143)
+        Me.message.Size = New System.Drawing.Size(936, 147)
         Me.message.TabIndex = 2
         '
         'kscmain
@@ -118,8 +118,8 @@ Partial Class dlgMessageboxOK
         Me.kscmain.Panel2.Controls.Add(Me.lblrescanrequired)
         Me.kscmain.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
         Me.kscmain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-        Me.kscmain.Size = New System.Drawing.Size(942, 503)
-        Me.kscmain.SplitterDistance = 460
+        Me.kscmain.Size = New System.Drawing.Size(942, 538)
+        Me.kscmain.SplitterDistance = 485
         Me.kscmain.TabIndex = 3
         '
         'kscTop
@@ -137,7 +137,7 @@ Partial Class dlgMessageboxOK
         'kscTop.Panel2
         '
         Me.kscTop.Panel2.Controls.Add(Me.kgFiles)
-        Me.kscTop.Size = New System.Drawing.Size(942, 460)
+        Me.kscTop.Size = New System.Drawing.Size(942, 485)
         Me.kscTop.SplitterDistance = 153
         Me.kscTop.TabIndex = 5
         '
@@ -151,7 +151,7 @@ Partial Class dlgMessageboxOK
         'kgFiles.Panel
         '
         Me.kgFiles.Panel.Controls.Add(Me.dgFiles)
-        Me.kgFiles.Size = New System.Drawing.Size(942, 302)
+        Me.kgFiles.Size = New System.Drawing.Size(942, 327)
         Me.kgFiles.TabIndex = 4
         '
         'dgFiles
@@ -167,7 +167,7 @@ Partial Class dlgMessageboxOK
         Me.dgFiles.Name = "dgFiles"
         Me.dgFiles.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Black
         Me.dgFiles.RowTemplate.Height = 30
-        Me.dgFiles.Size = New System.Drawing.Size(940, 300)
+        Me.dgFiles.Size = New System.Drawing.Size(940, 325)
         Me.dgFiles.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
         Me.dgFiles.StateCommon.HeaderColumn.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
@@ -180,18 +180,6 @@ Partial Class dlgMessageboxOK
         Me.dgFiles.StateCommon.HeaderRow.Border.Rounding = 0
         Me.dgFiles.StateCommon.HeaderRow.Border.Width = 0
         Me.dgFiles.TabIndex = 3
-        '
-        'lblrescanrequired
-        '
-        Me.lblrescanrequired.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblrescanrequired.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.lblrescanrequired.Location = New System.Drawing.Point(0, 0)
-        Me.lblrescanrequired.Name = "lblrescanrequired"
-        Me.lblrescanrequired.Size = New System.Drawing.Size(942, 38)
-        Me.lblrescanrequired.TabIndex = 2
-        Me.lblrescanrequired.Values.ExtraText = ""
-        Me.lblrescanrequired.Values.Image = Nothing
-        Me.lblrescanrequired.Values.Text = ""
         '
         'TVShow
         '
@@ -271,12 +259,24 @@ Partial Class dlgMessageboxOK
         Me.Multipart.ReadOnly = True
         Me.Multipart.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         '
+        'lblrescanrequired
+        '
+        Me.lblrescanrequired.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblrescanrequired.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.lblrescanrequired.Location = New System.Drawing.Point(0, 0)
+        Me.lblrescanrequired.Name = "lblrescanrequired"
+        Me.lblrescanrequired.Size = New System.Drawing.Size(942, 48)
+        Me.lblrescanrequired.TabIndex = 2
+        Me.lblrescanrequired.Values.ExtraText = ""
+        Me.lblrescanrequired.Values.Image = Nothing
+        Me.lblrescanrequired.Values.Text = ""
+        '
         'dlgMessageboxOK
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(942, 503)
+        Me.ClientSize = New System.Drawing.Size(942, 538)
         Me.ControlBox = False
         Me.Controls.Add(Me.kscmain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow

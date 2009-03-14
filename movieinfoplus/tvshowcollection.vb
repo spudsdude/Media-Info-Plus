@@ -1287,13 +1287,13 @@ Public Class tvshowcollection
                     Select Case tmbanner.BannerType.ToLower
                         Case "fanart"
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Fanart Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
                                 If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvfanart(tmbanner, selectedshow, switchpath)
                             End If
                             fanartcounter += 1
                         Case "poster"
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Poster Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
                                 If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvposters(tmbanner, selectedshow, switchpath)
                             End If
 
@@ -1320,7 +1320,7 @@ Public Class tvshowcollection
                             End Try
 
 
-                            If curlang = tmbanner.Language Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
                                 If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath)
                                 If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath)
                                 'check series length
@@ -1338,7 +1338,7 @@ Public Class tvshowcollection
 
                         Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Series Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
                                 If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseriesbanners(tmbanner, selectedshow, switchpath)
                             End If
                             seriescounter += 1
