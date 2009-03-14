@@ -35,10 +35,16 @@ Partial Class dlgPreviewPrintMediaImage
         Me.toolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
         Me.HelpToolStripButton = New System.Windows.Forms.ToolStripButton
         Me.kbPbGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.lblCurrentImage = New System.Windows.Forms.Label
         Me.pbMainImage = New System.Windows.Forms.PictureBox
         Me.kscMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-        Me.btnOK = New ComponentFactory.Krypton.Toolkit.KryptonButton
+        Me.kscImages = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+        Me.kgCroppedview = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.resizingTrackBar = New System.Windows.Forms.TrackBar
+        Me.lblNewImage = New System.Windows.Forms.Label
+        Me.pbNewImage = New System.Windows.Forms.PictureBox
         Me.kgBtnGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.btnOK = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.ToolStrip1.SuspendLayout()
         CType(Me.kbPbGroup, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kbPbGroup.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +57,18 @@ Partial Class dlgPreviewPrintMediaImage
         CType(Me.kscMain.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kscMain.Panel2.SuspendLayout()
         Me.kscMain.SuspendLayout()
+        CType(Me.kscImages, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kscImages.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kscImages.Panel1.SuspendLayout()
+        CType(Me.kscImages.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kscImages.Panel2.SuspendLayout()
+        Me.kscImages.SuspendLayout()
+        CType(Me.kgCroppedview, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kgCroppedview.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kgCroppedview.Panel.SuspendLayout()
+        Me.kgCroppedview.SuspendLayout()
+        CType(Me.resizingTrackBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbNewImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgBtnGroup, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgBtnGroup.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgBtnGroup.Panel.SuspendLayout()
@@ -66,6 +84,7 @@ Partial Class dlgPreviewPrintMediaImage
         Me.ToolStrip1.Size = New System.Drawing.Size(833, 25)
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
+        Me.ToolStrip1.Visible = False
         '
         'NewToolStripButton
         '
@@ -157,16 +176,27 @@ Partial Class dlgPreviewPrintMediaImage
         '
         'kbPbGroup.Panel
         '
+        Me.kbPbGroup.Panel.Controls.Add(Me.lblCurrentImage)
         Me.kbPbGroup.Panel.Controls.Add(Me.pbMainImage)
-        Me.kbPbGroup.Size = New System.Drawing.Size(833, 568)
+        Me.kbPbGroup.Size = New System.Drawing.Size(833, 593)
         Me.kbPbGroup.TabIndex = 2
+        '
+        'lblCurrentImage
+        '
+        Me.lblCurrentImage.AutoSize = True
+        Me.lblCurrentImage.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblCurrentImage.Location = New System.Drawing.Point(0, 574)
+        Me.lblCurrentImage.Name = "lblCurrentImage"
+        Me.lblCurrentImage.Size = New System.Drawing.Size(73, 13)
+        Me.lblCurrentImage.TabIndex = 1
+        Me.lblCurrentImage.Text = "Current Image"
         '
         'pbMainImage
         '
         Me.pbMainImage.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbMainImage.Location = New System.Drawing.Point(0, 0)
         Me.pbMainImage.Name = "pbMainImage"
-        Me.pbMainImage.Size = New System.Drawing.Size(823, 558)
+        Me.pbMainImage.Size = New System.Drawing.Size(827, 587)
         Me.pbMainImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbMainImage.TabIndex = 0
         Me.pbMainImage.TabStop = False
@@ -176,20 +206,97 @@ Partial Class dlgPreviewPrintMediaImage
         Me.kscMain.Cursor = System.Windows.Forms.Cursors.Default
         Me.kscMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.kscMain.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
-        Me.kscMain.Location = New System.Drawing.Point(0, 25)
+        Me.kscMain.Location = New System.Drawing.Point(0, 0)
         Me.kscMain.Name = "kscMain"
         Me.kscMain.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'kscMain.Panel1
         '
-        Me.kscMain.Panel1.Controls.Add(Me.kbPbGroup)
+        Me.kscMain.Panel1.Controls.Add(Me.kscImages)
         '
         'kscMain.Panel2
         '
         Me.kscMain.Panel2.Controls.Add(Me.kgBtnGroup)
-        Me.kscMain.Size = New System.Drawing.Size(833, 623)
-        Me.kscMain.SplitterDistance = 568
+        Me.kscMain.Size = New System.Drawing.Size(833, 648)
+        Me.kscMain.SplitterDistance = 593
         Me.kscMain.TabIndex = 3
+        '
+        'kscImages
+        '
+        Me.kscImages.Cursor = System.Windows.Forms.Cursors.Default
+        Me.kscImages.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.kscImages.Location = New System.Drawing.Point(0, 0)
+        Me.kscImages.Name = "kscImages"
+        '
+        'kscImages.Panel1
+        '
+        Me.kscImages.Panel1.Controls.Add(Me.kbPbGroup)
+        '
+        'kscImages.Panel2
+        '
+        Me.kscImages.Panel2.Controls.Add(Me.kgCroppedview)
+        Me.kscImages.Panel2Collapsed = True
+        Me.kscImages.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
+        Me.kscImages.Size = New System.Drawing.Size(833, 593)
+        Me.kscImages.SplitterDistance = 277
+        Me.kscImages.TabIndex = 0
+        '
+        'kgCroppedview
+        '
+        Me.kgCroppedview.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.kgCroppedview.Location = New System.Drawing.Point(0, 0)
+        Me.kgCroppedview.Name = "kgCroppedview"
+        '
+        'kgCroppedview.Panel
+        '
+        Me.kgCroppedview.Panel.Controls.Add(Me.resizingTrackBar)
+        Me.kgCroppedview.Panel.Controls.Add(Me.lblNewImage)
+        Me.kgCroppedview.Panel.Controls.Add(Me.pbNewImage)
+        Me.kgCroppedview.Size = New System.Drawing.Size(403, 568)
+        Me.kgCroppedview.TabIndex = 0
+        '
+        'resizingTrackBar
+        '
+        Me.resizingTrackBar.AutoSize = False
+        Me.resizingTrackBar.LargeChange = 1
+        Me.resizingTrackBar.Location = New System.Drawing.Point(156, 534)
+        Me.resizingTrackBar.Name = "resizingTrackBar"
+        Me.resizingTrackBar.Size = New System.Drawing.Size(79, 25)
+        Me.resizingTrackBar.SmallChange = 0
+        Me.resizingTrackBar.TabIndex = 16
+        Me.resizingTrackBar.TickStyle = System.Windows.Forms.TickStyle.None
+        '
+        'lblNewImage
+        '
+        Me.lblNewImage.AutoSize = True
+        Me.lblNewImage.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lblNewImage.Location = New System.Drawing.Point(0, 549)
+        Me.lblNewImage.Name = "lblNewImage"
+        Me.lblNewImage.Size = New System.Drawing.Size(79, 13)
+        Me.lblNewImage.TabIndex = 1
+        Me.lblNewImage.Text = "Modified Image"
+        '
+        'pbNewImage
+        '
+        Me.pbNewImage.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbNewImage.Location = New System.Drawing.Point(0, 0)
+        Me.pbNewImage.Name = "pbNewImage"
+        Me.pbNewImage.Size = New System.Drawing.Size(397, 562)
+        Me.pbNewImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbNewImage.TabIndex = 0
+        Me.pbNewImage.TabStop = False
+        '
+        'kgBtnGroup
+        '
+        Me.kgBtnGroup.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.kgBtnGroup.Location = New System.Drawing.Point(0, 0)
+        Me.kgBtnGroup.Name = "kgBtnGroup"
+        '
+        'kgBtnGroup.Panel
+        '
+        Me.kgBtnGroup.Panel.Controls.Add(Me.btnOK)
+        Me.kgBtnGroup.Size = New System.Drawing.Size(833, 50)
+        Me.kgBtnGroup.TabIndex = 0
         '
         'btnOK
         '
@@ -205,18 +312,6 @@ Partial Class dlgPreviewPrintMediaImage
         Me.btnOK.Values.ImageStates.ImageCheckedTracking = Nothing
         Me.btnOK.Values.Text = "Close"
         '
-        'kgBtnGroup
-        '
-        Me.kgBtnGroup.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.kgBtnGroup.Location = New System.Drawing.Point(0, 0)
-        Me.kgBtnGroup.Name = "kgBtnGroup"
-        '
-        'kgBtnGroup.Panel
-        '
-        Me.kgBtnGroup.Panel.Controls.Add(Me.btnOK)
-        Me.kgBtnGroup.Size = New System.Drawing.Size(833, 50)
-        Me.kgBtnGroup.TabIndex = 0
-        '
         'dlgPreviewPrintMediaImage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -227,11 +322,12 @@ Partial Class dlgPreviewPrintMediaImage
         Me.Name = "dlgPreviewPrintMediaImage"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "dlbPreviewPrintMediaImage"
+        Me.Text = "MediaImage"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         CType(Me.kbPbGroup.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kbPbGroup.Panel.ResumeLayout(False)
+        Me.kbPbGroup.Panel.PerformLayout()
         CType(Me.kbPbGroup, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kbPbGroup.ResumeLayout(False)
         CType(Me.pbMainImage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -241,6 +337,19 @@ Partial Class dlgPreviewPrintMediaImage
         Me.kscMain.Panel2.ResumeLayout(False)
         CType(Me.kscMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kscMain.ResumeLayout(False)
+        CType(Me.kscImages.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kscImages.Panel1.ResumeLayout(False)
+        CType(Me.kscImages.Panel2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kscImages.Panel2.ResumeLayout(False)
+        CType(Me.kscImages, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kscImages.ResumeLayout(False)
+        CType(Me.kgCroppedview.Panel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgCroppedview.Panel.ResumeLayout(False)
+        Me.kgCroppedview.Panel.PerformLayout()
+        CType(Me.kgCroppedview, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgCroppedview.ResumeLayout(False)
+        CType(Me.resizingTrackBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbNewImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kgBtnGroup.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgBtnGroup.Panel.ResumeLayout(False)
         CType(Me.kgBtnGroup, System.ComponentModel.ISupportInitialize).EndInit()
@@ -265,5 +374,11 @@ Partial Class dlgPreviewPrintMediaImage
     Friend WithEvents kscMain As ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
     Friend WithEvents kgBtnGroup As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents btnOK As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents lblCurrentImage As System.Windows.Forms.Label
+    Friend WithEvents kscImages As ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+    Friend WithEvents kgCroppedview As ComponentFactory.Krypton.Toolkit.KryptonGroup
+    Friend WithEvents lblNewImage As System.Windows.Forms.Label
+    Friend WithEvents pbNewImage As System.Windows.Forms.PictureBox
+    Friend WithEvents resizingTrackBar As System.Windows.Forms.TrackBar
 
 End Class

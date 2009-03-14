@@ -1662,25 +1662,8 @@ Public Class maincollection
             moviename = Strings.Replace(moviename, "_", " ")
 
             'make sure there's not a space at the end of the name, check 3 times
-            If Strings.Right(moviename, 1) = " " Then
-                moviename = Strings.Left(moviename, moviename.Length - 1)
-            End If
-            If Strings.Right(moviename, 1) = " " Then
-                moviename = Strings.Left(moviename, moviename.Length - 1)
-            End If
-            If Strings.Right(moviename, 1) = " " Then
-                moviename = Strings.Left(moviename, moviename.Length - 1)
-            End If
-            'because it will also cause problems, check for a space as the first char
-            If Strings.Left(moviename, 1) = " " Then
-                moviename = Strings.Right(moviename, moviename.Length - 1)
-            End If
-            If Strings.Left(moviename, 1) = " " Then
-                moviename = Strings.Right(moviename, moviename.Length - 1)
-            End If
-            If Strings.Left(moviename, 1) = " " Then
-                moviename = Strings.Right(moviename, moviename.Length - 1)
-            End If
+            moviename = Strings.Trim(moviename)
+
         End If
 
         filteredname = moviename
@@ -1767,24 +1750,10 @@ Public Class maincollection
                 Debug.Print(ex.ToString)
             End Try
         End If
+        moviename = Strings.Trim(moviename)
         'strip out the ( and ) from moviename
         'moviename = Strings.Replace(moviename, "(", "")
         'moviename = Strings.Replace(moviename, ")", "")
-        If Strings.Right(moviename, 1) = " " Then
-            moviename = Strings.Left(moviename, moviename.Length - 1)
-        End If
-        If Strings.Right(moviename, 1) = " " Then
-            moviename = Strings.Left(moviename, moviename.Length - 1)
-        End If
-        If Strings.Right(moviename, 1) = " " Then
-            moviename = Strings.Left(moviename, moviename.Length - 1)
-        End If
-        If Strings.Right(moviename, 1) = " " Then
-            moviename = Strings.Left(moviename, moviename.Length - 1)
-        End If
-
-
-
         filteredname = moviename
         Return filteredname
 
