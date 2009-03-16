@@ -177,6 +177,15 @@ Public Class GettingStartedWizard
         curConfig.pcbFilterXvid = True
         curConfig.pcbFilter1080i = True
         curConfig.pcbFilterYears = True
+
+        'file level filters (defaults)
+        curConfig.pcbFilterNameFileModeEverythingBeforeYear = True
+        curConfig.pcbFilterNameFileModeEverythingBeforeh264 = True
+        curConfig.pcbFilterNameFileModeEverythingBeforex264 = True
+        curConfig.pcbFilterNameFileModeEverythingBefore720p = True
+        curConfig.pcbFilterNameFileModeEverythingBefore1080i = True
+        curConfig.pcbFilterNameFileModeEverythingBefore1080p = True
+        curConfig.pcbFilterNameFileModeEverythingBeforeDash = True
         'curConfig.pcb
         curConfig.saveConfig(curConfig)
     End Sub

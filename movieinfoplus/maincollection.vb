@@ -1602,12 +1602,12 @@ Public Class maincollection
             Exit Function
         End If
 
-        'strip out anything in parans
-        Try
-            moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
-        Catch ex As Exception
-            Debug.Print(ex.ToString)
-        End Try
+        ''strip out anything in parans
+        'Try
+        '    moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
+        'Catch ex As Exception
+        '    Debug.Print(ex.ToString)
+        'End Try
 
         'strip out cd multipart
         Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
@@ -1625,46 +1625,137 @@ Public Class maincollection
 
     Private Function namefilterforfilemode(ByVal moviename As String) As String
         Dim filteredname As String = ""
-        If moviemode = "file" Then
-            'strip out anything in parans
+        'If moviemode = "file" Then
+        'strip out anything in parans
+        Try
+            moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+
+        'strip out cd multipart
+        Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
+        moviename = Strings.Replace(moviename, RegexObj.Match(moviename).Groups(1).Value, "")
+        'strip out dvd multipart
+        Dim RegexObj2 As New Regex("(([ _\.-]+dvd)[ _\.-]*([0-9a-d]+))")
+        moviename = Strings.Replace(moviename, RegexObj2.Match(moviename).Groups(1).Value, "")
+        'strip out part multipart
+        Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
+        moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
+        ''strip out dvd 
+        'Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
+        'moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
+        'strip out use selected objects (like divx, xvid, ac3, etc) .. not yet configured
+        'TODO: Add user selectable options here
+
+        'strip out anything past a token that parses moviename
+        'Try
+        '    Dim RegexObj4 As New Regex("[_-]+.*")
+        '    moviename = RegexObj4.Match(moviename).Groups(1).Value
+        'Catch ex As ArgumentException
+        '    'Syntax error in the regular expression
+        'End Try
+
+        If rconf.pcbFilterNameFileModeEverythingBeforeh264 Then
+            Dim ResultString As String = ""
             Try
-                moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
-            Catch ex As Exception
-                Debug.Print(ex.ToString)
+                Dim RegexObjDate As New Regex("(.*)h264", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
             End Try
-
-            'strip out cd multipart
-            Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
-            moviename = Strings.Replace(moviename, RegexObj.Match(moviename).Groups(1).Value, "")
-            'strip out dvd multipart
-            Dim RegexObj2 As New Regex("(([ _\.-]+dvd)[ _\.-]*([0-9a-d]+))")
-            moviename = Strings.Replace(moviename, RegexObj2.Match(moviename).Groups(1).Value, "")
-            'strip out part multipart
-            Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
-            moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
-            ''strip out dvd 
-            'Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
-            'moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
-            'strip out use selected objects (like divx, xvid, ac3, etc) .. not yet configured
-            'TODO: Add user selectable options here
-
-            'strip out anything past a token that parses moviename
-            'Try
-            '    Dim RegexObj4 As New Regex("[_-]+.*")
-            '    moviename = RegexObj4.Match(moviename).Groups(1).Value
-            'Catch ex As ArgumentException
-            '    'Syntax error in the regular expression
-            'End Try
-
-            'change periods to spaces
-            moviename = Strings.Replace(moviename, ".", " ")
-            'change underscores to spaces
-            moviename = Strings.Replace(moviename, "_", " ")
-
-            'make sure there's not a space at the end of the name, check 3 times
-            moviename = Strings.Trim(moviename)
-
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
         End If
+
+        If rconf.pcbFilterNameFileModeEverythingBeforex264 Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)x264", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If rconf.pcbFilterNameFileModeEverythingBefore720p Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)720p", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If rconf.pcbFilterNameFileModeEverythingBefore1080i Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)1080i", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If rconf.pcbFilterNameFileModeEverythingBefore1080p Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)1080p", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If rconf.pcbFilterNameFileModeEverythingBeforeYear Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)[\\([]{0,1}\d{4}", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If rconf.pcbFilterNameFileModeEverythingBeforeDash Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)-", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+        'change periods to spaces
+        moviename = Strings.Replace(moviename, ".", " ")
+        'change underscores to spaces
+        moviename = Strings.Replace(moviename, "_", " ")
+
+        'make sure there's not a space at the end of the name, check 3 times
+        moviename = Strings.Trim(moviename)
+
+
+        'End If
 
         filteredname = moviename
         Return filteredname
@@ -2486,7 +2577,7 @@ Public Class maincollection
             If mediapullTru Then
                 Dim MI As New MediaInfo
                 MI.getdata(tmovie, moviemode)
-                Debug.Print(tmovie.fileinfo.Video.Height.ToString)
+                'Debug.Print(tmovie.fileinfo.Video.Height.ToString)
                 Debug.Print("UPDATED MEDIA INFO IN .nfo FILE")
             End If
             If Not tmovie.pimdbnumber = Nothing Then tmovie.saveimdbinfomanual(tmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
@@ -2603,7 +2694,13 @@ Public Class maincollection
         End If
 
         'if there is no <moviename>.tbn, based on configured options, set one (ok for both modes)
-        If rconf.pcbcreatemovienamedottbn And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")) Then
+        Dim curtbnfile As String = ""
+        If moviemode = "file" Then
+            curtbnfile = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
+        Else
+            curtbnfile = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")
+        End If
+        If rconf.pcbcreatemovienamedottbn And Not File.Exists(curtbnfile) Then
             If rconf.pcbautocreatemovienametbn Then getdefaultmovienametbn(currentmovie, True)
         End If
 
@@ -5942,7 +6039,7 @@ Public Class maincollection
         End If
         'show video file information (video and audio)
         Try
-            If currentmovie.fileinfo.Video.Height = Nothing Then
+            If Not currentmovie.fileinfo.version = 1.1 Then
                 getmoviemediainfo_bw()
             Else
                 krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
@@ -6580,7 +6677,13 @@ Public Class maincollection
         End If
 
         'if there is no <moviename>.tbn, based on configured options, set one (ok for both modes)
-        If rconf.pcbcreatemovienamedottbn And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")) Then
+        Dim curtbnfile As String = ""
+        If moviemode = "file" Then
+            curtbnfile = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
+        Else
+            curtbnfile = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")
+        End If
+        If rconf.pcbcreatemovienamedottbn And Not File.Exists(curtbnfile) Then
             If rconf.pcbautocreatemovienametbn Then getdefaultmovienametbn(currentmovie)
         End If
 
@@ -6657,9 +6760,9 @@ Public Class maincollection
         'show video file information (video and audio)
         If rconf.pcbscanformoviemediainformation Then
             Try
-                If currentmovie.fileinfo.Video.Height = Nothing Or rconf.pcbOverwriteNFO Then
+                If Not currentmovie.fileinfo.version = 1.1 Or rconf.pcbOverwriteNFO Then
                     getmoviemediainfo_bw()
-                   
+
                 Else
                     krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
                     'Dim MI As New MediaInfo
@@ -9619,6 +9722,8 @@ Public Class maincollection
 
     End Sub
     Private Function checkforIMDBIDinnfofile(ByRef tmovie As movie) As Boolean
+        If tmovie.pfilemode Then Return False
+
         'grabs id from nfo file if it exsists
         Dim pathtonfo As String = tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo"
         'Debug.Print(tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo")
@@ -17042,6 +17147,10 @@ Public Class maincollection
         Dim constOverlayMargin As Double = rconf.overlayMargin
         ' Height of the overlay. Default = 0.09, which is 9% of the thumbnail height
         Dim constOverlayHeight As Double = rconf.overlayHeight * 2
+        If originalImageHeight > originalImageWidth Then
+            constOverlayHeight = constOverlayHeight * (originalImageWidth / originalImageHeight)
+        End If
+
 
         Dim geoY As Double = originalImageHeight * constOverlayHeight
         Dim margin As Double = originalImageWidth * constOverlayMargin
@@ -18251,9 +18360,15 @@ Public Class maincollection
                 If Not haveidonly Then
                     'see if there is an nfo file in the folder 
                     'Dim parentfolder As String = getparentdirectory(currentmovie.getmoviepath)
-                    If File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".nfo")) Then
+                    Dim curName As String = ""
+                    If currentmovie.pfilemode Then
+                        curName = addfiletofolder(currentmovie.getmoviepath, removeextension(currentmovie.preservedmoviename) & ".nfo")
+                    Else
+                        curName = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".nfo")
+                    End If
+                    If File.Exists(curName) Then
                         'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true and set the id in the movie
-                        Dim strwork As String = File.ReadAllText(addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".nfo"))
+                        Dim strwork As String = File.ReadAllText(curName)
                         Try
                             If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
                                 currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
@@ -24530,16 +24645,20 @@ Public Class maincollection
                 ktbep_epseason.Text = xbmccurep.Season
                 ktbep_epRating.Text = xbmccurep.Rating
                 xbmccurep.filename = gvcurrenttvepisode.episodefilepath
-                If xbmccurep.fileinfo.Video Is Nothing Then
+                If xbmccurep.fileinfo.streamdetails Is Nothing Then
                     'do nothing
                 Else
                 End If
-                If xbmccurep.fileinfo.Video.Height = "" Then
+                If Not xbmccurep.fileinfo.version = 1.1 Then
+                    Me.messageprompts = True
                     gettvepmediainfo_bw()
+                    'save nfo ?
+
                 Else
                     'display the data
                     krtbTVShowMediaInfo.Text = xbmccurep.fileinfo.objtostring(xbmccurep.fileinfo)
                 End If
+
             Catch ex As Exception
                 MsgBox("Failed to read the .nfo file for this episode.")
                 'ktbep_aired.Text = gvcurrenttvepisode.FirstAired
@@ -27106,7 +27225,22 @@ Public Class maincollection
         End If
     End Sub
 
+    Private Sub reload_tv_media_information()
+        Me.messageprompts = True
+        gettvepmediainfo_bw()
 
+        'Dim curmedinfo As New MediaInfo
+        'curmedinfo.getdata(gvcurrenttvepisode, True)
+        'gvcurrenttvepisode.FirstAired = ktbep_aired.Text '= curepisode.FirstAired
+        'gvcurrenttvepisode.Writer = ktbep_credits.Text '= Strings.Replace(curepisode.Writer, "|", "/")
+        'gvcurrenttvepisode.Director = ktbep_director.Text '= curepisode.Director
+        'gvcurrenttvepisode.EpisodeName = ktbep_epName.Text '= curepisode.EpisodeName
+        'gvcurrenttvepisode.EpisodeNumber = ktbEp_epnum.Text '= curepisode.EpisodeNumber
+        'gvcurrenttvepisode.Overview = krtbep_Overview.Text ' = curepisode.Overview
+
+       
+
+    End Sub
 
 
     Private Sub kbtnep_saveepchanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnep_saveepchanges.Click
@@ -27706,6 +27840,11 @@ Public Class maincollection
         If Me.messageprompts Then lblpbarLoadingTVShowMediaInfo.Visible = False
         If Me.messageprompts Then pbarLoadingTVShowMediaInfo.Visible = False
         If Me.messageprompts Then krtbTVShowMediaInfo.Text = gvcurrenttvepisode.fileinfo.objtostring(gvcurrenttvepisode.fileinfo)
+        'save it
+        Dim xbmced1 As New xbmc.xbmcEpisodedetails
+        gvcurrenttvepisode.tvdblangepisode2xbmcTvepisodeManualFromGUI(gvcurrenttvepisode, xbmced1) ', xbmctvshow1.Actors, curmirror)
+        xbmced1.writeNfo(removeextension(gvcurrenttvepisode.episodefilepath) + ".nfo")
+
     End Sub
     Private Sub pbTVSeasonPoster_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbTVSeasonPoster.Click
         dlgCurrentIconUsed2.pbCurrentIconUsed2.ImageLocation = pbTVSeasonPoster.ImageLocation 'currentmovie.getmoviepath + "\folder.jpg" 'pbCurIconUsed2.ImageLocation
@@ -29860,6 +29999,9 @@ Public Class maincollection
     End Sub
 
 
+    Private Sub bshgShowsEpisodeMediaRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgShowsEpisodeMediaRefresh.Click
+        reload_tv_media_information()
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -31800,13 +31942,6 @@ Public Property [Actors]() As List(Of Actor)
         If tmovie.pfilemode Then
             Dim filteredname As String = ""
             Dim lmoviename As String = tmovie.preservedmoviename
-            'strip out anything in parans
-            Try
-                lmoviename = Strings.Replace(moviename, Regex.Match(lmoviename, "(\(.*?\))").Groups(1).Value, "")
-            Catch ex As Exception
-                Debug.Print(ex.ToString)
-            End Try
-
             'strip out cd multipart
             Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
             lmoviename = Strings.Replace(lmoviename, RegexObj.Match(lmoviename).Groups(1).Value, "")
@@ -31816,9 +31951,16 @@ Public Property [Actors]() As List(Of Actor)
             'strip out part multipart
             Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
             lmoviename = Strings.Replace(lmoviename, RegexObj3.Match(lmoviename).Groups(1).Value, "")
-            filename = lmoviename
-            'End If
-
+            Dim retstr As String = ""
+            If Not lmoviename = Nothing Then
+                If lmoviename.Length > 5 Then
+                    retstr = Strings.Left(lmoviename, lmoviename.Length - 4)
+                End If
+            End If
+            filename = retstr + ".nfo"
+            'filename = lmoviename
+            ''End If
+            'filename = maincollection.stripstackforfilemode(maincollection.removeextension(tmovie.preservedmoviename)) + ".nfo"
         End If
         'filename = maincollection.stripstackforfilemode(maincollection.removeextension(tmovie.preservedmoviename)) + ".nfo"
         nm.writeMovXML(nfonamepath, filename)
@@ -32237,9 +32379,21 @@ Public Class configuration
     'movie - cache settings
     Private cbIgnoreparans, cbf1s0, cbf1s3, cbf1s9, cbf2s0, cbf2s2, cbf2s8, cbf2s10, cbf3s0, cbGetFanart, cbSaveNFO, cbOverwriteNFO, cbGenTBN As Boolean 'true or false for each type
 
+    'movie - file level filters
+    Private cbFilterNameFileModeEverythingBeforeYear As Boolean
+    Private cbFilterNameFileModeEverythingBeforeh264 As Boolean
+    Private cbFilterNameFileModeEverythingBeforex264 As Boolean
+    Private cbFilterNameFileModeEverythingBefore720p As Boolean
+    Private cbFilterNameFileModeEverythingBefore1080i As Boolean
+    Private cbFilterNameFileModeEverythingBefore1080p As Boolean
+    Private cbFilterNameFileModeEverythingBeforeDash As Boolean
+
+    'movie - folder level filters
     Private cbGetTMDBPosters, cbFilter1080i, cbFilterYears, cbFilter1080p, cbFilter720p, cbFilterAvi, cbFilterBluRay, cbFilterDivx, cbFilterDVD, cbFilterH264, cbFilterHidef, cbFilterLq, cbFilterXvid As Boolean
     Private cbFilterCustom1_enabled, cbFilterCustom2_enabled, cbFilterCustom3_enabled, cbFilterCustom4_enabled, cbFilterCustom5_enabled As Boolean
     Private cbFilterCustom1, cbFilterCustom2, cbFilterCustom3, cbFilterCustom4, cbFilterCustom5 As String
+
+
     Private cbMaxIconPerStyle, cbMaxIconsToDisplay As Integer 'int 0-23
     Private cbdlformat As Integer '0 (med), 1 (large), 2 (download)
     Private cbGetcaldnPosters As Boolean
@@ -32319,6 +32473,8 @@ Public Class configuration
     Private p_element_getMediaImagesMusic_cd4 As Boolean
     Private p_element_getMediaImagesMusic_inlay As Boolean
     Private p_element_getMediaImagesMusic_insert As Boolean
+
+
 
 
 
@@ -32790,6 +32946,72 @@ Public Class configuration
             cbIgnoreparans = value
         End Set
     End Property
+
+
+    Property pcbFilterNameFileModeEverythingBeforeYear() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBeforeYear
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBeforeYear = value
+        End Set
+    End Property
+    Property pcbFilterNameFileModeEverythingBeforeDash() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBeforeDash
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBeforeDash = value
+        End Set
+    End Property
+
+    Property pcbFilterNameFileModeEverythingBeforeh264() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBeforeh264
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBeforeh264 = value
+        End Set
+    End Property
+
+    Property pcbFilterNameFileModeEverythingBeforex264() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBeforex264
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBeforex264 = value
+        End Set
+    End Property
+
+    Property pcbFilterNameFileModeEverythingBefore720p() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBefore720p
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBefore720p = value
+        End Set
+    End Property
+
+    Property pcbFilterNameFileModeEverythingBefore1080i() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBefore1080i
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBefore1080i = value
+        End Set
+    End Property
+
+    Property pcbFilterNameFileModeEverythingBefore1080p() As Boolean
+        Get
+            Return cbFilterNameFileModeEverythingBefore1080p
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterNameFileModeEverythingBefore1080p = value
+        End Set
+    End Property
+
+
+
     Property pcbUseFolderJpgforTBN() As Boolean
         Get
             Return cbUseFolderJpgforTBN

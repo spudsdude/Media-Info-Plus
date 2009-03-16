@@ -85,6 +85,7 @@ Partial Class dlgConfiguration
         Me.cbGetTMDBPosters = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbgetncposters = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.kgNameFilter = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.cbFilterUnderscoreDot = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.lblFolderLevelNameFilters = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.cbIgnoreparans = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbFilterYears = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -139,6 +140,7 @@ Partial Class dlgConfiguration
         Me.btnsaveconfig = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.kgTVShowSettings = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.kgTVGlobalSettings = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.cbtvlangoverridebanners = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.lblCustomRegX = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tbTvRegex1 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
         Me.klblTVGSnoteslbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -218,7 +220,15 @@ Partial Class dlgConfiguration
         Me.tpSettingsMovies = New Dotnetrix.Controls.TabPageEX
         Me.kgMoviesNameFilters = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.kgFileLevelFilterOptions = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-        Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.cbFilterNameFileModeEverythingBeforeDash = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFileLevelFilterUnderscoreDot = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFilterNameFileModeEverythingBefore1080p = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFilterNameFileModeEverythingBefore1080i = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFilterNameFileModeEverythingBefore720p = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFilterNameFileModeEverythingBeforex264 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbFilterNameFileModeEverythingBeforeh264 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.lblMovieFileLevelFiltersWhatTheyDo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.cbFilterNameFileModeEverythingBeforeYear = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.lblMoviesFileLevelFilterOptions = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.lblMoviesNameFilterl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.kgMovieFileOptions = New ComponentFactory.Krypton.Toolkit.KryptonGroup
@@ -273,8 +283,7 @@ Partial Class dlgConfiguration
         Me.kbtnRemoveAllCachedMovieData = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.kscMainSettings = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
-        Me.cbFilterUnderscoreDot = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-        Me.cbtvlangoverridebanners = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.cbShowsStripEverythinginParan = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.kgMovieSettings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgMovieSettings.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1299,7 +1308,7 @@ Partial Class dlgConfiguration
         Me.kgNameFilter.Panel.Controls.Add(Me.tbCustomFilter5)
         Me.kgNameFilter.Panel.Controls.Add(Me.tbCustomFilter4)
         Me.kgNameFilter.Panel.Controls.Add(Me.cbFilterCustom1)
-        Me.kgNameFilter.Size = New System.Drawing.Size(774, 419)
+        Me.kgNameFilter.Size = New System.Drawing.Size(774, 432)
         Me.kgNameFilter.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgNameFilter.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgNameFilter.StateCommon.Border.ColorAngle = 60.0!
@@ -1310,6 +1319,18 @@ Partial Class dlgConfiguration
         Me.kgNameFilter.StateCommon.Border.Rounding = 7
         Me.kgNameFilter.StateCommon.Border.Width = 2
         Me.kgNameFilter.TabIndex = 0
+        '
+        'cbFilterUnderscoreDot
+        '
+        Me.cbFilterUnderscoreDot.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterUnderscoreDot.Location = New System.Drawing.Point(8, 393)
+        Me.cbFilterUnderscoreDot.Name = "cbFilterUnderscoreDot"
+        Me.cbFilterUnderscoreDot.Size = New System.Drawing.Size(159, 16)
+        Me.cbFilterUnderscoreDot.TabIndex = 72
+        Me.cbFilterUnderscoreDot.Text = "Replace _ and . with space"
+        Me.cbFilterUnderscoreDot.Values.ExtraText = ""
+        Me.cbFilterUnderscoreDot.Values.Image = Nothing
+        Me.cbFilterUnderscoreDot.Values.Text = "Replace _ and . with space"
         '
         'lblFolderLevelNameFilters
         '
@@ -2004,6 +2025,17 @@ Partial Class dlgConfiguration
         Me.kgTVGlobalSettings.StateCommon.Border.Rounding = 7
         Me.kgTVGlobalSettings.StateCommon.Border.Width = 2
         Me.kgTVGlobalSettings.TabIndex = 78
+        '
+        'cbtvlangoverridebanners
+        '
+        Me.cbtvlangoverridebanners.Location = New System.Drawing.Point(267, 93)
+        Me.cbtvlangoverridebanners.Name = "cbtvlangoverridebanners"
+        Me.cbtvlangoverridebanners.Size = New System.Drawing.Size(182, 16)
+        Me.cbtvlangoverridebanners.TabIndex = 84
+        Me.cbtvlangoverridebanners.Text = "Language Override for Banners"
+        Me.cbtvlangoverridebanners.Values.ExtraText = ""
+        Me.cbtvlangoverridebanners.Values.Image = Nothing
+        Me.cbtvlangoverridebanners.Values.Text = "Language Override for Banners"
         '
         'lblCustomRegX
         '
@@ -3009,32 +3041,142 @@ Partial Class dlgConfiguration
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.kgFileLevelFilterOptions)
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.lblMoviesNameFilterl)
         Me.kgMoviesNameFilters.Panel.Controls.Add(Me.kgNameFilter)
-        Me.kgMoviesNameFilters.Size = New System.Drawing.Size(789, 527)
+        Me.kgMoviesNameFilters.Size = New System.Drawing.Size(789, 840)
         Me.kgMoviesNameFilters.TabIndex = 87
         '
         'kgFileLevelFilterOptions
         '
         Me.kgFileLevelFilterOptions.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.kgFileLevelFilterOptions.Location = New System.Drawing.Point(8, 455)
+        Me.kgFileLevelFilterOptions.Location = New System.Drawing.Point(8, 468)
         Me.kgFileLevelFilterOptions.Name = "kgFileLevelFilterOptions"
         '
         'kgFileLevelFilterOptions.Panel
         '
-        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.KryptonLabel6)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbShowsStripEverythinginParan)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforeDash)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFileLevelFilterUnderscoreDot)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBefore1080p)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBefore1080i)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBefore720p)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforex264)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforeh264)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.lblMovieFileLevelFiltersWhatTheyDo)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforeYear)
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.lblMoviesFileLevelFilterOptions)
-        Me.kgFileLevelFilterOptions.Size = New System.Drawing.Size(772, 60)
+        Me.kgFileLevelFilterOptions.Size = New System.Drawing.Size(772, 363)
         Me.kgFileLevelFilterOptions.TabIndex = 1
         '
-        'KryptonLabel6
+        'cbFilterNameFileModeEverythingBeforeDash
         '
-        Me.KryptonLabel6.Location = New System.Drawing.Point(6, 30)
-        Me.KryptonLabel6.Name = "KryptonLabel6"
-        Me.KryptonLabel6.Size = New System.Drawing.Size(267, 16)
-        Me.KryptonLabel6.TabIndex = 1
-        Me.KryptonLabel6.Text = "No User Selectable file level options currently exist."
-        Me.KryptonLabel6.Values.ExtraText = ""
-        Me.KryptonLabel6.Values.Image = Nothing
-        Me.KryptonLabel6.Values.Text = "No User Selectable file level options currently exist."
+        Me.cbFilterNameFileModeEverythingBeforeDash.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBeforeDash.Location = New System.Drawing.Point(6, 67)
+        Me.cbFilterNameFileModeEverythingBeforeDash.Name = "cbFilterNameFileModeEverythingBeforeDash"
+        Me.cbFilterNameFileModeEverythingBeforeDash.Size = New System.Drawing.Size(288, 16)
+        Me.cbFilterNameFileModeEverythingBeforeDash.TabIndex = 74
+        Me.cbFilterNameFileModeEverythingBeforeDash.Text = "Use everything before a -  (dash) as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBeforeDash.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBeforeDash.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBeforeDash.Values.Text = "Use everything before a -  (dash) as the Movie Name"
+        '
+        'cbFileLevelFilterUnderscoreDot
+        '
+        Me.cbFileLevelFilterUnderscoreDot.Checked = True
+        Me.cbFileLevelFilterUnderscoreDot.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbFileLevelFilterUnderscoreDot.Enabled = False
+        Me.cbFileLevelFilterUnderscoreDot.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFileLevelFilterUnderscoreDot.Location = New System.Drawing.Point(5, 327)
+        Me.cbFileLevelFilterUnderscoreDot.Name = "cbFileLevelFilterUnderscoreDot"
+        Me.cbFileLevelFilterUnderscoreDot.Size = New System.Drawing.Size(159, 16)
+        Me.cbFileLevelFilterUnderscoreDot.TabIndex = 73
+        Me.cbFileLevelFilterUnderscoreDot.Text = "Replace _ and . with space"
+        Me.cbFileLevelFilterUnderscoreDot.Values.ExtraText = ""
+        Me.cbFileLevelFilterUnderscoreDot.Values.Image = Nothing
+        Me.cbFileLevelFilterUnderscoreDot.Values.Text = "Replace _ and . with space"
+        '
+        'cbFilterNameFileModeEverythingBefore1080p
+        '
+        Me.cbFilterNameFileModeEverythingBefore1080p.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBefore1080p.Location = New System.Drawing.Point(5, 254)
+        Me.cbFilterNameFileModeEverythingBefore1080p.Name = "cbFilterNameFileModeEverythingBefore1080p"
+        Me.cbFilterNameFileModeEverythingBefore1080p.Size = New System.Drawing.Size(287, 16)
+        Me.cbFilterNameFileModeEverythingBefore1080p.TabIndex = 8
+        Me.cbFilterNameFileModeEverythingBefore1080p.Text = "Use everything before the 1080p as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBefore1080p.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBefore1080p.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBefore1080p.Values.Text = "Use everything before the 1080p as the Movie Name"
+        '
+        'cbFilterNameFileModeEverythingBefore1080i
+        '
+        Me.cbFilterNameFileModeEverythingBefore1080i.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBefore1080i.Location = New System.Drawing.Point(5, 216)
+        Me.cbFilterNameFileModeEverythingBefore1080i.Name = "cbFilterNameFileModeEverythingBefore1080i"
+        Me.cbFilterNameFileModeEverythingBefore1080i.Size = New System.Drawing.Size(284, 16)
+        Me.cbFilterNameFileModeEverythingBefore1080i.TabIndex = 7
+        Me.cbFilterNameFileModeEverythingBefore1080i.Text = "Use everything before the 1080i as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBefore1080i.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBefore1080i.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBefore1080i.Values.Text = "Use everything before the 1080i as the Movie Name"
+        '
+        'cbFilterNameFileModeEverythingBefore720p
+        '
+        Me.cbFilterNameFileModeEverythingBefore720p.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBefore720p.Location = New System.Drawing.Point(5, 178)
+        Me.cbFilterNameFileModeEverythingBefore720p.Name = "cbFilterNameFileModeEverythingBefore720p"
+        Me.cbFilterNameFileModeEverythingBefore720p.Size = New System.Drawing.Size(281, 16)
+        Me.cbFilterNameFileModeEverythingBefore720p.TabIndex = 6
+        Me.cbFilterNameFileModeEverythingBefore720p.Text = "Use everything before the 720p as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBefore720p.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBefore720p.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBefore720p.Values.Text = "Use everything before the 720p as the Movie Name"
+        '
+        'cbFilterNameFileModeEverythingBeforex264
+        '
+        Me.cbFilterNameFileModeEverythingBeforex264.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBeforex264.Location = New System.Drawing.Point(5, 140)
+        Me.cbFilterNameFileModeEverythingBeforex264.Name = "cbFilterNameFileModeEverythingBeforex264"
+        Me.cbFilterNameFileModeEverythingBeforex264.Size = New System.Drawing.Size(280, 16)
+        Me.cbFilterNameFileModeEverythingBeforex264.TabIndex = 5
+        Me.cbFilterNameFileModeEverythingBeforex264.Text = "Use everything before the x264 as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBeforex264.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBeforex264.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBeforex264.Values.Text = "Use everything before the x264 as the Movie Name"
+        '
+        'cbFilterNameFileModeEverythingBeforeh264
+        '
+        Me.cbFilterNameFileModeEverythingBeforeh264.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBeforeh264.Location = New System.Drawing.Point(5, 102)
+        Me.cbFilterNameFileModeEverythingBeforeh264.Name = "cbFilterNameFileModeEverythingBeforeh264"
+        Me.cbFilterNameFileModeEverythingBeforeh264.Size = New System.Drawing.Size(281, 16)
+        Me.cbFilterNameFileModeEverythingBeforeh264.TabIndex = 4
+        Me.cbFilterNameFileModeEverythingBeforeh264.Text = "Use everything before the h264 as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBeforeh264.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBeforeh264.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBeforeh264.Values.Text = "Use everything before the h264 as the Movie Name"
+        '
+        'lblMovieFileLevelFiltersWhatTheyDo
+        '
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Location = New System.Drawing.Point(1, 23)
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Name = "lblMovieFileLevelFiltersWhatTheyDo"
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Size = New System.Drawing.Size(434, 16)
+        Me.lblMovieFileLevelFiltersWhatTheyDo.TabIndex = 3
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Text = "File Level Filters will look in the name and use everything up until the selected" & _
+            " option"
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Values.ExtraText = ""
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Values.Image = Nothing
+        Me.lblMovieFileLevelFiltersWhatTheyDo.Values.Text = "File Level Filters will look in the name and use everything up until the selected" & _
+            " option"
+        '
+        'cbFilterNameFileModeEverythingBeforeYear
+        '
+        Me.cbFilterNameFileModeEverythingBeforeYear.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBeforeYear.Location = New System.Drawing.Point(4, 289)
+        Me.cbFilterNameFileModeEverythingBeforeYear.Name = "cbFilterNameFileModeEverythingBeforeYear"
+        Me.cbFilterNameFileModeEverythingBeforeYear.Size = New System.Drawing.Size(280, 16)
+        Me.cbFilterNameFileModeEverythingBeforeYear.TabIndex = 2
+        Me.cbFilterNameFileModeEverythingBeforeYear.Text = "Use everything before the Year as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBeforeYear.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBeforeYear.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBeforeYear.Values.Text = "Use everything before the Year as the Movie Name"
         '
         'lblMoviesFileLevelFilterOptions
         '
@@ -3770,28 +3912,20 @@ Partial Class dlgConfiguration
         Me.kscMainSettings.SplitterDistance = 618
         Me.kscMainSettings.TabIndex = 89
         '
-        'cbFilterUnderscoreDot
+        'cbShowsStripEverythinginParan
         '
-        Me.cbFilterUnderscoreDot.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.cbFilterUnderscoreDot.Location = New System.Drawing.Point(410, 323)
-        Me.cbFilterUnderscoreDot.Name = "cbFilterUnderscoreDot"
-        Me.cbFilterUnderscoreDot.Size = New System.Drawing.Size(159, 16)
-        Me.cbFilterUnderscoreDot.TabIndex = 72
-        Me.cbFilterUnderscoreDot.Text = "Replace _ and . with space"
-        Me.cbFilterUnderscoreDot.Values.ExtraText = ""
-        Me.cbFilterUnderscoreDot.Values.Image = Nothing
-        Me.cbFilterUnderscoreDot.Values.Text = "Replace _ and . with space"
-        '
-        'cbtvlangoverridebanners
-        '
-        Me.cbtvlangoverridebanners.Location = New System.Drawing.Point(267, 93)
-        Me.cbtvlangoverridebanners.Name = "cbtvlangoverridebanners"
-        Me.cbtvlangoverridebanners.Size = New System.Drawing.Size(182, 16)
-        Me.cbtvlangoverridebanners.TabIndex = 84
-        Me.cbtvlangoverridebanners.Text = "Language Override for Banners"
-        Me.cbtvlangoverridebanners.Values.ExtraText = ""
-        Me.cbtvlangoverridebanners.Values.Image = Nothing
-        Me.cbtvlangoverridebanners.Values.Text = "Language Override for Banners"
+        Me.cbShowsStripEverythinginParan.Checked = True
+        Me.cbShowsStripEverythinginParan.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbShowsStripEverythinginParan.Enabled = False
+        Me.cbShowsStripEverythinginParan.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbShowsStripEverythinginParan.Location = New System.Drawing.Point(385, 327)
+        Me.cbShowsStripEverythinginParan.Name = "cbShowsStripEverythinginParan"
+        Me.cbShowsStripEverythinginParan.Size = New System.Drawing.Size(222, 16)
+        Me.cbShowsStripEverythinginParan.TabIndex = 75
+        Me.cbShowsStripEverythinginParan.Text = "Strip out everything in ( ) from the name"
+        Me.cbShowsStripEverythinginParan.Values.ExtraText = ""
+        Me.cbShowsStripEverythinginParan.Values.Image = Nothing
+        Me.cbShowsStripEverythinginParan.Values.Text = "Strip out everything in ( ) from the name"
         '
         'dlgConfiguration
         '
@@ -4186,7 +4320,6 @@ Partial Class dlgConfiguration
     Friend WithEvents lblFolderLevelNameFilters As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents lblMoviesMisc As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents kgFileLevelFilterOptions As ComponentFactory.Krypton.Toolkit.KryptonGroup
-    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents lblMoviesFileLevelFilterOptions As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents kgShowsMI As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents getMediaImagesShowsInsert As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -4217,5 +4350,15 @@ Partial Class dlgConfiguration
     Friend WithEvents lblGeneralMisc As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents cbFilterUnderscoreDot As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
     Friend WithEvents cbtvlangoverridebanners As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBeforeYear As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents lblMovieFileLevelFiltersWhatTheyDo As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents cbFilterNameFileModeEverythingBefore1080p As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBefore1080i As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBefore720p As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBeforex264 As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBeforeh264 As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFileLevelFilterUnderscoreDot As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbFilterNameFileModeEverythingBeforeDash As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbShowsStripEverythinginParan As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 
 End Class

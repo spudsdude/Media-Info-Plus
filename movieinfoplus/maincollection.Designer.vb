@@ -619,6 +619,7 @@ Me.khgEpisodePlotDetails = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGro
 Me.ButtonSpecHeaderGroup4 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.krtbep_Overview = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
 Me.khbTVShowEPMediaGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshgShowsEpisodeMediaRefresh = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.buttonSpecHeaderGroupTVShow = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.kpTvEpMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.pbarLoadingTVShowMediaInfo = New System.Windows.Forms.ProgressBar
@@ -6013,7 +6014,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(380, 355)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(388, 363)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -8288,7 +8289,7 @@ Me.kpEpisodeData.Location = New System.Drawing.Point(456, 32)
 Me.kpEpisodeData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpEpisodeData.MinimumSize = New System.Drawing.Size(350, 40)
 Me.kpEpisodeData.Name = "kpEpisodeData"
-Me.kpEpisodeData.Size = New System.Drawing.Size(350, 619)
+Me.kpEpisodeData.Size = New System.Drawing.Size(350, 629)
 Me.kpEpisodeData.TabIndex = 111
 Me.kpEpisodeData.Visible = false
 '
@@ -8301,7 +8302,7 @@ Me.khbEpisodeThumbGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palett
 Me.khbEpisodeThumbGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderVisibleSecondary = false
-Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 374)
+Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 384)
 Me.khbEpisodeThumbGroup.Name = "khbEpisodeThumbGroup"
 '
 'khbEpisodeThumbGroup.Panel
@@ -8370,7 +8371,7 @@ Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_creditslbl)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_director)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_directorlbl)
 Me.khgEpisodeNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 0)
-Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 374)
+Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 384)
 Me.khgEpisodeNameGroup.TabIndex = 0
 Me.khgEpisodeNameGroup.Text = "Episode Details"
 Me.khgEpisodeNameGroup.ValuesPrimary.Description = ""
@@ -8421,7 +8422,7 @@ Me.zpanel1.Location = New System.Drawing.Point(2, 131)
 Me.zpanel1.MinimumSize = New System.Drawing.Size(335, 60)
 Me.zpanel1.Name = "zpanel1"
 Me.zpanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-Me.zpanel1.Size = New System.Drawing.Size(335, 214)
+Me.zpanel1.Size = New System.Drawing.Size(335, 224)
 Me.zpanel1.TabIndex = 116
 '
 'khgEpisodePlotDetails
@@ -8434,7 +8435,7 @@ Me.khgEpisodePlotDetails.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palet
 Me.khgEpisodePlotDetails.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderVisibleSecondary = false
-Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 188)
+Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 198)
 Me.khgEpisodePlotDetails.Margin = New System.Windows.Forms.Padding(0)
 Me.khgEpisodePlotDetails.MinimumSize = New System.Drawing.Size(274, 0)
 Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
@@ -8471,7 +8472,7 @@ Me.krtbep_Overview.TabIndex = 5
 'khbTVShowEPMediaGroup
 '
 Me.khbTVShowEPMediaGroup.AutoSize = true
-Me.khbTVShowEPMediaGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.buttonSpecHeaderGroupTVShow})
+Me.khbTVShowEPMediaGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.bshgShowsEpisodeMediaRefresh, Me.buttonSpecHeaderGroupTVShow})
 Me.khbTVShowEPMediaGroup.Dock = System.Windows.Forms.DockStyle.Top
 Me.khbTVShowEPMediaGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
 Me.khbTVShowEPMediaGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
@@ -8485,7 +8486,7 @@ Me.khbTVShowEPMediaGroup.Name = "khbTVShowEPMediaGroup"
 '
 Me.khbTVShowEPMediaGroup.Panel.Controls.Add(Me.kpTvEpMediaInfo)
 Me.khbTVShowEPMediaGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(335, 188)
+Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(335, 198)
 Me.khbTVShowEPMediaGroup.TabIndex = 114
 Me.khbTVShowEPMediaGroup.Text = "Episode Media Information"
 Me.khbTVShowEPMediaGroup.ValuesPrimary.Description = ""
@@ -8494,6 +8495,14 @@ Me.khbTVShowEPMediaGroup.ValuesPrimary.Image = Nothing
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Description = ""
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Heading = "Description"
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Image = Nothing
+'
+'bshgShowsEpisodeMediaRefresh
+'
+Me.bshgShowsEpisodeMediaRefresh.ExtraText = ""
+Me.bshgShowsEpisodeMediaRefresh.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
+Me.bshgShowsEpisodeMediaRefresh.Text = "Refresh"
+Me.bshgShowsEpisodeMediaRefresh.ToolTipTitle = "Reload Episode Media Information"
+Me.bshgShowsEpisodeMediaRefresh.UniqueName = "116AA6C9FBEC49BD116AA6C9FBEC49BD"
 '
 'buttonSpecHeaderGroupTVShow
 '
@@ -21385,4 +21394,5 @@ End Sub
     Friend WithEvents ToolStripSeparator18 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents krbmusicfilterNoBackground As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents krbmusicfilterNoArtist As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+    Friend WithEvents bshgShowsEpisodeMediaRefresh As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 End Class

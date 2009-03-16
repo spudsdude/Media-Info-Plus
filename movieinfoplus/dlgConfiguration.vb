@@ -539,6 +539,13 @@ Public Class dlgConfiguration
             cbIgnoreparans.Checked = rconf.pcbIgnoreparans
             cbFilterUnderscoreDot.Checked = rconf.pcbFilterUnderscoreDot
             cbtvlangoverridebanners.Checked = rconf.pcbtvlangoverride
+            cbFilterNameFileModeEverythingBeforeYear.Checked = rconf.pcbFilterNameFileModeEverythingBeforeYear
+            cbFilterNameFileModeEverythingBeforeh264.Checked = rconf.pcbFilterNameFileModeEverythingBeforeh264
+            cbFilterNameFileModeEverythingBeforex264.Checked = rconf.pcbFilterNameFileModeEverythingBeforex264
+            cbFilterNameFileModeEverythingBefore720p.Checked = rconf.pcbFilterNameFileModeEverythingBefore720p
+            cbFilterNameFileModeEverythingBefore1080i.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080i
+            cbFilterNameFileModeEverythingBefore1080p.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080p
+            cbFilterNameFileModeEverythingBeforeDash.Checked = rconf.pcbFilterNameFileModeEverythingBeforeDash
 
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
@@ -820,7 +827,7 @@ Public Class dlgConfiguration
     Public Sub saveconfig()
         Dim curConfig As New configuration
         curConfig = rconf
-     
+
         curConfig.pcbDlFormat = cbDlFormat.SelectedIndex
         curConfig.ptvregx1 = tbTvRegex1.Text
 
@@ -1312,25 +1319,50 @@ Public Class dlgConfiguration
         setguicolor("pink")
     End Sub
 
-    Private Sub krbColorGreen_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorGreen.Click
+    Private Sub krbColorGreen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorGreen.Click
         setguicolor("green")
     End Sub
 
-    Private Sub krbColorPro_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorPro.Click
+    Private Sub krbColorPro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorPro.Click
         setguicolor("pro")
     End Sub
 
-    Private Sub cbMusicGetAlbumArt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.Click
+    Private Sub cbMusicGetAlbumArt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.Click
         rconf.pgetMusicAlbumArt = cbMusicGetAlbumArt.Checked
     End Sub
 
 
 
-    Private Sub cbFilterUnderscoreDot_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterUnderscoreDot.Click
+    Private Sub cbFilterUnderscoreDot_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterUnderscoreDot.Click
         rconf.pcbFilterUnderscoreDot = cbFilterUnderscoreDot.Checked
     End Sub
 
-    Private Sub pcb_tv_langoverridebanners_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbtvlangoverridebanners.Click
+    Private Sub pcb_tv_langoverridebanners_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbtvlangoverridebanners.Click
         rconf.pcbtvlangoverride = cbtvlangoverridebanners.Checked
     End Sub
+
+    Private Sub cbFilterNameFileModeEverythingBeforeDate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforeYear.Click
+        rconf.pcbFilterNameFileModeEverythingBeforeYear = cbFilterNameFileModeEverythingBeforeYear.Checked
+    End Sub
+
+    Private Sub cbFilterNameFileModeEverythingBeforeh264_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforeh264.Click
+        rconf.pcbFilterNameFileModeEverythingBeforeh264 = cbFilterNameFileModeEverythingBeforeh264.Checked
+    End Sub
+    Private Sub cbFilterNameFileModeEverythingBeforex264_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforex264.Click
+        rconf.pcbFilterNameFileModeEverythingBeforex264 = cbFilterNameFileModeEverythingBeforex264.Checked
+    End Sub
+    Private Sub cbFilterNameFileModeEverythingBefore720p_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBefore720p.Click
+        rconf.pcbFilterNameFileModeEverythingBefore720p = cbFilterNameFileModeEverythingBefore720p.Checked
+    End Sub
+    Private Sub cbFilterNameFileModeEverythingBefore1080i_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBefore1080i.Click
+        rconf.pcbFilterNameFileModeEverythingBefore1080i = cbFilterNameFileModeEverythingBefore1080i.Checked
+    End Sub
+    Private Sub cbFilterNameFileModeEverythingBefore1080p_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBefore1080p.Click
+        rconf.pcbFilterNameFileModeEverythingBefore1080p = cbFilterNameFileModeEverythingBefore1080p.Checked
+    End Sub
+
+    Private Sub cbFilterNameFileModeEverythingBeforeDash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforeDash.Click
+        rconf.pcbFilterNameFileModeEverythingBeforeDash = cbFilterNameFileModeEverythingBeforeDash.Checked
+    End Sub
+
 End Class

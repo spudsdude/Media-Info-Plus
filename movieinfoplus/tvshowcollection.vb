@@ -377,7 +377,7 @@ Public Class tvshowcollection
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes")
             For Each tmbanner As BannersBanner In tbanners.Banners
-                If curlang = tmbanner.Language Then 'check language and match it, if no match, skip it
+                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
                     'See If the file already exsists
 
                     Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
@@ -386,7 +386,7 @@ Public Class tvshowcollection
                     Select Case tmbanner.BannerType.ToLower
                         Case "fanart"
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Fanart Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
                                 If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvfanart(tmbanner, selectedshow, switchpath)
                                     If fanartcounter = 1 Or Not File.Exists(showfullpathname + "\fanart.jpg") Then
                                         If Not File.Exists(showfullpathname + "\fanart.jpg") Then
@@ -399,7 +399,7 @@ Public Class tvshowcollection
                             fanartcounter += 1
                         Case "poster"
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Poster Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
                                 If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvposters(tmbanner, selectedshow, switchpath)
                                     If Not File.Exists(showfullpathname + "\season-all.tbn") Then
                                         File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
@@ -435,7 +435,7 @@ Public Class tvshowcollection
                             End Try
 
 
-                            If curlang = tmbanner.Language Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
                                 'jive fix'If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
                                 'jive fix'If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
                                 'If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
@@ -487,7 +487,7 @@ Public Class tvshowcollection
 
                         Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Series Items: " + switchpath
-                            If curlang = tmbanner.Language And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
+                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
                                 If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
                                     If seriescounter = 1 Then
                                         If Not File.Exists(showfullpathname + "\folder.jpg") Then
@@ -805,7 +805,7 @@ Public Class tvshowcollection
                                             tepisode1.fullfilenameandpath = item
                                             Dim writnfo As Boolean = False
                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                            If rconf.tv_episode_overwrite_nfo Then writnfo = True
+                                            If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
                                             If writnfo Then
                                                 'get media data
                                                 maincollection.pbar1.Visible = True
@@ -1278,7 +1278,7 @@ Public Class tvshowcollection
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes")
             For Each tmbanner As BannersBanner In tbanners.Banners
-                If curlang = tmbanner.Language Then 'check language and match it, if no match, skip it
+                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
                     'See If the file already exsists
 
                     Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
