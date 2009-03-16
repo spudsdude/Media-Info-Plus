@@ -513,6 +513,7 @@ Me.ksctvtoolbar = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
 Me.klblTvShowName = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.kcstvMainRightBottom = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
 Me.tvMainRightMiddle = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.btnCreateTestFromLogfile = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.khgShowsMI = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
 Me.ButtonSpecHeaderGroup7 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.flpTVShowMI = New System.Windows.Forms.FlowLayoutPanel
@@ -604,13 +605,12 @@ Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem = New System.Windows
 Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tsbShowsOpenTVDBPage = New System.Windows.Forms.ToolStripButton
 Me.tsbShowsOpenFolder = New System.Windows.Forms.ToolStripButton
-Me.btnCreateTestFromLogfile = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.kbtnDebugtvgo = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
 Me.ButtonSpecHeaderGroup2 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.pbep_episodeimage = New System.Windows.Forms.PictureBox
 Me.khgEpisodeNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshgSaveEpisodeData = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.ButtonSpecHeaderGroup3 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.lblktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.ktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
@@ -625,7 +625,6 @@ Me.kpTvEpMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.pbarLoadingTVShowMediaInfo = New System.Windows.Forms.ProgressBar
 Me.lblpbarLoadingTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.krtbTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.kbtnep_saveepchanges = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.ktbep_aired = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.ktbep_epseason = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.ktbep_epName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
@@ -1224,14 +1223,15 @@ Me.klNumTvShows = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.krbCMTV = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.krpCMMovie = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.gbAppMode = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.cbAllowIconSelection = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 Me.rbmonitor = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.rbread = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.cbAllowIconSelection = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 Me.rbem = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.klblSelectAppMode = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.bwFolderData = New System.ComponentModel.BackgroundWorker
 Me.kManager = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
-Me.kpaletteDucks = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPalettePink = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteBling = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.kpaletteSilver = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.tcRootBackup = New Dotnetrix.Controls.TabControlEX
 Me.nouse = New Dotnetrix.Controls.TabPageEX
@@ -1247,13 +1247,13 @@ Me.kgMissingEpisodes = New ComponentFactory.Krypton.Toolkit.KryptonGroup
 Me.lbEpisodesMissing = New System.Windows.Forms.ListBox
 Me.bwFolderDataTDM = New System.ComponentModel.BackgroundWorker
 Me.kgQCIcons = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.klblMovieFolderContent = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.pbFDNFO = New System.Windows.Forms.PictureBox
-Me.pbFDTBN = New System.Windows.Forms.PictureBox
-Me.pbFDFanart = New System.Windows.Forms.PictureBox
 Me.pbFDFolderJpg = New System.Windows.Forms.PictureBox
+Me.pbFDNFO = New System.Windows.Forms.PictureBox
 Me.pbFDMovieFile1 = New System.Windows.Forms.PictureBox
 Me.pbFDTrailer = New System.Windows.Forms.PictureBox
+Me.klblMovieFolderContent = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbFDTBN = New System.Windows.Forms.PictureBox
+Me.pbFDFanart = New System.Windows.Forms.PictureBox
 Me.lblPbar = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.lblPCWorking = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.prgThread = New System.Windows.Forms.ProgressBar
@@ -1281,10 +1281,11 @@ Me.bwUpdatePosters = New System.ComponentModel.BackgroundWorker
 Me.bwGetMovieMediaInfo = New System.ComponentModel.BackgroundWorker
 Me.bwDownloader = New System.ComponentModel.BackgroundWorker
 Me.bwLoadMusic = New System.ComponentModel.BackgroundWorker
-Me.kPalettePink = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.bwGetTVEPMediaInfo = New System.ComponentModel.BackgroundWorker
 Me.kPaletteGreen = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -2155,12 +2156,12 @@ CType(Me.kgQCIcons,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgQCIcons.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgQCIcons.Panel.SuspendLayout
 Me.kgQCIcons.SuspendLayout
-CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kscMain,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kscMain.Panel1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kscMain.Panel1.SuspendLayout
@@ -2335,7 +2336,7 @@ Me.tcPIB.Name = "tcPIB"
 Me.tcPIB.Padding = New System.Drawing.Point(9, 3)
 Me.tcPIB.SelectedIndex = 1
 Me.tcPIB.SelectedTabColor = System.Drawing.Color.DimGray
-Me.tcPIB.Size = New System.Drawing.Size(812, 584)
+Me.tcPIB.Size = New System.Drawing.Size(812, 604)
 Me.tcPIB.TabColor = System.Drawing.Color.Black
 Me.tcPIB.TabIndex = 19
 Me.tcPIB.UseVisualStyles = false
@@ -2350,7 +2351,7 @@ Me.tp1.Controls.Add(Me.lbldebug)
 Me.tp1.Location = New System.Drawing.Point(4, 25)
 Me.tp1.Name = "tp1"
 Me.tp1.Padding = New System.Windows.Forms.Padding(3)
-Me.tp1.Size = New System.Drawing.Size(804, 555)
+Me.tp1.Size = New System.Drawing.Size(804, 575)
 Me.tp1.TabIndex = 0
 Me.tp1.Text = "WideIcons"
 '
@@ -2372,7 +2373,7 @@ Me.tcWide.Name = "tcWide"
 Me.tcWide.SelectedIndex = 0
 Me.tcWide.SelectedTabColor = System.Drawing.Color.DimGray
 Me.tcWide.SelectedTabFontStyle = System.Drawing.FontStyle.Bold
-Me.tcWide.Size = New System.Drawing.Size(794, 545)
+Me.tcWide.Size = New System.Drawing.Size(794, 565)
 Me.tcWide.TabIndex = 70
 Me.tcWide.UseVisualStyles = false
 '
@@ -2419,7 +2420,7 @@ Me.tpWRSG.Controls.Add(Me.pb13)
 Me.tpWRSG.Controls.Add(Me.pb15)
 Me.tpWRSG.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSG.Name = "tpWRSG"
-Me.tpWRSG.Size = New System.Drawing.Size(786, 516)
+Me.tpWRSG.Size = New System.Drawing.Size(786, 536)
 Me.tpWRSG.TabIndex = 3
 Me.tpWRSG.Text = "Rounded Shadow Glass"
 Me.tpWRSG.UseVisualStyleBackColor = true
@@ -2910,7 +2911,7 @@ Me.tpWNS.Controls.Add(Me.pbwns36)
 Me.tpWNS.Location = New System.Drawing.Point(4, 25)
 Me.tpWNS.Name = "tpWNS"
 Me.tpWNS.Padding = New System.Windows.Forms.Padding(3)
-Me.tpWNS.Size = New System.Drawing.Size(786, 516)
+Me.tpWNS.Size = New System.Drawing.Size(786, 536)
 Me.tpWNS.TabIndex = 1
 Me.tpWNS.Text = "No Style"
 Me.tpWNS.UseVisualStyleBackColor = true
@@ -3397,7 +3398,7 @@ Me.tpWRS.Controls.Add(Me.pbwrs35)
 Me.tpWRS.Controls.Add(Me.pbwrs36)
 Me.tpWRS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRS.Name = "tpWRS"
-Me.tpWRS.Size = New System.Drawing.Size(786, 516)
+Me.tpWRS.Size = New System.Drawing.Size(786, 536)
 Me.tpWRS.TabIndex = 2
 Me.tpWRS.Text = "Rounded Shadow"
 Me.tpWRS.UseVisualStyleBackColor = true
@@ -3879,7 +3880,7 @@ Me.tpWRSS.Controls.Add(Me.pbwrsscan35)
 Me.tpWRSS.Controls.Add(Me.pbwrsscan36)
 Me.tpWRSS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSS.Name = "tpWRSS"
-Me.tpWRSS.Size = New System.Drawing.Size(786, 516)
+Me.tpWRSS.Size = New System.Drawing.Size(786, 536)
 Me.tpWRSS.TabIndex = 4
 Me.tpWRSS.Text = "Rounded Shadow Scanlines"
 '
@@ -4323,7 +4324,7 @@ Me.pbwrsscan36.TabStop = false
 Me.lbldebug.Location = New System.Drawing.Point(32, 705)
 Me.lbldebug.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 Me.lbldebug.Name = "lbldebug"
-Me.lbldebug.Size = New System.Drawing.Size(59, 16)
+Me.lbldebug.Size = New System.Drawing.Size(64, 21)
 Me.lbldebug.TabIndex = 23
 Me.lbldebug.Text = "DebugLbl"
 Me.lbldebug.Values.ExtraText = ""
@@ -4362,7 +4363,7 @@ Me.tp5.Controls.Add(Me.spb1)
 Me.tp5.Location = New System.Drawing.Point(4, 25)
 Me.tp5.Name = "tp5"
 Me.tp5.Padding = New System.Windows.Forms.Padding(3)
-Me.tp5.Size = New System.Drawing.Size(804, 555)
+Me.tp5.Size = New System.Drawing.Size(804, 575)
 Me.tp5.TabIndex = 5
 Me.tp5.Text = "Square Icons"
 Me.tp5.UseVisualStyleBackColor = true
@@ -4568,7 +4569,7 @@ Me.tp6.Controls.Add(Me.kpBoxShots)
 Me.tp6.Location = New System.Drawing.Point(4, 25)
 Me.tp6.Name = "tp6"
 Me.tp6.Padding = New System.Windows.Forms.Padding(3)
-Me.tp6.Size = New System.Drawing.Size(804, 555)
+Me.tp6.Size = New System.Drawing.Size(804, 575)
 Me.tp6.TabIndex = 4
 Me.tp6.Text = "Box Shots"
 Me.tp6.UseVisualStyleBackColor = true
@@ -5437,7 +5438,7 @@ Me.tp4.Controls.Add(Me.tpb1)
 Me.tp4.Location = New System.Drawing.Point(4, 25)
 Me.tp4.Name = "tp4"
 Me.tp4.Padding = New System.Windows.Forms.Padding(3)
-Me.tp4.Size = New System.Drawing.Size(804, 555)
+Me.tp4.Size = New System.Drawing.Size(804, 575)
 Me.tp4.TabIndex = 3
 Me.tp4.Text = "Token Style"
 Me.tp4.UseVisualStyleBackColor = true
@@ -5565,7 +5566,7 @@ Me.tp3.Controls.Add(Me.btnGetXML)
 Me.tp3.Location = New System.Drawing.Point(4, 25)
 Me.tp3.Name = "tp3"
 Me.tp3.Padding = New System.Windows.Forms.Padding(3)
-Me.tp3.Size = New System.Drawing.Size(804, 555)
+Me.tp3.Size = New System.Drawing.Size(804, 575)
 Me.tp3.TabIndex = 2
 Me.tp3.Text = "Debug"
 Me.tp3.UseVisualStyleBackColor = true
@@ -5645,7 +5646,7 @@ Me.btnOpenIMDBImporter.Values.Text = "Open IMDB Importer"
 Me.klblmovietbn.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblmovietbn.Location = New System.Drawing.Point(133, 416)
 Me.klblmovietbn.Name = "klblmovietbn"
-Me.klblmovietbn.Size = New System.Drawing.Size(59, 16)
+Me.klblmovietbn.Size = New System.Drawing.Size(67, 21)
 Me.klblmovietbn.TabIndex = 109
 Me.klblmovietbn.Text = "Movie tbn"
 Me.klblmovietbn.Values.ExtraText = ""
@@ -5674,7 +5675,7 @@ Me.btnaddyourownfanart.Values.Text = "Add your own Fanart"
 Me.klblmoviefolderjpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblmoviefolderjpg.Location = New System.Drawing.Point(131, 394)
 Me.klblmoviefolderjpg.Name = "klblmoviefolderjpg"
-Me.klblmoviefolderjpg.Size = New System.Drawing.Size(61, 16)
+Me.klblmoviefolderjpg.Size = New System.Drawing.Size(69, 21)
 Me.klblmoviefolderjpg.TabIndex = 108
 Me.klblmoviefolderjpg.Text = "Folder.jpg"
 Me.klblmoviefolderjpg.Values.ExtraText = ""
@@ -5784,12 +5785,17 @@ Me.tp3rtbimdbdata.Text = ""
 '
 'btnCancelPC
 '
-Me.btnCancelPC.Location = New System.Drawing.Point(3, 0)
+Me.btnCancelPC.Location = New System.Drawing.Point(5, 11)
 Me.btnCancelPC.Name = "btnCancelPC"
-Me.btnCancelPC.Size = New System.Drawing.Size(286, 36)
+Me.btnCancelPC.Size = New System.Drawing.Size(137, 36)
 Me.btnCancelPC.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.red_x
 Me.btnCancelPC.StateCommon.Back.ImageAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Control
 Me.btnCancelPC.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft
+Me.btnCancelPC.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.btnCancelPC.StateCommon.Border.Rounding = 0
+Me.btnCancelPC.StateCommon.Border.Width = 0
 Me.btnCancelPC.StateTracking.Back.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
 Me.btnCancelPC.StateTracking.Back.ImageAlign = ComponentFactory.Krypton.Toolkit.PaletteRectangleAlign.Control
 Me.btnCancelPC.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.CenterLeft
@@ -5821,7 +5827,7 @@ Me.kgTVEpisodesGroup.Name = "kgTVEpisodesGroup"
 'kgTVEpisodesGroup.Panel
 '
 Me.kgTVEpisodesGroup.Panel.Controls.Add(Me.lbEpisodes)
-Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 78)
+Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 76)
 Me.kgTVEpisodesGroup.TabIndex = 81
 '
 'lbEpisodes
@@ -5831,7 +5837,7 @@ Me.lbEpisodes.ForeColor = System.Drawing.Color.Green
 Me.lbEpisodes.FormattingEnabled = true
 Me.lbEpisodes.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodes.Name = "lbEpisodes"
-Me.lbEpisodes.Size = New System.Drawing.Size(179, 69)
+Me.lbEpisodes.Size = New System.Drawing.Size(173, 56)
 Me.lbEpisodes.TabIndex = 98
 '
 'kgTVSeasonPickerGroup
@@ -5857,7 +5863,7 @@ Me.lbSeasonPicker.FormattingEnabled = true
 Me.lbSeasonPicker.Location = New System.Drawing.Point(0, 0)
 Me.lbSeasonPicker.Margin = New System.Windows.Forms.Padding(0)
 Me.lbSeasonPicker.Name = "lbSeasonPicker"
-Me.lbSeasonPicker.Size = New System.Drawing.Size(179, 17)
+Me.lbSeasonPicker.Size = New System.Drawing.Size(173, 4)
 Me.lbSeasonPicker.TabIndex = 98
 '
 'tbW2
@@ -5875,7 +5881,7 @@ Me.tbW2.UseVisualStyleBackColor = true
 Me.lblCurMovieFolder.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblCurMovieFolder.Location = New System.Drawing.Point(296, 5)
 Me.lblCurMovieFolder.Name = "lblCurMovieFolder"
-Me.lblCurMovieFolder.Size = New System.Drawing.Size(107, 16)
+Me.lblCurMovieFolder.Size = New System.Drawing.Size(124, 21)
 Me.lblCurMovieFolder.TabIndex = 84
 Me.lblCurMovieFolder.Text = "-- Movie Location --"
 Me.lblCurMovieFolder.Values.ExtraText = ""
@@ -5889,7 +5895,7 @@ Me.pbTick.Interval = 500
 'tcMain
 '
 Me.tcMain.Appearance = Dotnetrix.Controls.TabAppearanceEX.Bevel
-Me.tcMain.BackColor = System.Drawing.Color.DarkGray
+Me.tcMain.BackColor = System.Drawing.Color.Black
 Me.tcMain.CausesValidation = false
 Me.tcMain.Controls.Add(Me.tpcm)
 Me.tcMain.Controls.Add(Me.tptv)
@@ -5902,19 +5908,19 @@ Me.tcMain.Controls.Add(Me.tpmmn)
 Me.tcMain.Controls.Add(Me.tpPosters)
 Me.tcMain.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcMain.FlatBorderColor = System.Drawing.Color.Black
-Me.tcMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.tcMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tcMain.ForeColor = System.Drawing.Color.White
-Me.tcMain.HotColor = System.Drawing.Color.Teal
+Me.tcMain.HotColor = System.Drawing.Color.Orange
 Me.tcMain.ItemSize = New System.Drawing.Size(120, 20)
 Me.tcMain.Location = New System.Drawing.Point(0, 0)
 Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
-Me.tcMain.Padding = New System.Drawing.Point(9, 4)
-Me.tcMain.SelectedIndex = 1
+Me.tcMain.Padding = New System.Drawing.Point(2, 2)
+Me.tcMain.SelectedIndex = 0
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
 Me.tcMain.Size = New System.Drawing.Size(822, 634)
-Me.tcMain.TabColor = System.Drawing.Color.Black
+Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
 Me.tcMain.TabIndex = 49
 Me.tcMain.UseVisualStyles = false
 '
@@ -5941,10 +5947,10 @@ Me.tpcm.Controls.Add(Me.tsCurrentMovieTools)
 Me.tpcm.Controls.Add(Me.gbThanks)
 Me.tpcm.Controls.Add(Me.fanartpb1)
 Me.tpcm.ForeColor = System.Drawing.Color.White
-Me.tpcm.Location = New System.Drawing.Point(4, 44)
+Me.tpcm.Location = New System.Drawing.Point(4, 24)
 Me.tpcm.Margin = New System.Windows.Forms.Padding(0)
 Me.tpcm.Name = "tpcm"
-Me.tpcm.Size = New System.Drawing.Size(814, 586)
+Me.tpcm.Size = New System.Drawing.Size(814, 606)
 Me.tpcm.TabIndex = 2
 Me.tpcm.Text = "   Movie    "
 Me.tpcm.ToolTipText = "Current Selected Movie"
@@ -5959,7 +5965,7 @@ Me.khgMoviesMi.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyl
 Me.khgMoviesMi.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgMoviesMi.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgMoviesMi.HeaderVisibleSecondary = false
-Me.khgMoviesMi.Location = New System.Drawing.Point(0, 560)
+Me.khgMoviesMi.Location = New System.Drawing.Point(0, 577)
 Me.khgMoviesMi.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
 Me.khgMoviesMi.MinimumSize = New System.Drawing.Size(600, 0)
 Me.khgMoviesMi.Name = "khgMoviesMi"
@@ -5968,7 +5974,7 @@ Me.khgMoviesMi.Name = "khgMoviesMi"
 '
 Me.khgMoviesMi.Panel.AutoScroll = true
 Me.khgMoviesMi.Panel.Controls.Add(Me.flpMoviesMI)
-Me.khgMoviesMi.Size = New System.Drawing.Size(814, 26)
+Me.khgMoviesMi.Size = New System.Drawing.Size(814, 29)
 Me.khgMoviesMi.TabIndex = 116
 Me.khgMoviesMi.Text = "Media Images"
 Me.khgMoviesMi.ValuesPrimary.Description = ""
@@ -6014,7 +6020,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(388, 363)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(416, 391)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6066,7 +6072,7 @@ Me.kgCurMovieImagetbn.Name = "kgCurMovieImagetbn"
 'kgCurMovieImagetbn.Panel
 '
 Me.kgCurMovieImagetbn.Panel.Controls.Add(Me.pbCurTBNUsed2)
-Me.kgCurMovieImagetbn.Size = New System.Drawing.Size(137, 137)
+Me.kgCurMovieImagetbn.Size = New System.Drawing.Size(143, 143)
 Me.kgCurMovieImagetbn.TabIndex = 113
 Me.kgCurMovieImagetbn.Visible = false
 '
@@ -6131,7 +6137,7 @@ Me.kpMovieData.Location = New System.Drawing.Point(508, 32)
 Me.kpMovieData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpMovieData.MinimumSize = New System.Drawing.Size(305, 40)
 Me.kpMovieData.Name = "kpMovieData"
-Me.kpMovieData.Size = New System.Drawing.Size(305, 616)
+Me.kpMovieData.Size = New System.Drawing.Size(305, 635)
 Me.kpMovieData.TabIndex = 98
 '
 'khbPlotGroup
@@ -6143,14 +6149,14 @@ Me.khbPlotGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackSty
 Me.khbPlotGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbPlotGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbPlotGroup.HeaderVisibleSecondary = false
-Me.khbPlotGroup.Location = New System.Drawing.Point(0, 333)
+Me.khbPlotGroup.Location = New System.Drawing.Point(0, 343)
 Me.khbPlotGroup.Name = "khbPlotGroup"
 '
 'khbPlotGroup.Panel
 '
 Me.khbPlotGroup.Panel.Controls.Add(Me.kpMovieMediaInfoPanel)
 Me.khbPlotGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbPlotGroup.Size = New System.Drawing.Size(305, 283)
+Me.khbPlotGroup.Size = New System.Drawing.Size(305, 292)
 Me.khbPlotGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -6168,6 +6174,7 @@ Me.khbPlotGroup.ValuesSecondary.Image = Nothing
 Me.bshgRefreshMovieMediaInfo.ExtraText = ""
 Me.bshgRefreshMovieMediaInfo.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
 Me.bshgRefreshMovieMediaInfo.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(12,Byte),Integer), CType(CType(94,Byte),Integer), CType(CType(132,Byte),Integer))
+Me.bshgRefreshMovieMediaInfo.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.bshgRefreshMovieMediaInfo.Text = "Refresh"
 Me.bshgRefreshMovieMediaInfo.ToolTipTitle = "Reload Media Information"
 Me.bshgRefreshMovieMediaInfo.UniqueName = "1DD5B3F478B44BC71DD5B3F478B44BC7"
@@ -6176,6 +6183,7 @@ Me.bshgRefreshMovieMediaInfo.UniqueName = "1DD5B3F478B44BC71DD5B3F478B44BC7"
 '
 Me.buttonSpecHeaderGroup1.ExtraText = ""
 Me.buttonSpecHeaderGroup1.Image = Nothing
+Me.buttonSpecHeaderGroup1.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.buttonSpecHeaderGroup1.Text = ""
 Me.buttonSpecHeaderGroup1.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.buttonSpecHeaderGroup1.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
@@ -6185,9 +6193,9 @@ Me.buttonSpecHeaderGroup1.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
 Me.kpMovieMediaInfoPanel.Controls.Add(Me.pbarLoadingMovieMediaInfo)
 Me.kpMovieMediaInfoPanel.Controls.Add(Me.lblpbarLoadingMovieMediaInfo)
 Me.kpMovieMediaInfoPanel.Controls.Add(Me.krtbMovieVideoInfo)
-Me.kpMovieMediaInfoPanel.Location = New System.Drawing.Point(10, 2)
+Me.kpMovieMediaInfoPanel.Location = New System.Drawing.Point(0, 3)
 Me.kpMovieMediaInfoPanel.Name = "kpMovieMediaInfoPanel"
-Me.kpMovieMediaInfoPanel.Size = New System.Drawing.Size(274, 240)
+Me.kpMovieMediaInfoPanel.Size = New System.Drawing.Size(300, 240)
 Me.kpMovieMediaInfoPanel.TabIndex = 114
 '
 'pbarLoadingMovieMediaInfo
@@ -6195,7 +6203,7 @@ Me.kpMovieMediaInfoPanel.TabIndex = 114
 Me.pbarLoadingMovieMediaInfo.Location = New System.Drawing.Point(1, 115)
 Me.pbarLoadingMovieMediaInfo.MarqueeAnimationSpeed = 50
 Me.pbarLoadingMovieMediaInfo.Name = "pbarLoadingMovieMediaInfo"
-Me.pbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(270, 18)
+Me.pbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(298, 18)
 Me.pbarLoadingMovieMediaInfo.Style = System.Windows.Forms.ProgressBarStyle.Marquee
 Me.pbarLoadingMovieMediaInfo.TabIndex = 1
 Me.pbarLoadingMovieMediaInfo.Visible = false
@@ -6204,7 +6212,7 @@ Me.pbarLoadingMovieMediaInfo.Visible = false
 '
 Me.lblpbarLoadingMovieMediaInfo.Location = New System.Drawing.Point(57, 91)
 Me.lblpbarLoadingMovieMediaInfo.Name = "lblpbarLoadingMovieMediaInfo"
-Me.lblpbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(160, 16)
+Me.lblpbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(182, 21)
 Me.lblpbarLoadingMovieMediaInfo.TabIndex = 2
 Me.lblpbarLoadingMovieMediaInfo.Text = "Loading Media Information .... "
 Me.lblpbarLoadingMovieMediaInfo.Values.ExtraText = ""
@@ -6218,7 +6226,11 @@ Me.krtbMovieVideoInfo.Dock = System.Windows.Forms.DockStyle.Fill
 Me.krtbMovieVideoInfo.Location = New System.Drawing.Point(0, 0)
 Me.krtbMovieVideoInfo.Name = "krtbMovieVideoInfo"
 Me.krtbMovieVideoInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
-Me.krtbMovieVideoInfo.Size = New System.Drawing.Size(274, 240)
+Me.krtbMovieVideoInfo.Size = New System.Drawing.Size(300, 240)
+Me.krtbMovieVideoInfo.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.krtbMovieVideoInfo.StateCommon.Border.Rounding = 0
 Me.krtbMovieVideoInfo.TabIndex = 0
 '
 'khgMovieNameGroup
@@ -6269,7 +6281,7 @@ Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbGenre)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbDirector)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label18)
 Me.khgMovieNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 1)
-Me.khgMovieNameGroup.Size = New System.Drawing.Size(305, 333)
+Me.khgMovieNameGroup.Size = New System.Drawing.Size(305, 343)
 Me.khgMovieNameGroup.TabIndex = 0
 Me.khgMovieNameGroup.Text = "Movie Name"
 Me.khgMovieNameGroup.ValuesPrimary.Description = ""
@@ -6283,8 +6295,9 @@ Me.khgMovieNameGroup.ValuesSecondary.Image = Nothing
 '
 Me.header1ButtonSpec.ExtraText = ""
 Me.header1ButtonSpec.Image = Nothing
+Me.header1ButtonSpec.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.header1ButtonSpec.Text = ""
-Me.header1ButtonSpec.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
+Me.header1ButtonSpec.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.header1ButtonSpec.UniqueName = "3F21FD013FD447823F21FD013FD44782"
 '
 'kbtnMoviesChangeIMDBid
@@ -6317,7 +6330,7 @@ Me.Label13.AutoSize = true
 Me.Label13.BackColor = System.Drawing.Color.Transparent
 Me.Label13.Location = New System.Drawing.Point(2, 39)
 Me.Label13.Name = "Label13"
-Me.Label13.Size = New System.Drawing.Size(67, 16)
+Me.Label13.Size = New System.Drawing.Size(59, 16)
 Me.Label13.TabIndex = 129
 Me.Label13.Text = "IMDb ID:"
 '
@@ -6327,7 +6340,7 @@ Me.Label12.AutoSize = true
 Me.Label12.BackColor = System.Drawing.Color.Transparent
 Me.Label12.Location = New System.Drawing.Point(2, 145)
 Me.Label12.Name = "Label12"
-Me.Label12.Size = New System.Drawing.Size(92, 16)
+Me.Label12.Size = New System.Drawing.Size(80, 16)
 Me.Label12.TabIndex = 128
 Me.Label12.Text = "Trailer URL:"
 '
@@ -6337,7 +6350,7 @@ Me.Label11.AutoSize = true
 Me.Label11.BackColor = System.Drawing.Color.Transparent
 Me.Label11.Location = New System.Drawing.Point(2, 128)
 Me.Label11.Name = "Label11"
-Me.Label11.Size = New System.Drawing.Size(54, 16)
+Me.Label11.Size = New System.Drawing.Size(48, 16)
 Me.Label11.TabIndex = 127
 Me.Label11.Text = "Genre:"
 '
@@ -6347,7 +6360,7 @@ Me.Label10.AutoSize = true
 Me.Label10.BackColor = System.Drawing.Color.Transparent
 Me.Label10.Location = New System.Drawing.Point(2, 111)
 Me.Label10.Name = "Label10"
-Me.Label10.Size = New System.Drawing.Size(67, 16)
+Me.Label10.Size = New System.Drawing.Size(58, 16)
 Me.Label10.TabIndex = 126
 Me.Label10.Text = "Director:"
 '
@@ -6357,7 +6370,7 @@ Me.Label9.AutoSize = true
 Me.Label9.BackColor = System.Drawing.Color.Transparent
 Me.Label9.Location = New System.Drawing.Point(84, 75)
 Me.Label9.Name = "Label9"
-Me.Label9.Size = New System.Drawing.Size(54, 16)
+Me.Label9.Size = New System.Drawing.Size(49, 16)
 Me.Label9.TabIndex = 125
 Me.Label9.Text = "MPAA:"
 '
@@ -6367,7 +6380,7 @@ Me.Label8.AutoSize = true
 Me.Label8.BackColor = System.Drawing.Color.Transparent
 Me.Label8.Location = New System.Drawing.Point(2, 76)
 Me.Label8.Name = "Label8"
-Me.Label8.Size = New System.Drawing.Size(45, 16)
+Me.Label8.Size = New System.Drawing.Size(40, 16)
 Me.Label8.TabIndex = 124
 Me.Label8.Text = "Year:"
 '
@@ -6377,7 +6390,7 @@ Me.Label7.AutoSize = true
 Me.Label7.BackColor = System.Drawing.Color.Transparent
 Me.Label7.Location = New System.Drawing.Point(208, 57)
 Me.Label7.Name = "Label7"
-Me.Label7.Size = New System.Drawing.Size(57, 16)
+Me.Label7.Size = New System.Drawing.Size(50, 16)
 Me.Label7.TabIndex = 123
 Me.Label7.Text = "Rating:"
 '
@@ -6387,7 +6400,7 @@ Me.Label6.AutoSize = true
 Me.Label6.BackColor = System.Drawing.Color.Transparent
 Me.Label6.Location = New System.Drawing.Point(109, 57)
 Me.Label6.Name = "Label6"
-Me.Label6.Size = New System.Drawing.Size(52, 16)
+Me.Label6.Size = New System.Drawing.Size(46, 16)
 Me.Label6.TabIndex = 122
 Me.Label6.Text = "Votes:"
 '
@@ -6397,7 +6410,7 @@ Me.Label5.AutoSize = true
 Me.Label5.BackColor = System.Drawing.Color.Transparent
 Me.Label5.Location = New System.Drawing.Point(1, 57)
 Me.Label5.Name = "Label5"
-Me.Label5.Size = New System.Drawing.Size(68, 16)
+Me.Label5.Size = New System.Drawing.Size(60, 16)
 Me.Label5.TabIndex = 121
 Me.Label5.Text = "Top 250:"
 '
@@ -6407,7 +6420,7 @@ Me.Label4.AutoSize = true
 Me.Label4.BackColor = System.Drawing.Color.Transparent
 Me.Label4.Location = New System.Drawing.Point(151, 39)
 Me.Label4.Name = "Label4"
-Me.Label4.Size = New System.Drawing.Size(68, 16)
+Me.Label4.Size = New System.Drawing.Size(60, 16)
 Me.Label4.TabIndex = 120
 Me.Label4.Text = "Runtime:"
 '
@@ -6417,7 +6430,7 @@ Me.Label3.AutoSize = true
 Me.Label3.BackColor = System.Drawing.Color.Transparent
 Me.Label3.Location = New System.Drawing.Point(3, 19)
 Me.Label3.Name = "Label3"
-Me.Label3.Size = New System.Drawing.Size(65, 16)
+Me.Label3.Size = New System.Drawing.Size(55, 16)
 Me.Label3.TabIndex = 119
 Me.Label3.Text = "Alt Title:"
 '
@@ -6427,7 +6440,7 @@ Me.Label1.AutoSize = true
 Me.Label1.BackColor = System.Drawing.Color.Transparent
 Me.Label1.Location = New System.Drawing.Point(3, 3)
 Me.Label1.Name = "Label1"
-Me.Label1.Size = New System.Drawing.Size(105, 16)
+Me.Label1.Size = New System.Drawing.Size(90, 16)
 Me.Label1.TabIndex = 118
 Me.Label1.Text = "Editable Title:"
 '
@@ -6437,7 +6450,7 @@ Me.llIMDBIDStudio.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawin
 Me.llIMDBIDStudio.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.llIMDBIDStudio.Location = New System.Drawing.Point(2, 90)
 Me.llIMDBIDStudio.Name = "llIMDBIDStudio"
-Me.llIMDBIDStudio.Size = New System.Drawing.Size(46, 16)
+Me.llIMDBIDStudio.Size = New System.Drawing.Size(52, 21)
 Me.llIMDBIDStudio.TabIndex = 115
 Me.llIMDBIDStudio.Text = "Studio:"
 Me.llIMDBIDStudio.Values.ExtraText = ""
@@ -6473,7 +6486,7 @@ Me.khbMoviePlotBtm.Panel.Controls.Add(Me.rtbPlot)
 Me.khbMoviePlotBtm.Panel.Controls.Add(Me.lblPlotOutline)
 Me.khbMoviePlotBtm.Panel.Controls.Add(Me.rtbPlotOutline)
 Me.khbMoviePlotBtm.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbMoviePlotBtm.Size = New System.Drawing.Size(287, 26)
+Me.khbMoviePlotBtm.Size = New System.Drawing.Size(287, 31)
 Me.khbMoviePlotBtm.TabIndex = 114
 Me.khbMoviePlotBtm.Text = "Movie Plot"
 Me.khbMoviePlotBtm.ValuesPrimary.Description = ""
@@ -6487,6 +6500,7 @@ Me.khbMoviePlotBtm.ValuesSecondary.Image = Nothing
 '
 Me.ButtonSpecHeaderGroup5.ExtraText = ""
 Me.ButtonSpecHeaderGroup5.Image = Nothing
+Me.ButtonSpecHeaderGroup5.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.ButtonSpecHeaderGroup5.Text = ""
 Me.ButtonSpecHeaderGroup5.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
 Me.ButtonSpecHeaderGroup5.UniqueName = "4F14906157F94C7D4A14906157B94C7D"
@@ -6509,7 +6523,7 @@ Me.lblPlotOutline.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Norma
 Me.lblPlotOutline.Location = New System.Drawing.Point(3, 1)
 Me.lblPlotOutline.Name = "lblPlotOutline"
 Me.lblPlotOutline.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
-Me.lblPlotOutline.Size = New System.Drawing.Size(16, 72)
+Me.lblPlotOutline.Size = New System.Drawing.Size(21, 82)
 Me.lblPlotOutline.TabIndex = 75
 Me.lblPlotOutline.Text = "Plot Outline:"
 Me.lblPlotOutline.Values.ExtraText = ""
@@ -6529,6 +6543,7 @@ Me.rtbPlotOutline.Text = ""
 '
 'kbtnReloadMovieFromIMDB
 '
+Me.kbtnReloadMovieFromIMDB.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Cluster
 Me.kbtnReloadMovieFromIMDB.Location = New System.Drawing.Point(141, 235)
 Me.kbtnReloadMovieFromIMDB.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.kbtnReloadMovieFromIMDB.Name = "kbtnReloadMovieFromIMDB"
@@ -6545,6 +6560,7 @@ Me.kbtnReloadMovieFromIMDB.Values.Text = "Reload IMDB info"
 '
 'kbtnSaveIMDB
 '
+Me.kbtnSaveIMDB.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Cluster
 Me.kbtnSaveIMDB.Location = New System.Drawing.Point(1, 235)
 Me.kbtnSaveIMDB.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.kbtnSaveIMDB.Name = "kbtnSaveIMDB"
@@ -6696,7 +6712,7 @@ Me.Label18.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.Label18.Location = New System.Drawing.Point(5, 163)
 Me.Label18.Name = "Label18"
 Me.Label18.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
-Me.Label18.Size = New System.Drawing.Size(16, 51)
+Me.Label18.Size = New System.Drawing.Size(21, 56)
 Me.Label18.TabIndex = 78
 Me.Label18.Text = "Tagline:"
 Me.Label18.Values.ExtraText = ""
@@ -6721,7 +6737,7 @@ Me.llFDFileDetails.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawi
 Me.llFDFileDetails.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.llFDFileDetails.Location = New System.Drawing.Point(574, 405)
 Me.llFDFileDetails.Name = "llFDFileDetails"
-Me.llFDFileDetails.Size = New System.Drawing.Size(93, 16)
+Me.llFDFileDetails.Size = New System.Drawing.Size(107, 21)
 Me.llFDFileDetails.TabIndex = 96
 Me.llFDFileDetails.Text = "Hide File Details"
 Me.llFDFileDetails.Values.ExtraText = ""
@@ -6780,7 +6796,7 @@ Me.tbCredits.Visible = false
 Me.lblCredits.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblCredits.Location = New System.Drawing.Point(591, 403)
 Me.lblCredits.Name = "lblCredits"
-Me.lblCredits.Size = New System.Drawing.Size(49, 16)
+Me.lblCredits.Size = New System.Drawing.Size(57, 21)
 Me.lblCredits.TabIndex = 73
 Me.lblCredits.Text = "Credits:"
 Me.lblCredits.Values.ExtraText = ""
@@ -7384,7 +7400,7 @@ Me.gbThanks.Controls.Add(Me.kllMediaIcons)
 Me.gbThanks.Controls.Add(Me.kllTheTVDB)
 Me.gbThanks.Controls.Add(Me.kllimpawards)
 Me.gbThanks.Controls.Add(Me.kllTheMovieDB)
-Me.gbThanks.Location = New System.Drawing.Point(0, 516)
+Me.gbThanks.Location = New System.Drawing.Point(0, 536)
 Me.gbThanks.Name = "gbThanks"
 Me.gbThanks.Size = New System.Drawing.Size(553, 38)
 Me.gbThanks.TabIndex = 115
@@ -7395,9 +7411,9 @@ Me.gbThanks.Text = "Thanks to:"
 '
 Me.kllFreecovers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllFreecovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllFreecovers.Location = New System.Drawing.Point(447, 16)
+Me.kllFreecovers.Location = New System.Drawing.Point(447, 11)
 Me.kllFreecovers.Name = "kllFreecovers"
-Me.kllFreecovers.Size = New System.Drawing.Size(67, 16)
+Me.kllFreecovers.Size = New System.Drawing.Size(75, 21)
 Me.kllFreecovers.TabIndex = 105
 Me.kllFreecovers.Text = "Freecovers"
 Me.kllFreecovers.Values.ExtraText = ""
@@ -7408,9 +7424,9 @@ Me.kllFreecovers.Values.Text = "Freecovers"
 '
 Me.kllxbmc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllxbmc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllxbmc.Location = New System.Drawing.Point(6, 15)
+Me.kllxbmc.Location = New System.Drawing.Point(6, 10)
 Me.kllxbmc.Name = "kllxbmc"
-Me.kllxbmc.Size = New System.Drawing.Size(43, 16)
+Me.kllxbmc.Size = New System.Drawing.Size(46, 21)
 Me.kllxbmc.TabIndex = 100
 Me.kllxbmc.Text = "XBMC"
 Me.kllxbmc.Values.ExtraText = ""
@@ -7421,9 +7437,9 @@ Me.kllxbmc.Values.Text = "XBMC"
 '
 Me.kllMediaIcons.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllMediaIcons.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllMediaIcons.Location = New System.Drawing.Point(71, 15)
+Me.kllMediaIcons.Location = New System.Drawing.Point(71, 10)
 Me.kllMediaIcons.Name = "kllMediaIcons"
-Me.kllMediaIcons.Size = New System.Drawing.Size(71, 16)
+Me.kllMediaIcons.Size = New System.Drawing.Size(81, 21)
 Me.kllMediaIcons.TabIndex = 101
 Me.kllMediaIcons.Text = "Media Icons"
 Me.kllMediaIcons.Values.ExtraText = ""
@@ -7434,9 +7450,9 @@ Me.kllMediaIcons.Values.Text = "Media Icons"
 '
 Me.kllTheTVDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheTVDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheTVDB.Location = New System.Drawing.Point(169, 15)
+Me.kllTheTVDB.Location = New System.Drawing.Point(169, 10)
 Me.kllTheTVDB.Name = "kllTheTVDB"
-Me.kllTheTVDB.Size = New System.Drawing.Size(60, 16)
+Me.kllTheTVDB.Size = New System.Drawing.Size(66, 21)
 Me.kllTheTVDB.TabIndex = 103
 Me.kllTheTVDB.Text = "TheTVDB"
 Me.kllTheTVDB.Values.ExtraText = ""
@@ -7447,9 +7463,9 @@ Me.kllTheTVDB.Values.Text = "TheTVDB"
 '
 Me.kllimpawards.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllimpawards.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllimpawards.Location = New System.Drawing.Point(249, 15)
+Me.kllimpawards.Location = New System.Drawing.Point(249, 10)
 Me.kllimpawards.Name = "kllimpawards"
-Me.kllimpawards.Size = New System.Drawing.Size(66, 16)
+Me.kllimpawards.Size = New System.Drawing.Size(74, 21)
 Me.kllimpawards.TabIndex = 104
 Me.kllimpawards.Text = "Impawards"
 Me.kllimpawards.Values.ExtraText = ""
@@ -7460,9 +7476,9 @@ Me.kllimpawards.Values.Text = "Impawards"
 '
 Me.kllTheMovieDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheMovieDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 17)
+Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 12)
 Me.kllTheMovieDB.Name = "kllTheMovieDB"
-Me.kllTheMovieDB.Size = New System.Drawing.Size(79, 16)
+Me.kllTheMovieDB.Size = New System.Drawing.Size(87, 21)
 Me.kllTheMovieDB.TabIndex = 102
 Me.kllTheMovieDB.Text = "The MovieDB"
 Me.kllTheMovieDB.Values.ExtraText = ""
@@ -7479,7 +7495,7 @@ Me.fanartpb1.Image = Global.movieinfoplus.My.Resources.Resources.mymovies
 Me.fanartpb1.InitialImage = Nothing
 Me.fanartpb1.Location = New System.Drawing.Point(0, 0)
 Me.fanartpb1.Name = "fanartpb1"
-Me.fanartpb1.Size = New System.Drawing.Size(814, 586)
+Me.fanartpb1.Size = New System.Drawing.Size(814, 606)
 Me.fanartpb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.fanartpb1.TabIndex = 54
 Me.fanartpb1.TabStop = false
@@ -7490,10 +7506,10 @@ Me.tptv.BackColor = System.Drawing.Color.Black
 Me.tptv.CausesValidation = false
 Me.tptv.Controls.Add(Me.TVCurrentTVRightMain)
 Me.tptv.ForeColor = System.Drawing.Color.White
-Me.tptv.Location = New System.Drawing.Point(4, 44)
+Me.tptv.Location = New System.Drawing.Point(4, 24)
 Me.tptv.Name = "tptv"
 Me.tptv.Padding = New System.Windows.Forms.Padding(3)
-Me.tptv.Size = New System.Drawing.Size(814, 586)
+Me.tptv.Size = New System.Drawing.Size(814, 606)
 Me.tptv.TabIndex = 0
 Me.tptv.Text = "  Shows    "
 Me.tptv.ToolTipText = "Current Selected TV Show"
@@ -7522,8 +7538,8 @@ Me.TVCurrentTVRightMain.Panel1MinSize = 90
 Me.TVCurrentTVRightMain.Panel2.Controls.Add(Me.kcstvMainRightBottom)
 Me.TVCurrentTVRightMain.Panel2MinSize = 400
 Me.TVCurrentTVRightMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 580)
-Me.TVCurrentTVRightMain.SplitterDistance = 175
+Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 600)
+Me.TVCurrentTVRightMain.SplitterDistance = 195
 Me.TVCurrentTVRightMain.TabIndex = 7
 '
 'ksctvtoolbar
@@ -7548,7 +7564,7 @@ Me.klblTvShowName.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblTvShowName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
 Me.klblTvShowName.Location = New System.Drawing.Point(0, 0)
 Me.klblTvShowName.Name = "klblTvShowName"
-Me.klblTvShowName.Size = New System.Drawing.Size(150, 43)
+Me.klblTvShowName.Size = New System.Drawing.Size(150, 37)
 Me.klblTvShowName.TabIndex = 16
 Me.klblTvShowName.Text = "Click on ' Load TV Shows ' to start. Initially this may take a long time to downl"& _ 
     "oad everything."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"If more then 1 match is found, you will be prompted to select t"& _ 
@@ -7578,8 +7594,8 @@ Me.kcstvMainRightBottom.Panel1MinSize = 100
 Me.kcstvMainRightBottom.Panel2.Controls.Add(Me.ksctvMainRightBottomPortion)
 Me.kcstvMainRightBottom.Panel2MinSize = 70
 Me.kcstvMainRightBottom.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 580)
-Me.kcstvMainRightBottom.SplitterDistance = 507
+Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 600)
+Me.kcstvMainRightBottom.SplitterDistance = 527
 Me.kcstvMainRightBottom.SplitterWidth = 3
 Me.kcstvMainRightBottom.TabIndex = 0
 '
@@ -7593,20 +7609,34 @@ Me.tvMainRightMiddle.Name = "tvMainRightMiddle"
 '
 'tvMainRightMiddle.Panel1
 '
+Me.tvMainRightMiddle.Panel1.Controls.Add(Me.btnCreateTestFromLogfile)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.khgShowsMI)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kgTvShowsCurImage)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.tsCurrentTVShowTools)
-Me.tvMainRightMiddle.Panel1.Controls.Add(Me.btnCreateTestFromLogfile)
-Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kbtnDebugtvgo)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kpEpisodeData)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kgpbSeasonAllposter)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.pbTVFanart)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kgRatingStars)
 Me.tvMainRightMiddle.Panel2Collapsed = true
 Me.tvMainRightMiddle.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 507)
+Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 527)
 Me.tvMainRightMiddle.SplitterDistance = 269
 Me.tvMainRightMiddle.TabIndex = 0
+'
+'btnCreateTestFromLogfile
+'
+Me.btnCreateTestFromLogfile.Location = New System.Drawing.Point(2, 38)
+Me.btnCreateTestFromLogfile.Name = "btnCreateTestFromLogfile"
+Me.btnCreateTestFromLogfile.Size = New System.Drawing.Size(139, 34)
+Me.btnCreateTestFromLogfile.TabIndex = 113
+Me.btnCreateTestFromLogfile.Text = "Create Test from Logfile"
+Me.btnCreateTestFromLogfile.Values.ExtraText = ""
+Me.btnCreateTestFromLogfile.Values.Image = Nothing
+Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedNormal = Nothing
+Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedPressed = Nothing
+Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedTracking = Nothing
+Me.btnCreateTestFromLogfile.Values.Text = "Create Test from Logfile"
+Me.btnCreateTestFromLogfile.Visible = false
 '
 'khgShowsMI
 '
@@ -7616,14 +7646,14 @@ Me.khgShowsMI.Collapsed = true
 Me.khgShowsMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.khgShowsMI.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgShowsMI.HeaderVisibleSecondary = false
-Me.khgShowsMI.Location = New System.Drawing.Point(0, 475)
+Me.khgShowsMI.Location = New System.Drawing.Point(0, 498)
 Me.khgShowsMI.Name = "khgShowsMI"
 '
 'khgShowsMI.Panel
 '
 Me.khgShowsMI.Panel.AutoScroll = true
 Me.khgShowsMI.Panel.Controls.Add(Me.flpTVShowMI)
-Me.khgShowsMI.Size = New System.Drawing.Size(808, 32)
+Me.khgShowsMI.Size = New System.Drawing.Size(808, 29)
 Me.khgShowsMI.TabIndex = 117
 Me.khgShowsMI.Text = "Media Images"
 Me.khgShowsMI.ValuesPrimary.Description = ""
@@ -7658,7 +7688,7 @@ Me.flpTVShowMI.TabIndex = 8
 '
 Me.kgTvShowsCurImage.AutoSize = true
 Me.kgTvShowsCurImage.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-Me.kgTvShowsCurImage.Location = New System.Drawing.Point(1, 30)
+Me.kgTvShowsCurImage.Location = New System.Drawing.Point(0, 32)
 Me.kgTvShowsCurImage.Name = "kgTvShowsCurImage"
 '
 'kgTvShowsCurImage.Panel
@@ -7666,13 +7696,12 @@ Me.kgTvShowsCurImage.Name = "kgTvShowsCurImage"
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVSeasonPoster)
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVPoster)
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVWide)
-Me.kgTvShowsCurImage.Size = New System.Drawing.Size(513, 453)
+Me.kgTvShowsCurImage.Size = New System.Drawing.Size(446, 459)
 Me.kgTvShowsCurImage.TabIndex = 115
 '
 'pbTVSeasonPoster
 '
 Me.pbTVSeasonPoster.BackColor = System.Drawing.Color.Transparent
-Me.pbTVSeasonPoster.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 Me.pbTVSeasonPoster.Location = New System.Drawing.Point(1, 1)
 Me.pbTVSeasonPoster.Name = "pbTVSeasonPoster"
 Me.pbTVSeasonPoster.Size = New System.Drawing.Size(308, 443)
@@ -7694,10 +7723,10 @@ Me.pbTVPoster.Visible = false
 'pbTVWide
 '
 Me.pbTVWide.BackColor = System.Drawing.Color.Transparent
-Me.pbTVWide.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 Me.pbTVWide.Location = New System.Drawing.Point(1, 1)
+Me.pbTVWide.Margin = New System.Windows.Forms.Padding(0)
 Me.pbTVWide.Name = "pbTVWide"
-Me.pbTVWide.Size = New System.Drawing.Size(503, 92)
+Me.pbTVWide.Size = New System.Drawing.Size(433, 92)
 Me.pbTVWide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbTVWide.TabIndex = 0
 Me.pbTVWide.TabStop = false
@@ -8243,40 +8272,9 @@ Me.tsbShowsOpenTVDBPage.Text = "Open thetvdb.com page for this show"
 Me.tsbShowsOpenFolder.Image = CType(resources.GetObject("tsbShowsOpenFolder.Image"),System.Drawing.Image)
 Me.tsbShowsOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbShowsOpenFolder.Name = "tsbShowsOpenFolder"
-Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 29)
+Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 20)
 Me.tsbShowsOpenFolder.Text = "Open Folder"
 Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
-'
-'btnCreateTestFromLogfile
-'
-Me.btnCreateTestFromLogfile.Location = New System.Drawing.Point(2, 19)
-Me.btnCreateTestFromLogfile.Name = "btnCreateTestFromLogfile"
-Me.btnCreateTestFromLogfile.Size = New System.Drawing.Size(139, 25)
-Me.btnCreateTestFromLogfile.TabIndex = 113
-Me.btnCreateTestFromLogfile.Text = "Create Test from Logfile"
-Me.btnCreateTestFromLogfile.Values.ExtraText = ""
-Me.btnCreateTestFromLogfile.Values.Image = Nothing
-Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.btnCreateTestFromLogfile.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.btnCreateTestFromLogfile.Values.Text = "Create Test from Logfile"
-Me.btnCreateTestFromLogfile.Visible = false
-'
-'kbtnDebugtvgo
-'
-Me.kbtnDebugtvgo.Enabled = false
-Me.kbtnDebugtvgo.Location = New System.Drawing.Point(3, 46)
-Me.kbtnDebugtvgo.Name = "kbtnDebugtvgo"
-Me.kbtnDebugtvgo.Size = New System.Drawing.Size(445, 25)
-Me.kbtnDebugtvgo.TabIndex = 112
-Me.kbtnDebugtvgo.Text = "Set debug to true in config.xml to use debugging for tv shows"
-Me.kbtnDebugtvgo.Values.ExtraText = ""
-Me.kbtnDebugtvgo.Values.Image = Nothing
-Me.kbtnDebugtvgo.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.kbtnDebugtvgo.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.kbtnDebugtvgo.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.kbtnDebugtvgo.Values.Text = "Set debug to true in config.xml to use debugging for tv shows"
-Me.kbtnDebugtvgo.Visible = false
 '
 'kpEpisodeData
 '
@@ -8289,7 +8287,8 @@ Me.kpEpisodeData.Location = New System.Drawing.Point(456, 32)
 Me.kpEpisodeData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpEpisodeData.MinimumSize = New System.Drawing.Size(350, 40)
 Me.kpEpisodeData.Name = "kpEpisodeData"
-Me.kpEpisodeData.Size = New System.Drawing.Size(350, 629)
+Me.kpEpisodeData.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient
+Me.kpEpisodeData.Size = New System.Drawing.Size(350, 659)
 Me.kpEpisodeData.TabIndex = 111
 Me.kpEpisodeData.Visible = false
 '
@@ -8302,14 +8301,18 @@ Me.khbEpisodeThumbGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palett
 Me.khbEpisodeThumbGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderVisibleSecondary = false
-Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 384)
+Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 412)
 Me.khbEpisodeThumbGroup.Name = "khbEpisodeThumbGroup"
 '
 'khbEpisodeThumbGroup.Panel
 '
 Me.khbEpisodeThumbGroup.Panel.Controls.Add(Me.pbep_episodeimage)
 Me.khbEpisodeThumbGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 245)
+Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 247)
+Me.khbEpisodeThumbGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.khbEpisodeThumbGroup.StateCommon.Border.Rounding = 0
 Me.khbEpisodeThumbGroup.TabIndex = 1
 Me.khbEpisodeThumbGroup.Text = "Episode Thumbnail"
 Me.khbEpisodeThumbGroup.ValuesPrimary.Description = ""
@@ -8323,18 +8326,20 @@ Me.khbEpisodeThumbGroup.ValuesSecondary.Image = Nothing
 '
 Me.ButtonSpecHeaderGroup2.ExtraText = ""
 Me.ButtonSpecHeaderGroup2.Image = Nothing
+Me.ButtonSpecHeaderGroup2.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.ButtonSpecHeaderGroup2.Text = ""
-Me.ButtonSpecHeaderGroup2.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
+Me.ButtonSpecHeaderGroup2.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.ButtonSpecHeaderGroup2.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
 '
 'pbep_episodeimage
 '
 Me.pbep_episodeimage.BackColor = System.Drawing.Color.Transparent
 Me.pbep_episodeimage.Location = New System.Drawing.Point(0, 2)
+Me.pbep_episodeimage.Margin = New System.Windows.Forms.Padding(0)
 Me.pbep_episodeimage.MaximumSize = New System.Drawing.Size(512, 0)
 Me.pbep_episodeimage.MinimumSize = New System.Drawing.Size(256, 212)
 Me.pbep_episodeimage.Name = "pbep_episodeimage"
-Me.pbep_episodeimage.Size = New System.Drawing.Size(340, 212)
+Me.pbep_episodeimage.Size = New System.Drawing.Size(348, 212)
 Me.pbep_episodeimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbep_episodeimage.TabIndex = 0
 Me.pbep_episodeimage.TabStop = false
@@ -8342,7 +8347,7 @@ Me.pbep_episodeimage.TabStop = false
 'khgEpisodeNameGroup
 '
 Me.khgEpisodeNameGroup.AutoSize = true
-Me.khgEpisodeNameGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.ButtonSpecHeaderGroup3})
+Me.khgEpisodeNameGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.bshgSaveEpisodeData, Me.ButtonSpecHeaderGroup3})
 Me.khgEpisodeNameGroup.Dock = System.Windows.Forms.DockStyle.Top
 Me.khgEpisodeNameGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
 Me.khgEpisodeNameGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
@@ -8357,7 +8362,6 @@ Me.khgEpisodeNameGroup.Name = "khgEpisodeNameGroup"
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.lblktbep_epRating)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_epRating)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.zpanel1)
-Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.kbtnep_saveepchanges)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_aired)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_epseason)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_epName)
@@ -8371,7 +8375,11 @@ Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_creditslbl)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_director)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_directorlbl)
 Me.khgEpisodeNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 0)
-Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 384)
+Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 412)
+Me.khgEpisodeNameGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.khgEpisodeNameGroup.StateCommon.Border.Rounding = 0
 Me.khgEpisodeNameGroup.TabIndex = 0
 Me.khgEpisodeNameGroup.Text = "Episode Details"
 Me.khgEpisodeNameGroup.ValuesPrimary.Description = ""
@@ -8381,19 +8389,30 @@ Me.khgEpisodeNameGroup.ValuesSecondary.Description = ""
 Me.khgEpisodeNameGroup.ValuesSecondary.Heading = "Description"
 Me.khgEpisodeNameGroup.ValuesSecondary.Image = Nothing
 '
+'bshgSaveEpisodeData
+'
+Me.bshgSaveEpisodeData.ExtraText = ""
+Me.bshgSaveEpisodeData.Image = Nothing
+Me.bshgSaveEpisodeData.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
+Me.bshgSaveEpisodeData.Text = "Save Episode Changes"
+Me.bshgSaveEpisodeData.ToolTipBody = "Save Episode Changes"
+Me.bshgSaveEpisodeData.ToolTipTitle = "Save Episode Changes"
+Me.bshgSaveEpisodeData.UniqueName = "099E8A43A9F14A5E099E8A43A9F14A5E"
+'
 'ButtonSpecHeaderGroup3
 '
 Me.ButtonSpecHeaderGroup3.ExtraText = ""
 Me.ButtonSpecHeaderGroup3.Image = Nothing
+Me.ButtonSpecHeaderGroup3.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.ButtonSpecHeaderGroup3.Text = ""
-Me.ButtonSpecHeaderGroup3.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
+Me.ButtonSpecHeaderGroup3.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.ButtonSpecHeaderGroup3.UniqueName = "3F21FD013FD447823F21FD013FD44782"
 '
 'lblktbep_epRating
 '
-Me.lblktbep_epRating.Location = New System.Drawing.Point(2, 103)
+Me.lblktbep_epRating.Location = New System.Drawing.Point(2, 113)
 Me.lblktbep_epRating.Name = "lblktbep_epRating"
-Me.lblktbep_epRating.Size = New System.Drawing.Size(46, 16)
+Me.lblktbep_epRating.Size = New System.Drawing.Size(51, 21)
 Me.lblktbep_epRating.TabIndex = 118
 Me.lblktbep_epRating.Text = "Rating:"
 Me.lblktbep_epRating.Values.ExtraText = ""
@@ -8402,9 +8421,9 @@ Me.lblktbep_epRating.Values.Text = "Rating:"
 '
 'ktbep_epRating
 '
-Me.ktbep_epRating.Location = New System.Drawing.Point(60, 101)
+Me.ktbep_epRating.Location = New System.Drawing.Point(60, 110)
 Me.ktbep_epRating.Name = "ktbep_epRating"
-Me.ktbep_epRating.Size = New System.Drawing.Size(100, 20)
+Me.ktbep_epRating.Size = New System.Drawing.Size(100, 24)
 Me.ktbep_epRating.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8418,11 +8437,11 @@ Me.zpanel1.AutoSize = true
 Me.zpanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
 Me.zpanel1.Controls.Add(Me.khgEpisodePlotDetails)
 Me.zpanel1.Controls.Add(Me.khbTVShowEPMediaGroup)
-Me.zpanel1.Location = New System.Drawing.Point(2, 131)
-Me.zpanel1.MinimumSize = New System.Drawing.Size(335, 60)
+Me.zpanel1.Location = New System.Drawing.Point(2, 136)
+Me.zpanel1.MinimumSize = New System.Drawing.Size(344, 60)
 Me.zpanel1.Name = "zpanel1"
 Me.zpanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-Me.zpanel1.Size = New System.Drawing.Size(335, 224)
+Me.zpanel1.Size = New System.Drawing.Size(344, 234)
 Me.zpanel1.TabIndex = 116
 '
 'khgEpisodePlotDetails
@@ -8435,7 +8454,7 @@ Me.khgEpisodePlotDetails.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palet
 Me.khgEpisodePlotDetails.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderVisibleSecondary = false
-Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 198)
+Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 203)
 Me.khgEpisodePlotDetails.Margin = New System.Windows.Forms.Padding(0)
 Me.khgEpisodePlotDetails.MinimumSize = New System.Drawing.Size(274, 0)
 Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
@@ -8443,7 +8462,7 @@ Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
 'khgEpisodePlotDetails.Panel
 '
 Me.khgEpisodePlotDetails.Panel.Controls.Add(Me.krtbep_Overview)
-Me.khgEpisodePlotDetails.Size = New System.Drawing.Size(335, 26)
+Me.khgEpisodePlotDetails.Size = New System.Drawing.Size(344, 31)
 Me.khgEpisodePlotDetails.TabIndex = 112
 Me.khgEpisodePlotDetails.Text = "Plot"
 Me.khgEpisodePlotDetails.ValuesPrimary.Description = ""
@@ -8457,16 +8476,22 @@ Me.khgEpisodePlotDetails.ValuesSecondary.Image = Nothing
 '
 Me.ButtonSpecHeaderGroup4.ExtraText = ""
 Me.ButtonSpecHeaderGroup4.Image = Nothing
+Me.ButtonSpecHeaderGroup4.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.ButtonSpecHeaderGroup4.Text = ""
 Me.ButtonSpecHeaderGroup4.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
 Me.ButtonSpecHeaderGroup4.UniqueName = "3F21FD013FD447823F21FD013FD4478F"
 '
 'krtbep_Overview
 '
-Me.krtbep_Overview.Location = New System.Drawing.Point(3, 0)
+Me.krtbep_Overview.Location = New System.Drawing.Point(0, 0)
+Me.krtbep_Overview.Margin = New System.Windows.Forms.Padding(0)
 Me.krtbep_Overview.Name = "krtbep_Overview"
 Me.krtbep_Overview.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
 Me.krtbep_Overview.Size = New System.Drawing.Size(324, 121)
+Me.krtbep_Overview.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.krtbep_Overview.StateCommon.Border.Rounding = 0
 Me.krtbep_Overview.TabIndex = 5
 '
 'khbTVShowEPMediaGroup
@@ -8479,14 +8504,14 @@ Me.khbTVShowEPMediaGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.H
 Me.khbTVShowEPMediaGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbTVShowEPMediaGroup.HeaderVisibleSecondary = false
 Me.khbTVShowEPMediaGroup.Location = New System.Drawing.Point(0, 0)
-Me.khbTVShowEPMediaGroup.MinimumSize = New System.Drawing.Size(274, 0)
+Me.khbTVShowEPMediaGroup.MinimumSize = New System.Drawing.Size(300, 0)
 Me.khbTVShowEPMediaGroup.Name = "khbTVShowEPMediaGroup"
 '
 'khbTVShowEPMediaGroup.Panel
 '
 Me.khbTVShowEPMediaGroup.Panel.Controls.Add(Me.kpTvEpMediaInfo)
 Me.khbTVShowEPMediaGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(335, 198)
+Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(344, 203)
 Me.khbTVShowEPMediaGroup.TabIndex = 114
 Me.khbTVShowEPMediaGroup.Text = "Episode Media Information"
 Me.khbTVShowEPMediaGroup.ValuesPrimary.Description = ""
@@ -8500,6 +8525,7 @@ Me.khbTVShowEPMediaGroup.ValuesSecondary.Image = Nothing
 '
 Me.bshgShowsEpisodeMediaRefresh.ExtraText = ""
 Me.bshgShowsEpisodeMediaRefresh.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
+Me.bshgShowsEpisodeMediaRefresh.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.bshgShowsEpisodeMediaRefresh.Text = "Refresh"
 Me.bshgShowsEpisodeMediaRefresh.ToolTipTitle = "Reload Episode Media Information"
 Me.bshgShowsEpisodeMediaRefresh.UniqueName = "116AA6C9FBEC49BD116AA6C9FBEC49BD"
@@ -8508,18 +8534,21 @@ Me.bshgShowsEpisodeMediaRefresh.UniqueName = "116AA6C9FBEC49BD116AA6C9FBEC49BD"
 '
 Me.buttonSpecHeaderGroupTVShow.ExtraText = ""
 Me.buttonSpecHeaderGroupTVShow.Image = Nothing
+Me.buttonSpecHeaderGroupTVShow.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.buttonSpecHeaderGroupTVShow.Text = ""
 Me.buttonSpecHeaderGroupTVShow.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.buttonSpecHeaderGroupTVShow.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
 '
 'kpTvEpMediaInfo
 '
+Me.kpTvEpMediaInfo.Controls.Add(Me.btnCancelPC)
 Me.kpTvEpMediaInfo.Controls.Add(Me.pbarLoadingTVShowMediaInfo)
 Me.kpTvEpMediaInfo.Controls.Add(Me.lblpbarLoadingTVShowMediaInfo)
 Me.kpTvEpMediaInfo.Controls.Add(Me.krtbTVShowMediaInfo)
 Me.kpTvEpMediaInfo.Location = New System.Drawing.Point(0, 2)
+Me.kpTvEpMediaInfo.Margin = New System.Windows.Forms.Padding(0)
 Me.kpTvEpMediaInfo.Name = "kpTvEpMediaInfo"
-Me.kpTvEpMediaInfo.Size = New System.Drawing.Size(324, 155)
+Me.kpTvEpMediaInfo.Size = New System.Drawing.Size(330, 155)
 Me.kpTvEpMediaInfo.TabIndex = 114
 '
 'pbarLoadingTVShowMediaInfo
@@ -8536,7 +8565,7 @@ Me.pbarLoadingTVShowMediaInfo.Visible = false
 '
 Me.lblpbarLoadingTVShowMediaInfo.Location = New System.Drawing.Point(88, 93)
 Me.lblpbarLoadingTVShowMediaInfo.Name = "lblpbarLoadingTVShowMediaInfo"
-Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(160, 16)
+Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(182, 21)
 Me.lblpbarLoadingTVShowMediaInfo.TabIndex = 2
 Me.lblpbarLoadingTVShowMediaInfo.Text = "Loading Media Information .... "
 Me.lblpbarLoadingTVShowMediaInfo.Values.ExtraText = ""
@@ -8551,28 +8580,19 @@ Me.krtbTVShowMediaInfo.Location = New System.Drawing.Point(0, 0)
 Me.krtbTVShowMediaInfo.MinimumSize = New System.Drawing.Size(274, 0)
 Me.krtbTVShowMediaInfo.Name = "krtbTVShowMediaInfo"
 Me.krtbTVShowMediaInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
-Me.krtbTVShowMediaInfo.Size = New System.Drawing.Size(324, 155)
+Me.krtbTVShowMediaInfo.Size = New System.Drawing.Size(330, 155)
+Me.krtbTVShowMediaInfo.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.krtbTVShowMediaInfo.StateCommon.Border.Rounding = 0
+Me.krtbTVShowMediaInfo.StateCommon.Border.Width = 0
 Me.krtbTVShowMediaInfo.TabIndex = 0
-'
-'kbtnep_saveepchanges
-'
-Me.kbtnep_saveepchanges.Location = New System.Drawing.Point(215, 99)
-Me.kbtnep_saveepchanges.Name = "kbtnep_saveepchanges"
-Me.kbtnep_saveepchanges.Size = New System.Drawing.Size(121, 28)
-Me.kbtnep_saveepchanges.TabIndex = 14
-Me.kbtnep_saveepchanges.Text = "Save Changes"
-Me.kbtnep_saveepchanges.Values.ExtraText = ""
-Me.kbtnep_saveepchanges.Values.Image = Nothing
-Me.kbtnep_saveepchanges.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.kbtnep_saveepchanges.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.kbtnep_saveepchanges.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.kbtnep_saveepchanges.Values.Text = "Save Changes"
 '
 'ktbep_aired
 '
-Me.ktbep_aired.Location = New System.Drawing.Point(241, -1)
+Me.ktbep_aired.Location = New System.Drawing.Point(229, 110)
 Me.ktbep_aired.Name = "ktbep_aired"
-Me.ktbep_aired.Size = New System.Drawing.Size(100, 20)
+Me.ktbep_aired.Size = New System.Drawing.Size(100, 24)
 Me.ktbep_aired.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8582,9 +8602,9 @@ Me.ktbep_aired.TabIndex = 11
 '
 'ktbep_epseason
 '
-Me.ktbep_epseason.Location = New System.Drawing.Point(56, -1)
+Me.ktbep_epseason.Location = New System.Drawing.Point(62, 1)
 Me.ktbep_epseason.Name = "ktbep_epseason"
-Me.ktbep_epseason.Size = New System.Drawing.Size(36, 20)
+Me.ktbep_epseason.Size = New System.Drawing.Size(36, 24)
 Me.ktbep_epseason.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8594,9 +8614,9 @@ Me.ktbep_epseason.TabIndex = 13
 '
 'ktbep_epName
 '
-Me.ktbep_epName.Location = New System.Drawing.Point(96, 23)
+Me.ktbep_epName.Location = New System.Drawing.Point(96, 27)
 Me.ktbep_epName.Name = "ktbep_epName"
-Me.ktbep_epName.Size = New System.Drawing.Size(246, 20)
+Me.ktbep_epName.Size = New System.Drawing.Size(246, 24)
 Me.ktbep_epName.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8606,9 +8626,9 @@ Me.ktbep_epName.TabIndex = 3
 '
 'klblep_epseasonlbl
 '
-Me.klblep_epseasonlbl.Location = New System.Drawing.Point(2, 4)
+Me.klblep_epseasonlbl.Location = New System.Drawing.Point(2, 3)
 Me.klblep_epseasonlbl.Name = "klblep_epseasonlbl"
-Me.klblep_epseasonlbl.Size = New System.Drawing.Size(52, 16)
+Me.klblep_epseasonlbl.Size = New System.Drawing.Size(55, 21)
 Me.klblep_epseasonlbl.TabIndex = 12
 Me.klblep_epseasonlbl.Text = "Season:"
 Me.klblep_epseasonlbl.Values.ExtraText = ""
@@ -8617,9 +8637,9 @@ Me.klblep_epseasonlbl.Values.Text = "Season:"
 '
 'klblEp_epnumlbl
 '
-Me.klblEp_epnumlbl.Location = New System.Drawing.Point(100, 4)
+Me.klblEp_epnumlbl.Location = New System.Drawing.Point(105, 3)
 Me.klblEp_epnumlbl.Name = "klblEp_epnumlbl"
-Me.klblEp_epnumlbl.Size = New System.Drawing.Size(54, 16)
+Me.klblEp_epnumlbl.Size = New System.Drawing.Size(59, 21)
 Me.klblEp_epnumlbl.TabIndex = 0
 Me.klblEp_epnumlbl.Text = "Episode:"
 Me.klblEp_epnumlbl.Values.ExtraText = ""
@@ -8628,9 +8648,9 @@ Me.klblEp_epnumlbl.Values.Text = "Episode:"
 '
 'ktbEp_epnum
 '
-Me.ktbEp_epnum.Location = New System.Drawing.Point(160, -1)
+Me.ktbEp_epnum.Location = New System.Drawing.Point(171, 1)
 Me.ktbEp_epnum.Name = "ktbEp_epnum"
-Me.ktbEp_epnum.Size = New System.Drawing.Size(36, 20)
+Me.ktbEp_epnum.Size = New System.Drawing.Size(36, 24)
 Me.ktbEp_epnum.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8640,9 +8660,9 @@ Me.ktbEp_epnum.TabIndex = 1
 '
 'klblep_airedlbl
 '
-Me.klblep_airedlbl.Location = New System.Drawing.Point(198, 4)
+Me.klblep_airedlbl.Location = New System.Drawing.Point(186, 112)
 Me.klblep_airedlbl.Name = "klblep_airedlbl"
-Me.klblep_airedlbl.Size = New System.Drawing.Size(40, 16)
+Me.klblep_airedlbl.Size = New System.Drawing.Size(47, 21)
 Me.klblep_airedlbl.TabIndex = 10
 Me.klblep_airedlbl.Text = "Aired:"
 Me.klblep_airedlbl.Values.ExtraText = ""
@@ -8651,9 +8671,9 @@ Me.klblep_airedlbl.Values.Text = "Aired:"
 '
 'klblep_epNamelbl
 '
-Me.klblep_epNamelbl.Location = New System.Drawing.Point(1, 27)
+Me.klblep_epNamelbl.Location = New System.Drawing.Point(1, 31)
 Me.klblep_epNamelbl.Name = "klblep_epNamelbl"
-Me.klblep_epNamelbl.Size = New System.Drawing.Size(88, 16)
+Me.klblep_epNamelbl.Size = New System.Drawing.Size(95, 21)
 Me.klblep_epNamelbl.TabIndex = 2
 Me.klblep_epNamelbl.Text = "Episode Name:"
 Me.klblep_epNamelbl.Values.ExtraText = ""
@@ -8662,9 +8682,9 @@ Me.klblep_epNamelbl.Values.Text = "Episode Name:"
 '
 'ktbep_credits
 '
-Me.ktbep_credits.Location = New System.Drawing.Point(60, 73)
+Me.ktbep_credits.Location = New System.Drawing.Point(60, 82)
 Me.ktbep_credits.Name = "ktbep_credits"
-Me.ktbep_credits.Size = New System.Drawing.Size(282, 20)
+Me.ktbep_credits.Size = New System.Drawing.Size(282, 24)
 Me.ktbep_credits.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8674,9 +8694,9 @@ Me.ktbep_credits.TabIndex = 9
 '
 'klblep_creditslbl
 '
-Me.klblep_creditslbl.Location = New System.Drawing.Point(1, 76)
+Me.klblep_creditslbl.Location = New System.Drawing.Point(1, 85)
 Me.klblep_creditslbl.Name = "klblep_creditslbl"
-Me.klblep_creditslbl.Size = New System.Drawing.Size(49, 16)
+Me.klblep_creditslbl.Size = New System.Drawing.Size(57, 21)
 Me.klblep_creditslbl.TabIndex = 8
 Me.klblep_creditslbl.Text = "Credits:"
 Me.klblep_creditslbl.Values.ExtraText = ""
@@ -8685,9 +8705,9 @@ Me.klblep_creditslbl.Values.Text = "Credits:"
 '
 'ktbep_director
 '
-Me.ktbep_director.Location = New System.Drawing.Point(60, 48)
+Me.ktbep_director.Location = New System.Drawing.Point(60, 54)
 Me.ktbep_director.Name = "ktbep_director"
-Me.ktbep_director.Size = New System.Drawing.Size(282, 20)
+Me.ktbep_director.Size = New System.Drawing.Size(282, 24)
 Me.ktbep_director.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8697,9 +8717,9 @@ Me.ktbep_director.TabIndex = 7
 '
 'klblep_directorlbl
 '
-Me.klblep_directorlbl.Location = New System.Drawing.Point(1, 50)
+Me.klblep_directorlbl.Location = New System.Drawing.Point(1, 56)
 Me.klblep_directorlbl.Name = "klblep_directorlbl"
-Me.klblep_directorlbl.Size = New System.Drawing.Size(53, 16)
+Me.klblep_directorlbl.Size = New System.Drawing.Size(64, 21)
 Me.klblep_directorlbl.TabIndex = 6
 Me.klblep_directorlbl.Text = "Director:"
 Me.klblep_directorlbl.Values.ExtraText = ""
@@ -8723,9 +8743,9 @@ Me.kgpbSeasonAllposter.Visible = false
 'klblAllSeasonPosterStatic
 '
 Me.klblAllSeasonPosterStatic.Dock = System.Windows.Forms.DockStyle.Bottom
-Me.klblAllSeasonPosterStatic.Location = New System.Drawing.Point(0, 348)
+Me.klblAllSeasonPosterStatic.Location = New System.Drawing.Point(0, 337)
 Me.klblAllSeasonPosterStatic.Name = "klblAllSeasonPosterStatic"
-Me.klblAllSeasonPosterStatic.Size = New System.Drawing.Size(268, 16)
+Me.klblAllSeasonPosterStatic.Size = New System.Drawing.Size(262, 21)
 Me.klblAllSeasonPosterStatic.TabIndex = 113
 Me.klblAllSeasonPosterStatic.Text = "All Seasons Image"
 Me.klblAllSeasonPosterStatic.Values.ExtraText = ""
@@ -8739,7 +8759,7 @@ Me.pbSeasonAllposter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 Me.pbSeasonAllposter.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbSeasonAllposter.Location = New System.Drawing.Point(0, 0)
 Me.pbSeasonAllposter.Name = "pbSeasonAllposter"
-Me.pbSeasonAllposter.Size = New System.Drawing.Size(268, 364)
+Me.pbSeasonAllposter.Size = New System.Drawing.Size(262, 358)
 Me.pbSeasonAllposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbSeasonAllposter.TabIndex = 112
 Me.pbSeasonAllposter.TabStop = false
@@ -8753,7 +8773,7 @@ Me.pbTVFanart.Image = Global.movieinfoplus.My.Resources.Resources.myshows
 Me.pbTVFanart.InitialImage = Nothing
 Me.pbTVFanart.Location = New System.Drawing.Point(0, 0)
 Me.pbTVFanart.Name = "pbTVFanart"
-Me.pbTVFanart.Size = New System.Drawing.Size(808, 507)
+Me.pbTVFanart.Size = New System.Drawing.Size(808, 527)
 Me.pbTVFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbTVFanart.TabIndex = 1
 Me.pbTVFanart.TabStop = false
@@ -8977,7 +8997,7 @@ Me.kpTVShowInfo.TabIndex = 6
 Me.klblInformationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
 Me.klblInformationlbl.Location = New System.Drawing.Point(64, 72)
 Me.klblInformationlbl.Name = "klblInformationlbl"
-Me.klblInformationlbl.Size = New System.Drawing.Size(104, 24)
+Me.klblInformationlbl.Size = New System.Drawing.Size(81, 21)
 Me.klblInformationlbl.TabIndex = 13
 Me.klblInformationlbl.Text = "Information"
 Me.klblInformationlbl.Values.ExtraText = ""
@@ -8988,7 +9008,7 @@ Me.klblInformationlbl.Values.Text = "Information"
 '
 Me.klFirstAiredlbl.Location = New System.Drawing.Point(13, 4)
 Me.klFirstAiredlbl.Name = "klFirstAiredlbl"
-Me.klFirstAiredlbl.Size = New System.Drawing.Size(65, 16)
+Me.klFirstAiredlbl.Size = New System.Drawing.Size(79, 21)
 Me.klFirstAiredlbl.TabIndex = 14
 Me.klFirstAiredlbl.Text = "First Aired:"
 Me.klFirstAiredlbl.Values.ExtraText = ""
@@ -8999,18 +9019,17 @@ Me.klFirstAiredlbl.Values.Text = "First Aired:"
 '
 Me.klbltvGenre.Location = New System.Drawing.Point(124, 51)
 Me.klbltvGenre.Name = "klbltvGenre"
-Me.klbltvGenre.Size = New System.Drawing.Size(44, 16)
+Me.klbltvGenre.Size = New System.Drawing.Size(6, 2)
 Me.klbltvGenre.TabIndex = 25
-Me.klbltvGenre.Text = "Drama"
 Me.klbltvGenre.Values.ExtraText = ""
 Me.klbltvGenre.Values.Image = Nothing
-Me.klbltvGenre.Values.Text = "Drama"
+Me.klbltvGenre.Values.Text = ""
 '
 'klblAirDaylbl
 '
 Me.klblAirDaylbl.Location = New System.Drawing.Point(13, 142)
 Me.klblAirDaylbl.Name = "klblAirDaylbl"
-Me.klblAirDaylbl.Size = New System.Drawing.Size(50, 16)
+Me.klblAirDaylbl.Size = New System.Drawing.Size(58, 21)
 Me.klblAirDaylbl.TabIndex = 15
 Me.klblAirDaylbl.Text = "Air Day:"
 Me.klblAirDaylbl.Values.ExtraText = ""
@@ -9021,18 +9040,17 @@ Me.klblAirDaylbl.Values.Text = "Air Day:"
 '
 Me.klbltvNetwork.Location = New System.Drawing.Point(124, 35)
 Me.klbltvNetwork.Name = "klbltvNetwork"
-Me.klbltvNetwork.Size = New System.Drawing.Size(33, 16)
+Me.klbltvNetwork.Size = New System.Drawing.Size(6, 2)
 Me.klbltvNetwork.TabIndex = 24
-Me.klbltvNetwork.Text = "FOX"
 Me.klbltvNetwork.Values.ExtraText = ""
 Me.klbltvNetwork.Values.Image = Nothing
-Me.klbltvNetwork.Values.Text = "FOX"
+Me.klbltvNetwork.Values.Text = ""
 '
 'klblAirTimelbl
 '
 Me.klblAirTimelbl.Location = New System.Drawing.Point(13, 158)
 Me.klblAirTimelbl.Name = "klblAirTimelbl"
-Me.klblAirTimelbl.Size = New System.Drawing.Size(55, 16)
+Me.klblAirTimelbl.Size = New System.Drawing.Size(65, 21)
 Me.klblAirTimelbl.TabIndex = 16
 Me.klblAirTimelbl.Text = "Air Time:"
 Me.klblAirTimelbl.Values.ExtraText = ""
@@ -9043,18 +9061,17 @@ Me.klblAirTimelbl.Values.Text = "Air Time:"
 '
 Me.klbltvRunTime.Location = New System.Drawing.Point(124, 20)
 Me.klbltvRunTime.Name = "klbltvRunTime"
-Me.klbltvRunTime.Size = New System.Drawing.Size(44, 16)
+Me.klbltvRunTime.Size = New System.Drawing.Size(6, 2)
 Me.klbltvRunTime.TabIndex = 23
-Me.klbltvRunTime.Text = "60 Min"
 Me.klbltvRunTime.Values.ExtraText = ""
 Me.klbltvRunTime.Values.Image = Nothing
-Me.klbltvRunTime.Values.Text = "60 Min"
+Me.klbltvRunTime.Values.Text = ""
 '
 'klblRunTimelbl
 '
 Me.klblRunTimelbl.Location = New System.Drawing.Point(13, 20)
 Me.klblRunTimelbl.Name = "klblRunTimelbl"
-Me.klblRunTimelbl.Size = New System.Drawing.Size(56, 16)
+Me.klblRunTimelbl.Size = New System.Drawing.Size(61, 21)
 Me.klblRunTimelbl.TabIndex = 17
 Me.klblRunTimelbl.Text = "Runtime:"
 Me.klblRunTimelbl.Values.ExtraText = ""
@@ -9065,7 +9082,7 @@ Me.klblRunTimelbl.Values.Text = "Runtime:"
 '
 Me.klbltvAirTime.Location = New System.Drawing.Point(124, 158)
 Me.klbltvAirTime.Name = "klbltvAirTime"
-Me.klbltvAirTime.Size = New System.Drawing.Size(52, 16)
+Me.klbltvAirTime.Size = New System.Drawing.Size(58, 21)
 Me.klbltvAirTime.TabIndex = 22
 Me.klbltvAirTime.Text = "9:00 PM"
 Me.klbltvAirTime.Values.ExtraText = ""
@@ -9076,7 +9093,7 @@ Me.klbltvAirTime.Values.Text = "9:00 PM"
 '
 Me.klblNetworklbl.Location = New System.Drawing.Point(13, 35)
 Me.klblNetworklbl.Name = "klblNetworklbl"
-Me.klblNetworklbl.Size = New System.Drawing.Size(55, 16)
+Me.klblNetworklbl.Size = New System.Drawing.Size(64, 21)
 Me.klblNetworklbl.TabIndex = 18
 Me.klblNetworklbl.Text = "Network:"
 Me.klblNetworklbl.Values.ExtraText = ""
@@ -9087,7 +9104,7 @@ Me.klblNetworklbl.Values.Text = "Network:"
 '
 Me.klbltvAirDay.Location = New System.Drawing.Point(124, 142)
 Me.klbltvAirDay.Name = "klbltvAirDay"
-Me.klbltvAirDay.Size = New System.Drawing.Size(70, 16)
+Me.klbltvAirDay.Size = New System.Drawing.Size(77, 21)
 Me.klbltvAirDay.TabIndex = 21
 Me.klbltvAirDay.Text = "Wednesday"
 Me.klbltvAirDay.Values.ExtraText = ""
@@ -9098,7 +9115,7 @@ Me.klbltvAirDay.Values.Text = "Wednesday"
 '
 Me.klblGenrelbl.Location = New System.Drawing.Point(13, 51)
 Me.klblGenrelbl.Name = "klblGenrelbl"
-Me.klblGenrelbl.Size = New System.Drawing.Size(45, 16)
+Me.klblGenrelbl.Size = New System.Drawing.Size(49, 21)
 Me.klblGenrelbl.TabIndex = 19
 Me.klblGenrelbl.Text = "Genre:"
 Me.klblGenrelbl.Values.ExtraText = ""
@@ -9109,12 +9126,11 @@ Me.klblGenrelbl.Values.Text = "Genre:"
 '
 Me.klbltvFirstAired.Location = New System.Drawing.Point(124, 4)
 Me.klbltvFirstAired.Name = "klbltvFirstAired"
-Me.klbltvFirstAired.Size = New System.Drawing.Size(105, 16)
+Me.klbltvFirstAired.Size = New System.Drawing.Size(6, 2)
 Me.klbltvFirstAired.TabIndex = 20
-Me.klbltvFirstAired.Text = "Month - Day - Year"
 Me.klbltvFirstAired.Values.ExtraText = ""
 Me.klbltvFirstAired.Values.Image = Nothing
-Me.klbltvFirstAired.Values.Text = "Month - Day - Year"
+Me.klbltvFirstAired.Values.Text = ""
 '
 'tpMusic
 '
@@ -9122,11 +9138,11 @@ Me.tpMusic.Controls.Add(Me.kgMusic_SongImage)
 Me.tpMusic.Controls.Add(Me.kgMusicMI)
 Me.tpMusic.Controls.Add(Me.kgArtistArtImage)
 Me.tpMusic.Controls.Add(Me.kgMusicSongData)
-Me.tpMusic.Controls.Add(Me.tstripMusicToolbar)
 Me.tpMusic.Controls.Add(Me.pbMusicCurFanart)
-Me.tpMusic.Location = New System.Drawing.Point(4, 44)
+Me.tpMusic.Controls.Add(Me.tstripMusicToolbar)
+Me.tpMusic.Location = New System.Drawing.Point(4, 24)
 Me.tpMusic.Name = "tpMusic"
-Me.tpMusic.Size = New System.Drawing.Size(814, 586)
+Me.tpMusic.Size = New System.Drawing.Size(814, 606)
 Me.tpMusic.TabIndex = 9
 Me.tpMusic.Text = "Tunes        "
 Me.tpMusic.ToolTipText = "Music Collection"
@@ -9151,7 +9167,7 @@ Me.lblSongImage.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.lblSongImage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
 Me.lblSongImage.Location = New System.Drawing.Point(0, 339)
 Me.lblSongImage.Name = "lblSongImage"
-Me.lblSongImage.Size = New System.Drawing.Size(365, 27)
+Me.lblSongImage.Size = New System.Drawing.Size(359, 21)
 Me.lblSongImage.TabIndex = 1
 Me.lblSongImage.Text = "Embedded Song Image"
 Me.lblSongImage.Values.ExtraText = ""
@@ -9163,7 +9179,7 @@ Me.lblSongImage.Values.Text = "Embedded Song Image"
 Me.pbMusic_CurSongImage.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbMusic_CurSongImage.Location = New System.Drawing.Point(0, 0)
 Me.pbMusic_CurSongImage.Name = "pbMusic_CurSongImage"
-Me.pbMusic_CurSongImage.Size = New System.Drawing.Size(365, 366)
+Me.pbMusic_CurSongImage.Size = New System.Drawing.Size(359, 360)
 Me.pbMusic_CurSongImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbMusic_CurSongImage.TabIndex = 0
 Me.pbMusic_CurSongImage.TabStop = false
@@ -9172,7 +9188,7 @@ Me.pbMusic_CurSongImage.TabStop = false
 '
 Me.kgMusicMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.kgMusicMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-Me.kgMusicMI.Location = New System.Drawing.Point(0, 424)
+Me.kgMusicMI.Location = New System.Drawing.Point(0, 444)
 Me.kgMusicMI.Name = "kgMusicMI"
 '
 'kgMusicMI.Panel
@@ -9191,7 +9207,7 @@ Me.flpMusicMI.Dock = System.Windows.Forms.DockStyle.Fill
 Me.flpMusicMI.ForeColor = System.Drawing.Color.Transparent
 Me.flpMusicMI.Location = New System.Drawing.Point(0, 0)
 Me.flpMusicMI.Name = "flpMusicMI"
-Me.flpMusicMI.Size = New System.Drawing.Size(808, 156)
+Me.flpMusicMI.Size = New System.Drawing.Size(802, 150)
 Me.flpMusicMI.TabIndex = 8
 '
 'kgArtistArtImage
@@ -9213,7 +9229,7 @@ Me.lblArtistArtImage.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.lblArtistArtImage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
 Me.lblArtistArtImage.Location = New System.Drawing.Point(0, 317)
 Me.lblArtistArtImage.Name = "lblArtistArtImage"
-Me.lblArtistArtImage.Size = New System.Drawing.Size(344, 27)
+Me.lblArtistArtImage.Size = New System.Drawing.Size(338, 21)
 Me.lblArtistArtImage.TabIndex = 4
 Me.lblArtistArtImage.Text = "Album Image"
 Me.lblArtistArtImage.Values.ExtraText = ""
@@ -9226,7 +9242,7 @@ Me.pbCurAlbumArt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
 Me.pbCurAlbumArt.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbCurAlbumArt.Location = New System.Drawing.Point(0, 0)
 Me.pbCurAlbumArt.Name = "pbCurAlbumArt"
-Me.pbCurAlbumArt.Size = New System.Drawing.Size(344, 344)
+Me.pbCurAlbumArt.Size = New System.Drawing.Size(338, 338)
 Me.pbCurAlbumArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbCurAlbumArt.TabIndex = 3
 Me.pbCurAlbumArt.TabStop = false
@@ -9253,7 +9269,7 @@ Me.kgMusicSongData.Visible = false
 Me.lblCurSongExtV.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
 Me.lblCurSongExtV.Location = New System.Drawing.Point(300, 2)
 Me.lblCurSongExtV.Name = "lblCurSongExtV"
-Me.lblCurSongExtV.Size = New System.Drawing.Size(45, 27)
+Me.lblCurSongExtV.Size = New System.Drawing.Size(35, 21)
 Me.lblCurSongExtV.TabIndex = 3
 Me.lblCurSongExtV.Text = "MP3"
 Me.lblCurSongExtV.Values.ExtraText = ""
@@ -9285,7 +9301,7 @@ Me.rtbMusic_SongData.Text = "Song Data"
 Me.lblMusic_SongTitle.Dock = System.Windows.Forms.DockStyle.Top
 Me.lblMusic_SongTitle.Location = New System.Drawing.Point(0, 0)
 Me.lblMusic_SongTitle.Name = "lblMusic_SongTitle"
-Me.lblMusic_SongTitle.Size = New System.Drawing.Size(360, 16)
+Me.lblMusic_SongTitle.Size = New System.Drawing.Size(354, 21)
 Me.lblMusic_SongTitle.TabIndex = 0
 Me.lblMusic_SongTitle.Text = "Song Title"
 Me.lblMusic_SongTitle.Values.ExtraText = ""
@@ -9442,9 +9458,9 @@ Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Text = "Setup and Configu
 '
 Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
-Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 0)
+Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 25)
 Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
-Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 586)
+Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 581)
 Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbMusicCurFanart.TabIndex = 1
 Me.pbMusicCurFanart.TabStop = false
@@ -9452,9 +9468,9 @@ Me.pbMusicCurFanart.TabStop = false
 'tpFCDN
 '
 Me.tpFCDN.Controls.Add(Me.tcFCDN)
-Me.tpFCDN.Location = New System.Drawing.Point(4, 44)
+Me.tpFCDN.Location = New System.Drawing.Point(4, 24)
 Me.tpFCDN.Name = "tpFCDN"
-Me.tpFCDN.Size = New System.Drawing.Size(814, 586)
+Me.tpFCDN.Size = New System.Drawing.Size(814, 606)
 Me.tpFCDN.TabIndex = 11
 Me.tpFCDN.Text = "Media Image"
 '
@@ -9473,7 +9489,7 @@ Me.tcFCDN.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcFCDN.Location = New System.Drawing.Point(0, 0)
 Me.tcFCDN.Name = "tcFCDN"
 Me.tcFCDN.SelectedIndex = 7
-Me.tcFCDN.Size = New System.Drawing.Size(814, 586)
+Me.tcFCDN.Size = New System.Drawing.Size(814, 606)
 Me.tcFCDN.TabIndex = 0
 Me.tcFCDN.UseVisualStyles = false
 '
@@ -9493,7 +9509,7 @@ Me.tpFCDNFront.Controls.Add(Me.kgpbFront1)
 Me.tpFCDNFront.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNFront.Name = "tpFCDNFront"
 Me.tpFCDNFront.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNFront.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNFront.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNFront.TabIndex = 0
 Me.tpFCDNFront.Text = "Front Cover"
 Me.tpFCDNFront.UseVisualStyleBackColor = true
@@ -9514,7 +9530,7 @@ Me.kgpbFront10.TabIndex = 19
 Me.pbFront10.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront10.Location = New System.Drawing.Point(0, 0)
 Me.pbFront10.Name = "pbFront10"
-Me.pbFront10.Size = New System.Drawing.Size(467, 340)
+Me.pbFront10.Size = New System.Drawing.Size(461, 334)
 Me.pbFront10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront10.TabIndex = 9
 Me.pbFront10.TabStop = false
@@ -9535,7 +9551,7 @@ Me.kgpbFront9.TabIndex = 18
 Me.pbFront9.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront9.Location = New System.Drawing.Point(0, 0)
 Me.pbFront9.Name = "pbFront9"
-Me.pbFront9.Size = New System.Drawing.Size(467, 340)
+Me.pbFront9.Size = New System.Drawing.Size(461, 334)
 Me.pbFront9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront9.TabIndex = 8
 Me.pbFront9.TabStop = false
@@ -9556,7 +9572,7 @@ Me.kgpbFront8.TabIndex = 17
 Me.pbFront8.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront8.Location = New System.Drawing.Point(0, 0)
 Me.pbFront8.Name = "pbFront8"
-Me.pbFront8.Size = New System.Drawing.Size(467, 340)
+Me.pbFront8.Size = New System.Drawing.Size(461, 334)
 Me.pbFront8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront8.TabIndex = 7
 Me.pbFront8.TabStop = false
@@ -9577,7 +9593,7 @@ Me.kgpbFront7.TabIndex = 16
 Me.pbFront7.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront7.Location = New System.Drawing.Point(0, 0)
 Me.pbFront7.Name = "pbFront7"
-Me.pbFront7.Size = New System.Drawing.Size(467, 340)
+Me.pbFront7.Size = New System.Drawing.Size(461, 334)
 Me.pbFront7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront7.TabIndex = 6
 Me.pbFront7.TabStop = false
@@ -9598,7 +9614,7 @@ Me.kgpbFront6.TabIndex = 15
 Me.pbFront6.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront6.Location = New System.Drawing.Point(0, 0)
 Me.pbFront6.Name = "pbFront6"
-Me.pbFront6.Size = New System.Drawing.Size(467, 340)
+Me.pbFront6.Size = New System.Drawing.Size(461, 334)
 Me.pbFront6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront6.TabIndex = 5
 Me.pbFront6.TabStop = false
@@ -9619,7 +9635,7 @@ Me.kgpbFront5.TabIndex = 14
 Me.pbFront5.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront5.Location = New System.Drawing.Point(0, 0)
 Me.pbFront5.Name = "pbFront5"
-Me.pbFront5.Size = New System.Drawing.Size(467, 340)
+Me.pbFront5.Size = New System.Drawing.Size(461, 334)
 Me.pbFront5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront5.TabIndex = 4
 Me.pbFront5.TabStop = false
@@ -9700,7 +9716,7 @@ Me.kgpbFront1.TabIndex = 10
 Me.pbFront1.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbFront1.Location = New System.Drawing.Point(0, 0)
 Me.pbFront1.Name = "pbFront1"
-Me.pbFront1.Size = New System.Drawing.Size(467, 340)
+Me.pbFront1.Size = New System.Drawing.Size(461, 334)
 Me.pbFront1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbFront1.TabIndex = 0
 Me.pbFront1.TabStop = false
@@ -9719,7 +9735,7 @@ Me.tpFCDNBack.Controls.Add(Me.pbBack1)
 Me.tpFCDNBack.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNBack.Name = "tpFCDNBack"
 Me.tpFCDNBack.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNBack.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNBack.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNBack.TabIndex = 1
 Me.tpFCDNBack.Text = "Back Cover"
 Me.tpFCDNBack.UseVisualStyleBackColor = true
@@ -9819,7 +9835,7 @@ Me.tpFCDNcd1.Controls.Add(Me.pbcdi2)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi1)
 Me.tpFCDNcd1.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd1.Name = "tpFCDNcd1"
-Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd1.TabIndex = 2
 Me.tpFCDNcd1.Text = "CD1"
 '
@@ -9918,7 +9934,7 @@ Me.tpFCDNcd2.Controls.Add(Me.pbcd2i2)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i1)
 Me.tpFCDNcd2.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd2.Name = "tpFCDNcd2"
-Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd2.TabIndex = 3
 Me.tpFCDNcd2.Text = "CD2"
 '
@@ -10017,7 +10033,7 @@ Me.tpFCDNcd3.Controls.Add(Me.pbcd3i2)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i1)
 Me.tpFCDNcd3.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd3.Name = "tpFCDNcd3"
-Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd3.TabIndex = 4
 Me.tpFCDNcd3.Text = "CD3"
 '
@@ -10116,7 +10132,7 @@ Me.tpFCDNcd4.Controls.Add(Me.pbcd4i2)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i1)
 Me.tpFCDNcd4.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd4.Name = "tpFCDNcd4"
-Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd4.TabIndex = 5
 Me.tpFCDNcd4.Text = "CD4"
 '
@@ -10215,7 +10231,7 @@ Me.tpFCDNinsert.Controls.Add(Me.pbInsert2)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert1)
 Me.tpFCDNinsert.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinsert.Name = "tpFCDNinsert"
-Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNinsert.TabIndex = 6
 Me.tpFCDNinsert.Text = "Insert"
 '
@@ -10314,7 +10330,7 @@ Me.tpFCDNinlay.Controls.Add(Me.pbInlay2)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay1)
 Me.tpFCDNinlay.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinlay.Name = "tpFCDNinlay"
-Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 557)
+Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNinlay.TabIndex = 7
 Me.tpFCDNinlay.Text = "Inlay"
 '
@@ -10405,10 +10421,10 @@ Me.tpmipf.BackColor = System.Drawing.Color.Black
 Me.tpmipf.CausesValidation = false
 Me.tpmipf.Controls.Add(Me.tcPIB)
 Me.tpmipf.ForeColor = System.Drawing.Color.White
-Me.tpmipf.Location = New System.Drawing.Point(4, 44)
+Me.tpmipf.Location = New System.Drawing.Point(4, 24)
 Me.tpmipf.Name = "tpmipf"
 Me.tpmipf.Padding = New System.Windows.Forms.Padding(1)
-Me.tpmipf.Size = New System.Drawing.Size(814, 586)
+Me.tpmipf.Size = New System.Drawing.Size(814, 606)
 Me.tpmipf.TabIndex = 0
 Me.tpmipf.Text = "   Wide Images / 3D Boxes    "
 Me.tpmipf.ToolTipText = "Wide Images and 3D Box Shots"
@@ -10417,9 +10433,9 @@ Me.tpmipf.ToolTipText = "Wide Images and 3D Box Shots"
 '
 Me.tpTallImages.AutoScroll = true
 Me.tpTallImages.Controls.Add(Me.KryptonPanel1)
-Me.tpTallImages.Location = New System.Drawing.Point(4, 44)
+Me.tpTallImages.Location = New System.Drawing.Point(4, 24)
 Me.tpTallImages.Name = "tpTallImages"
-Me.tpTallImages.Size = New System.Drawing.Size(814, 586)
+Me.tpTallImages.Size = New System.Drawing.Size(814, 606)
 Me.tpTallImages.TabIndex = 10
 Me.tpTallImages.Text = "Posters"
 Me.tpTallImages.ToolTipText = "Tall Images (posters)"
@@ -10582,7 +10598,7 @@ Me.KryptonPanel1.TabIndex = 1
 '
 Me.lpbti72.Location = New System.Drawing.Point(855, 7266)
 Me.lpbti72.Name = "lpbti72"
-Me.lpbti72.Size = New System.Drawing.Size(23, 16)
+Me.lpbti72.Size = New System.Drawing.Size(26, 21)
 Me.lpbti72.TabIndex = 158
 Me.lpbti72.Text = "72"
 Me.lpbti72.Values.ExtraText = ""
@@ -10593,7 +10609,7 @@ Me.lpbti72.Values.Text = "72"
 '
 Me.lpbti71.Location = New System.Drawing.Point(586, 7266)
 Me.lpbti71.Name = "lpbti71"
-Me.lpbti71.Size = New System.Drawing.Size(23, 16)
+Me.lpbti71.Size = New System.Drawing.Size(24, 21)
 Me.lpbti71.TabIndex = 157
 Me.lpbti71.Text = "71"
 Me.lpbti71.Values.ExtraText = ""
@@ -10604,7 +10620,7 @@ Me.lpbti71.Values.Text = "71"
 '
 Me.lpbti70.Location = New System.Drawing.Point(329, 7266)
 Me.lpbti70.Name = "lpbti70"
-Me.lpbti70.Size = New System.Drawing.Size(23, 16)
+Me.lpbti70.Size = New System.Drawing.Size(26, 21)
 Me.lpbti70.TabIndex = 156
 Me.lpbti70.Text = "70"
 Me.lpbti70.Values.ExtraText = ""
@@ -10615,7 +10631,7 @@ Me.lpbti70.Values.Text = "70"
 '
 Me.lpbti69.Location = New System.Drawing.Point(85, 7266)
 Me.lpbti69.Name = "lpbti69"
-Me.lpbti69.Size = New System.Drawing.Size(23, 16)
+Me.lpbti69.Size = New System.Drawing.Size(26, 21)
 Me.lpbti69.TabIndex = 155
 Me.lpbti69.Text = "69"
 Me.lpbti69.Values.ExtraText = ""
@@ -10670,7 +10686,7 @@ Me.pbti69.TabStop = false
 '
 Me.lpbti68.Location = New System.Drawing.Point(855, 6862)
 Me.lpbti68.Name = "lpbti68"
-Me.lpbti68.Size = New System.Drawing.Size(23, 16)
+Me.lpbti68.Size = New System.Drawing.Size(26, 21)
 Me.lpbti68.TabIndex = 150
 Me.lpbti68.Text = "68"
 Me.lpbti68.Values.ExtraText = ""
@@ -10681,7 +10697,7 @@ Me.lpbti68.Values.Text = "68"
 '
 Me.lpbti67.Location = New System.Drawing.Point(586, 6862)
 Me.lpbti67.Name = "lpbti67"
-Me.lpbti67.Size = New System.Drawing.Size(23, 16)
+Me.lpbti67.Size = New System.Drawing.Size(26, 21)
 Me.lpbti67.TabIndex = 149
 Me.lpbti67.Text = "67"
 Me.lpbti67.Values.ExtraText = ""
@@ -10692,7 +10708,7 @@ Me.lpbti67.Values.Text = "67"
 '
 Me.lpbti66.Location = New System.Drawing.Point(329, 6862)
 Me.lpbti66.Name = "lpbti66"
-Me.lpbti66.Size = New System.Drawing.Size(23, 16)
+Me.lpbti66.Size = New System.Drawing.Size(26, 21)
 Me.lpbti66.TabIndex = 148
 Me.lpbti66.Text = "66"
 Me.lpbti66.Values.ExtraText = ""
@@ -10703,7 +10719,7 @@ Me.lpbti66.Values.Text = "66"
 '
 Me.lpbti65.Location = New System.Drawing.Point(85, 6862)
 Me.lpbti65.Name = "lpbti65"
-Me.lpbti65.Size = New System.Drawing.Size(23, 16)
+Me.lpbti65.Size = New System.Drawing.Size(26, 21)
 Me.lpbti65.TabIndex = 147
 Me.lpbti65.Text = "65"
 Me.lpbti65.Values.ExtraText = ""
@@ -10758,7 +10774,7 @@ Me.pbti65.TabStop = false
 '
 Me.lpbti64.Location = New System.Drawing.Point(855, 6457)
 Me.lpbti64.Name = "lpbti64"
-Me.lpbti64.Size = New System.Drawing.Size(23, 16)
+Me.lpbti64.Size = New System.Drawing.Size(26, 21)
 Me.lpbti64.TabIndex = 142
 Me.lpbti64.Text = "64"
 Me.lpbti64.Values.ExtraText = ""
@@ -10769,7 +10785,7 @@ Me.lpbti64.Values.Text = "64"
 '
 Me.lpbti63.Location = New System.Drawing.Point(586, 6457)
 Me.lpbti63.Name = "lpbti63"
-Me.lpbti63.Size = New System.Drawing.Size(23, 16)
+Me.lpbti63.Size = New System.Drawing.Size(26, 21)
 Me.lpbti63.TabIndex = 141
 Me.lpbti63.Text = "63"
 Me.lpbti63.Values.ExtraText = ""
@@ -10780,7 +10796,7 @@ Me.lpbti63.Values.Text = "63"
 '
 Me.lpbti62.Location = New System.Drawing.Point(329, 6457)
 Me.lpbti62.Name = "lpbti62"
-Me.lpbti62.Size = New System.Drawing.Size(23, 16)
+Me.lpbti62.Size = New System.Drawing.Size(26, 21)
 Me.lpbti62.TabIndex = 140
 Me.lpbti62.Text = "62"
 Me.lpbti62.Values.ExtraText = ""
@@ -10791,7 +10807,7 @@ Me.lpbti62.Values.Text = "62"
 '
 Me.lpbti61.Location = New System.Drawing.Point(85, 6457)
 Me.lpbti61.Name = "lpbti61"
-Me.lpbti61.Size = New System.Drawing.Size(23, 16)
+Me.lpbti61.Size = New System.Drawing.Size(24, 21)
 Me.lpbti61.TabIndex = 139
 Me.lpbti61.Text = "61"
 Me.lpbti61.Values.ExtraText = ""
@@ -10846,7 +10862,7 @@ Me.pbti61.TabStop = false
 '
 Me.lpbti60.Location = New System.Drawing.Point(855, 6053)
 Me.lpbti60.Name = "lpbti60"
-Me.lpbti60.Size = New System.Drawing.Size(23, 16)
+Me.lpbti60.Size = New System.Drawing.Size(26, 21)
 Me.lpbti60.TabIndex = 134
 Me.lpbti60.Text = "60"
 Me.lpbti60.Values.ExtraText = ""
@@ -10857,7 +10873,7 @@ Me.lpbti60.Values.Text = "60"
 '
 Me.lpbti59.Location = New System.Drawing.Point(586, 6053)
 Me.lpbti59.Name = "lpbti59"
-Me.lpbti59.Size = New System.Drawing.Size(23, 16)
+Me.lpbti59.Size = New System.Drawing.Size(26, 21)
 Me.lpbti59.TabIndex = 133
 Me.lpbti59.Text = "59"
 Me.lpbti59.Values.ExtraText = ""
@@ -10868,7 +10884,7 @@ Me.lpbti59.Values.Text = "59"
 '
 Me.lpbti58.Location = New System.Drawing.Point(329, 6053)
 Me.lpbti58.Name = "lpbti58"
-Me.lpbti58.Size = New System.Drawing.Size(23, 16)
+Me.lpbti58.Size = New System.Drawing.Size(26, 21)
 Me.lpbti58.TabIndex = 132
 Me.lpbti58.Text = "58"
 Me.lpbti58.Values.ExtraText = ""
@@ -10879,7 +10895,7 @@ Me.lpbti58.Values.Text = "58"
 '
 Me.lpbti57.Location = New System.Drawing.Point(85, 6053)
 Me.lpbti57.Name = "lpbti57"
-Me.lpbti57.Size = New System.Drawing.Size(23, 16)
+Me.lpbti57.Size = New System.Drawing.Size(26, 21)
 Me.lpbti57.TabIndex = 131
 Me.lpbti57.Text = "57"
 Me.lpbti57.Values.ExtraText = ""
@@ -10934,7 +10950,7 @@ Me.pbti57.TabStop = false
 '
 Me.lpbti56.Location = New System.Drawing.Point(855, 5647)
 Me.lpbti56.Name = "lpbti56"
-Me.lpbti56.Size = New System.Drawing.Size(23, 16)
+Me.lpbti56.Size = New System.Drawing.Size(26, 21)
 Me.lpbti56.TabIndex = 126
 Me.lpbti56.Text = "56"
 Me.lpbti56.Values.ExtraText = ""
@@ -10945,7 +10961,7 @@ Me.lpbti56.Values.Text = "56"
 '
 Me.lpbti55.Location = New System.Drawing.Point(586, 5647)
 Me.lpbti55.Name = "lpbti55"
-Me.lpbti55.Size = New System.Drawing.Size(23, 16)
+Me.lpbti55.Size = New System.Drawing.Size(26, 21)
 Me.lpbti55.TabIndex = 125
 Me.lpbti55.Text = "55"
 Me.lpbti55.Values.ExtraText = ""
@@ -10956,7 +10972,7 @@ Me.lpbti55.Values.Text = "55"
 '
 Me.lpbti54.Location = New System.Drawing.Point(329, 5647)
 Me.lpbti54.Name = "lpbti54"
-Me.lpbti54.Size = New System.Drawing.Size(23, 16)
+Me.lpbti54.Size = New System.Drawing.Size(26, 21)
 Me.lpbti54.TabIndex = 124
 Me.lpbti54.Text = "54"
 Me.lpbti54.Values.ExtraText = ""
@@ -10967,7 +10983,7 @@ Me.lpbti54.Values.Text = "54"
 '
 Me.lpbti53.Location = New System.Drawing.Point(85, 5647)
 Me.lpbti53.Name = "lpbti53"
-Me.lpbti53.Size = New System.Drawing.Size(23, 16)
+Me.lpbti53.Size = New System.Drawing.Size(26, 21)
 Me.lpbti53.TabIndex = 123
 Me.lpbti53.Text = "53"
 Me.lpbti53.Values.ExtraText = ""
@@ -11022,7 +11038,7 @@ Me.pbti53.TabStop = false
 '
 Me.lpbti52.Location = New System.Drawing.Point(855, 5243)
 Me.lpbti52.Name = "lpbti52"
-Me.lpbti52.Size = New System.Drawing.Size(23, 16)
+Me.lpbti52.Size = New System.Drawing.Size(26, 21)
 Me.lpbti52.TabIndex = 118
 Me.lpbti52.Text = "52"
 Me.lpbti52.Values.ExtraText = ""
@@ -11033,7 +11049,7 @@ Me.lpbti52.Values.Text = "52"
 '
 Me.lpbti51.Location = New System.Drawing.Point(586, 5243)
 Me.lpbti51.Name = "lpbti51"
-Me.lpbti51.Size = New System.Drawing.Size(23, 16)
+Me.lpbti51.Size = New System.Drawing.Size(24, 21)
 Me.lpbti51.TabIndex = 117
 Me.lpbti51.Text = "51"
 Me.lpbti51.Values.ExtraText = ""
@@ -11044,7 +11060,7 @@ Me.lpbti51.Values.Text = "51"
 '
 Me.lpbti50.Location = New System.Drawing.Point(329, 5243)
 Me.lpbti50.Name = "lpbti50"
-Me.lpbti50.Size = New System.Drawing.Size(23, 16)
+Me.lpbti50.Size = New System.Drawing.Size(26, 21)
 Me.lpbti50.TabIndex = 116
 Me.lpbti50.Text = "50"
 Me.lpbti50.Values.ExtraText = ""
@@ -11055,7 +11071,7 @@ Me.lpbti50.Values.Text = "50"
 '
 Me.lpbti49.Location = New System.Drawing.Point(85, 5243)
 Me.lpbti49.Name = "lpbti49"
-Me.lpbti49.Size = New System.Drawing.Size(23, 16)
+Me.lpbti49.Size = New System.Drawing.Size(26, 21)
 Me.lpbti49.TabIndex = 115
 Me.lpbti49.Text = "49"
 Me.lpbti49.Values.ExtraText = ""
@@ -11110,7 +11126,7 @@ Me.pbti49.TabStop = false
 '
 Me.lpbti48.Location = New System.Drawing.Point(855, 4837)
 Me.lpbti48.Name = "lpbti48"
-Me.lpbti48.Size = New System.Drawing.Size(23, 16)
+Me.lpbti48.Size = New System.Drawing.Size(26, 21)
 Me.lpbti48.TabIndex = 110
 Me.lpbti48.Text = "48"
 Me.lpbti48.Values.ExtraText = ""
@@ -11121,7 +11137,7 @@ Me.lpbti48.Values.Text = "48"
 '
 Me.lpbti47.Location = New System.Drawing.Point(586, 4837)
 Me.lpbti47.Name = "lpbti47"
-Me.lpbti47.Size = New System.Drawing.Size(23, 16)
+Me.lpbti47.Size = New System.Drawing.Size(26, 21)
 Me.lpbti47.TabIndex = 109
 Me.lpbti47.Text = "47"
 Me.lpbti47.Values.ExtraText = ""
@@ -11132,7 +11148,7 @@ Me.lpbti47.Values.Text = "47"
 '
 Me.lpbti46.Location = New System.Drawing.Point(329, 4837)
 Me.lpbti46.Name = "lpbti46"
-Me.lpbti46.Size = New System.Drawing.Size(23, 16)
+Me.lpbti46.Size = New System.Drawing.Size(26, 21)
 Me.lpbti46.TabIndex = 108
 Me.lpbti46.Text = "46"
 Me.lpbti46.Values.ExtraText = ""
@@ -11143,7 +11159,7 @@ Me.lpbti46.Values.Text = "46"
 '
 Me.lpbti45.Location = New System.Drawing.Point(85, 4837)
 Me.lpbti45.Name = "lpbti45"
-Me.lpbti45.Size = New System.Drawing.Size(23, 16)
+Me.lpbti45.Size = New System.Drawing.Size(26, 21)
 Me.lpbti45.TabIndex = 107
 Me.lpbti45.Text = "45"
 Me.lpbti45.Values.ExtraText = ""
@@ -11198,7 +11214,7 @@ Me.pbti45.TabStop = false
 '
 Me.lpbti44.Location = New System.Drawing.Point(855, 4433)
 Me.lpbti44.Name = "lpbti44"
-Me.lpbti44.Size = New System.Drawing.Size(23, 16)
+Me.lpbti44.Size = New System.Drawing.Size(26, 21)
 Me.lpbti44.TabIndex = 102
 Me.lpbti44.Text = "44"
 Me.lpbti44.Values.ExtraText = ""
@@ -11209,7 +11225,7 @@ Me.lpbti44.Values.Text = "44"
 '
 Me.lpbti43.Location = New System.Drawing.Point(586, 4433)
 Me.lpbti43.Name = "lpbti43"
-Me.lpbti43.Size = New System.Drawing.Size(23, 16)
+Me.lpbti43.Size = New System.Drawing.Size(26, 21)
 Me.lpbti43.TabIndex = 101
 Me.lpbti43.Text = "43"
 Me.lpbti43.Values.ExtraText = ""
@@ -11220,7 +11236,7 @@ Me.lpbti43.Values.Text = "43"
 '
 Me.lpbti42.Location = New System.Drawing.Point(329, 4433)
 Me.lpbti42.Name = "lpbti42"
-Me.lpbti42.Size = New System.Drawing.Size(23, 16)
+Me.lpbti42.Size = New System.Drawing.Size(26, 21)
 Me.lpbti42.TabIndex = 100
 Me.lpbti42.Text = "42"
 Me.lpbti42.Values.ExtraText = ""
@@ -11231,7 +11247,7 @@ Me.lpbti42.Values.Text = "42"
 '
 Me.lpbti41.Location = New System.Drawing.Point(85, 4433)
 Me.lpbti41.Name = "lpbti41"
-Me.lpbti41.Size = New System.Drawing.Size(23, 16)
+Me.lpbti41.Size = New System.Drawing.Size(24, 21)
 Me.lpbti41.TabIndex = 99
 Me.lpbti41.Text = "41"
 Me.lpbti41.Values.ExtraText = ""
@@ -11286,7 +11302,7 @@ Me.pbti41.TabStop = false
 '
 Me.lpbti40.Location = New System.Drawing.Point(855, 4029)
 Me.lpbti40.Name = "lpbti40"
-Me.lpbti40.Size = New System.Drawing.Size(23, 16)
+Me.lpbti40.Size = New System.Drawing.Size(26, 21)
 Me.lpbti40.TabIndex = 94
 Me.lpbti40.Text = "40"
 Me.lpbti40.Values.ExtraText = ""
@@ -11297,7 +11313,7 @@ Me.lpbti40.Values.Text = "40"
 '
 Me.lpbti39.Location = New System.Drawing.Point(586, 4029)
 Me.lpbti39.Name = "lpbti39"
-Me.lpbti39.Size = New System.Drawing.Size(23, 16)
+Me.lpbti39.Size = New System.Drawing.Size(26, 21)
 Me.lpbti39.TabIndex = 93
 Me.lpbti39.Text = "39"
 Me.lpbti39.Values.ExtraText = ""
@@ -11308,7 +11324,7 @@ Me.lpbti39.Values.Text = "39"
 '
 Me.lpbti38.Location = New System.Drawing.Point(329, 4029)
 Me.lpbti38.Name = "lpbti38"
-Me.lpbti38.Size = New System.Drawing.Size(23, 16)
+Me.lpbti38.Size = New System.Drawing.Size(26, 21)
 Me.lpbti38.TabIndex = 92
 Me.lpbti38.Text = "38"
 Me.lpbti38.Values.ExtraText = ""
@@ -11319,7 +11335,7 @@ Me.lpbti38.Values.Text = "38"
 '
 Me.lpbti37.Location = New System.Drawing.Point(85, 4029)
 Me.lpbti37.Name = "lpbti37"
-Me.lpbti37.Size = New System.Drawing.Size(23, 16)
+Me.lpbti37.Size = New System.Drawing.Size(26, 21)
 Me.lpbti37.TabIndex = 91
 Me.lpbti37.Text = "37"
 Me.lpbti37.Values.ExtraText = ""
@@ -11374,7 +11390,7 @@ Me.pbti37.TabStop = false
 '
 Me.lpbti36.Location = New System.Drawing.Point(855, 3625)
 Me.lpbti36.Name = "lpbti36"
-Me.lpbti36.Size = New System.Drawing.Size(23, 16)
+Me.lpbti36.Size = New System.Drawing.Size(26, 21)
 Me.lpbti36.TabIndex = 86
 Me.lpbti36.Text = "36"
 Me.lpbti36.Values.ExtraText = ""
@@ -11385,7 +11401,7 @@ Me.lpbti36.Values.Text = "36"
 '
 Me.lpbti35.Location = New System.Drawing.Point(586, 3625)
 Me.lpbti35.Name = "lpbti35"
-Me.lpbti35.Size = New System.Drawing.Size(23, 16)
+Me.lpbti35.Size = New System.Drawing.Size(26, 21)
 Me.lpbti35.TabIndex = 85
 Me.lpbti35.Text = "35"
 Me.lpbti35.Values.ExtraText = ""
@@ -11396,7 +11412,7 @@ Me.lpbti35.Values.Text = "35"
 '
 Me.lpbti34.Location = New System.Drawing.Point(329, 3625)
 Me.lpbti34.Name = "lpbti34"
-Me.lpbti34.Size = New System.Drawing.Size(23, 16)
+Me.lpbti34.Size = New System.Drawing.Size(26, 21)
 Me.lpbti34.TabIndex = 84
 Me.lpbti34.Text = "34"
 Me.lpbti34.Values.ExtraText = ""
@@ -11407,7 +11423,7 @@ Me.lpbti34.Values.Text = "34"
 '
 Me.lpbti33.Location = New System.Drawing.Point(85, 3625)
 Me.lpbti33.Name = "lpbti33"
-Me.lpbti33.Size = New System.Drawing.Size(23, 16)
+Me.lpbti33.Size = New System.Drawing.Size(26, 21)
 Me.lpbti33.TabIndex = 83
 Me.lpbti33.Text = "33"
 Me.lpbti33.Values.ExtraText = ""
@@ -11462,7 +11478,7 @@ Me.pbti33.TabStop = false
 '
 Me.lpbti32.Location = New System.Drawing.Point(855, 3221)
 Me.lpbti32.Name = "lpbti32"
-Me.lpbti32.Size = New System.Drawing.Size(90, 16)
+Me.lpbti32.Size = New System.Drawing.Size(102, 21)
 Me.lpbti32.TabIndex = 78
 Me.lpbti32.Text = "KryptonLabel24"
 Me.lpbti32.Values.ExtraText = ""
@@ -11473,7 +11489,7 @@ Me.lpbti32.Values.Text = "KryptonLabel24"
 '
 Me.lpbti31.Location = New System.Drawing.Point(586, 3221)
 Me.lpbti31.Name = "lpbti31"
-Me.lpbti31.Size = New System.Drawing.Size(90, 16)
+Me.lpbti31.Size = New System.Drawing.Size(102, 21)
 Me.lpbti31.TabIndex = 77
 Me.lpbti31.Text = "KryptonLabel23"
 Me.lpbti31.Values.ExtraText = ""
@@ -11484,7 +11500,7 @@ Me.lpbti31.Values.Text = "KryptonLabel23"
 '
 Me.lpbti30.Location = New System.Drawing.Point(329, 3221)
 Me.lpbti30.Name = "lpbti30"
-Me.lpbti30.Size = New System.Drawing.Size(90, 16)
+Me.lpbti30.Size = New System.Drawing.Size(102, 21)
 Me.lpbti30.TabIndex = 76
 Me.lpbti30.Text = "KryptonLabel22"
 Me.lpbti30.Values.ExtraText = ""
@@ -11495,7 +11511,7 @@ Me.lpbti30.Values.Text = "KryptonLabel22"
 '
 Me.lpbti29.Location = New System.Drawing.Point(85, 3221)
 Me.lpbti29.Name = "lpbti29"
-Me.lpbti29.Size = New System.Drawing.Size(90, 16)
+Me.lpbti29.Size = New System.Drawing.Size(100, 21)
 Me.lpbti29.TabIndex = 75
 Me.lpbti29.Text = "KryptonLabel21"
 Me.lpbti29.Values.ExtraText = ""
@@ -11550,7 +11566,7 @@ Me.pbti29.TabStop = false
 '
 Me.lpbti28.Location = New System.Drawing.Point(855, 2817)
 Me.lpbti28.Name = "lpbti28"
-Me.lpbti28.Size = New System.Drawing.Size(90, 16)
+Me.lpbti28.Size = New System.Drawing.Size(102, 21)
 Me.lpbti28.TabIndex = 70
 Me.lpbti28.Text = "KryptonLabel24"
 Me.lpbti28.Values.ExtraText = ""
@@ -11561,7 +11577,7 @@ Me.lpbti28.Values.Text = "KryptonLabel24"
 '
 Me.lpbti27.Location = New System.Drawing.Point(586, 2817)
 Me.lpbti27.Name = "lpbti27"
-Me.lpbti27.Size = New System.Drawing.Size(90, 16)
+Me.lpbti27.Size = New System.Drawing.Size(102, 21)
 Me.lpbti27.TabIndex = 69
 Me.lpbti27.Text = "KryptonLabel23"
 Me.lpbti27.Values.ExtraText = ""
@@ -11572,7 +11588,7 @@ Me.lpbti27.Values.Text = "KryptonLabel23"
 '
 Me.lpbti26.Location = New System.Drawing.Point(329, 2817)
 Me.lpbti26.Name = "lpbti26"
-Me.lpbti26.Size = New System.Drawing.Size(90, 16)
+Me.lpbti26.Size = New System.Drawing.Size(102, 21)
 Me.lpbti26.TabIndex = 68
 Me.lpbti26.Text = "KryptonLabel22"
 Me.lpbti26.Values.ExtraText = ""
@@ -11583,7 +11599,7 @@ Me.lpbti26.Values.Text = "KryptonLabel22"
 '
 Me.lpbti25.Location = New System.Drawing.Point(85, 2817)
 Me.lpbti25.Name = "lpbti25"
-Me.lpbti25.Size = New System.Drawing.Size(90, 16)
+Me.lpbti25.Size = New System.Drawing.Size(100, 21)
 Me.lpbti25.TabIndex = 67
 Me.lpbti25.Text = "KryptonLabel21"
 Me.lpbti25.Values.ExtraText = ""
@@ -11638,7 +11654,7 @@ Me.pbti25.TabStop = false
 '
 Me.KryptonLabel5.Location = New System.Drawing.Point(180, 1)
 Me.KryptonLabel5.Name = "KryptonLabel5"
-Me.KryptonLabel5.Size = New System.Drawing.Size(492, 16)
+Me.KryptonLabel5.Size = New System.Drawing.Size(556, 21)
 Me.KryptonLabel5.TabIndex = 62
 Me.KryptonLabel5.Text = "Images provided by Impawards.com, themoviedb.com, calagregory.net and other onlin"& _ 
     "e sources"
@@ -11651,7 +11667,7 @@ Me.KryptonLabel5.Values.Text = "Images provided by Impawards.com, themoviedb.com
 '
 Me.lpbti24.Location = New System.Drawing.Point(855, 2412)
 Me.lpbti24.Name = "lpbti24"
-Me.lpbti24.Size = New System.Drawing.Size(90, 16)
+Me.lpbti24.Size = New System.Drawing.Size(102, 21)
 Me.lpbti24.TabIndex = 61
 Me.lpbti24.Text = "KryptonLabel24"
 Me.lpbti24.Values.ExtraText = ""
@@ -11662,7 +11678,7 @@ Me.lpbti24.Values.Text = "KryptonLabel24"
 '
 Me.lpbti23.Location = New System.Drawing.Point(586, 2412)
 Me.lpbti23.Name = "lpbti23"
-Me.lpbti23.Size = New System.Drawing.Size(90, 16)
+Me.lpbti23.Size = New System.Drawing.Size(102, 21)
 Me.lpbti23.TabIndex = 60
 Me.lpbti23.Text = "KryptonLabel23"
 Me.lpbti23.Values.ExtraText = ""
@@ -11673,7 +11689,7 @@ Me.lpbti23.Values.Text = "KryptonLabel23"
 '
 Me.lpbti22.Location = New System.Drawing.Point(329, 2412)
 Me.lpbti22.Name = "lpbti22"
-Me.lpbti22.Size = New System.Drawing.Size(90, 16)
+Me.lpbti22.Size = New System.Drawing.Size(102, 21)
 Me.lpbti22.TabIndex = 59
 Me.lpbti22.Text = "KryptonLabel22"
 Me.lpbti22.Values.ExtraText = ""
@@ -11684,7 +11700,7 @@ Me.lpbti22.Values.Text = "KryptonLabel22"
 '
 Me.lpbti21.Location = New System.Drawing.Point(85, 2412)
 Me.lpbti21.Name = "lpbti21"
-Me.lpbti21.Size = New System.Drawing.Size(90, 16)
+Me.lpbti21.Size = New System.Drawing.Size(100, 21)
 Me.lpbti21.TabIndex = 58
 Me.lpbti21.Text = "KryptonLabel21"
 Me.lpbti21.Values.ExtraText = ""
@@ -11695,7 +11711,7 @@ Me.lpbti21.Values.Text = "KryptonLabel21"
 '
 Me.lpbti20.Location = New System.Drawing.Point(843, 2008)
 Me.lpbti20.Name = "lpbti20"
-Me.lpbti20.Size = New System.Drawing.Size(90, 16)
+Me.lpbti20.Size = New System.Drawing.Size(102, 21)
 Me.lpbti20.TabIndex = 57
 Me.lpbti20.Text = "KryptonLabel20"
 Me.lpbti20.Values.ExtraText = ""
@@ -11706,7 +11722,7 @@ Me.lpbti20.Values.Text = "KryptonLabel20"
 '
 Me.lpbti19.Location = New System.Drawing.Point(586, 2008)
 Me.lpbti19.Name = "lpbti19"
-Me.lpbti19.Size = New System.Drawing.Size(90, 16)
+Me.lpbti19.Size = New System.Drawing.Size(100, 21)
 Me.lpbti19.TabIndex = 56
 Me.lpbti19.Text = "KryptonLabel19"
 Me.lpbti19.Values.ExtraText = ""
@@ -11717,7 +11733,7 @@ Me.lpbti19.Values.Text = "KryptonLabel19"
 '
 Me.lpbti18.Location = New System.Drawing.Point(341, 2007)
 Me.lpbti18.Name = "lpbti18"
-Me.lpbti18.Size = New System.Drawing.Size(90, 16)
+Me.lpbti18.Size = New System.Drawing.Size(100, 21)
 Me.lpbti18.TabIndex = 55
 Me.lpbti18.Text = "KryptonLabel18"
 Me.lpbti18.Values.ExtraText = ""
@@ -11728,7 +11744,7 @@ Me.lpbti18.Values.Text = "KryptonLabel18"
 '
 Me.lpbti17.Location = New System.Drawing.Point(72, 2007)
 Me.lpbti17.Name = "lpbti17"
-Me.lpbti17.Size = New System.Drawing.Size(90, 16)
+Me.lpbti17.Size = New System.Drawing.Size(100, 21)
 Me.lpbti17.TabIndex = 54
 Me.lpbti17.Text = "KryptonLabel17"
 Me.lpbti17.Values.ExtraText = ""
@@ -11739,7 +11755,7 @@ Me.lpbti17.Values.Text = "KryptonLabel17"
 '
 Me.lpbti16.Location = New System.Drawing.Point(843, 1601)
 Me.lpbti16.Name = "lpbti16"
-Me.lpbti16.Size = New System.Drawing.Size(90, 16)
+Me.lpbti16.Size = New System.Drawing.Size(100, 21)
 Me.lpbti16.TabIndex = 53
 Me.lpbti16.Text = "KryptonLabel16"
 Me.lpbti16.Values.ExtraText = ""
@@ -11750,7 +11766,7 @@ Me.lpbti16.Values.Text = "KryptonLabel16"
 '
 Me.lpbti15.Location = New System.Drawing.Point(598, 1601)
 Me.lpbti15.Name = "lpbti15"
-Me.lpbti15.Size = New System.Drawing.Size(90, 16)
+Me.lpbti15.Size = New System.Drawing.Size(100, 21)
 Me.lpbti15.TabIndex = 52
 Me.lpbti15.Text = "KryptonLabel15"
 Me.lpbti15.Values.ExtraText = ""
@@ -11761,7 +11777,7 @@ Me.lpbti15.Values.Text = "KryptonLabel15"
 '
 Me.lpbti14.Location = New System.Drawing.Point(329, 1601)
 Me.lpbti14.Name = "lpbti14"
-Me.lpbti14.Size = New System.Drawing.Size(90, 16)
+Me.lpbti14.Size = New System.Drawing.Size(100, 21)
 Me.lpbti14.TabIndex = 51
 Me.lpbti14.Text = "KryptonLabel14"
 Me.lpbti14.Values.ExtraText = ""
@@ -11772,7 +11788,7 @@ Me.lpbti14.Values.Text = "KryptonLabel14"
 '
 Me.lpbti13.Location = New System.Drawing.Point(72, 1601)
 Me.lpbti13.Name = "lpbti13"
-Me.lpbti13.Size = New System.Drawing.Size(90, 16)
+Me.lpbti13.Size = New System.Drawing.Size(100, 21)
 Me.lpbti13.TabIndex = 50
 Me.lpbti13.Text = "KryptonLabel13"
 Me.lpbti13.Values.ExtraText = ""
@@ -11783,7 +11799,7 @@ Me.lpbti13.Values.Text = "KryptonLabel13"
 '
 Me.lpbti12.Location = New System.Drawing.Point(855, 1197)
 Me.lpbti12.Name = "lpbti12"
-Me.lpbti12.Size = New System.Drawing.Size(90, 16)
+Me.lpbti12.Size = New System.Drawing.Size(100, 21)
 Me.lpbti12.TabIndex = 49
 Me.lpbti12.Text = "KryptonLabel12"
 Me.lpbti12.Values.ExtraText = ""
@@ -11794,7 +11810,7 @@ Me.lpbti12.Values.Text = "KryptonLabel12"
 '
 Me.lpbti11.Location = New System.Drawing.Point(586, 1197)
 Me.lpbti11.Name = "lpbti11"
-Me.lpbti11.Size = New System.Drawing.Size(90, 16)
+Me.lpbti11.Size = New System.Drawing.Size(98, 21)
 Me.lpbti11.TabIndex = 48
 Me.lpbti11.Text = "KryptonLabel11"
 Me.lpbti11.Values.ExtraText = ""
@@ -11805,7 +11821,7 @@ Me.lpbti11.Values.Text = "KryptonLabel11"
 '
 Me.lpbti10.Location = New System.Drawing.Point(329, 1197)
 Me.lpbti10.Name = "lpbti10"
-Me.lpbti10.Size = New System.Drawing.Size(90, 16)
+Me.lpbti10.Size = New System.Drawing.Size(100, 21)
 Me.lpbti10.TabIndex = 47
 Me.lpbti10.Text = "KryptonLabel10"
 Me.lpbti10.Values.ExtraText = ""
@@ -11816,7 +11832,7 @@ Me.lpbti10.Values.Text = "KryptonLabel10"
 '
 Me.lpbti9.Location = New System.Drawing.Point(84, 1198)
 Me.lpbti9.Name = "lpbti9"
-Me.lpbti9.Size = New System.Drawing.Size(83, 16)
+Me.lpbti9.Size = New System.Drawing.Size(94, 21)
 Me.lpbti9.TabIndex = 46
 Me.lpbti9.Text = "KryptonLabel9"
 Me.lpbti9.Values.ExtraText = ""
@@ -11827,7 +11843,7 @@ Me.lpbti9.Values.Text = "KryptonLabel9"
 '
 Me.lpbti8.Location = New System.Drawing.Point(843, 794)
 Me.lpbti8.Name = "lpbti8"
-Me.lpbti8.Size = New System.Drawing.Size(83, 16)
+Me.lpbti8.Size = New System.Drawing.Size(94, 21)
 Me.lpbti8.TabIndex = 45
 Me.lpbti8.Text = "KryptonLabel8"
 Me.lpbti8.Values.ExtraText = ""
@@ -11838,7 +11854,7 @@ Me.lpbti8.Values.Text = "KryptonLabel8"
 '
 Me.lpbti7.Location = New System.Drawing.Point(586, 794)
 Me.lpbti7.Name = "lpbti7"
-Me.lpbti7.Size = New System.Drawing.Size(83, 16)
+Me.lpbti7.Size = New System.Drawing.Size(94, 21)
 Me.lpbti7.TabIndex = 44
 Me.lpbti7.Text = "KryptonLabel7"
 Me.lpbti7.Values.ExtraText = ""
@@ -11849,7 +11865,7 @@ Me.lpbti7.Values.Text = "KryptonLabel7"
 '
 Me.lpbti6.Location = New System.Drawing.Point(341, 794)
 Me.lpbti6.Name = "lpbti6"
-Me.lpbti6.Size = New System.Drawing.Size(83, 16)
+Me.lpbti6.Size = New System.Drawing.Size(94, 21)
 Me.lpbti6.TabIndex = 43
 Me.lpbti6.Text = "KryptonLabel6"
 Me.lpbti6.Values.ExtraText = ""
@@ -11860,7 +11876,7 @@ Me.lpbti6.Values.Text = "KryptonLabel6"
 '
 Me.lpbti5.Location = New System.Drawing.Point(72, 794)
 Me.lpbti5.Name = "lpbti5"
-Me.lpbti5.Size = New System.Drawing.Size(83, 16)
+Me.lpbti5.Size = New System.Drawing.Size(94, 21)
 Me.lpbti5.TabIndex = 42
 Me.lpbti5.Text = "KryptonLabel5"
 Me.lpbti5.Values.ExtraText = ""
@@ -11871,7 +11887,7 @@ Me.lpbti5.Values.Text = "KryptonLabel5"
 '
 Me.lpbti4.Location = New System.Drawing.Point(867, 386)
 Me.lpbti4.Name = "lpbti4"
-Me.lpbti4.Size = New System.Drawing.Size(83, 16)
+Me.lpbti4.Size = New System.Drawing.Size(94, 21)
 Me.lpbti4.TabIndex = 41
 Me.lpbti4.Text = "KryptonLabel4"
 Me.lpbti4.Values.ExtraText = ""
@@ -11882,7 +11898,7 @@ Me.lpbti4.Values.Text = "KryptonLabel4"
 '
 Me.lpbti3.Location = New System.Drawing.Point(598, 386)
 Me.lpbti3.Name = "lpbti3"
-Me.lpbti3.Size = New System.Drawing.Size(83, 16)
+Me.lpbti3.Size = New System.Drawing.Size(94, 21)
 Me.lpbti3.TabIndex = 40
 Me.lpbti3.Text = "KryptonLabel3"
 Me.lpbti3.Values.ExtraText = ""
@@ -11893,7 +11909,7 @@ Me.lpbti3.Values.Text = "KryptonLabel3"
 '
 Me.lpbti2.Location = New System.Drawing.Point(329, 386)
 Me.lpbti2.Name = "lpbti2"
-Me.lpbti2.Size = New System.Drawing.Size(83, 16)
+Me.lpbti2.Size = New System.Drawing.Size(94, 21)
 Me.lpbti2.TabIndex = 39
 Me.lpbti2.Text = "KryptonLabel2"
 Me.lpbti2.Values.ExtraText = ""
@@ -11904,7 +11920,7 @@ Me.lpbti2.Values.Text = "KryptonLabel2"
 '
 Me.lpbti1.Location = New System.Drawing.Point(72, 386)
 Me.lpbti1.Name = "lpbti1"
-Me.lpbti1.Size = New System.Drawing.Size(83, 16)
+Me.lpbti1.Size = New System.Drawing.Size(94, 21)
 Me.lpbti1.TabIndex = 38
 Me.lpbti1.Text = "KryptonLabel2"
 Me.lpbti1.Values.ExtraText = ""
@@ -12168,10 +12184,10 @@ Me.pbti7.TabStop = false
 Me.tpFanart.AutoScroll = true
 Me.tpFanart.CausesValidation = false
 Me.tpFanart.Controls.Add(Me.kpFanartSelection)
-Me.tpFanart.Location = New System.Drawing.Point(4, 44)
+Me.tpFanart.Location = New System.Drawing.Point(4, 24)
 Me.tpFanart.Name = "tpFanart"
 Me.tpFanart.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFanart.Size = New System.Drawing.Size(814, 586)
+Me.tpFanart.Size = New System.Drawing.Size(814, 606)
 Me.tpFanart.TabIndex = 7
 Me.tpFanart.Text = "   Backgrounds      "
 Me.tpFanart.ToolTipText = "Background Images (fanart)"
@@ -12730,7 +12746,7 @@ Me.klblfatmdb1.Values.Text = ""
 '
 Me.klblFanartProvider.Location = New System.Drawing.Point(231, 4)
 Me.klblFanartProvider.Name = "klblFanartProvider"
-Me.klblFanartProvider.Size = New System.Drawing.Size(304, 16)
+Me.klblFanartProvider.Size = New System.Drawing.Size(338, 21)
 Me.klblFanartProvider.TabIndex = 29
 Me.klblFanartProvider.Text = "Fanart Provided by: The Movie DB  www.Themoviedb.com"
 Me.klblFanartProvider.Values.ExtraText = ""
@@ -12968,10 +12984,10 @@ Me.tpmmn.Controls.Add(Me.btnRetryName)
 Me.tpmmn.Controls.Add(Me.tbnewname)
 Me.tpmmn.Controls.Add(Me.Button7)
 Me.tpmmn.ForeColor = System.Drawing.Color.White
-Me.tpmmn.Location = New System.Drawing.Point(4, 44)
+Me.tpmmn.Location = New System.Drawing.Point(4, 24)
 Me.tpmmn.Name = "tpmmn"
 Me.tpmmn.Padding = New System.Windows.Forms.Padding(3)
-Me.tpmmn.Size = New System.Drawing.Size(814, 586)
+Me.tpmmn.Size = New System.Drawing.Size(814, 606)
 Me.tpmmn.TabIndex = 1
 Me.tpmmn.Text = " Rename     "
 Me.tpmmn.ToolTipText = "Modify the name of the movie"
@@ -13005,7 +13021,7 @@ Me.btnUpdatePosters.Values.Text = "Update Known Posters"
 Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.Label2.Location = New System.Drawing.Point(169, 115)
 Me.Label2.Name = "Label2"
-Me.Label2.Size = New System.Drawing.Size(684, 16)
+Me.Label2.Size = New System.Drawing.Size(797, 21)
 Me.Label2.TabIndex = 32
 Me.Label2.Text = "Select the new name from the list by double clicking on it. Then click on the Cor"& _ 
     "rect Name button (Above this text) to change the name."
@@ -13044,7 +13060,7 @@ Me.Button4.Values.Text = "Find Similar Movies"
 Me.cbChangeFolderName.AutoCheck = false
 Me.cbChangeFolderName.Location = New System.Drawing.Point(333, 62)
 Me.cbChangeFolderName.Name = "cbChangeFolderName"
-Me.cbChangeFolderName.Size = New System.Drawing.Size(267, 16)
+Me.cbChangeFolderName.Size = New System.Drawing.Size(303, 21)
 Me.cbChangeFolderName.TabIndex = 30
 Me.cbChangeFolderName.Text = "Modify name of folder to match new movie name"
 Me.cbChangeFolderName.Values.ExtraText = ""
@@ -13097,9 +13113,9 @@ Me.Button7.Visible = false
 '
 Me.tpPosters.AutoScroll = true
 Me.tpPosters.Controls.Add(Me.tcPosters)
-Me.tpPosters.Location = New System.Drawing.Point(4, 44)
+Me.tpPosters.Location = New System.Drawing.Point(4, 24)
 Me.tpPosters.Name = "tpPosters"
-Me.tpPosters.Size = New System.Drawing.Size(814, 586)
+Me.tpPosters.Size = New System.Drawing.Size(814, 606)
 Me.tpPosters.TabIndex = 8
 Me.tpPosters.ToolTipText = "TV Show Posters and Wide Icons"
 '
@@ -13114,7 +13130,7 @@ Me.tcPosters.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcPosters.Location = New System.Drawing.Point(0, 0)
 Me.tcPosters.Name = "tcPosters"
 Me.tcPosters.SelectedIndex = 1
-Me.tcPosters.Size = New System.Drawing.Size(814, 586)
+Me.tcPosters.Size = New System.Drawing.Size(814, 606)
 Me.tcPosters.TabIndex = 0
 Me.tcPosters.UseVisualStyles = false
 '
@@ -13124,7 +13140,7 @@ Me.tpTVWideIcons.AutoScroll = true
 Me.tpTVWideIcons.Controls.Add(Me.kptvwide)
 Me.tpTVWideIcons.Location = New System.Drawing.Point(4, 25)
 Me.tpTVWideIcons.Name = "tpTVWideIcons"
-Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 557)
+Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 577)
 Me.tpTVWideIcons.TabIndex = 2
 Me.tpTVWideIcons.Text = "TV Wide Icons"
 '
@@ -13454,7 +13470,7 @@ Me.tpIMPPosters.Controls.Add(Me.kpIMPPosterSelection)
 Me.tpIMPPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpIMPPosters.Name = "tpIMPPosters"
 Me.tpIMPPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpIMPPosters.Size = New System.Drawing.Size(806, 557)
+Me.tpIMPPosters.Size = New System.Drawing.Size(806, 577)
 Me.tpIMPPosters.TabIndex = 0
 Me.tpIMPPosters.Text = "Posters -IMPawards"
 '
@@ -13518,7 +13534,7 @@ Me.kpIMPPosterSelection.TabIndex = 0
 '
 Me.lblImpaposters.Location = New System.Drawing.Point(313, 1)
 Me.lblImpaposters.Name = "lblImpaposters"
-Me.lblImpaposters.Size = New System.Drawing.Size(157, 16)
+Me.lblImpaposters.Size = New System.Drawing.Size(179, 21)
 Me.lblImpaposters.TabIndex = 62
 Me.lblImpaposters.Text = "Posters from Impawards.com"
 Me.lblImpaposters.Values.ExtraText = ""
@@ -13529,7 +13545,7 @@ Me.lblImpaposters.Values.Text = "Posters from Impawards.com"
 '
 Me.klblposterIMP24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterIMP24.Name = "klblposterIMP24"
-Me.klblposterIMP24.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP24.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP24.TabIndex = 61
 Me.klblposterIMP24.Text = "KryptonLabel24"
 Me.klblposterIMP24.Values.ExtraText = ""
@@ -13540,7 +13556,7 @@ Me.klblposterIMP24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterIMP23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterIMP23.Name = "klblposterIMP23"
-Me.klblposterIMP23.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP23.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP23.TabIndex = 60
 Me.klblposterIMP23.Text = "KryptonLabel23"
 Me.klblposterIMP23.Values.ExtraText = ""
@@ -13551,7 +13567,7 @@ Me.klblposterIMP23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterIMP22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterIMP22.Name = "klblposterIMP22"
-Me.klblposterIMP22.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP22.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP22.TabIndex = 59
 Me.klblposterIMP22.Text = "KryptonLabel22"
 Me.klblposterIMP22.Values.ExtraText = ""
@@ -13562,7 +13578,7 @@ Me.klblposterIMP22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterIMP21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterIMP21.Name = "klblposterIMP21"
-Me.klblposterIMP21.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP21.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP21.TabIndex = 58
 Me.klblposterIMP21.Text = "KryptonLabel21"
 Me.klblposterIMP21.Values.ExtraText = ""
@@ -13573,7 +13589,7 @@ Me.klblposterIMP21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterIMP20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterIMP20.Name = "klblposterIMP20"
-Me.klblposterIMP20.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP20.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP20.TabIndex = 57
 Me.klblposterIMP20.Text = "KryptonLabel20"
 Me.klblposterIMP20.Values.ExtraText = ""
@@ -13584,7 +13600,7 @@ Me.klblposterIMP20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterIMP19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterIMP19.Name = "klblposterIMP19"
-Me.klblposterIMP19.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP19.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP19.TabIndex = 56
 Me.klblposterIMP19.Text = "KryptonLabel19"
 Me.klblposterIMP19.Values.ExtraText = ""
@@ -13595,7 +13611,7 @@ Me.klblposterIMP19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterIMP18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterIMP18.Name = "klblposterIMP18"
-Me.klblposterIMP18.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP18.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP18.TabIndex = 55
 Me.klblposterIMP18.Text = "KryptonLabel18"
 Me.klblposterIMP18.Values.ExtraText = ""
@@ -13606,7 +13622,7 @@ Me.klblposterIMP18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterIMP17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterIMP17.Name = "klblposterIMP17"
-Me.klblposterIMP17.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP17.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP17.TabIndex = 54
 Me.klblposterIMP17.Text = "KryptonLabel17"
 Me.klblposterIMP17.Values.ExtraText = ""
@@ -13617,7 +13633,7 @@ Me.klblposterIMP17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterIMP16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterIMP16.Name = "klblposterIMP16"
-Me.klblposterIMP16.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP16.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP16.TabIndex = 53
 Me.klblposterIMP16.Text = "KryptonLabel16"
 Me.klblposterIMP16.Values.ExtraText = ""
@@ -13628,7 +13644,7 @@ Me.klblposterIMP16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterIMP15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterIMP15.Name = "klblposterIMP15"
-Me.klblposterIMP15.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP15.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP15.TabIndex = 52
 Me.klblposterIMP15.Text = "KryptonLabel15"
 Me.klblposterIMP15.Values.ExtraText = ""
@@ -13639,7 +13655,7 @@ Me.klblposterIMP15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterIMP14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterIMP14.Name = "klblposterIMP14"
-Me.klblposterIMP14.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP14.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP14.TabIndex = 51
 Me.klblposterIMP14.Text = "KryptonLabel14"
 Me.klblposterIMP14.Values.ExtraText = ""
@@ -13650,7 +13666,7 @@ Me.klblposterIMP14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterIMP13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterIMP13.Name = "klblposterIMP13"
-Me.klblposterIMP13.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP13.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP13.TabIndex = 50
 Me.klblposterIMP13.Text = "KryptonLabel13"
 Me.klblposterIMP13.Values.ExtraText = ""
@@ -13661,7 +13677,7 @@ Me.klblposterIMP13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterIMP12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterIMP12.Name = "klblposterIMP12"
-Me.klblposterIMP12.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP12.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP12.TabIndex = 49
 Me.klblposterIMP12.Text = "KryptonLabel12"
 Me.klblposterIMP12.Values.ExtraText = ""
@@ -13672,7 +13688,7 @@ Me.klblposterIMP12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterIMP11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterIMP11.Name = "klblposterIMP11"
-Me.klblposterIMP11.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP11.Size = New System.Drawing.Size(98, 21)
 Me.klblposterIMP11.TabIndex = 48
 Me.klblposterIMP11.Text = "KryptonLabel11"
 Me.klblposterIMP11.Values.ExtraText = ""
@@ -13683,7 +13699,7 @@ Me.klblposterIMP11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterIMP10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterIMP10.Name = "klblposterIMP10"
-Me.klblposterIMP10.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP10.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP10.TabIndex = 47
 Me.klblposterIMP10.Text = "KryptonLabel10"
 Me.klblposterIMP10.Values.ExtraText = ""
@@ -13694,7 +13710,7 @@ Me.klblposterIMP10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterIMP9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterIMP9.Name = "klblposterIMP9"
-Me.klblposterIMP9.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP9.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP9.TabIndex = 46
 Me.klblposterIMP9.Text = "KryptonLabel9"
 Me.klblposterIMP9.Values.ExtraText = ""
@@ -13705,7 +13721,7 @@ Me.klblposterIMP9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterIMP8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterIMP8.Name = "klblposterIMP8"
-Me.klblposterIMP8.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP8.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP8.TabIndex = 45
 Me.klblposterIMP8.Text = "KryptonLabel8"
 Me.klblposterIMP8.Values.ExtraText = ""
@@ -13716,7 +13732,7 @@ Me.klblposterIMP8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterIMP7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterIMP7.Name = "klblposterIMP7"
-Me.klblposterIMP7.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP7.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP7.TabIndex = 44
 Me.klblposterIMP7.Text = "KryptonLabel7"
 Me.klblposterIMP7.Values.ExtraText = ""
@@ -13727,7 +13743,7 @@ Me.klblposterIMP7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterIMP6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterIMP6.Name = "klblposterIMP6"
-Me.klblposterIMP6.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP6.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP6.TabIndex = 43
 Me.klblposterIMP6.Text = "KryptonLabel6"
 Me.klblposterIMP6.Values.ExtraText = ""
@@ -13738,7 +13754,7 @@ Me.klblposterIMP6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterIMP5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterIMP5.Name = "klblposterIMP5"
-Me.klblposterIMP5.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP5.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP5.TabIndex = 42
 Me.klblposterIMP5.Text = "KryptonLabel5"
 Me.klblposterIMP5.Values.ExtraText = ""
@@ -13749,7 +13765,7 @@ Me.klblposterIMP5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterIMP4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterIMP4.Name = "klblposterIMP4"
-Me.klblposterIMP4.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP4.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP4.TabIndex = 41
 Me.klblposterIMP4.Text = "KryptonLabel4"
 Me.klblposterIMP4.Values.ExtraText = ""
@@ -13760,7 +13776,7 @@ Me.klblposterIMP4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterIMP3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterIMP3.Name = "klblposterIMP3"
-Me.klblposterIMP3.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP3.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP3.TabIndex = 40
 Me.klblposterIMP3.Text = "KryptonLabel3"
 Me.klblposterIMP3.Values.ExtraText = ""
@@ -13771,7 +13787,7 @@ Me.klblposterIMP3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterIMP2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterIMP2.Name = "klblposterIMP2"
-Me.klblposterIMP2.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP2.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP2.TabIndex = 39
 Me.klblposterIMP2.Text = "KryptonLabel2"
 Me.klblposterIMP2.Values.ExtraText = ""
@@ -13782,7 +13798,7 @@ Me.klblposterIMP2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterIMP1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterIMP1.Name = "klblposterIMP1"
-Me.klblposterIMP1.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP1.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP1.TabIndex = 38
 Me.klblposterIMP1.Text = "KryptonLabel2"
 Me.klblposterIMP1.Values.ExtraText = ""
@@ -14048,7 +14064,7 @@ Me.tpTMDBPosters.Controls.Add(Me.kpTMDBPostersSelection)
 Me.tpTMDBPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpTMDBPosters.Name = "tpTMDBPosters"
 Me.tpTMDBPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 557)
+Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 577)
 Me.tpTMDBPosters.TabIndex = 1
 Me.tpTMDBPosters.Text = "HD Posters - from TMDB"
 '
@@ -14112,7 +14128,7 @@ Me.kpTMDBPostersSelection.TabIndex = 0
 '
 Me.klblPostersByTMDB.Location = New System.Drawing.Point(329, 0)
 Me.klblPostersByTMDB.Name = "klblPostersByTMDB"
-Me.klblPostersByTMDB.Size = New System.Drawing.Size(109, 16)
+Me.klblPostersByTMDB.Size = New System.Drawing.Size(126, 21)
 Me.klblPostersByTMDB.TabIndex = 0
 Me.klblPostersByTMDB.Text = "Posters from TMDB"
 Me.klblPostersByTMDB.Values.ExtraText = ""
@@ -14123,7 +14139,7 @@ Me.klblPostersByTMDB.Values.Text = "Posters from TMDB"
 '
 Me.klblposterTMDB24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterTMDB24.Name = "klblposterTMDB24"
-Me.klblposterTMDB24.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB24.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB24.TabIndex = 61
 Me.klblposterTMDB24.Text = "KryptonLabel24"
 Me.klblposterTMDB24.Values.ExtraText = ""
@@ -14134,7 +14150,7 @@ Me.klblposterTMDB24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterTMDB23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterTMDB23.Name = "klblposterTMDB23"
-Me.klblposterTMDB23.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB23.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB23.TabIndex = 60
 Me.klblposterTMDB23.Text = "KryptonLabel23"
 Me.klblposterTMDB23.Values.ExtraText = ""
@@ -14145,7 +14161,7 @@ Me.klblposterTMDB23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterTMDB22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterTMDB22.Name = "klblposterTMDB22"
-Me.klblposterTMDB22.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB22.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB22.TabIndex = 59
 Me.klblposterTMDB22.Text = "KryptonLabel22"
 Me.klblposterTMDB22.Values.ExtraText = ""
@@ -14156,7 +14172,7 @@ Me.klblposterTMDB22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterTMDB21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterTMDB21.Name = "klblposterTMDB21"
-Me.klblposterTMDB21.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB21.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB21.TabIndex = 58
 Me.klblposterTMDB21.Text = "KryptonLabel21"
 Me.klblposterTMDB21.Values.ExtraText = ""
@@ -14167,7 +14183,7 @@ Me.klblposterTMDB21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterTMDB20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterTMDB20.Name = "klblposterTMDB20"
-Me.klblposterTMDB20.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB20.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB20.TabIndex = 57
 Me.klblposterTMDB20.Text = "KryptonLabel20"
 Me.klblposterTMDB20.Values.ExtraText = ""
@@ -14178,7 +14194,7 @@ Me.klblposterTMDB20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterTMDB19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterTMDB19.Name = "klblposterTMDB19"
-Me.klblposterTMDB19.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB19.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB19.TabIndex = 56
 Me.klblposterTMDB19.Text = "KryptonLabel19"
 Me.klblposterTMDB19.Values.ExtraText = ""
@@ -14189,7 +14205,7 @@ Me.klblposterTMDB19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterTMDB18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterTMDB18.Name = "klblposterTMDB18"
-Me.klblposterTMDB18.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB18.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB18.TabIndex = 55
 Me.klblposterTMDB18.Text = "KryptonLabel18"
 Me.klblposterTMDB18.Values.ExtraText = ""
@@ -14200,7 +14216,7 @@ Me.klblposterTMDB18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterTMDB17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterTMDB17.Name = "klblposterTMDB17"
-Me.klblposterTMDB17.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB17.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB17.TabIndex = 54
 Me.klblposterTMDB17.Text = "KryptonLabel17"
 Me.klblposterTMDB17.Values.ExtraText = ""
@@ -14211,7 +14227,7 @@ Me.klblposterTMDB17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterTMDB16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterTMDB16.Name = "klblposterTMDB16"
-Me.klblposterTMDB16.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB16.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB16.TabIndex = 53
 Me.klblposterTMDB16.Text = "KryptonLabel16"
 Me.klblposterTMDB16.Values.ExtraText = ""
@@ -14222,7 +14238,7 @@ Me.klblposterTMDB16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterTMDB15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterTMDB15.Name = "klblposterTMDB15"
-Me.klblposterTMDB15.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB15.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB15.TabIndex = 52
 Me.klblposterTMDB15.Text = "KryptonLabel15"
 Me.klblposterTMDB15.Values.ExtraText = ""
@@ -14233,7 +14249,7 @@ Me.klblposterTMDB15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterTMDB14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterTMDB14.Name = "klblposterTMDB14"
-Me.klblposterTMDB14.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB14.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB14.TabIndex = 51
 Me.klblposterTMDB14.Text = "KryptonLabel14"
 Me.klblposterTMDB14.Values.ExtraText = ""
@@ -14244,7 +14260,7 @@ Me.klblposterTMDB14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterTMDB13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterTMDB13.Name = "klblposterTMDB13"
-Me.klblposterTMDB13.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB13.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB13.TabIndex = 50
 Me.klblposterTMDB13.Text = "KryptonLabel13"
 Me.klblposterTMDB13.Values.ExtraText = ""
@@ -14255,7 +14271,7 @@ Me.klblposterTMDB13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterTMDB12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterTMDB12.Name = "klblposterTMDB12"
-Me.klblposterTMDB12.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB12.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB12.TabIndex = 49
 Me.klblposterTMDB12.Text = "KryptonLabel12"
 Me.klblposterTMDB12.Values.ExtraText = ""
@@ -14266,7 +14282,7 @@ Me.klblposterTMDB12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterTMDB11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterTMDB11.Name = "klblposterTMDB11"
-Me.klblposterTMDB11.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB11.Size = New System.Drawing.Size(98, 21)
 Me.klblposterTMDB11.TabIndex = 48
 Me.klblposterTMDB11.Text = "KryptonLabel11"
 Me.klblposterTMDB11.Values.ExtraText = ""
@@ -14277,7 +14293,7 @@ Me.klblposterTMDB11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterTMDB10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterTMDB10.Name = "klblposterTMDB10"
-Me.klblposterTMDB10.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB10.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB10.TabIndex = 47
 Me.klblposterTMDB10.Text = "KryptonLabel10"
 Me.klblposterTMDB10.Values.ExtraText = ""
@@ -14288,7 +14304,7 @@ Me.klblposterTMDB10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterTMDB9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterTMDB9.Name = "klblposterTMDB9"
-Me.klblposterTMDB9.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB9.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB9.TabIndex = 46
 Me.klblposterTMDB9.Text = "KryptonLabel9"
 Me.klblposterTMDB9.Values.ExtraText = ""
@@ -14299,7 +14315,7 @@ Me.klblposterTMDB9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterTMDB8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterTMDB8.Name = "klblposterTMDB8"
-Me.klblposterTMDB8.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB8.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB8.TabIndex = 45
 Me.klblposterTMDB8.Text = "KryptonLabel8"
 Me.klblposterTMDB8.Values.ExtraText = ""
@@ -14310,7 +14326,7 @@ Me.klblposterTMDB8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterTMDB7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterTMDB7.Name = "klblposterTMDB7"
-Me.klblposterTMDB7.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB7.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB7.TabIndex = 44
 Me.klblposterTMDB7.Text = "KryptonLabel7"
 Me.klblposterTMDB7.Values.ExtraText = ""
@@ -14321,7 +14337,7 @@ Me.klblposterTMDB7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterTMDB6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterTMDB6.Name = "klblposterTMDB6"
-Me.klblposterTMDB6.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB6.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB6.TabIndex = 43
 Me.klblposterTMDB6.Text = "KryptonLabel6"
 Me.klblposterTMDB6.Values.ExtraText = ""
@@ -14332,7 +14348,7 @@ Me.klblposterTMDB6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterTMDB5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterTMDB5.Name = "klblposterTMDB5"
-Me.klblposterTMDB5.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB5.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB5.TabIndex = 42
 Me.klblposterTMDB5.Text = "KryptonLabel5"
 Me.klblposterTMDB5.Values.ExtraText = ""
@@ -14343,7 +14359,7 @@ Me.klblposterTMDB5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterTMDB4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterTMDB4.Name = "klblposterTMDB4"
-Me.klblposterTMDB4.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB4.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB4.TabIndex = 41
 Me.klblposterTMDB4.Text = "KryptonLabel4"
 Me.klblposterTMDB4.Values.ExtraText = ""
@@ -14354,7 +14370,7 @@ Me.klblposterTMDB4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterTMDB3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterTMDB3.Name = "klblposterTMDB3"
-Me.klblposterTMDB3.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB3.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB3.TabIndex = 40
 Me.klblposterTMDB3.Text = "KryptonLabel3"
 Me.klblposterTMDB3.Values.ExtraText = ""
@@ -14365,7 +14381,7 @@ Me.klblposterTMDB3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterTMDB2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterTMDB2.Name = "klblposterTMDB2"
-Me.klblposterTMDB2.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB2.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB2.TabIndex = 39
 Me.klblposterTMDB2.Text = "KryptonLabel2"
 Me.klblposterTMDB2.Values.ExtraText = ""
@@ -14376,7 +14392,7 @@ Me.klblposterTMDB2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterTMDB1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterTMDB1.Name = "klblposterTMDB1"
-Me.klblposterTMDB1.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB1.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB1.TabIndex = 38
 Me.klblposterTMDB1.Text = "KryptonLabel2"
 Me.klblposterTMDB1.Values.ExtraText = ""
@@ -14640,7 +14656,7 @@ Me.pbposterTMDB24.TabStop = false
 Me.TabPageEX1.Controls.Add(Me.tbnone)
 Me.TabPageEX1.Location = New System.Drawing.Point(4, 25)
 Me.TabPageEX1.Name = "TabPageEX1"
-Me.TabPageEX1.Size = New System.Drawing.Size(806, 557)
+Me.TabPageEX1.Size = New System.Drawing.Size(806, 577)
 Me.TabPageEX1.TabIndex = 3
 Me.TabPageEX1.Text = "For Expansion"
 '
@@ -14657,7 +14673,7 @@ Me.tbnone.Text = "This tab is for future expansion and is not yet used."
 Me.curtvshowiconsettinglbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.curtvshowiconsettinglbl.Location = New System.Drawing.Point(3, 12)
 Me.curtvshowiconsettinglbl.Name = "curtvshowiconsettinglbl"
-Me.curtvshowiconsettinglbl.Size = New System.Drawing.Size(258, 16)
+Me.curtvshowiconsettinglbl.Size = New System.Drawing.Size(293, 21)
 Me.curtvshowiconsettinglbl.TabIndex = 73
 Me.curtvshowiconsettinglbl.Text = "Wide Images / 3D Boxes will be saved as the ......"
 Me.curtvshowiconsettinglbl.Values.ExtraText = ""
@@ -14674,7 +14690,7 @@ Me.kgMusicLeftNav.Name = "kgMusicLeftNav"
 'kgMusicLeftNav.Panel
 '
 Me.kgMusicLeftNav.Panel.Controls.Add(Me.kscMusicMainSC)
-Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 182)
+Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 180)
 Me.kgMusicLeftNav.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -14698,8 +14714,8 @@ Me.kscMusicMainSC.Panel1.Controls.Add(Me.kscMusicMainTopFilterGroup)
 '
 Me.kscMusicMainSC.Panel2.Controls.Add(Me.kscMusicLeftNavBottomMainSCAlbumSongs)
 Me.kscMusicMainSC.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 180)
-Me.kscMusicMainSC.SplitterDistance = 90
+Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 178)
+Me.kscMusicMainSC.SplitterDistance = 89
 Me.kscMusicMainSC.TabIndex = 0
 '
 'kscMusicMainTopFilterGroup
@@ -14721,8 +14737,8 @@ Me.kscMusicMainTopFilterGroup.Panel1MinSize = 30
 Me.kscMusicMainTopFilterGroup.Panel2.Controls.Add(Me.lbmusicArtist)
 Me.kscMusicMainTopFilterGroup.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicMainTopFilterGroup.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 90)
-Me.kscMusicMainTopFilterGroup.SplitterDistance = 60
+Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 89)
+Me.kscMusicMainTopFilterGroup.SplitterDistance = 59
 Me.kscMusicMainTopFilterGroup.SplitterWidth = 0
 Me.kscMusicMainTopFilterGroup.TabIndex = 0
 '
@@ -14739,7 +14755,7 @@ Me.kgmusicFilters.Panel.Controls.Add(Me.krbmusicfilterNoBackground)
 Me.kgmusicFilters.Panel.Controls.Add(Me.krbmusicfilterAll)
 Me.kgmusicFilters.Panel.Controls.Add(Me.krbmusicfilterNoArtist)
 Me.kgmusicFilters.Panel.MinimumSize = New System.Drawing.Size(0, 36)
-Me.kgmusicFilters.Size = New System.Drawing.Size(187, 60)
+Me.kgmusicFilters.Size = New System.Drawing.Size(187, 59)
 Me.kgmusicFilters.TabIndex = 0
 '
 'krbmusicfilterNoBackground
@@ -14748,7 +14764,7 @@ Me.krbmusicfilterNoBackground.Enabled = false
 Me.krbmusicfilterNoBackground.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krbmusicfilterNoBackground.Location = New System.Drawing.Point(1, 36)
 Me.krbmusicfilterNoBackground.Name = "krbmusicfilterNoBackground"
-Me.krbmusicfilterNoBackground.Size = New System.Drawing.Size(124, 16)
+Me.krbmusicfilterNoBackground.Size = New System.Drawing.Size(135, 21)
 Me.krbmusicfilterNoBackground.TabIndex = 16
 Me.krbmusicfilterNoBackground.Text = "Missing Background"
 Me.krbmusicfilterNoBackground.Values.ExtraText = ""
@@ -14761,7 +14777,7 @@ Me.krbmusicfilterAll.Checked = true
 Me.krbmusicfilterAll.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krbmusicfilterAll.Location = New System.Drawing.Point(0, 0)
 Me.krbmusicfilterAll.Name = "krbmusicfilterAll"
-Me.krbmusicfilterAll.Size = New System.Drawing.Size(86, 16)
+Me.krbmusicfilterAll.Size = New System.Drawing.Size(96, 21)
 Me.krbmusicfilterAll.TabIndex = 0
 Me.krbmusicfilterAll.Text = "All My Music"
 Me.krbmusicfilterAll.Values.ExtraText = ""
@@ -14774,7 +14790,7 @@ Me.krbmusicfilterNoArtist.Enabled = false
 Me.krbmusicfilterNoArtist.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krbmusicfilterNoArtist.Location = New System.Drawing.Point(0, 17)
 Me.krbmusicfilterNoArtist.Name = "krbmusicfilterNoArtist"
-Me.krbmusicfilterNoArtist.Size = New System.Drawing.Size(124, 16)
+Me.krbmusicfilterNoArtist.Size = New System.Drawing.Size(145, 21)
 Me.krbmusicfilterNoArtist.TabIndex = 15
 Me.krbmusicfilterNoArtist.Text = "Missing Artist Image"
 Me.krbmusicfilterNoArtist.Values.ExtraText = ""
@@ -14810,8 +14826,8 @@ Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel1.Padding = New System.Windows.For
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Controls.Add(Me.lbmusicSongs)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 85)
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 54
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 84)
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 53
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.TabIndex = 0
 '
 'lbmusicAlbums
@@ -15272,7 +15288,7 @@ Me.LinkLabel1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.Fo
 Me.LinkLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.LinkLabel1.Location = New System.Drawing.Point(221, 4)
 Me.LinkLabel1.Name = "LinkLabel1"
-Me.LinkLabel1.Size = New System.Drawing.Size(73, 16)
+Me.LinkLabel1.Size = New System.Drawing.Size(81, 21)
 Me.LinkLabel1.TabIndex = 95
 Me.LinkLabel1.Text = "Open Folder"
 Me.LinkLabel1.Values.ExtraText = ""
@@ -15286,7 +15302,7 @@ Me.lblFDOtherFiles.ForeColor = System.Drawing.Color.Black
 Me.lblFDOtherFiles.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDOtherFiles.Location = New System.Drawing.Point(406, 55)
 Me.lblFDOtherFiles.Name = "lblFDOtherFiles"
-Me.lblFDOtherFiles.Size = New System.Drawing.Size(38, 16)
+Me.lblFDOtherFiles.Size = New System.Drawing.Size(46, 21)
 Me.lblFDOtherFiles.TabIndex = 11
 Me.lblFDOtherFiles.Text = "Other"
 Me.lblFDOtherFiles.Values.ExtraText = ""
@@ -15326,7 +15342,7 @@ Me.lblFDNFOFile2.ForeColor = System.Drawing.Color.Black
 Me.lblFDNFOFile2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDNFOFile2.Location = New System.Drawing.Point(-3, 40)
 Me.lblFDNFOFile2.Name = "lblFDNFOFile2"
-Me.lblFDNFOFile2.Size = New System.Drawing.Size(49, 16)
+Me.lblFDNFOFile2.Size = New System.Drawing.Size(58, 21)
 Me.lblFDNFOFile2.TabIndex = 100
 Me.lblFDNFOFile2.Text = "Nfo File"
 Me.lblFDNFOFile2.Values.ExtraText = ""
@@ -15349,7 +15365,7 @@ Me.lblFDTBNFile2.ForeColor = System.Drawing.Color.Black
 Me.lblFDTBNFile2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDTBNFile2.Location = New System.Drawing.Point(-4, 25)
 Me.lblFDTBNFile2.Name = "lblFDTBNFile2"
-Me.lblFDTBNFile2.Size = New System.Drawing.Size(51, 16)
+Me.lblFDTBNFile2.Size = New System.Drawing.Size(58, 21)
 Me.lblFDTBNFile2.TabIndex = 99
 Me.lblFDTBNFile2.Text = "Tbn File"
 Me.lblFDTBNFile2.Values.ExtraText = ""
@@ -15372,7 +15388,7 @@ Me.lblFDIconfile2.ForeColor = System.Drawing.Color.Black
 Me.lblFDIconfile2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDIconfile2.Location = New System.Drawing.Point(-3, 8)
 Me.lblFDIconfile2.Name = "lblFDIconfile2"
-Me.lblFDIconfile2.Size = New System.Drawing.Size(42, 16)
+Me.lblFDIconfile2.Size = New System.Drawing.Size(48, 21)
 Me.lblFDIconfile2.TabIndex = 98
 Me.lblFDIconfile2.Text = "Folder"
 Me.lblFDIconfile2.Values.ExtraText = ""
@@ -15395,7 +15411,7 @@ Me.lblFDMovieFile12.ForeColor = System.Drawing.Color.Black
 Me.lblFDMovieFile12.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDMovieFile12.Location = New System.Drawing.Point(406, 24)
 Me.lblFDMovieFile12.Name = "lblFDMovieFile12"
-Me.lblFDMovieFile12.Size = New System.Drawing.Size(40, 16)
+Me.lblFDMovieFile12.Size = New System.Drawing.Size(44, 21)
 Me.lblFDMovieFile12.TabIndex = 102
 Me.lblFDMovieFile12.Text = "Movie"
 Me.lblFDMovieFile12.Values.ExtraText = ""
@@ -15409,7 +15425,7 @@ Me.lblFDFanartFile2.ForeColor = System.Drawing.Color.Black
 Me.lblFDFanartFile2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDFanartFile2.Location = New System.Drawing.Point(-3, 55)
 Me.lblFDFanartFile2.Name = "lblFDFanartFile2"
-Me.lblFDFanartFile2.Size = New System.Drawing.Size(43, 16)
+Me.lblFDFanartFile2.Size = New System.Drawing.Size(49, 21)
 Me.lblFDFanartFile2.TabIndex = 101
 Me.lblFDFanartFile2.Text = "Fanart"
 Me.lblFDFanartFile2.Values.ExtraText = ""
@@ -15423,7 +15439,7 @@ Me.lblFDTrailer2.ForeColor = System.Drawing.Color.Black
 Me.lblFDTrailer2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDTrailer2.Location = New System.Drawing.Point(406, 40)
 Me.lblFDTrailer2.Name = "lblFDTrailer2"
-Me.lblFDTrailer2.Size = New System.Drawing.Size(42, 16)
+Me.lblFDTrailer2.Size = New System.Drawing.Size(51, 21)
 Me.lblFDTrailer2.TabIndex = 103
 Me.lblFDTrailer2.Text = "Trailer"
 Me.lblFDTrailer2.Values.ExtraText = ""
@@ -15452,9 +15468,9 @@ Me.header1Border.TabIndex = 1
 Me.lblFDTrailer.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDTrailer.ForeColor = System.Drawing.Color.Gainsboro
 Me.lblFDTrailer.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDTrailer.Location = New System.Drawing.Point(119, 55)
+Me.lblFDTrailer.Location = New System.Drawing.Point(119, 61)
 Me.lblFDTrailer.Name = "lblFDTrailer"
-Me.lblFDTrailer.Size = New System.Drawing.Size(42, 16)
+Me.lblFDTrailer.Size = New System.Drawing.Size(51, 21)
 Me.lblFDTrailer.TabIndex = 99
 Me.lblFDTrailer.Text = "Trailer"
 Me.lblFDTrailer.Values.ExtraText = ""
@@ -15466,9 +15482,9 @@ Me.lblFDTrailer.Values.Text = "Trailer"
 Me.lblFDMovieFile1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDMovieFile1.ForeColor = System.Drawing.Color.Gainsboro
 Me.lblFDMovieFile1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDMovieFile1.Location = New System.Drawing.Point(119, 35)
+Me.lblFDMovieFile1.Location = New System.Drawing.Point(119, 41)
 Me.lblFDMovieFile1.Name = "lblFDMovieFile1"
-Me.lblFDMovieFile1.Size = New System.Drawing.Size(41, 16)
+Me.lblFDMovieFile1.Size = New System.Drawing.Size(45, 21)
 Me.lblFDMovieFile1.TabIndex = 10
 Me.lblFDMovieFile1.Text = "Media"
 Me.lblFDMovieFile1.Values.ExtraText = ""
@@ -15480,9 +15496,9 @@ Me.lblFDMovieFile1.Values.Text = "Media"
 Me.lblFDFanartFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDFanartFile.ForeColor = System.Drawing.Color.White
 Me.lblFDFanartFile.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDFanartFile.Location = New System.Drawing.Point(12, 52)
+Me.lblFDFanartFile.Location = New System.Drawing.Point(12, 58)
 Me.lblFDFanartFile.Name = "lblFDFanartFile"
-Me.lblFDFanartFile.Size = New System.Drawing.Size(71, 16)
+Me.lblFDFanartFile.Size = New System.Drawing.Size(77, 21)
 Me.lblFDFanartFile.TabIndex = 9
 Me.lblFDFanartFile.Text = "Background"
 Me.lblFDFanartFile.Values.ExtraText = ""
@@ -15494,9 +15510,9 @@ Me.lblFDFanartFile.Values.Text = "Background"
 Me.lblFDNFOFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDNFOFile.ForeColor = System.Drawing.Color.Gainsboro
 Me.lblFDNFOFile.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDNFOFile.Location = New System.Drawing.Point(120, 15)
+Me.lblFDNFOFile.Location = New System.Drawing.Point(120, 21)
 Me.lblFDNFOFile.Name = "lblFDNFOFile"
-Me.lblFDNFOFile.Size = New System.Drawing.Size(29, 16)
+Me.lblFDNFOFile.Size = New System.Drawing.Size(37, 21)
 Me.lblFDNFOFile.TabIndex = 8
 Me.lblFDNFOFile.Text = "Info"
 Me.lblFDNFOFile.Values.ExtraText = ""
@@ -15508,9 +15524,9 @@ Me.lblFDNFOFile.Values.Text = "Info"
 Me.lblFDTBNFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDTBNFile.ForeColor = System.Drawing.Color.Gainsboro
 Me.lblFDTBNFile.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDTBNFile.Location = New System.Drawing.Point(12, 32)
+Me.lblFDTBNFile.Location = New System.Drawing.Point(12, 38)
 Me.lblFDTBNFile.Name = "lblFDTBNFile"
-Me.lblFDTBNFile.Size = New System.Drawing.Size(75, 16)
+Me.lblFDTBNFile.Size = New System.Drawing.Size(84, 21)
 Me.lblFDTBNFile.TabIndex = 7
 Me.lblFDTBNFile.Text = "Movie Image"
 Me.lblFDTBNFile.Values.ExtraText = ""
@@ -15522,9 +15538,9 @@ Me.lblFDTBNFile.Values.Text = "Movie Image"
 Me.lblFDIconfile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblFDIconfile.ForeColor = System.Drawing.Color.Gainsboro
 Me.lblFDIconfile.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.lblFDIconfile.Location = New System.Drawing.Point(12, 13)
+Me.lblFDIconfile.Location = New System.Drawing.Point(12, 19)
 Me.lblFDIconfile.Name = "lblFDIconfile"
-Me.lblFDIconfile.Size = New System.Drawing.Size(77, 16)
+Me.lblFDIconfile.Size = New System.Drawing.Size(88, 21)
 Me.lblFDIconfile.TabIndex = 6
 Me.lblFDIconfile.Text = "Folder Image"
 Me.lblFDIconfile.Values.ExtraText = ""
@@ -15550,7 +15566,7 @@ Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
 Me.rbMDNFOProblems.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDNFOProblems.Location = New System.Drawing.Point(-1, 77)
 Me.rbMDNFOProblems.Name = "rbMDNFOProblems"
-Me.rbMDNFOProblems.Size = New System.Drawing.Size(120, 16)
+Me.rbMDNFOProblems.Size = New System.Drawing.Size(139, 21)
 Me.rbMDNFOProblems.TabIndex = 5
 Me.rbMDNFOProblems.Text = "Missing Information"
 Me.rbMDNFOProblems.Values.ExtraText = ""
@@ -15562,7 +15578,7 @@ Me.rbMDNFOProblems.Values.Text = "Missing Information"
 Me.rbMDNoFanart.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDNoFanart.Location = New System.Drawing.Point(-1, 36)
 Me.rbMDNoFanart.Name = "rbMDNoFanart"
-Me.rbMDNoFanart.Size = New System.Drawing.Size(159, 16)
+Me.rbMDNoFanart.Size = New System.Drawing.Size(175, 21)
 Me.rbMDNoFanart.TabIndex = 4
 Me.rbMDNoFanart.Text = "Missing Background Image"
 Me.rbMDNoFanart.Values.ExtraText = ""
@@ -15574,7 +15590,7 @@ Me.rbMDNoFanart.Values.Text = "Missing Background Image"
 Me.rbMDNoTBN.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDNoTBN.Location = New System.Drawing.Point(-1, 57)
 Me.rbMDNoTBN.Name = "rbMDNoTBN"
-Me.rbMDNoTBN.Size = New System.Drawing.Size(128, 16)
+Me.rbMDNoTBN.Size = New System.Drawing.Size(142, 21)
 Me.rbMDNoTBN.TabIndex = 3
 Me.rbMDNoTBN.Text = "Missing Movie Image"
 Me.rbMDNoTBN.Values.ExtraText = ""
@@ -15586,7 +15602,7 @@ Me.rbMDNoTBN.Values.Text = "Missing Movie Image"
 Me.rbMDNoIcon.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDNoIcon.Location = New System.Drawing.Point(-1, 97)
 Me.rbMDNoIcon.Name = "rbMDNoIcon"
-Me.rbMDNoIcon.Size = New System.Drawing.Size(130, 16)
+Me.rbMDNoIcon.Size = New System.Drawing.Size(146, 21)
 Me.rbMDNoIcon.TabIndex = 2
 Me.rbMDNoIcon.Text = "Missing Folder Image"
 Me.rbMDNoIcon.Values.ExtraText = ""
@@ -15598,7 +15614,7 @@ Me.rbMDNoIcon.Values.Text = "Missing Folder Image"
 Me.rbMDwithIssues.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDwithIssues.Location = New System.Drawing.Point(-1, 16)
 Me.rbMDwithIssues.Name = "rbMDwithIssues"
-Me.rbMDwithIssues.Size = New System.Drawing.Size(132, 16)
+Me.rbMDwithIssues.Size = New System.Drawing.Size(146, 21)
 Me.rbMDwithIssues.TabIndex = 1
 Me.rbMDwithIssues.Text = "Movies with Problems"
 Me.rbMDwithIssues.Values.ExtraText = ""
@@ -15611,7 +15627,7 @@ Me.rbMDAll.Checked = true
 Me.rbMDAll.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.rbMDAll.Location = New System.Drawing.Point(-1, -2)
 Me.rbMDAll.Name = "rbMDAll"
-Me.rbMDAll.Size = New System.Drawing.Size(92, 16)
+Me.rbMDAll.Size = New System.Drawing.Size(103, 21)
 Me.rbMDAll.TabIndex = 0
 Me.rbMDAll.Text = "All My Movies"
 Me.rbMDAll.Values.ExtraText = ""
@@ -15648,7 +15664,7 @@ Me.kgMyMovieList.Name = "kgMyMovieList"
 'kgMyMovieList.Panel
 '
 Me.kgMyMovieList.Panel.Controls.Add(Me.lbMyMovies)
-Me.kgMyMovieList.Size = New System.Drawing.Size(187, 47)
+Me.kgMyMovieList.Size = New System.Drawing.Size(187, 44)
 Me.kgMyMovieList.TabIndex = 80
 '
 'lbMyMovies
@@ -15658,7 +15674,7 @@ Me.lbMyMovies.FormattingEnabled = true
 Me.lbMyMovies.Location = New System.Drawing.Point(0, 0)
 Me.lbMyMovies.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.lbMyMovies.Name = "lbMyMovies"
-Me.lbMyMovies.Size = New System.Drawing.Size(181, 30)
+Me.lbMyMovies.Size = New System.Drawing.Size(175, 30)
 Me.lbMyMovies.TabIndex = 98
 '
 'kgMovieOrTVShow
@@ -15685,7 +15701,7 @@ Me.kgMovieOrTVShow.TabIndex = 98
 Me.klNumMovies.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klNumMovies.Location = New System.Drawing.Point(7, 14)
 Me.klNumMovies.Name = "klNumMovies"
-Me.klNumMovies.Size = New System.Drawing.Size(29, 16)
+Me.klNumMovies.Size = New System.Drawing.Size(33, 21)
 Me.klNumMovies.TabIndex = 101
 Me.klNumMovies.Text = "000"
 Me.klNumMovies.Values.ExtraText = ""
@@ -15697,7 +15713,7 @@ Me.klNumMovies.Values.Text = "000"
 Me.klNumMusic.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klNumMusic.Location = New System.Drawing.Point(128, 14)
 Me.klNumMusic.Name = "klNumMusic"
-Me.klNumMusic.Size = New System.Drawing.Size(29, 16)
+Me.klNumMusic.Size = New System.Drawing.Size(33, 21)
 Me.klNumMusic.TabIndex = 104
 Me.klNumMusic.Text = "000"
 Me.klNumMusic.Values.ExtraText = ""
@@ -15709,7 +15725,7 @@ Me.klNumMusic.Values.Text = "000"
 Me.krbCMMusic.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krbCMMusic.Location = New System.Drawing.Point(120, -3)
 Me.krbCMMusic.Name = "krbCMMusic"
-Me.krbCMMusic.Size = New System.Drawing.Size(54, 16)
+Me.krbCMMusic.Size = New System.Drawing.Size(57, 21)
 Me.krbCMMusic.TabIndex = 103
 Me.krbCMMusic.Text = "Tunes"
 Me.krbCMMusic.Values.ExtraText = ""
@@ -15721,7 +15737,7 @@ Me.krbCMMusic.Values.Text = "Tunes"
 Me.klNumTvShows.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klNumTvShows.Location = New System.Drawing.Point(63, 14)
 Me.klNumTvShows.Name = "klNumTvShows"
-Me.klNumTvShows.Size = New System.Drawing.Size(29, 16)
+Me.klNumTvShows.Size = New System.Drawing.Size(33, 21)
 Me.klNumTvShows.TabIndex = 102
 Me.klNumTvShows.Text = "000"
 Me.klNumTvShows.Values.ExtraText = ""
@@ -15733,7 +15749,7 @@ Me.klNumTvShows.Values.Text = "000"
 Me.krbCMTV.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krbCMTV.Location = New System.Drawing.Point(61, -3)
 Me.krbCMTV.Name = "krbCMTV"
-Me.krbCMTV.Size = New System.Drawing.Size(56, 16)
+Me.krbCMTV.Size = New System.Drawing.Size(59, 21)
 Me.krbCMTV.StateCommon.LongText.Color1 = System.Drawing.Color.White
 Me.krbCMTV.StateCommon.LongText.Color2 = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(128,Byte),Integer), CType(CType(128,Byte),Integer))
 Me.krbCMTV.TabIndex = 99
@@ -15748,7 +15764,7 @@ Me.krpCMMovie.Checked = true
 Me.krpCMMovie.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.krpCMMovie.Location = New System.Drawing.Point(-1, -3)
 Me.krpCMMovie.Name = "krpCMMovie"
-Me.krpCMMovie.Size = New System.Drawing.Size(58, 16)
+Me.krpCMMovie.Size = New System.Drawing.Size(62, 21)
 Me.krpCMMovie.TabIndex = 98
 Me.krpCMMovie.Text = "Movies"
 Me.krpCMMovie.Values.ExtraText = ""
@@ -15765,40 +15781,26 @@ Me.gbAppMode.Name = "gbAppMode"
 '
 'gbAppMode.Panel
 '
-Me.gbAppMode.Panel.Controls.Add(Me.btnCancelPC)
-Me.gbAppMode.Panel.Controls.Add(Me.cbAllowIconSelection)
 Me.gbAppMode.Panel.Controls.Add(Me.rbmonitor)
 Me.gbAppMode.Panel.Controls.Add(Me.rbread)
+Me.gbAppMode.Panel.Controls.Add(Me.cbAllowIconSelection)
 Me.gbAppMode.Panel.Controls.Add(Me.rbem)
 Me.gbAppMode.Panel.Controls.Add(Me.klblSelectAppMode)
-Me.gbAppMode.Size = New System.Drawing.Size(299, 43)
+Me.gbAppMode.Size = New System.Drawing.Size(308, 43)
 Me.gbAppMode.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.gbAppMode.StateCommon.Border.Width = 1
 Me.gbAppMode.TabIndex = 106
 '
-'cbAllowIconSelection
-'
-Me.cbAllowIconSelection.Checked = true
-Me.cbAllowIconSelection.CheckState = System.Windows.Forms.CheckState.Checked
-Me.cbAllowIconSelection.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.cbAllowIconSelection.Location = New System.Drawing.Point(85, 20)
-Me.cbAllowIconSelection.Name = "cbAllowIconSelection"
-Me.cbAllowIconSelection.Size = New System.Drawing.Size(125, 16)
-Me.cbAllowIconSelection.TabIndex = 99
-Me.cbAllowIconSelection.Text = "Allow Icon Selection"
-Me.cbAllowIconSelection.Values.ExtraText = ""
-Me.cbAllowIconSelection.Values.Image = Nothing
-Me.cbAllowIconSelection.Values.Text = "Allow Icon Selection"
-'
 'rbmonitor
 '
 Me.rbmonitor.Enabled = false
 Me.rbmonitor.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.rbmonitor.Location = New System.Drawing.Point(213, 0)
+Me.rbmonitor.Location = New System.Drawing.Point(213, -1)
+Me.rbmonitor.Margin = New System.Windows.Forms.Padding(0)
 Me.rbmonitor.Name = "rbmonitor"
-Me.rbmonitor.Size = New System.Drawing.Size(60, 16)
+Me.rbmonitor.Size = New System.Drawing.Size(68, 21)
 Me.rbmonitor.TabIndex = 102
 Me.rbmonitor.Text = "Monitor"
 Me.rbmonitor.Values.ExtraText = ""
@@ -15808,22 +15810,39 @@ Me.rbmonitor.Values.Text = "Monitor"
 'rbread
 '
 Me.rbread.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.rbread.Location = New System.Drawing.Point(133, 0)
+Me.rbread.Location = New System.Drawing.Point(133, -1)
+Me.rbread.Margin = New System.Windows.Forms.Padding(0)
 Me.rbread.Name = "rbread"
-Me.rbread.Size = New System.Drawing.Size(59, 16)
+Me.rbread.Size = New System.Drawing.Size(64, 21)
 Me.rbread.TabIndex = 100
 Me.rbread.Text = "Display"
 Me.rbread.Values.ExtraText = ""
 Me.rbread.Values.Image = Nothing
 Me.rbread.Values.Text = "Display"
 '
+'cbAllowIconSelection
+'
+Me.cbAllowIconSelection.Checked = true
+Me.cbAllowIconSelection.CheckState = System.Windows.Forms.CheckState.Checked
+Me.cbAllowIconSelection.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.cbAllowIconSelection.Location = New System.Drawing.Point(78, 15)
+Me.cbAllowIconSelection.Margin = New System.Windows.Forms.Padding(0)
+Me.cbAllowIconSelection.Name = "cbAllowIconSelection"
+Me.cbAllowIconSelection.Size = New System.Drawing.Size(142, 21)
+Me.cbAllowIconSelection.TabIndex = 99
+Me.cbAllowIconSelection.Text = "Allow Icon Selection"
+Me.cbAllowIconSelection.Values.ExtraText = ""
+Me.cbAllowIconSelection.Values.Image = Nothing
+Me.cbAllowIconSelection.Values.Text = "Allow Icon Selection"
+'
 'rbem
 '
 Me.rbem.Checked = true
 Me.rbem.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.rbem.Location = New System.Drawing.Point(47, 0)
+Me.rbem.Location = New System.Drawing.Point(47, -1)
+Me.rbem.Margin = New System.Windows.Forms.Padding(0)
 Me.rbem.Name = "rbem"
-Me.rbem.Size = New System.Drawing.Size(73, 16)
+Me.rbem.Size = New System.Drawing.Size(76, 21)
 Me.rbem.TabIndex = 99
 Me.rbem.Text = "Download"
 Me.rbem.Values.ExtraText = ""
@@ -15835,8 +15854,9 @@ Me.rbem.Values.Text = "Download"
 Me.klblSelectAppMode.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblSelectAppMode.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblSelectAppMode.Location = New System.Drawing.Point(0, 0)
+Me.klblSelectAppMode.Margin = New System.Windows.Forms.Padding(0)
 Me.klblSelectAppMode.Name = "klblSelectAppMode"
-Me.klblSelectAppMode.Size = New System.Drawing.Size(293, 16)
+Me.klblSelectAppMode.Size = New System.Drawing.Size(296, 21)
 Me.klblSelectAppMode.TabIndex = 101
 Me.klblSelectAppMode.Text = "Mode:"
 Me.klblSelectAppMode.Values.ExtraText = ""
@@ -15849,389 +15869,872 @@ Me.bwFolderData.WorkerReportsProgress = true
 '
 'kManager
 '
-Me.kManager.GlobalPalette = Me.kpaletteDucks
+Me.kManager.GlobalPalette = Me.kPalettePink
 Me.kManager.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Custom
 '
-'kpaletteDucks
+'kPalettePink
 '
-Me.kpaletteDucks.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleOrange
-Me.kpaletteDucks.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color1 = System.Drawing.Color.White
+Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteDucks.ButtonStyles.ButtonCommon.StateCommon.Border.Rounding = 7
-Me.kpaletteDucks.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1
-Me.kpaletteDucks.Common.StateCommon.Border.Color1 = System.Drawing.Color.Goldenrod
-Me.kpaletteDucks.Common.StateCommon.Border.Color2 = System.Drawing.Color.Black
-Me.kpaletteDucks.Common.StateCommon.Border.ColorAngle = 60!
-Me.kpaletteDucks.Common.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear50
-Me.kpaletteDucks.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedFull
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color1 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color2 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteDucks.Common.StateCommon.Border.Rounding = 7
-Me.kpaletteDucks.Common.StateCommon.Border.Width = 1
-Me.kpaletteDucks.DragDrop.DropDockActive = System.Drawing.Color.Empty
-Me.kpaletteDucks.DragDrop.DropDockBack = System.Drawing.Color.Empty
-Me.kpaletteDucks.DragDrop.DropDockBorder = System.Drawing.Color.Empty
-Me.kpaletteDucks.DragDrop.DropDockInactive = System.Drawing.Color.Empty
-Me.kpaletteDucks.DragDrop.SolidBack = System.Drawing.Color.Empty
-Me.kpaletteDucks.DragDrop.SolidBorder = System.Drawing.Color.Empty
-Me.kpaletteDucks.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteDucks.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteDucks.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteDucks.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteDucks.HeaderStyles.HeaderCustom1.StateDisabled.Content.Padding = New System.Windows.Forms.Padding(0)
-Me.kpaletteDucks.HeaderStyles.HeaderCustom1.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
-Me.kpaletteDucks.HeaderStyles.HeaderCustom1.StateNormal.Content.Padding = New System.Windows.Forms.Padding(0)
-Me.kpaletteDucks.HeaderStyles.HeaderCustom1.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color1 = System.Drawing.Color.Peru
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color2 = System.Drawing.Color.Peru
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateActive.Border.Rounding = 2
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateActive.Border.Width = 0
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color1 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color2 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateCommon.Border.Rounding = 2
-Me.kpaletteDucks.InputControlStyles.InputControlCommon.StateCommon.Border.Width = 0
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.LongText.Color1 = System.Drawing.Color.Black
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.LongText.Color2 = System.Drawing.Color.Goldenrod
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.LongText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.Goldenrod
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.ShortText.ColorAngle = 60!
-Me.kpaletteDucks.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
-Me.kpaletteDucks.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.DimGray
-Me.kpaletteDucks.PanelStyles.PanelAlternate.StateCommon.Color2 = System.Drawing.Color.Black
-Me.kpaletteDucks.PanelStyles.PanelAlternate.StateCommon.ColorAngle = 60!
-Me.kpaletteDucks.PanelStyles.PanelAlternate.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
-Me.kpaletteDucks.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.DimGray
-Me.kpaletteDucks.PanelStyles.PanelCustom1.StateCommon.Color2 = System.Drawing.Color.Black
-Me.kpaletteDucks.PanelStyles.PanelCustom1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteDucks.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.Color1 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.Color2 = System.Drawing.Color.Tan
+Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.Color2 = System.Drawing.Color.FloralWhite
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.Color2 = System.Drawing.Color.Orange
+Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.Common.StateCommon.Border.Rounding = 15
+Me.kPalettePink.Common.StateCommon.Border.Width = 1
+Me.kPalettePink.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.Color2 = System.Drawing.Color.FloralWhite
+Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.ContextMenu.StateCommon.Heading.Back.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ContextMenu.StateCommon.Heading.Back.Color2 = System.Drawing.Color.FloralWhite
+Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.Color2 = System.Drawing.Color.FloralWhite
+Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.ContextMenu.StateCommon.Separator.Back.Color1 = System.Drawing.Color.GhostWhite
+Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Back.Color1 = System.Drawing.Color.Orange
+Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.Color1 = System.Drawing.Color.Tan
+Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.Color2 = System.Drawing.Color.Tan
+Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.DragDrop.DropDockActive = System.Drawing.Color.Empty
+Me.kPalettePink.DragDrop.DropDockBack = System.Drawing.Color.Empty
+Me.kPalettePink.DragDrop.DropDockBorder = System.Drawing.Color.Empty
+Me.kPalettePink.DragDrop.DropDockInactive = System.Drawing.Color.Empty
+Me.kPalettePink.DragDrop.SolidBack = System.Drawing.Color.Empty
+Me.kPalettePink.DragDrop.SolidBorder = System.Drawing.Color.Empty
+Me.kPalettePink.FormStyles.FormCommon.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.FormStyles.FormCommon.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPalettePink.FormStyles.FormCommon.StateActive.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.FormStyles.FormCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.FormStyles.FormCustom1.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPalettePink.FormStyles.FormCustom1.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPalettePink.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPalettePink.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPalettePink.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.Rounding = 7
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
+Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPalettePink.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.LightSkyBlue
+Me.kPalettePink.PanelStyles.PanelAlternate.StateNormal.Color1 = System.Drawing.Color.LightSkyBlue
+Me.kPalettePink.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.PanelStyles.PanelClient.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPalettePink.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.SteelBlue
+Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.White
+Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.White
+Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.White
+Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Gray
+Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.SlateGray
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.SlateGray
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.SlateGray
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.SlateGray
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Orange
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Transparent
+Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Red
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.AliceBlue
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.White
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.White
+Me.kPalettePink.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.ToolMenuStatus.Menu.MenuBorder = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ToolMenuStatus.Menu.MenuItemText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.ToolMenuStatus.Separator.SeparatorDark = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripBorder = System.Drawing.Color.LightSteelBlue
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientEnd = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripDropDownBackground = System.Drawing.Color.White
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientBegin = System.Drawing.Color.WhiteSmoke
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientEnd = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientMiddle = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripPanelGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripPanelGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+'
+'kPaletteBling
+'
+Me.kPaletteBling.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleOrange
+Me.kPaletteBling.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBling.ButtonStyles.ButtonCommon.StateCommon.Border.Rounding = 7
+Me.kPaletteBling.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1
+Me.kPaletteBling.Common.StateCommon.Border.Color1 = System.Drawing.Color.Goldenrod
+Me.kPaletteBling.Common.StateCommon.Border.Color2 = System.Drawing.Color.Black
+Me.kPaletteBling.Common.StateCommon.Border.ColorAngle = 60!
+Me.kPaletteBling.Common.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear50
+Me.kPaletteBling.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBling.Common.StateCommon.Border.Rounding = 7
+Me.kPaletteBling.Common.StateCommon.Border.Width = 1
+Me.kPaletteBling.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteBling.DragDrop.DropDockActive = System.Drawing.Color.Empty
+Me.kPaletteBling.DragDrop.DropDockBack = System.Drawing.Color.Empty
+Me.kPaletteBling.DragDrop.DropDockBorder = System.Drawing.Color.Empty
+Me.kPaletteBling.DragDrop.DropDockInactive = System.Drawing.Color.Empty
+Me.kPaletteBling.DragDrop.SolidBack = System.Drawing.Color.Empty
+Me.kPaletteBling.DragDrop.SolidBorder = System.Drawing.Color.Empty
+Me.kPaletteBling.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBling.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBling.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBling.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBling.HeaderStyles.HeaderCustom1.StateDisabled.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kPaletteBling.HeaderStyles.HeaderCustom1.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
+Me.kPaletteBling.HeaderStyles.HeaderCustom1.StateNormal.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kPaletteBling.HeaderStyles.HeaderCustom1.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateActive.Border.Rounding = 2
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateActive.Border.Width = 0
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateCommon.Border.Rounding = 2
+Me.kPaletteBling.InputControlStyles.InputControlCommon.StateCommon.Border.Width = 0
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.LongText.Color1 = System.Drawing.Color.Black
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.LongText.Color2 = System.Drawing.Color.Goldenrod
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.LongText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.Goldenrod
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.ShortText.ColorAngle = 60!
+Me.kPaletteBling.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kPaletteBling.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.DimGray
+Me.kPaletteBling.PanelStyles.PanelAlternate.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kPaletteBling.PanelStyles.PanelAlternate.StateCommon.ColorAngle = 60!
+Me.kPaletteBling.PanelStyles.PanelAlternate.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kPaletteBling.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.DimGray
+Me.kPaletteBling.PanelStyles.PanelCustom1.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kPaletteBling.PanelStyles.PanelCustom1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBling.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
 '
 'kpaletteSilver
 '
@@ -16250,6 +16753,7 @@ Me.kpaletteSilver.Common.StateCommon.Border.DrawBorders = CType((((ComponentFact
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.kpaletteSilver.Common.StateCommon.Border.Rounding = 7
 Me.kpaletteSilver.Common.StateCommon.Border.Width = 2
+Me.kpaletteSilver.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
 Me.kpaletteSilver.DragDrop.DropDockActive = System.Drawing.Color.Empty
 Me.kpaletteSilver.DragDrop.DropDockBack = System.Drawing.Color.Empty
 Me.kpaletteSilver.DragDrop.DropDockBorder = System.Drawing.Color.Empty
@@ -16726,7 +17230,7 @@ Me.kgMoviesNavLeft.Name = "kgMoviesNavLeft"
 'kgMoviesNavLeft.Panel
 '
 Me.kgMoviesNavLeft.Panel.Controls.Add(Me.kscLeftMovieNavMain)
-Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 178)
+Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 175)
 Me.kgMoviesNavLeft.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -16753,7 +17257,7 @@ Me.kscLeftMovieNavMain.Panel1MinSize = 100
 '
 Me.kscLeftMovieNavMain.Panel2.Controls.Add(Me.kgMyMovieList)
 Me.kscLeftMovieNavMain.Panel2MinSize = 40
-Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 176)
+Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 173)
 Me.kscLeftMovieNavMain.SplitterDistance = 126
 Me.kscLeftMovieNavMain.SplitterWidth = 3
 Me.kscLeftMovieNavMain.TabIndex = 77
@@ -16768,7 +17272,7 @@ Me.kgTVNavLeft.Name = "kgTVNavLeft"
 'kgTVNavLeft.Panel
 '
 Me.kgTVNavLeft.Panel.Controls.Add(Me.kscTVMainNavLeft)
-Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 183)
+Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 181)
 Me.kgTVNavLeft.StateNormal.Border.ColorAngle = 20!
 Me.kgTVNavLeft.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
@@ -16793,7 +17297,7 @@ Me.kscTVMainNavLeft.Panel1.Controls.Add(Me.kgTvShowPickerArea)
 '
 Me.kscTVMainNavLeft.Panel2.Controls.Add(Me.kscTVMainLeftBottomNav)
 Me.kscTVMainNavLeft.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 179)
+Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 177)
 Me.kscTVMainNavLeft.SplitterDistance = 25
 Me.kscTVMainNavLeft.TabIndex = 47
 '
@@ -16815,7 +17319,7 @@ Me.lbTvShowPicker.Dock = System.Windows.Forms.DockStyle.Fill
 Me.lbTvShowPicker.FormattingEnabled = true
 Me.lbTvShowPicker.Location = New System.Drawing.Point(0, 0)
 Me.lbTvShowPicker.Name = "lbTvShowPicker"
-Me.lbTvShowPicker.Size = New System.Drawing.Size(179, 17)
+Me.lbTvShowPicker.Size = New System.Drawing.Size(173, 4)
 Me.lbTvShowPicker.TabIndex = 0
 '
 'kscTVMainLeftBottomNav
@@ -16834,7 +17338,7 @@ Me.kscTVMainLeftBottomNav.Panel1.Controls.Add(Me.kgTVSeasonPickerGroup)
 '
 Me.kscTVMainLeftBottomNav.Panel2.Controls.Add(Me.kscEpisodesEEM)
 Me.kscTVMainLeftBottomNav.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 149)
+Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 147)
 Me.kscTVMainLeftBottomNav.SplitterDistance = 25
 Me.kscTVMainLeftBottomNav.TabIndex = 0
 '
@@ -16854,8 +17358,8 @@ Me.kscEpisodesEEM.Panel1.Controls.Add(Me.kgTVEpisodesGroup)
 '
 Me.kscEpisodesEEM.Panel2.Controls.Add(Me.kgMissingEpisodes)
 Me.kscEpisodesEEM.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 119)
-Me.kscEpisodesEEM.SplitterDistance = 78
+Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 117)
+Me.kscEpisodesEEM.SplitterDistance = 76
 Me.kscEpisodesEEM.TabIndex = 113
 '
 'kgMissingEpisodes
@@ -16878,7 +17382,7 @@ Me.lbEpisodesMissing.ForeColor = System.Drawing.Color.Red
 Me.lbEpisodesMissing.FormattingEnabled = true
 Me.lbEpisodesMissing.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodesMissing.Name = "lbEpisodesMissing"
-Me.lbEpisodesMissing.Size = New System.Drawing.Size(179, 30)
+Me.lbEpisodesMissing.Size = New System.Drawing.Size(173, 17)
 Me.lbEpisodesMissing.TabIndex = 98
 '
 'bwFolderDataTDM
@@ -16894,84 +17398,49 @@ Me.kgQCIcons.Name = "kgQCIcons"
 '
 'kgQCIcons.Panel
 '
-Me.kgQCIcons.Panel.Controls.Add(Me.klblMovieFolderContent)
+Me.kgQCIcons.Panel.Controls.Add(Me.pbFDFolderJpg)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDNFOFile)
 Me.kgQCIcons.Panel.Controls.Add(Me.pbFDNFO)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDMovieFile1)
-Me.kgQCIcons.Panel.Controls.Add(Me.pbFDTBN)
-Me.kgQCIcons.Panel.Controls.Add(Me.pbFDFanart)
-Me.kgQCIcons.Panel.Controls.Add(Me.pbFDFolderJpg)
 Me.kgQCIcons.Panel.Controls.Add(Me.pbFDMovieFile1)
 Me.kgQCIcons.Panel.Controls.Add(Me.pbFDTrailer)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDTrailer)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDFanartFile)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDTBNFile)
 Me.kgQCIcons.Panel.Controls.Add(Me.lblFDIconfile)
-Me.kgQCIcons.Size = New System.Drawing.Size(189, 80)
+Me.kgQCIcons.Panel.Controls.Add(Me.klblMovieFolderContent)
+Me.kgQCIcons.Panel.Controls.Add(Me.pbFDTBN)
+Me.kgQCIcons.Panel.Controls.Add(Me.pbFDFanart)
+Me.kgQCIcons.Size = New System.Drawing.Size(189, 90)
 Me.kgQCIcons.TabIndex = 105
-'
-'klblMovieFolderContent
-'
-Me.klblMovieFolderContent.Dock = System.Windows.Forms.DockStyle.Top
-Me.klblMovieFolderContent.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblMovieFolderContent.Location = New System.Drawing.Point(0, 0)
-Me.klblMovieFolderContent.Name = "klblMovieFolderContent"
-Me.klblMovieFolderContent.Size = New System.Drawing.Size(183, 16)
-Me.klblMovieFolderContent.TabIndex = 48
-Me.klblMovieFolderContent.Text = "Movie Folder Content"
-Me.klblMovieFolderContent.Values.ExtraText = ""
-Me.klblMovieFolderContent.Values.Image = Nothing
-Me.klblMovieFolderContent.Values.Text = "Movie Folder Content"
-'
-'pbFDNFO
-'
-Me.pbFDNFO.BackColor = System.Drawing.Color.Transparent
-Me.pbFDNFO.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDNFO.Location = New System.Drawing.Point(99, 12)
-Me.pbFDNFO.Name = "pbFDNFO"
-Me.pbFDNFO.Size = New System.Drawing.Size(21, 19)
-Me.pbFDNFO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDNFO.TabIndex = 98
-Me.pbFDNFO.TabStop = false
-'
-'pbFDTBN
-'
-Me.pbFDTBN.BackColor = System.Drawing.Color.Transparent
-Me.pbFDTBN.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDTBN.Location = New System.Drawing.Point(-4, 32)
-Me.pbFDTBN.Name = "pbFDTBN"
-Me.pbFDTBN.Size = New System.Drawing.Size(21, 19)
-Me.pbFDTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDTBN.TabIndex = 98
-Me.pbFDTBN.TabStop = false
-'
-'pbFDFanart
-'
-Me.pbFDFanart.BackColor = System.Drawing.Color.Transparent
-Me.pbFDFanart.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDFanart.Location = New System.Drawing.Point(-4, 52)
-Me.pbFDFanart.Name = "pbFDFanart"
-Me.pbFDFanart.Size = New System.Drawing.Size(21, 19)
-Me.pbFDFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDFanart.TabIndex = 98
-Me.pbFDFanart.TabStop = false
 '
 'pbFDFolderJpg
 '
 Me.pbFDFolderJpg.BackColor = System.Drawing.Color.Transparent
 Me.pbFDFolderJpg.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDFolderJpg.Location = New System.Drawing.Point(-4, 12)
+Me.pbFDFolderJpg.Location = New System.Drawing.Point(-4, 18)
 Me.pbFDFolderJpg.Name = "pbFDFolderJpg"
 Me.pbFDFolderJpg.Size = New System.Drawing.Size(21, 19)
 Me.pbFDFolderJpg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
 Me.pbFDFolderJpg.TabIndex = 97
 Me.pbFDFolderJpg.TabStop = false
 '
+'pbFDNFO
+'
+Me.pbFDNFO.BackColor = System.Drawing.Color.Transparent
+Me.pbFDNFO.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDNFO.Location = New System.Drawing.Point(99, 18)
+Me.pbFDNFO.Name = "pbFDNFO"
+Me.pbFDNFO.Size = New System.Drawing.Size(21, 19)
+Me.pbFDNFO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDNFO.TabIndex = 98
+Me.pbFDNFO.TabStop = false
+'
 'pbFDMovieFile1
 '
 Me.pbFDMovieFile1.BackColor = System.Drawing.Color.Transparent
 Me.pbFDMovieFile1.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDMovieFile1.Location = New System.Drawing.Point(98, 32)
+Me.pbFDMovieFile1.Location = New System.Drawing.Point(98, 38)
 Me.pbFDMovieFile1.Name = "pbFDMovieFile1"
 Me.pbFDMovieFile1.Size = New System.Drawing.Size(21, 19)
 Me.pbFDMovieFile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -16982,12 +17451,47 @@ Me.pbFDMovieFile1.TabStop = false
 '
 Me.pbFDTrailer.BackColor = System.Drawing.Color.Transparent
 Me.pbFDTrailer.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDTrailer.Location = New System.Drawing.Point(98, 52)
+Me.pbFDTrailer.Location = New System.Drawing.Point(98, 58)
 Me.pbFDTrailer.Name = "pbFDTrailer"
 Me.pbFDTrailer.Size = New System.Drawing.Size(21, 19)
 Me.pbFDTrailer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
 Me.pbFDTrailer.TabIndex = 100
 Me.pbFDTrailer.TabStop = false
+'
+'klblMovieFolderContent
+'
+Me.klblMovieFolderContent.Dock = System.Windows.Forms.DockStyle.Top
+Me.klblMovieFolderContent.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.klblMovieFolderContent.Location = New System.Drawing.Point(0, 0)
+Me.klblMovieFolderContent.Name = "klblMovieFolderContent"
+Me.klblMovieFolderContent.Size = New System.Drawing.Size(177, 21)
+Me.klblMovieFolderContent.TabIndex = 48
+Me.klblMovieFolderContent.Text = "Movie Folder Content"
+Me.klblMovieFolderContent.Values.ExtraText = ""
+Me.klblMovieFolderContent.Values.Image = Nothing
+Me.klblMovieFolderContent.Values.Text = "Movie Folder Content"
+'
+'pbFDTBN
+'
+Me.pbFDTBN.BackColor = System.Drawing.Color.Transparent
+Me.pbFDTBN.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDTBN.Location = New System.Drawing.Point(-4, 38)
+Me.pbFDTBN.Name = "pbFDTBN"
+Me.pbFDTBN.Size = New System.Drawing.Size(21, 19)
+Me.pbFDTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDTBN.TabIndex = 98
+Me.pbFDTBN.TabStop = false
+'
+'pbFDFanart
+'
+Me.pbFDFanart.BackColor = System.Drawing.Color.Transparent
+Me.pbFDFanart.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDFanart.Location = New System.Drawing.Point(-4, 58)
+Me.pbFDFanart.Name = "pbFDFanart"
+Me.pbFDFanart.Size = New System.Drawing.Size(21, 19)
+Me.pbFDFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDFanart.TabIndex = 98
+Me.pbFDFanart.TabStop = false
 '
 'lblPbar
 '
@@ -16995,7 +17499,7 @@ Me.lblPbar.Dock = System.Windows.Forms.DockStyle.Fill
 Me.lblPbar.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblPbar.Location = New System.Drawing.Point(0, 0)
 Me.lblPbar.Name = "lblPbar"
-Me.lblPbar.Size = New System.Drawing.Size(385, 30)
+Me.lblPbar.Size = New System.Drawing.Size(372, 30)
 Me.lblPbar.TabIndex = 41
 Me.lblPbar.Text = "WORKING"
 Me.lblPbar.Values.ExtraText = ""
@@ -17009,7 +17513,7 @@ Me.lblPCWorking.Dock = System.Windows.Forms.DockStyle.Fill
 Me.lblPCWorking.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblPCWorking.Location = New System.Drawing.Point(0, 0)
 Me.lblPCWorking.Name = "lblPCWorking"
-Me.lblPCWorking.Size = New System.Drawing.Size(385, 30)
+Me.lblPCWorking.Size = New System.Drawing.Size(372, 30)
 Me.lblPCWorking.TabIndex = 78
 Me.lblPCWorking.Text = "Working...."
 Me.lblPCWorking.Values.ExtraText = ""
@@ -17023,7 +17527,7 @@ Me.prgThread.Dock = System.Windows.Forms.DockStyle.Fill
 Me.prgThread.Location = New System.Drawing.Point(0, 0)
 Me.prgThread.MarqueeAnimationSpeed = 140
 Me.prgThread.Name = "prgThread"
-Me.prgThread.Size = New System.Drawing.Size(385, 13)
+Me.prgThread.Size = New System.Drawing.Size(372, 13)
 Me.prgThread.TabIndex = 77
 Me.prgThread.Visible = false
 '
@@ -17035,7 +17539,7 @@ Me.pbar1.Margin = New System.Windows.Forms.Padding(2)
 Me.pbar1.MarqueeAnimationSpeed = 25
 Me.pbar1.Maximum = 50
 Me.pbar1.Name = "pbar1"
-Me.pbar1.Size = New System.Drawing.Size(385, 13)
+Me.pbar1.Size = New System.Drawing.Size(372, 13)
 Me.pbar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
 Me.pbar1.TabIndex = 5
 Me.pbar1.Visible = false
@@ -17047,7 +17551,7 @@ Me.lblCurItem.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPan
 Me.lblCurItem.Location = New System.Drawing.Point(0, 0)
 Me.lblCurItem.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 Me.lblCurItem.Name = "lblCurItem"
-Me.lblCurItem.Size = New System.Drawing.Size(385, 30)
+Me.lblCurItem.Size = New System.Drawing.Size(372, 30)
 Me.lblCurItem.TabIndex = 17
 Me.lblCurItem.Text = "------------"
 Me.lblCurItem.Values.ExtraText = ""
@@ -17106,7 +17610,7 @@ Me.kscLeftFull.Panel1MinSize = 40
 Me.kscLeftFull.Panel2.Controls.Add(Me.kscLeftBottomPart)
 Me.kscLeftFull.Size = New System.Drawing.Size(189, 678)
 Me.kscLeftFull.SplitterDistance = 42
-Me.kscLeftFull.SplitterWidth = 3
+Me.kscLeftFull.SplitterWidth = 0
 Me.kscLeftFull.TabIndex = 0
 '
 'kscLeftBottomPart
@@ -17125,9 +17629,9 @@ Me.kscLeftBottomPart.Panel1.Controls.Add(Me.kscLeftNavMain)
 'kscLeftBottomPart.Panel2
 '
 Me.kscLeftBottomPart.Panel2.Controls.Add(Me.kgQCIcons)
-Me.kscLeftBottomPart.Panel2MinSize = 80
-Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 633)
-Me.kscLeftBottomPart.SplitterDistance = 553
+Me.kscLeftBottomPart.Panel2MinSize = 90
+Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 636)
+Me.kscLeftBottomPart.SplitterDistance = 546
 Me.kscLeftBottomPart.SplitterWidth = 0
 Me.kscLeftBottomPart.TabIndex = 0
 '
@@ -17147,8 +17651,8 @@ Me.kscLeftNavMain.Panel1.Controls.Add(Me.kgMoviesNavLeft)
 '
 Me.kscLeftNavMain.Panel2.Controls.Add(Me.kscLeftNavBarSC2)
 Me.kscLeftNavMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 553)
-Me.kscLeftNavMain.SplitterDistance = 178
+Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 546)
+Me.kscLeftNavMain.SplitterDistance = 175
 Me.kscLeftNavMain.TabIndex = 0
 '
 'kscLeftNavBarSC2
@@ -17167,8 +17671,8 @@ Me.kscLeftNavBarSC2.Panel1.Controls.Add(Me.kgMusicLeftNav)
 '
 Me.kscLeftNavBarSC2.Panel2.Controls.Add(Me.kgTVNavLeft)
 Me.kscLeftNavBarSC2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 370)
-Me.kscLeftNavBarSC2.SplitterDistance = 182
+Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 366)
+Me.kscLeftNavBarSC2.SplitterDistance = 180
 Me.kscLeftNavBarSC2.TabIndex = 0
 '
 'kscFullRight
@@ -17211,7 +17715,7 @@ Me.kscTopRightNavBarMain.Panel1MinSize = 297
 Me.kscTopRightNavBarMain.Panel2.Controls.Add(Me.kscTopRightNavRightSideTop)
 Me.kscTopRightNavBarMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
 Me.kscTopRightNavBarMain.Size = New System.Drawing.Size(822, 43)
-Me.kscTopRightNavBarMain.SplitterDistance = 437
+Me.kscTopRightNavBarMain.SplitterDistance = 450
 Me.kscTopRightNavBarMain.SplitterWidth = 0
 Me.kscTopRightNavBarMain.TabIndex = 0
 '
@@ -17229,8 +17733,8 @@ Me.kscTopRightSelectionArea.Panel1.Controls.Add(Me.ToolStrip1)
 'kscTopRightSelectionArea.Panel2
 '
 Me.kscTopRightSelectionArea.Panel2.Controls.Add(Me.gbAppMode)
-Me.kscTopRightSelectionArea.Size = New System.Drawing.Size(437, 43)
-Me.kscTopRightSelectionArea.SplitterDistance = 138
+Me.kscTopRightSelectionArea.Size = New System.Drawing.Size(450, 43)
+Me.kscTopRightSelectionArea.SplitterDistance = 142
 Me.kscTopRightSelectionArea.SplitterWidth = 0
 Me.kscTopRightSelectionArea.TabIndex = 0
 '
@@ -17241,7 +17745,7 @@ Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
 Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbMainDonate})
 Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
 Me.ToolStrip1.Name = "ToolStrip1"
-Me.ToolStrip1.Size = New System.Drawing.Size(138, 32)
+Me.ToolStrip1.Size = New System.Drawing.Size(142, 32)
 Me.ToolStrip1.TabIndex = 0
 Me.ToolStrip1.Text = "ToolStrip1"
 '
@@ -17277,7 +17781,7 @@ Me.kscTopRightNavRightSideTop.Panel2.Controls.Add(Me.lblCurItem)
 Me.kscTopRightNavRightSideTop.Panel2.Controls.Add(Me.lblPCWorking)
 Me.kscTopRightNavRightSideTop.Panel2.Controls.Add(Me.lblPbar)
 Me.kscTopRightNavRightSideTop.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTopRightNavRightSideTop.Size = New System.Drawing.Size(385, 43)
+Me.kscTopRightNavRightSideTop.Size = New System.Drawing.Size(372, 43)
 Me.kscTopRightNavRightSideTop.SplitterDistance = 13
 Me.kscTopRightNavRightSideTop.SplitterWidth = 0
 Me.kscTopRightNavRightSideTop.TabIndex = 0
@@ -17345,7 +17849,7 @@ Me.llOpenTVShowLocation.Font = New System.Drawing.Font("Verdana", 8.25!, System.
 Me.llOpenTVShowLocation.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.llOpenTVShowLocation.Location = New System.Drawing.Point(6, 47)
 Me.llOpenTVShowLocation.Name = "llOpenTVShowLocation"
-Me.llOpenTVShowLocation.Size = New System.Drawing.Size(122, 16)
+Me.llOpenTVShowLocation.Size = New System.Drawing.Size(136, 21)
 Me.llOpenTVShowLocation.TabIndex = 106
 Me.llOpenTVShowLocation.Text = "Open TV Show Folder"
 Me.llOpenTVShowLocation.Values.ExtraText = ""
@@ -17357,7 +17861,7 @@ Me.llOpenTVShowLocation.Values.Text = "Open TV Show Folder"
 Me.curtvshowlocationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.curtvshowlocationlbl.Location = New System.Drawing.Point(134, 47)
 Me.curtvshowlocationlbl.Name = "curtvshowlocationlbl"
-Me.curtvshowlocationlbl.Size = New System.Drawing.Size(123, 16)
+Me.curtvshowlocationlbl.Size = New System.Drawing.Size(141, 21)
 Me.curtvshowlocationlbl.TabIndex = 106
 Me.curtvshowlocationlbl.Text = "-- TV Show Location --"
 Me.curtvshowlocationlbl.Values.ExtraText = ""
@@ -17385,6 +17889,7 @@ Me.kpaletteBlue.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactor
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.kpaletteBlue.Common.StateCommon.Border.Rounding = 7
 Me.kpaletteBlue.Common.StateCommon.Border.Width = 2
+Me.kpaletteBlue.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
 Me.kpaletteBlue.DragDrop.DropDockActive = System.Drawing.Color.Empty
 Me.kpaletteBlue.DragDrop.DropDockBack = System.Drawing.Color.Empty
 Me.kpaletteBlue.DragDrop.DropDockBorder = System.Drawing.Color.Empty
@@ -17780,486 +18285,6 @@ Me.bwDownloader.WorkerSupportsCancellation = true
 '
 Me.bwLoadMusic.WorkerReportsProgress = true
 '
-'kPalettePink
-'
-Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color1 = System.Drawing.Color.White
-Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ButtonStyles.ButtonCommon.OverrideDefault.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color2 = System.Drawing.Color.Khaki
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedFull
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color1 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color2 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color2 = System.Drawing.Color.Khaki
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color1 = System.Drawing.Color.Peru
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color2 = System.Drawing.Color.Peru
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color2 = System.Drawing.Color.Khaki
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color1 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color2 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.Color2 = System.Drawing.Color.Khaki
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.Color1 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.Color2 = System.Drawing.Color.Tan
-Me.kPalettePink.ButtonStyles.ButtonCommon.StatePressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.Color2 = System.Drawing.Color.FloralWhite
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.Color2 = System.Drawing.Color.Orange
-Me.kPalettePink.ButtonStyles.ButtonCommon.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.Common.StateCommon.Border.Rounding = 15
-Me.kPalettePink.Common.StateCommon.Border.Width = 1
-Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.Color2 = System.Drawing.Color.FloralWhite
-Me.kPalettePink.ContextMenu.StateCommon.ControlOuter.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ContextMenu.StateCommon.Heading.Back.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ContextMenu.StateCommon.Heading.Back.Color2 = System.Drawing.Color.FloralWhite
-Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.Color2 = System.Drawing.Color.FloralWhite
-Me.kPalettePink.ContextMenu.StateCommon.Heading.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ContextMenu.StateCommon.Separator.Back.Color1 = System.Drawing.Color.GhostWhite
-Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Back.Color1 = System.Drawing.Color.Orange
-Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Back.Color2 = System.Drawing.Color.Khaki
-Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.Color1 = System.Drawing.Color.Tan
-Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.Color2 = System.Drawing.Color.Tan
-Me.kPalettePink.ContextMenu.StateHighlight.ItemHighlight.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ControlStyles.ControlClient.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.DragDrop.DropDockActive = System.Drawing.Color.Empty
-Me.kPalettePink.DragDrop.DropDockBack = System.Drawing.Color.Empty
-Me.kPalettePink.DragDrop.DropDockBorder = System.Drawing.Color.Empty
-Me.kPalettePink.DragDrop.DropDockInactive = System.Drawing.Color.Empty
-Me.kPalettePink.DragDrop.SolidBack = System.Drawing.Color.Empty
-Me.kPalettePink.DragDrop.SolidBorder = System.Drawing.Color.Empty
-Me.kPalettePink.FormStyles.FormCommon.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.FormStyles.FormCommon.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientActiveCaption
-Me.kPalettePink.FormStyles.FormCommon.StateActive.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.FormStyles.FormCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.FormStyles.FormCustom1.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientActiveCaption
-Me.kPalettePink.FormStyles.FormCustom1.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kPalettePink.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kPalettePink.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kPalettePink.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.HeaderStyles.HeaderPrimary.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
-Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPalettePink.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.LightSkyBlue
-Me.kPalettePink.PanelStyles.PanelAlternate.StateNormal.Color1 = System.Drawing.Color.LightSkyBlue
-Me.kPalettePink.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.PanelStyles.PanelClient.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPalettePink.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.SteelBlue
-Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.White
-Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.White
-Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.White
-Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Gray
-Me.kPalettePink.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.SlateGray
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.SlateGray
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.SlateGray
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.SlateGray
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.DarkOrange
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Orange
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Transparent
-Me.kPalettePink.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Red
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.DarkOrange
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.DarkOrange
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.AliceBlue
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.White
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.White
-Me.kPalettePink.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.ToolMenuStatus.Menu.MenuBorder = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ToolMenuStatus.Menu.MenuItemText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
-Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.ToolMenuStatus.MenuStrip.MenuStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.ToolMenuStatus.Separator.SeparatorDark = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.ToolMenuStatus.StatusStrip.StatusStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripBorder = System.Drawing.Color.LightSteelBlue
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientEnd = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripDropDownBackground = System.Drawing.Color.White
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientBegin = System.Drawing.Color.WhiteSmoke
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientEnd = System.Drawing.SystemColors.GradientActiveCaption
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripGradientMiddle = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripPanelGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
-Me.kPalettePink.ToolMenuStatus.ToolStrip.ToolStripPanelGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
-'
 'bwGetTVEPMediaInfo
 '
 '
@@ -18327,6 +18352,7 @@ Me.kPaletteGreen.Common.StateCommon.Border.DrawBorders = CType((((ComponentFacto
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.kPaletteGreen.Common.StateCommon.Border.Rounding = 15
 Me.kPaletteGreen.Common.StateCommon.Border.Width = 1
+Me.kPaletteGreen.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
 Me.kPaletteGreen.ContextMenu.StateCommon.ControlOuter.Border.Color1 = System.Drawing.Color.OliveDrab
 Me.kPaletteGreen.ContextMenu.StateCommon.ControlOuter.Border.Color2 = System.Drawing.Color.FloralWhite
 Me.kPaletteGreen.ContextMenu.StateCommon.ControlOuter.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
@@ -19098,6 +19124,870 @@ Me.kPaletteSystem.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Col
 Me.kPaletteSystem.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
 Me.kPaletteSystem.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
 Me.kPaletteSystem.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
+'
+'kPaletteSkyBlueLarge
+'
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.OverrideDefault.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.OverrideDefault.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedFull
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color1 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.Color2 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color1 = System.Drawing.Color.Peru
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.Color2 = System.Drawing.Color.Peru
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedPressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassCheckedTrackingFull
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color1 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.Color2 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateCheckedTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Border.Color1 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Border.Color2 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StatePressed.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Back.Color2 = System.Drawing.Color.FloralWhite
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Border.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Border.Color2 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ButtonStyles.ButtonCommon.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.Common.StateCommon.Border.Rounding = 15
+Me.kPaletteSkyBlueLarge.Common.StateCommon.Border.Width = 1
+Me.kPaletteSkyBlueLarge.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.ControlOuter.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.ControlOuter.Border.Color2 = System.Drawing.Color.FloralWhite
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.ControlOuter.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Heading.Back.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Heading.Back.Color2 = System.Drawing.Color.FloralWhite
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Heading.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Heading.Border.Color2 = System.Drawing.Color.FloralWhite
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Heading.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ContextMenu.StateCommon.Separator.Back.Color1 = System.Drawing.Color.GhostWhite
+Me.kPaletteSkyBlueLarge.ContextMenu.StateHighlight.ItemHighlight.Back.Color1 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.ContextMenu.StateHighlight.ItemHighlight.Back.Color2 = System.Drawing.Color.Khaki
+Me.kPaletteSkyBlueLarge.ContextMenu.StateHighlight.ItemHighlight.Border.Color1 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ContextMenu.StateHighlight.ItemHighlight.Border.Color2 = System.Drawing.Color.Tan
+Me.kPaletteSkyBlueLarge.ContextMenu.StateHighlight.ItemHighlight.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.ControlStyles.ControlClient.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ControlStyles.ControlClient.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ControlStyles.ControlClient.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.DragDrop.DropDockActive = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.DragDrop.DropDockBack = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.DragDrop.DropDockBorder = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.DragDrop.DropDockInactive = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.DragDrop.SolidBack = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.DragDrop.SolidBorder = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.FormStyles.FormCommon.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.FormStyles.FormCommon.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPaletteSkyBlueLarge.FormStyles.FormCommon.StateActive.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.FormStyles.FormCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.FormStyles.FormCustom1.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPaletteSkyBlueLarge.FormStyles.FormCustom1.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteSkyBlueLarge.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteSkyBlueLarge.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteSkyBlueLarge.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateCommon.Border.Rounding = 7
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateNormal.Back.Color1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateNormal.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateNormal.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderCommon.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderPrimary.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderPrimary.StateCommon.Border.Color2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.HeaderStyles.HeaderPrimary.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.InputControlStyles.InputControlCommon.StateCommon.Back.Color1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.InputControlStyles.InputControlCommon.StateCommon.Border.Color1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.LightSkyBlue
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelAlternate.StateNormal.Color1 = System.Drawing.Color.LightSkyBlue
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelClient.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
+Me.kPaletteSkyBlueLarge.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.SteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Gray
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.SlateGray
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.SlateGray
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.SlateGray
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.SlateGray
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Orange
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Transparent
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Red
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.DarkOrange
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.AliceBlue
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.Menu.MenuBorder = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.Menu.MenuItemText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.MenuStrip.MenuStripGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.MenuStrip.MenuStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.MenuStrip.MenuStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.Separator.SeparatorDark = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.StatusStrip.StatusStripGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.StatusStrip.StatusStripGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.StatusStrip.StatusStripText = System.Drawing.Color.FromArgb(CType(CType(30,Byte),Integer), CType(CType(57,Byte),Integer), CType(CType(91,Byte),Integer))
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripBorder = System.Drawing.Color.LightSteelBlue
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientBegin = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripContentPanelGradientEnd = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripDropDownBackground = System.Drawing.Color.White
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripGradientBegin = System.Drawing.Color.WhiteSmoke
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripGradientEnd = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripGradientMiddle = System.Drawing.SystemColors.GradientInactiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripPanelGradientBegin = System.Drawing.SystemColors.GradientActiveCaption
+Me.kPaletteSkyBlueLarge.ToolMenuStatus.ToolStrip.ToolStripPanelGradientEnd = System.Drawing.SystemColors.GradientInactiveCaption
+'
+'kPaletteBlingLarge
+'
+Me.kPaletteBlingLarge.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleOrange
+Me.kPaletteBlingLarge.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBlingLarge.ButtonStyles.ButtonCommon.StateCommon.Border.Rounding = 7
+Me.kPaletteBlingLarge.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1
+Me.kPaletteBlingLarge.Common.StateCommon.Border.Color1 = System.Drawing.Color.Goldenrod
+Me.kPaletteBlingLarge.Common.StateCommon.Border.Color2 = System.Drawing.Color.Black
+Me.kPaletteBlingLarge.Common.StateCommon.Border.ColorAngle = 60!
+Me.kPaletteBlingLarge.Common.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear50
+Me.kPaletteBlingLarge.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBlingLarge.Common.StateCommon.Border.Rounding = 7
+Me.kPaletteBlingLarge.Common.StateCommon.Border.Width = 1
+Me.kPaletteBlingLarge.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteBlingLarge.DragDrop.DropDockActive = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.DragDrop.DropDockBack = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.DragDrop.DropDockBorder = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.DragDrop.DropDockInactive = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.DragDrop.SolidBack = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.DragDrop.SolidBorder = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBlingLarge.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBlingLarge.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBlingLarge.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kPaletteBlingLarge.HeaderStyles.HeaderCustom1.StateDisabled.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kPaletteBlingLarge.HeaderStyles.HeaderCustom1.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 18!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteBlingLarge.HeaderStyles.HeaderCustom1.StateNormal.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kPaletteBlingLarge.HeaderStyles.HeaderCustom1.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 14!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateActive.Border.Rounding = 2
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateActive.Border.Width = 0
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateCommon.Border.Rounding = 2
+Me.kPaletteBlingLarge.InputControlStyles.InputControlCommon.StateCommon.Border.Width = 0
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.LongText.Color1 = System.Drawing.Color.Black
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.LongText.Color2 = System.Drawing.Color.Goldenrod
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.LongText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.Goldenrod
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.ShortText.ColorAngle = 60!
+Me.kPaletteBlingLarge.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kPaletteBlingLarge.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.DimGray
+Me.kPaletteBlingLarge.PanelStyles.PanelAlternate.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kPaletteBlingLarge.PanelStyles.PanelAlternate.StateCommon.ColorAngle = 60!
+Me.kPaletteBlingLarge.PanelStyles.PanelAlternate.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kPaletteBlingLarge.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.DimGray
+Me.kPaletteBlingLarge.PanelStyles.PanelCustom1.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kPaletteBlingLarge.PanelStyles.PanelCustom1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
 '
 'maincollection
 '
@@ -20022,12 +20912,12 @@ Me.kgQCIcons.Panel.ResumeLayout(false)
 Me.kgQCIcons.Panel.PerformLayout
 CType(Me.kgQCIcons,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgQCIcons.ResumeLayout(false)
-CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kscMain.Panel1,System.ComponentModel.ISupportInitialize).EndInit
 Me.kscMain.Panel1.ResumeLayout(false)
 CType(Me.kscMain.Panel2,System.ComponentModel.ISupportInitialize).EndInit
@@ -20720,7 +21610,6 @@ End Sub
     Friend WithEvents klblep_creditslbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents ktbep_director As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents klblep_directorlbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents kbtnep_saveepchanges As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents ktbep_epseason As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents klblep_epseasonlbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents tbEditableTitle As System.Windows.Forms.TextBox
@@ -20913,7 +21802,6 @@ End Sub
     Friend WithEvents BluRaySDTSES As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BluRaySHDAudio As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SetupTagIconsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents kbtnDebugtvgo As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents kscEpisodesEEM As ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
     Friend WithEvents kgMissingEpisodes As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents lbEpisodesMissing As System.Windows.Forms.ListBox
@@ -21225,7 +22113,7 @@ End Sub
     Friend WithEvents movtbar_tsb_SetupAndConfigurationToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsddTVShows_OptionsAndSettings As System.Windows.Forms.ToolStripDropDownButton
     Friend WithEvents tsbTVShows_SetupAndConfigurationToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents kpaletteDucks As ComponentFactory.Krypton.Toolkit.KryptonPalette
+    Friend WithEvents kPaletteBling As ComponentFactory.Krypton.Toolkit.KryptonPalette
     Friend WithEvents kgArtistArtImage As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents lblArtistArtImage As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents lblSongImage As ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -21395,4 +22283,7 @@ End Sub
     Friend WithEvents krbmusicfilterNoBackground As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents krbmusicfilterNoArtist As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents bshgShowsEpisodeMediaRefresh As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents kPaletteSkyBlueLarge As ComponentFactory.Krypton.Toolkit.KryptonPalette
+    Friend WithEvents kPaletteBlingLarge As ComponentFactory.Krypton.Toolkit.KryptonPalette
+    Friend WithEvents bshgSaveEpisodeData As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 End Class

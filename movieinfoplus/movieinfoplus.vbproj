@@ -251,7 +251,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="icGenre.vb" />
-    <Compile Include="ImageModifer.vb" />
     <Compile Include="linkedimage.vb">
       <SubType>Component</SubType>
     </Compile>

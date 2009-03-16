@@ -150,24 +150,165 @@ Public Class dlgConfiguration
             Case "black"
                 maincollection.kManager.GlobalPalette = maincollection.kpalette
                 rconf.guicolor = "black"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "silver"
                 maincollection.kManager.GlobalPalette = maincollection.kpaletteSilver
                 rconf.guicolor = "silver"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "bling"
-                maincollection.kManager.GlobalPalette = maincollection.kpaletteDucks
+                maincollection.kManager.GlobalPalette = maincollection.kPaletteBling
                 rconf.guicolor = "bling"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
+            Case "blinglarge"
+                maincollection.kManager.GlobalPalette = maincollection.kPaletteBlingLarge
+                rconf.guicolor = "blinglarge"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "blue"
                 maincollection.kManager.GlobalPalette = maincollection.kpaletteBlue
                 rconf.guicolor = "blue"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "pink"
                 maincollection.kManager.GlobalPalette = maincollection.kPalettePink
                 rconf.guicolor = "pink"
+                maincollection.tcMain.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.TabColor = Color.SteelBlue
+                maincollection.tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.HotColor = Color.Orange
+                maincollection.tcPIB.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.TabColor = Color.SteelBlue
+                maincollection.tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.HotColor = Color.Orange
+                maincollection.tcFCDN.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.TabColor = Color.SteelBlue
+                maincollection.tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.HotColor = Color.Orange
+            Case "skybluelarge"
+                maincollection.kManager.GlobalPalette = maincollection.kPaletteSkyBlueLarge
+                rconf.guicolor = "skybluelarge"
+                maincollection.tcMain.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.TabColor = Color.SteelBlue
+                maincollection.tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.HotColor = Color.Orange
+                maincollection.tcPIB.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.TabColor = Color.SteelBlue
+                maincollection.tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.HotColor = Color.Orange
+                maincollection.tcFCDN.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.TabColor = Color.SteelBlue
+                maincollection.tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.HotColor = Color.Orange
             Case "green"
                 maincollection.kManager.GlobalPalette = maincollection.kPaletteGreen
                 rconf.guicolor = "green"
+                maincollection.tcMain.SelectedTabColor = Color.SeaGreen
+                maincollection.tcMain.BackColor = Color.LightSeaGreen
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "pro"
                 maincollection.kManager.GlobalPalette = maincollection.kPaletteSystem
                 rconf.guicolor = "pro"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case Else
                 'do nothing
         End Select
@@ -1326,7 +1467,12 @@ Public Class dlgConfiguration
     Private Sub krbColorPro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorPro.Click
         setguicolor("pro")
     End Sub
-
+    Private Sub krbColorBlingLarge_Cclick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorBlingLarge.Click
+        setguicolor("blinglarge")
+    End Sub
+    Private Sub krbColorSkyBlueLarge_Cclick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorSkyBlueLarge.Click
+        setguicolor("skybluelarge")
+    End Sub
     Private Sub cbMusicGetAlbumArt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicGetAlbumArt.Click
         rconf.pgetMusicAlbumArt = cbMusicGetAlbumArt.Checked
     End Sub
@@ -1364,5 +1510,6 @@ Public Class dlgConfiguration
     Private Sub cbFilterNameFileModeEverythingBeforeDash_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforeDash.Click
         rconf.pcbFilterNameFileModeEverythingBeforeDash = cbFilterNameFileModeEverythingBeforeDash.Checked
     End Sub
+
 
 End Class

@@ -2105,10 +2105,10 @@ Public Class maincollection
         '        TabControl2.SelectTab(0)
         Try
             'turn off debug tab
-            If File.Exists(rconf.basefolder + "debugtvshows.txt") Or File.Exists(rconf.basefolder + "debugtvshows") Then
-                kbtnDebugtvgo.Enabled = True
-                kbtnDebugtvgo.Visible = True
-            End If
+            'If File.Exists(rconf.basefolder + "debugtvshows.txt") Or File.Exists(rconf.basefolder + "debugtvshows") Then
+            '    kbtnDebugtvgo.Enabled = True
+            '    kbtnDebugtvgo.Visible = True
+            'End If
 
             If Not File.Exists(rconf.basefolder + "debugmode") Then
                 tcPIB.Controls.Remove(tcPIB.TabPages(4))
@@ -24611,7 +24611,7 @@ Public Class maincollection
         Debug.Print(lbEpisodes.SelectedValue.ToString)
 
         kpEpisodeData.Visible = True
-        kbtnep_saveepchanges.Enabled = True
+        bshgSaveEpisodeData.Enabled = ButtonEnabled.True
         'Dim curepisode As tvdblangEpisode
         gvcurrenttvepisode = CType(episodeshashtable.Item(lbEpisodes.SelectedValue), tvdblangEpisode)
         Try
@@ -24862,7 +24862,7 @@ Public Class maincollection
             curtvshowpicturboxtoupdate = pbep_episodeimage
             curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: Season: " + gvcurrenttvepisode.SeasonNumber + " Episode: " + gvcurrenttvepisode.EpisodeNumber + " Image File (" + removeextension(getfilefrompath(gvcurrenttvepisode.episodefilepath)) + ".tbn)"
         Else
-            kbtnep_saveepchanges.Enabled = False
+            bshgSaveEpisodeData.Enabled = ButtonEnabled.False
         End If
         ktbep_aired.Text = gvcurrenttvepisode.FirstAired
         ktbep_credits.Text = Strings.Replace(gvcurrenttvepisode.Writer, "|", "/")
@@ -27169,29 +27169,169 @@ Public Class maincollection
 
 
     Public Sub setguicolor(ByRef vcolor As String)
-
         Select Case vcolor
             Case "black"
                 kManager.GlobalPalette = kpalette
                 'rconf.guicolor = "black"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "silver"
                 kManager.GlobalPalette = kpaletteSilver
                 'rconf.guicolor = "silver"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "bling"
-                kManager.GlobalPalette = kpaletteDucks
+                kManager.GlobalPalette = kPaletteBling
                 'rconf.guicolor = "bling"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
+            Case "blinglarge"
+                kManager.GlobalPalette = kPaletteBlingLarge
+                'rconf.guicolor = "blinglarge"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "blue"
                 kManager.GlobalPalette = kpaletteBlue
                 'rconf.guicolor = "blue"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "pink"
                 kManager.GlobalPalette = kPalettePink
                 'rconf.guicolor = "pink"
+                tcMain.SelectedTabColor = Color.RoyalBlue
+                tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                tcMain.TabColor = Color.SteelBlue
+                tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                tcMain.HotColor = Color.Orange
+                tcPIB.SelectedTabColor = Color.RoyalBlue
+                tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                tcPIB.TabColor = Color.SteelBlue
+                tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                tcPIB.HotColor = Color.Orange
+                tcFCDN.SelectedTabColor = Color.RoyalBlue
+                tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.TabColor = Color.SteelBlue
+                tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.HotColor = Color.Orange
+            Case "skybluelarge"
+                kManager.GlobalPalette = kPaletteSkyBlueLarge
+                'rconf.guicolor = "skybluelarge"
+                tcMain.SelectedTabColor = Color.RoyalBlue
+                tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                tcMain.TabColor = Color.SteelBlue
+                tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                tcMain.HotColor = Color.Orange
+                tcPIB.SelectedTabColor = Color.RoyalBlue
+                tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                tcPIB.TabColor = Color.SteelBlue
+                tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                tcPIB.HotColor = Color.Orange
+                tcFCDN.SelectedTabColor = Color.RoyalBlue
+                tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.TabColor = Color.SteelBlue
+                tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.HotColor = Color.Orange
             Case "green"
                 kManager.GlobalPalette = kPaletteGreen
                 'rconf.guicolor = "green"
+                tcMain.SelectedTabColor = Color.SeaGreen
+                tcMain.BackColor = Color.LightSeaGreen
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "pro"
                 kManager.GlobalPalette = kPaletteSystem
                 'rconf.guicolor = "pro"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case Else
                 'do nothing
         End Select
@@ -27243,7 +27383,7 @@ Public Class maincollection
     End Sub
 
 
-    Private Sub kbtnep_saveepchanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnep_saveepchanges.Click
+    Private Sub bshgSaveEpisodeData_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgSaveEpisodeData.Click
         'asdf()
         gvcurrenttvepisode.FirstAired = ktbep_aired.Text '= curepisode.FirstAired
         gvcurrenttvepisode.Writer = ktbep_credits.Text '= Strings.Replace(curepisode.Writer, "|", "/")
@@ -27777,7 +27917,7 @@ Public Class maincollection
 
     End Sub
 
-    Private Sub kbtnDebugtvgo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnDebugtvgo.Click
+    Private Sub kbtnDebugtvgo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         rconf.debugtvshows = True
         Dim tshows As New tvshowcollection
         tshows.kbLoadTvShows(True)
