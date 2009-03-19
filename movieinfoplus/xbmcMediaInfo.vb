@@ -10,7 +10,16 @@ Namespace xbmcMediaInfo
     <XmlRoot("fileinfo")> _
     Public Class Fileinfo
         Private p_element_streamdata As New streamdetailsC
-        Private p_element_version As Double 'cur version is 1.1 for Mip Release build 2800
+        Private p_element_version As Double 'cur version is 1.2 for Mip Release build 2800
+        Private p_element_lastupdate As Date
+        Property lastupdate() As Date
+            Get
+                Return p_element_lastupdate
+            End Get
+            Set(ByVal value As Date)
+                p_element_lastupdate = value
+            End Set
+        End Property
         Property version() As Double
             Get
                 Return p_element_version
@@ -72,7 +81,10 @@ Namespace xbmcMediaInfo
                     To_Display += "   Language: " + curSS.Language + vbNewLine
 
                 Next
-
+                To_Display += vbNewLine
+                To_Display += "Last Scanned: " & lastupdate.ToString
+                To_Display += vbNewLine
+                To_Display += "Scanner Version: " & version.ToString
             End If
             ''video
             'To_Display += "Video" + vbNewLine

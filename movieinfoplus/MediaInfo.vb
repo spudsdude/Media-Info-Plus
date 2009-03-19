@@ -147,17 +147,35 @@ Public Class MediaInfo
 
             Dim fnPeices1() As String = fileinlisting.ToString.Split(CChar("\"))
             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+            Try
+                Select Case fourr_ext
+                    Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                        'make sure it's not a trailer file
+                        If Not tfname.ToLower.Contains("-trailer") Then
+                            filenamewithfullpath = currentmovie.getmoviepath + "\" + tfname
+                            Exit For
+                        End If
+                    Case Else
+                        'do nothing it's not a movie
+                End Select
+            Catch ex2 As Exception
+                Debug.Print(ex2.ToString)
+            End Try
 
-            Select Case fourr_ext
-                Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
-                    'make sure it's not a trailer file
-                    If Not tfname.ToLower.Contains("-trailer") Then
-                        filenamewithfullpath = currentmovie.getmoviepath + "\" + tfname
-                        Exit For
-                    End If
-                Case Else
-                    'do nothing it's not a movie
-            End Select
+            If filenamewithfullpath = "" Then
+                Dim three_ext As String = ""
+                Try
+                    three_ext = Strings.Right(fileinlisting.ToString, 3).ToLower
+                    Select Case three_ext
+                        Case ".ts"
+                            If Not tfname.ToLower.Contains("-trailer") Then
+                                filenamewithfullpath = currentmovie.getmoviepath + "\" + tfname
+                            End If
+                    End Select
+                Catch ex3 As Exception
+                    Debug.Print(ex3.ToString)
+                End Try
+            End If
         Next
         Return filenamewithfullpath
     End Function
@@ -221,12 +239,26 @@ Public Class MediaInfo
         'get the moviefilename
         Dim moviefilename As String = ""
         moviefilename = getfilenamefrommovie(currentmovie, moviemode)
-        If moviefilename = "nofile" Then Exit Sub
+        If moviefilename = "nofile" Or moviefilename = "" Then
+            'see if there's a VIDEO_TS folder, if so check the .ifo file
+            If Directory.Exists(addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS")) Then
+                If File.Exists(addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\VTS_01_0.IFO")) Then
+                    moviefilename = addfiletofolder(currentmovie.getmoviepath, "VIDEO_TS\VTS_01_0.IFO")
+                Else
+                    Exit Sub
+                End If
+            Else
+                Exit Sub
+            End If
+        End If
+        'Exit Sub
 
         'open the file
         MI.Open(moviefilename)
         currentmovie.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentmovie.fileinfo.version = 1.1
+        currentmovie.fileinfo.version = 1.2
+        currentmovie.fileinfo.lastupdate = Now()
+        Debug.Print(currentmovie.fileinfo.lastupdate.ToString)
         'find the longest stream in the file
         'find the number of video streams in the video file
         Dim numOfVideoStreams As Integer = MI.Count_Get(StreamKind.Visual)
@@ -255,11 +287,67 @@ Public Class MediaInfo
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(moviefilename, 4) '"This is the extension of the file"
 
+            curVS = False
             With vidstream
-                If .Bitrate.Length > 0 Or .Bitratemax.Length > 0 Or .Bitratemode.Length > 0 Or .Codec.Length > 0 Or .Codecid.Length > 0 Or .Codecidinfo.Length > 0 Or .Container.Length > 0 Or .Duration.Length > 0 Or .Formatinfo.Length > 0 Or .Height.Length > 0 Or .Scantype.Length > 0 Or .Width.Length > 0 Then
-                    addVS = True
-                Else
-                    addVS = False
+                If Not .Bitrate Is Nothing Then
+                    If .Bitrate.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemax Is Nothing Then
+                    If .Bitratemax.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemode Is Nothing Then
+                    If .Bitratemode.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codec Is Nothing Then
+                    If .Codec.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecid Is Nothing Then
+                    If .Codecid.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecidinfo Is Nothing Then
+                    If .Codecidinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Container Is Nothing Then
+                    If .Container.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Duration Is Nothing Then
+                    If .Duration.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Formatinfo Is Nothing Then
+                    If .Formatinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Height Is Nothing Then
+                    If .Height.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Scantype Is Nothing Then
+                    If .Scantype.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Width Is Nothing Then
+                    If .Width.Length > 0 Then
+                        addVS = True
+                    End If
                 End If
             End With
             If addVS Then currentmovie.fileinfo.streamdetails.Video.Add(vidstream)
@@ -276,11 +364,28 @@ Public Class MediaInfo
             audstream.Channels = MI.Get_(StreamKind.Audio, curAS, "Channel(s)")
             audstream.Bitrate = MI.Get_(StreamKind.Audio, curAS, "BitRate/String")
             audstream.Language = getlangcode(MI.Get_(StreamKind.Audio, curAS, "Language/String"))
-            If audstream.Codec.Length > 0 Or audstream.Channels.Length > 0 Or audstream.Bitrate.Length > 0 Or audstream.Language.Length > 0 Then
-                addAS = True
-            Else
-                addAS = False
+            addAS = False
+            If Not audstream.Codec Is Nothing Then
+                If audstream.Codec.Length > 0 Then
+                    addAS = True
+                End If
             End If
+            If Not audstream.Channels Is Nothing Then
+                If audstream.Channels.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Bitrate Is Nothing Then
+                If audstream.Bitrate.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Language Is Nothing Then
+                If audstream.Language.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+
             If addAS Then currentmovie.fileinfo.streamdetails.Audio.Add(audstream)
             curAS += 1
         End While
@@ -291,7 +396,9 @@ Public Class MediaInfo
             'get subtitle data
             Dim subtitleStream As New xbmcMediaInfo.Subtitle
             subtitleStream.Language = getlangcode(MI.Get_(StreamKind.Text, curSS, "Language/String"))
-            If subtitleStream.Language.Length > 0 Then currentmovie.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            If Not subtitleStream.Language Is Nothing Then
+                If subtitleStream.Language.Length > 0 Then currentmovie.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            End If
             curSS += 1
         End While
 
@@ -1352,7 +1459,8 @@ Public Class MediaInfo
         'open the file
         MI.Open(curtvepfilename)
         currentshow.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentshow.fileinfo.version = 1.1
+        currentshow.fileinfo.version = 1.2
+        currentshow.fileinfo.lastupdate = Now()
         'find the longest stream in the file
         'find the number of video streams in the video file
         Dim numOfVideoStreams As Integer = MI.Count_Get(StreamKind.Visual)
@@ -1380,17 +1488,80 @@ Public Class MediaInfo
             vidstream.Codecidinfo = MI.Get_(StreamKind.Visual, curVS, "CodecID/Info")
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(curtvepfilename, 4) '"This is the extension of the file"
-
+            If Not vidstream.Container Is Nothing Then
+                If vidstream.Container.Length = 4 Then
+                    If Not Strings.Left(vidstream.Container, 1) = "." Then
+                        vidstream.Container = Strings.Right(vidstream.Container, 3)
+                    End If
+                End If
+            End If
+            curVS = False
             With vidstream
-                If .Bitrate.Length > 0 Or .Bitratemax.Length > 0 Or .Bitratemode.Length > 0 Or .Codec.Length > 0 Or .Codecid.Length > 0 Or .Codecidinfo.Length > 0 Or .Container.Length > 0 Or .Duration.Length > 0 Or .Formatinfo.Length > 0 Or .Height.Length > 0 Or .Scantype.Length > 0 Or .Width.Length > 0 Then
-                    addVS = True
-                Else
-                    addVS = False
+                If Not .Bitrate Is Nothing Then
+                    If .Bitrate.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemax Is Nothing Then
+                    If .Bitratemax.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemode Is Nothing Then
+                    If .Bitratemode.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codec Is Nothing Then
+                    If .Codec.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecid Is Nothing Then
+                    If .Codecid.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecidinfo Is Nothing Then
+                    If .Codecidinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Container Is Nothing Then
+                    If .Container.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Duration Is Nothing Then
+                    If .Duration.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Formatinfo Is Nothing Then
+                    If .Formatinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Height Is Nothing Then
+                    If .Height.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Scantype Is Nothing Then
+                    If .Scantype.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Width Is Nothing Then
+                    If .Width.Length > 0 Then
+                        addVS = True
+                    End If
                 End If
             End With
             If addVS Then currentshow.fileinfo.streamdetails.Video.Add(vidstream)
             curVS += 1
         End While
+       
 
         Dim numOfAudioStreams As Integer = MI.Count_Get(StreamKind.Audio)
         Dim curAS As Integer = 0
@@ -1402,10 +1573,26 @@ Public Class MediaInfo
             audstream.Channels = MI.Get_(StreamKind.Audio, curAS, "Channel(s)")
             audstream.Bitrate = MI.Get_(StreamKind.Audio, curAS, "BitRate/String")
             audstream.Language = getlangcode(MI.Get_(StreamKind.Audio, curAS, "Language/String"))
-            If audstream.Codec.Length > 0 Or audstream.Channels.Length > 0 Or audstream.Bitrate.Length > 0 Or audstream.Language.Length > 0 Then
-                addAS = True
-            Else
-                addAS = False
+            addAS = False
+            If Not audstream.Codec Is Nothing Then
+                If audstream.Codec.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Channels Is Nothing Then
+                If audstream.Channels.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Bitrate Is Nothing Then
+                If audstream.Bitrate.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Language Is Nothing Then
+                If audstream.Language.Length > 0 Then
+                    addAS = True
+                End If
             End If
             If addAS Then currentshow.fileinfo.streamdetails.Audio.Add(audstream)
             curAS += 1
@@ -1417,7 +1604,10 @@ Public Class MediaInfo
             'get subtitle data
             Dim subtitleStream As New xbmcMediaInfo.Subtitle
             subtitleStream.Language = getlangcode(MI.Get_(StreamKind.Text, curSS, "Language/String"))
-            If subtitleStream.Language.Length > 0 Then currentshow.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            If Not subtitleStream.Language Is Nothing Then
+                If subtitleStream.Language.Length > 0 Then currentshow.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            End If
+            'If subtitleStream.Language.Length > 0 Then currentshow.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
             curSS += 1
         End While
 
@@ -1470,7 +1660,8 @@ Public Class MediaInfo
         'open the file
         MI.Open(curtvepfilename)
         currentshow.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentshow.fileinfo.version = 1.1
+        currentshow.fileinfo.version = 1.2
+        currentshow.fileinfo.lastupdate = Now()
         'find the longest stream in the file
         'find the number of video streams in the video file
         Dim numOfVideoStreams As Integer = MI.Count_Get(StreamKind.Visual)
@@ -1499,11 +1690,67 @@ Public Class MediaInfo
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(curtvepfilename, 4) '"This is the extension of the file"
 
+            curVS = False
             With vidstream
-                If .Bitrate.Length > 0 Or .Bitratemax.Length > 0 Or .Bitratemode.Length > 0 Or .Codec.Length > 0 Or .Codecid.Length > 0 Or .Codecidinfo.Length > 0 Or .Container.Length > 0 Or .Duration.Length > 0 Or .Formatinfo.Length > 0 Or .Height.Length > 0 Or .Scantype.Length > 0 Or .Width.Length > 0 Then
-                    addVS = True
-                Else
-                    addVS = False
+                If Not .Bitrate Is Nothing Then
+                    If .Bitrate.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemax Is Nothing Then
+                    If .Bitratemax.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Bitratemode Is Nothing Then
+                    If .Bitratemode.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codec Is Nothing Then
+                    If .Codec.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecid Is Nothing Then
+                    If .Codecid.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Codecidinfo Is Nothing Then
+                    If .Codecidinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Container Is Nothing Then
+                    If .Container.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Duration Is Nothing Then
+                    If .Duration.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Formatinfo Is Nothing Then
+                    If .Formatinfo.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Height Is Nothing Then
+                    If .Height.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Scantype Is Nothing Then
+                    If .Scantype.Length > 0 Then
+                        addVS = True
+                    End If
+                End If
+                If Not .Width Is Nothing Then
+                    If .Width.Length > 0 Then
+                        addVS = True
+                    End If
                 End If
             End With
             If addVS Then currentshow.fileinfo.streamdetails.Video.Add(vidstream)
@@ -1520,10 +1767,26 @@ Public Class MediaInfo
             audstream.Channels = MI.Get_(StreamKind.Audio, curAS, "Channel(s)")
             audstream.Bitrate = MI.Get_(StreamKind.Audio, curAS, "BitRate/String")
             audstream.Language = getlangcode(MI.Get_(StreamKind.Audio, curAS, "Language/String"))
-            If audstream.Codec.Length > 0 Or audstream.Channels.Length > 0 Or audstream.Bitrate.Length > 0 Or audstream.Language.Length > 0 Then
-                addAS = True
-            Else
-                addAS = False
+            addAS = False
+            If Not audstream.Codec Is Nothing Then
+                If audstream.Codec.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Channels Is Nothing Then
+                If audstream.Channels.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Bitrate Is Nothing Then
+                If audstream.Bitrate.Length > 0 Then
+                    addAS = True
+                End If
+            End If
+            If Not audstream.Language Is Nothing Then
+                If audstream.Language.Length > 0 Then
+                    addAS = True
+                End If
             End If
             If addAS Then currentshow.fileinfo.streamdetails.Audio.Add(audstream)
             curAS += 1
@@ -1535,7 +1798,9 @@ Public Class MediaInfo
             'get subtitle data
             Dim subtitleStream As New xbmcMediaInfo.Subtitle
             subtitleStream.Language = getlangcode(MI.Get_(StreamKind.Text, curSS, "Language/String"))
-            If subtitleStream.Language.Length > 0 Then currentshow.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            If Not subtitleStream.Language Is Nothing Then
+                If subtitleStream.Language.Length > 0 Then currentshow.fileinfo.streamdetails.Subtitle.Add(subtitleStream)
+            End If
             curSS += 1
         End While
 

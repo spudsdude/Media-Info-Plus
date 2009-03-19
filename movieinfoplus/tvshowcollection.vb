@@ -886,7 +886,7 @@ Public Class tvshowcollection
                                                     maincollection.pbar1.Visible = True
                                                     maincollection.lblPbar.Visible = True
                                                     maincollection.lblPbar.BringToFront()
-                                                    maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                                    maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
                                                     maincollection.Refresh()
                                                     Dim curmedinfo As New MediaInfo
                                                     curmedinfo.getdata(tepisode1, True)
@@ -1039,7 +1039,11 @@ Public Class tvshowcollection
             dlgMessageboxOK.ShowDialog()
         End If
     End Sub
-
+    Private Function getfilefrompath(ByVal filenameandpath As String) As String
+        Dim fnPeices1() As String = filenameandpath.ToString.Split(CChar("\"))
+        Dim returnedfilename As String = fnPeices1(fnPeices1.Length - 1)
+        Return returnedfilename
+    End Function
     Public Sub precacheTvShows(Optional ByVal debugon As Boolean = False)
         'ssprecaching.Show()
         rconf = rconf.getconfig("config", True)

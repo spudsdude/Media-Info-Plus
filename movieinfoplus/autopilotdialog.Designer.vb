@@ -433,7 +433,7 @@ Partial Class autopilotdialog
         Me.cbcreatetbn.AutoSize = True
         Me.cbcreatetbn.Checked = True
         Me.cbcreatetbn.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbcreatetbn.Location = New System.Drawing.Point(600, 12)
+        Me.cbcreatetbn.Location = New System.Drawing.Point(600, 4)
         Me.cbcreatetbn.Name = "cbcreatetbn"
         Me.cbcreatetbn.Size = New System.Drawing.Size(94, 17)
         Me.cbcreatetbn.TabIndex = 2
@@ -517,9 +517,9 @@ Partial Class autopilotdialog
         '
         'btnMediaDataOnly
         '
-        Me.btnMediaDataOnly.Location = New System.Drawing.Point(546, 35)
+        Me.btnMediaDataOnly.Location = New System.Drawing.Point(546, 20)
         Me.btnMediaDataOnly.Name = "btnMediaDataOnly"
-        Me.btnMediaDataOnly.Size = New System.Drawing.Size(218, 30)
+        Me.btnMediaDataOnly.Size = New System.Drawing.Size(218, 45)
         Me.btnMediaDataOnly.TabIndex = 32
         Me.btnMediaDataOnly.Text = "Update Media Information Only!"
         Me.btnMediaDataOnly.Values.ExtraText = ""

@@ -6404,15 +6404,16 @@ Public Class maincollection
             End If
         End If
 
-        getfcdn_movie_front()
-        getfcdn_movie_back()
-        getfcdn_movie_cd1()
-        getfcdn_movie_cd2()
-        getfcdn_movie_cd3()
-        getfcdn_movie_cd4()
-        getfcdn_movie_inlay()
-        getfcdn_movie_insert()
-
+        If rbem.Checked Then
+            getfcdn_movie_front()
+            getfcdn_movie_back()
+            getfcdn_movie_cd1()
+            getfcdn_movie_cd2()
+            getfcdn_movie_cd3()
+            getfcdn_movie_cd4()
+            getfcdn_movie_inlay()
+            getfcdn_movie_insert()
+        End If
         'download images (new)
         If Not currentmovie.pdownloadlist.Count = 0 Then
             'dlgDownloadingFile.downloadertxtFileName.Text = url
@@ -6499,7 +6500,7 @@ Public Class maincollection
                             curdname = dname + "-fanart.jpg"
                             File.Copy(pbfatmdb1.AccessibleName, addfiletofolder(curpath, curdname), False)
                         End If
-                        
+
                     Catch ex As Exception
                         Debug.Print(ex.ToString)
                     End Try
@@ -6760,7 +6761,7 @@ Public Class maincollection
         'show video file information (video and audio)
         If rconf.pcbscanformoviemediainformation Then
             Try
-                If Not currentmovie.fileinfo.version = 1.1 Or rconf.pcbOverwriteNFO Then
+                If Not currentmovie.fileinfo.version = 1.2 Or rconf.pcbOverwriteNFO Then
                     getmoviemediainfo_bw()
 
                 Else
@@ -11462,6 +11463,59 @@ Public Class maincollection
         'System.Diagnostics.Process.Start(binfilelocal, url + " -P " + """" + folder + cou.ToString + """")
         'myProcess.WaitForExit()
     End Sub
+    Public Class imdbsearch
+        Private pid As String
+        Private pname As String
+        Property id() As String
+            Get
+                Return pid
+            End Get
+            Set(ByVal value As String)
+                pid = value
+            End Set
+        End Property
+        Property name() As String
+            Get
+                Return pname
+            End Get
+            Set(ByVal value As String)
+                pname = value
+            End Set
+        End Property
+    End Class
+    Private Function snagimdbid_dlg(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
+        Dim lookupname As String = pmname.ToLower
+        lookupname = Strings.Replace(lookupname, "(", "")
+        lookupname = Strings.Replace(lookupname, ")", "")
+        Dim retid As String = ""
+        Try
+            retid = Regex.Match(v1tstringofimdbpage, "/(?<imdbid1>tt\d{5,9})/").Groups(1).Value
+            If Not retid = "" Then Return retid
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+
+        Dim imdbidlist As New ArrayList
+        Try
+            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\(\d{4}\)")
+            Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
+            While MatchResults.Success
+                Dim nid As New imdbsearch
+                nid.id = MatchResults.Groups(0).Value.ToString
+                nid.name = MatchResults.Groups(1).Value.ToString
+                imdbidlist.Add(nid)
+                MatchResults = MatchResults.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+
+
+
+        'skipping other 2 methods as this one is more generic, may result in more bogus results
+        Return retid
+    End Function
     Private Function snagimdbid(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
         Dim lookupname As String = pmname.ToLower
         lookupname = Strings.Replace(lookupname, "(", "")
@@ -11473,6 +11527,25 @@ Public Class maincollection
         Catch ex As Exception
             Debug.Print(ex.ToString)
         End Try
+
+        Dim imdbidlist As New ArrayList
+        Try
+            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\(\d{4}\)")
+            Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
+            While MatchResults.Success
+                Dim nid As New imdbsearch
+                nid.id = MatchResults.Groups(0).Value.ToString
+                nid.name = MatchResults.Groups(1).Value.ToString
+                imdbidlist.Add(nid)
+                MatchResults = MatchResults.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+
+
+
         'skipping other 2 methods as this one is more generic, may result in more bogus results
         Return retid
         'Dim RegexObj As New Regex("<a href=""/title/(?<imdbid1>tt\d{5,9})/"">" + lookupname + "</a>.{1,2}((?<gyear>\d{4}))")
@@ -11495,7 +11568,7 @@ Public Class maincollection
         '    tmovie.pimdbnumber = retid2
         '    If Not retid2 = "" Then Return retid2
         'End If
-        
+
     End Function
     Private Function snagyear(ByVal pmname As String, ByRef tmovie As movie, ByRef vtstringofimdbpage As String) As String
         Dim lookupname As String = pmname.ToLower
@@ -17670,7 +17743,7 @@ Public Class maincollection
         MsgBox("Gui feedback reduction is set. Display of prompts is set to: " + messageprompts.ToString)
 
     End Sub
-    Private Sub kbtnSaveIMDB_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnSaveIMDB.Click
+    Private Sub bshMovieSaveChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieSaveChanges.Click
         If currentmovie Is Nothing Then Exit Sub
         saveNfoFromGuiText()
         'cbNoNfoChangePrompt.Checked
@@ -17793,6 +17866,39 @@ Public Class maincollection
                     Try
                         Dim fnPeices1() As String = item.ToString.Split(CChar("\"))
                         Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+                        Select Case Strings.Right(tfname, 3).ToLower
+                            Case ".ts"
+                                Debug.Print("parser for : " + item.ToString + " : Result was : " + tfname.ToString)
+                                'have a movie file, parse it for season and episode
+                                Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
+                                Debug.Print(tfnameoffile)
+                                Dim mname As String = tfnameoffile
+                                Dim cleanname As String = namefilterforfilemode(removeextension(mname))
+                                'filter code injection here
+                                If mname.ToLower = "con air" Or cleanname = "" Then
+                                    'do nada
+                                Else
+                                    Dim newmovie As New movie
+                                    newmovie.setmoviename(cleanname)
+                                    newmovie.preservedmoviename = mname
+                                    newmovie.setmoviepath(tdirectory)
+                                    newmovie.pfilemode = True
+                                    'read nfo if it's there
+                                    readnfo(newmovie) ' does not set the moviename, edited name is only used in the .nfo file
+                                    'newmovie.peditedmoviename = newmovie.pmoviename
+                                    dtIDA.LoadDataRow(New Object() {newmovie.getmoviepath, cleanname, currentindex}, True)
+                                    'add movie to array - change this so that we can display them in a different sort order
+                                    movies.Add(newmovie)
+                                    newmovie = Nothing
+                                    mname = Nothing
+                                    currentindex += 1
+                                End If
+                                curcount += 1
+                                Debug.Print("-------------- Done movie file level 2 extension processing, moving to next or end --------------")
+                            Case Else
+                                'Debug.Print("Non Movie File: " + item.ToString + " : " + tfname.ToString)
+                        End Select
+
                         Select Case Strings.Right(tfname, 4).ToLower
                             Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                 Debug.Print("parser for : " + item.ToString + " : Result was : " + tfname.ToString)
@@ -18628,7 +18734,11 @@ Public Class maincollection
     Private Sub Label12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblFDMovieFile1.Click
         Shell("C:\windows\explorer  " + """" + currentmovie.getmoviepath + """", AppWinStyle.NormalFocus)
     End Sub
-    Private Sub kbtnReloadMovieFromIMDB_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kbtnReloadMovieFromIMDB.Click
+    Private Sub bshMovieReloadIMDBInformation_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieReloadIMDBInformation.Click 'kbtnReloadMovieFromIMDB.Click
+        If MsgBox("Are you sure you want to re-download all information for this movie from the IMDB?", MsgBoxStyle.OkCancel, "Confirm reloading of movie information") = MsgBoxResult.Cancel Then
+            Exit Sub
+        End If
+
         Dim checkid As String = Me.tbIMDBID.Text
         If checkid = Nothing Then
             'MsgBox("can't save a movie without an imdb id number")
@@ -24649,7 +24759,7 @@ Public Class maincollection
                     'do nothing
                 Else
                 End If
-                If Not xbmccurep.fileinfo.version = 1.1 Then
+                If Not xbmccurep.fileinfo.version = 1.2 Then
                     Me.messageprompts = True
                     gettvepmediainfo_bw()
                     'save nfo ?
@@ -27142,7 +27252,12 @@ Public Class maincollection
         Dim retstr As String = "none"
         If Not filename = Nothing Then
             If filename.Length > 5 Then
-                retstr = Strings.Left(filename, filename.Length - 4)
+                If Strings.Left(Strings.Right(filename, 3), 1) = "." Then
+                    retstr = Strings.Left(filename, filename.Length - 3)
+                Else
+                    retstr = Strings.Left(filename, filename.Length - 4)
+                End If
+                'retstr = Strings.Left(filename, filename.Length - 4)
             End If
         End If
         Return retstr
@@ -30142,6 +30257,21 @@ Public Class maincollection
     Private Sub bshgShowsEpisodeMediaRefresh_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgShowsEpisodeMediaRefresh.Click
         reload_tv_media_information()
     End Sub
+
+
+    Private Sub lblMovieInfcloGenre_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblMovieInfoGenre.Click
+        If Not currentmovie Is Nothing Then
+            If Not currentmovie.pmoviename = "" Then
+                dlgMovieGenreSelect.prepop(currentmovie, rconf.basefolder)
+                dlgMovieGenreSelect.ShowDialog()
+                'MsgBox(currentmovie.pgenre)
+                If Not currentmovie.pgenre = tbGenre.Text Then
+                    tbGenre.Text = currentmovie.pgenre
+                    saveNfoFromGuiText()
+                End If
+            End If
+        End If
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -32094,7 +32224,12 @@ Public Property [Actors]() As List(Of Actor)
             Dim retstr As String = ""
             If Not lmoviename = Nothing Then
                 If lmoviename.Length > 5 Then
-                    retstr = Strings.Left(lmoviename, lmoviename.Length - 4)
+                    If Strings.Left(Strings.Right(lmoviename, 3), 1) = "." Then
+                        retstr = Strings.Left(lmoviename, lmoviename.Length - 3)
+                    Else
+                        retstr = Strings.Left(lmoviename, lmoviename.Length - 4)
+                    End If
+
                 End If
             End If
             filename = retstr + ".nfo"

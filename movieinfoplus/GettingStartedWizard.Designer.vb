@@ -111,7 +111,8 @@ Partial Class GettingStartedWizard
         Me.klblWelcomeText.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
         Me.klblWelcomeText.Location = New System.Drawing.Point(3, 3)
         Me.klblWelcomeText.Name = "klblWelcomeText"
-        Me.klblWelcomeText.Size = New System.Drawing.Size(610, 24)
+        Me.klblWelcomeText.Size = New System.Drawing.Size(432, 18)
+        Me.klblWelcomeText.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.klblWelcomeText.TabIndex = 1
         Me.klblWelcomeText.Text = "Welcome To Media Info Plus - Your Movie, Music, and TV Show manager!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.klblWelcomeText.Values.ExtraText = ""
@@ -218,7 +219,7 @@ Partial Class GettingStartedWizard
         Me.klMovieFolderGroup.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.SuperTip
         Me.klMovieFolderGroup.Location = New System.Drawing.Point(3, 0)
         Me.klMovieFolderGroup.Name = "klMovieFolderGroup"
-        Me.klMovieFolderGroup.Size = New System.Drawing.Size(298, 22)
+        Me.klMovieFolderGroup.Size = New System.Drawing.Size(332, 27)
         Me.klMovieFolderGroup.TabIndex = 46
         Me.klMovieFolderGroup.Text = "Movie Folder Locations - Select the root Movie Folders"
         Me.klMovieFolderGroup.Values.ExtraText = ""
@@ -227,9 +228,10 @@ Partial Class GettingStartedWizard
         '
         'klblDirectoryExampleText
         '
-        Me.klblDirectoryExampleText.Location = New System.Drawing.Point(576, 31)
+        Me.klblDirectoryExampleText.Location = New System.Drawing.Point(562, 6)
         Me.klblDirectoryExampleText.Name = "klblDirectoryExampleText"
-        Me.klblDirectoryExampleText.Size = New System.Drawing.Size(286, 527)
+        Me.klblDirectoryExampleText.Size = New System.Drawing.Size(312, 574)
+        Me.klblDirectoryExampleText.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.klblDirectoryExampleText.TabIndex = 49
         Me.klblDirectoryExampleText.Text = resources.GetString("klblDirectoryExampleText.Text")
         Me.klblDirectoryExampleText.Values.ExtraText = ""
@@ -240,7 +242,7 @@ Partial Class GettingStartedWizard
         '
         Me.klblMovieExampleText.Location = New System.Drawing.Point(691, 54)
         Me.klblMovieExampleText.Name = "klblMovieExampleText"
-        Me.klblMovieExampleText.Size = New System.Drawing.Size(142, 29)
+        Me.klblMovieExampleText.Size = New System.Drawing.Size(157, 37)
         Me.klblMovieExampleText.TabIndex = 50
         Me.klblMovieExampleText.Text = "For Movies you would add " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "     c:\media\Movies"
         Me.klblMovieExampleText.Values.ExtraText = ""
@@ -251,7 +253,7 @@ Partial Class GettingStartedWizard
         '
         Me.klblTVShowExampleText.Location = New System.Drawing.Point(687, 254)
         Me.klblTVShowExampleText.Name = "klblTVShowExampleText"
-        Me.klblTVShowExampleText.Size = New System.Drawing.Size(158, 29)
+        Me.klblTVShowExampleText.Size = New System.Drawing.Size(174, 37)
         Me.klblTVShowExampleText.TabIndex = 51
         Me.klblTVShowExampleText.Text = "For TV Shows you would add" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "      c:\media\TVShows"
         Me.klblTVShowExampleText.Values.ExtraText = ""
@@ -357,7 +359,7 @@ Partial Class GettingStartedWizard
         Me.klbTVShowFolders.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.SuperTip
         Me.klbTVShowFolders.Location = New System.Drawing.Point(1, 4)
         Me.klbTVShowFolders.Name = "klbTVShowFolders"
-        Me.klbTVShowFolders.Size = New System.Drawing.Size(239, 22)
+        Me.klbTVShowFolders.Size = New System.Drawing.Size(267, 27)
         Me.klbTVShowFolders.TabIndex = 46
         Me.klbTVShowFolders.Text = "TV Shows - Select the root TV Show Folder"
         Me.klbTVShowFolders.Values.ExtraText = ""
@@ -486,7 +488,7 @@ Partial Class GettingStartedWizard
         Me.lblMusic.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.SuperTip
         Me.lblMusic.Location = New System.Drawing.Point(1, 4)
         Me.lblMusic.Name = "lblMusic"
-        Me.lblMusic.Size = New System.Drawing.Size(200, 22)
+        Me.lblMusic.Size = New System.Drawing.Size(226, 27)
         Me.lblMusic.TabIndex = 46
         Me.lblMusic.Text = "Music - Select the root Music Folder"
         Me.lblMusic.Values.ExtraText = ""
@@ -495,9 +497,9 @@ Partial Class GettingStartedWizard
         '
         'klblLetsGetStartedText
         '
-        Me.klblLetsGetStartedText.Location = New System.Drawing.Point(47, 30)
+        Me.klblLetsGetStartedText.Location = New System.Drawing.Point(6, 25)
         Me.klblLetsGetStartedText.Name = "klblLetsGetStartedText"
-        Me.klblLetsGetStartedText.Size = New System.Drawing.Size(473, 29)
+        Me.klblLetsGetStartedText.Size = New System.Drawing.Size(550, 37)
         Me.klblLetsGetStartedText.TabIndex = 53
         Me.klblLetsGetStartedText.Text = "      To get started, select the folder(s) that contain your Movies and/or TV Sho" & _
             "ws below." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Folders and configuration options will be available later under the s" & _

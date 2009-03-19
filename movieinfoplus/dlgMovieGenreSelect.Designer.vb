@@ -141,7 +141,7 @@ Partial Class dlgMovieGenreSelect
         Me.klbl4dummies.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klbl4dummies.Location = New System.Drawing.Point(10, 85)
         Me.klbl4dummies.Name = "klbl4dummies"
-        Me.klbl4dummies.Size = New System.Drawing.Size(82, 29)
+        Me.klbl4dummies.Size = New System.Drawing.Size(91, 37)
         Me.klbl4dummies.TabIndex = 1
         Me.klbl4dummies.Text = "     Click To" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Add / Remove"
         Me.klbl4dummies.Values.ExtraText = ""
@@ -153,7 +153,7 @@ Partial Class dlgMovieGenreSelect
         Me.klblSelected.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblSelected.Location = New System.Drawing.Point(39, 32)
         Me.klblSelected.Name = "klblSelected"
-        Me.klblSelected.Size = New System.Drawing.Size(68, 16)
+        Me.klblSelected.Size = New System.Drawing.Size(76, 21)
         Me.klblSelected.TabIndex = 2
         Me.klblSelected.Text = "Selected ->"
         Me.klblSelected.Values.ExtraText = ""
@@ -165,7 +165,7 @@ Partial Class dlgMovieGenreSelect
         Me.klblAllGenres.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblAllGenres.Location = New System.Drawing.Point(0, 9)
         Me.klblAllGenres.Name = "klblAllGenres"
-        Me.klblAllGenres.Size = New System.Drawing.Size(70, 16)
+        Me.klblAllGenres.Size = New System.Drawing.Size(76, 21)
         Me.klblAllGenres.TabIndex = 1
         Me.klblAllGenres.Text = "<- Available"
         Me.klblAllGenres.Values.ExtraText = ""
@@ -184,7 +184,7 @@ Partial Class dlgMovieGenreSelect
         Me.kgButtons.Panel.Controls.Add(Me.kbtnCancel)
         Me.kgButtons.Panel.Controls.Add(Me.kbtnOK)
         Me.kgButtons.Panel.Controls.Add(Me.kbtnRemoveAll)
-        Me.kgButtons.Size = New System.Drawing.Size(100, 103)
+        Me.kgButtons.Size = New System.Drawing.Size(100, 140)
         Me.kgButtons.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgButtons.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgButtons.StateCommon.Border.ColorAngle = 60.0!
@@ -199,9 +199,9 @@ Partial Class dlgMovieGenreSelect
         'kbtnCancel
         '
         Me.kbtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.kbtnCancel.Location = New System.Drawing.Point(1, 65)
+        Me.kbtnCancel.Location = New System.Drawing.Point(1, 91)
         Me.kbtnCancel.Name = "kbtnCancel"
-        Me.kbtnCancel.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnCancel.Size = New System.Drawing.Size(90, 41)
         Me.kbtnCancel.TabIndex = 7
         Me.kbtnCancel.Text = "Cancel"
         Me.kbtnCancel.Values.ExtraText = ""
@@ -213,9 +213,9 @@ Partial Class dlgMovieGenreSelect
         '
         'kbtnOK
         '
-        Me.kbtnOK.Location = New System.Drawing.Point(1, 34)
+        Me.kbtnOK.Location = New System.Drawing.Point(1, 47)
         Me.kbtnOK.Name = "kbtnOK"
-        Me.kbtnOK.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnOK.Size = New System.Drawing.Size(90, 41)
         Me.kbtnOK.TabIndex = 6
         Me.kbtnOK.Text = "OK"
         Me.kbtnOK.Values.ExtraText = ""
@@ -229,7 +229,7 @@ Partial Class dlgMovieGenreSelect
         '
         Me.kbtnRemoveAll.Location = New System.Drawing.Point(1, 3)
         Me.kbtnRemoveAll.Name = "kbtnRemoveAll"
-        Me.kbtnRemoveAll.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnRemoveAll.Size = New System.Drawing.Size(90, 41)
         Me.kbtnRemoveAll.TabIndex = 5
         Me.kbtnRemoveAll.Text = "Remove All"
         Me.kbtnRemoveAll.Values.ExtraText = ""

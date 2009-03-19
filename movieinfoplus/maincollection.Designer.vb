@@ -367,50 +367,50 @@ Me.pbarLoadingMovieMediaInfo = New System.Windows.Forms.ProgressBar
 Me.lblpbarLoadingMovieMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.krtbMovieVideoInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
 Me.khgMovieNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshMovieSaveChanges = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.bshMovieReloadIMDBInformation = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.header1ButtonSpec = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.lblMovieInfoMpaa = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoYear = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoTrailerURL = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoGenre = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoDirector = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoVotes = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoTop250 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoRuntime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoImdbID = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoAltTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.kbtnMoviesChangeIMDBid = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.Label13 = New System.Windows.Forms.Label
-Me.Label12 = New System.Windows.Forms.Label
-Me.Label11 = New System.Windows.Forms.Label
-Me.Label10 = New System.Windows.Forms.Label
-Me.Label9 = New System.Windows.Forms.Label
-Me.Label8 = New System.Windows.Forms.Label
-Me.Label7 = New System.Windows.Forms.Label
-Me.Label6 = New System.Windows.Forms.Label
-Me.Label5 = New System.Windows.Forms.Label
-Me.Label4 = New System.Windows.Forms.Label
-Me.Label3 = New System.Windows.Forms.Label
-Me.Label1 = New System.Windows.Forms.Label
 Me.llIMDBIDStudio = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.tbEditableTitle = New System.Windows.Forms.TextBox
+Me.tbEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.khbMoviePlotBtm = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
 Me.ButtonSpecHeaderGroup5 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.rtbPlot = New System.Windows.Forms.RichTextBox
 Me.lblPlotOutline = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.rtbPlotOutline = New System.Windows.Forms.RichTextBox
-Me.kbtnReloadMovieFromIMDB = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.kbtnSaveIMDB = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tbStudio = New System.Windows.Forms.TextBox
+Me.tbStudio = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.rtbTagline = New System.Windows.Forms.RichTextBox
-Me.tbOriginalTitle = New System.Windows.Forms.TextBox
-Me.tbVotes = New System.Windows.Forms.TextBox
-Me.tbTop250 = New System.Windows.Forms.TextBox
-Me.tbMpaa = New System.Windows.Forms.TextBox
-Me.tbyear = New System.Windows.Forms.TextBox
-Me.tbIMDBID = New System.Windows.Forms.TextBox
-Me.tbRuntime = New System.Windows.Forms.TextBox
-Me.tbRating = New System.Windows.Forms.TextBox
-Me.tbTrailer = New System.Windows.Forms.TextBox
-Me.tbGenre = New System.Windows.Forms.TextBox
-Me.tbDirector = New System.Windows.Forms.TextBox
+Me.tbOriginalTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbVotes = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbTop250 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbMpaa = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbyear = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbIMDBID = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbRuntime = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbGenre = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbDirector = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.Label18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbFrame = New System.Windows.Forms.PictureBox
 Me.llFDFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.tbMovieNameE = New System.Windows.Forms.TextBox
+Me.tbMovieNameE = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.pbCurIconUsed = New System.Windows.Forms.PictureBox
-Me.tbCredits = New System.Windows.Forms.TextBox
+Me.tbCredits = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.lblCredits = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbMovieName = New System.Windows.Forms.TextBox
+Me.tbMovieName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.tsCurrentMovieTools = New System.Windows.Forms.ToolStrip
 Me.ToolStripSeparator17 = New System.Windows.Forms.ToolStripSeparator
 Me.tsbMoviesLoadMovies = New System.Windows.Forms.ToolStripButton
@@ -684,6 +684,7 @@ Me.lblCurSongExtV = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbMusic_CurSongExtPic = New System.Windows.Forms.PictureBox
 Me.rtbMusic_SongData = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
 Me.lblMusic_SongTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbMusicCurFanart = New System.Windows.Forms.PictureBox
 Me.tstripMusicToolbar = New System.Windows.Forms.ToolStrip
 Me.tsbLoadMyMusic = New System.Windows.Forms.ToolStripButton
 Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator
@@ -705,7 +706,6 @@ Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuIt
 Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
 Me.movtbar_ddbut_optionsAndSettings = New System.Windows.Forms.ToolStripDropDownButton
 Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-Me.pbMusicCurFanart = New System.Windows.Forms.PictureBox
 Me.tpFCDN = New Dotnetrix.Controls.TabPageEX
 Me.tcFCDN = New Dotnetrix.Controls.TabControlEX
 Me.tpFCDNFront = New Dotnetrix.Controls.TabPageEX
@@ -1030,7 +1030,7 @@ Me.lbsimnames = New System.Windows.Forms.ListBox
 Me.Button4 = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.cbChangeFolderName = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 Me.btnRetryName = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tbnewname = New System.Windows.Forms.TextBox
+Me.tbnewname = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.Button7 = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.tpPosters = New Dotnetrix.Controls.TabPageEX
 Me.tcPosters = New Dotnetrix.Controls.TabControlEX
@@ -1163,7 +1163,7 @@ Me.pbposterTMDB22 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB23 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB24 = New System.Windows.Forms.PictureBox
 Me.TabPageEX1 = New Dotnetrix.Controls.TabPageEX
-Me.tbnone = New System.Windows.Forms.TextBox
+Me.tbnone = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.curtvshowiconsettinglbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.kgMusicLeftNav = New ComponentFactory.Krypton.Toolkit.KryptonGroup
 Me.kscMusicMainSC = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
@@ -1179,19 +1179,19 @@ Me.lbmusicSongs = New System.Windows.Forms.ListBox
 Me.kpalette = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.lblimdb = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.kgFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.tbFDMovieFile2 = New System.Windows.Forms.TextBox
-Me.tbFDMovieFile1 = New System.Windows.Forms.TextBox
-Me.tbFDTrailer = New System.Windows.Forms.TextBox
+Me.tbFDMovieFile2 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbFDMovieFile1 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbFDTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.LinkLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
 Me.lblFDOtherFiles = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.btnValidate = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tbFDTBNFile = New System.Windows.Forms.TextBox
+Me.tbFDTBNFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.lblFDNFOFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDIconfile = New System.Windows.Forms.TextBox
+Me.tbFDIconfile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.lblFDTBNFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDNFOFile = New System.Windows.Forms.TextBox
+Me.tbFDNFOFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.lblFDIconfile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDFanartFile = New System.Windows.Forms.TextBox
+Me.tbFDFanartFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
 Me.lblFDMovieFile12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.lblFDFanartFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.lblFDTrailer2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -1737,8 +1737,8 @@ CType(Me.kgMusicSongData.Panel,System.ComponentModel.ISupportInitialize).BeginIn
 Me.kgMusicSongData.Panel.SuspendLayout
 Me.kgMusicSongData.SuspendLayout
 CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).BeginInit
-Me.tstripMusicToolbar.SuspendLayout
 CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).BeginInit
+Me.tstripMusicToolbar.SuspendLayout
 Me.tpFCDN.SuspendLayout
 Me.tcFCDN.SuspendLayout
 Me.tpFCDNFront.SuspendLayout
@@ -6020,7 +6020,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(416, 391)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(426, 401)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6137,7 +6137,7 @@ Me.kpMovieData.Location = New System.Drawing.Point(508, 32)
 Me.kpMovieData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpMovieData.MinimumSize = New System.Drawing.Size(305, 40)
 Me.kpMovieData.Name = "kpMovieData"
-Me.kpMovieData.Size = New System.Drawing.Size(305, 635)
+Me.kpMovieData.Size = New System.Drawing.Size(305, 660)
 Me.kpMovieData.TabIndex = 98
 '
 'khbPlotGroup
@@ -6149,7 +6149,7 @@ Me.khbPlotGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackSty
 Me.khbPlotGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbPlotGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbPlotGroup.HeaderVisibleSecondary = false
-Me.khbPlotGroup.Location = New System.Drawing.Point(0, 343)
+Me.khbPlotGroup.Location = New System.Drawing.Point(0, 368)
 Me.khbPlotGroup.Name = "khbPlotGroup"
 '
 'khbPlotGroup.Panel
@@ -6236,7 +6236,7 @@ Me.krtbMovieVideoInfo.TabIndex = 0
 'khgMovieNameGroup
 '
 Me.khgMovieNameGroup.AutoSize = true
-Me.khgMovieNameGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.header1ButtonSpec})
+Me.khgMovieNameGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.bshMovieSaveChanges, Me.bshMovieReloadIMDBInformation, Me.header1ButtonSpec})
 Me.khgMovieNameGroup.Dock = System.Windows.Forms.DockStyle.Top
 Me.khgMovieNameGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelCustom1
 Me.khgMovieNameGroup.HeaderPositionSecondary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
@@ -6248,24 +6248,22 @@ Me.khgMovieNameGroup.Name = "khgMovieNameGroup"
 '
 'khgMovieNameGroup.Panel
 '
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoMpaa)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoYear)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoTrailerURL)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoGenre)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoDirector)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoRating)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoVotes)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoTop250)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoRuntime)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoImdbID)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoAltTitle)
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoEditableTitle)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.kbtnMoviesChangeIMDBid)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label13)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label12)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label11)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label10)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label9)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label8)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label7)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label6)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label5)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label4)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label3)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label1)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.llIMDBIDStudio)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbEditableTitle)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.khbMoviePlotBtm)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.kbtnReloadMovieFromIMDB)
-Me.khgMovieNameGroup.Panel.Controls.Add(Me.kbtnSaveIMDB)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbStudio)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.rtbTagline)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbOriginalTitle)
@@ -6281,7 +6279,7 @@ Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbGenre)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.tbDirector)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.Label18)
 Me.khgMovieNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 1)
-Me.khgMovieNameGroup.Size = New System.Drawing.Size(305, 343)
+Me.khgMovieNameGroup.Size = New System.Drawing.Size(305, 368)
 Me.khgMovieNameGroup.TabIndex = 0
 Me.khgMovieNameGroup.Text = "Movie Name"
 Me.khgMovieNameGroup.ValuesPrimary.Description = ""
@@ -6291,18 +6289,191 @@ Me.khgMovieNameGroup.ValuesSecondary.Description = ""
 Me.khgMovieNameGroup.ValuesSecondary.Heading = "Description"
 Me.khgMovieNameGroup.ValuesSecondary.Image = Nothing
 '
+'bshMovieSaveChanges
+'
+Me.bshMovieSaveChanges.ExtraText = ""
+Me.bshMovieSaveChanges.Image = Nothing
+Me.bshMovieSaveChanges.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
+Me.bshMovieSaveChanges.Text = "Save"
+Me.bshMovieSaveChanges.UniqueName = "60021E42BB89417560021E42BB894175"
+'
+'bshMovieReloadIMDBInformation
+'
+Me.bshMovieReloadIMDBInformation.ExtraText = ""
+Me.bshMovieReloadIMDBInformation.Image = Nothing
+Me.bshMovieReloadIMDBInformation.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
+Me.bshMovieReloadIMDBInformation.Text = "Reload"
+Me.bshMovieReloadIMDBInformation.ToolTipBody = "Reload movie information from IMDB"
+Me.bshMovieReloadIMDBInformation.ToolTipTitle = "Reload movie information from IMDB"
+Me.bshMovieReloadIMDBInformation.UniqueName = "D4B37747525A4B1AD4B37747525A4B1A"
+'
 'header1ButtonSpec
 '
 Me.header1ButtonSpec.ExtraText = ""
 Me.header1ButtonSpec.Image = Nothing
 Me.header1ButtonSpec.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.header1ButtonSpec.Text = ""
-Me.header1ButtonSpec.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
+Me.header1ButtonSpec.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
 Me.header1ButtonSpec.UniqueName = "3F21FD013FD447823F21FD013FD44782"
+'
+'lblMovieInfoMpaa
+'
+Me.lblMovieInfoMpaa.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoMpaa.Location = New System.Drawing.Point(94, 101)
+Me.lblMovieInfoMpaa.Name = "lblMovieInfoMpaa"
+Me.lblMovieInfoMpaa.Size = New System.Drawing.Size(45, 18)
+Me.lblMovieInfoMpaa.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoMpaa.TabIndex = 142
+Me.lblMovieInfoMpaa.Text = "Mpaa:"
+Me.lblMovieInfoMpaa.Values.ExtraText = ""
+Me.lblMovieInfoMpaa.Values.Image = Nothing
+Me.lblMovieInfoMpaa.Values.Text = "Mpaa:"
+'
+'lblMovieInfoYear
+'
+Me.lblMovieInfoYear.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoYear.Location = New System.Drawing.Point(1, 101)
+Me.lblMovieInfoYear.Name = "lblMovieInfoYear"
+Me.lblMovieInfoYear.Size = New System.Drawing.Size(40, 18)
+Me.lblMovieInfoYear.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoYear.TabIndex = 141
+Me.lblMovieInfoYear.Text = "Year:"
+Me.lblMovieInfoYear.Values.ExtraText = ""
+Me.lblMovieInfoYear.Values.Image = Nothing
+Me.lblMovieInfoYear.Values.Text = "Year:"
+'
+'lblMovieInfoTrailerURL
+'
+Me.lblMovieInfoTrailerURL.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoTrailerURL.Location = New System.Drawing.Point(1, 202)
+Me.lblMovieInfoTrailerURL.Name = "lblMovieInfoTrailerURL"
+Me.lblMovieInfoTrailerURL.Size = New System.Drawing.Size(77, 18)
+Me.lblMovieInfoTrailerURL.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoTrailerURL.TabIndex = 140
+Me.lblMovieInfoTrailerURL.Text = "Trailer URL:"
+Me.lblMovieInfoTrailerURL.Values.ExtraText = ""
+Me.lblMovieInfoTrailerURL.Values.Image = Nothing
+Me.lblMovieInfoTrailerURL.Values.Text = "Trailer URL:"
+'
+'lblMovieInfoGenre
+'
+Me.lblMovieInfoGenre.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoGenre.Location = New System.Drawing.Point(1, 177)
+Me.lblMovieInfoGenre.Name = "lblMovieInfoGenre"
+Me.lblMovieInfoGenre.Size = New System.Drawing.Size(48, 18)
+Me.lblMovieInfoGenre.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoGenre.TabIndex = 139
+Me.lblMovieInfoGenre.Text = "Genre:"
+Me.lblMovieInfoGenre.Values.ExtraText = ""
+Me.lblMovieInfoGenre.Values.Image = Nothing
+Me.lblMovieInfoGenre.Values.Text = "Genre:"
+'
+'lblMovieInfoDirector
+'
+Me.lblMovieInfoDirector.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoDirector.Location = New System.Drawing.Point(1, 152)
+Me.lblMovieInfoDirector.Name = "lblMovieInfoDirector"
+Me.lblMovieInfoDirector.Size = New System.Drawing.Size(57, 18)
+Me.lblMovieInfoDirector.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoDirector.TabIndex = 138
+Me.lblMovieInfoDirector.Text = "Director:"
+Me.lblMovieInfoDirector.Values.ExtraText = ""
+Me.lblMovieInfoDirector.Values.Image = Nothing
+Me.lblMovieInfoDirector.Values.Text = "Director:"
+'
+'lblMovieInfoRating
+'
+Me.lblMovieInfoRating.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoRating.Location = New System.Drawing.Point(213, 76)
+Me.lblMovieInfoRating.Name = "lblMovieInfoRating"
+Me.lblMovieInfoRating.Size = New System.Drawing.Size(46, 18)
+Me.lblMovieInfoRating.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoRating.TabIndex = 137
+Me.lblMovieInfoRating.Text = "Rating"
+Me.lblMovieInfoRating.Values.ExtraText = ""
+Me.lblMovieInfoRating.Values.Image = Nothing
+Me.lblMovieInfoRating.Values.Text = "Rating"
+'
+'lblMovieInfoVotes
+'
+Me.lblMovieInfoVotes.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoVotes.Location = New System.Drawing.Point(105, 76)
+Me.lblMovieInfoVotes.Name = "lblMovieInfoVotes"
+Me.lblMovieInfoVotes.Size = New System.Drawing.Size(46, 18)
+Me.lblMovieInfoVotes.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoVotes.TabIndex = 136
+Me.lblMovieInfoVotes.Text = "Votes:"
+Me.lblMovieInfoVotes.Values.ExtraText = ""
+Me.lblMovieInfoVotes.Values.Image = Nothing
+Me.lblMovieInfoVotes.Values.Text = "Votes:"
+'
+'lblMovieInfoTop250
+'
+Me.lblMovieInfoTop250.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoTop250.Location = New System.Drawing.Point(1, 76)
+Me.lblMovieInfoTop250.Name = "lblMovieInfoTop250"
+Me.lblMovieInfoTop250.Size = New System.Drawing.Size(56, 18)
+Me.lblMovieInfoTop250.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoTop250.TabIndex = 135
+Me.lblMovieInfoTop250.Text = "Top 250"
+Me.lblMovieInfoTop250.Values.ExtraText = ""
+Me.lblMovieInfoTop250.Values.Image = Nothing
+Me.lblMovieInfoTop250.Values.Text = "Top 250"
+'
+'lblMovieInfoRuntime
+'
+Me.lblMovieInfoRuntime.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoRuntime.Location = New System.Drawing.Point(158, 50)
+Me.lblMovieInfoRuntime.Name = "lblMovieInfoRuntime"
+Me.lblMovieInfoRuntime.Size = New System.Drawing.Size(60, 18)
+Me.lblMovieInfoRuntime.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoRuntime.TabIndex = 134
+Me.lblMovieInfoRuntime.Text = "Runtime:"
+Me.lblMovieInfoRuntime.Values.ExtraText = ""
+Me.lblMovieInfoRuntime.Values.Image = Nothing
+Me.lblMovieInfoRuntime.Values.Text = "Runtime:"
+'
+'lblMovieInfoImdbID
+'
+Me.lblMovieInfoImdbID.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoImdbID.Location = New System.Drawing.Point(1, 50)
+Me.lblMovieInfoImdbID.Name = "lblMovieInfoImdbID"
+Me.lblMovieInfoImdbID.Size = New System.Drawing.Size(60, 18)
+Me.lblMovieInfoImdbID.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoImdbID.TabIndex = 133
+Me.lblMovieInfoImdbID.Text = "IMDB ID:"
+Me.lblMovieInfoImdbID.Values.ExtraText = ""
+Me.lblMovieInfoImdbID.Values.Image = Nothing
+Me.lblMovieInfoImdbID.Values.Text = "IMDB ID:"
+'
+'lblMovieInfoAltTitle
+'
+Me.lblMovieInfoAltTitle.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoAltTitle.Location = New System.Drawing.Point(1, 24)
+Me.lblMovieInfoAltTitle.Name = "lblMovieInfoAltTitle"
+Me.lblMovieInfoAltTitle.Size = New System.Drawing.Size(55, 18)
+Me.lblMovieInfoAltTitle.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.lblMovieInfoAltTitle.TabIndex = 132
+Me.lblMovieInfoAltTitle.Text = "Alt Title:"
+Me.lblMovieInfoAltTitle.Values.ExtraText = ""
+Me.lblMovieInfoAltTitle.Values.Image = Nothing
+Me.lblMovieInfoAltTitle.Values.Text = "Alt Title:"
+'
+'lblMovieInfoEditableTitle
+'
+Me.lblMovieInfoEditableTitle.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.lblMovieInfoEditableTitle.Location = New System.Drawing.Point(1, 0)
+Me.lblMovieInfoEditableTitle.Name = "lblMovieInfoEditableTitle"
+Me.lblMovieInfoEditableTitle.Size = New System.Drawing.Size(94, 21)
+Me.lblMovieInfoEditableTitle.TabIndex = 131
+Me.lblMovieInfoEditableTitle.Text = "Editable Title:"
+Me.lblMovieInfoEditableTitle.Values.ExtraText = ""
+Me.lblMovieInfoEditableTitle.Values.Image = Nothing
+Me.lblMovieInfoEditableTitle.Values.Text = "Editable Title:"
 '
 'kbtnMoviesChangeIMDBid
 '
-Me.kbtnMoviesChangeIMDBid.Location = New System.Drawing.Point(129, 36)
+Me.kbtnMoviesChangeIMDBid.Location = New System.Drawing.Point(129, 50)
 Me.kbtnMoviesChangeIMDBid.Name = "kbtnMoviesChangeIMDBid"
 Me.kbtnMoviesChangeIMDBid.Size = New System.Drawing.Size(24, 24)
 Me.kbtnMoviesChangeIMDBid.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.refresh
@@ -6324,133 +6495,14 @@ Me.kbtnMoviesChangeIMDBid.Values.ImageStates.ImageCheckedPressed = Nothing
 Me.kbtnMoviesChangeIMDBid.Values.ImageStates.ImageCheckedTracking = Nothing
 Me.kbtnMoviesChangeIMDBid.Values.Text = ""
 '
-'Label13
-'
-Me.Label13.AutoSize = true
-Me.Label13.BackColor = System.Drawing.Color.Transparent
-Me.Label13.Location = New System.Drawing.Point(2, 39)
-Me.Label13.Name = "Label13"
-Me.Label13.Size = New System.Drawing.Size(59, 16)
-Me.Label13.TabIndex = 129
-Me.Label13.Text = "IMDb ID:"
-'
-'Label12
-'
-Me.Label12.AutoSize = true
-Me.Label12.BackColor = System.Drawing.Color.Transparent
-Me.Label12.Location = New System.Drawing.Point(2, 145)
-Me.Label12.Name = "Label12"
-Me.Label12.Size = New System.Drawing.Size(80, 16)
-Me.Label12.TabIndex = 128
-Me.Label12.Text = "Trailer URL:"
-'
-'Label11
-'
-Me.Label11.AutoSize = true
-Me.Label11.BackColor = System.Drawing.Color.Transparent
-Me.Label11.Location = New System.Drawing.Point(2, 128)
-Me.Label11.Name = "Label11"
-Me.Label11.Size = New System.Drawing.Size(48, 16)
-Me.Label11.TabIndex = 127
-Me.Label11.Text = "Genre:"
-'
-'Label10
-'
-Me.Label10.AutoSize = true
-Me.Label10.BackColor = System.Drawing.Color.Transparent
-Me.Label10.Location = New System.Drawing.Point(2, 111)
-Me.Label10.Name = "Label10"
-Me.Label10.Size = New System.Drawing.Size(58, 16)
-Me.Label10.TabIndex = 126
-Me.Label10.Text = "Director:"
-'
-'Label9
-'
-Me.Label9.AutoSize = true
-Me.Label9.BackColor = System.Drawing.Color.Transparent
-Me.Label9.Location = New System.Drawing.Point(84, 75)
-Me.Label9.Name = "Label9"
-Me.Label9.Size = New System.Drawing.Size(49, 16)
-Me.Label9.TabIndex = 125
-Me.Label9.Text = "MPAA:"
-'
-'Label8
-'
-Me.Label8.AutoSize = true
-Me.Label8.BackColor = System.Drawing.Color.Transparent
-Me.Label8.Location = New System.Drawing.Point(2, 76)
-Me.Label8.Name = "Label8"
-Me.Label8.Size = New System.Drawing.Size(40, 16)
-Me.Label8.TabIndex = 124
-Me.Label8.Text = "Year:"
-'
-'Label7
-'
-Me.Label7.AutoSize = true
-Me.Label7.BackColor = System.Drawing.Color.Transparent
-Me.Label7.Location = New System.Drawing.Point(208, 57)
-Me.Label7.Name = "Label7"
-Me.Label7.Size = New System.Drawing.Size(50, 16)
-Me.Label7.TabIndex = 123
-Me.Label7.Text = "Rating:"
-'
-'Label6
-'
-Me.Label6.AutoSize = true
-Me.Label6.BackColor = System.Drawing.Color.Transparent
-Me.Label6.Location = New System.Drawing.Point(109, 57)
-Me.Label6.Name = "Label6"
-Me.Label6.Size = New System.Drawing.Size(46, 16)
-Me.Label6.TabIndex = 122
-Me.Label6.Text = "Votes:"
-'
-'Label5
-'
-Me.Label5.AutoSize = true
-Me.Label5.BackColor = System.Drawing.Color.Transparent
-Me.Label5.Location = New System.Drawing.Point(1, 57)
-Me.Label5.Name = "Label5"
-Me.Label5.Size = New System.Drawing.Size(60, 16)
-Me.Label5.TabIndex = 121
-Me.Label5.Text = "Top 250:"
-'
-'Label4
-'
-Me.Label4.AutoSize = true
-Me.Label4.BackColor = System.Drawing.Color.Transparent
-Me.Label4.Location = New System.Drawing.Point(151, 39)
-Me.Label4.Name = "Label4"
-Me.Label4.Size = New System.Drawing.Size(60, 16)
-Me.Label4.TabIndex = 120
-Me.Label4.Text = "Runtime:"
-'
-'Label3
-'
-Me.Label3.AutoSize = true
-Me.Label3.BackColor = System.Drawing.Color.Transparent
-Me.Label3.Location = New System.Drawing.Point(3, 19)
-Me.Label3.Name = "Label3"
-Me.Label3.Size = New System.Drawing.Size(55, 16)
-Me.Label3.TabIndex = 119
-Me.Label3.Text = "Alt Title:"
-'
-'Label1
-'
-Me.Label1.AutoSize = true
-Me.Label1.BackColor = System.Drawing.Color.Transparent
-Me.Label1.Location = New System.Drawing.Point(3, 3)
-Me.Label1.Name = "Label1"
-Me.Label1.Size = New System.Drawing.Size(90, 16)
-Me.Label1.TabIndex = 118
-Me.Label1.Text = "Editable Title:"
-'
 'llIMDBIDStudio
 '
 Me.llIMDBIDStudio.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.llIMDBIDStudio.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.llIMDBIDStudio.Location = New System.Drawing.Point(2, 90)
+Me.llIMDBIDStudio.Location = New System.Drawing.Point(1, 127)
 Me.llIMDBIDStudio.Name = "llIMDBIDStudio"
 Me.llIMDBIDStudio.Size = New System.Drawing.Size(52, 21)
+Me.llIMDBIDStudio.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
 Me.llIMDBIDStudio.TabIndex = 115
 Me.llIMDBIDStudio.Text = "Studio:"
 Me.llIMDBIDStudio.Values.ExtraText = ""
@@ -6460,11 +6512,14 @@ Me.llIMDBIDStudio.Values.Text = "Studio:"
 'tbEditableTitle
 '
 Me.tbEditableTitle.BackColor = System.Drawing.Color.Gainsboro
-Me.tbEditableTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbEditableTitle.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbEditableTitle.Location = New System.Drawing.Point(113, 5)
+Me.tbEditableTitle.Location = New System.Drawing.Point(113, 0)
 Me.tbEditableTitle.Name = "tbEditableTitle"
-Me.tbEditableTitle.Size = New System.Drawing.Size(180, 14)
+Me.tbEditableTitle.Size = New System.Drawing.Size(180, 24)
+Me.tbEditableTitle.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbEditableTitle.StateCommon.Border.Rounding = 0
 Me.tbEditableTitle.TabIndex = 98
 '
 'khbMoviePlotBtm
@@ -6476,7 +6531,7 @@ Me.khbMoviePlotBtm.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBack
 Me.khbMoviePlotBtm.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbMoviePlotBtm.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbMoviePlotBtm.HeaderVisibleSecondary = false
-Me.khbMoviePlotBtm.Location = New System.Drawing.Point(1, 277)
+Me.khbMoviePlotBtm.Location = New System.Drawing.Point(1, 294)
 Me.khbMoviePlotBtm.MinimumSize = New System.Drawing.Size(287, 0)
 Me.khbMoviePlotBtm.Name = "khbMoviePlotBtm"
 '
@@ -6541,47 +6596,17 @@ Me.rtbPlotOutline.Size = New System.Drawing.Size(254, 67)
 Me.rtbPlotOutline.TabIndex = 31
 Me.rtbPlotOutline.Text = ""
 '
-'kbtnReloadMovieFromIMDB
-'
-Me.kbtnReloadMovieFromIMDB.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Cluster
-Me.kbtnReloadMovieFromIMDB.Location = New System.Drawing.Point(141, 235)
-Me.kbtnReloadMovieFromIMDB.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-Me.kbtnReloadMovieFromIMDB.Name = "kbtnReloadMovieFromIMDB"
-Me.kbtnReloadMovieFromIMDB.Size = New System.Drawing.Size(151, 36)
-Me.kbtnReloadMovieFromIMDB.TabIndex = 97
-Me.kbtnReloadMovieFromIMDB.TabStop = false
-Me.kbtnReloadMovieFromIMDB.Text = "Reload IMDB info"
-Me.kbtnReloadMovieFromIMDB.Values.ExtraText = ""
-Me.kbtnReloadMovieFromIMDB.Values.Image = Nothing
-Me.kbtnReloadMovieFromIMDB.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.kbtnReloadMovieFromIMDB.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.kbtnReloadMovieFromIMDB.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.kbtnReloadMovieFromIMDB.Values.Text = "Reload IMDB info"
-'
-'kbtnSaveIMDB
-'
-Me.kbtnSaveIMDB.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Cluster
-Me.kbtnSaveIMDB.Location = New System.Drawing.Point(1, 235)
-Me.kbtnSaveIMDB.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
-Me.kbtnSaveIMDB.Name = "kbtnSaveIMDB"
-Me.kbtnSaveIMDB.Size = New System.Drawing.Size(137, 36)
-Me.kbtnSaveIMDB.TabIndex = 34
-Me.kbtnSaveIMDB.Text = "Save Changes"
-Me.kbtnSaveIMDB.Values.ExtraText = ""
-Me.kbtnSaveIMDB.Values.Image = Nothing
-Me.kbtnSaveIMDB.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.kbtnSaveIMDB.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.kbtnSaveIMDB.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.kbtnSaveIMDB.Values.Text = "Save Changes"
-'
 'tbStudio
 '
 Me.tbStudio.BackColor = System.Drawing.Color.Gainsboro
-Me.tbStudio.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbStudio.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbStudio.Location = New System.Drawing.Point(66, 94)
+Me.tbStudio.Location = New System.Drawing.Point(59, 127)
 Me.tbStudio.Name = "tbStudio"
-Me.tbStudio.Size = New System.Drawing.Size(227, 14)
+Me.tbStudio.Size = New System.Drawing.Size(234, 24)
+Me.tbStudio.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbStudio.StateCommon.Border.Rounding = 0
 Me.tbStudio.TabIndex = 27
 '
 'rtbTagline
@@ -6589,127 +6614,160 @@ Me.tbStudio.TabIndex = 27
 Me.rtbTagline.BackColor = System.Drawing.Color.Gainsboro
 Me.rtbTagline.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.rtbTagline.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.rtbTagline.Location = New System.Drawing.Point(27, 164)
+Me.rtbTagline.Location = New System.Drawing.Point(27, 228)
 Me.rtbTagline.Name = "rtbTagline"
-Me.rtbTagline.Size = New System.Drawing.Size(266, 66)
+Me.rtbTagline.Size = New System.Drawing.Size(266, 60)
 Me.rtbTagline.TabIndex = 32
 Me.rtbTagline.Text = ""
 '
 'tbOriginalTitle
 '
 Me.tbOriginalTitle.BackColor = System.Drawing.Color.Gainsboro
-Me.tbOriginalTitle.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbOriginalTitle.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbOriginalTitle.Location = New System.Drawing.Point(67, 22)
+Me.tbOriginalTitle.Location = New System.Drawing.Point(67, 25)
 Me.tbOriginalTitle.Name = "tbOriginalTitle"
-Me.tbOriginalTitle.Size = New System.Drawing.Size(226, 14)
+Me.tbOriginalTitle.Size = New System.Drawing.Size(226, 24)
+Me.tbOriginalTitle.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbOriginalTitle.StateCommon.Border.Rounding = 0
 Me.tbOriginalTitle.TabIndex = 19
 '
 'tbVotes
 '
 Me.tbVotes.BackColor = System.Drawing.Color.Gainsboro
-Me.tbVotes.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbVotes.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbVotes.Location = New System.Drawing.Point(154, 59)
+Me.tbVotes.Location = New System.Drawing.Point(154, 76)
 Me.tbVotes.Name = "tbVotes"
-Me.tbVotes.Size = New System.Drawing.Size(56, 14)
+Me.tbVotes.Size = New System.Drawing.Size(56, 24)
+Me.tbVotes.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbVotes.StateCommon.Border.Rounding = 0
 Me.tbVotes.TabIndex = 23
 '
 'tbTop250
 '
 Me.tbTop250.BackColor = System.Drawing.Color.Gainsboro
-Me.tbTop250.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbTop250.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbTop250.Location = New System.Drawing.Point(69, 59)
+Me.tbTop250.Location = New System.Drawing.Point(69, 76)
 Me.tbTop250.Name = "tbTop250"
-Me.tbTop250.Size = New System.Drawing.Size(29, 14)
+Me.tbTop250.Size = New System.Drawing.Size(29, 24)
+Me.tbTop250.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbTop250.StateCommon.Border.Rounding = 0
 Me.tbTop250.TabIndex = 22
 '
 'tbMpaa
 '
 Me.tbMpaa.BackColor = System.Drawing.Color.Gainsboro
-Me.tbMpaa.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbMpaa.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbMpaa.Location = New System.Drawing.Point(141, 76)
+Me.tbMpaa.Location = New System.Drawing.Point(141, 101)
 Me.tbMpaa.Name = "tbMpaa"
-Me.tbMpaa.Size = New System.Drawing.Size(148, 14)
+Me.tbMpaa.Size = New System.Drawing.Size(148, 24)
+Me.tbMpaa.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbMpaa.StateCommon.Border.Rounding = 0
 Me.tbMpaa.TabIndex = 26
 '
 'tbyear
 '
 Me.tbyear.BackColor = System.Drawing.Color.Gainsboro
-Me.tbyear.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbyear.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbyear.Location = New System.Drawing.Point(49, 76)
+Me.tbyear.Location = New System.Drawing.Point(45, 100)
 Me.tbyear.Name = "tbyear"
-Me.tbyear.Size = New System.Drawing.Size(29, 14)
+Me.tbyear.Size = New System.Drawing.Size(46, 24)
+Me.tbyear.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbyear.StateCommon.Border.Rounding = 0
 Me.tbyear.TabIndex = 25
 '
 'tbIMDBID
 '
 Me.tbIMDBID.BackColor = System.Drawing.Color.Gainsboro
-Me.tbIMDBID.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbIMDBID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbIMDBID.Location = New System.Drawing.Point(69, 40)
+Me.tbIMDBID.Location = New System.Drawing.Point(69, 50)
 Me.tbIMDBID.Name = "tbIMDBID"
-Me.tbIMDBID.Size = New System.Drawing.Size(60, 14)
+Me.tbIMDBID.Size = New System.Drawing.Size(60, 24)
+Me.tbIMDBID.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbIMDBID.StateCommon.Border.Rounding = 0
 Me.tbIMDBID.TabIndex = 20
 '
 'tbRuntime
 '
 Me.tbRuntime.BackColor = System.Drawing.Color.Gainsboro
-Me.tbRuntime.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbRuntime.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbRuntime.Location = New System.Drawing.Point(219, 40)
+Me.tbRuntime.Location = New System.Drawing.Point(219, 50)
 Me.tbRuntime.Name = "tbRuntime"
-Me.tbRuntime.Size = New System.Drawing.Size(74, 14)
+Me.tbRuntime.Size = New System.Drawing.Size(74, 24)
+Me.tbRuntime.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbRuntime.StateCommon.Border.Rounding = 0
 Me.tbRuntime.TabIndex = 21
 '
 'tbRating
 '
 Me.tbRating.BackColor = System.Drawing.Color.Gainsboro
-Me.tbRating.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbRating.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbRating.Location = New System.Drawing.Point(269, 59)
+Me.tbRating.Location = New System.Drawing.Point(266, 76)
 Me.tbRating.Name = "tbRating"
-Me.tbRating.Size = New System.Drawing.Size(23, 14)
+Me.tbRating.Size = New System.Drawing.Size(26, 24)
+Me.tbRating.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbRating.StateCommon.Border.Rounding = 0
 Me.tbRating.TabIndex = 24
 '
 'tbTrailer
 '
 Me.tbTrailer.BackColor = System.Drawing.Color.Gainsboro
-Me.tbTrailer.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbTrailer.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbTrailer.Location = New System.Drawing.Point(96, 145)
+Me.tbTrailer.Location = New System.Drawing.Point(83, 202)
 Me.tbTrailer.Name = "tbTrailer"
-Me.tbTrailer.Size = New System.Drawing.Size(196, 14)
+Me.tbTrailer.Size = New System.Drawing.Size(207, 24)
+Me.tbTrailer.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbTrailer.StateCommon.Border.Rounding = 0
 Me.tbTrailer.TabIndex = 30
 '
 'tbGenre
 '
 Me.tbGenre.BackColor = System.Drawing.Color.Gainsboro
-Me.tbGenre.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbGenre.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbGenre.Location = New System.Drawing.Point(62, 128)
+Me.tbGenre.Location = New System.Drawing.Point(62, 177)
 Me.tbGenre.Name = "tbGenre"
-Me.tbGenre.Size = New System.Drawing.Size(230, 14)
+Me.tbGenre.Size = New System.Drawing.Size(230, 24)
+Me.tbGenre.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbGenre.StateCommon.Border.Rounding = 0
 Me.tbGenre.TabIndex = 29
 '
 'tbDirector
 '
 Me.tbDirector.BackColor = System.Drawing.Color.Gainsboro
-Me.tbDirector.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbDirector.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbDirector.Location = New System.Drawing.Point(69, 111)
+Me.tbDirector.Location = New System.Drawing.Point(69, 152)
 Me.tbDirector.Name = "tbDirector"
-Me.tbDirector.Size = New System.Drawing.Size(224, 14)
+Me.tbDirector.Size = New System.Drawing.Size(224, 24)
+Me.tbDirector.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.tbDirector.StateCommon.Border.Rounding = 0
 Me.tbDirector.TabIndex = 28
 '
 'Label18
 '
 Me.Label18.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.Label18.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.Label18.Location = New System.Drawing.Point(5, 163)
+Me.Label18.Location = New System.Drawing.Point(5, 227)
 Me.Label18.Name = "Label18"
 Me.Label18.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
 Me.Label18.Size = New System.Drawing.Size(21, 56)
@@ -6782,11 +6840,10 @@ Me.pbCurIconUsed.WaitOnLoad = true
 '
 'tbCredits
 '
-Me.tbCredits.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbCredits.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbCredits.Location = New System.Drawing.Point(651, 405)
 Me.tbCredits.Name = "tbCredits"
-Me.tbCredits.Size = New System.Drawing.Size(286, 14)
+Me.tbCredits.Size = New System.Drawing.Size(286, 34)
 Me.tbCredits.TabIndex = 65
 Me.tbCredits.Text = "Credits"
 Me.tbCredits.Visible = false
@@ -6807,11 +6864,10 @@ Me.lblCredits.Visible = false
 'tbMovieName
 '
 Me.tbMovieName.BackColor = System.Drawing.Color.Gainsboro
-Me.tbMovieName.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbMovieName.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbMovieName.Location = New System.Drawing.Point(301, 61)
 Me.tbMovieName.Name = "tbMovieName"
-Me.tbMovieName.Size = New System.Drawing.Size(320, 14)
+Me.tbMovieName.Size = New System.Drawing.Size(320, 34)
 Me.tbMovieName.TabIndex = 66
 Me.tbMovieName.Text = "Movie Name"
 Me.tbMovieName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -7411,7 +7467,7 @@ Me.gbThanks.Text = "Thanks to:"
 '
 Me.kllFreecovers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllFreecovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllFreecovers.Location = New System.Drawing.Point(447, 11)
+Me.kllFreecovers.Location = New System.Drawing.Point(447, 14)
 Me.kllFreecovers.Name = "kllFreecovers"
 Me.kllFreecovers.Size = New System.Drawing.Size(75, 21)
 Me.kllFreecovers.TabIndex = 105
@@ -7424,7 +7480,7 @@ Me.kllFreecovers.Values.Text = "Freecovers"
 '
 Me.kllxbmc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllxbmc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllxbmc.Location = New System.Drawing.Point(6, 10)
+Me.kllxbmc.Location = New System.Drawing.Point(6, 14)
 Me.kllxbmc.Name = "kllxbmc"
 Me.kllxbmc.Size = New System.Drawing.Size(46, 21)
 Me.kllxbmc.TabIndex = 100
@@ -7437,7 +7493,7 @@ Me.kllxbmc.Values.Text = "XBMC"
 '
 Me.kllMediaIcons.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllMediaIcons.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllMediaIcons.Location = New System.Drawing.Point(71, 10)
+Me.kllMediaIcons.Location = New System.Drawing.Point(71, 14)
 Me.kllMediaIcons.Name = "kllMediaIcons"
 Me.kllMediaIcons.Size = New System.Drawing.Size(81, 21)
 Me.kllMediaIcons.TabIndex = 101
@@ -7450,7 +7506,7 @@ Me.kllMediaIcons.Values.Text = "Media Icons"
 '
 Me.kllTheTVDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheTVDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheTVDB.Location = New System.Drawing.Point(169, 10)
+Me.kllTheTVDB.Location = New System.Drawing.Point(169, 14)
 Me.kllTheTVDB.Name = "kllTheTVDB"
 Me.kllTheTVDB.Size = New System.Drawing.Size(66, 21)
 Me.kllTheTVDB.TabIndex = 103
@@ -7463,7 +7519,7 @@ Me.kllTheTVDB.Values.Text = "TheTVDB"
 '
 Me.kllimpawards.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllimpawards.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllimpawards.Location = New System.Drawing.Point(249, 10)
+Me.kllimpawards.Location = New System.Drawing.Point(249, 14)
 Me.kllimpawards.Name = "kllimpawards"
 Me.kllimpawards.Size = New System.Drawing.Size(74, 21)
 Me.kllimpawards.TabIndex = 104
@@ -7476,7 +7532,7 @@ Me.kllimpawards.Values.Text = "Impawards"
 '
 Me.kllTheMovieDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheMovieDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 12)
+Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 14)
 Me.kllTheMovieDB.Name = "kllTheMovieDB"
 Me.kllTheMovieDB.Size = New System.Drawing.Size(87, 21)
 Me.kllTheMovieDB.TabIndex = 102
@@ -9308,6 +9364,17 @@ Me.lblMusic_SongTitle.Values.ExtraText = ""
 Me.lblMusic_SongTitle.Values.Image = Nothing
 Me.lblMusic_SongTitle.Values.Text = "Song Title"
 '
+'pbMusicCurFanart
+'
+Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
+Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 25)
+Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
+Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 581)
+Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbMusicCurFanart.TabIndex = 1
+Me.pbMusicCurFanart.TabStop = false
+'
 'tstripMusicToolbar
 '
 Me.tstripMusicToolbar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
@@ -9453,17 +9520,6 @@ Me.movtbar_ddbut_optionsAndSettings.Text = "Options and Settings"
 Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Name = "movtbar_tsb_SetupAndConfigurationToolStripMenuItem1"
 Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Size = New System.Drawing.Size(191, 22)
 Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Text = "Setup and Configuration"
-'
-'pbMusicCurFanart
-'
-Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
-Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 25)
-Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
-Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 581)
-Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbMusicCurFanart.TabIndex = 1
-Me.pbMusicCurFanart.TabStop = false
 '
 'tpFCDN
 '
@@ -13089,7 +13145,7 @@ Me.tbnewname.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, Syste
 Me.tbnewname.Location = New System.Drawing.Point(286, 34)
 Me.tbnewname.Margin = New System.Windows.Forms.Padding(2)
 Me.tbnewname.Name = "tbnewname"
-Me.tbnewname.Size = New System.Drawing.Size(260, 22)
+Me.tbnewname.Size = New System.Drawing.Size(260, 34)
 Me.tbnewname.TabIndex = 28
 '
 'Button7
@@ -14664,7 +14720,7 @@ Me.TabPageEX1.Text = "For Expansion"
 '
 Me.tbnone.Location = New System.Drawing.Point(128, 197)
 Me.tbnone.Name = "tbnone"
-Me.tbnone.Size = New System.Drawing.Size(376, 22)
+Me.tbnone.Size = New System.Drawing.Size(376, 34)
 Me.tbnone.TabIndex = 0
 Me.tbnone.Text = "This tab is for future expansion and is not yet used."
 '
@@ -15257,29 +15313,26 @@ Me.kgFileDetails.TabIndex = 105
 '
 'tbFDMovieFile2
 '
-Me.tbFDMovieFile2.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDMovieFile2.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDMovieFile2.Location = New System.Drawing.Point(455, 54)
 Me.tbFDMovieFile2.Name = "tbFDMovieFile2"
-Me.tbFDMovieFile2.Size = New System.Drawing.Size(340, 14)
+Me.tbFDMovieFile2.Size = New System.Drawing.Size(340, 34)
 Me.tbFDMovieFile2.TabIndex = 5
 '
 'tbFDMovieFile1
 '
-Me.tbFDMovieFile1.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDMovieFile1.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDMovieFile1.Location = New System.Drawing.Point(455, 24)
 Me.tbFDMovieFile1.Name = "tbFDMovieFile1"
-Me.tbFDMovieFile1.Size = New System.Drawing.Size(340, 14)
+Me.tbFDMovieFile1.Size = New System.Drawing.Size(340, 34)
 Me.tbFDMovieFile1.TabIndex = 4
 '
 'tbFDTrailer
 '
-Me.tbFDTrailer.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDTrailer.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDTrailer.Location = New System.Drawing.Point(455, 39)
 Me.tbFDTrailer.Name = "tbFDTrailer"
-Me.tbFDTrailer.Size = New System.Drawing.Size(340, 14)
+Me.tbFDTrailer.Size = New System.Drawing.Size(340, 34)
 Me.tbFDTrailer.TabIndex = 97
 '
 'LinkLabel1
@@ -15328,11 +15381,10 @@ Me.btnValidate.Values.Text = "Validate"
 '
 'tbFDTBNFile
 '
-Me.tbFDTBNFile.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDTBNFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDTBNFile.Location = New System.Drawing.Point(58, 24)
 Me.tbFDTBNFile.Name = "tbFDTBNFile"
-Me.tbFDTBNFile.Size = New System.Drawing.Size(345, 14)
+Me.tbFDTBNFile.Size = New System.Drawing.Size(345, 34)
 Me.tbFDTBNFile.TabIndex = 1
 '
 'lblFDNFOFile2
@@ -15351,11 +15403,10 @@ Me.lblFDNFOFile2.Values.Text = "Nfo File"
 '
 'tbFDIconfile
 '
-Me.tbFDIconfile.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDIconfile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDIconfile.Location = New System.Drawing.Point(53, 9)
 Me.tbFDIconfile.Name = "tbFDIconfile"
-Me.tbFDIconfile.Size = New System.Drawing.Size(77, 14)
+Me.tbFDIconfile.Size = New System.Drawing.Size(77, 34)
 Me.tbFDIconfile.TabIndex = 0
 '
 'lblFDTBNFile2
@@ -15374,11 +15425,10 @@ Me.lblFDTBNFile2.Values.Text = "Tbn File"
 '
 'tbFDNFOFile
 '
-Me.tbFDNFOFile.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDNFOFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDNFOFile.Location = New System.Drawing.Point(58, 39)
 Me.tbFDNFOFile.Name = "tbFDNFOFile"
-Me.tbFDNFOFile.Size = New System.Drawing.Size(345, 14)
+Me.tbFDNFOFile.Size = New System.Drawing.Size(345, 34)
 Me.tbFDNFOFile.TabIndex = 2
 '
 'lblFDIconfile2
@@ -15397,11 +15447,10 @@ Me.lblFDIconfile2.Values.Text = "Folder"
 '
 'tbFDFanartFile
 '
-Me.tbFDFanartFile.BorderStyle = System.Windows.Forms.BorderStyle.None
 Me.tbFDFanartFile.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tbFDFanartFile.Location = New System.Drawing.Point(58, 54)
 Me.tbFDFanartFile.Name = "tbFDFanartFile"
-Me.tbFDFanartFile.Size = New System.Drawing.Size(345, 14)
+Me.tbFDFanartFile.Size = New System.Drawing.Size(345, 34)
 Me.tbFDFanartFile.TabIndex = 3
 '
 'lblFDMovieFile12
@@ -20480,9 +20529,9 @@ Me.kgMusicSongData.Panel.PerformLayout
 CType(Me.kgMusicSongData,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgMusicSongData.ResumeLayout(false)
 CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).EndInit
 Me.tstripMusicToolbar.ResumeLayout(false)
 Me.tstripMusicToolbar.PerformLayout
-CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDN.ResumeLayout(false)
 Me.tcFCDN.ResumeLayout(false)
 Me.tpFCDNFront.ResumeLayout(false)
@@ -21106,7 +21155,7 @@ End Sub
     Friend WithEvents tpmipf As Dotnetrix.Controls.TabPageEX 'Dotnetrix.Controls.TabPageEX
     Friend WithEvents tpmmn As Dotnetrix.Controls.TabPageEX 'Dotnetrix.Controls.TabPageEX
     Friend WithEvents btnRetryName As KryptonButton
-    Friend WithEvents tbnewname As System.Windows.Forms.TextBox
+    Friend WithEvents tbnewname As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents cbChangeFolderName As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
     Friend WithEvents pb34 As System.Windows.Forms.PictureBox
     Friend WithEvents pb33 As System.Windows.Forms.PictureBox
@@ -21125,12 +21174,12 @@ End Sub
     Friend WithEvents pb22 As System.Windows.Forms.PictureBox
     Friend WithEvents pb21 As System.Windows.Forms.PictureBox
     Friend WithEvents pbCurIconUsed As System.Windows.Forms.PictureBox
-    Friend WithEvents tbRuntime As System.Windows.Forms.TextBox
-    Friend WithEvents tbVotes As System.Windows.Forms.TextBox
-    Friend WithEvents tbTop250 As System.Windows.Forms.TextBox
-    Friend WithEvents tbyear As System.Windows.Forms.TextBox
-    Friend WithEvents tbIMDBID As System.Windows.Forms.TextBox
-    Friend WithEvents tbMovieNameE As System.Windows.Forms.TextBox
+    Friend WithEvents tbRuntime As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbVotes As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbTop250 As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbyear As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbIMDBID As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbMovieNameE As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents pbposterIMP8 As System.Windows.Forms.PictureBox
     Friend WithEvents pbposterIMP7 As System.Windows.Forms.PictureBox
     Friend WithEvents Button2 As KryptonButton
@@ -21149,14 +21198,14 @@ End Sub
     Friend WithEvents fanartpb1 As System.Windows.Forms.PictureBox
     Friend WithEvents rtbPlot As System.Windows.Forms.RichTextBox
     Friend WithEvents rtbTagline As System.Windows.Forms.RichTextBox
-    Friend WithEvents tbTrailer As System.Windows.Forms.TextBox
-    Friend WithEvents tbCredits As System.Windows.Forms.TextBox
-    Friend WithEvents tbMpaa As System.Windows.Forms.TextBox
-    Friend WithEvents tbOriginalTitle As System.Windows.Forms.TextBox
-    Friend WithEvents tbDirector As System.Windows.Forms.TextBox
-    Friend WithEvents tbGenre As System.Windows.Forms.TextBox
-    Friend WithEvents tbRating As System.Windows.Forms.TextBox
-    Friend WithEvents tbMovieName As System.Windows.Forms.TextBox
+    Friend WithEvents tbTrailer As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbCredits As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbMpaa As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbOriginalTitle As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbDirector As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbGenre As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbRating As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbMovieName As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents Label18 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents lblPlotOutline As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     'System.Windows.Forms.Label
@@ -21292,24 +21341,24 @@ End Sub
     Friend WithEvents pbwrsscan36 As System.Windows.Forms.PictureBox
     'System.Windows.Forms.Label
     'System.Windows.Forms.Label
-    Friend WithEvents tbStudio As System.Windows.Forms.TextBox
+    Friend WithEvents tbStudio As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     'System.Windows.Forms.Button
     Friend WithEvents pbCurrentIconUsedNT As System.Windows.Forms.PictureBox
     Friend WithEvents bwPreCache As System.ComponentModel.BackgroundWorker
     Friend WithEvents btnCancelPC As KryptonButton 'System.Windows.Forms.Button
     'System.Windows.Forms.Label
-    Friend WithEvents tbFDFanartFile As System.Windows.Forms.TextBox
-    Friend WithEvents tbFDNFOFile As System.Windows.Forms.TextBox
-    Friend WithEvents tbFDTBNFile As System.Windows.Forms.TextBox
-    Friend WithEvents tbFDIconfile As System.Windows.Forms.TextBox
-    Friend WithEvents tbFDMovieFile1 As System.Windows.Forms.TextBox
+    Friend WithEvents tbFDFanartFile As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbFDNFOFile As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbFDTBNFile As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbFDIconfile As ComponentFactory.Krypton.Toolkit.KryptonTextBox
+    Friend WithEvents tbFDMovieFile1 As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents lblFDOtherFiles As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     Friend WithEvents lblFDMovieFile1 As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     Friend WithEvents lblFDFanartFile As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     Friend WithEvents lblFDNFOFile As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     Friend WithEvents lblFDTBNFile As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
     Friend WithEvents lblFDIconfile As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
-    Friend WithEvents tbFDMovieFile2 As System.Windows.Forms.TextBox
+    Friend WithEvents tbFDMovieFile2 As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     'System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLinkLabel 'System.Windows.Forms.LinkLabel
     Friend WithEvents pbCustomImageTemp As System.Windows.Forms.PictureBox
@@ -21322,7 +21371,7 @@ End Sub
     Friend WithEvents rtbPlotOutline As System.Windows.Forms.RichTextBox
     Friend WithEvents pbFDTrailer As System.Windows.Forms.PictureBox
     Friend WithEvents lblFDTrailer As ComponentFactory.Krypton.Toolkit.KryptonLabel 'System.Windows.Forms.Label
-    Friend WithEvents tbFDTrailer As System.Windows.Forms.TextBox
+    Friend WithEvents tbFDTrailer As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     'System.Windows.Forms.LinkLabel
     Friend WithEvents rbMDNoFanart As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents rbMDNoTBN As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
@@ -21394,8 +21443,6 @@ End Sub
     Friend WithEvents tcRootBackup As Dotnetrix.Controls.TabControlEX
     Friend WithEvents nouse As Dotnetrix.Controls.TabPageEX
     Friend WithEvents tpcm As Dotnetrix.Controls.TabPageEX
-    Friend WithEvents kbtnReloadMovieFromIMDB As ComponentFactory.Krypton.Toolkit.KryptonButton
-    Friend WithEvents kbtnSaveIMDB As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents kgTVEpisodesGroup As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents lbEpisodes As System.Windows.Forms.ListBox
     Friend WithEvents kgTVSeasonPickerGroup As ComponentFactory.Krypton.Toolkit.KryptonGroup
@@ -21612,7 +21659,7 @@ End Sub
     Friend WithEvents klblep_directorlbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents ktbep_epseason As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents klblep_epseasonlbl As ComponentFactory.Krypton.Toolkit.KryptonLabel
-    Friend WithEvents tbEditableTitle As System.Windows.Forms.TextBox
+    Friend WithEvents tbEditableTitle As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents pbTVSeasonPoster As System.Windows.Forms.PictureBox
     Private WithEvents kpEpisodeData As ComponentFactory.Krypton.Toolkit.KryptonPanel
     Private WithEvents khbEpisodeThumbGroup As ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
@@ -21894,7 +21941,7 @@ End Sub
     Friend WithEvents lblImpaposters As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents llIMDBIDStudio As ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
     Friend WithEvents TabPageEX1 As Dotnetrix.Controls.TabPageEX
-    Friend WithEvents tbnone As System.Windows.Forms.TextBox
+    Friend WithEvents tbnone As ComponentFactory.Krypton.Toolkit.KryptonTextBox
     Friend WithEvents klNumMusic As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents krbCMMusic As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents tpMusic As Dotnetrix.Controls.TabPageEX
@@ -22237,23 +22284,11 @@ End Sub
     Friend WithEvents tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents gbThanks As System.Windows.Forms.GroupBox
     Friend WithEvents kllFreecovers As ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
     Friend WithEvents tsbMoviesOpenCurMovieFolder As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbMoviesOpenImdbLink As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbMoviesOpenTMDBLink As System.Windows.Forms.ToolStripButton
-    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents khgMoviesMi As ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
     Friend WithEvents ButtonSpecHeaderGroup6 As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
     Friend WithEvents flpMoviesMI As System.Windows.Forms.FlowLayoutPanel
@@ -22286,4 +22321,18 @@ End Sub
     Friend WithEvents kPaletteSkyBlueLarge As ComponentFactory.Krypton.Toolkit.KryptonPalette
     Friend WithEvents kPaletteBlingLarge As ComponentFactory.Krypton.Toolkit.KryptonPalette
     Friend WithEvents bshgSaveEpisodeData As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents bshMovieSaveChanges As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents bshMovieReloadIMDBInformation As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents lblMovieInfoTop250 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoRuntime As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoImdbID As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoAltTitle As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoEditableTitle As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoMpaa As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoYear As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoTrailerURL As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoGenre As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoDirector As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoRating As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents lblMovieInfoVotes As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

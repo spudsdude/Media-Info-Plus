@@ -65,21 +65,21 @@ Public Class GettingStartedWizard
         curConfig.tv_episode_overwrite_nfo = False
         curConfig.tv_episode_overwrite_tbn = False
         curConfig.tv_season_banners_download_boolean = True
-        curConfig.tv_season_banners_download_maxnumber_integer = 8
+        curConfig.tv_season_banners_download_maxnumber_integer = 4
         curConfig.tv_season_banners_download_type_string = "all"
         curConfig.tv_season_banners_toapply_string = "season"
         curConfig.tv_season_posters_download_boolean = True
-        curConfig.tv_season_posters_download_maxnumber_integer = 8
+        curConfig.tv_season_posters_download_maxnumber_integer = 4
         curConfig.tv_season_usewhich_banner_poster = "season"
         curConfig.tv_tvshow_fanart_display_boolean = True
         curConfig.tv_tvshow_fanart_download_boolean = True
-        curConfig.tv_tvshow_fanart_download_maxnumber_integer = 8
+        curConfig.tv_tvshow_fanart_download_maxnumber_integer = 4
         curConfig.tv_tvshow_fanart_download_size_string = "1920 x 1080"
         curConfig.tv_tvshow_fanart_toapply_whatsize_string = "1920 x 1080"
-        curConfig.tv_tvshow_posters_download_maxnumber_integer = 8
+        curConfig.tv_tvshow_posters_download_maxnumber_integer = 4
         curConfig.tv_tvshow_nfo_overwrite_boolean = False
         curConfig.tv_tvshow_wideicon_download_boolean = True
-        curConfig.tv_tvshow_wideicon_download_maxnumber_integer = 8
+        curConfig.tv_tvshow_wideicon_download_maxnumber_integer = 4
         curConfig.tv_usewgetforimages = True
         curConfig.tv_wgetsleepinmilliseconds = 100
         curConfig.tv_curlang = "en"
@@ -123,9 +123,9 @@ Public Class GettingStartedWizard
         curConfig.pcbf2s8 = True
         curConfig.pcbf2s10 = True
         curConfig.pcbf3s0 = True
-        curConfig.pworkoffline = False
-        curConfig.pcbMaxIconPerStyle = 8
-        curConfig.pcbMaxIconsToDisplay = 8
+        curConfig.pworkoffline = True
+        curConfig.pcbMaxIconPerStyle = 4
+        curConfig.pcbMaxIconsToDisplay = 4
         curConfig.pcbDlFormat = 2
         curConfig.overlayMargin = 0.01
         curConfig.overlayHeight = 0.12
@@ -178,6 +178,7 @@ Public Class GettingStartedWizard
         curConfig.pcbFilter1080i = True
         curConfig.pcbFilterYears = True
 
+        curConfig.guicolor = "pink"
         'file level filters (defaults)
         curConfig.pcbFilterNameFileModeEverythingBeforeYear = True
         curConfig.pcbFilterNameFileModeEverythingBeforeh264 = True
@@ -254,12 +255,12 @@ Public Class GettingStartedWizard
                 MsgBox("Path already added to list")
                 Exit Sub
             Else
-                clbPaths.Items.Add(tbMusicPath.Text, True)
+                lbMusic.Items.Add(tbMusicPath.Text) ', True)
                 OK_Button.Enabled = True
             End If
 
         Catch ex As Exception
-            clbPaths.Items.Add(tbMusicPath.Text, True)
+            lbMusic.Items.Add(tbMusicPath.Text) ', True)
         End Try
     End Sub
     Private Sub addtotvlist()
@@ -371,6 +372,11 @@ Public Class GettingStartedWizard
         'MsgBox("Resources created")
         'Me.Close()
         'If Not Directory.Exists("c:\Program Files\movieinfoplus") Then Directory.CreateDirectory("c:\Program Files\movieinfoplus")
+    End Sub
+
+
+    Private Sub btnMusicAddPath_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnMusicAddPath.Click
+        addtomusiclist()
     End Sub
 End Class
 
