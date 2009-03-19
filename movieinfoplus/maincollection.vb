@@ -6188,7 +6188,8 @@ Public Class maincollection
 
             If Not haveidonly Then
                 'if there is no nfo file, check for a poster file (they have the imdbid in them)
-                haveidonly = checkforposterfiletogetimdbid(currentmovie)
+                'TODO: add rconf option for manual movie pick list
+                'haveidonly = checkforposterfiletogetimdbid(currentmovie)
             End If
         Else
             hasnfoalready = True
@@ -6206,10 +6207,10 @@ Public Class maincollection
                 Debug.Print("no id in movie, grabbing imdb info")
                 If Me.messageprompts Then lblPbar.Text = "-- Connecting to IMDB: " + dname + "--"
                 If Me.messageprompts Then Me.Refresh()
-                Dim tstringofimdbpage As String = getimdbidsearch(dname)
+                Dim tstringofimdbpage As String = getimdbidsearch(dname, False)
                 If Me.messageprompts Then lblPbar.Text = " -- Searching IMDB for: " + dname + "--"
                 If Me.messageprompts Then Me.Refresh()
-                currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
+                currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
             Else
                 'do not grab the data, we know the id already
                 'hasnfoalready = True
@@ -6230,10 +6231,10 @@ Public Class maincollection
                         'no nfo so get the data
                         If Me.messageprompts Then lblPbar.Text = "-- Searching IMDB: " + dname + "--"
                         If Me.messageprompts Then Me.Refresh()
-                        Dim tstringofimdbpage As String = getimdbidsearch(dname)
+                        Dim tstringofimdbpage As String = getimdbidsearch(dname, False)
                         If Me.messageprompts Then lblPbar.Text = "-- Gathering IMDB: " + dname + "--"
                         If Me.messageprompts Then Me.Refresh()
-                        currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
+                        currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
                         snagyear(dname, currentmovie, tstringofimdbpage)
                     End If
                     ' getimdbdata(tmovie)
@@ -7655,7 +7656,7 @@ Public Class maincollection
             'count is not 0, process items
             Dim tbdcou As Integer = 0
             While tbdcou < tbdcount
-
+                Debug.Print(tbdcou.ToString)
                 'if the file is not local download it
                 Dim currentitem As New tmdbapiv2.backdrop 'mip.themoviedb.backdrop.Item
                 currentitem = cbackdrops.backdrops.Item(tbdcou)
@@ -11239,7 +11240,7 @@ Public Class maincollection
             Debug.Print("Error getting IMDB data for " + tmovie.pmoviename + ".")
         End Try
     End Sub
-    Private Function getimdbidsearch(ByVal pmname As String) As String
+    Private Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         'http://akas.imdb.com/find?s=all&q=blood+diamond&x=0&y=0
         Try
 
@@ -11254,6 +11255,7 @@ Public Class maincollection
                 s = reader.ReadToEnd()
             End Using
             'Me.tp3rtbimdbdata.Text
+            If Not tolower Then Return s
             Dim tvarstolower As String = s.ToLower
             Return tvarstolower
             'searchit
@@ -11425,7 +11427,7 @@ Public Class maincollection
         'System.Diagnostics.Process.Start(binfilelocal, url + " -P " + """" + folder + cou.ToString + """")
         'myProcess.WaitForExit()
     End Sub
-    Public Sub wget(ByRef url As String, ByRef folder As String, ByRef id As String, ByVal wait As Boolean, Optional ByVal delay As Integer = 200)
+    Public Shared Sub wget(ByRef url As String, ByRef folder As String, ByRef id As String, ByVal wait As Boolean, Optional ByVal delay As Integer = 200)
         Dim binfilelocal As String = rconf.wgetfolder + "wget.exe"
         Debug.Print(binfilelocal + url + " -P " + """" + folder + """")
         If id = "getimdbidsearch" Then
@@ -11466,6 +11468,8 @@ Public Class maincollection
     Public Class imdbsearch
         Private pid As String
         Private pname As String
+        Private pyear As String
+
         Property id() As String
             Get
                 Return pid
@@ -11482,27 +11486,37 @@ Public Class maincollection
                 pname = value
             End Set
         End Property
+        Property year() As String
+            Get
+                Return pyear
+            End Get
+            Set(ByVal value As String)
+                pyear = value
+            End Set
+        End Property
     End Class
     Private Function snagimdbid_dlg(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
-        Dim lookupname As String = pmname.ToLower
+        Dim lookupname As String = pmname '.ToLower
         lookupname = Strings.Replace(lookupname, "(", "")
         lookupname = Strings.Replace(lookupname, ")", "")
         Dim retid As String = ""
         Try
             retid = Regex.Match(v1tstringofimdbpage, "/(?<imdbid1>tt\d{5,9})/").Groups(1).Value
-            If Not retid = "" Then Return retid
+            'If Not retid = "" Then Return retid
         Catch ex As Exception
             Debug.Print(ex.ToString)
         End Try
-
+        Dim multimode As Boolean = False
         Dim imdbidlist As New ArrayList
         Try
-            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\(\d{4}\)")
+            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\((\d{4})\)")
             Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
             While MatchResults.Success
+                multimode = True
                 Dim nid As New imdbsearch
-                nid.id = MatchResults.Groups(0).Value.ToString
-                nid.name = MatchResults.Groups(1).Value.ToString
+                nid.id = MatchResults.Groups(1).Value.ToString
+                nid.name = cleanimdbdata(MatchResults.Groups(2).Value.ToString)
+                nid.year = MatchResults.Groups(3).Value.ToString
                 imdbidlist.Add(nid)
                 MatchResults = MatchResults.NextMatch()
             End While
@@ -11510,7 +11524,57 @@ Public Class maincollection
             'Syntax error in the regular expression
         End Try
 
+        If Not multimode Then Return retid 'return single id if only one was located
+        Dim dtIDA As New DataTable
+        dtIDA.Columns.Add("Path", GetType(System.String))
+        dtIDA.Columns.Add("Name")
+        dtIDA.Columns.Add("Index")
+        'dtIDA.Columns.Add("objShow")
+        Dim thashtable As New Hashtable
+        Dim cutcmIndex As Integer = 0
+        Try 'jivefix 2nd round
+            For Each tcmitem As imdbsearch In imdbidlist 'update path info for real code
+                dtIDA.LoadDataRow(New Object() {tmovie.getmoviepath, "(" & tcmitem.year & ") " & tcmitem.id & ": " & tcmitem.name, tcmitem.id}, True)
+                Try
+                    thashtable.Add(tcmitem.id, tcmitem)
+                Catch ex As Exception
+                    Debug.Print("duplicate: " & tcmitem.id)
+                End Try
+                cutcmIndex += 1
+            Next
+        Catch exTarray As Exception
+            Debug.Print("exTarray failed" + vbNewLine + exTarray.ToString)
+        End Try
+        dialogTvShowSelect.dhashtable = thashtable
+        dtIDA.DefaultView.Sort = "Name"
+        dialogMovieSelect.klbPickTheMovie.DataSource = dtIDA.DefaultView
+        dialogMovieSelect.klbPickTheMovie.ValueMember = "Index"
+        dialogMovieSelect.klbPickTheMovie.DisplayMember = "Name"
+        'dialogMovieSelect.displayshowdata()
+        dialogMovieSelect.klblCurMovie.Text = "Name: " + pmname
+        dialogMovieSelect.klblCurMoviePath.Text = "Location on drive: " + addfiletofolder(tmovie.getmoviepath, tmovie.preservedmoviename)
+        dialogMovieSelect.Refresh()
+        dialogMovieSelect.ShowDialog()
+        If dialogMovieSelect.DialogResult = System.Windows.Forms.DialogResult.Cancel Then
+            'MsgBox("Cancel Selected, the first id (if one was found) will be used.")
+            If Not retid = "" Then Return retid
+        Else
+            retid = CStr(dialogMovieSelect.klbPickTheMovie.SelectedValue)
+            retid = Strings.Trim(retid)
+            Return retid
+        End If
 
+        'Debug.Print(selectedshow)
+        'dialogTvShowSelect.Dispose()
+        'If dbgTVShows Then dlgTVShowCurStatus.Show()
+        '        Else
+        'Dim tvbdseries1 As New thetvdb.TvSeries
+        'tvbdseries1 = CType(tarray.Item(0), TvSeries)
+        'selectedshow = tvbdseries1.seriesid
+        'selectedshow = Strings.Replace(selectedshow, " ", "")
+        '        End If
+        '    End If
+        'now that we have the showid, use the api to get the data
 
 
         'skipping other 2 methods as this one is more generic, may result in more bogus results
@@ -11528,20 +11592,20 @@ Public Class maincollection
             Debug.Print(ex.ToString)
         End Try
 
-        Dim imdbidlist As New ArrayList
-        Try
-            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\(\d{4}\)")
-            Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
-            While MatchResults.Success
-                Dim nid As New imdbsearch
-                nid.id = MatchResults.Groups(0).Value.ToString
-                nid.name = MatchResults.Groups(1).Value.ToString
-                imdbidlist.Add(nid)
-                MatchResults = MatchResults.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-        End Try
+        'Dim imdbidlist As New ArrayList
+        'Try
+        '    Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\(\d{4}\)")
+        '    Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
+        '    While MatchResults.Success
+        '        Dim nid As New imdbsearch
+        '        nid.id = MatchResults.Groups(0).Value.ToString
+        '        nid.name = MatchResults.Groups(1).Value.ToString
+        '        imdbidlist.Add(nid)
+        '        MatchResults = MatchResults.NextMatch()
+        '    End While
+        'Catch ex As ArgumentException
+        '    'Syntax error in the regular expression
+        'End Try
 
 
 
@@ -15813,7 +15877,56 @@ Public Class maincollection
             End While
         End If
     End Sub
+    Public Shared Sub downloadtmdbposter_single(ByRef whatmovie As movie, Optional ByRef bwcount As Integer = 0, Optional ByRef specificarraylist As ArrayList = Nothing, Optional ByVal dlgitem As Boolean = False, Optional ByVal downloadsmallonly As Boolean = False)
+        'get posters
+        'Dim tmovie As movie = c
+        Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
+        'working online, get latest info
+        tmdbapiv2.Results.getposters(cposters, whatmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
+       
+        Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
+       
+        If Not tbdcount = 0 Then
+            'count is not 0, process items
+            Dim tbdcou As Integer = 0
+            While tbdcou < tbdcount
+                'if the file is not local download it
+                Dim currentitem As New tmdbapiv2.Poster 'mip.themoviedb.backdrop.Item
+                currentitem = cposters.posters.Item(tbdcou)
+                'only process original size
+                If Not currentitem.Size = "original" Then
+                    tbdcou += 1
+                    Continue While
+                End If
+                Dim posterurl As String = currentitem.Text
+                'Dim posterpostcard As String = Strings.Left(currentitem.Text, currentitem.Text.Length - 4) + "_poster.jpg"
+                Dim posterfilename As String = Regex.Match(posterurl, "posters/(.{1,8})/(.*?.).jpg", RegexOptions.IgnoreCase).Groups(2).Value
+                Dim posterfilesubfoldername As String = Regex.Match(posterurl, "posters/(.{1,8})/(.*?.).jpg", RegexOptions.IgnoreCase).Groups(1).Value
+                If posterfilename = "" Then
+                    'fanartfilename = Regex.Match(fanarturl, "backdrops/.{1,8}/(.*?.).png", RegexOptions.IgnoreCase).Groups(1).Value
+                    'skip it
 
+                    tbdcou += 1
+                    Continue While
+                End If
+                Dim posterurl_mid As String = Strings.Left(currentitem.Text, currentitem.Text.Length - 4) + "_mid.jpg"
+                Dim posterurl_cover As String = Strings.Left(currentitem.Text, currentitem.Text.Length - 4) + "_cover.jpg"
+                If Not Directory.Exists(rconf.tmdbpostercachefolder + whatmovie.pimdbnumber + "\" + posterfilesubfoldername + "\") Then Directory.CreateDirectory(rconf.tmdbpostercachefolder + whatmovie.pimdbnumber + "\" + posterfilesubfoldername + "\")
+                If (Not File.Exists(rconf.tmdbpostercachefolder + whatmovie.pimdbnumber + "\" + posterfilesubfoldername + "\" + posterfilename + "_cover.jpg")) Or dlgitem Then 'thumbnail
+                    'add it to the download arraylist in the movie
+                    Dim newdownloadobject As New miplibfc.mip.dlobject
+                    newdownloadobject.URL = posterurl_cover
+                    newdownloadobject.Destination = rconf.tmdbpostercachefolder + whatmovie.pimdbnumber + "\" + posterfilesubfoldername + "\" + posterfilename + "_cover.jpg"
+                    newdownloadobject.misc = whatmovie.pmoviename + ": TMDB Poster Small Image - " + posterfilename
+                    newdownloadobject.hideurl = True
+                    whatmovie.pdownloadlist.Add(newdownloadobject)
+                    'addtodownloadlist(whatmovie, posterurl_cover, rconf.tmdbpostercachefolder + whatmovie.pimdbnumber + "\" + posterfilesubfoldername + "\" + posterfilename + "_cover.jpg", whatmovie.pmoviename + ": TMDB Poster Small Image - " + posterfilename)
+                End If
+                tbdcou += 1
+                If tbdcou = 1 Then Exit Sub 'more then gui has 
+            End While
+        End If
+    End Sub
     Private Sub downloadtmdbfanart(Optional ByRef bwcount As Integer = 0, Optional ByRef specificarraylist As ArrayList = Nothing)
         'get fanart
         Dim cbackdrops As New tmdbapiv2.Backdrops
@@ -16836,7 +16949,7 @@ Public Class maincollection
         Return imdbstring
 
     End Function
-    Function getimdbbyid(ByRef imdbid As String) As String
+    Shared Function getimdbbyid(ByRef imdbid As String) As String
         Dim imdbstring As String = ""
         Dim baseurlsiid As String = "http://akas.imdb.com/title/" + imdbid '+ "/"
         'Dim foundimdbid, retid, retyr As String
@@ -16863,7 +16976,7 @@ Public Class maincollection
         'imdbstring = Convert.ToString(s)
         Return imdbstring
     End Function
-    Function getimdbbyidplot(ByRef imdbid As String) As String
+    Shared Function getimdbbyidplot(ByRef imdbid As String) As String
         Dim imdbstring As String = ""
         Dim baseurlsiid As String = "http://akas.imdb.com/title/" + imdbid '+ "/"
         Dim pathtofile As String = rconf.tempfolder + imdbid + "\plotsummary"
@@ -16877,7 +16990,7 @@ Public Class maincollection
         End Try
         Return imdbstring
     End Function
-    Private Function clb(ByRef tString As String) As String
+    Private Shared Function clb(ByRef tString As String) As String
         'remove line break
         Dim tStringResult As String
         tStringResult = Strings.Replace(tString, Chr(13), "")
@@ -16885,7 +16998,7 @@ Public Class maincollection
         'Dim tStringResult As String = Regex.Replace(tString, "(\r\n\s*?){2,}", Environment.NewLine)
         Return tStringResult
     End Function
-    Private Function cleanimdbdata(ByVal strData As String) As String
+    Private Shared Function cleanimdbdata(ByVal strData As String) As String
         Dim strClean As String = ""
         If strData Is Nothing Then Return ""
         If strData = "" Then Return ""
@@ -16924,7 +17037,7 @@ Public Class maincollection
         End If
         Return strClean
     End Function
-    Function imdbparse(ByRef imdbid As String) As IMDB
+    Shared Function imdbparse(ByRef imdbid As String) As IMDB
         'get imdbid data using imdbid
         Dim imdbtxt As String = getimdbbyid(imdbid + "/")
 
@@ -24502,7 +24615,13 @@ Public Class maincollection
 
         If File.Exists(addfiletofolder(curtvshowpath, "season" + curseasonas2digitid + ".tbn")) Then
             pbTVSeasonPoster.ImageLocation = addfiletofolder(curtvshowpath, "season" + curseasonas2digitid + ".tbn")
-            pbTVSeasonPoster.Load()
+            Try
+                pbTVSeasonPoster.Load()
+            Catch ex As Exception
+                pbTVSeasonPoster.ImageLocation = Nothing
+                pbTVSeasonPoster.Image = Nothing
+            End Try
+
         Else
             pbTVSeasonPoster.ImageLocation = Nothing
             pbTVSeasonPoster.Image = Nothing
@@ -31388,7 +31507,7 @@ Public Property [Actors]() As List(Of Actor)
             'reader.Close()
             gROReader.Close()
             'debug print test
-            gRIMDB.imdbtostring()
+            ' gRIMDB.imdbtostring()
             'set tmovie values to gRIMDB
             gRIMDB.imdbtomovie(tmovie)
         Catch ex As Exception
@@ -31420,7 +31539,7 @@ Public Property [Actors]() As List(Of Actor)
         Me.studio = tmovie2.pstudio
         Me.Actors = tmovie2.Actors
     End Sub
-    Private Function cleanimdbdata(ByVal strData As String) As String
+    Public Function cleanimdbdata(ByVal strData As String) As String
         Dim strClean As String = ""
         If strData Is Nothing Then Return ""
         If strData = "" Then Return ""

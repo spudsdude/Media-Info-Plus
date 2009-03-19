@@ -781,25 +781,27 @@ Public Class tvshowcollection
                                         If Not tepisode1 Is Nothing Then
                                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
                                             curseason.episodes.Add(tepisode1)
-                                            If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
-                                                'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
-                                                If Not tepisode1.Filename = "" Then
-                                                    wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                            If rconf.tv_episode_download_boolean Then
+                                                If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
+                                                    'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
+                                                    If Not tepisode1.Filename = "" Then
+                                                        wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                                    End If
                                                 End If
-                                            End If
-                                            If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
-                                                'we should now have it in cache
-                                                'check episode thumb overwrite option in conf
-                                                If rconf.tv_episode_overwrite_tbn Then
-                                                    File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
-                                                Else
-                                                    Try
-                                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
-                                                    Catch ex As Exception
-                                                        'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
-                                                        Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                    End Try
+                                                If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
+                                                    'we should now have it in cache
+                                                    'check episode thumb overwrite option in conf
+                                                    If rconf.tv_episode_overwrite_tbn Then
+                                                        File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
+                                                    Else
+                                                        Try
+                                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                        Catch ex As Exception
+                                                            'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
+                                                            Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                        End Try
 
+                                                    End If
                                                 End If
                                             End If
                                             tepisode1.fullfilenameandpath = item
@@ -856,29 +858,29 @@ Public Class tvshowcollection
                                             If Not tepisode1 Is Nothing Then
                                                 If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
                                                 curseason.episodes.Add(tepisode1)
-                                                If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
-                                                    'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
-                                                    If Not tepisode1.Filename = "" Then
-                                                        wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                                If rconf.tv_episode_download_boolean Then
+                                                    If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
+                                                        'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
+                                                        If Not tepisode1.Filename = "" Then
+                                                            wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                                        End If
                                                     End If
-                                                End If
-                                                If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
-                                                    'we should now have it in cache
-                                                    'check episode thumb overwrite option in conf
-                                                    If rconf.tv_episode_overwrite_tbn Then
-                                                        File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
-                                                    Else
-                                                        Try
-                                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
-                                                        Catch ex As Exception
-                                                            'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
-                                                            Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                        End Try
-
+                                                    If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
+                                                        'we should now have it in cache
+                                                        'check episode thumb overwrite option in conf
+                                                        If rconf.tv_episode_overwrite_tbn Then
+                                                            File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
+                                                        Else
+                                                            Try
+                                                                If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                            Catch ex As Exception
+                                                                'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
+                                                                Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                            End Try
+                                                        End If
                                                     End If
+                                                    'asdf()
                                                 End If
-                                                'asdf()
-
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.fullfilenameandpath = item
                                                 tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror)
@@ -913,7 +915,7 @@ Public Class tvshowcollection
                                     'End If
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Done episode processing of single item, movie to next or end --------------"
                                 Case Else
-                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Non Movie File: " + item.ToString + " : " + tfname.ToString
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Non Movie File: " + item.ToString + " : " + tfname.ToString
                             End Select
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
@@ -1377,18 +1379,21 @@ Public Class tvshowcollection
                 End Try
                 xbmctvshow.Episodeguideurl = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
                 xbmctvshow.writeXML(showfullpathname) '"c:\")
-                For Each curep As tvdblangEpisode In newtvdbData.Episodes
-                    Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
-                    If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then mgettvepisodeimages(curep, selectedshow, switchpath)
-                Next
-
+                If rconf.tv_episode_download_boolean Then
+                    For Each curep As tvdblangEpisode In newtvdbData.Episodes
+                        Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
+                        If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then
+                            mgettvepisodeimages(curep, selectedshow, switchpath)
+                        End If
+                    Next
+                End If
                 maincollection.tsbtvPreCacheMediaIconsdata(xbmctvshow.Title)
             Catch ex As Exception
                 Debug.Print(ex.ToString)
             End Try
             showcount += 1
         End While
-        maincollection.lblPbar.Text = "Download Completed - Reading Show Data"
+        maincollection.lblPbar.Text = "Download Processing Completed"
         maincollection.Refresh()
         maincollection.lblPbar.Visible = False
         maincollection.pbar1.Visible = False

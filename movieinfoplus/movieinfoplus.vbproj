@@ -171,6 +171,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dlobject.vb" />
+    <Compile Include="htbackdrops.vb" />
     <Compile Include="icStudio.vb" />
     <Compile Include="dlgMovieStudioSelect.Designer.vb">
       <DependentUpon>dlgMovieStudioSelect.vb</DependentUpon>
