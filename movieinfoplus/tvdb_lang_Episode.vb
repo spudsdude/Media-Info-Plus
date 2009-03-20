@@ -8,6 +8,7 @@ Imports System.Collections.Generic
 
 Namespace tvdblang
     ' <summary>Represents a Data.Episode node.</summary>
+    <XmlRoot("Episode")> _
     Public Class [tvdblangEpisode]
         Private p_element_id As String
         Private p_element_combinedepisodenumber As String
@@ -43,6 +44,17 @@ Namespace tvdblang
         Private p_element_fileinfo As New xbmcMediaInfo.Fileinfo
         Private p_element_mutlipart As Boolean
         Private p_element_fullfilenameandpath As String
+        Private p_element_miptvdbkey As String
+
+        <XmlIgnore()> _
+      Property miptvdbkey() As String
+            Get
+                Return p_element_miptvdbkey
+            End Get
+            Set(ByVal value As String)
+                p_element_miptvdbkey = value
+            End Set
+        End Property
         <XmlIgnore()> _
       Property mutlipart() As Boolean
             Get
@@ -99,6 +111,25 @@ Property fullfilenameandpath() As String
                 p_element_episodefilepath = value
             End Set
         End Property
+
+        Public Sub writeXML(ByRef folderlocationandname As String)
+            Dim serializer As New XmlSerializer(Me.GetType())
+            Try
+                Dim writer As New StreamWriter(folderlocationandname)
+                serializer.Serialize(writer, Me)
+                writer.Close()
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+        End Sub
+        Public Sub readXML(ByVal xmllocationandfilename As String, ByRef curtvdblangEpisode As tvdblangEpisode)
+            Dim xmlfile As String = xmllocationandfilename
+            Dim serializer As New XmlSerializer(Me.GetType())
+            Dim gROReader As New StreamReader(xmlfile)
+            Dim gRvtvdblangData As tvdblangEpisode = CType(serializer.Deserialize(gROReader), tvdblangEpisode)
+            gROReader.Close()
+            curtvdblangEpisode = gRvtvdblangData
+        End Sub
 
         Public Sub tvdblangepisode2xbmcTvepisode(ByRef tls As tvdblangEpisode, ByRef xbmctvepisode As xbmc.xbmcEpisodedetails, ByRef theactors As List(Of movieinfoplus.mip.mov.Actor), ByRef currentmirror As String)
             'Dim ccount As Integer = 0

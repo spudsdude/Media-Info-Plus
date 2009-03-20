@@ -166,6 +166,7 @@ Public Class autopilotdialog
             Debug.Print("Primary set to: " + primaryselected)
             Debug.Print("Secondary set to: " + secondaryselected)
             Debug.Print("use poster: " + buseposter.ToString + "use fanart: " + busefanart.ToString + "create tbn: " + bctbn.ToString + "create nfo: " + bcnfo.ToString + "overwrite nfo:" + bonfo.ToString)
+
             maincollection.autopilotfromform(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
         End If
 
