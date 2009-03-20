@@ -17002,13 +17002,13 @@ Public Class maincollection
         Dim strClean As String = ""
         If strData Is Nothing Then Return ""
         If strData = "" Then Return ""
-        strClean = strData
+        strClean = Strings.Replace(strData, "&#183;", "-")
         'remove char codes
         Try
             Dim rObj1 As New Regex("(&#\d{1,3};)")
-            Dim mObj1 As Match = rObj1.Match(strData)
+            Dim mObj1 As Match = rObj1.Match(strClean)
             While mObj1.Success
-                strClean = Strings.Replace(strData, mObj1.Value, "")
+                strClean = Strings.Replace(strClean, mObj1.Value, "")
                 mObj1 = mObj1.NextMatch()
             End While
         Catch ex As ArgumentException
@@ -19908,6 +19908,34 @@ Public Class maincollection
                 Debug.Print(ex.ToString)
             End Try
 
+        End If
+
+        'get music fanart
+        Dim htdb As New htbackdrops
+        Dim dlitems As New ArrayList 'list of htbackdrops
+        Dim curdlobjects As New ArrayList
+        If rbem.Checked Then
+            htdb.getdownloadlist(dlitems, Strings.Replace(currentartist.artistname, "&", "%20"))
+            'download 
+            If Not dlitems.Count = 0 Then
+                For Each curdbitem As bditem In dlitems
+                    Dim newdlo As New miplibfc.mip.dlobject
+                    newdlo.URL = curdbitem.url
+                    newdlo.misc = "HT Backdrops Item: " & currentartist.artistname
+                    newdlo.Destination = curdbitem.destinationfolder
+                    If Not File.Exists(newdlo.Destination) Then curdlobjects.Add(newdlo)
+                Next
+            End If
+            If Not curdlobjects.Count = 0 Then
+                'download the images
+                dlgDownloadingFile.downloadingmutliimages = True
+                dlgDownloadingFile.downloadlist = curdlobjects
+                dlgDownloadingFile.ShowDialog()
+
+            End If
+        End If
+        If cbAllowIconSelection.Checked Then
+            'put into gui
         End If
     End Sub
 

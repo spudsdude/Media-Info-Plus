@@ -58,9 +58,37 @@ Namespace xbmc
         Private p_element_rating As String
         Private p_element_actor As New List(Of mip.mov.Actor)
         Private p_element_filename As String
-
+        Private p_element_episodeid As String
+        Private p_element_seriesid As String
+        Private p_element_seasonid As String
         Private p_element_fileinfo As New xbmcMediaInfo.Fileinfo
-
+        <XmlIgnore()> _
+        Property seasonid() As String
+            Get
+                Return p_element_seasonid
+            End Get
+            Set(ByVal value As String)
+                p_element_seasonid = value
+            End Set
+        End Property
+        <XmlIgnore()> _
+        Property seriesid() As String
+            Get
+                Return p_element_seriesid
+            End Get
+            Set(ByVal value As String)
+                p_element_seriesid = value
+            End Set
+        End Property
+        <XmlIgnore()> _
+       Property episodeid() As String
+            Get
+                Return p_element_episodeid
+            End Get
+            Set(ByVal value As String)
+                p_element_episodeid = value
+            End Set
+        End Property
         <XmlIgnore()> _
         Property filename() As String
             Get

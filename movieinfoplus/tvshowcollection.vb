@@ -119,7 +119,11 @@ Public Class tvshowcollection
         End While
         Return parentdirname
     End Function
-
+    Private Sub updatesinglespisode(ByRef curepisode As xbmc.xbmcEpisodedetails)
+        'http://www.thetvdb.com/api/' & miptvdbkey & '/episodes/' & episodeid & '/' & curlang & '.xml'
+        Dim newepdata As New tvdblangEpisode
+        'newepdata
+    End Sub
     Private Sub setupmirrors()
         Dim tvdbmirrors As New Mirrors
         getmirrors() 'get mirror list and save it
@@ -218,7 +222,7 @@ Public Class tvshowcollection
                     If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
                         'dont add it
                     Else
-                        tvshowarray.Add(currentdir)
+                        If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
                     End If
                 Catch ex As Exception
                     Debug.Print(ex.ToString)
@@ -1072,7 +1076,7 @@ Public Class tvshowcollection
                     If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
                         'dont add it
                     Else
-                        tvshowarray.Add(currentdir)
+                        If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
                     End If
                 Catch ex As Exception
                     Debug.Print(ex.ToString)
@@ -1422,7 +1426,7 @@ Public Class tvshowcollection
                 If ((Strings.Right(s, 8)).ToLower = "video_ts" Or (Strings.Right(s, 8)).ToLower = "audio_ts" Or (Strings.Right(s, 7)).ToLower = "highdef" Or (Strings.Right(s, 15)).ToLower = "temporary files" Or (Strings.Right(s, 8)).ToUpper = "RECYCLER" Or (Strings.Right(s, 8)).ToLower = "(noscan)" Or s.ToUpper = "LOST+FOUND" Or s.ToUpper = "System Volume Information".ToUpper) Then
                     Debug.Print("Sub Enumerate Directory -- found video or audio ts at " + Convert.ToString(thecounter) + " - skipping")
                 Else
-                    thearray.Add(s)
+                    If Not File.Exists(s & "\noscan") Then thearray.Add(s)
                 End If
                 EnumTVDirectory(s, thearray, thecounter) ' will parse sub dirs
             End If

@@ -124,6 +124,9 @@ Property fullfilenameandpath() As String
             xbmctvepisode.Rating = tls.Rating
             xbmctvepisode.Watched = ""
             xbmctvepisode.fileinfo = tls.fileinfo
+            xbmctvepisode.episodeid = tls.Id
+            xbmctvepisode.seriesid = tls.Seriesid
+            xbmctvepisode.seasonid = tls.Seasonid
         End Sub
 
         Public Sub tvdblangepisode2xbmcTvepisodeManualFromGUI(ByRef tls As tvdblangEpisode, ByRef xbmctvepisode As xbmc.xbmcEpisodedetails)
