@@ -495,25 +495,26 @@ Public Class dlgDownloadingFile
         Me.downloaderpbar4.Maximum = downloadlist_t4.Count
         Me.downloaderpbar5.Style = ProgressBarStyle.Blocks
         Me.downloaderpbar5.Maximum = downloadlist_t5.Count
+        btnCancel.Enabled = True
         bwmutlidownload = New System.ComponentModel.BackgroundWorker
         bwmutlidownload.WorkerReportsProgress = True
-        bwmutlidownload.WorkerSupportsCancellation = False
+        bwmutlidownload.WorkerSupportsCancellation = True
         bwmutlidownload.RunWorkerAsync()
         bwmutlidownload2 = New System.ComponentModel.BackgroundWorker
         bwmutlidownload2.WorkerReportsProgress = True
-        bwmutlidownload2.WorkerSupportsCancellation = False
+        bwmutlidownload2.WorkerSupportsCancellation = True
         bwmutlidownload2.RunWorkerAsync()
         bwmutlidownload3 = New System.ComponentModel.BackgroundWorker
         bwmutlidownload3.WorkerReportsProgress = True
-        bwmutlidownload3.WorkerSupportsCancellation = False
+        bwmutlidownload3.WorkerSupportsCancellation = True
         bwmutlidownload3.RunWorkerAsync()
         bwmutlidownload4 = New System.ComponentModel.BackgroundWorker
         bwmutlidownload4.WorkerReportsProgress = True
-        bwmutlidownload4.WorkerSupportsCancellation = False
+        bwmutlidownload4.WorkerSupportsCancellation = True
         bwmutlidownload4.RunWorkerAsync()
         bwmutlidownload5 = New System.ComponentModel.BackgroundWorker
         bwmutlidownload5.WorkerReportsProgress = True
-        bwmutlidownload5.WorkerSupportsCancellation = False
+        bwmutlidownload5.WorkerSupportsCancellation = True
         bwmutlidownload5.RunWorkerAsync()
         'Dim procs() As Process
         '' get an array of all processes named "app" on server "serverName"
@@ -534,6 +535,7 @@ Public Class dlgDownloadingFile
 
 
             For Each item As miplibfc.mip.dlobject In downloadlist_t1
+                If bwmutlidownload.CancellationPending Then Exit For
                 bwmutlidownload.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -622,6 +624,7 @@ Public Class dlgDownloadingFile
 
 
             For Each item As miplibfc.mip.dlobject In downloadlist_t2
+                If bwmutlidownload2.CancellationPending Then Exit For
                 bwmutlidownload2.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -731,6 +734,7 @@ Public Class dlgDownloadingFile
             Dim curitemcounter As Integer = 0
 
             For Each item As miplibfc.mip.dlobject In downloadlist_t3
+                If bwmutlidownload3.CancellationPending Then Exit For
                 bwmutlidownload3.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -818,6 +822,7 @@ Public Class dlgDownloadingFile
             Dim curitemcounter As Integer = 0
 
             For Each item As miplibfc.mip.dlobject In downloadlist_t4
+                If bwmutlidownload4.CancellationPending Then Exit For
                 bwmutlidownload4.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -905,6 +910,7 @@ Public Class dlgDownloadingFile
             Dim curitemcounter As Integer = 0
 
             For Each item As miplibfc.mip.dlobject In downloadlist_t5
+                If bwmutlidownload5.CancellationPending Then Exit For
                 bwmutlidownload5.ReportProgress(curitemcounter, item)
                 'clear the log portion
                 'Try
@@ -997,5 +1003,13 @@ Public Class dlgDownloadingFile
         Catch ex As Exception
             Debug.Print(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub btnCancel_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
+        bwmutlidownload.CancelAsync()
+        bwmutlidownload2.CancelAsync()
+        bwmutlidownload3.CancelAsync()
+        bwmutlidownload4.CancelAsync()
+        bwmutlidownload5.CancelAsync()
     End Sub
 End Class

@@ -14792,8 +14792,8 @@ Public Class maincollection
 
         Try
             'release the tv show fanart
-            tvMainRightMiddle.Panel1.StateCommon.Image.Dispose() ' = Nothing
-            System.Threading.Thread.Sleep(200)
+            ' tvMainRightMiddle.Panel1.StateCommon.Image.Dispose() ' = Nothing
+            'System.Threading.Thread.Sleep(200)
             pbTVFanart.ImageLocation = Nothing
             pbTVFanart.Image = Nothing
         Catch ex As Exception
@@ -14819,21 +14819,34 @@ Public Class maincollection
       
         'saving the new files
         Try
-            If savefanartjpg Then File.Copy(selectedicon.ImageLocation, imagelocationandname, True)
-            If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            Dim curloc As String = ""
+            curloc = selectedicon.ImageLocation
+            If curloc = "" Then
+                curloc = selectedicon.AccessibleName
+            End If
+            If Not curloc = "" Then
+                If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+                If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            End If
         Catch ex As Exception
             MessageBox.Show("Unable to save the tv show fanart, check permissions on the files in the tv show folder", "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
 
-        Dim fabackground As System.Drawing.Image
-        fabackground = System.Drawing.Image.FromFile(curtvshowpath + "\fanart.jpg")
-        tvMainRightMiddle.Panel1.StateCommon.Image = fabackground
-        tvMainRightMiddle.Panel1.StateCommon.ImageStyle = CType(5, PaletteImageStyle)
+        'Dim fabackground As System.Drawing.Image
+        'fabackground = System.Drawing.Image.FromFile(curtvshowpath + "\fanart.jpg")
+        'tvMainRightMiddle.Panel1.StateCommon.Image = fabackground
+        'tvMainRightMiddle.Panel1.StateCommon.ImageStyle = CType(5, PaletteImageStyle)
         'If savefanartjpg Then 'refresh all as start point may have shifted
-        '    pbTVFanart.ImageLocation = imagelocationandname
-        '    pbTVFanart.Visible = True
-        '    pbTVFanart.Load()
+        pbTVFanart.ImageLocation = imagelocationandname
+        pbTVFanart.Visible = True
+        Try
+            pbTVFanart.Load()
+        Catch ex As Exception
+
+        End Try
+
+
         '    'showfolderjpginmainwindow(cmpath, False)
         '    'showtbninmainwindow(cmpath, False)
         tcMain.SelectTab(1)
@@ -14877,14 +14890,48 @@ Public Class maincollection
         End If
 
         'saving the new files
+        Dim curloc As String = ""
         Try
-            If savefanartjpg Then File.Copy(selectedicon.ImageLocation, imagelocationandname, True)
-            If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            curloc = selectedicon.ImageLocation
+            If curloc = "" Then
+                curloc = selectedicon.AccessibleName
+            End If
+            If Not curloc = "" Then
+                If rconf.pcbmusicfanartresize Then
+                    Dim binfilelocal As String = "MagickCMD"
+                    Dim exstring As String = "convert " & """" & curloc & """" & " -resize 960x540^ " & """" & imagelocationandname & """"
+                    Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+                    pro1.StartInfo.FileName = binfilelocal
+                    pro1.StartInfo.Arguments = exstring
+                    pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+                    pro1.Start()
+                    pro1.WaitForExit()
+
+                    'convert curloc -resize 960x540^ imagelocationandname
+                Else
+                    ' asdf()
+                    If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+                    If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+                End If
+            End If
+
         Catch ex As Exception
-            MessageBox.Show("Unable to save the tv show fanart, check permissions on the files in the tv show folder", "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("music artist fanart image, check permissions on the files in the folder", "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
+        'If rconf.pcbmusicfanartresize Then
+        '    Dim newwidth As Double = rconf.pnudmusicfanartwidth
+        '    Dim newheight As Double
+        '    Dim timage As System.Drawing.Image
+        '    timage = System.Drawing.Image.FromFile(curloc)
+        '    Dim ar As Double = aspectratio(timage)
+        '    newheight = newwidth / ar
 
+        '    'find current image h / w and calc ar
+        '    'apply ar to new width for new height
+        '    'set new size and scale image
+
+        'End If
        
         pbMusicCurFanart.ImageLocation = imagelocationandname
         pbMusicCurFanart.Visible = True
@@ -20108,7 +20155,8 @@ Public Class maincollection
                 tpIMPPosters.Text = "TV Show Posters"
                 tpTMDBPosters.Text = "Season Specific Posters"
                 tpIMPPosters.Enabled = False
-                tpFanart.Enabled = False
+                tpFanart.Enabled = True
+                tpFanart.Text = "Backgrounds"
                 tpTMDBPosters.Enabled = False
                 tpmmn.Enabled = False
                 tpmmn.Text = ""
@@ -20194,8 +20242,8 @@ Public Class maincollection
                 tptv.Text = ""
                 tpcm.Enabled = False
                 tpcm.Text = ""
-                tpFanart.Enabled = False
-                tpFanart.Text = ""
+                tpFanart.Enabled = True
+                tpFanart.Text = "Artist Backgrounds"
                 tpTallImages.Enabled = True
                 tpTallImages.Text = "Album Art"
 
@@ -20546,36 +20594,38 @@ Public Class maincollection
             End Try
 
         End If
-
+        resetanddisableimages()
         'get music fanart
         Dim htdb As New htbackdrops
         Dim dlitems As New ArrayList 'list of htbackdrops
         Dim curdlobjects As New ArrayList
         Dim displaylist As New ArrayList
         If rbem.Checked Then
-            htdb.getdownloadlist(dlitems, Strings.Replace(currentartist.artistname, "&", "%20"))
-            'download 
-            If Not dlitems.Count = 0 Then
-                For Each curdbitem As bditem In dlitems
-                    Dim newdlo As New miplibfc.mip.dlobject
-                    newdlo.URL = curdbitem.url
-                    newdlo.misc = "HT Backdrops Item: " & currentartist.artistname
-                    newdlo.Destination = curdbitem.destinationfolder
-                    displaylist.Add(newdlo.Destination)
-                    If Not File.Exists(newdlo.Destination) Then curdlobjects.Add(newdlo)
-                Next
-            End If
-            If Not curdlobjects.Count = 0 Then
-                'download the images
-                dlgDownloadingFile.downloadingmutliimages = True
-                dlgDownloadingFile.downloadlist = curdlobjects
-                dlgDownloadingFile.ShowDialog()
+            If rconf.pcbGetMusicFanartFromHTBackdrops Then
+                htdb.getdownloadlist(dlitems, Strings.Replace(currentartist.artistname, "&", "%20"))
+                'download 
+                If Not dlitems.Count = 0 Then
+                    For Each curdbitem As bditem In dlitems
+                        Dim newdlo As New miplibfc.mip.dlobject
+                        newdlo.URL = curdbitem.url
+                        newdlo.misc = "HT Backdrops Item: " & currentartist.artistname
+                        newdlo.Destination = curdbitem.destinationfolder
+                        displaylist.Add(newdlo.Destination)
+                        If Not File.Exists(newdlo.Destination) Then curdlobjects.Add(newdlo)
+                    Next
+                End If
+                If Not curdlobjects.Count = 0 Then
+                    'download the images
+                    dlgDownloadingFile.downloadingmutliimages = True
+                    dlgDownloadingFile.downloadlist = curdlobjects
+                    dlgDownloadingFile.ShowDialog()
 
+                End If
             End If
         End If
         If cbAllowIconSelection.Checked Then
             'put into gui
-            displaymusicfanart(displaylist, True)
+            If rconf.pcbGetMusicFanartFromHTBackdrops Then displaymusicfanart(displaylist, True)
         End If
     End Sub
 
@@ -20712,6 +20762,7 @@ Public Class maincollection
                 'show images
                 resetanddisableimages()
                 If Not imagestoload.Count = 0 Then
+ 
                     displaymovieposters(imagestoload)
                 End If
 
@@ -24802,14 +24853,19 @@ Public Class maincollection
             pbTVFanart.ImageLocation = Nothing
             pbTVFanart.Image = Nothing
             pbTVFanart.Visible = False
-            Dim fabackground As System.Drawing.Image
-            fabackground = System.Drawing.Image.FromFile(curtvshowpath + "\fanart.jpg")
-            tvMainRightMiddle.Panel1.StateCommon.Image = fabackground
-            tvMainRightMiddle.Panel1.StateCommon.ImageStyle = CType(5, PaletteImageStyle)
+            'Dim fabackground As System.Drawing.Image
+            'fabackground = System.Drawing.Image.FromFile(curtvshowpath + "\fanart.jpg")
+            'tvMainRightMiddle.Panel1.StateCommon.Image = fabackground
+            'tvMainRightMiddle.Panel1.StateCommon.ImageStyle = CType(5, PaletteImageStyle)
             ' fabackground.Dispose()
-            'pbTVFanart.ImageLocation = addfiletofolder(curtvshowpath, "fanart.jpg") '- fanart for show
-            'pbTVFanart.Load()
-            'pbTVFanart.Visible = True
+            pbTVFanart.ImageLocation = addfiletofolder(curtvshowpath, "fanart.jpg") '- fanart for show
+            Try
+                pbTVFanart.Load()
+            Catch ex As Exception
+
+            End Try
+
+            pbTVFanart.Visible = True
         Catch ex As Exception
             Debug.Print(ex.ToString)
         End Try
@@ -33644,10 +33700,83 @@ Public Class configuration
     Private p_element_getMediaImagesMusic_inlay As Boolean
     Private p_element_getMediaImagesMusic_insert As Boolean
 
+    Private p_element_cbGetMusicFanartFromHTBackdrops As Boolean
+
+    'resize music fanart
+    Private p_element_pcbmusicfanartresize As Boolean
+    Private p_element_pnudmusicfanartwidth As Double
+
+    'resize movie fanart
+    Private p_element_pcbmoviefanartresize As Boolean
+    Private p_element_pnudmoviefanartwidth As Double
+
+    'resize show fanart
+    Private p_element_pcbshowfanartresize As Boolean
+    Private p_element_pnudshowfanartwidth As Double
 
 
+    Property pcbmusicfanartresize() As Boolean
+        Get
+            Return p_element_pcbmusicfanartresize
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbmusicfanartresize = value
+        End Set
+    End Property
 
+    Property pnudmusicfanartwidth() As Double
+        Get
+            Return p_element_pnudmusicfanartwidth
+        End Get
+        Set(ByVal value As Double)
+            p_element_pnudmusicfanartwidth = value
+        End Set
+    End Property
 
+    Property pcbmoviefanartresize() As Boolean
+        Get
+            Return p_element_pcbmoviefanartresize
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbmoviefanartresize = value
+        End Set
+    End Property
+
+    Property pnudmoviefanartwidth() As Double
+        Get
+            Return p_element_pnudmoviefanartwidth
+        End Get
+        Set(ByVal value As Double)
+            p_element_pnudmoviefanartwidth = value
+        End Set
+    End Property
+
+    Property pcbshowfanartresize() As Boolean
+        Get
+            Return p_element_pcbshowfanartresize
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbshowfanartresize = value
+        End Set
+    End Property
+
+    Property pnudshowfanartwidth() As Double
+        Get
+            Return p_element_pnudshowfanartwidth
+        End Get
+        Set(ByVal value As Double)
+            p_element_pnudshowfanartwidth = value
+        End Set
+    End Property
+
+    Property pcbGetMusicFanartFromHTBackdrops() As Boolean
+        Get
+            Return p_element_cbGetMusicFanartFromHTBackdrops
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_cbGetMusicFanartFromHTBackdrops = value
+        End Set
+    End Property
 
     Property pgetMusicAlbumArt() As Boolean
         Get
@@ -33690,7 +33819,7 @@ Public Class configuration
             cbSkipTransparency = value
         End Set
     End Property
-  
+
     Property ptso_auto_addtoablumonnewart() As Boolean
         Get
             Return tso_auto_addtoablumonnewart
@@ -33771,7 +33900,7 @@ Public Class configuration
             p_element_getMediaImagesMovies_insert = value
         End Set
     End Property
-  
+
     Property pgetMediaImagesMusic() As Boolean
         Get
             Return p_element_getMediaImagesMusic

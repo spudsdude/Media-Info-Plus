@@ -710,6 +710,7 @@ Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1 = New System.Windows.Form
 Me.tpFCDN = New Dotnetrix.Controls.TabPageEX
 Me.tcFCDN = New Dotnetrix.Controls.TabControlEX
 Me.tpFCDNFront = New Dotnetrix.Controls.TabPageEX
+Me.lblFreeCovers = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.kgpbFront10 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
 Me.pbFront10 = New System.Windows.Forms.PictureBox
 Me.kgpbFront9 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
@@ -731,6 +732,7 @@ Me.pbFront2 = New System.Windows.Forms.PictureBox
 Me.kgpbFront1 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
 Me.pbFront1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNBack = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbBack9 = New System.Windows.Forms.PictureBox
 Me.pbBack8 = New System.Windows.Forms.PictureBox
 Me.pbBack7 = New System.Windows.Forms.PictureBox
@@ -741,6 +743,7 @@ Me.pbBack3 = New System.Windows.Forms.PictureBox
 Me.pbBack2 = New System.Windows.Forms.PictureBox
 Me.pbBack1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNcd1 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbcdi9 = New System.Windows.Forms.PictureBox
 Me.pbcdi8 = New System.Windows.Forms.PictureBox
 Me.pbcdi7 = New System.Windows.Forms.PictureBox
@@ -751,6 +754,7 @@ Me.pbcdi3 = New System.Windows.Forms.PictureBox
 Me.pbcdi2 = New System.Windows.Forms.PictureBox
 Me.pbcdi1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNcd2 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbcd2i9 = New System.Windows.Forms.PictureBox
 Me.pbcd2i8 = New System.Windows.Forms.PictureBox
 Me.pbcd2i7 = New System.Windows.Forms.PictureBox
@@ -761,6 +765,7 @@ Me.pbcd2i3 = New System.Windows.Forms.PictureBox
 Me.pbcd2i2 = New System.Windows.Forms.PictureBox
 Me.pbcd2i1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNcd3 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbcd3i9 = New System.Windows.Forms.PictureBox
 Me.pbcd3i8 = New System.Windows.Forms.PictureBox
 Me.pbcd3i7 = New System.Windows.Forms.PictureBox
@@ -771,6 +776,7 @@ Me.pbcd3i3 = New System.Windows.Forms.PictureBox
 Me.pbcd3i2 = New System.Windows.Forms.PictureBox
 Me.pbcd3i1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNcd4 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbcd4i9 = New System.Windows.Forms.PictureBox
 Me.pbcd4i8 = New System.Windows.Forms.PictureBox
 Me.pbcd4i7 = New System.Windows.Forms.PictureBox
@@ -781,6 +787,7 @@ Me.pbcd4i3 = New System.Windows.Forms.PictureBox
 Me.pbcd4i2 = New System.Windows.Forms.PictureBox
 Me.pbcd4i1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNinsert = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbInsert9 = New System.Windows.Forms.PictureBox
 Me.pbInsert8 = New System.Windows.Forms.PictureBox
 Me.pbInsert7 = New System.Windows.Forms.PictureBox
@@ -791,6 +798,7 @@ Me.pbInsert3 = New System.Windows.Forms.PictureBox
 Me.pbInsert2 = New System.Windows.Forms.PictureBox
 Me.pbInsert1 = New System.Windows.Forms.PictureBox
 Me.tpFCDNinlay = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbInlay9 = New System.Windows.Forms.PictureBox
 Me.pbInlay8 = New System.Windows.Forms.PictureBox
 Me.pbInlay7 = New System.Windows.Forms.PictureBox
@@ -6022,7 +6030,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(456, 431)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(476, 451)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -8330,7 +8338,7 @@ Me.tsbShowsOpenTVDBPage.Text = "Open thetvdb.com page for this show"
 Me.tsbShowsOpenFolder.Image = CType(resources.GetObject("tsbShowsOpenFolder.Image"),System.Drawing.Image)
 Me.tsbShowsOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbShowsOpenFolder.Name = "tsbShowsOpenFolder"
-Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 29)
+Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 20)
 Me.tsbShowsOpenFolder.Text = "Open Folder"
 Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
 '
@@ -9554,7 +9562,7 @@ Me.tcFCDN.Controls.Add(Me.tpFCDNinlay)
 Me.tcFCDN.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcFCDN.Location = New System.Drawing.Point(0, 0)
 Me.tcFCDN.Name = "tcFCDN"
-Me.tcFCDN.SelectedIndex = 7
+Me.tcFCDN.SelectedIndex = 0
 Me.tcFCDN.Size = New System.Drawing.Size(814, 606)
 Me.tcFCDN.TabIndex = 0
 Me.tcFCDN.UseVisualStyles = false
@@ -9562,6 +9570,7 @@ Me.tcFCDN.UseVisualStyles = false
 'tpFCDNFront
 '
 Me.tpFCDNFront.AutoScroll = true
+Me.tpFCDNFront.Controls.Add(Me.lblFreeCovers)
 Me.tpFCDNFront.Controls.Add(Me.kgpbFront10)
 Me.tpFCDNFront.Controls.Add(Me.kgpbFront9)
 Me.tpFCDNFront.Controls.Add(Me.kgpbFront8)
@@ -9580,9 +9589,24 @@ Me.tpFCDNFront.TabIndex = 0
 Me.tpFCDNFront.Text = "Front Cover"
 Me.tpFCDNFront.UseVisualStyleBackColor = true
 '
+'lblFreeCovers
+'
+Me.lblFreeCovers.Dock = System.Windows.Forms.DockStyle.Top
+Me.lblFreeCovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.lblFreeCovers.Location = New System.Drawing.Point(3, 3)
+Me.lblFreeCovers.Name = "lblFreeCovers"
+Me.lblFreeCovers.Size = New System.Drawing.Size(943, 20)
+Me.lblFreeCovers.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.lblFreeCovers.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.lblFreeCovers.TabIndex = 20
+Me.lblFreeCovers.Text = "Media Images Provided by Freecovers.net "
+Me.lblFreeCovers.Values.ExtraText = ""
+Me.lblFreeCovers.Values.Image = Nothing
+Me.lblFreeCovers.Values.Text = "Media Images Provided by Freecovers.net "
+'
 'kgpbFront10
 '
-Me.kgpbFront10.Location = New System.Drawing.Point(476, 1404)
+Me.kgpbFront10.Location = New System.Drawing.Point(476, 1420)
 Me.kgpbFront10.Name = "kgpbFront10"
 '
 'kgpbFront10.Panel
@@ -9603,7 +9627,7 @@ Me.pbFront10.TabStop = false
 '
 'kgpbFront9
 '
-Me.kgpbFront9.Location = New System.Drawing.Point(1, 1404)
+Me.kgpbFront9.Location = New System.Drawing.Point(1, 1420)
 Me.kgpbFront9.Name = "kgpbFront9"
 '
 'kgpbFront9.Panel
@@ -9624,7 +9648,7 @@ Me.pbFront9.TabStop = false
 '
 'kgpbFront8
 '
-Me.kgpbFront8.Location = New System.Drawing.Point(476, 1052)
+Me.kgpbFront8.Location = New System.Drawing.Point(476, 1068)
 Me.kgpbFront8.Name = "kgpbFront8"
 '
 'kgpbFront8.Panel
@@ -9645,7 +9669,7 @@ Me.pbFront8.TabStop = false
 '
 'kgpbFront7
 '
-Me.kgpbFront7.Location = New System.Drawing.Point(1, 1052)
+Me.kgpbFront7.Location = New System.Drawing.Point(1, 1068)
 Me.kgpbFront7.Name = "kgpbFront7"
 '
 'kgpbFront7.Panel
@@ -9666,7 +9690,7 @@ Me.pbFront7.TabStop = false
 '
 'kgpbFront6
 '
-Me.kgpbFront6.Location = New System.Drawing.Point(476, 700)
+Me.kgpbFront6.Location = New System.Drawing.Point(476, 719)
 Me.kgpbFront6.Name = "kgpbFront6"
 '
 'kgpbFront6.Panel
@@ -9687,7 +9711,7 @@ Me.pbFront6.TabStop = false
 '
 'kgpbFront5
 '
-Me.kgpbFront5.Location = New System.Drawing.Point(1, 700)
+Me.kgpbFront5.Location = New System.Drawing.Point(1, 719)
 Me.kgpbFront5.Name = "kgpbFront5"
 '
 'kgpbFront5.Panel
@@ -9708,7 +9732,7 @@ Me.pbFront5.TabStop = false
 '
 'kgpbFront4
 '
-Me.kgpbFront4.Location = New System.Drawing.Point(476, 348)
+Me.kgpbFront4.Location = New System.Drawing.Point(476, 367)
 Me.kgpbFront4.Name = "kgpbFront4"
 '
 'kgpbFront4.Panel
@@ -9728,7 +9752,7 @@ Me.pbFront4.TabStop = false
 '
 'kgpbFront3
 '
-Me.kgpbFront3.Location = New System.Drawing.Point(1, 348)
+Me.kgpbFront3.Location = New System.Drawing.Point(1, 367)
 Me.kgpbFront3.Name = "kgpbFront3"
 '
 'kgpbFront3.Panel
@@ -9748,7 +9772,7 @@ Me.pbFront3.TabStop = false
 '
 'kgpbFront2
 '
-Me.kgpbFront2.Location = New System.Drawing.Point(475, 1)
+Me.kgpbFront2.Location = New System.Drawing.Point(475, 19)
 Me.kgpbFront2.Name = "kgpbFront2"
 '
 'kgpbFront2.Panel
@@ -9768,7 +9792,7 @@ Me.pbFront2.TabStop = false
 '
 'kgpbFront1
 '
-Me.kgpbFront1.Location = New System.Drawing.Point(0, 0)
+Me.kgpbFront1.Location = New System.Drawing.Point(0, 22)
 Me.kgpbFront1.Name = "kgpbFront1"
 '
 'kgpbFront1.Panel
@@ -9789,6 +9813,7 @@ Me.pbFront1.TabStop = false
 '
 'tpFCDNBack
 '
+Me.tpFCDNBack.Controls.Add(Me.KryptonLabel1)
 Me.tpFCDNBack.Controls.Add(Me.pbBack9)
 Me.tpFCDNBack.Controls.Add(Me.pbBack8)
 Me.tpFCDNBack.Controls.Add(Me.pbBack7)
@@ -9805,6 +9830,21 @@ Me.tpFCDNBack.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNBack.TabIndex = 1
 Me.tpFCDNBack.Text = "Back Cover"
 Me.tpFCDNBack.UseVisualStyleBackColor = true
+'
+'KryptonLabel1
+'
+Me.KryptonLabel1.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel1.Location = New System.Drawing.Point(3, 3)
+Me.KryptonLabel1.Name = "KryptonLabel1"
+Me.KryptonLabel1.Size = New System.Drawing.Size(800, 20)
+Me.KryptonLabel1.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel1.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel1.TabIndex = 21
+Me.KryptonLabel1.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel1.Values.ExtraText = ""
+Me.KryptonLabel1.Values.Image = Nothing
+Me.KryptonLabel1.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbBack9
 '
@@ -9890,6 +9930,7 @@ Me.pbBack1.TabStop = false
 'tpFCDNcd1
 '
 Me.tpFCDNcd1.AutoScroll = true
+Me.tpFCDNcd1.Controls.Add(Me.KryptonLabel2)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi9)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi8)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi7)
@@ -9904,6 +9945,21 @@ Me.tpFCDNcd1.Name = "tpFCDNcd1"
 Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd1.TabIndex = 2
 Me.tpFCDNcd1.Text = "CD1"
+'
+'KryptonLabel2
+'
+Me.KryptonLabel2.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel2.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel2.Name = "KryptonLabel2"
+Me.KryptonLabel2.Size = New System.Drawing.Size(915, 20)
+Me.KryptonLabel2.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel2.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel2.TabIndex = 27
+Me.KryptonLabel2.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel2.Values.ExtraText = ""
+Me.KryptonLabel2.Values.Image = Nothing
+Me.KryptonLabel2.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbcdi9
 '
@@ -9989,6 +10045,7 @@ Me.pbcdi1.TabStop = false
 'tpFCDNcd2
 '
 Me.tpFCDNcd2.AutoScroll = true
+Me.tpFCDNcd2.Controls.Add(Me.KryptonLabel3)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i9)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i8)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i7)
@@ -10003,6 +10060,21 @@ Me.tpFCDNcd2.Name = "tpFCDNcd2"
 Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd2.TabIndex = 3
 Me.tpFCDNcd2.Text = "CD2"
+'
+'KryptonLabel3
+'
+Me.KryptonLabel3.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel3.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel3.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel3.Name = "KryptonLabel3"
+Me.KryptonLabel3.Size = New System.Drawing.Size(906, 20)
+Me.KryptonLabel3.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel3.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel3.TabIndex = 36
+Me.KryptonLabel3.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel3.Values.ExtraText = ""
+Me.KryptonLabel3.Values.Image = Nothing
+Me.KryptonLabel3.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbcd2i9
 '
@@ -10088,6 +10160,7 @@ Me.pbcd2i1.TabStop = false
 'tpFCDNcd3
 '
 Me.tpFCDNcd3.AutoScroll = true
+Me.tpFCDNcd3.Controls.Add(Me.KryptonLabel4)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i9)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i8)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i7)
@@ -10102,6 +10175,21 @@ Me.tpFCDNcd3.Name = "tpFCDNcd3"
 Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd3.TabIndex = 4
 Me.tpFCDNcd3.Text = "CD3"
+'
+'KryptonLabel4
+'
+Me.KryptonLabel4.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel4.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel4.Name = "KryptonLabel4"
+Me.KryptonLabel4.Size = New System.Drawing.Size(906, 20)
+Me.KryptonLabel4.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel4.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel4.TabIndex = 45
+Me.KryptonLabel4.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel4.Values.ExtraText = ""
+Me.KryptonLabel4.Values.Image = Nothing
+Me.KryptonLabel4.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbcd3i9
 '
@@ -10187,6 +10275,7 @@ Me.pbcd3i1.TabStop = false
 'tpFCDNcd4
 '
 Me.tpFCDNcd4.AutoScroll = true
+Me.tpFCDNcd4.Controls.Add(Me.KryptonLabel6)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i9)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i8)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i7)
@@ -10201,6 +10290,21 @@ Me.tpFCDNcd4.Name = "tpFCDNcd4"
 Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNcd4.TabIndex = 5
 Me.tpFCDNcd4.Text = "CD4"
+'
+'KryptonLabel6
+'
+Me.KryptonLabel6.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel6.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel6.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel6.Name = "KryptonLabel6"
+Me.KryptonLabel6.Size = New System.Drawing.Size(906, 20)
+Me.KryptonLabel6.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel6.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel6.TabIndex = 54
+Me.KryptonLabel6.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel6.Values.ExtraText = ""
+Me.KryptonLabel6.Values.Image = Nothing
+Me.KryptonLabel6.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbcd4i9
 '
@@ -10286,6 +10390,7 @@ Me.pbcd4i1.TabStop = false
 'tpFCDNinsert
 '
 Me.tpFCDNinsert.AutoScroll = true
+Me.tpFCDNinsert.Controls.Add(Me.KryptonLabel7)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert9)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert8)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert7)
@@ -10300,6 +10405,21 @@ Me.tpFCDNinsert.Name = "tpFCDNinsert"
 Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNinsert.TabIndex = 6
 Me.tpFCDNinsert.Text = "Insert"
+'
+'KryptonLabel7
+'
+Me.KryptonLabel7.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel7.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel7.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel7.Name = "KryptonLabel7"
+Me.KryptonLabel7.Size = New System.Drawing.Size(906, 20)
+Me.KryptonLabel7.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel7.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel7.TabIndex = 63
+Me.KryptonLabel7.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel7.Values.ExtraText = ""
+Me.KryptonLabel7.Values.Image = Nothing
+Me.KryptonLabel7.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbInsert9
 '
@@ -10385,6 +10505,7 @@ Me.pbInsert1.TabStop = false
 'tpFCDNinlay
 '
 Me.tpFCDNinlay.AutoScroll = true
+Me.tpFCDNinlay.Controls.Add(Me.KryptonLabel8)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay9)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay8)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay7)
@@ -10399,6 +10520,21 @@ Me.tpFCDNinlay.Name = "tpFCDNinlay"
 Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 577)
 Me.tpFCDNinlay.TabIndex = 7
 Me.tpFCDNinlay.Text = "Inlay"
+'
+'KryptonLabel8
+'
+Me.KryptonLabel8.Dock = System.Windows.Forms.DockStyle.Top
+Me.KryptonLabel8.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+Me.KryptonLabel8.Location = New System.Drawing.Point(0, 0)
+Me.KryptonLabel8.Name = "KryptonLabel8"
+Me.KryptonLabel8.Size = New System.Drawing.Size(906, 20)
+Me.KryptonLabel8.StateCommon.ShortText.Color1 = System.Drawing.Color.White
+Me.KryptonLabel8.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+Me.KryptonLabel8.TabIndex = 72
+Me.KryptonLabel8.Text = "Media Images Provided by Freecovers.net "
+Me.KryptonLabel8.Values.ExtraText = ""
+Me.KryptonLabel8.Values.Image = Nothing
+Me.KryptonLabel8.Values.Text = "Media Images Provided by Freecovers.net "
 '
 'pbInlay9
 '
@@ -12810,14 +12946,16 @@ Me.klblfatmdb1.Values.Text = ""
 '
 'klblFanartProvider
 '
-Me.klblFanartProvider.Location = New System.Drawing.Point(231, 4)
+Me.klblFanartProvider.Location = New System.Drawing.Point(110, 4)
 Me.klblFanartProvider.Name = "klblFanartProvider"
-Me.klblFanartProvider.Size = New System.Drawing.Size(338, 21)
+Me.klblFanartProvider.Size = New System.Drawing.Size(584, 21)
 Me.klblFanartProvider.TabIndex = 29
-Me.klblFanartProvider.Text = "Fanart Provided by: The Movie DB  www.Themoviedb.com"
+Me.klblFanartProvider.Text = "Movie Fanart Provided by: The Movie DB  www.Themoviedb.com - Music Fanart by HtBa"& _ 
+    "ckdrops.com"
 Me.klblFanartProvider.Values.ExtraText = ""
 Me.klblFanartProvider.Values.Image = Nothing
-Me.klblFanartProvider.Values.Text = "Fanart Provided by: The Movie DB  www.Themoviedb.com"
+Me.klblFanartProvider.Values.Text = "Movie Fanart Provided by: The Movie DB  www.Themoviedb.com - Music Fanart by HtBa"& _ 
+    "ckdrops.com"
 '
 'pbfatmdb8
 '
@@ -20550,6 +20688,7 @@ Me.tstripMusicToolbar.PerformLayout
 Me.tpFCDN.ResumeLayout(false)
 Me.tcFCDN.ResumeLayout(false)
 Me.tpFCDNFront.ResumeLayout(false)
+Me.tpFCDNFront.PerformLayout
 CType(Me.kgpbFront10.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront10.Panel.ResumeLayout(false)
 CType(Me.kgpbFront10,System.ComponentModel.ISupportInitialize).EndInit
@@ -20601,6 +20740,7 @@ CType(Me.kgpbFront1,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront1.ResumeLayout(false)
 CType(Me.pbFront1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNBack.ResumeLayout(false)
+Me.tpFCDNBack.PerformLayout
 CType(Me.pbBack9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbBack8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbBack7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20611,6 +20751,7 @@ CType(Me.pbBack3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbBack2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbBack1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd1.ResumeLayout(false)
+Me.tpFCDNcd1.PerformLayout
 CType(Me.pbcdi9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcdi8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcdi7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20621,6 +20762,7 @@ CType(Me.pbcdi3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcdi2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcdi1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd2.ResumeLayout(false)
+Me.tpFCDNcd2.PerformLayout
 CType(Me.pbcd2i9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd2i8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd2i7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20631,6 +20773,7 @@ CType(Me.pbcd2i3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd2i2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd2i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd3.ResumeLayout(false)
+Me.tpFCDNcd3.PerformLayout
 CType(Me.pbcd3i9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd3i8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd3i7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20641,6 +20784,7 @@ CType(Me.pbcd3i3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd3i2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd3i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd4.ResumeLayout(false)
+Me.tpFCDNcd4.PerformLayout
 CType(Me.pbcd4i9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd4i8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd4i7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20651,6 +20795,7 @@ CType(Me.pbcd4i3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd4i2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbcd4i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNinsert.ResumeLayout(false)
+Me.tpFCDNinsert.PerformLayout
 CType(Me.pbInsert9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInsert8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInsert7,System.ComponentModel.ISupportInitialize).EndInit
@@ -20661,6 +20806,7 @@ CType(Me.pbInsert3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInsert2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInsert1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNinlay.ResumeLayout(false)
+Me.tpFCDNinlay.PerformLayout
 CType(Me.pbInlay9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInlay8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.pbInlay7,System.ComponentModel.ISupportInitialize).EndInit
@@ -22352,4 +22498,12 @@ End Sub
     Friend WithEvents lblMovieInfoVotes As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents bwAutopilot As System.ComponentModel.BackgroundWorker
     Friend WithEvents bshgReloadEPData As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents lblFreeCovers As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel1 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel2 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel3 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel4 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel6 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel7 As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents KryptonLabel8 As ComponentFactory.Krypton.Toolkit.KryptonLabel
 End Class

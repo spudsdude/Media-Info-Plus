@@ -125,9 +125,16 @@ Public Class htbackdrops
         If Not Directory.Exists(curhtitem.cachedir) Then Directory.CreateDirectory(curhtitem.cachedir)
         parsehtml(filename, curhtitem)
         Dim tarray As New ArrayList
+        Dim thas As New Hashtable
         If Not curhtitem.items.Count = 0 Then
             For Each curdb As bditem In curhtitem.items
-                tarray.Add(curdb)
+                Try
+                    thas.Add(curdb.name, curdb)
+                    tarray.Add(curdb) 'filters dups by erroring on duplicate id numbers 
+                Catch ex As Exception
+
+                End Try
+                'tarray.Add(curdb)
             Next
         End If
         thearraylist = tarray

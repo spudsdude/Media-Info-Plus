@@ -338,7 +338,7 @@ Public Class dlgConfiguration
     Private Sub cbMaxIconsToDisplay_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMaxIconsToDisplay.SelectedValueChanged
         rconf.pcbMaxIconsToDisplay = cbMaxIconsToDisplay.SelectedIndex
     End Sub
-    Private Sub cbshowwgetwindows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbtv_showwgetwindows.Click
+    Private Sub cbshowwgetwindows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         rconf.tv_showwgetwindows = cbtv_showwgetwindows.Checked
     End Sub
     Private Sub krbColorBlue_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorBlue.Click
@@ -687,6 +687,7 @@ Public Class dlgConfiguration
             cbFilterNameFileModeEverythingBefore1080i.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080i
             cbFilterNameFileModeEverythingBefore1080p.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080p
             cbFilterNameFileModeEverythingBeforeDash.Checked = rconf.pcbFilterNameFileModeEverythingBeforeDash
+            cbGetMusicFanartFromHTBackdrops.Checked = rconf.pcbGetMusicFanartFromHTBackdrops
 
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
@@ -1512,4 +1513,7 @@ Public Class dlgConfiguration
     End Sub
 
 
+    Private Sub cbGetMusicFanartFromHTBackdrops_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbGetMusicFanartFromHTBackdrops.Click
+        rconf.pcbGetMusicFanartFromHTBackdrops = cbGetMusicFanartFromHTBackdrops.Checked
+    End Sub
 End Class

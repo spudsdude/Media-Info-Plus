@@ -76,6 +76,7 @@ Partial Class dlgDownloadingFile
         Me.bwmutlidownload3 = New System.ComponentModel.BackgroundWorker
         Me.bwmutlidownload4 = New System.ComponentModel.BackgroundWorker
         Me.bwmutlidownload5 = New System.ComponentModel.BackgroundWorker
+        Me.btnCancel = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.SuspendLayout()
         '
         'downloaderpbar
@@ -110,7 +111,7 @@ Partial Class dlgDownloadingFile
         '
         Me.downloaderLabel1.Location = New System.Drawing.Point(405, 61)
         Me.downloaderLabel1.Name = "downloaderLabel1"
-        Me.downloaderLabel1.Size = New System.Drawing.Size(83, 16)
+        Me.downloaderLabel1.Size = New System.Drawing.Size(92, 21)
         Me.downloaderLabel1.TabIndex = 3
         Me.downloaderLabel1.Text = "KryptonLabel1"
         Me.downloaderLabel1.Values.ExtraText = ""
@@ -200,7 +201,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblAmountDownloaded.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblAmountDownloaded.Location = New System.Drawing.Point(12, 586)
         Me.downloaderlblAmountDownloaded.Name = "downloaderlblAmountDownloaded"
-        Me.downloaderlblAmountDownloaded.Size = New System.Drawing.Size(84, 16)
+        Me.downloaderlblAmountDownloaded.Size = New System.Drawing.Size(92, 21)
         Me.downloaderlblAmountDownloaded.TabIndex = 6
         Me.downloaderlblAmountDownloaded.Text = "Downloaded --"
         Me.downloaderlblAmountDownloaded.Values.ExtraText = ""
@@ -561,6 +562,20 @@ Partial Class dlgDownloadingFile
         Me.bwmutlidownload5.WorkerReportsProgress = True
         Me.bwmutlidownload5.WorkerSupportsCancellation = True
         '
+        'btnCancel
+        '
+        Me.btnCancel.Location = New System.Drawing.Point(527, 463)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(126, 37)
+        Me.btnCancel.TabIndex = 40
+        Me.btnCancel.Text = "Cancel "
+        Me.btnCancel.Values.ExtraText = ""
+        Me.btnCancel.Values.Image = Nothing
+        Me.btnCancel.Values.ImageStates.ImageCheckedNormal = Nothing
+        Me.btnCancel.Values.ImageStates.ImageCheckedPressed = Nothing
+        Me.btnCancel.Values.ImageStates.ImageCheckedTracking = Nothing
+        Me.btnCancel.Values.Text = "Cancel "
+        '
         'dlgDownloadingFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -569,6 +584,7 @@ Partial Class dlgDownloadingFile
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(690, 501)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.downloaderpbar5)
         Me.Controls.Add(Me.rtbLog5)
         Me.Controls.Add(Me.downloaderlblSpeed5)
@@ -613,7 +629,7 @@ Partial Class dlgDownloadingFile
         Me.MaximizeBox = False
         Me.Name = "dlgDownloadingFile"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "File Download(s) In Progress (dl rev 36)"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -664,5 +680,6 @@ Partial Class dlgDownloadingFile
     Friend WithEvents bwmutlidownload3 As System.ComponentModel.BackgroundWorker
     Friend WithEvents bwmutlidownload4 As System.ComponentModel.BackgroundWorker
     Friend WithEvents bwmutlidownload5 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents btnCancel As ComponentFactory.Krypton.Toolkit.KryptonButton
 
 End Class
