@@ -116,6 +116,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property fire_tall_small() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("fire_tall_small", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property folder_32x32() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("folder_32x32", resourceCulture)
@@ -252,6 +259,13 @@ Namespace My.Resources
         Friend ReadOnly Property ph() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ph", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property pirate_small() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pirate_small", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

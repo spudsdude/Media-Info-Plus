@@ -14764,21 +14764,27 @@ Public Class maincollection
         fanartpb1.Image = Nothing
         fanartpb1.ImageLocation = Nothing
         'MsgBox(currentfanart.ImageLocation)
+        Dim curfaused As String = ""
+
         If moviemode = "file" Then
             File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
+            curfaused = currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg"
         End If
 
         If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
             File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
+            curfaused = currentmovie.getmoviepath + "\" + currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg"
         End If
 
         If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
             File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
+            curfaused = currentmovie.getmoviepath + "\" + "fanart.jpg"
         End If
 
         lblPbar.Visible = True
         lblPbar.Text = Date.Now.ToString + " - Fanart saved --" '+ selectedicon.ImageLocation
         fanartpb1.Image = currentfanart.Image
+        fanartpb1.ImageLocation = curfaused
         'fanartpb1.Load()
         'tcMain.Refresh()
         tcMain.SelectTab(0)
@@ -17534,29 +17540,59 @@ Public Class maincollection
                     Exit Sub
                 End Try
 
-                'try to set it to -fanart.jpg
-                Try
-                    If File.Exists(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg") Then
-                        Try
-                            File.SetAttributes(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", FileAttributes.Normal)
-                        Catch ex1a As Exception
-                            Debug.Print("unable to remove old attributes")
-                        End Try
-                        File.Delete(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg")
+                Dim newfile As String = opfd2.FileName
+                Dim curfile As String = ""
+                If cmmode = "movie" Then
+                    'check settings to see what fanart image we should be saving, copy the new file 
+                    If moviemode = "file" Then
+                        File.Copy(newfile, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
+                        File.SetAttributes(currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", FileAttributes.Normal)
+                        curfile = currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg"
                     End If
-                    File.Copy(opfd2.FileName, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", overwrite:=True)
-                    File.SetAttributes(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", FileAttributes.Normal)
-                Catch ex1 As Exception
-                    MsgBox("Unable to copy the file as " + currentmovie.pmoviename + "-fanart.jpg in " + currentmovie.getmoviepath + vbNewLine + ex1.ToString)
+
+                    If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
+                        File.Copy(newfile, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
+                        File.SetAttributes(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", FileAttributes.Normal)
+                        curfile = currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg"
+                    End If
+
+                    If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
+                        File.Copy(newfile, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
+                        File.SetAttributes(currentmovie.getmoviepath + "\" + "fanart.jpg", FileAttributes.Normal)
+                        curfile = currentmovie.getmoviepath + "\" + "fanart.jpg"
+                    End If
+                End If
+                fanartpb1.ImageLocation = curfile
+                Try
+                    fanartpb1.Load()
+                Catch ex As Exception
+
                 End Try
-                Dim tappmode As Boolean = rbem.Checked 'get current app mode
-                Dim tais As Boolean = cbAllowIconSelection.Checked 'get current icon selection mode
-                rbem.Checked = False 'set to display only (it's faster)
-                'cbAllowIconSelection.Checked = False 'turn off allow icon selection (it's faster)
-                processdropdownitems() 'reload the movie
-                rbem.Checked = tappmode 'reset app mode to previous value
-                cbAllowIconSelection.Checked = tais 'reset allow icon selection to previous value
-            End If
+
+
+                'try to set it to -fanart.jpg
+                'Try
+                '    If File.Exists(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg") Then
+                '        Try
+                '            File.SetAttributes(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", FileAttributes.Normal)
+                '        Catch ex1a As Exception
+                '            Debug.Print("unable to remove old attributes")
+                '        End Try
+                '        File.Delete(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg")
+                '    End If
+                '    File.Copy(opfd2.FileName, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", overwrite:=True)
+                '    File.SetAttributes(currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", FileAttributes.Normal)
+                'Catch ex1 As Exception
+                '    MsgBox("Unable to copy the file as " + currentmovie.pmoviename + "-fanart.jpg in " + currentmovie.getmoviepath + vbNewLine + ex1.ToString)
+                'End Try
+                'Dim tappmode As Boolean = rbem.Checked 'get current app mode
+                'Dim tais As Boolean = cbAllowIconSelection.Checked 'get current icon selection mode
+                'rbem.Checked = False 'set to display only (it's faster)
+                ''cbAllowIconSelection.Checked = False 'turn off allow icon selection (it's faster)
+                'processdropdownitems() 'reload the movie
+                'rbem.Checked = tappmode 'reset app mode to previous value
+                'cbAllowIconSelection.Checked = tais 'reset allow icon selection to previous value
+                End If
         End With
     End Sub
 
@@ -28267,6 +28303,24 @@ Public Class maincollection
                 tcFCDN.TabColor = Color.SteelBlue
                 tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
                 tcFCDN.HotColor = Color.Orange
+            Case "fire"
+                kManager.GlobalPalette = kPaletteBlueSkulls
+                'rconf.guicolor = "fire"
+                tcMain.SelectedTabColor = Color.Gray
+                tcMain.BackColor = Color.Black
+                tcMain.TabColor = Color.Black
+                tcMain.ForeColor = Color.White
+                tcMain.HotColor = Color.Silver
+                tcPIB.SelectedTabColor = Color.Gray
+                tcPIB.BackColor = Color.Black
+                tcPIB.TabColor = Color.Black
+                tcPIB.ForeColor = Color.White
+                tcPIB.HotColor = Color.Silver
+                tcFCDN.SelectedTabColor = Color.Gray
+                tcFCDN.BackColor = Color.Black
+                tcFCDN.TabColor = Color.Black
+                tcFCDN.ForeColor = Color.White
+                tcFCDN.HotColor = Color.Silver
             Case "skybluelarge"
                 kManager.GlobalPalette = kPaletteSkyBlueLarge
                 'rconf.guicolor = "skybluelarge"
@@ -28583,7 +28637,7 @@ Public Class maincollection
         'asdf()
     End Sub
     Private Sub tsbAddmyOwnFanart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbAddMusicFanart.Click
-        If rconf.popgoogleimagesearch Then System.Diagnostics.Process.Start("http://images.google.com/images?&q=" + currentartist.artistname + "%20" + currentalbum.albumname) '.pmoviename)
+        If rconf.popgoogleimagesearch Then System.Diagnostics.Process.Start("http://images.google.com/images?&q=" + currentartist.artistname) ' + "%20") '+ currentalbum.albumname) '.pmoviename)
         addyourownimageformusicfanart()
         'asdf()
     End Sub
@@ -31242,6 +31296,198 @@ Public Class maincollection
         Catch ex As Exception
 
         End Try
+    End Sub
+
+
+    Private Sub tsmimovie_fanart_r960x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_r960x540.Click
+        resizefanartimage(fanartpb1, "960x540")
+    End Sub
+    Private Sub tsmimovie_fanart_r1280x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_r1280x720.Click
+        resizefanartimage(fanartpb1, "1280x720")
+    End Sub
+    Private Sub tsmimovie_fanart_r1920x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_r1920x1080.Click
+        resizefanartimage(fanartpb1, "1920x1080")
+    End Sub
+    Private Sub tsmimovie_fanart_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_q60.Click
+        compressfanartimage(fanartpb1, "60")
+    End Sub
+    Private Sub tsmimovie_fanart_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_q70.Click
+        compressfanartimage(fanartpb1, "70")
+    End Sub
+    Private Sub tsmimovie_fanart_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_q80.Click
+        compressfanartimage(fanartpb1, "80")
+    End Sub
+    Private Sub tsmimovie_fanart_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_q90.Click
+        compressfanartimage(fanartpb1, "90")
+    End Sub
+    Private Sub tsmimovie_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_fanart_q95.Click
+        compressfanartimage(fanartpb1, "95")
+    End Sub
+
+    Private Sub tsmishows_960x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_960x540.Click
+        resizefanartimage(pbMusicCurFanart, "960x540")
+    End Sub
+    Private Sub tsmishows_1280x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1280x720.Click
+        resizefanartimage(pbMusicCurFanart, "1280x720")
+    End Sub
+    Private Sub tsmishows_1920x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1920x1080.Click
+        resizefanartimage(pbMusicCurFanart, "1920x1080")
+    End Sub
+
+    Private Sub tsmishows_fanart_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q60.Click
+        compressfanartimage(pbMusicCurFanart, "60")
+    End Sub
+    Private Sub tsmishows_fanart_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q70.Click
+        compressfanartimage(pbMusicCurFanart, "70")
+    End Sub
+    Private Sub tsmishows_fanart_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q80.Click
+        compressfanartimage(pbMusicCurFanart, "80")
+    End Sub
+    Private Sub tsmishows_fanart_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q90.Click
+        compressfanartimage(pbMusicCurFanart, "90")
+    End Sub
+    Private Sub tsmishows_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q95.Click
+        compressfanartimage(pbMusicCurFanart, "95")
+    End Sub
+    Private Sub compressfanartimage(ByRef currentpb As PictureBox, ByVal amount As String)
+        If currentpb.ImageLocation = Nothing Then Exit Sub
+        Dim curloc As String = currentpb.ImageLocation
+        Dim backupfile As String = curloc & ".orig"
+        Dim newfile As String = curloc & ".new.jpg"
+        Dim imagelocationandname As String = currentpb.ImageLocation
+        currentpb.Image = Nothing
+        currentpb.ImageLocation = Nothing
+
+        'move the real fanart
+        If File.Exists(backupfile) Then File.Delete(backupfile)
+        File.Move(curloc, backupfile)
+        'saving the new files
+        Try
+            If Not curloc = "" Then
+                Dim binfilelocal As String = "MagickCMD"
+                Dim exstring As String = "convert " & """" & backupfile & """" & " -quality " & amount & " " & """" & newfile & """"
+                Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+                pro1.StartInfo.FileName = binfilelocal
+                pro1.StartInfo.Arguments = exstring
+                pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+                pro1.Start()
+                pro1.WaitForExit()
+            Else
+                ' asdf()
+                'If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+                'If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            End If
+
+            If cmmode = "movie" Then
+                'check settings to see what fanart image we should be saving, copy the new file 
+                If moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
+                End If
+
+                If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
+                End If
+
+                If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
+                End If
+            Else
+                File.Move(newfile, curloc)
+            End If
+            'cleanup newfile and backupfile as long as curloc is populated
+            If File.Exists(curloc) Then
+                File.Delete(newfile)
+                File.Delete(backupfile)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("fanart image compression failed, check permissions on the files in the folder", "Compressing fanart failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'put the backup file back in place
+            If File.Exists(backupfile) Then
+                If Not File.Exists(curloc) Then
+                    File.Move(backupfile, curloc)
+                End If
+            End If
+            Exit Sub
+        End Try
+        If File.Exists(curloc) Then
+            'reload pb 
+            Try
+                currentpb.ImageLocation = curloc
+                currentpb.Load()
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
+    Private Sub resizefanartimage(ByRef currentpb As PictureBox, ByVal size As String)
+        If currentpb.ImageLocation = Nothing Then Exit Sub
+        Dim curloc As String = currentpb.ImageLocation
+        Dim backupfile As String = curloc & ".orig"
+        Dim newfile As String = curloc & ".new.jpg"
+        Dim imagelocationandname As String = currentpb.ImageLocation
+        currentpb.Image = Nothing
+        currentpb.ImageLocation = Nothing
+
+        'move the real fanart
+        If File.Exists(backupfile) Then File.Delete(backupfile)
+        File.Move(curloc, backupfile)
+        'saving the new files
+        Try
+            If Not curloc = "" Then
+                Dim binfilelocal As String = "MagickCMD"
+                Dim exstring As String = "convert " & """" & backupfile & """" & " -resize " & size & "^ -gravity center -extent " & size & " " & """" & newfile & """"
+                Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+                pro1.StartInfo.FileName = binfilelocal
+                pro1.StartInfo.Arguments = exstring
+                pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+                pro1.Start()
+                pro1.WaitForExit()
+            Else
+                ' asdf()
+                'If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+                'If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            End If
+
+            If cmmode = "movie" Then
+                'check settings to see what fanart image we should be saving, copy the new file 
+                If moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
+                End If
+
+                If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
+                End If
+
+                If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
+                    File.Copy(newfile, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
+                End If
+            Else
+                File.Move(newfile, curloc)
+            End If
+            'cleanup newfile and backupfile as long as curloc is populated
+            If File.Exists(curloc) Then
+                File.Delete(newfile)
+                File.Delete(backupfile)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("fanart image resize failed, check permissions on the files in the folder", "Resizing fanart failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'put the backup file back in place
+            If File.Exists(backupfile) Then
+                If Not File.Exists(curloc) Then
+                    File.Move(backupfile, curloc)
+                End If
+            End If
+            Exit Sub
+        End Try
+        If File.Exists(curloc) Then
+            'reload pb 
+            Try
+                currentpb.ImageLocation = curloc
+                currentpb.Load()
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
 

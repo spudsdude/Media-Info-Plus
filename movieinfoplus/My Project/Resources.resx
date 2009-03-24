@@ -136,14 +136,14 @@
   <data name="bluebar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bluebar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tmdb_32x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tmdb_32x25.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fullstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fullstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tvbgExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tvbgExample.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mytunes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mytunes.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fire_tall_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fire_tall_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="f2s8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f2s8.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +166,8 @@
   <data name="paypal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paypal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tmdb_32x25" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tmdb_32x25.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bspb1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bspb1.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +180,9 @@
   </data>
   <data name="green_check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_check.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh24.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="f2s0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f2s0.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +241,11 @@
   <data name="tv_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tv_icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tvbgExample" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tvbgExample.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fullstar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fullstar.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="imp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imp.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,7 +274,7 @@
   <data name="tvbgExample2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tvbgExample2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh24.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pirate_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pirate_small.jpeg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

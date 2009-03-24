@@ -85,7 +85,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.tbSrcMusicFolder.Location = New System.Drawing.Point(3, 7)
         Me.tbSrcMusicFolder.Name = "tbSrcMusicFolder"
-        Me.tbSrcMusicFolder.Size = New System.Drawing.Size(510, 34)
+        Me.tbSrcMusicFolder.Size = New System.Drawing.Size(510, 32)
         Me.tbSrcMusicFolder.TabIndex = 1
         Me.tbSrcMusicFolder.Text = "Music Folder (source)"
         '
@@ -93,7 +93,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.tbDstMusicFolder.Location = New System.Drawing.Point(3, 43)
         Me.tbDstMusicFolder.Name = "tbDstMusicFolder"
-        Me.tbDstMusicFolder.Size = New System.Drawing.Size(509, 34)
+        Me.tbDstMusicFolder.Size = New System.Drawing.Size(509, 32)
         Me.tbDstMusicFolder.TabIndex = 2
         Me.tbDstMusicFolder.Text = "Music Folder (destination)"
         '
@@ -112,7 +112,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.cbRenameMusicFiles.Location = New System.Drawing.Point(15, 72)
         Me.cbRenameMusicFiles.Name = "cbRenameMusicFiles"
-        Me.cbRenameMusicFiles.Size = New System.Drawing.Size(126, 16)
+        Me.cbRenameMusicFiles.Size = New System.Drawing.Size(154, 24)
         Me.cbRenameMusicFiles.TabIndex = 4
         Me.cbRenameMusicFiles.Text = "Rename Music Files"
         Me.cbRenameMusicFiles.Values.ExtraText = ""
@@ -217,7 +217,7 @@ Partial Class dlgMusicSortWizard
         Me.cbDelimiter.Items.AddRange(New Object() {" - <Space><Hyphen><Space>(Default)", "_ <Underscore>", "   <Space>", "-  <Hyphen>", ".   <Dot>", "=  <Equals>"})
         Me.cbDelimiter.Location = New System.Drawing.Point(164, 43)
         Me.cbDelimiter.Name = "cbDelimiter"
-        Me.cbDelimiter.Size = New System.Drawing.Size(192, 34)
+        Me.cbDelimiter.Size = New System.Drawing.Size(192, 32)
         Me.cbDelimiter.TabIndex = 15
         Me.cbDelimiter.Text = " - (Space Dash Space - Default)"
         '
@@ -283,7 +283,7 @@ Partial Class dlgMusicSortWizard
         Me.cbFourth.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbFourth.Location = New System.Drawing.Point(451, 87)
         Me.cbFourth.Name = "cbFourth"
-        Me.cbFourth.Size = New System.Drawing.Size(121, 34)
+        Me.cbFourth.Size = New System.Drawing.Size(121, 32)
         Me.cbFourth.TabIndex = 8
         Me.cbFourth.Text = "Track Name"
         '
@@ -294,7 +294,7 @@ Partial Class dlgMusicSortWizard
         Me.cbThird.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbThird.Location = New System.Drawing.Point(304, 87)
         Me.cbThird.Name = "cbThird"
-        Me.cbThird.Size = New System.Drawing.Size(121, 34)
+        Me.cbThird.Size = New System.Drawing.Size(121, 32)
         Me.cbThird.TabIndex = 7
         Me.cbThird.Text = "Track Number"
         '
@@ -305,7 +305,7 @@ Partial Class dlgMusicSortWizard
         Me.cbSecond.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbSecond.Location = New System.Drawing.Point(157, 87)
         Me.cbSecond.Name = "cbSecond"
-        Me.cbSecond.Size = New System.Drawing.Size(121, 34)
+        Me.cbSecond.Size = New System.Drawing.Size(121, 32)
         Me.cbSecond.TabIndex = 6
         Me.cbSecond.Text = "Album"
         '
@@ -316,7 +316,7 @@ Partial Class dlgMusicSortWizard
         Me.cbFirst.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name"})
         Me.cbFirst.Location = New System.Drawing.Point(9, 87)
         Me.cbFirst.Name = "cbFirst"
-        Me.cbFirst.Size = New System.Drawing.Size(121, 34)
+        Me.cbFirst.Size = New System.Drawing.Size(121, 32)
         Me.cbFirst.TabIndex = 5
         Me.cbFirst.Text = "Artist"
         '

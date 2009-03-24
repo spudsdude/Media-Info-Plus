@@ -255,6 +255,24 @@ Public Class dlgConfiguration
                 maincollection.tcFCDN.TabColor = Color.SteelBlue
                 maincollection.tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
                 maincollection.tcFCDN.HotColor = Color.Orange
+            Case "fire"
+                maincollection.kManager.GlobalPalette = maincollection.kPaletteBlueSkulls
+                rconf.guicolor = "fire"
+                maincollection.tcMain.SelectedTabColor = Color.Gray
+                maincollection.tcMain.BackColor = Color.Black
+                maincollection.tcMain.TabColor = Color.Black
+                maincollection.tcMain.ForeColor = Color.White
+                maincollection.tcMain.HotColor = Color.Silver
+                maincollection.tcPIB.SelectedTabColor = Color.Gray
+                maincollection.tcPIB.BackColor = Color.Black
+                maincollection.tcPIB.TabColor = Color.Black
+                maincollection.tcPIB.ForeColor = Color.White
+                maincollection.tcPIB.HotColor = Color.Silver
+                maincollection.tcFCDN.SelectedTabColor = Color.Gray
+                maincollection.tcFCDN.BackColor = Color.Black
+                maincollection.tcFCDN.TabColor = Color.Black
+                maincollection.tcFCDN.ForeColor = Color.White
+                maincollection.tcFCDN.HotColor = Color.Silver
             Case "skybluelarge"
                 maincollection.kManager.GlobalPalette = maincollection.kPaletteSkyBlueLarge
                 rconf.guicolor = "skybluelarge"
@@ -347,7 +365,9 @@ Public Class dlgConfiguration
     Private Sub krbColorSilver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorSilver.Click
         setguicolor("silver")
     End Sub
-
+    Private Sub krbColorFire_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorFire.Click
+        setguicolor("fire")
+    End Sub
     Private Sub krbColorHazel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorBling.Click
         setguicolor("bling")
     End Sub
