@@ -8260,10 +8260,22 @@ Public Class maincollection
         Debug.Print("end of fanart function")
     End Sub
 
-    Private Sub displaymusicfanart(ByRef fanartarraylist As ArrayList, ByRef ais As Boolean)
-        'TODO: test required, need to change save current image (fanart) savecif for music to set to correct file name.
+    Private Sub displaymusicfanart(ByRef fanartarraylistBDitems As ArrayList, ByRef ais As Boolean)
+        If fanartarraylistBDitems Is Nothing Then Exit Sub
+        If fanartarraylistBDitems.Count = 0 Then Exit Sub
+        Dim fanartarraylist As New ArrayList
+        Dim fanartSname As New ArrayList
 
-        'check list of fanart for count
+        For Each curdbitem As bditem In fanartarraylist
+            Dim newdlo As New miplibfc.mip.dlobject
+            newdlo.URL = curdbitem.url
+            newdlo.misc = "HT Backdrops Item: " & currentartist.artistname
+            newdlo.Destination = curdbitem.destinationfolder
+            fanartarraylist.Add(curdbitem.destinationfolder)
+            fanartSname.Add(curdbitem.sname)
+        Next
+
+
         Dim total As Integer = fanartarraylist.Count 'tmovie.pbackdrops.backdrops.Count
         If total = Nothing Then Exit Sub
 
@@ -8273,6 +8285,7 @@ Public Class maincollection
             Debug.Print(total.ToString + ": is the count of backdrops")
         End If
         If Me.messageprompts Then fanarttotal = total
+
         If Not total = 0 Then
             Dim fanartfilename As String
             Dim tbdcou As Integer = 0
@@ -8286,7 +8299,7 @@ Public Class maincollection
                         Case 0
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb1.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb1.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb1.Visible = True
                                 Me.pbfatmdb1.Image = objImage
@@ -8302,7 +8315,7 @@ Public Class maincollection
                         Case 1
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb2.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb2.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb2.Visible = True
                                 Me.pbfatmdb2.Image = objImage
@@ -8316,7 +8329,7 @@ Public Class maincollection
                         Case 2
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb3.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb3.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb3.Visible = True
                                 Me.pbfatmdb3.Image = objImage
@@ -8330,7 +8343,7 @@ Public Class maincollection
                         Case 3
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb4.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb4.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb4.Visible = True
                                 Me.pbfatmdb4.Image = objImage
@@ -8344,7 +8357,7 @@ Public Class maincollection
                         Case 4
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb5.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb5.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb5.Visible = True
                                 Me.pbfatmdb5.Image = objImage
@@ -8358,7 +8371,7 @@ Public Class maincollection
                         Case 5
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb6.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb6.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb6.Visible = True
                                 Me.pbfatmdb6.Image = objImage
@@ -8373,21 +8386,21 @@ Public Class maincollection
                         Case 6
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb7.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb7.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb7.Visible = True
                                 Me.pbfatmdb7.Image = objImage
                                 Me.pbfatmdb7.Enabled = True
                                 Me.pbfatmdb7.Visible = True
                                 Me.pbfatmdb7.AccessibleName = fanartfilename
-                                'pbfatmdb7.Load()
+                                'pbfatmdb7.Load() 
                             Catch ex As Exception
                                 Debug.Print(ex.ToString)
                             End Try
                         Case 7
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb8.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb8.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb8.Visible = True
                                 Me.pbfatmdb8.Image = objImage
@@ -8401,7 +8414,7 @@ Public Class maincollection
                         Case 8
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb9.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb9.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb9.Visible = True
                                 Me.pbfatmdb9.Image = objImage
@@ -8415,7 +8428,7 @@ Public Class maincollection
                         Case 9
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb10.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb10.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb10.Visible = True
                                 Me.pbfatmdb10.Image = objImage
@@ -8429,7 +8442,7 @@ Public Class maincollection
                         Case 10
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb11.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb11.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb11.Visible = True
                                 Me.pbfatmdb11.Image = objImage
@@ -8443,7 +8456,7 @@ Public Class maincollection
                         Case 11
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb12.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb12.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb12.Visible = True
                                 Me.pbfatmdb12.Image = objImage
@@ -8457,7 +8470,7 @@ Public Class maincollection
                         Case 12
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb13.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb13.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb13.Visible = True
                                 Me.pbfatmdb13.Image = objImage
@@ -8471,7 +8484,7 @@ Public Class maincollection
                         Case 13
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb14.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb14.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb14.Visible = True
                                 Me.pbfatmdb14.Image = objImage
@@ -8485,7 +8498,7 @@ Public Class maincollection
                         Case 14
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb15.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb15.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb15.Visible = True
                                 Me.pbfatmdb15.Image = objImage
@@ -8499,7 +8512,7 @@ Public Class maincollection
                         Case 15
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb16.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb16.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb16.Visible = True
                                 Me.pbfatmdb16.Image = objImage
@@ -8513,7 +8526,7 @@ Public Class maincollection
                         Case 16
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb17.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb17.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb17.Visible = True
                                 Me.pbfatmdb17.Image = objImage
@@ -8527,7 +8540,7 @@ Public Class maincollection
                         Case 17
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb18.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb18.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb18.Visible = True
                                 Me.pbfatmdb18.Image = objImage
@@ -8541,7 +8554,7 @@ Public Class maincollection
                         Case 18
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb19.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb19.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb19.Visible = True
                                 Me.pbfatmdb19.Image = objImage
@@ -8555,7 +8568,7 @@ Public Class maincollection
                         Case 19
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb20.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb20.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb20.Visible = True
                                 Me.pbfatmdb20.Image = objImage
@@ -8570,7 +8583,7 @@ Public Class maincollection
                         Case 20
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb21.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb21.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb21.Visible = True
                                 Me.pbfatmdb21.Image = objImage
@@ -8584,7 +8597,7 @@ Public Class maincollection
                         Case 21
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb22.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb22.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb22.Visible = True
                                 Me.pbfatmdb22.Image = objImage
@@ -8598,7 +8611,7 @@ Public Class maincollection
                         Case 22
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb23.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb23.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb23.Visible = True
                                 Me.pbfatmdb23.Image = objImage
@@ -8612,7 +8625,7 @@ Public Class maincollection
                         Case 23
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb24.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb24.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb24.Visible = True
                                 Me.pbfatmdb24.Image = objImage
@@ -8626,7 +8639,7 @@ Public Class maincollection
                         Case 24
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb25.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb25.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb25.Visible = True
                                 Me.pbfatmdb25.Image = objImage
@@ -8640,7 +8653,7 @@ Public Class maincollection
                         Case 25
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb26.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb26.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb26.Visible = True
                                 Me.pbfatmdb26.Image = objImage
@@ -8654,7 +8667,7 @@ Public Class maincollection
                         Case 26
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb27.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb27.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb27.Visible = True
                                 Me.pbfatmdb27.Image = objImage
@@ -8668,7 +8681,7 @@ Public Class maincollection
                         Case 27
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb28.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb28.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb28.Visible = True
                                 Me.pbfatmdb28.Image = objImage
@@ -8682,7 +8695,7 @@ Public Class maincollection
                         Case 28
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb29.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb29.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb29.Visible = True
                                 Me.pbfatmdb29.Image = objImage
@@ -8696,7 +8709,7 @@ Public Class maincollection
                         Case 29
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb30.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb30.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb30.Visible = True
                                 Me.pbfatmdb30.Image = objImage
@@ -8710,7 +8723,7 @@ Public Class maincollection
                         Case 30
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb31.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb31.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb31.Visible = True
                                 Me.pbfatmdb31.Image = objImage
@@ -8724,7 +8737,7 @@ Public Class maincollection
                         Case 31
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb32.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb32.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb32.Visible = True
                                 Me.pbfatmdb32.Image = objImage
@@ -8738,7 +8751,7 @@ Public Class maincollection
                         Case 32
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb33.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb33.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb33.Visible = True
                                 Me.pbfatmdb33.Image = objImage
@@ -8752,7 +8765,7 @@ Public Class maincollection
                         Case 33
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb34.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb34.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb34.Visible = True
                                 Me.pbfatmdb34.Image = objImage
@@ -8766,7 +8779,7 @@ Public Class maincollection
                         Case 34
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb35.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb35.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb35.Visible = True
                                 Me.pbfatmdb35.Image = objImage
@@ -8780,7 +8793,7 @@ Public Class maincollection
                         Case 35
                             Try
                                 Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
-                                klblfatmdb36.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                                klblfatmdb36.Text = fanartSname(tbdcou).ToString & ": " & objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
                                 'objImage = Nothing
                                 klblfatmdb36.Visible = True
                                 Me.pbfatmdb36.Image = objImage
@@ -20625,7 +20638,7 @@ Public Class maincollection
         End If
         If cbAllowIconSelection.Checked Then
             'put into gui
-            If rconf.pcbGetMusicFanartFromHTBackdrops Then displaymusicfanart(displaylist, True)
+            If rconf.pcbGetMusicFanartFromHTBackdrops Then displaymusicfanart(dlitems, True)
         End If
     End Sub
 
@@ -29468,6 +29481,13 @@ Public Class maincollection
             End Try
         End If
     End Sub
+    Private Sub tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Click
+        If currentsong Is Nothing Then Exit Sub
+        If Not currentsong.Filename = "" Then
+            getimagefromid3tagSaveLocal(currentsong.Filename, addfiletofolder(currentalbum.path, "folder.jpg"))
+        End If
+    End Sub
+
     Private Sub tsbInjectIntoCurSong_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbInjectIntoCurSong.Click
         If currentsong Is Nothing Then Exit Sub
         If Not currentsong.Filename = "" Then
@@ -31223,6 +31243,8 @@ Public Class maincollection
 
         End Try
     End Sub
+
+
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -34395,6 +34417,15 @@ Public Class configuration
 
     Private tv_zprivatevalue_usewgetforimages As Boolean '= True
     Private tv_zprivatevalue_wgetsleepinmilliseconds As Integer '= 100
+    Private tv_pcbshows_UseStudioasRating As Boolean
+    Property pcbshows_UseStudioasRating() As Boolean
+        Get
+            Return tv_pcbshows_UseStudioasRating
+        End Get
+        Set(ByVal value As Boolean)
+            tv_pcbshows_UseStudioasRating = value
+        End Set
+    End Property
     Property pcbtvlangoverride() As Boolean
         Get
             Return tv_zprivatevalue_langoverride

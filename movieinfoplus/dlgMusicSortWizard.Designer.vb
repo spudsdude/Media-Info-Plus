@@ -85,7 +85,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.tbSrcMusicFolder.Location = New System.Drawing.Point(3, 7)
         Me.tbSrcMusicFolder.Name = "tbSrcMusicFolder"
-        Me.tbSrcMusicFolder.Size = New System.Drawing.Size(510, 24)
+        Me.tbSrcMusicFolder.Size = New System.Drawing.Size(510, 34)
         Me.tbSrcMusicFolder.TabIndex = 1
         Me.tbSrcMusicFolder.Text = "Music Folder (source)"
         '
@@ -93,7 +93,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.tbDstMusicFolder.Location = New System.Drawing.Point(3, 43)
         Me.tbDstMusicFolder.Name = "tbDstMusicFolder"
-        Me.tbDstMusicFolder.Size = New System.Drawing.Size(509, 24)
+        Me.tbDstMusicFolder.Size = New System.Drawing.Size(509, 34)
         Me.tbDstMusicFolder.TabIndex = 2
         Me.tbDstMusicFolder.Text = "Music Folder (destination)"
         '
@@ -101,7 +101,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.cbLowerCaseFileNames.Location = New System.Drawing.Point(4, 3)
         Me.cbLowerCaseFileNames.Name = "cbLowerCaseFileNames"
-        Me.cbLowerCaseFileNames.Size = New System.Drawing.Size(163, 16)
+        Me.cbLowerCaseFileNames.Size = New System.Drawing.Size(181, 21)
         Me.cbLowerCaseFileNames.TabIndex = 3
         Me.cbLowerCaseFileNames.Text = "Make file names lower case"
         Me.cbLowerCaseFileNames.Values.ExtraText = ""
@@ -159,7 +159,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.cbUse2digitTrackNums.Location = New System.Drawing.Point(216, 24)
         Me.cbUse2digitTrackNums.Name = "cbUse2digitTrackNums"
-        Me.cbUse2digitTrackNums.Size = New System.Drawing.Size(302, 16)
+        Me.cbUse2digitTrackNums.Size = New System.Drawing.Size(344, 21)
         Me.cbUse2digitTrackNums.TabIndex = 20
         Me.cbUse2digitTrackNums.Text = "Use 2 Digit Track Numbers - Track 1 becomes Track 01"
         Me.cbUse2digitTrackNums.Values.ExtraText = ""
@@ -170,7 +170,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.cbleaveunknownfilesalone.Location = New System.Drawing.Point(216, 3)
         Me.cbleaveunknownfilesalone.Name = "cbleaveunknownfilesalone"
-        Me.cbleaveunknownfilesalone.Size = New System.Drawing.Size(164, 16)
+        Me.cbleaveunknownfilesalone.Size = New System.Drawing.Size(178, 21)
         Me.cbleaveunknownfilesalone.TabIndex = 19
         Me.cbleaveunknownfilesalone.Text = "Do not copy unknown music"
         Me.cbleaveunknownfilesalone.Values.ExtraText = ""
@@ -181,7 +181,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lbFormatOfNewFileName.Location = New System.Drawing.Point(5, 69)
         Me.lbFormatOfNewFileName.Name = "lbFormatOfNewFileName"
-        Me.lbFormatOfNewFileName.Size = New System.Drawing.Size(117, 16)
+        Me.lbFormatOfNewFileName.Size = New System.Drawing.Size(136, 21)
         Me.lbFormatOfNewFileName.TabIndex = 18
         Me.lbFormatOfNewFileName.Text = "New file name format"
         Me.lbFormatOfNewFileName.Values.ExtraText = ""
@@ -192,7 +192,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.cbUseUnderScoreForSpaces.Location = New System.Drawing.Point(4, 25)
         Me.cbUseUnderScoreForSpaces.Name = "cbUseUnderScoreForSpaces"
-        Me.cbUseUnderScoreForSpaces.Size = New System.Drawing.Size(162, 16)
+        Me.cbUseUnderScoreForSpaces.Size = New System.Drawing.Size(183, 21)
         Me.cbUseUnderScoreForSpaces.TabIndex = 17
         Me.cbUseUnderScoreForSpaces.Text = "Use Underscore for Spaces"
         Me.cbUseUnderScoreForSpaces.Values.ExtraText = ""
@@ -203,7 +203,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lbDelimiter.Location = New System.Drawing.Point(5, 47)
         Me.lbDelimiter.Name = "lbDelimiter"
-        Me.lbDelimiter.Size = New System.Drawing.Size(158, 16)
+        Me.lbDelimiter.Size = New System.Drawing.Size(184, 21)
         Me.lbDelimiter.TabIndex = 16
         Me.lbDelimiter.Text = "What to put between sections"
         Me.lbDelimiter.Values.ExtraText = ""
@@ -217,7 +217,7 @@ Partial Class dlgMusicSortWizard
         Me.cbDelimiter.Items.AddRange(New Object() {" - <Space><Hyphen><Space>(Default)", "_ <Underscore>", "   <Space>", "-  <Hyphen>", ".   <Dot>", "=  <Equals>"})
         Me.cbDelimiter.Location = New System.Drawing.Point(164, 43)
         Me.cbDelimiter.Name = "cbDelimiter"
-        Me.cbDelimiter.Size = New System.Drawing.Size(192, 24)
+        Me.cbDelimiter.Size = New System.Drawing.Size(192, 34)
         Me.cbDelimiter.TabIndex = 15
         Me.cbDelimiter.Text = " - (Space Dash Space - Default)"
         '
@@ -225,7 +225,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lblExampleFormat.Location = New System.Drawing.Point(157, 128)
         Me.lblExampleFormat.Name = "lblExampleFormat"
-        Me.lblExampleFormat.Size = New System.Drawing.Size(358, 16)
+        Me.lblExampleFormat.Size = New System.Drawing.Size(404, 21)
         Me.lblExampleFormat.TabIndex = 14
         Me.lblExampleFormat.Text = "Default Example: Green Day - Dookie - 5 - Welcome to Paradise.mp3"
         Me.lblExampleFormat.Values.ExtraText = ""
@@ -236,7 +236,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.KryptonLabel5.Location = New System.Drawing.Point(578, 91)
         Me.KryptonLabel5.Name = "KryptonLabel5"
-        Me.KryptonLabel5.Size = New System.Drawing.Size(62, 16)
+        Me.KryptonLabel5.Size = New System.Drawing.Size(69, 21)
         Me.KryptonLabel5.TabIndex = 13
         Me.KryptonLabel5.Text = ".extension"
         Me.KryptonLabel5.Values.ExtraText = ""
@@ -247,7 +247,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lbDelim3.Location = New System.Drawing.Point(431, 91)
         Me.lbDelim3.Name = "lbDelim3"
-        Me.lbDelim3.Size = New System.Drawing.Size(16, 16)
+        Me.lbDelim3.Size = New System.Drawing.Size(18, 21)
         Me.lbDelim3.TabIndex = 12
         Me.lbDelim3.Text = "_"
         Me.lbDelim3.Values.ExtraText = ""
@@ -258,7 +258,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lbDelim2.Location = New System.Drawing.Point(284, 91)
         Me.lbDelim2.Name = "lbDelim2"
-        Me.lbDelim2.Size = New System.Drawing.Size(16, 16)
+        Me.lbDelim2.Size = New System.Drawing.Size(18, 21)
         Me.lbDelim2.TabIndex = 11
         Me.lbDelim2.Text = "_"
         Me.lbDelim2.Values.ExtraText = ""
@@ -269,7 +269,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.lbDelim1.Location = New System.Drawing.Point(136, 91)
         Me.lbDelim1.Name = "lbDelim1"
-        Me.lbDelim1.Size = New System.Drawing.Size(16, 16)
+        Me.lbDelim1.Size = New System.Drawing.Size(18, 21)
         Me.lbDelim1.TabIndex = 10
         Me.lbDelim1.Text = "_"
         Me.lbDelim1.Values.ExtraText = ""
@@ -283,7 +283,7 @@ Partial Class dlgMusicSortWizard
         Me.cbFourth.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbFourth.Location = New System.Drawing.Point(451, 87)
         Me.cbFourth.Name = "cbFourth"
-        Me.cbFourth.Size = New System.Drawing.Size(121, 24)
+        Me.cbFourth.Size = New System.Drawing.Size(121, 34)
         Me.cbFourth.TabIndex = 8
         Me.cbFourth.Text = "Track Name"
         '
@@ -294,7 +294,7 @@ Partial Class dlgMusicSortWizard
         Me.cbThird.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbThird.Location = New System.Drawing.Point(304, 87)
         Me.cbThird.Name = "cbThird"
-        Me.cbThird.Size = New System.Drawing.Size(121, 24)
+        Me.cbThird.Size = New System.Drawing.Size(121, 34)
         Me.cbThird.TabIndex = 7
         Me.cbThird.Text = "Track Number"
         '
@@ -305,7 +305,7 @@ Partial Class dlgMusicSortWizard
         Me.cbSecond.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name", "<none>"})
         Me.cbSecond.Location = New System.Drawing.Point(157, 87)
         Me.cbSecond.Name = "cbSecond"
-        Me.cbSecond.Size = New System.Drawing.Size(121, 24)
+        Me.cbSecond.Size = New System.Drawing.Size(121, 34)
         Me.cbSecond.TabIndex = 6
         Me.cbSecond.Text = "Album"
         '
@@ -316,7 +316,7 @@ Partial Class dlgMusicSortWizard
         Me.cbFirst.Items.AddRange(New Object() {"Artist", "Album", "Track Number", "Track Name"})
         Me.cbFirst.Location = New System.Drawing.Point(9, 87)
         Me.cbFirst.Name = "cbFirst"
-        Me.cbFirst.Size = New System.Drawing.Size(121, 24)
+        Me.cbFirst.Size = New System.Drawing.Size(121, 34)
         Me.cbFirst.TabIndex = 5
         Me.cbFirst.Text = "Artist"
         '
@@ -347,9 +347,9 @@ Partial Class dlgMusicSortWizard
         '
         'btnBrowseForDstFolder
         '
-        Me.btnBrowseForDstFolder.Location = New System.Drawing.Point(517, 38)
+        Me.btnBrowseForDstFolder.Location = New System.Drawing.Point(517, 40)
         Me.btnBrowseForDstFolder.Name = "btnBrowseForDstFolder"
-        Me.btnBrowseForDstFolder.Size = New System.Drawing.Size(184, 32)
+        Me.btnBrowseForDstFolder.Size = New System.Drawing.Size(193, 39)
         Me.btnBrowseForDstFolder.TabIndex = 7
         Me.btnBrowseForDstFolder.Text = "Browse for Destination Folder"
         Me.btnBrowseForDstFolder.Values.ExtraText = ""
@@ -363,7 +363,7 @@ Partial Class dlgMusicSortWizard
         '
         Me.btnBrowseSrc.Location = New System.Drawing.Point(517, 2)
         Me.btnBrowseSrc.Name = "btnBrowseSrc"
-        Me.btnBrowseSrc.Size = New System.Drawing.Size(182, 32)
+        Me.btnBrowseSrc.Size = New System.Drawing.Size(195, 39)
         Me.btnBrowseSrc.TabIndex = 6
         Me.btnBrowseSrc.Text = "Browse for Source Folder"
         Me.btnBrowseSrc.Values.ExtraText = ""
@@ -376,9 +376,9 @@ Partial Class dlgMusicSortWizard
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(371, 304)
+        Me.btnCancel.Location = New System.Drawing.Point(371, 296)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(148, 32)
+        Me.btnCancel.Size = New System.Drawing.Size(148, 40)
         Me.btnCancel.TabIndex = 7
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.Values.ExtraText = ""
@@ -390,9 +390,9 @@ Partial Class dlgMusicSortWizard
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(190, 304)
+        Me.btnStart.Location = New System.Drawing.Point(190, 296)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(147, 32)
+        Me.btnStart.Size = New System.Drawing.Size(147, 40)
         Me.btnStart.TabIndex = 6
         Me.btnStart.Text = "Start Processing"
         Me.btnStart.Values.ExtraText = ""

@@ -100,13 +100,15 @@ Public Class htbackdrops
     Private Function parsehtml(ByRef whattoparse As String, ByRef curhtitem As htbackdrops) As Boolean
         Dim filedata As String = File.ReadAllText(whattoparse)
         Try
-            Dim RegexObjName As New Regex("image_id=(\d{1,10}).*?<img src="".(/data/thumbnails/1/.*?.jpg)""")
+            'Dim RegexObjName As New Regex("image_id=(\d{1,10}).*?<img src="".(/data/thumbnails/1/.*?.jpg)""")
+            Dim RegexObjName As New Regex("image_id=(\d{1,10}).*?<img src="".(/data/thumbnails/1/.*?.jpg)"".*?alt=""(.*?)""")
             Dim MatchResultsName As Match = RegexObjName.Match(filedata)
             While MatchResultsName.Success
                 Dim nbditem As New bditem
                 nbditem.name = MatchResultsName.Groups(1).Value.ToString
                 nbditem.url = createlink(MatchResultsName.Groups(1).Value.ToString)
                 nbditem.thumburl = createthumblink(MatchResultsName.Groups(2).Value.ToString)
+                nbditem.sname = MatchResultsName.Groups(3).Value.ToString
                 nbditem.size = ""
                 nbditem.destinationfolder = curhtitem.cachedir & MatchResultsName.Groups(1).Value.ToString & ".jpg"
                 curhtitem.items.Add(nbditem)
@@ -137,6 +139,7 @@ Public Class htbackdrops
                 'tarray.Add(curdb)
             Next
         End If
+        'htpasseeddrop = curhtitem
         thearraylist = tarray
     End Sub
 
@@ -148,6 +151,15 @@ Public Class bditem
     Private psize As String
     Private pthumburl As String
     Private pdestinationfolder As String
+    Private psname As String
+    Property sname() As String
+        Get
+            Return psname
+        End Get
+        Set(ByVal value As String)
+            psname = value
+        End Set
+    End Property
     Property destinationfolder() As String
         Get
             Return pdestinationfolder

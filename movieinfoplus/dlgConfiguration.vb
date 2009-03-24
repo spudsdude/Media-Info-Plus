@@ -677,18 +677,18 @@ Public Class dlgConfiguration
             cbGetTMDBPosters.Checked = trconf.pcbGetTMDBPosters
             cbGetIMDBInfo.Checked = trconf.pcbGetIMDBInfo
             cbGetFanart.Checked = trconf.pcbGetFanart
-            cbIgnoreparans.Checked = rconf.pcbIgnoreparans
-            cbFilterUnderscoreDot.Checked = rconf.pcbFilterUnderscoreDot
-            cbtvlangoverridebanners.Checked = rconf.pcbtvlangoverride
-            cbFilterNameFileModeEverythingBeforeYear.Checked = rconf.pcbFilterNameFileModeEverythingBeforeYear
-            cbFilterNameFileModeEverythingBeforeh264.Checked = rconf.pcbFilterNameFileModeEverythingBeforeh264
-            cbFilterNameFileModeEverythingBeforex264.Checked = rconf.pcbFilterNameFileModeEverythingBeforex264
-            cbFilterNameFileModeEverythingBefore720p.Checked = rconf.pcbFilterNameFileModeEverythingBefore720p
-            cbFilterNameFileModeEverythingBefore1080i.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080i
-            cbFilterNameFileModeEverythingBefore1080p.Checked = rconf.pcbFilterNameFileModeEverythingBefore1080p
-            cbFilterNameFileModeEverythingBeforeDash.Checked = rconf.pcbFilterNameFileModeEverythingBeforeDash
-            cbGetMusicFanartFromHTBackdrops.Checked = rconf.pcbGetMusicFanartFromHTBackdrops
-
+            cbIgnoreparans.Checked = trconf.pcbIgnoreparans
+            cbFilterUnderscoreDot.Checked = trconf.pcbFilterUnderscoreDot
+            cbtvlangoverridebanners.Checked = trconf.pcbtvlangoverride
+            cbFilterNameFileModeEverythingBeforeYear.Checked = trconf.pcbFilterNameFileModeEverythingBeforeYear
+            cbFilterNameFileModeEverythingBeforeh264.Checked = trconf.pcbFilterNameFileModeEverythingBeforeh264
+            cbFilterNameFileModeEverythingBeforex264.Checked = trconf.pcbFilterNameFileModeEverythingBeforex264
+            cbFilterNameFileModeEverythingBefore720p.Checked = trconf.pcbFilterNameFileModeEverythingBefore720p
+            cbFilterNameFileModeEverythingBefore1080i.Checked = trconf.pcbFilterNameFileModeEverythingBefore1080i
+            cbFilterNameFileModeEverythingBefore1080p.Checked = trconf.pcbFilterNameFileModeEverythingBefore1080p
+            cbFilterNameFileModeEverythingBeforeDash.Checked = trconf.pcbFilterNameFileModeEverythingBeforeDash
+            cbGetMusicFanartFromHTBackdrops.Checked = trconf.pcbGetMusicFanartFromHTBackdrops
+            cbtv_lang.SelectedText = trconf.tv_curlang ' = cbtv_lang.SelectedItem.ToString
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
                 maincollection.dltype = "med"
@@ -746,14 +746,14 @@ Public Class dlgConfiguration
             '## Misc
             cbGoogleImageSearchPop.Checked = trconf.popgoogleimagesearch
             cbAllowAutoMovienameRename.Checked = trconf.autorenamemoviefilenames
-            tbTvRegex1.Text = rconf.ptvregx1
-            cbgetncposters.Checked = rconf.pcbgetncposters
-            cbautocreatefolderjpg.Checked = rconf.pcbautocreatefolderjpg
-            cbautocreatemovietbn.Checked = rconf.pcbautocreatemovietbn
-            cbautocreatemovienametbn.Checked = rconf.pcbautocreatemovienametbn
-            cbnopromptfornewposters.Checked = rconf.pcbnopromptfornewposters
-            cbscanformoviemediainformation.Checked = rconf.pcbscanformoviemediainformation
-            cbcopyplotsummaryifnoplot.Checked = rconf.pcbcopyplotsummaryifnoplot
+            tbTvRegex1.Text = trconf.ptvregx1
+            cbgetncposters.Checked = trconf.pcbgetncposters
+            cbautocreatefolderjpg.Checked = trconf.pcbautocreatefolderjpg
+            cbautocreatemovietbn.Checked = trconf.pcbautocreatemovietbn
+            cbautocreatemovienametbn.Checked = trconf.pcbautocreatemovienametbn
+            cbnopromptfornewposters.Checked = trconf.pcbnopromptfornewposters
+            cbscanformoviemediainformation.Checked = trconf.pcbscanformoviemediainformation
+            cbcopyplotsummaryifnoplot.Checked = trconf.pcbcopyplotsummaryifnoplot
 
             '## File settings
             cbSaveNFO.Checked = trconf.pcbSaveNFO
@@ -805,6 +805,8 @@ Public Class dlgConfiguration
             tvgs_cb_tvshow_nfo_overwrite.Checked = trconf.tv_tvshow_nfo_overwrite_boolean
             tvgs_cb_tvshow_wideicon_download.Checked = trconf.tv_tvshow_wideicon_download_boolean
             tvgs_knud_tvshow_wideicon_download_maxnumber.Value = trconf.tv_tvshow_wideicon_download_maxnumber_integer
+
+            cbshows_UseStudioasRating.Checked = trconf.pcbshows_UseStudioasRating
             '= trconf.tv_usewgetforimages = True
             '= trconf.tv_wgetsleepinmilliseconds = 100
 
@@ -833,39 +835,39 @@ Public Class dlgConfiguration
             'clbPaths clear and set
 
             '## Media Images
-            getMediaImagesMoviesFront.Checked = rconf.pgetMediaImagesMoviesFront
-            getMediaImagesMoviesBack.Checked = rconf.pgetMediaImagesMoviesback
-            getMediaImagesMoviesCD1.Checked = rconf.pgetMediaImagesMoviescd1
-            getMediaImagesMoviesCD2.Checked = rconf.pgetMediaImagesMoviescd2
-            getMediaImagesMoviesCD3.Checked = rconf.pgetMediaImagesMoviescd3
-            getMediaImagesMoviesCD4.Checked = rconf.pgetMediaImagesMoviescd4
-            getMediaImagesMoviesInlay.Checked = rconf.pgetMediaImagesMoviesinlay
-            getMediaImagesMoviesInsert.Checked = rconf.pgetMediaImagesMoviesinsert
+            getMediaImagesMoviesFront.Checked = trconf.pgetMediaImagesMoviesFront
+            getMediaImagesMoviesBack.Checked = trconf.pgetMediaImagesMoviesback
+            getMediaImagesMoviesCD1.Checked = trconf.pgetMediaImagesMoviescd1
+            getMediaImagesMoviesCD2.Checked = trconf.pgetMediaImagesMoviescd2
+            getMediaImagesMoviesCD3.Checked = trconf.pgetMediaImagesMoviescd3
+            getMediaImagesMoviesCD4.Checked = trconf.pgetMediaImagesMoviescd4
+            getMediaImagesMoviesInlay.Checked = trconf.pgetMediaImagesMoviesinlay
+            getMediaImagesMoviesInsert.Checked = trconf.pgetMediaImagesMoviesinsert
 
-            getMediaImagesShowsFront.Checked = rconf.pgetMediaImagesShowsFront
-            getMediaImagesShowsBack.Checked = rconf.pgetMediaImagesShowsback
-            getMediaImagesShowsCD1.Checked = rconf.pgetMediaImagesShowscd1
-            getMediaImagesShowsCD2.Checked = rconf.pgetMediaImagesShowscd2
-            getMediaImagesShowsCD3.Checked = rconf.pgetMediaImagesShowscd3
-            getMediaImagesShowsCD4.Checked = rconf.pgetMediaImagesShowscd4
-            getMediaImagesShowsInlay.Checked = rconf.pgetMediaImagesShowsinlay
-            getMediaImagesShowsInsert.Checked = rconf.pgetMediaImagesShowsinsert
+            getMediaImagesShowsFront.Checked = trconf.pgetMediaImagesShowsFront
+            getMediaImagesShowsBack.Checked = trconf.pgetMediaImagesShowsback
+            getMediaImagesShowsCD1.Checked = trconf.pgetMediaImagesShowscd1
+            getMediaImagesShowsCD2.Checked = trconf.pgetMediaImagesShowscd2
+            getMediaImagesShowsCD3.Checked = trconf.pgetMediaImagesShowscd3
+            getMediaImagesShowsCD4.Checked = trconf.pgetMediaImagesShowscd4
+            getMediaImagesShowsInlay.Checked = trconf.pgetMediaImagesShowsinlay
+            getMediaImagesShowsInsert.Checked = trconf.pgetMediaImagesShowsinsert
 
-            getMediaImagesMusicFront.Checked = rconf.pgetMediaImagesMusicFront
-            getMediaImagesMusicBack.Checked = rconf.pgetMediaImagesMusicback
-            getMediaImagesMusicCd1.Checked = rconf.pgetMediaImagesMusiccd1
-            getMediaImagesMusicCd2.Checked = rconf.pgetMediaImagesMusiccd2
-            getMediaImagesMusicCd3.Checked = rconf.pgetMediaImagesMusiccd3
-            getMediaImagesMusicCd4.Checked = rconf.pgetMediaImagesMusiccd4
-            getMediaImagesMusicInlay.Checked = rconf.pgetMediaImagesMusicinlay
-            getMediaImagesMusicInsert.Checked = rconf.pgetMediaImagesMusicinsert
+            getMediaImagesMusicFront.Checked = trconf.pgetMediaImagesMusicFront
+            getMediaImagesMusicBack.Checked = trconf.pgetMediaImagesMusicback
+            getMediaImagesMusicCd1.Checked = trconf.pgetMediaImagesMusiccd1
+            getMediaImagesMusicCd2.Checked = trconf.pgetMediaImagesMusiccd2
+            getMediaImagesMusicCd3.Checked = trconf.pgetMediaImagesMusiccd3
+            getMediaImagesMusicCd4.Checked = trconf.pgetMediaImagesMusiccd4
+            getMediaImagesMusicInlay.Checked = trconf.pgetMediaImagesMusicinlay
+            getMediaImagesMusicInsert.Checked = trconf.pgetMediaImagesMusicinsert
 
             '##Music
-            cbMusicGetAlbumArt.Checked = rconf.pgetMusicAlbumArt
-
+            cbMusicGetAlbumArt.Checked = trconf.pgetMusicAlbumArt
+            cbMusicResizeMusicFanart.Checked = trconf.pcbmusicfanartresize
             '## Wine specific options for compatability
             ' rconf.winecompatable = False
-            If rconf.winecompatable Then
+            If trconf.winecompatable Then
                 'disable the folder selection browse buttons
                 btnMoviesBrowseForFolder.Enabled = False
                 btnMoviesBrowseForFolderFileMode.Enabled = False
@@ -1515,5 +1517,13 @@ Public Class dlgConfiguration
 
     Private Sub cbGetMusicFanartFromHTBackdrops_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbGetMusicFanartFromHTBackdrops.Click
         rconf.pcbGetMusicFanartFromHTBackdrops = cbGetMusicFanartFromHTBackdrops.Checked
+    End Sub
+
+    Private Sub cbMusicResizeMusicFanart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMusicResizeMusicFanart.Click
+        rconf.pcbmusicfanartresize = cbMusicResizeMusicFanart.Checked
+    End Sub
+
+    Private Sub cbshows_UseStudioasRating_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbshows_UseStudioasRating.CheckedChanged
+        rconf.pcbshows_UseStudioasRating = cbshows_UseStudioasRating.Checked
     End Sub
 End Class
