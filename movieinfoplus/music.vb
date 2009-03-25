@@ -75,6 +75,37 @@ Public Class musicalbums
     End Property
 End Class
 
+<XmlRoot("musiccache")> _
+Public Class [MusicCache]
+    Private p_element_musicarray As New List(Of Music)
+    Property musiclist() As List(Of Music)
+        Get
+            Return p_element_musicarray
+        End Get
+        Set(ByVal value As List(Of Music))
+            p_element_musicarray = value
+        End Set
+    End Property
+    Public Sub writexml(ByRef folderlocationandname As String)
+        Dim serializer As New XmlSerializer(Me.GetType())
+        Try
+            Dim writer As New StreamWriter(folderlocationandname)
+            serializer.Serialize(writer, Me)
+            writer.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+            Debug.Print(ex.ToString)
+        End Try
+    End Sub
+    Public Sub readxml(ByVal xmllocationandfilename As String, ByRef currsp As MusicCache)
+        Dim xmlfile As String = xmllocationandfilename
+        Dim serializer As New XmlSerializer(Me.GetType())
+        Dim gROReader As New StreamReader(xmlfile)
+        Dim gRrsp As MusicCache = CType(serializer.Deserialize(gROReader), MusicCache)
+        gROReader.Close()
+        currsp = gRrsp
+    End Sub
+End Class
 ' <summary>Represents an xml root music document element.</summary>
 <XmlRoot("music")> _
 Public Class [Music]

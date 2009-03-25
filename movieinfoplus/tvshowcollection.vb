@@ -1805,8 +1805,8 @@ Public Class tvshowcollection
                 xbmctvshow1e.readXML(curtvshowpath + "\tvshow.nfo", xbmctvshow1e)
             Catch ex As Exception
                 'if no tvshow.nfo or it fails, goto next one
-                Debug.Print(ex.ToString)
-                'counter += 1
+                Console.Out.WriteLine("No show data for: " & curtvshowpath)
+                showcount2 += 1
                 Continue While
             End Try
             Dim selectedshow As String = xbmctvshow1e.Tvdbid
@@ -1850,8 +1850,10 @@ Public Class tvshowcollection
                             Dim tfname2 As String = fnPeices2(fnPeices2.Length - 1)
                             Select Case Strings.Right(tfname2, 4).ToLower
                                 Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1)
+                                    Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
                                     Dim haveseason As Boolean = False
@@ -2064,12 +2066,13 @@ Public Class tvshowcollection
                                                 tepisode1.fullfilenameandpath = item
                                                 tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1e.Actors, curmirror)
                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
-                                                    maincollection.pbar1.Visible = True
-                                                    maincollection.lblPbar.Visible = True
-                                                    maincollection.lblPbar.BringToFront()
-                                                    maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
-                                                    maincollection.Refresh()
+                                                    'maincollection.pbar1.Visible = True
+                                                    'maincollection.lblPbar.Visible = True
+                                                    'maincollection.lblPbar.BringToFront()
+                                                    'maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
+                                                    'maincollection.Refresh()
                                                     Dim curmedinfo As New MediaInfo
+                                                    Console.Out.WriteLine("Scanning Media Info: " + getfilefrompath(item))
                                                     curmedinfo.getdata(tepisode1, True)
                                                 End If
                                                 curxbmcmultiepisode.episodes.Add(xbmced1)
@@ -2095,12 +2098,14 @@ Public Class tvshowcollection
                             End Select
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
+                            Console.Out.WriteLine(ex.ToString)
                         End Try
                     Next
                 Catch ex As Exception 'catch bad parse of directory
+                    Console.Out.WriteLine(ex.ToString)
                 End Try
-
             Next
+            Console.Out.WriteLine("Show Count: " & showcount2.ToString)
             showcount2 += 1
         End While
 
@@ -2578,13 +2583,11 @@ Public Class tvshowcollection
 
 
         While showcount < tvshowarray.Count
-            Console.Out.WriteLine("curcount" & showcount.ToString)
+            Console.Out.WriteLine("")
             Dim showfullpathname As String = tvshowarray(showcount).ToString
             Console.Out.WriteLine("Processing: " & showfullpathname)
             Dim fnPeices1() As String = showfullpathname.ToString.Split(CChar("\"))
             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
-
-            Console.Out.WriteLine("Preping " + tfname + "'s Download Data")
 
             Dim selectedshow As String = ""
             Dim tvshownfooverwrite As Boolean = False
@@ -2596,55 +2599,70 @@ Public Class tvshowcollection
                 If Not selectedshow = "" Then tvshownfooverwrite = True
             End If
 
-            If selectedshow = "" Then 'if it's not a 1-1 match, skip it for cmd line updates.
-                showcount += 1
-                Console.Out.WriteLine("No id for the show, skipping. Use the GUI to add a new show.")
-                Continue While
+            If selectedshow = "" Then 'no nfo file located
+                'tvdbid.txt - contains only the show id
+                If File.Exists(showfullpathname + "\tvdbid.txt") Then
+                    selectedshow = File.ReadAllText(showfullpathname + "\tvdbid.txt")
+                    selectedshow.Trim()
+                Else
+                    showcount += 1
+                    Console.Out.WriteLine("------------------------------")
+                    Console.Out.WriteLine("No show id for the show was found - skipping")
+                    Console.Out.WriteLine("Path: " & showfullpathname)
+                    Console.Out.WriteLine("Create a text file named tvdbid.txt with the tvdbid number in it")
+                    Console.Out.WriteLine("Or use the GUI to add a new show.")
+                    Console.Out.WriteLine("------------------------------")
+                    Continue While
+                End If
             End If
             Console.Out.WriteLine("Id found: " & selectedshow)
-            'Try
-            '    If Strings.Left(tfname, 3).ToLower = "csi" Then
-            '        getTVSeriesList("csi")
-            '    Else
-            '        getTVSeriesList(tfname)
-            '    End If
-            'Catch ex As Exception
-            '    Console.Out.WriteLine(ex.ToString)
-            '    showcount += 1 'jive fix
-            '    Continue While
-            'End Try
+            If selectedshow = "" Then
+                Try
+                    If Strings.Left(tfname, 3).ToLower = "csi" Then
+                        getTVSeriesList("csi")
+                    Else
+                        getTVSeriesList(tfname)
+                    End If
+                Catch ex As Exception
+                    Console.Out.WriteLine(ex.ToString)
+                    showcount += 1 'jive fix
+                    Continue While
+                End Try
 
-            'Dim temptvshowdata As New TVSeriesData
-            'Try
-            '    If Strings.Left(tfname, 3).ToLower = "csi" Then
-            '        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + "csi" + ".xml", temptvshowdata)
-            '    Else
-            '        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + tfname + ".xml", temptvshowdata)
-            '    End If
+                Dim temptvshowdata As New TVSeriesData
+                Try
+                    If Strings.Left(tfname, 3).ToLower = "csi" Then
+                        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + "csi" + ".xml", temptvshowdata)
+                    Else
+                        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + tfname + ".xml", temptvshowdata)
+                    End If
 
-            'Catch ex As Exception
-            '    Console.Out.WriteLine(ex.ToString)
-            '    showcount += 1 'jive fix
-            '    Continue While
-            'End Try
+                Catch ex As Exception
+                    Console.Out.WriteLine(ex.ToString)
+                    showcount += 1 'jive fix
+                    Continue While
+                End Try
 
-            'Dim tarray As New ArrayList
-            'Try
-            '    For Each item In temptvshowdata.SeriesArray
-            '        tarray.Add(item)
-            '    Next
-            'Catch ex As Exception
-            '    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "No TV Show data exsists for: " + tfname
-            '    showcount += 1
-            '    Continue While
+                Dim tarray As New ArrayList
+                Try
+                    For Each item In temptvshowdata.SeriesArray
+                        tarray.Add(item)
+                    Next
+                Catch ex As Exception
+                    Console.Out.WriteLine("No TV Show data exsists for: " + tfname)
+                    showcount += 1
+                    Continue While
 
-            'End Try
+                End Try
 
+                If Not tarray.Count = 1 Then
+                    Console.Out.WriteLine("More then 1 TV Show data exsists for: " + tfname)
+                    Console.Out.WriteLine("~ You can also add the tvshow id to a tvdbid.txt text file, or scan with MIP ~") 'More then 1 TV Show data exsists for: " + tfname
+                    showcount += 1
+                    Continue While
+                End If
+            End If
 
-            'If Not tarray.Count = 1 Then
-            '    showcount += 1
-            '    Continue While
-            'End If
             '        Dim dtIDA As New DataTable
             '        dtIDA.Columns.Add("Path", GetType(System.String))
             '        dtIDA.Columns.Add("Name")
@@ -2687,7 +2705,10 @@ Public Class tvshowcollection
             '        selectedshow = Strings.Replace(selectedshow, " ", "")
             '    End If
             'End If
-
+            If selectedshow = "" Then 'break out of while loop, no show id
+                showcount += 1
+                Continue While
+            End If
             Dim numtoaddfromconf As Integer = 5
             numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
             Console.Out.WriteLine(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
@@ -2736,6 +2757,14 @@ Public Class tvshowcollection
                     End Try
                     'decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
                 End If
+            End If
+            If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\banners.xml") Then
+                Try
+                    decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
+                Catch ex As Exception
+                    showcount += 1 'break out of loop, no banners.xml or it failed to extract
+                    Continue While
+                End Try
             End If
             '--------------------------------------Section Start----------------------------------------
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------

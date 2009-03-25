@@ -165,6 +165,24 @@ Public Class dlgConfiguration
                 maincollection.tcFCDN.TabColor = Color.Black
                 maincollection.tcFCDN.ForeColor = Color.White
                 maincollection.tcFCDN.HotColor = Color.Silver
+            Case "bubbles"
+                maincollection.kManager.GlobalPalette = maincollection.kPaletteBubbles
+                rconf.guicolor = "bubbles"
+                maincollection.tcMain.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.TabColor = Color.SteelBlue
+                maincollection.tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcMain.HotColor = Color.Orange
+                maincollection.tcPIB.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.TabColor = Color.SteelBlue
+                maincollection.tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcPIB.HotColor = Color.Orange
+                maincollection.tcFCDN.SelectedTabColor = Color.RoyalBlue
+                maincollection.tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.TabColor = Color.SteelBlue
+                maincollection.tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                maincollection.tcFCDN.HotColor = Color.Orange
             Case "silver"
                 maincollection.kManager.GlobalPalette = maincollection.kpaletteSilver
                 rconf.guicolor = "silver"
@@ -370,6 +388,9 @@ Public Class dlgConfiguration
     End Sub
     Private Sub krbColorHazel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorBling.Click
         setguicolor("bling")
+    End Sub
+    Private Sub krbColorBubbles_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles krbColorBubbles.Click
+        setguicolor("bubbles")
     End Sub
     Private Sub cbNoNfoChangePrompt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbNoNfoChangePrompt.Click
         rconf.pcbNoNfoChangePrompt = cbNoNfoChangePrompt.Checked

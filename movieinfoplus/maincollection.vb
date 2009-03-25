@@ -28213,6 +28213,23 @@ Public Class maincollection
                 tcFCDN.TabColor = Color.Black
                 tcFCDN.ForeColor = Color.White
                 tcFCDN.HotColor = Color.Silver
+            Case "bubbles"
+                kManager.GlobalPalette = kPaletteBubbles
+                tcMain.SelectedTabColor = Color.RoyalBlue
+                tcMain.BackColor = Color.FromArgb(223, 233, 245)
+                tcMain.TabColor = Color.SteelBlue
+                tcMain.ForeColor = Color.FromArgb(223, 233, 245)
+                tcMain.HotColor = Color.Orange
+                tcPIB.SelectedTabColor = Color.RoyalBlue
+                tcPIB.BackColor = Color.FromArgb(223, 233, 245)
+                tcPIB.TabColor = Color.SteelBlue
+                tcPIB.ForeColor = Color.FromArgb(223, 233, 245)
+                tcPIB.HotColor = Color.Orange
+                tcFCDN.SelectedTabColor = Color.RoyalBlue
+                tcFCDN.BackColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.TabColor = Color.SteelBlue
+                tcFCDN.ForeColor = Color.FromArgb(223, 233, 245)
+                tcFCDN.HotColor = Color.Orange
             Case "silver"
                 kManager.GlobalPalette = kpaletteSilver
                 'rconf.guicolor = "silver"
@@ -29816,7 +29833,34 @@ Public Class maincollection
         Dim curthecou As Integer = 0
         klNumMusic.Text = musicfilelist.Count.ToString
         Dim totcou As Integer = musicfilelist.Count
-        If Not Directory.Exists(rconf.tempfolder + "musicdata/") Then Directory.CreateDirectory(rconf.tempfolder + "musicdata/")
+        If Not Directory.Exists(rconf.tempfolder + "musiccachedata/") Then Directory.CreateDirectory(rconf.tempfolder + "musiccachedata/")
+        If Directory.Exists(rconf.tempfolder + "musicdata/") Then
+            'clean out old cache info, removed in build 2810
+            For Each curfile As String In Directory.GetFiles(rconf.tempfolder + "musicdata/")
+                File.Delete(curfile)
+            Next
+        End If
+        'setup the musiclist file
+        Dim curmusiccachelist As New MusicCache
+        If File.Exists(rconf.tempfolder + "musiccachedata/mymusicdata.nfo") Then
+            Try
+                curmusiccachelist.readxml(rconf.tempfolder + "musiccachedata/mymusicdata.nfo", curmusiccachelist)
+            Catch ex As Exception
+                MsgBox("Loading Music Cached Data Failed!")
+            End Try
+        End If
+        MsgBox("counter: " & curmusiccachelist.musiclist.Count.ToString)
+        'setup the hash table
+        Dim curmusichashcache As New Hashtable
+        For Each curMus As Music In curmusiccachelist.musiclist
+            Try
+                curmusichashcache.Add(curMus.md5, curMus)
+            Catch ex As Exception
+
+            End Try
+        Next
+        Dim newcache As New MusicCache
+        'Directory.CreateDirectory(rconf.tempfolder + "musicdata/")
         'read up each file and get it's id3 data and store those into the mainarray of music objects, add add the artist oject into the hashtable
         For Each musicfile As String In musicfilelist
             bwLoadMusic.ReportProgress(curthecou, "Scanning " + curthecou.ToString + " of " + totcou.ToString + ": " + getfilefrompath(musicfile))
@@ -29824,28 +29868,40 @@ Public Class maincollection
             Dim curhash As New crypto
             Dim curmd5 As String = curhash.GenerateHash(musicfile)
             'see if we already have data for this file
-            Dim norescan As Boolean = False
+            Dim rescan As Boolean = False
             Dim curmusicitem As New Music
             curmusicitem.Filename = musicfile
             Dim nfofilename As String = cleanimdbdata(musicfile) '+ ".nfo"
             Dim hashedname As String = nfofilename.GetHashCode.ToString
-            Dim nfoloc As String = rconf.tempfolder + "musicdata/" + hashedname + ".nfo"
-            If File.Exists(nfoloc) Then
-                'read the nfo and compare hash
-                curmusicitem.readxml(nfoloc, curmusicitem)
-                'compare hash, if it matches,don't rescan item
-                If curmd5 = curmusicitem.md5 Then
-                    norescan = True
-                End If
-            End If
+            curmusicitem.md5 = hashedname
+            'Dim nfoloc As String = rconf.tempfolder + "musicdata/" + hashedname + ".nfo"
+            'try to add hashtable based on hashstring, if that fails, it doesn't need to be scanned
+            Try
+                curmusichashcache.Add(curmusicitem.md5, curmusicitem)
+                'curmusicitem = CType(curmusichashcache.Item(hashedname), Music)
+                rescan = True
+            Catch ex As Exception
+                rescan = False
+                'Debug.Print("Non-Crit Failure: failed to pull from hashtable based on hashstring")
+            End Try
+            'If File.Exists(nfoloc) Then
+            '    'read the nfo and compare hash
+            '    curmusicitem.readxml(nfoloc, curmusicitem)
+            '    'compare hash, if it matches,don't rescan item
+            '    If curmd5 = curmusicitem.md5 Then
+            '        norescan = True
+            '    End If
+            'End If
 
             'if hash failed, rescan
             'use mediainfo to get data about the file
-            If Not norescan Then
+            If rescan Then
                 Dim curmediainfo As New MediaInfo
                 curmediainfo.getmusicdata(curmusicitem)
                 curmusicitem.md5 = curmd5
-                curmusicitem.writexml(nfoloc)
+                'add to hashtable (it's new or changed)
+                'curmusicitem.writexml(nfoloc)
+                'curmusichashcache.Add(curmusicitem.md5, curmusicitem)
             End If
 
             tempmusiclist.Add(curmusicitem)
@@ -29861,8 +29917,11 @@ Public Class maincollection
                 'used to filter out duplicate artists
             End Try
             'Debug.Print(curthecou.ToString + " ---item---")
+            newcache.musiclist.Add(curmusicitem)
             curthecou += 1
         Next
+
+        newcache.writexml(rconf.tempfolder + "musiccachedata/mymusicdata.nfo")
 
         gvmusicobjects = tempmusiclist
         'we now have a list of(music) that contains all of our artists

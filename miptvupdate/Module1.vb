@@ -58,7 +58,7 @@ Module Module1
                 Debug.Print(ex.ToString)
             End Try
         End If
-
+        Console.Out.WriteLine("Processing of episodes started")
         curtv.kbLoadTvShowsCmdLine()
 
     End Sub
