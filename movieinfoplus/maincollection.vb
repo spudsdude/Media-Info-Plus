@@ -8266,7 +8266,7 @@ Public Class maincollection
         Dim fanartarraylist As New ArrayList
         Dim fanartSname As New ArrayList
 
-        For Each curdbitem As bditem In fanartarraylist
+        For Each curdbitem As bditem In fanartarraylistBDitems
             Dim newdlo As New miplibfc.mip.dlobject
             newdlo.URL = curdbitem.url
             newdlo.misc = "HT Backdrops Item: " & currentartist.artistname

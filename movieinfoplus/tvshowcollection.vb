@@ -812,8 +812,11 @@ Public Class tvshowcollection
                     Debug.Print(ex.ToString)
                 End Try
                 xbmctvshow.Episodeguideurl = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
-                If rconf.pcbshows_UseStudioasRating Then
-                    xbmctvshow.Rating = xbmctvshow.Studio
+
+                If rconf.pcbshows_UseStudioasRating Then 'digitalhigh request
+                    xbmctvshow.Rating = studiotorating(xbmctvshow.Studio).ToString
+                Else
+                    'xbmctvshow.Rating = xbmctvshow.Studio
                 End If
                 xbmctvshow.writeXML(showfullpathname) '"c:\")
                 'add show to datatable
@@ -863,7 +866,93 @@ Public Class tvshowcollection
         'stpw.Start()
         updatetvshows()
     End Sub
+    Private Function studiotorating(ByVal curstringname As String) As Integer
+        Select Case curstringname.ToLower
+            Case "a&e"
+                Return 1
+            Case "abc"
+                Return 2
+            Case "abc family"
+                Return 3
+            Case "adult swim"
+                Return 4
+            Case "amc"
+                Return 5
+            Case "animal planet"
+                Return 6
+            Case "bbc"
+                Return 7
+            Case "bbc2"
+                Return 8
+            Case "bet"
+                Return 9
+            Case "bravo"
+                Return 10
+            Case "cartoon network"
+                Return 11
+            Case "cbs"
+                Return 12
+            Case "channel 4 uk"
+                Return 13
+            Case "comedy central"
+                Return 14
+            Case "cw"
+                Return 15
+            Case "discovery"
+                Return 16
+            Case "disney"
+                Return 17
+            Case "espn"
+                Return 18
+            Case "food network"
+                Return 19
+            Case "fox"
+                Return 20
+            Case "fx"
+                Return 21
+            Case "hbo"
+                Return 22
+            Case "history"
+                Return 23
+            Case "msnbc"
+                Return 24
+            Case "mtv"
+                Return 25
+            Case "my tv"
+                Return 26
+            Case "nbc"
+                Return 27
+            Case "nickelodeon"
+                Return 28
+            Case "pbs"
+                Return 29
+            Case "scifi"
+                Return 30
+            Case "showtime"
+                Return 31
+            Case "space"
+                Return 32
+            Case "spike"
+                Return 33
+            Case "tbs"
+                Return 34
+            Case "tnt"
+                Return 35
+            Case "upn"
+                Return 36
+            Case "usa"
+                Return 37
+            Case "versus"
+                Return 38
+            Case "vh1"
+                Return 39
+            Case "wgn"
+                Return 40
+            Case Else
+                Return 0
+        End Select
 
+    End Function
     Public Sub updatetvshows()
         'Dim stpw2 As New Stopwatch
         'stpw2.Start()
@@ -1105,6 +1194,7 @@ Public Class tvshowcollection
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
+                                                
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror)
                                                 xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
@@ -1333,7 +1423,7 @@ Public Class tvshowcollection
 
     Public Sub kbLoadTvShowsCmdLine(Optional ByVal debugon As Boolean = False, Optional ByVal dlo As Boolean = False)
         gvNoShowsList = "" 'clear out the no show data list var
-
+        Console.Out.WriteLine("starting to load the episodes")
         'Dim stpw As New Stopwatch
         'stpw.Start()
         rconf = rconf.getconfig("config", True)
@@ -1342,13 +1432,13 @@ Public Class tvshowcollection
             dbgTVShows = True
         End If
         Dim boguscounter As Integer = 0
-       'get updates file from server
+        'get updates file from server
 
         Dim tdate As String = ""
         ' getdatesfromtvdb(tdate)
         Debug.Print("getdatefromtvdb done")
 
-         'myseries.Serieses.
+        'myseries.Serieses.
         Dim maindttv As New DataTable
         maindttv.Columns.Add("Path", GetType(System.String))
         maindttv.Columns.Add("Name")
@@ -1369,13 +1459,14 @@ Public Class tvshowcollection
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
+                        Console.Out.WriteLine("Adding: " & currentdir.ToString)
                     End If
                 Catch ex As Exception
                     Debug.Print(ex.ToString)
                 End Try
             Next
         Next
-
+        Console.Out.WriteLine("curdircontents finished")
         While showcount < tvshowarray.Count
             'see if we have any info about the show
             'grab the latest zip file for show
@@ -1429,6 +1520,7 @@ Public Class tvshowcollection
                     showcount += 1
                     Continue While
                 End If
+                Console.Out.WriteLine("counter during show loc loop: " & showcount.ToString)
                 '    Dim dtIDA As New DataTable
                 '    dtIDA.Columns.Add("Path", GetType(System.String))
                 '    dtIDA.Columns.Add("Name")
@@ -1494,10 +1586,12 @@ Public Class tvshowcollection
             Try
                 tbanners.readBannerXML(rconf.tvdbcachefolder + selectedshow + "\banners.xml", tbanners)
             Catch ex As Exception
-                MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+                'MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 Debug.Print("unable to load xml file from cache folder")
                 showcount += 1
+                Console.Out.WriteLine("no xml file in cache folder for " & "-" & selectedshow & "-")
+
                 Continue While 'break out of while loop, no data in banners 
             End Try
 
@@ -1573,7 +1667,7 @@ Public Class tvshowcollection
                             Catch ex As Exception
                                 boolGetSeason = True
                                 Debug.Print(ex.ToString)
-                             End Try
+                            End Try
 
 
                             If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
@@ -1644,7 +1738,7 @@ Public Class tvshowcollection
             Next
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             '--------------------------------------Section END------------------------------------------
-             Dim newtvdbData As New tvdblangData
+            Dim newtvdbData As New tvdblangData
             Dim newactors As New Actors
             newactors.readXML(rconf.tvdbcachefolder + selectedshow + "\Actors.xml", newactors)
             'tvdblangseries2xbmcTvshow()
@@ -1675,15 +1769,64 @@ Public Class tvshowcollection
                 Debug.Print(ex.ToString)
             End Try
 
-            ' --------------------------------
-            'process episode level items
-            ' --------------------------------
+            'wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + tseriesname.Id + "/all/" + curlang + ".zip", "everything", True)
+            showcount += 1
+        End While
+
+        ' --------------------------------
+        'process episode level items
+        ' --------------------------------
+        'For Each item In rconf.pclbTVPaths 'maincollection.lbTVShows.CheckedItems
+        '    'ennum sub dir x levels deep
+        '    Dim curdircontents() As String
+        '    curdircontents = Directory.GetDirectories(item.ToString)
+        '    For Each currentdir As String In curdircontents
+        '        Try
+        '            If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
+        '                'dont add it
+        '            Else
+        '                If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
+        '            End If
+        '        Catch ex As Exception
+        '            Debug.Print(ex.ToString)
+        '        End Try
+        '    Next
+        'Next
+        Dim showcount2 As Integer = 0
+        While showcount2 < tvshowarray.Count
+            'see if we have any info about the show
+            'grab the latest zip file for show
+            'find the key first
+            'maincollection.lbTVShows.SelectedIndex = showcount
+            Dim showfullpathname As String = tvshowarray(showcount2).ToString
             Dim curtvshowpath As String = showfullpathname
             Dim xbmctvshow1e As New xbmc.xbmcTvshow
             Try
                 xbmctvshow1e.readXML(curtvshowpath + "\tvshow.nfo", xbmctvshow1e)
             Catch ex As Exception
+                'if no tvshow.nfo or it fails, goto next one
                 Debug.Print(ex.ToString)
+                'counter += 1
+                Continue While
+            End Try
+            Dim selectedshow As String = xbmctvshow1e.Tvdbid
+
+            Dim newtvdbdata As New tvdblangData
+            Try
+
+                newtvdbdata.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbdata)
+                For Each tepisode In newtvdbdata.Episodes
+                    Try
+                        theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
+                    Catch ex As Exception
+                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "duplicate or invalid episode" + ex.ToString
+                    End Try
+
+                Next
+
+            Catch ex As Exception
+                'MsgBox("No TV Shows found for: " + curtvshowpath)
                 'counter += 1
                 'Continue While
             End Try
@@ -1958,13 +2101,14 @@ Public Class tvshowcollection
                 End Try
 
             Next
-            'end episode level items
-
-
-            'wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + tseriesname.Id + "/all/" + curlang + ".zip", "everything", True)
-            showcount += 1
+            showcount2 += 1
         End While
-        Exit Sub 'temp break out for cmd line
+
+        'end episode level items
+
+
+
+        'Exit Sub 'temp break out for cmd line
 
 
         maindttv.DefaultView.Sort = "Name"
@@ -2397,7 +2541,8 @@ Public Class tvshowcollection
         Dim returnedfilename As String = fnPeices1(fnPeices1.Length - 1)
         Return returnedfilename
     End Function
-    Public Sub precacheTVShowsCmdLine(Optional ByVal debugon As Boolean = False)
+    Public Sub precacheTVShowsCmdLine(ByRef curarray As ArrayList, Optional ByVal debugon As Boolean = False)
+        Console.Out.WriteLine("Starting pre-cache of images and data for tv shows")
         'ssprecaching.Show()
         rconf = rconf.getconfig("config", True)
         'If rconf.debugtvshows Or debugon Then
@@ -2430,16 +2575,17 @@ Public Class tvshowcollection
 
             Next
         Next
-        maincollection.pbar1.Visible = True
-        maincollection.lblPbar.Visible = True
-        maincollection.lblPbar.BringToFront()
+
+
         While showcount < tvshowarray.Count
+            Console.Out.WriteLine("curcount" & showcount.ToString)
             Dim showfullpathname As String = tvshowarray(showcount).ToString
+            Console.Out.WriteLine("Processing: " & showfullpathname)
             Dim fnPeices1() As String = showfullpathname.ToString.Split(CChar("\"))
             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
 
-            maincollection.lblPbar.Text = "Preping " + tfname + "'s Download Data"
-            maincollection.Refresh()
+            Console.Out.WriteLine("Preping " + tfname + "'s Download Data")
+
             Dim selectedshow As String = ""
             Dim tvshownfooverwrite As Boolean = False
             If File.Exists(showfullpathname + "\tvshow.nfo") Then
@@ -2452,49 +2598,53 @@ Public Class tvshowcollection
 
             If selectedshow = "" Then 'if it's not a 1-1 match, skip it for cmd line updates.
                 showcount += 1
+                Console.Out.WriteLine("No id for the show, skipping. Use the GUI to add a new show.")
                 Continue While
             End If
+            Console.Out.WriteLine("Id found: " & selectedshow)
+            'Try
+            '    If Strings.Left(tfname, 3).ToLower = "csi" Then
+            '        getTVSeriesList("csi")
+            '    Else
+            '        getTVSeriesList(tfname)
+            '    End If
+            'Catch ex As Exception
+            '    Console.Out.WriteLine(ex.ToString)
+            '    showcount += 1 'jive fix
+            '    Continue While
+            'End Try
 
-            '    Try
-            '        If Strings.Left(tfname, 3).ToLower = "csi" Then
-            '            getTVSeriesList("csi")
-            '        Else
-            '            getTVSeriesList(tfname)
-            '        End If
-            '    Catch ex As Exception
-            '        Debug.Print(ex.ToString)
-            '        showcount += 1 'jive fix
-            '        Continue While
-            '    End Try
+            'Dim temptvshowdata As New TVSeriesData
+            'Try
+            '    If Strings.Left(tfname, 3).ToLower = "csi" Then
+            '        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + "csi" + ".xml", temptvshowdata)
+            '    Else
+            '        temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + tfname + ".xml", temptvshowdata)
+            '    End If
 
-            '    Dim temptvshowdata As New TVSeriesData
-            '    Try
-            '        If Strings.Left(tfname, 3).ToLower = "csi" Then
-            '            temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + "csi" + ".xml", temptvshowdata)
-            '        Else
-            '            temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + tfname + ".xml", temptvshowdata)
-            '        End If
+            'Catch ex As Exception
+            '    Console.Out.WriteLine(ex.ToString)
+            '    showcount += 1 'jive fix
+            '    Continue While
+            'End Try
 
-            '    Catch ex As Exception
-            '        Debug.Print(ex.ToString)
-            '        showcount += 1 'jive fix
-            '        Continue While
-            '    End Try
+            'Dim tarray As New ArrayList
+            'Try
+            '    For Each item In temptvshowdata.SeriesArray
+            '        tarray.Add(item)
+            '    Next
+            'Catch ex As Exception
+            '    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "No TV Show data exsists for: " + tfname
+            '    showcount += 1
+            '    Continue While
 
-            '    Dim tarray As New ArrayList
-            '    Try
-            '        For Each item In temptvshowdata.SeriesArray
-            '            tarray.Add(item)
-            '        Next
-            '    Catch ex As Exception
-            '        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "No TV Show data exsists for: " + tfname
-            '        showcount += 1
-            '        Continue While
-
-            '    End Try
+            'End Try
 
 
-            '    If Not tarray.Count = 1 Then
+            'If Not tarray.Count = 1 Then
+            '    showcount += 1
+            '    Continue While
+            'End If
             '        Dim dtIDA As New DataTable
             '        dtIDA.Columns.Add("Path", GetType(System.String))
             '        dtIDA.Columns.Add("Name")
@@ -2540,11 +2690,14 @@ Public Class tvshowcollection
 
             Dim numtoaddfromconf As Integer = 5
             numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
+            Console.Out.WriteLine(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
             ''old method, checks date on zip file, it's done again later, might as well do it now before the precache starts for new items
-            If File.GetLastWriteTime(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip").AddDays(numtoaddfromconf) < Date.Now Then
-                If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
-                If Not selectedshow = "" Then wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + selectedshow + "/all/" + curlang + ".zip", "everything", True, selectedshow)
-                decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
+            If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then
+                If File.GetLastWriteTime(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip").AddDays(numtoaddfromconf) < Date.Now Then
+                    If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
+                    If Not selectedshow = "" Then wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + selectedshow + "/all/" + curlang + ".zip", "everything", True, selectedshow)
+                    decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
+                End If
             End If
 
             'changed back - will now update on precache
@@ -2587,6 +2740,7 @@ Public Class tvshowcollection
             '--------------------------------------Section Start----------------------------------------
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             'read in banners.xml and then process it
+            Console.Out.WriteLine("Starting banner processing")
             Dim tbanners As New Banners
             Try
                 tbanners.readBannerXML(rconf.tvdbcachefolder + selectedshow + "\banners.xml", tbanners)
@@ -2605,7 +2759,7 @@ Public Class tvshowcollection
             Dim seriescounter As Integer = 0
             'check for folders
             'rconf.tv_usewgetforimages = False
-
+            Console.Out.WriteLine("Image processing running")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart\original") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart\original")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\graphical") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\graphical")
@@ -2628,12 +2782,12 @@ Public Class tvshowcollection
                     Select Case tmbanner.BannerType.ToLower
                         Case "fanart"
                             If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
-                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvfanart(tmbanner, selectedshow, switchpath)
+                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvfanart(tmbanner, selectedshow, switchpath, curarray)
                             End If
                             fanartcounter += 1
                         Case "poster"
                             If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
-                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvposters(tmbanner, selectedshow, switchpath)
+                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvposters(tmbanner, selectedshow, switchpath, curarray)
                             End If
 
                             postercounter += 1
@@ -2659,8 +2813,8 @@ Public Class tvshowcollection
 
 
                             If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
-                                If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath, curarray)
+                                If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseasonbanners(tmbanner, selectedshow, switchpath, curarray)
                                 'check series length
                                 Dim vSeasonLen As Integer = tmbanner.Season.Length
                                 Dim vSeasonPreText As String = ""
@@ -2676,13 +2830,14 @@ Public Class tvshowcollection
 
                         Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
                             If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
-                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseriesbanners(tmbanner, selectedshow, switchpath)
+                                If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then mgettvseriesbanners(tmbanner, selectedshow, switchpath, curarray)
                             End If
                             seriescounter += 1
                     End Select
                 End If
                 'End If
             Next
+            Console.Out.WriteLine("BANNERS FANART POSTERS STARTING ") ' & selectedshow)
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             '--------------------------------------Section END------------------------------------------
 
@@ -2714,17 +2869,20 @@ Public Class tvshowcollection
                 If rconf.tv_episode_download_boolean Then
                     For Each curep As tvdblangEpisode In newtvdbData.Episodes
                         Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
+                        Dim parentdir As String = getparentdirectory(rconf.tvdbcachefolder + selectedshow + "\" + switchpath)
+                        If Not Directory.Exists(parentdir) Then Directory.CreateDirectory(parentdir)
                         If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then
                             mgettvepisodeimages(curep, selectedshow, switchpath)
                         End If
                     Next
                 End If
-                maincollection.tsbtvPreCacheMediaIconsdata(xbmctvshow.Title)
+                'maincollection.tsbtvPreCacheMediaIconsdata(xbmctvshow.Title)
             Catch ex As Exception
                 Debug.Print(ex.ToString)
             End Try
             showcount += 1
         End While
+        Console.Out.WriteLine("done")
         'maincollection.lblPbar.Text = "Download Processing Completed"
         'maincollection.Refresh()
         'maincollection.lblPbar.Visible = False
@@ -2735,6 +2893,7 @@ Public Class tvshowcollection
 
 
     End Sub
+
     Public Sub precacheTvShows(Optional ByVal debugon As Boolean = False)
         'ssprecaching.Show()
         rconf = rconf.getconfig("config", True)
@@ -3074,6 +3233,8 @@ Public Class tvshowcollection
                 If rconf.tv_episode_download_boolean Then
                     For Each curep As tvdblangEpisode In newtvdbData.Episodes
                         Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
+                        Dim parentdir As String = getparentdirectory(rconf.tvdbcachefolder + selectedshow + "\" + switchpath)
+                        If Not Directory.Exists(parentdir) Then Directory.CreateDirectory(parentdir)
                         If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then
                             mgettvepisodeimages(curep, selectedshow, switchpath)
                         End If
@@ -3263,9 +3424,11 @@ Public Class tvshowcollection
         If wait Then pro1.WaitForExit()
     End Sub
     Private Sub wgetTVEpisodeImage(ByVal url As String, ByVal destinationpathandname As String, ByVal wait As Boolean)
-        dlgDownloadingFile.downloadertxtFileName.Text = url 'curmirror + "/banners/" + tmbanner.BannerPath
-        dlgDownloadingFile.whereToSave = destinationpathandname 'rconf.tvdbcachefolder + selectedshow + "\" + switchpath
-        dlgDownloadingFile.ShowDialog()
+        'dlgDownloadingFile.downloadertxtFileName.Text = url 'curmirror + "/banners/" + tmbanner.BannerPath
+        'dlgDownloadingFile.whereToSave = destinationpathandname 'rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+        'dlgDownloadingFile.ShowDialog()
+        'first 3 lines are off since the path in the xml changed . rev 2808 change 
+
         'Dim binfilelocal As String = rconf.wgetfolder + "wget.exe"
         'Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
         'pro1.StartInfo.FileName = binfilelocal
@@ -3405,7 +3568,7 @@ Public Class tvshowcollection
         Return response
     End Function
 #Region "Multi-get functions - used for precaching data only"
-    Private Sub mgettvfanart(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
+    Private Sub mgettvfanart(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
 
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
@@ -3413,6 +3576,9 @@ Public Class tvshowcollection
             Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+            If Not specificarraylist Is Nothing Then
+                specificarraylist.Add(dlobj)
+            End If
             maincollection.currenttvshowdownloadlist.Add(dlobj)
             'dlgDownloadingFile.nomultidownload = False
             'dlgDownloadingFile.ShowDialog()
@@ -3438,13 +3604,17 @@ Public Class tvshowcollection
             End Try
         End If
     End Sub
-    Private Sub mgettvposters(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
+    Private Sub mgettvposters(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
             'maincollection.lblCurItem.Visible = True
             Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+            If Not specificarraylist Is Nothing Then
+                specificarraylist.Add(dlobj)
+            End If
+
             maincollection.currenttvshowdownloadlist.Add(dlobj)
             'dlgDownloadingFile.nomultidownload = False
             'dlgDownloadingFile.ShowDialog()
@@ -3470,12 +3640,16 @@ Public Class tvshowcollection
             End Try
         End If
     End Sub
-    Private Sub mgettvseasonbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
+    Private Sub mgettvseasonbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
             Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+
+            If Not specificarraylist Is Nothing Then
+                specificarraylist.Add(dlobj)
+            End If
             maincollection.currenttvshowdownloadlist.Add(dlobj)
 
             'dlgDownloadingFile.downloadertxtFileName.Text = curmirror + "/banners/" + tmbanner.BannerPath
@@ -3503,12 +3677,15 @@ Public Class tvshowcollection
             End Try
         End If
     End Sub
-    Private Sub mgettvseriesbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String)
+    Private Sub mgettvseriesbanners(ByRef tmbanner As BannersBanner, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
         If rconf.tv_usewgetforimages Then
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmbanner.BannerPath
             Dim dlobj As New miplibfc.mip.dlobject
             dlobj.URL = curmirror + "/banners/" + tmbanner.BannerPath
             dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+            If Not specificarraylist Is Nothing Then
+                specificarraylist.Add(dlobj)
+            End If
             maincollection.currenttvshowdownloadlist.Add(dlobj)
 
 
@@ -3538,12 +3715,16 @@ Public Class tvshowcollection
         End If
     End Sub
     'mgettvepisodeimages
-    Private Sub mgettvepisodeimages(ByRef tmepisode As tvdblangEpisode, ByRef selectedshow As String, ByRef switchpath As String)
-
+    Private Sub mgettvepisodeimages(ByRef tmepisode As tvdblangEpisode, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
+        Dim locmirror As String = "http://images.thetvdb.com.nyud.net:8080"
         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmepisode.Filename
         Dim dlobj As New miplibfc.mip.dlobject
-        dlobj.URL = curmirror + "/banners/" + tmepisode.Filename
+        dlobj.URL = locmirror + "/banners/" + tmepisode.Filename
         dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+
+        If Not specificarraylist Is Nothing Then
+            specificarraylist.Add(dlobj)
+        End If
         maincollection.currenttvshowdownloadlist.Add(dlobj)
 
         '        dlgDownloadingFile.downloadertxtFileName.Text = curmirror + "/banners/" + tmepisode.Filename

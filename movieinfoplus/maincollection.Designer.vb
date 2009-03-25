@@ -38,834 +38,6 @@ Me.tp1 = New Dotnetrix.Controls.TabPageEX
 Me.tcWide = New Dotnetrix.Controls.TabControlEX
 Me.tpWRSG = New Dotnetrix.Controls.TabPageEX
 Me.kpRSGBG = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.tpWNS = New Dotnetrix.Controls.TabPageEX
-Me.kpWNSBackground = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.tpWRS = New Dotnetrix.Controls.TabPageEX
-Me.kpRSBackground = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.tpWRSS = New Dotnetrix.Controls.TabPageEX
-Me.lbldebug = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tp5 = New Dotnetrix.Controls.TabPageEX
-Me.tp6 = New Dotnetrix.Controls.TabPageEX
-Me.kpBoxShots = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.tp4 = New Dotnetrix.Controls.TabPageEX
-Me.tp3 = New Dotnetrix.Controls.TabPageEX
-Me.btnGetMovieInfofromvideofile = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.kbtnOverlayImages = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.gbDisplay = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.btnaddyourownicon = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.btnOpenIMDBImporter = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.klblmovietbn = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.btnaddyourownfanart = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.klblmoviefolderjpg = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.btnNext = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.Button5 = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.Button3 = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.btnPrev = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.btntester = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.Button2 = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tp3rtbimdbdata = New System.Windows.Forms.RichTextBox
-Me.btnCancelPC = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tp7b = New Dotnetrix.Controls.TabPageEX
-Me.kgTVEpisodesGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lbEpisodes = New System.Windows.Forms.ListBox
-Me.kgTVSeasonPickerGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lbSeasonPicker = New System.Windows.Forms.ListBox
-Me.tbW2 = New Dotnetrix.Controls.TabPageEX
-Me.lblCurMovieFolder = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.pbTick = New System.Windows.Forms.Timer(Me.components)
-Me.tcMain = New Dotnetrix.Controls.TabControlEX
-Me.tpcm = New Dotnetrix.Controls.TabPageEX
-Me.khgMoviesMi = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.ButtonSpecHeaderGroup6 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.flpMoviesMI = New System.Windows.Forms.FlowLayoutPanel
-Me.kgCurMovieImageFolderjpg = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgCurMovieImagetbn = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kpMovieData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.khbPlotGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.buttonSpecHeaderGroup1 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.kpMovieMediaInfoPanel = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.pbarLoadingMovieMediaInfo = New System.Windows.Forms.ProgressBar
-Me.lblpbarLoadingMovieMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.krtbMovieVideoInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.khgMovieNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.bshMovieSaveChanges = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.bshMovieReloadIMDBInformation = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.header1ButtonSpec = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.lblMovieInfoMpaa = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoYear = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoTrailerURL = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoGenre = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoDirector = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoVotes = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoTop250 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoRuntime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoImdbID = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoAltTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblMovieInfoEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kbtnMoviesChangeIMDBid = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.llIMDBIDStudio = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.tbEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.khbMoviePlotBtm = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.ButtonSpecHeaderGroup5 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.rtbPlot = New System.Windows.Forms.RichTextBox
-Me.lblPlotOutline = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.rtbPlotOutline = New System.Windows.Forms.RichTextBox
-Me.tbStudio = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.rtbTagline = New System.Windows.Forms.RichTextBox
-Me.tbOriginalTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbVotes = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbTop250 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbMpaa = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbyear = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbIMDBID = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbRuntime = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbGenre = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbDirector = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.Label18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.llFDFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.tbMovieNameE = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbCredits = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.lblCredits = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbMovieName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tsCurrentMovieTools = New System.Windows.Forms.ToolStrip
-Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator16 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator18 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator17 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
-Me.gbThanks = New System.Windows.Forms.GroupBox
-Me.kllFreecovers = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.kllxbmc = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.kllMediaIcons = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.kllTheTVDB = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.kllimpawards = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.kllTheMovieDB = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.tptv = New Dotnetrix.Controls.TabPageEX
-Me.TVCurrentTVRightMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.ksctvtoolbar = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.klblTvShowName = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kcstvMainRightBottom = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.tvMainRightMiddle = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.btnCreateTestFromLogfile = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.khgShowsMI = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.ButtonSpecHeaderGroup7 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.flpTVShowMI = New System.Windows.Forms.FlowLayoutPanel
-Me.kgTvShowsCurImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.tsCurrentTVShowTools = New System.Windows.Forms.ToolStrip
-Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
-Me.tsbtvPreCache = New System.Windows.Forms.ToolStripButton
-Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
-Me.tsbAddTVFanart = New System.Windows.Forms.ToolStripButton
-Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
-Me.tsbtvAddImage = New System.Windows.Forms.ToolStripButton
-Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
-Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.ButtonSpecHeaderGroup2 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.khgEpisodeNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.bshgReloadEPData = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.bshgSaveEpisodeData = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.ButtonSpecHeaderGroup3 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.lblktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.ktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.zpanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.khgEpisodePlotDetails = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.ButtonSpecHeaderGroup4 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.krtbep_Overview = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.khbTVShowEPMediaGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
-Me.buttonSpecHeaderGroupTVShow = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.kpTvEpMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.pbarLoadingTVShowMediaInfo = New System.Windows.Forms.ProgressBar
-Me.lblpbarLoadingTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.krtbTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.ktbep_aired = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.ktbep_epseason = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.ktbep_epName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.klblep_epseasonlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblEp_epnumlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.ktbEp_epnum = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.klblep_airedlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblep_epNamelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.ktbep_credits = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.klblep_creditslbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.ktbep_director = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.klblep_directorlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgpbSeasonAllposter = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.klblAllSeasonPosterStatic = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgRatingStars = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.ksctvMainRightBottomPortion = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kpTVShowOverview = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.kscTVOverviewLocBottomLeft = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.krtbTvShowOverview = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.kpTVShowInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.klblInformationlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klFirstAiredlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvGenre = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblAirDaylbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvNetwork = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblAirTimelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvRunTime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblRunTimelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvAirTime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblNetworklbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvAirDay = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblGenrelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klbltvFirstAired = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpMusic = New Dotnetrix.Controls.TabPageEX
-Me.kgMusic_SongImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lblSongImage = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgMusicMI = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.flpMusicMI = New System.Windows.Forms.FlowLayoutPanel
-Me.kgArtistArtImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lblArtistArtImage = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgMusicSongData = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lblCurSongExtV = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.rtbMusic_SongData = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-Me.lblMusic_SongTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tstripMusicToolbar = New System.Windows.Forms.ToolStrip
-Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator
-Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
-Me.tpFCDN = New Dotnetrix.Controls.TabPageEX
-Me.tcFCDN = New Dotnetrix.Controls.TabControlEX
-Me.tpFCDNFront = New Dotnetrix.Controls.TabPageEX
-Me.lblFreeCovers = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgpbFront10 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront9 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront8 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront7 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront6 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront5 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront4 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront3 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront2 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgpbFront1 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.tpFCDNBack = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNcd1 = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNcd2 = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNcd3 = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNcd4 = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNinsert = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFCDNinlay = New Dotnetrix.Controls.TabPageEX
-Me.KryptonLabel8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpmipf = New Dotnetrix.Controls.TabPageEX
-Me.tpTallImages = New Dotnetrix.Controls.TabPageEX
-Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.lpbti72 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti71 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti70 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti69 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti68 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti67 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti66 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti65 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti64 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti63 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti62 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti61 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti60 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti59 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti58 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti57 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti56 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti55 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti54 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti53 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti52 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti51 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti50 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti49 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti48 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti47 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti46 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti45 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti44 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti43 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti42 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti41 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti40 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti39 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti38 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti37 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti36 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti35 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti34 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti33 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti32 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti31 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti30 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti29 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti28 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti27 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti26 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti25 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lpbti1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpFanart = New Dotnetrix.Controls.TabPageEX
-Me.kpFanartSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.klblfatmdb36 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb35 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb34 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb33 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb32 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb31 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb30 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb29 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb28 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb27 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb26 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb25 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblfatmdb1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblFanartProvider = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpmmn = New Dotnetrix.Controls.TabPageEX
-Me.btnUpdatePosters = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.Label2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lbsimnames = New System.Windows.Forms.ListBox
-Me.Button4 = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.cbChangeFolderName = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-Me.btnRetryName = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tbnewname = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.Button7 = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tpPosters = New Dotnetrix.Controls.TabPageEX
-Me.tcPosters = New Dotnetrix.Controls.TabControlEX
-Me.tpTVWideIcons = New Dotnetrix.Controls.TabPageEX
-Me.kptvwide = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.tpIMPPosters = New Dotnetrix.Controls.TabPageEX
-Me.kpIMPPosterSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.lblImpaposters = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterIMP1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tpTMDBPosters = New Dotnetrix.Controls.TabPageEX
-Me.kpTMDBPostersSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.klblPostersByTMDB = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klblposterTMDB1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.TabPageEX1 = New Dotnetrix.Controls.TabPageEX
-Me.tbnone = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.curtvshowiconsettinglbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgMusicLeftNav = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kscMusicMainSC = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscMusicMainTopFilterGroup = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kgmusicFilters = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.krbmusicfilterNoBackground = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.krbmusicfilterAll = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.krbmusicfilterNoArtist = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.lbmusicArtist = New System.Windows.Forms.ListBox
-Me.kscMusicLeftNavBottomMainSCAlbumSongs = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.lbmusicAlbums = New System.Windows.Forms.ListBox
-Me.lbmusicSongs = New System.Windows.Forms.ListBox
-Me.kpalette = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.lblimdb = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kgFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.tbFDMovieFile2 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbFDMovieFile1 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.tbFDTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.LinkLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.lblFDOtherFiles = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.btnValidate = New ComponentFactory.Krypton.Toolkit.KryptonButton
-Me.tbFDTBNFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.lblFDNFOFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDIconfile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.lblFDTBNFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDNFOFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.lblFDIconfile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.tbFDFanartFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
-Me.lblFDMovieFile12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDFanartFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDTrailer2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.header2Border = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.header1Border = New ComponentFactory.Krypton.Toolkit.KryptonPanel
-Me.lblFDTrailer = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDMovieFile1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDFanartFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDNFOFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDTBNFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblFDIconfile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.opfd2 = New System.Windows.Forms.OpenFileDialog
-Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-Me.bwPreCache = New System.ComponentModel.BackgroundWorker
-Me.rbMDNFOProblems = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbMDNoFanart = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbMDNoTBN = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbMDNoIcon = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbMDwithIssues = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbMDAll = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.kgMyMovieInfoPicker = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kgMyMovieList = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lbMyMovies = New System.Windows.Forms.ListBox
-Me.kgMovieOrTVShow = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.klNumMovies = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.klNumMusic = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.krbCMMusic = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.klNumTvShows = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.krbCMTV = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.krpCMMovie = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.gbAppMode = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.rbmonitor = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.rbread = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.cbAllowIconSelection = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-Me.rbem = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
-Me.klblSelectAppMode = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.bwFolderData = New System.ComponentModel.BackgroundWorker
-Me.kManager = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
-Me.kPaletteBlueSkulls = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kPalettePink = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kPaletteBling = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kpaletteSilver = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.tcRootBackup = New Dotnetrix.Controls.TabControlEX
-Me.nouse = New Dotnetrix.Controls.TabPageEX
-Me.kgMoviesNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kscLeftMovieNavMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kgTVNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.kscTVMainNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kgTvShowPickerArea = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lbTvShowPicker = New System.Windows.Forms.ListBox
-Me.kscTVMainLeftBottomNav = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscEpisodesEEM = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kgMissingEpisodes = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.lbEpisodesMissing = New System.Windows.Forms.ListBox
-Me.bwFolderDataTDM = New System.ComponentModel.BackgroundWorker
-Me.kgQCIcons = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.klblMovieFolderContent = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblPbar = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.lblPCWorking = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.prgThread = New System.Windows.Forms.ProgressBar
-Me.pbar1 = New System.Windows.Forms.ProgressBar
-Me.lblCurItem = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kscMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscLeftFull = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscLeftBottomPart = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscLeftNavMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscLeftNavBarSC2 = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscFullRight = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscTopRightNavBarMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscTopRightSelectionArea = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-Me.kscTopRightNavRightSideTop = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscRightBottomPart = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kscBottom2PartTVorMovie = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
-Me.kgTvShowCurrentLocationIconSettings = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-Me.llOpenTVShowLocation = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
-Me.curtvshowlocationlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-Me.kpaletteBlue = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.bwDisplayMovieData = New System.ComponentModel.BackgroundWorker
-Me.bwUpdatePosters = New System.ComponentModel.BackgroundWorker
-Me.bwGetMovieMediaInfo = New System.ComponentModel.BackgroundWorker
-Me.bwDownloader = New System.ComponentModel.BackgroundWorker
-Me.bwLoadMusic = New System.ComponentModel.BackgroundWorker
-Me.bwGetTVEPMediaInfo = New System.ComponentModel.BackgroundWorker
-Me.kPaletteGreen = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
-Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
-Me.pbFDFolderJpg = New System.Windows.Forms.PictureBox
-Me.pbFDNFO = New System.Windows.Forms.PictureBox
-Me.pbFDMovieFile1 = New System.Windows.Forms.PictureBox
-Me.pbFDTrailer = New System.Windows.Forms.PictureBox
-Me.pbFDTBN = New System.Windows.Forms.PictureBox
-Me.pbFDFanart = New System.Windows.Forms.PictureBox
-Me.tsbMainDonate = New System.Windows.Forms.ToolStripButton
-Me.pbCurIconUsed2 = New System.Windows.Forms.PictureBox
-Me.pbCurrentIconUsedNT = New System.Windows.Forms.PictureBox
-Me.pbCurTBNUsed2 = New System.Windows.Forms.PictureBox
-Me.pbCurTBNUsed = New System.Windows.Forms.PictureBox
-Me.pbFrameTBN = New System.Windows.Forms.PictureBox
-Me.bshgRefreshMovieMediaInfo = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.pbFrame = New System.Windows.Forms.PictureBox
-Me.pbCurIconUsed = New System.Windows.Forms.PictureBox
-Me.tsbMoviesLoadMovies = New System.Windows.Forms.ToolStripButton
-Me.tsbMoviesPreCache = New System.Windows.Forms.ToolStripButton
-Me.tsbMoviesAutoPilot = New System.Windows.Forms.ToolStripButton
-Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
-Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
-Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton
-Me.Tagdivx = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.Tagxvid = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.Tagdvd = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.DVDSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.DVDSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.SDTag = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag720p = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag1080i = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag1080p = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSmono = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.TagBluRay = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySmono = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySStereo = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDD51 = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDD71 = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDTS = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDTSES = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySHDAudio = New System.Windows.Forms.ToolStripMenuItem
-Me.SetupTagIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsbMoviesOpenCurMovieFolder = New System.Windows.Forms.ToolStripButton
-Me.tsbMoviesOpenImdbLink = New System.Windows.Forms.ToolStripButton
-Me.tsbMoviesOpenTMDBLink = New System.Windows.Forms.ToolStripButton
-Me.tsbtnMovieSettings = New System.Windows.Forms.ToolStripDropDownButton
-Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton
-Me.tsmimovie_ResizeFanartImage = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_r960x540 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_r1280x720 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_r1920x1080 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_CompressFanartImage = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_q60 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_q90 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimovie_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
-Me.fanartpb1 = New System.Windows.Forms.PictureBox
-Me.pbTVSeasonPoster = New System.Windows.Forms.PictureBox
-Me.pbTVPoster = New System.Windows.Forms.PictureBox
-Me.pbTVWide = New System.Windows.Forms.PictureBox
-Me.tsbShowsLoadShows = New System.Windows.Forms.ToolStripButton
-Me.tsbShowsUpdateShows = New System.Windows.Forms.ToolStripButton
-Me.tsddbtvshowstag = New System.Windows.Forms.ToolStripDropDownButton
-Me.Tagdivxtv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.divxSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.Tagxvidtv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.xvidSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.Tagdvdtv = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.dvdSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.DVDSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.DVDSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDTagtv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.SDSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag720ptv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd720pSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag1080itv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080iSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.Tag1080ptv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.hd1080pSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.TagBluRaytv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySmonotv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySStereotv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDD51tv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDD71tv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDTStv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySDTSEStv = New System.Windows.Forms.ToolStripMenuItem
-Me.BluRaySHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
-Me.SetupTagIconsToolStripMenuItemtv = New System.Windows.Forms.ToolStripMenuItem
-Me.tsddTVShows_OptionsAndSettings = New System.Windows.Forms.ToolStripDropDownButton
-Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmiTVDebug = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsbShowsOpenTVDBPage = New System.Windows.Forms.ToolStripButton
-Me.tsbShowsOpenFolder = New System.Windows.Forms.ToolStripButton
-Me.pbep_episodeimage = New System.Windows.Forms.PictureBox
-Me.bshgShowsEpisodeMediaRefresh = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
-Me.pbSeasonAllposter = New System.Windows.Forms.PictureBox
-Me.pbTVFanart = New System.Windows.Forms.PictureBox
-Me.pbTVStar10 = New System.Windows.Forms.PictureBox
-Me.pbTVStar3 = New System.Windows.Forms.PictureBox
-Me.pbTVStar6 = New System.Windows.Forms.PictureBox
-Me.pbTVStar1 = New System.Windows.Forms.PictureBox
-Me.pbTVStar9 = New System.Windows.Forms.PictureBox
-Me.pbTVStar7 = New System.Windows.Forms.PictureBox
-Me.pbTVStar8 = New System.Windows.Forms.PictureBox
-Me.pbTVStar4 = New System.Windows.Forms.PictureBox
-Me.pbTVStar5 = New System.Windows.Forms.PictureBox
-Me.pbTVStar2 = New System.Windows.Forms.PictureBox
-Me.pbMusic_CurSongImage = New System.Windows.Forms.PictureBox
-Me.pbCurAlbumArt = New System.Windows.Forms.PictureBox
-Me.pbMusic_CurSongExtPic = New System.Windows.Forms.PictureBox
-Me.tsbLoadMyMusic = New System.Windows.Forms.ToolStripButton
-Me.tsbAddMusicFanart = New System.Windows.Forms.ToolStripButton
-Me.tsbAddmyOwnAlbumart = New System.Windows.Forms.ToolStripButton
-Me.tsddbInjectImage = New System.Windows.Forms.ToolStripDropDownButton
-Me.tsbInjectIntoCurSong = New System.Windows.Forms.ToolStripMenuItem
-Me.tsbInjectIntoCurAlbum = New System.Windows.Forms.ToolStripMenuItem
-Me.tsbInjectIntoCurArtist = New System.Windows.Forms.ToolStripMenuItem
-Me.AutomaticOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tso_auto_addtoablumonnewart = New System.Windows.Forms.ToolStripMenuItem
-Me.movtbar_ddbut_optionsAndSettings = New System.Windows.Forms.ToolStripDropDownButton
-Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsddbTools = New System.Windows.Forms.ToolStripDropDownButton
-Me.tsbMusicSortMyMusicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsbMusicModifyAlbumDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.ResizeFanartImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_960x540 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_1280x720 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_1920x1080 = New System.Windows.Forms.ToolStripMenuItem
-Me.CompressBackgroundImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_q60 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmishows_fanart_q90 = New System.Windows.Forms.ToolStripMenuItem
-Me.tsmimusic_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
-Me.pbMusicCurFanart = New System.Windows.Forms.PictureBox
-Me.pbFront10 = New System.Windows.Forms.PictureBox
-Me.pbFront9 = New System.Windows.Forms.PictureBox
-Me.pbFront8 = New System.Windows.Forms.PictureBox
-Me.pbFront7 = New System.Windows.Forms.PictureBox
-Me.pbFront6 = New System.Windows.Forms.PictureBox
-Me.pbFront5 = New System.Windows.Forms.PictureBox
-Me.pbFront4 = New System.Windows.Forms.PictureBox
-Me.pbFront3 = New System.Windows.Forms.PictureBox
-Me.pbFront2 = New System.Windows.Forms.PictureBox
-Me.pbFront1 = New System.Windows.Forms.PictureBox
-Me.pbBack9 = New System.Windows.Forms.PictureBox
-Me.pbBack8 = New System.Windows.Forms.PictureBox
-Me.pbBack7 = New System.Windows.Forms.PictureBox
-Me.pbBack6 = New System.Windows.Forms.PictureBox
-Me.pbBack5 = New System.Windows.Forms.PictureBox
-Me.pbBack4 = New System.Windows.Forms.PictureBox
-Me.pbBack3 = New System.Windows.Forms.PictureBox
-Me.pbBack2 = New System.Windows.Forms.PictureBox
-Me.pbBack1 = New System.Windows.Forms.PictureBox
-Me.pbcdi9 = New System.Windows.Forms.PictureBox
-Me.pbcdi8 = New System.Windows.Forms.PictureBox
-Me.pbcdi7 = New System.Windows.Forms.PictureBox
-Me.pbcdi6 = New System.Windows.Forms.PictureBox
-Me.pbcdi5 = New System.Windows.Forms.PictureBox
-Me.pbcdi4 = New System.Windows.Forms.PictureBox
-Me.pbcdi3 = New System.Windows.Forms.PictureBox
-Me.pbcdi2 = New System.Windows.Forms.PictureBox
-Me.pbcdi1 = New System.Windows.Forms.PictureBox
-Me.pbcd2i9 = New System.Windows.Forms.PictureBox
-Me.pbcd2i8 = New System.Windows.Forms.PictureBox
-Me.pbcd2i7 = New System.Windows.Forms.PictureBox
-Me.pbcd2i6 = New System.Windows.Forms.PictureBox
-Me.pbcd2i5 = New System.Windows.Forms.PictureBox
-Me.pbcd2i4 = New System.Windows.Forms.PictureBox
-Me.pbcd2i3 = New System.Windows.Forms.PictureBox
-Me.pbcd2i2 = New System.Windows.Forms.PictureBox
-Me.pbcd2i1 = New System.Windows.Forms.PictureBox
-Me.pbcd3i9 = New System.Windows.Forms.PictureBox
-Me.pbcd3i8 = New System.Windows.Forms.PictureBox
-Me.pbcd3i7 = New System.Windows.Forms.PictureBox
-Me.pbcd3i6 = New System.Windows.Forms.PictureBox
-Me.pbcd3i5 = New System.Windows.Forms.PictureBox
-Me.pbcd3i4 = New System.Windows.Forms.PictureBox
-Me.pbcd3i3 = New System.Windows.Forms.PictureBox
-Me.pbcd3i2 = New System.Windows.Forms.PictureBox
-Me.pbcd3i1 = New System.Windows.Forms.PictureBox
-Me.pbcd4i9 = New System.Windows.Forms.PictureBox
-Me.pbcd4i8 = New System.Windows.Forms.PictureBox
-Me.pbcd4i7 = New System.Windows.Forms.PictureBox
-Me.pbcd4i6 = New System.Windows.Forms.PictureBox
-Me.pbcd4i5 = New System.Windows.Forms.PictureBox
-Me.pbcd4i4 = New System.Windows.Forms.PictureBox
-Me.pbcd4i3 = New System.Windows.Forms.PictureBox
-Me.pbcd4i2 = New System.Windows.Forms.PictureBox
-Me.pbcd4i1 = New System.Windows.Forms.PictureBox
-Me.pbInsert9 = New System.Windows.Forms.PictureBox
-Me.pbInsert8 = New System.Windows.Forms.PictureBox
-Me.pbInsert7 = New System.Windows.Forms.PictureBox
-Me.pbInsert6 = New System.Windows.Forms.PictureBox
-Me.pbInsert5 = New System.Windows.Forms.PictureBox
-Me.pbInsert4 = New System.Windows.Forms.PictureBox
-Me.pbInsert3 = New System.Windows.Forms.PictureBox
-Me.pbInsert2 = New System.Windows.Forms.PictureBox
-Me.pbInsert1 = New System.Windows.Forms.PictureBox
-Me.pbInlay9 = New System.Windows.Forms.PictureBox
-Me.pbInlay8 = New System.Windows.Forms.PictureBox
-Me.pbInlay7 = New System.Windows.Forms.PictureBox
-Me.pbInlay6 = New System.Windows.Forms.PictureBox
-Me.pbInlay5 = New System.Windows.Forms.PictureBox
-Me.pbInlay4 = New System.Windows.Forms.PictureBox
-Me.pbInlay3 = New System.Windows.Forms.PictureBox
-Me.pbInlay2 = New System.Windows.Forms.PictureBox
-Me.pbInlay1 = New System.Windows.Forms.PictureBox
 Me.pb36 = New System.Windows.Forms.PictureBox
 Me.pb35 = New System.Windows.Forms.PictureBox
 Me.pb9 = New System.Windows.Forms.PictureBox
@@ -902,6 +74,8 @@ Me.pb17 = New System.Windows.Forms.PictureBox
 Me.pb19 = New System.Windows.Forms.PictureBox
 Me.pb13 = New System.Windows.Forms.PictureBox
 Me.pb15 = New System.Windows.Forms.PictureBox
+Me.tpWNS = New Dotnetrix.Controls.TabPageEX
+Me.kpWNSBackground = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.pbwns1 = New System.Windows.Forms.PictureBox
 Me.pbwns2 = New System.Windows.Forms.PictureBox
 Me.pbwns3 = New System.Windows.Forms.PictureBox
@@ -938,6 +112,8 @@ Me.pbwns33 = New System.Windows.Forms.PictureBox
 Me.pbwns34 = New System.Windows.Forms.PictureBox
 Me.pbwns35 = New System.Windows.Forms.PictureBox
 Me.pbwns36 = New System.Windows.Forms.PictureBox
+Me.tpWRS = New Dotnetrix.Controls.TabPageEX
+Me.kpRSBackground = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.pbwrs1 = New System.Windows.Forms.PictureBox
 Me.pbwrs2 = New System.Windows.Forms.PictureBox
 Me.pbwrs3 = New System.Windows.Forms.PictureBox
@@ -974,6 +150,7 @@ Me.pbwrs33 = New System.Windows.Forms.PictureBox
 Me.pbwrs34 = New System.Windows.Forms.PictureBox
 Me.pbwrs35 = New System.Windows.Forms.PictureBox
 Me.pbwrs36 = New System.Windows.Forms.PictureBox
+Me.tpWRSS = New Dotnetrix.Controls.TabPageEX
 Me.pbwrsscan1 = New System.Windows.Forms.PictureBox
 Me.pbwrsscan2 = New System.Windows.Forms.PictureBox
 Me.pbwrsscan3 = New System.Windows.Forms.PictureBox
@@ -1010,6 +187,8 @@ Me.pbwrsscan33 = New System.Windows.Forms.PictureBox
 Me.pbwrsscan34 = New System.Windows.Forms.PictureBox
 Me.pbwrsscan35 = New System.Windows.Forms.PictureBox
 Me.pbwrsscan36 = New System.Windows.Forms.PictureBox
+Me.lbldebug = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tp5 = New Dotnetrix.Controls.TabPageEX
 Me.spb24 = New System.Windows.Forms.PictureBox
 Me.spb23 = New System.Windows.Forms.PictureBox
 Me.spb22 = New System.Windows.Forms.PictureBox
@@ -1034,6 +213,8 @@ Me.spb4 = New System.Windows.Forms.PictureBox
 Me.spb3 = New System.Windows.Forms.PictureBox
 Me.spb2 = New System.Windows.Forms.PictureBox
 Me.spb1 = New System.Windows.Forms.PictureBox
+Me.tp6 = New Dotnetrix.Controls.TabPageEX
+Me.kpBoxShots = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.bspb91 = New System.Windows.Forms.PictureBox
 Me.bspb88 = New System.Windows.Forms.PictureBox
 Me.bspb92 = New System.Windows.Forms.PictureBox
@@ -1127,6 +308,7 @@ Me.bspb25 = New System.Windows.Forms.PictureBox
 Me.bspb31 = New System.Windows.Forms.PictureBox
 Me.bspb28 = New System.Windows.Forms.PictureBox
 Me.bspb27 = New System.Windows.Forms.PictureBox
+Me.tp4 = New Dotnetrix.Controls.TabPageEX
 Me.tpb12 = New System.Windows.Forms.PictureBox
 Me.tpb11 = New System.Windows.Forms.PictureBox
 Me.tpb10 = New System.Windows.Forms.PictureBox
@@ -1139,54 +321,640 @@ Me.tpb4 = New System.Windows.Forms.PictureBox
 Me.tpb3 = New System.Windows.Forms.PictureBox
 Me.tpb2 = New System.Windows.Forms.PictureBox
 Me.tpb1 = New System.Windows.Forms.PictureBox
+Me.tp3 = New Dotnetrix.Controls.TabPageEX
+Me.btnGetMovieInfofromvideofile = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.kbtnOverlayImages = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.gbDisplay = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.btnaddyourownicon = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.btnOpenIMDBImporter = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.klblmovietbn = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.btnaddyourownfanart = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.klblmoviefolderjpg = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.btnNext = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.Button5 = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.Button3 = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.btnPrev = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.btntester = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.Button2 = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.tp3rtbimdbdata = New System.Windows.Forms.RichTextBox
+Me.btnCancelPC = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.tp7b = New Dotnetrix.Controls.TabPageEX
+Me.kgTVEpisodesGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lbEpisodes = New System.Windows.Forms.ListBox
+Me.kgTVSeasonPickerGroup = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lbSeasonPicker = New System.Windows.Forms.ListBox
+Me.tbW2 = New Dotnetrix.Controls.TabPageEX
+Me.lblCurMovieFolder = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbTick = New System.Windows.Forms.Timer(Me.components)
+Me.tcMain = New Dotnetrix.Controls.TabControlEX
+Me.tpcm = New Dotnetrix.Controls.TabPageEX
+Me.khgMoviesMi = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.ButtonSpecHeaderGroup6 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.flpMoviesMI = New System.Windows.Forms.FlowLayoutPanel
+Me.kgCurMovieImageFolderjpg = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbCurIconUsed2 = New System.Windows.Forms.PictureBox
+Me.pbCurrentIconUsedNT = New System.Windows.Forms.PictureBox
+Me.kgCurMovieImagetbn = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbCurTBNUsed2 = New System.Windows.Forms.PictureBox
+Me.pbCurTBNUsed = New System.Windows.Forms.PictureBox
+Me.pbFrameTBN = New System.Windows.Forms.PictureBox
+Me.kpMovieData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.khbPlotGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshgRefreshMovieMediaInfo = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.buttonSpecHeaderGroup1 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.kpMovieMediaInfoPanel = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.pbarLoadingMovieMediaInfo = New System.Windows.Forms.ProgressBar
+Me.lblpbarLoadingMovieMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.krtbMovieVideoInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
+Me.khgMovieNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshMovieSaveChanges = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.bshMovieReloadIMDBInformation = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.header1ButtonSpec = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.lblMovieInfoMpaa = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoYear = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoTrailerURL = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoGenre = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoDirector = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoVotes = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoTop250 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoRuntime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoImdbID = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoAltTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblMovieInfoEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kbtnMoviesChangeIMDBid = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.llIMDBIDStudio = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.tbEditableTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.khbMoviePlotBtm = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.ButtonSpecHeaderGroup5 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.rtbPlot = New System.Windows.Forms.RichTextBox
+Me.lblPlotOutline = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.rtbPlotOutline = New System.Windows.Forms.RichTextBox
+Me.tbStudio = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.rtbTagline = New System.Windows.Forms.RichTextBox
+Me.tbOriginalTitle = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbVotes = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbTop250 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbMpaa = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbyear = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbIMDBID = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbRuntime = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbGenre = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbDirector = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.Label18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbFrame = New System.Windows.Forms.PictureBox
+Me.llFDFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.tbMovieNameE = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.pbCurIconUsed = New System.Windows.Forms.PictureBox
+Me.tbCredits = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.lblCredits = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tbMovieName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tsCurrentMovieTools = New System.Windows.Forms.ToolStrip
+Me.tsbMoviesLoadMovies = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator15 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbMoviesPreCache = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator16 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbMoviesAutoPilot = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator18 = New System.Windows.Forms.ToolStripSeparator
+Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator
+Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
+Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton
+Me.Tagdivx = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.Tagxvid = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.Tagdvd = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.DVDSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.DVDSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.SDTag = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag720p = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag1080i = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag1080p = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSmono = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.TagBluRay = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySmono = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySStereo = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDD51 = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDD71 = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDTS = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDTSES = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySHDAudio = New System.Windows.Forms.ToolStripMenuItem
+Me.SetupTagIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator17 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbMoviesOpenCurMovieFolder = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator14 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbMoviesOpenImdbLink = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbMoviesOpenTMDBLink = New System.Windows.Forms.ToolStripButton
+Me.tsbtnMovieSettings = New System.Windows.Forms.ToolStripDropDownButton
+Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton
+Me.tsmimovie_ResizeFanartImage = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_r960x540 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_r1280x720 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_r1920x1080 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_CompressFanartImage = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_q60 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_q90 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimovie_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
+Me.gbThanks = New System.Windows.Forms.GroupBox
+Me.kllFreecovers = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.kllxbmc = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.kllMediaIcons = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.kllTheTVDB = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.kllimpawards = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.kllTheMovieDB = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.fanartpb1 = New System.Windows.Forms.PictureBox
+Me.tptv = New Dotnetrix.Controls.TabPageEX
+Me.TVCurrentTVRightMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.ksctvtoolbar = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.klblTvShowName = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kcstvMainRightBottom = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.tvMainRightMiddle = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.btnCreateTestFromLogfile = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.khgShowsMI = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.ButtonSpecHeaderGroup7 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.flpTVShowMI = New System.Windows.Forms.FlowLayoutPanel
+Me.kgTvShowsCurImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbTVSeasonPoster = New System.Windows.Forms.PictureBox
+Me.pbTVPoster = New System.Windows.Forms.PictureBox
+Me.pbTVWide = New System.Windows.Forms.PictureBox
+Me.tsCurrentTVShowTools = New System.Windows.Forms.ToolStrip
+Me.tsbShowsLoadShows = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbShowsUpdateShows = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbtvPreCache = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbAddTVFanart = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbtvAddImage = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
+Me.tsddbtvshowstag = New System.Windows.Forms.ToolStripDropDownButton
+Me.Tagdivxtv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.divxSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.Tagxvidtv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.xvidSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.Tagdvdtv = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.dvdSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.DVDSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.DVDSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDTagtv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.SDSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag720ptv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd720pSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag1080itv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080iSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.Tag1080ptv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.hd1080pSHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.TagBluRaytv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySmonotv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySStereotv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDD51tv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDD71tv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDTStv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySDTSEStv = New System.Windows.Forms.ToolStripMenuItem
+Me.BluRaySHDAudiotv = New System.Windows.Forms.ToolStripMenuItem
+Me.SetupTagIconsToolStripMenuItemtv = New System.Windows.Forms.ToolStripMenuItem
+Me.tsddTVShows_OptionsAndSettings = New System.Windows.Forms.ToolStripDropDownButton
+Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmiTVDebug = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsbShowsOpenTVDBPage = New System.Windows.Forms.ToolStripButton
+Me.tsbShowsOpenFolder = New System.Windows.Forms.ToolStripButton
+Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.ButtonSpecHeaderGroup2 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.pbep_episodeimage = New System.Windows.Forms.PictureBox
+Me.khgEpisodeNameGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshgReloadEPData = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.bshgSaveEpisodeData = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.ButtonSpecHeaderGroup3 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.lblktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.ktbep_epRating = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.zpanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.khgEpisodePlotDetails = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.ButtonSpecHeaderGroup4 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.krtbep_Overview = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
+Me.khbTVShowEPMediaGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
+Me.bshgShowsEpisodeMediaRefresh = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.buttonSpecHeaderGroupTVShow = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.kpTvEpMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.pbarLoadingTVShowMediaInfo = New System.Windows.Forms.ProgressBar
+Me.lblpbarLoadingTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.krtbTVShowMediaInfo = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
+Me.ktbep_aired = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.ktbep_epseason = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.ktbep_epName = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.klblep_epseasonlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblEp_epnumlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.ktbEp_epnum = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.klblep_airedlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblep_epNamelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.ktbep_credits = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.klblep_creditslbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.ktbep_director = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.klblep_directorlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kgpbSeasonAllposter = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.klblAllSeasonPosterStatic = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbSeasonAllposter = New System.Windows.Forms.PictureBox
+Me.pbTVFanart = New System.Windows.Forms.PictureBox
+Me.kgRatingStars = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.pbTVStar10 = New System.Windows.Forms.PictureBox
+Me.pbTVStar3 = New System.Windows.Forms.PictureBox
+Me.pbTVStar6 = New System.Windows.Forms.PictureBox
+Me.pbTVStar1 = New System.Windows.Forms.PictureBox
+Me.pbTVStar9 = New System.Windows.Forms.PictureBox
+Me.pbTVStar7 = New System.Windows.Forms.PictureBox
+Me.pbTVStar8 = New System.Windows.Forms.PictureBox
+Me.pbTVStar4 = New System.Windows.Forms.PictureBox
+Me.pbTVStar5 = New System.Windows.Forms.PictureBox
+Me.pbTVStar2 = New System.Windows.Forms.PictureBox
+Me.ksctvMainRightBottomPortion = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kpTVShowOverview = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.kscTVOverviewLocBottomLeft = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.krtbTvShowOverview = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
+Me.kpTVShowInfo = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.klblInformationlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klFirstAiredlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvGenre = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblAirDaylbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvNetwork = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblAirTimelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvRunTime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblRunTimelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvAirTime = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblNetworklbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvAirDay = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblGenrelbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klbltvFirstAired = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tpMusic = New Dotnetrix.Controls.TabPageEX
+Me.kgMusic_SongImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lblSongImage = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbMusic_CurSongImage = New System.Windows.Forms.PictureBox
+Me.kgMusicMI = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.flpMusicMI = New System.Windows.Forms.FlowLayoutPanel
+Me.kgArtistArtImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lblArtistArtImage = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbCurAlbumArt = New System.Windows.Forms.PictureBox
+Me.kgMusicSongData = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lblCurSongExtV = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbMusic_CurSongExtPic = New System.Windows.Forms.PictureBox
+Me.rtbMusic_SongData = New ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
+Me.lblMusic_SongTitle = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tstripMusicToolbar = New System.Windows.Forms.ToolStrip
+Me.tsbLoadMyMusic = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbAddMusicFanart = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator
+Me.tsbAddmyOwnAlbumart = New System.Windows.Forms.ToolStripButton
+Me.ToolStripSeparator11 = New System.Windows.Forms.ToolStripSeparator
+Me.tsddbInjectImage = New System.Windows.Forms.ToolStripDropDownButton
+Me.tsbInjectIntoCurSong = New System.Windows.Forms.ToolStripMenuItem
+Me.tsbInjectIntoCurAlbum = New System.Windows.Forms.ToolStripMenuItem
+Me.tsbInjectIntoCurArtist = New System.Windows.Forms.ToolStripMenuItem
+Me.AutomaticOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tso_auto_addtoablumonnewart = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator12 = New System.Windows.Forms.ToolStripSeparator
+Me.ToolStripSeparator13 = New System.Windows.Forms.ToolStripSeparator
+Me.movtbar_ddbut_optionsAndSettings = New System.Windows.Forms.ToolStripDropDownButton
+Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsddbTools = New System.Windows.Forms.ToolStripDropDownButton
+Me.tsbMusicSortMyMusicToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsbMusicModifyAlbumDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.ResizeFanartImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_960x540 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_1280x720 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_1920x1080 = New System.Windows.Forms.ToolStripMenuItem
+Me.CompressBackgroundImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_q60 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_fanart_q90 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmimusic_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
+Me.pbMusicCurFanart = New System.Windows.Forms.PictureBox
+Me.tpFCDN = New Dotnetrix.Controls.TabPageEX
+Me.tcFCDN = New Dotnetrix.Controls.TabControlEX
+Me.tpFCDNFront = New Dotnetrix.Controls.TabPageEX
+Me.lblFreeCovers = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kgpbFront10 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront10 = New System.Windows.Forms.PictureBox
+Me.kgpbFront9 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront9 = New System.Windows.Forms.PictureBox
+Me.kgpbFront8 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront8 = New System.Windows.Forms.PictureBox
+Me.kgpbFront7 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront7 = New System.Windows.Forms.PictureBox
+Me.kgpbFront6 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront6 = New System.Windows.Forms.PictureBox
+Me.kgpbFront5 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront5 = New System.Windows.Forms.PictureBox
+Me.kgpbFront4 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront4 = New System.Windows.Forms.PictureBox
+Me.kgpbFront3 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront3 = New System.Windows.Forms.PictureBox
+Me.kgpbFront2 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront2 = New System.Windows.Forms.PictureBox
+Me.kgpbFront1 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFront1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNBack = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbBack9 = New System.Windows.Forms.PictureBox
+Me.pbBack8 = New System.Windows.Forms.PictureBox
+Me.pbBack7 = New System.Windows.Forms.PictureBox
+Me.pbBack6 = New System.Windows.Forms.PictureBox
+Me.pbBack5 = New System.Windows.Forms.PictureBox
+Me.pbBack4 = New System.Windows.Forms.PictureBox
+Me.pbBack3 = New System.Windows.Forms.PictureBox
+Me.pbBack2 = New System.Windows.Forms.PictureBox
+Me.pbBack1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNcd1 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbcdi9 = New System.Windows.Forms.PictureBox
+Me.pbcdi8 = New System.Windows.Forms.PictureBox
+Me.pbcdi7 = New System.Windows.Forms.PictureBox
+Me.pbcdi6 = New System.Windows.Forms.PictureBox
+Me.pbcdi5 = New System.Windows.Forms.PictureBox
+Me.pbcdi4 = New System.Windows.Forms.PictureBox
+Me.pbcdi3 = New System.Windows.Forms.PictureBox
+Me.pbcdi2 = New System.Windows.Forms.PictureBox
+Me.pbcdi1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNcd2 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbcd2i9 = New System.Windows.Forms.PictureBox
+Me.pbcd2i8 = New System.Windows.Forms.PictureBox
+Me.pbcd2i7 = New System.Windows.Forms.PictureBox
+Me.pbcd2i6 = New System.Windows.Forms.PictureBox
+Me.pbcd2i5 = New System.Windows.Forms.PictureBox
+Me.pbcd2i4 = New System.Windows.Forms.PictureBox
+Me.pbcd2i3 = New System.Windows.Forms.PictureBox
+Me.pbcd2i2 = New System.Windows.Forms.PictureBox
+Me.pbcd2i1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNcd3 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbcd3i9 = New System.Windows.Forms.PictureBox
+Me.pbcd3i8 = New System.Windows.Forms.PictureBox
+Me.pbcd3i7 = New System.Windows.Forms.PictureBox
+Me.pbcd3i6 = New System.Windows.Forms.PictureBox
+Me.pbcd3i5 = New System.Windows.Forms.PictureBox
+Me.pbcd3i4 = New System.Windows.Forms.PictureBox
+Me.pbcd3i3 = New System.Windows.Forms.PictureBox
+Me.pbcd3i2 = New System.Windows.Forms.PictureBox
+Me.pbcd3i1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNcd4 = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbcd4i9 = New System.Windows.Forms.PictureBox
+Me.pbcd4i8 = New System.Windows.Forms.PictureBox
+Me.pbcd4i7 = New System.Windows.Forms.PictureBox
+Me.pbcd4i6 = New System.Windows.Forms.PictureBox
+Me.pbcd4i5 = New System.Windows.Forms.PictureBox
+Me.pbcd4i4 = New System.Windows.Forms.PictureBox
+Me.pbcd4i3 = New System.Windows.Forms.PictureBox
+Me.pbcd4i2 = New System.Windows.Forms.PictureBox
+Me.pbcd4i1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNinsert = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbInsert9 = New System.Windows.Forms.PictureBox
+Me.pbInsert8 = New System.Windows.Forms.PictureBox
+Me.pbInsert7 = New System.Windows.Forms.PictureBox
+Me.pbInsert6 = New System.Windows.Forms.PictureBox
+Me.pbInsert5 = New System.Windows.Forms.PictureBox
+Me.pbInsert4 = New System.Windows.Forms.PictureBox
+Me.pbInsert3 = New System.Windows.Forms.PictureBox
+Me.pbInsert2 = New System.Windows.Forms.PictureBox
+Me.pbInsert1 = New System.Windows.Forms.PictureBox
+Me.tpFCDNinlay = New Dotnetrix.Controls.TabPageEX
+Me.KryptonLabel8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbInlay9 = New System.Windows.Forms.PictureBox
+Me.pbInlay8 = New System.Windows.Forms.PictureBox
+Me.pbInlay7 = New System.Windows.Forms.PictureBox
+Me.pbInlay6 = New System.Windows.Forms.PictureBox
+Me.pbInlay5 = New System.Windows.Forms.PictureBox
+Me.pbInlay4 = New System.Windows.Forms.PictureBox
+Me.pbInlay3 = New System.Windows.Forms.PictureBox
+Me.pbInlay2 = New System.Windows.Forms.PictureBox
+Me.pbInlay1 = New System.Windows.Forms.PictureBox
+Me.tpmipf = New Dotnetrix.Controls.TabPageEX
+Me.tpTallImages = New Dotnetrix.Controls.TabPageEX
+Me.KryptonPanel1 = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.lpbti72 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti71 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti70 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti69 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti72 = New System.Windows.Forms.PictureBox
 Me.pbti71 = New System.Windows.Forms.PictureBox
 Me.pbti70 = New System.Windows.Forms.PictureBox
 Me.pbti69 = New System.Windows.Forms.PictureBox
+Me.lpbti68 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti67 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti66 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti65 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti68 = New System.Windows.Forms.PictureBox
 Me.pbti67 = New System.Windows.Forms.PictureBox
 Me.pbti66 = New System.Windows.Forms.PictureBox
 Me.pbti65 = New System.Windows.Forms.PictureBox
+Me.lpbti64 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti63 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti62 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti61 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti64 = New System.Windows.Forms.PictureBox
 Me.pbti63 = New System.Windows.Forms.PictureBox
 Me.pbti62 = New System.Windows.Forms.PictureBox
 Me.pbti61 = New System.Windows.Forms.PictureBox
+Me.lpbti60 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti59 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti58 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti57 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti60 = New System.Windows.Forms.PictureBox
 Me.pbti59 = New System.Windows.Forms.PictureBox
 Me.pbti58 = New System.Windows.Forms.PictureBox
 Me.pbti57 = New System.Windows.Forms.PictureBox
+Me.lpbti56 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti55 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti54 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti53 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti56 = New System.Windows.Forms.PictureBox
 Me.pbti55 = New System.Windows.Forms.PictureBox
 Me.pbti54 = New System.Windows.Forms.PictureBox
 Me.pbti53 = New System.Windows.Forms.PictureBox
+Me.lpbti52 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti51 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti50 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti49 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti52 = New System.Windows.Forms.PictureBox
 Me.pbti51 = New System.Windows.Forms.PictureBox
 Me.pbti50 = New System.Windows.Forms.PictureBox
 Me.pbti49 = New System.Windows.Forms.PictureBox
+Me.lpbti48 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti47 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti46 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti45 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti48 = New System.Windows.Forms.PictureBox
 Me.pbti47 = New System.Windows.Forms.PictureBox
 Me.pbti46 = New System.Windows.Forms.PictureBox
 Me.pbti45 = New System.Windows.Forms.PictureBox
+Me.lpbti44 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti43 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti42 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti41 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti44 = New System.Windows.Forms.PictureBox
 Me.pbti43 = New System.Windows.Forms.PictureBox
 Me.pbti42 = New System.Windows.Forms.PictureBox
 Me.pbti41 = New System.Windows.Forms.PictureBox
+Me.lpbti40 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti39 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti38 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti37 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti40 = New System.Windows.Forms.PictureBox
 Me.pbti39 = New System.Windows.Forms.PictureBox
 Me.pbti38 = New System.Windows.Forms.PictureBox
 Me.pbti37 = New System.Windows.Forms.PictureBox
+Me.lpbti36 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti35 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti34 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti33 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti36 = New System.Windows.Forms.PictureBox
 Me.pbti35 = New System.Windows.Forms.PictureBox
 Me.pbti34 = New System.Windows.Forms.PictureBox
 Me.pbti33 = New System.Windows.Forms.PictureBox
+Me.lpbti32 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti31 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti30 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti29 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti32 = New System.Windows.Forms.PictureBox
 Me.pbti31 = New System.Windows.Forms.PictureBox
 Me.pbti30 = New System.Windows.Forms.PictureBox
 Me.pbti29 = New System.Windows.Forms.PictureBox
+Me.lpbti28 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti27 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti26 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti25 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti28 = New System.Windows.Forms.PictureBox
 Me.pbti27 = New System.Windows.Forms.PictureBox
 Me.pbti26 = New System.Windows.Forms.PictureBox
 Me.pbti25 = New System.Windows.Forms.PictureBox
+Me.KryptonLabel5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lpbti1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbti6 = New System.Windows.Forms.PictureBox
 Me.pbti5 = New System.Windows.Forms.PictureBox
 Me.pbti4 = New System.Windows.Forms.PictureBox
@@ -1211,18 +979,57 @@ Me.pbti10 = New System.Windows.Forms.PictureBox
 Me.pbti9 = New System.Windows.Forms.PictureBox
 Me.pbti8 = New System.Windows.Forms.PictureBox
 Me.pbti7 = New System.Windows.Forms.PictureBox
+Me.tpFanart = New Dotnetrix.Controls.TabPageEX
+Me.kpFanartSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.klblfatmdb36 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb35 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb34 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb33 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb32 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb31 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbfatmdb31 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb35 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb36 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb34 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb33 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb32 = New System.Windows.Forms.PictureBox
+Me.klblfatmdb30 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb29 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb28 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb27 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb26 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb25 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbfatmdb25 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb29 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb30 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb28 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb27 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb26 = New System.Windows.Forms.PictureBox
+Me.klblfatmdb24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblfatmdb1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblFanartProvider = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbfatmdb8 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb17 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb18 = New System.Windows.Forms.PictureBox
@@ -1247,7 +1054,20 @@ Me.pbfatmdb20 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb7 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb1 = New System.Windows.Forms.PictureBox
 Me.pbfatmdb2 = New System.Windows.Forms.PictureBox
+Me.tpmmn = New Dotnetrix.Controls.TabPageEX
 Me.pbCustomImageTemp = New System.Windows.Forms.PictureBox
+Me.btnUpdatePosters = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.Label2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lbsimnames = New System.Windows.Forms.ListBox
+Me.Button4 = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.cbChangeFolderName = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+Me.btnRetryName = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.tbnewname = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.Button7 = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.tpPosters = New Dotnetrix.Controls.TabPageEX
+Me.tcPosters = New Dotnetrix.Controls.TabControlEX
+Me.tpTVWideIcons = New Dotnetrix.Controls.TabPageEX
+Me.kptvwide = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.pbtvwide24 = New System.Windows.Forms.PictureBox
 Me.pbtvwide23 = New System.Windows.Forms.PictureBox
 Me.pbtvwide10 = New System.Windows.Forms.PictureBox
@@ -1272,6 +1092,33 @@ Me.pbtvwide5 = New System.Windows.Forms.PictureBox
 Me.pbtvwide13 = New System.Windows.Forms.PictureBox
 Me.pbtvwide11 = New System.Windows.Forms.PictureBox
 Me.pbtvwide12 = New System.Windows.Forms.PictureBox
+Me.tpIMPPosters = New Dotnetrix.Controls.TabPageEX
+Me.kpIMPPosterSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.lblImpaposters = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterIMP1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbposterIMP6 = New System.Windows.Forms.PictureBox
 Me.pbposterIMP5 = New System.Windows.Forms.PictureBox
 Me.pbposterIMP4 = New System.Windows.Forms.PictureBox
@@ -1296,6 +1143,33 @@ Me.pbposterIMP10 = New System.Windows.Forms.PictureBox
 Me.pbposterIMP9 = New System.Windows.Forms.PictureBox
 Me.pbposterIMP8 = New System.Windows.Forms.PictureBox
 Me.pbposterIMP7 = New System.Windows.Forms.PictureBox
+Me.tpTMDBPosters = New Dotnetrix.Controls.TabPageEX
+Me.kpTMDBPostersSelection = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.klblPostersByTMDB = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB24 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB23 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB22 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB21 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB20 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB19 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB18 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB17 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB16 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB15 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB14 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB13 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB11 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB10 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB9 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB8 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB7 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB6 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB5 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB3 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klblposterTMDB1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbposterTMDB1 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB2 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB3 = New System.Windows.Forms.PictureBox
@@ -1320,21 +1194,420 @@ Me.pbposterTMDB21 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB22 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB23 = New System.Windows.Forms.PictureBox
 Me.pbposterTMDB24 = New System.Windows.Forms.PictureBox
+Me.TabPageEX1 = New Dotnetrix.Controls.TabPageEX
+Me.tbnone = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.curtvshowiconsettinglbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kgMusicLeftNav = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.kscMusicMainSC = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscMusicMainTopFilterGroup = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kgmusicFilters = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.krbmusicfilterNoBackground = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.krbmusicfilterAll = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.krbmusicfilterNoArtist = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.lbmusicArtist = New System.Windows.Forms.ListBox
+Me.kscMusicLeftNavBottomMainSCAlbumSongs = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.lbmusicAlbums = New System.Windows.Forms.ListBox
+Me.lbmusicSongs = New System.Windows.Forms.ListBox
+Me.kpalette = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.lblimdb = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kgFileDetails = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.tbFDMovieFile2 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbFDMovieFile1 = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.tbFDTrailer = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.LinkLabel1 = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.lblFDOtherFiles = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.btnValidate = New ComponentFactory.Krypton.Toolkit.KryptonButton
+Me.tbFDTBNFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.lblFDNFOFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tbFDIconfile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.lblFDTBNFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tbFDNFOFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.lblFDIconfile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.tbFDFanartFile = New ComponentFactory.Krypton.Toolkit.KryptonTextBox
+Me.lblFDMovieFile12 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDFanartFile2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDTrailer2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.header2Border = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.header1Border = New ComponentFactory.Krypton.Toolkit.KryptonPanel
+Me.lblFDTrailer = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDMovieFile1 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDFanartFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDNFOFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDTBNFile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblFDIconfile = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.opfd2 = New System.Windows.Forms.OpenFileDialog
+Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+Me.bwPreCache = New System.ComponentModel.BackgroundWorker
+Me.rbMDNFOProblems = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbMDNoFanart = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbMDNoTBN = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbMDNoIcon = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbMDwithIssues = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbMDAll = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.kgMyMovieInfoPicker = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.kgMyMovieList = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lbMyMovies = New System.Windows.Forms.ListBox
+Me.kgMovieOrTVShow = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.klNumMovies = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.klNumMusic = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.krbCMMusic = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.klNumTvShows = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.krbCMTV = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.krpCMMovie = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.gbAppMode = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.rbmonitor = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.rbread = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.cbAllowIconSelection = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+Me.rbem = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+Me.klblSelectAppMode = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.bwFolderData = New System.ComponentModel.BackgroundWorker
+Me.kManager = New ComponentFactory.Krypton.Toolkit.KryptonManager(Me.components)
+Me.kpaletteBlue = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteBlueSkulls = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPalettePink = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteBling = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kpaletteSilver = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.tcRootBackup = New Dotnetrix.Controls.TabControlEX
+Me.nouse = New Dotnetrix.Controls.TabPageEX
+Me.kgMoviesNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.kscLeftMovieNavMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kgTVNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.kscTVMainNavLeft = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kgTvShowPickerArea = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lbTvShowPicker = New System.Windows.Forms.ListBox
+Me.kscTVMainLeftBottomNav = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscEpisodesEEM = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kgMissingEpisodes = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.lbEpisodesMissing = New System.Windows.Forms.ListBox
+Me.bwFolderDataTDM = New System.ComponentModel.BackgroundWorker
+Me.kgQCIcons = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.pbFDFolderJpg = New System.Windows.Forms.PictureBox
+Me.pbFDNFO = New System.Windows.Forms.PictureBox
+Me.pbFDMovieFile1 = New System.Windows.Forms.PictureBox
+Me.pbFDTrailer = New System.Windows.Forms.PictureBox
+Me.klblMovieFolderContent = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.pbFDTBN = New System.Windows.Forms.PictureBox
+Me.pbFDFanart = New System.Windows.Forms.PictureBox
+Me.lblPbar = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.lblPCWorking = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.prgThread = New System.Windows.Forms.ProgressBar
+Me.pbar1 = New System.Windows.Forms.ProgressBar
+Me.lblCurItem = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.kscMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscLeftFull = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscLeftBottomPart = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscLeftNavMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscLeftNavBarSC2 = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscFullRight = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscTopRightNavBarMain = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscTopRightSelectionArea = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
+Me.tsbMainDonate = New System.Windows.Forms.ToolStripButton
+Me.kscTopRightNavRightSideTop = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscRightBottomPart = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kscBottom2PartTVorMovie = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
+Me.kgTvShowCurrentLocationIconSettings = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.llOpenTVShowLocation = New ComponentFactory.Krypton.Toolkit.KryptonLinkLabel
+Me.curtvshowlocationlbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+Me.bwDisplayMovieData = New System.ComponentModel.BackgroundWorker
+Me.bwUpdatePosters = New System.ComponentModel.BackgroundWorker
+Me.bwGetMovieMediaInfo = New System.ComponentModel.BackgroundWorker
+Me.bwDownloader = New System.ComponentModel.BackgroundWorker
+Me.bwLoadMusic = New System.ComponentModel.BackgroundWorker
+Me.bwGetTVEPMediaInfo = New System.ComponentModel.BackgroundWorker
+Me.kPaletteGreen = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
+Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
 Me.tpWRSG.SuspendLayout
 CType(Me.kpRSGBG,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb36,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pb15,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpWNS.SuspendLayout
 CType(Me.kpWNSBackground,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwns36,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpWRS.SuspendLayout
 CType(Me.kpRSBackground,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrs36,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpWRSS.SuspendLayout
+CType(Me.pbwrsscan1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbwrsscan36,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tp5.SuspendLayout
+CType(Me.spb24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.spb1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tp6.SuspendLayout
 CType(Me.kpBoxShots,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpBoxShots.SuspendLayout
+CType(Me.bspb91,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb88,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb92,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb79,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb93,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb89,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb90,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb70,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb85,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb80,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb86,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb61,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb87,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb81,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb71,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb82,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb46,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb83,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb72,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb84,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb62,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb73,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb47,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb74,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb75,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb63,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb76,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb48,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb77,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb64,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb78,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb65,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb49,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb66,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb50,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb67,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb51,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb68,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb52,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb69,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb53,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb54,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb55,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb56,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb57,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb58,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb59,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb60,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb45,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb36,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb44,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb43,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb42,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb41,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb40,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb39,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb38,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb37,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.bspb27,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tp4.SuspendLayout
+CType(Me.tpb12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.tpb1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tp3.SuspendLayout
 CType(Me.gbDisplay,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.gbDisplay.Panel,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1357,10 +1630,15 @@ CType(Me.kgCurMovieImageFolderjpg,System.ComponentModel.ISupportInitialize).Begi
 CType(Me.kgCurMovieImageFolderjpg.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgCurMovieImageFolderjpg.Panel.SuspendLayout
 Me.kgCurMovieImageFolderjpg.SuspendLayout
+CType(Me.pbCurIconUsed2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbCurrentIconUsedNT,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgCurMovieImagetbn,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgCurMovieImagetbn.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgCurMovieImagetbn.Panel.SuspendLayout
 Me.kgCurMovieImagetbn.SuspendLayout
+CType(Me.pbCurTBNUsed2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbCurTBNUsed,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFrameTBN,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kpMovieData,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpMovieData.SuspendLayout
 CType(Me.khbPlotGroup,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1377,8 +1655,11 @@ CType(Me.khbMoviePlotBtm,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.khbMoviePlotBtm.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.khbMoviePlotBtm.Panel.SuspendLayout
 Me.khbMoviePlotBtm.SuspendLayout
+CType(Me.pbFrame,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbCurIconUsed,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tsCurrentMovieTools.SuspendLayout
 Me.gbThanks.SuspendLayout
+CType(Me.fanartpb1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tptv.SuspendLayout
 CType(Me.TVCurrentTVRightMain,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TVCurrentTVRightMain.Panel1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1410,6 +1691,9 @@ CType(Me.kgTvShowsCurImage,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgTvShowsCurImage.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgTvShowsCurImage.Panel.SuspendLayout
 Me.kgTvShowsCurImage.SuspendLayout
+CType(Me.pbTVSeasonPoster,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVPoster,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVWide,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tsCurrentTVShowTools.SuspendLayout
 CType(Me.kpEpisodeData,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpEpisodeData.SuspendLayout
@@ -1417,6 +1701,7 @@ CType(Me.khbEpisodeThumbGroup,System.ComponentModel.ISupportInitialize).BeginIni
 CType(Me.khbEpisodeThumbGroup.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.khbEpisodeThumbGroup.Panel.SuspendLayout
 Me.khbEpisodeThumbGroup.SuspendLayout
+CType(Me.pbep_episodeimage,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.khgEpisodeNameGroup,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.khgEpisodeNameGroup.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.khgEpisodeNameGroup.Panel.SuspendLayout
@@ -1437,8 +1722,20 @@ CType(Me.kgpbSeasonAllposter,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbSeasonAllposter.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbSeasonAllposter.Panel.SuspendLayout
 Me.kgpbSeasonAllposter.SuspendLayout
+CType(Me.pbSeasonAllposter,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVFanart,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgRatingStars,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgRatingStars.SuspendLayout
+CType(Me.pbTVStar10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbTVStar2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.ksctvMainRightBottomPortion,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.ksctvMainRightBottomPortion.Panel1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.ksctvMainRightBottomPortion.Panel1.SuspendLayout
@@ -1459,6 +1756,7 @@ CType(Me.kgMusic_SongImage,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusic_SongImage.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgMusic_SongImage.Panel.SuspendLayout
 Me.kgMusic_SongImage.SuspendLayout
+CType(Me.pbMusic_CurSongImage,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusicMI,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusicMI.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgMusicMI.Panel.SuspendLayout
@@ -1467,11 +1765,14 @@ CType(Me.kgArtistArtImage,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgArtistArtImage.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgArtistArtImage.Panel.SuspendLayout
 Me.kgArtistArtImage.SuspendLayout
+CType(Me.pbCurAlbumArt,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusicSongData,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusicSongData.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgMusicSongData.Panel.SuspendLayout
 Me.kgMusicSongData.SuspendLayout
+CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tstripMusicToolbar.SuspendLayout
+CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDN.SuspendLayout
 Me.tcFCDN.SuspendLayout
 Me.tpFCDNFront.SuspendLayout
@@ -1479,68 +1780,322 @@ CType(Me.kgpbFront10,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront10.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront10.Panel.SuspendLayout
 Me.kgpbFront10.SuspendLayout
+CType(Me.pbFront10,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront9,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront9.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront9.Panel.SuspendLayout
 Me.kgpbFront9.SuspendLayout
+CType(Me.pbFront9,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront8,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront8.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront8.Panel.SuspendLayout
 Me.kgpbFront8.SuspendLayout
+CType(Me.pbFront8,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront7,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront7.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront7.Panel.SuspendLayout
 Me.kgpbFront7.SuspendLayout
+CType(Me.pbFront7,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront6,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront6.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront6.Panel.SuspendLayout
 Me.kgpbFront6.SuspendLayout
+CType(Me.pbFront6,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront5,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront5.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront5.Panel.SuspendLayout
 Me.kgpbFront5.SuspendLayout
+CType(Me.pbFront5,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront4.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront4.Panel.SuspendLayout
 Me.kgpbFront4.SuspendLayout
+CType(Me.pbFront4,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront3.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront3.Panel.SuspendLayout
 Me.kgpbFront3.SuspendLayout
+CType(Me.pbFront3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront2.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront2.Panel.SuspendLayout
 Me.kgpbFront2.SuspendLayout
+CType(Me.pbFront2,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront1,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgpbFront1.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgpbFront1.Panel.SuspendLayout
 Me.kgpbFront1.SuspendLayout
+CType(Me.pbFront1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNBack.SuspendLayout
+CType(Me.pbBack9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbBack1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNcd1.SuspendLayout
+CType(Me.pbcdi9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcdi1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNcd2.SuspendLayout
+CType(Me.pbcd2i9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd2i1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNcd3.SuspendLayout
+CType(Me.pbcd3i9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd3i1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNcd4.SuspendLayout
+CType(Me.pbcd4i9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbcd4i1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNinsert.SuspendLayout
+CType(Me.pbInsert9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInsert1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFCDNinlay.SuspendLayout
+CType(Me.pbInlay9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbInlay1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpmipf.SuspendLayout
 Me.tpTallImages.SuspendLayout
 CType(Me.KryptonPanel1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.KryptonPanel1.SuspendLayout
+CType(Me.pbti72,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti71,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti70,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti69,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti68,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti67,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti66,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti65,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti64,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti63,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti62,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti61,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti60,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti59,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti58,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti57,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti56,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti55,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti54,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti53,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti52,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti51,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti50,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti49,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti48,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti47,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti46,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti45,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti44,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti43,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti42,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti41,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti40,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti39,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti38,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti37,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti36,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbti7,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpFanart.SuspendLayout
 CType(Me.kpFanartSelection,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpFanartSelection.SuspendLayout
+CType(Me.pbfatmdb31,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb35,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb36,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb34,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb33,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb32,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb25,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb29,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb30,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb28,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb27,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb26,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbfatmdb2,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpmmn.SuspendLayout
+CType(Me.pbCustomImageTemp,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpPosters.SuspendLayout
 Me.tcPosters.SuspendLayout
 Me.tpTVWideIcons.SuspendLayout
 CType(Me.kptvwide,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kptvwide.SuspendLayout
+CType(Me.pbtvwide24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbtvwide12,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpIMPPosters.SuspendLayout
 CType(Me.kpIMPPosterSelection,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpIMPPosterSelection.SuspendLayout
+CType(Me.pbposterIMP6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP24,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterIMP7,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tpTMDBPosters.SuspendLayout
 CType(Me.kpTMDBPostersSelection,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kpTMDBPostersSelection.SuspendLayout
+CType(Me.pbposterTMDB1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB3,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB4,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB5,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB6,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB7,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB8,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB9,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB10,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB11,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB12,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB13,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB14,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB15,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB16,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB17,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB18,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB19,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB20,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB21,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB22,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB23,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbposterTMDB24,System.ComponentModel.ISupportInitialize).BeginInit
 Me.TabPageEX1.SuspendLayout
 CType(Me.kgMusicLeftNav,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgMusicLeftNav.Panel,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1635,6 +2190,12 @@ CType(Me.kgQCIcons,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kgQCIcons.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgQCIcons.Panel.SuspendLayout
 Me.kgQCIcons.SuspendLayout
+CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kscMain,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.kscMain.Panel1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kscMain.Panel1.SuspendLayout
@@ -1706,567 +2267,6 @@ CType(Me.kgTvShowCurrentLocationIconSettings,System.ComponentModel.ISupportIniti
 CType(Me.kgTvShowCurrentLocationIconSettings.Panel,System.ComponentModel.ISupportInitialize).BeginInit
 Me.kgTvShowCurrentLocationIconSettings.Panel.SuspendLayout
 Me.kgTvShowCurrentLocationIconSettings.SuspendLayout
-CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurIconUsed2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurrentIconUsedNT,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurTBNUsed2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurTBNUsed,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFrameTBN,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFrame,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurIconUsed,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.fanartpb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVSeasonPoster,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVPoster,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVWide,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbep_episodeimage,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbSeasonAllposter,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVFanart,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbTVStar2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbMusic_CurSongImage,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCurAlbumArt,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbFront1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbBack1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcdi1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd2i1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd3i1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbcd4i1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInsert1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbInlay1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pb15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwns36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrs36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbwrsscan36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.spb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb91,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb88,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb92,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb79,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb93,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb89,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb90,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb70,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb85,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb80,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb86,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb61,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb87,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb81,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb71,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb82,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb46,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb83,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb72,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb84,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb62,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb73,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb47,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb74,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb75,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb63,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb76,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb48,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb77,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb64,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb78,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb65,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb49,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb66,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb50,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb67,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb51,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb68,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb52,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb69,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb53,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb54,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb55,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb56,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb57,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb58,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb59,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb60,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb45,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb44,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb43,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb42,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb41,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb40,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb39,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb38,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb37,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.bspb27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.tpb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti72,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti71,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti70,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti69,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti68,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti67,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti66,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti65,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti64,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti63,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti62,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti61,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti60,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti59,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti58,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti57,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti56,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti55,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti54,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti53,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti52,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti51,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti50,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti49,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti48,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti47,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti46,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti45,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti44,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti43,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti42,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti41,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti40,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti39,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti38,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti37,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbti7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb31,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb35,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb36,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb34,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb33,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb32,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb25,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb29,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb30,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb28,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb27,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb26,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbfatmdb2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbCustomImageTemp,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbtvwide12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP24,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterIMP7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB1,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB2,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB4,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB5,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB6,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB7,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB8,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB9,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB10,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB11,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB12,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB13,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB14,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB15,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB16,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB17,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB18,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB19,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB20,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB21,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB22,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB23,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.pbposterTMDB24,System.ComponentModel.ISupportInitialize).BeginInit
 Me.SuspendLayout
 '
 'btnGetXML
@@ -2466,6 +2466,441 @@ Me.kpRSGBG.Name = "kpRSGBG"
 Me.kpRSGBG.Size = New System.Drawing.Size(2, 1280)
 Me.kpRSGBG.TabIndex = 71
 '
+'pb36
+'
+Me.pb36.BackColor = System.Drawing.Color.Transparent
+Me.pb36.Enabled = false
+Me.pb36.Location = New System.Drawing.Point(380, 1206)
+Me.pb36.Margin = New System.Windows.Forms.Padding(2)
+Me.pb36.Name = "pb36"
+Me.pb36.Size = New System.Drawing.Size(380, 68)
+Me.pb36.TabIndex = 57
+Me.pb36.TabStop = false
+'
+'pb35
+'
+Me.pb35.BackColor = System.Drawing.Color.Transparent
+Me.pb35.Enabled = false
+Me.pb35.Location = New System.Drawing.Point(0, 1206)
+Me.pb35.Margin = New System.Windows.Forms.Padding(2)
+Me.pb35.Name = "pb35"
+Me.pb35.Size = New System.Drawing.Size(380, 68)
+Me.pb35.TabIndex = 56
+Me.pb35.TabStop = false
+'
+'pb9
+'
+Me.pb9.BackColor = System.Drawing.Color.Transparent
+Me.pb9.Enabled = false
+Me.pb9.Location = New System.Drawing.Point(0, 283)
+Me.pb9.Margin = New System.Windows.Forms.Padding(2)
+Me.pb9.Name = "pb9"
+Me.pb9.Size = New System.Drawing.Size(380, 68)
+Me.pb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb9.TabIndex = 24
+Me.pb9.TabStop = false
+'
+'pb34
+'
+Me.pb34.BackColor = System.Drawing.Color.Transparent
+Me.pb34.Enabled = false
+Me.pb34.Location = New System.Drawing.Point(381, 1134)
+Me.pb34.Margin = New System.Windows.Forms.Padding(2)
+Me.pb34.Name = "pb34"
+Me.pb34.Size = New System.Drawing.Size(380, 68)
+Me.pb34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb34.TabIndex = 69
+Me.pb34.TabStop = false
+'
+'pb5
+'
+Me.pb5.BackColor = System.Drawing.Color.Transparent
+Me.pb5.Enabled = false
+Me.pb5.Location = New System.Drawing.Point(0, 141)
+Me.pb5.Margin = New System.Windows.Forms.Padding(2)
+Me.pb5.Name = "pb5"
+Me.pb5.Size = New System.Drawing.Size(380, 68)
+Me.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb5.TabIndex = 14
+Me.pb5.TabStop = false
+'
+'pb22
+'
+Me.pb22.BackColor = System.Drawing.Color.Transparent
+Me.pb22.Enabled = false
+Me.pb22.Location = New System.Drawing.Point(381, 708)
+Me.pb22.Margin = New System.Windows.Forms.Padding(2)
+Me.pb22.Name = "pb22"
+Me.pb22.Size = New System.Drawing.Size(380, 68)
+Me.pb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb22.TabIndex = 55
+Me.pb22.TabStop = false
+'
+'pb32
+'
+Me.pb32.BackColor = System.Drawing.Color.Transparent
+Me.pb32.Enabled = false
+Me.pb32.Location = New System.Drawing.Point(381, 1063)
+Me.pb32.Margin = New System.Windows.Forms.Padding(2)
+Me.pb32.Name = "pb32"
+Me.pb32.Size = New System.Drawing.Size(380, 68)
+Me.pb32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb32.TabIndex = 67
+Me.pb32.TabStop = false
+'
+'pb20
+'
+Me.pb20.BackColor = System.Drawing.Color.Transparent
+Me.pb20.Enabled = false
+Me.pb20.Location = New System.Drawing.Point(381, 637)
+Me.pb20.Margin = New System.Windows.Forms.Padding(2)
+Me.pb20.Name = "pb20"
+Me.pb20.Size = New System.Drawing.Size(380, 68)
+Me.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb20.TabIndex = 51
+Me.pb20.TabStop = false
+'
+'pb33
+'
+Me.pb33.BackColor = System.Drawing.Color.Transparent
+Me.pb33.Enabled = false
+Me.pb33.Location = New System.Drawing.Point(0, 1134)
+Me.pb33.Margin = New System.Windows.Forms.Padding(2)
+Me.pb33.Name = "pb33"
+Me.pb33.Size = New System.Drawing.Size(380, 68)
+Me.pb33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb33.TabIndex = 68
+Me.pb33.TabStop = false
+'
+'pb30
+'
+Me.pb30.BackColor = System.Drawing.Color.Transparent
+Me.pb30.Enabled = false
+Me.pb30.Location = New System.Drawing.Point(381, 992)
+Me.pb30.Margin = New System.Windows.Forms.Padding(2)
+Me.pb30.Name = "pb30"
+Me.pb30.Size = New System.Drawing.Size(380, 68)
+Me.pb30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb30.TabIndex = 65
+Me.pb30.TabStop = false
+'
+'pb3
+'
+Me.pb3.BackColor = System.Drawing.Color.Transparent
+Me.pb3.Enabled = false
+Me.pb3.Location = New System.Drawing.Point(0, 70)
+Me.pb3.Margin = New System.Windows.Forms.Padding(2)
+Me.pb3.Name = "pb3"
+Me.pb3.Size = New System.Drawing.Size(380, 68)
+Me.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb3.TabIndex = 12
+Me.pb3.TabStop = false
+'
+'pb28
+'
+Me.pb28.BackColor = System.Drawing.Color.Transparent
+Me.pb28.Enabled = false
+Me.pb28.Location = New System.Drawing.Point(381, 921)
+Me.pb28.Margin = New System.Windows.Forms.Padding(2)
+Me.pb28.Name = "pb28"
+Me.pb28.Size = New System.Drawing.Size(380, 68)
+Me.pb28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb28.TabIndex = 63
+Me.pb28.TabStop = false
+'
+'pb18
+'
+Me.pb18.BackColor = System.Drawing.Color.Transparent
+Me.pb18.Enabled = false
+Me.pb18.Location = New System.Drawing.Point(381, 566)
+Me.pb18.Margin = New System.Windows.Forms.Padding(2)
+Me.pb18.Name = "pb18"
+Me.pb18.Size = New System.Drawing.Size(380, 68)
+Me.pb18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb18.TabIndex = 45
+Me.pb18.TabStop = false
+'
+'pb1
+'
+Me.pb1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pb1.BackColor = System.Drawing.Color.Transparent
+Me.pb1.Enabled = false
+Me.pb1.Location = New System.Drawing.Point(0, 1)
+Me.pb1.Margin = New System.Windows.Forms.Padding(2)
+Me.pb1.MaximumSize = New System.Drawing.Size(380, 68)
+Me.pb1.MinimumSize = New System.Drawing.Size(380, 68)
+Me.pb1.Name = "pb1"
+Me.pb1.Size = New System.Drawing.Size(380, 68)
+Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb1.TabIndex = 10
+Me.pb1.TabStop = false
+'
+'pb16
+'
+Me.pb16.BackColor = System.Drawing.Color.Transparent
+Me.pb16.Enabled = false
+Me.pb16.Location = New System.Drawing.Point(381, 496)
+Me.pb16.Margin = New System.Windows.Forms.Padding(2)
+Me.pb16.Name = "pb16"
+Me.pb16.Size = New System.Drawing.Size(380, 68)
+Me.pb16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb16.TabIndex = 43
+Me.pb16.TabStop = false
+'
+'pb8
+'
+Me.pb8.BackColor = System.Drawing.Color.Transparent
+Me.pb8.Enabled = false
+Me.pb8.Location = New System.Drawing.Point(381, 212)
+Me.pb8.Margin = New System.Windows.Forms.Padding(2)
+Me.pb8.Name = "pb8"
+Me.pb8.Size = New System.Drawing.Size(380, 68)
+Me.pb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb8.TabIndex = 23
+Me.pb8.TabStop = false
+'
+'pb26
+'
+Me.pb26.BackColor = System.Drawing.Color.Transparent
+Me.pb26.Enabled = false
+Me.pb26.Location = New System.Drawing.Point(381, 850)
+Me.pb26.Margin = New System.Windows.Forms.Padding(2)
+Me.pb26.Name = "pb26"
+Me.pb26.Size = New System.Drawing.Size(380, 68)
+Me.pb26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb26.TabIndex = 61
+Me.pb26.TabStop = false
+'
+'pb24
+'
+Me.pb24.BackColor = System.Drawing.Color.Transparent
+Me.pb24.Enabled = false
+Me.pb24.Location = New System.Drawing.Point(381, 779)
+Me.pb24.Margin = New System.Windows.Forms.Padding(2)
+Me.pb24.Name = "pb24"
+Me.pb24.Size = New System.Drawing.Size(380, 68)
+Me.pb24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb24.TabIndex = 59
+Me.pb24.TabStop = false
+'
+'pb14
+'
+Me.pb14.BackColor = System.Drawing.Color.Transparent
+Me.pb14.Enabled = false
+Me.pb14.Location = New System.Drawing.Point(381, 425)
+Me.pb14.Margin = New System.Windows.Forms.Padding(2)
+Me.pb14.Name = "pb14"
+Me.pb14.Size = New System.Drawing.Size(380, 68)
+Me.pb14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb14.TabIndex = 39
+Me.pb14.TabStop = false
+'
+'pb31
+'
+Me.pb31.BackColor = System.Drawing.Color.Transparent
+Me.pb31.Enabled = false
+Me.pb31.Location = New System.Drawing.Point(0, 1063)
+Me.pb31.Margin = New System.Windows.Forms.Padding(2)
+Me.pb31.Name = "pb31"
+Me.pb31.Size = New System.Drawing.Size(380, 68)
+Me.pb31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb31.TabIndex = 66
+Me.pb31.TabStop = false
+'
+'pb2
+'
+Me.pb2.BackColor = System.Drawing.Color.Transparent
+Me.pb2.Enabled = false
+Me.pb2.Location = New System.Drawing.Point(381, 1)
+Me.pb2.Margin = New System.Windows.Forms.Padding(2)
+Me.pb2.Name = "pb2"
+Me.pb2.Size = New System.Drawing.Size(380, 68)
+Me.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb2.TabIndex = 11
+Me.pb2.TabStop = false
+'
+'pb12
+'
+Me.pb12.BackColor = System.Drawing.Color.Transparent
+Me.pb12.Enabled = false
+Me.pb12.Location = New System.Drawing.Point(381, 354)
+Me.pb12.Margin = New System.Windows.Forms.Padding(2)
+Me.pb12.Name = "pb12"
+Me.pb12.Size = New System.Drawing.Size(380, 68)
+Me.pb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb12.TabIndex = 33
+Me.pb12.TabStop = false
+'
+'pb6
+'
+Me.pb6.BackColor = System.Drawing.Color.Transparent
+Me.pb6.Enabled = false
+Me.pb6.Location = New System.Drawing.Point(381, 141)
+Me.pb6.Margin = New System.Windows.Forms.Padding(2)
+Me.pb6.Name = "pb6"
+Me.pb6.Size = New System.Drawing.Size(380, 68)
+Me.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb6.TabIndex = 15
+Me.pb6.TabStop = false
+'
+'pb7
+'
+Me.pb7.BackColor = System.Drawing.Color.Transparent
+Me.pb7.Enabled = false
+Me.pb7.Location = New System.Drawing.Point(0, 212)
+Me.pb7.Margin = New System.Windows.Forms.Padding(2)
+Me.pb7.Name = "pb7"
+Me.pb7.Size = New System.Drawing.Size(380, 68)
+Me.pb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb7.TabIndex = 22
+Me.pb7.TabStop = false
+'
+'pb4
+'
+Me.pb4.BackColor = System.Drawing.Color.Transparent
+Me.pb4.Enabled = false
+Me.pb4.Location = New System.Drawing.Point(381, 70)
+Me.pb4.Margin = New System.Windows.Forms.Padding(2)
+Me.pb4.Name = "pb4"
+Me.pb4.Size = New System.Drawing.Size(380, 68)
+Me.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb4.TabIndex = 13
+Me.pb4.TabStop = false
+'
+'pb11
+'
+Me.pb11.BackColor = System.Drawing.Color.Transparent
+Me.pb11.Enabled = false
+Me.pb11.Location = New System.Drawing.Point(0, 354)
+Me.pb11.Margin = New System.Windows.Forms.Padding(2)
+Me.pb11.Name = "pb11"
+Me.pb11.Size = New System.Drawing.Size(380, 68)
+Me.pb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb11.TabIndex = 32
+Me.pb11.TabStop = false
+'
+'pb29
+'
+Me.pb29.BackColor = System.Drawing.Color.Transparent
+Me.pb29.Enabled = false
+Me.pb29.Location = New System.Drawing.Point(0, 992)
+Me.pb29.Margin = New System.Windows.Forms.Padding(2)
+Me.pb29.Name = "pb29"
+Me.pb29.Size = New System.Drawing.Size(380, 68)
+Me.pb29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb29.TabIndex = 64
+Me.pb29.TabStop = false
+'
+'pb27
+'
+Me.pb27.BackColor = System.Drawing.Color.Transparent
+Me.pb27.Enabled = false
+Me.pb27.Location = New System.Drawing.Point(0, 921)
+Me.pb27.Margin = New System.Windows.Forms.Padding(2)
+Me.pb27.Name = "pb27"
+Me.pb27.Size = New System.Drawing.Size(380, 68)
+Me.pb27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb27.TabIndex = 62
+Me.pb27.TabStop = false
+'
+'pb10
+'
+Me.pb10.BackColor = System.Drawing.Color.Transparent
+Me.pb10.Enabled = false
+Me.pb10.Location = New System.Drawing.Point(381, 283)
+Me.pb10.Margin = New System.Windows.Forms.Padding(2)
+Me.pb10.Name = "pb10"
+Me.pb10.Size = New System.Drawing.Size(380, 68)
+Me.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb10.TabIndex = 25
+Me.pb10.TabStop = false
+'
+'pb23
+'
+Me.pb23.BackColor = System.Drawing.Color.Transparent
+Me.pb23.Enabled = false
+Me.pb23.Location = New System.Drawing.Point(0, 779)
+Me.pb23.Margin = New System.Windows.Forms.Padding(2)
+Me.pb23.Name = "pb23"
+Me.pb23.Size = New System.Drawing.Size(380, 68)
+Me.pb23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb23.TabIndex = 58
+Me.pb23.TabStop = false
+'
+'pb25
+'
+Me.pb25.BackColor = System.Drawing.Color.Transparent
+Me.pb25.Enabled = false
+Me.pb25.Location = New System.Drawing.Point(0, 850)
+Me.pb25.Margin = New System.Windows.Forms.Padding(2)
+Me.pb25.Name = "pb25"
+Me.pb25.Size = New System.Drawing.Size(380, 68)
+Me.pb25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb25.TabIndex = 60
+Me.pb25.TabStop = false
+'
+'pb21
+'
+Me.pb21.BackColor = System.Drawing.Color.Transparent
+Me.pb21.Enabled = false
+Me.pb21.Location = New System.Drawing.Point(0, 708)
+Me.pb21.Margin = New System.Windows.Forms.Padding(2)
+Me.pb21.Name = "pb21"
+Me.pb21.Size = New System.Drawing.Size(380, 68)
+Me.pb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb21.TabIndex = 54
+Me.pb21.TabStop = false
+'
+'pb17
+'
+Me.pb17.BackColor = System.Drawing.Color.Transparent
+Me.pb17.Enabled = false
+Me.pb17.Location = New System.Drawing.Point(0, 566)
+Me.pb17.Margin = New System.Windows.Forms.Padding(2)
+Me.pb17.Name = "pb17"
+Me.pb17.Size = New System.Drawing.Size(380, 68)
+Me.pb17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb17.TabIndex = 44
+Me.pb17.TabStop = false
+'
+'pb19
+'
+Me.pb19.BackColor = System.Drawing.Color.Transparent
+Me.pb19.Enabled = false
+Me.pb19.Location = New System.Drawing.Point(0, 637)
+Me.pb19.Margin = New System.Windows.Forms.Padding(2)
+Me.pb19.Name = "pb19"
+Me.pb19.Size = New System.Drawing.Size(380, 68)
+Me.pb19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb19.TabIndex = 50
+Me.pb19.TabStop = false
+'
+'pb13
+'
+Me.pb13.BackColor = System.Drawing.Color.Transparent
+Me.pb13.Enabled = false
+Me.pb13.Location = New System.Drawing.Point(0, 425)
+Me.pb13.Margin = New System.Windows.Forms.Padding(2)
+Me.pb13.Name = "pb13"
+Me.pb13.Size = New System.Drawing.Size(380, 68)
+Me.pb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb13.TabIndex = 38
+Me.pb13.TabStop = false
+'
+'pb15
+'
+Me.pb15.BackColor = System.Drawing.Color.Transparent
+Me.pb15.Enabled = false
+Me.pb15.Location = New System.Drawing.Point(0, 496)
+Me.pb15.Margin = New System.Windows.Forms.Padding(2)
+Me.pb15.Name = "pb15"
+Me.pb15.Size = New System.Drawing.Size(380, 68)
+Me.pb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pb15.TabIndex = 42
+Me.pb15.TabStop = false
+'
 'tpWNS
 '
 Me.tpWNS.AutoScroll = true
@@ -2522,6 +2957,438 @@ Me.kpWNSBackground.Name = "kpWNSBackground"
 Me.kpWNSBackground.Size = New System.Drawing.Size(2, 1480)
 Me.kpWNSBackground.TabIndex = 70
 '
+'pbwns1
+'
+Me.pbwns1.BackColor = System.Drawing.Color.Transparent
+Me.pbwns1.Enabled = false
+Me.pbwns1.Location = New System.Drawing.Point(0, 1)
+Me.pbwns1.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns1.Name = "pbwns1"
+Me.pbwns1.Size = New System.Drawing.Size(380, 80)
+Me.pbwns1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns1.TabIndex = 10
+Me.pbwns1.TabStop = false
+'
+'pbwns2
+'
+Me.pbwns2.BackColor = System.Drawing.Color.Transparent
+Me.pbwns2.Enabled = false
+Me.pbwns2.Location = New System.Drawing.Point(382, 2)
+Me.pbwns2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns2.Name = "pbwns2"
+Me.pbwns2.Size = New System.Drawing.Size(380, 80)
+Me.pbwns2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns2.TabIndex = 11
+Me.pbwns2.TabStop = false
+'
+'pbwns3
+'
+Me.pbwns3.BackColor = System.Drawing.Color.Transparent
+Me.pbwns3.Enabled = false
+Me.pbwns3.Location = New System.Drawing.Point(0, 84)
+Me.pbwns3.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns3.Name = "pbwns3"
+Me.pbwns3.Size = New System.Drawing.Size(380, 80)
+Me.pbwns3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns3.TabIndex = 12
+Me.pbwns3.TabStop = false
+'
+'pbwns4
+'
+Me.pbwns4.BackColor = System.Drawing.Color.Transparent
+Me.pbwns4.Enabled = false
+Me.pbwns4.Location = New System.Drawing.Point(382, 84)
+Me.pbwns4.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns4.Name = "pbwns4"
+Me.pbwns4.Size = New System.Drawing.Size(380, 80)
+Me.pbwns4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns4.TabIndex = 13
+Me.pbwns4.TabStop = false
+'
+'pbwns5
+'
+Me.pbwns5.BackColor = System.Drawing.Color.Transparent
+Me.pbwns5.Enabled = false
+Me.pbwns5.Location = New System.Drawing.Point(0, 167)
+Me.pbwns5.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns5.Name = "pbwns5"
+Me.pbwns5.Size = New System.Drawing.Size(380, 80)
+Me.pbwns5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns5.TabIndex = 14
+Me.pbwns5.TabStop = false
+'
+'pbwns6
+'
+Me.pbwns6.BackColor = System.Drawing.Color.Transparent
+Me.pbwns6.Enabled = false
+Me.pbwns6.Location = New System.Drawing.Point(382, 167)
+Me.pbwns6.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns6.Name = "pbwns6"
+Me.pbwns6.Size = New System.Drawing.Size(380, 80)
+Me.pbwns6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns6.TabIndex = 15
+Me.pbwns6.TabStop = false
+'
+'pbwns7
+'
+Me.pbwns7.BackColor = System.Drawing.Color.Transparent
+Me.pbwns7.Enabled = false
+Me.pbwns7.Location = New System.Drawing.Point(0, 250)
+Me.pbwns7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns7.Name = "pbwns7"
+Me.pbwns7.Size = New System.Drawing.Size(380, 80)
+Me.pbwns7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns7.TabIndex = 22
+Me.pbwns7.TabStop = false
+'
+'pbwns8
+'
+Me.pbwns8.BackColor = System.Drawing.Color.Transparent
+Me.pbwns8.Enabled = false
+Me.pbwns8.Location = New System.Drawing.Point(382, 250)
+Me.pbwns8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns8.Name = "pbwns8"
+Me.pbwns8.Size = New System.Drawing.Size(380, 80)
+Me.pbwns8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns8.TabIndex = 23
+Me.pbwns8.TabStop = false
+'
+'pbwns9
+'
+Me.pbwns9.BackColor = System.Drawing.Color.Transparent
+Me.pbwns9.Enabled = false
+Me.pbwns9.Location = New System.Drawing.Point(0, 333)
+Me.pbwns9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns9.Name = "pbwns9"
+Me.pbwns9.Size = New System.Drawing.Size(380, 80)
+Me.pbwns9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns9.TabIndex = 24
+Me.pbwns9.TabStop = false
+'
+'pbwns10
+'
+Me.pbwns10.BackColor = System.Drawing.Color.Transparent
+Me.pbwns10.Enabled = false
+Me.pbwns10.Location = New System.Drawing.Point(382, 333)
+Me.pbwns10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns10.Name = "pbwns10"
+Me.pbwns10.Size = New System.Drawing.Size(380, 80)
+Me.pbwns10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns10.TabIndex = 25
+Me.pbwns10.TabStop = false
+'
+'pbwns11
+'
+Me.pbwns11.BackColor = System.Drawing.Color.Transparent
+Me.pbwns11.Enabled = false
+Me.pbwns11.Location = New System.Drawing.Point(0, 416)
+Me.pbwns11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns11.Name = "pbwns11"
+Me.pbwns11.Size = New System.Drawing.Size(380, 80)
+Me.pbwns11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns11.TabIndex = 32
+Me.pbwns11.TabStop = false
+'
+'pbwns12
+'
+Me.pbwns12.BackColor = System.Drawing.Color.Transparent
+Me.pbwns12.Enabled = false
+Me.pbwns12.Location = New System.Drawing.Point(382, 416)
+Me.pbwns12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns12.Name = "pbwns12"
+Me.pbwns12.Size = New System.Drawing.Size(380, 80)
+Me.pbwns12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns12.TabIndex = 33
+Me.pbwns12.TabStop = false
+'
+'pbwns13
+'
+Me.pbwns13.BackColor = System.Drawing.Color.Transparent
+Me.pbwns13.Enabled = false
+Me.pbwns13.Location = New System.Drawing.Point(0, 499)
+Me.pbwns13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns13.Name = "pbwns13"
+Me.pbwns13.Size = New System.Drawing.Size(380, 80)
+Me.pbwns13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns13.TabIndex = 38
+Me.pbwns13.TabStop = false
+'
+'pbwns14
+'
+Me.pbwns14.BackColor = System.Drawing.Color.Transparent
+Me.pbwns14.Enabled = false
+Me.pbwns14.Location = New System.Drawing.Point(382, 499)
+Me.pbwns14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns14.Name = "pbwns14"
+Me.pbwns14.Size = New System.Drawing.Size(380, 80)
+Me.pbwns14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns14.TabIndex = 39
+Me.pbwns14.TabStop = false
+'
+'pbwns15
+'
+Me.pbwns15.BackColor = System.Drawing.Color.Transparent
+Me.pbwns15.Enabled = false
+Me.pbwns15.Location = New System.Drawing.Point(0, 583)
+Me.pbwns15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns15.Name = "pbwns15"
+Me.pbwns15.Size = New System.Drawing.Size(380, 80)
+Me.pbwns15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns15.TabIndex = 42
+Me.pbwns15.TabStop = false
+'
+'pbwns16
+'
+Me.pbwns16.BackColor = System.Drawing.Color.Transparent
+Me.pbwns16.Enabled = false
+Me.pbwns16.Location = New System.Drawing.Point(382, 583)
+Me.pbwns16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns16.Name = "pbwns16"
+Me.pbwns16.Size = New System.Drawing.Size(380, 80)
+Me.pbwns16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns16.TabIndex = 43
+Me.pbwns16.TabStop = false
+'
+'pbwns17
+'
+Me.pbwns17.BackColor = System.Drawing.Color.Transparent
+Me.pbwns17.Enabled = false
+Me.pbwns17.Location = New System.Drawing.Point(0, 667)
+Me.pbwns17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns17.Name = "pbwns17"
+Me.pbwns17.Size = New System.Drawing.Size(380, 80)
+Me.pbwns17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns17.TabIndex = 44
+Me.pbwns17.TabStop = false
+'
+'pbwns18
+'
+Me.pbwns18.BackColor = System.Drawing.Color.Transparent
+Me.pbwns18.Enabled = false
+Me.pbwns18.Location = New System.Drawing.Point(382, 667)
+Me.pbwns18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns18.Name = "pbwns18"
+Me.pbwns18.Size = New System.Drawing.Size(380, 80)
+Me.pbwns18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns18.TabIndex = 45
+Me.pbwns18.TabStop = false
+'
+'pbwns19
+'
+Me.pbwns19.BackColor = System.Drawing.Color.Transparent
+Me.pbwns19.Enabled = false
+Me.pbwns19.Location = New System.Drawing.Point(0, 750)
+Me.pbwns19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns19.Name = "pbwns19"
+Me.pbwns19.Size = New System.Drawing.Size(380, 80)
+Me.pbwns19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns19.TabIndex = 50
+Me.pbwns19.TabStop = false
+'
+'pbwns20
+'
+Me.pbwns20.BackColor = System.Drawing.Color.Transparent
+Me.pbwns20.Enabled = false
+Me.pbwns20.Location = New System.Drawing.Point(382, 750)
+Me.pbwns20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns20.Name = "pbwns20"
+Me.pbwns20.Size = New System.Drawing.Size(380, 80)
+Me.pbwns20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns20.TabIndex = 51
+Me.pbwns20.TabStop = false
+'
+'pbwns21
+'
+Me.pbwns21.BackColor = System.Drawing.Color.Transparent
+Me.pbwns21.Enabled = false
+Me.pbwns21.Location = New System.Drawing.Point(0, 833)
+Me.pbwns21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns21.Name = "pbwns21"
+Me.pbwns21.Size = New System.Drawing.Size(380, 80)
+Me.pbwns21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns21.TabIndex = 54
+Me.pbwns21.TabStop = false
+'
+'pbwns22
+'
+Me.pbwns22.BackColor = System.Drawing.Color.Transparent
+Me.pbwns22.Enabled = false
+Me.pbwns22.Location = New System.Drawing.Point(382, 833)
+Me.pbwns22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns22.Name = "pbwns22"
+Me.pbwns22.Size = New System.Drawing.Size(380, 80)
+Me.pbwns22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns22.TabIndex = 55
+Me.pbwns22.TabStop = false
+'
+'pbwns23
+'
+Me.pbwns23.BackColor = System.Drawing.Color.Transparent
+Me.pbwns23.Enabled = false
+Me.pbwns23.Location = New System.Drawing.Point(0, 915)
+Me.pbwns23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns23.Name = "pbwns23"
+Me.pbwns23.Size = New System.Drawing.Size(380, 80)
+Me.pbwns23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns23.TabIndex = 58
+Me.pbwns23.TabStop = false
+'
+'pbwns24
+'
+Me.pbwns24.BackColor = System.Drawing.Color.Transparent
+Me.pbwns24.Enabled = false
+Me.pbwns24.Location = New System.Drawing.Point(382, 915)
+Me.pbwns24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns24.Name = "pbwns24"
+Me.pbwns24.Size = New System.Drawing.Size(380, 80)
+Me.pbwns24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns24.TabIndex = 59
+Me.pbwns24.TabStop = false
+'
+'pbwns25
+'
+Me.pbwns25.BackColor = System.Drawing.Color.Transparent
+Me.pbwns25.Enabled = false
+Me.pbwns25.Location = New System.Drawing.Point(0, 998)
+Me.pbwns25.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns25.Name = "pbwns25"
+Me.pbwns25.Size = New System.Drawing.Size(380, 80)
+Me.pbwns25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns25.TabIndex = 60
+Me.pbwns25.TabStop = false
+'
+'pbwns26
+'
+Me.pbwns26.BackColor = System.Drawing.Color.Transparent
+Me.pbwns26.Enabled = false
+Me.pbwns26.Location = New System.Drawing.Point(382, 998)
+Me.pbwns26.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns26.Name = "pbwns26"
+Me.pbwns26.Size = New System.Drawing.Size(380, 80)
+Me.pbwns26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns26.TabIndex = 61
+Me.pbwns26.TabStop = false
+'
+'pbwns27
+'
+Me.pbwns27.BackColor = System.Drawing.Color.Transparent
+Me.pbwns27.Enabled = false
+Me.pbwns27.Location = New System.Drawing.Point(0, 1081)
+Me.pbwns27.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns27.Name = "pbwns27"
+Me.pbwns27.Size = New System.Drawing.Size(380, 80)
+Me.pbwns27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns27.TabIndex = 62
+Me.pbwns27.TabStop = false
+'
+'pbwns28
+'
+Me.pbwns28.BackColor = System.Drawing.Color.Transparent
+Me.pbwns28.Enabled = false
+Me.pbwns28.Location = New System.Drawing.Point(382, 1081)
+Me.pbwns28.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns28.Name = "pbwns28"
+Me.pbwns28.Size = New System.Drawing.Size(380, 80)
+Me.pbwns28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns28.TabIndex = 63
+Me.pbwns28.TabStop = false
+'
+'pbwns29
+'
+Me.pbwns29.BackColor = System.Drawing.Color.Transparent
+Me.pbwns29.Enabled = false
+Me.pbwns29.Location = New System.Drawing.Point(0, 1164)
+Me.pbwns29.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns29.Name = "pbwns29"
+Me.pbwns29.Size = New System.Drawing.Size(380, 80)
+Me.pbwns29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns29.TabIndex = 64
+Me.pbwns29.TabStop = false
+'
+'pbwns30
+'
+Me.pbwns30.BackColor = System.Drawing.Color.Transparent
+Me.pbwns30.Enabled = false
+Me.pbwns30.Location = New System.Drawing.Point(382, 1164)
+Me.pbwns30.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns30.Name = "pbwns30"
+Me.pbwns30.Size = New System.Drawing.Size(380, 80)
+Me.pbwns30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns30.TabIndex = 65
+Me.pbwns30.TabStop = false
+'
+'pbwns31
+'
+Me.pbwns31.BackColor = System.Drawing.Color.Transparent
+Me.pbwns31.Enabled = false
+Me.pbwns31.Location = New System.Drawing.Point(0, 1249)
+Me.pbwns31.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns31.Name = "pbwns31"
+Me.pbwns31.Size = New System.Drawing.Size(380, 80)
+Me.pbwns31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns31.TabIndex = 66
+Me.pbwns31.TabStop = false
+'
+'pbwns32
+'
+Me.pbwns32.BackColor = System.Drawing.Color.Transparent
+Me.pbwns32.Enabled = false
+Me.pbwns32.Location = New System.Drawing.Point(382, 1249)
+Me.pbwns32.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns32.Name = "pbwns32"
+Me.pbwns32.Size = New System.Drawing.Size(380, 80)
+Me.pbwns32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns32.TabIndex = 67
+Me.pbwns32.TabStop = false
+'
+'pbwns33
+'
+Me.pbwns33.BackColor = System.Drawing.Color.Transparent
+Me.pbwns33.Enabled = false
+Me.pbwns33.Location = New System.Drawing.Point(0, 1333)
+Me.pbwns33.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns33.Name = "pbwns33"
+Me.pbwns33.Size = New System.Drawing.Size(380, 80)
+Me.pbwns33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns33.TabIndex = 68
+Me.pbwns33.TabStop = false
+'
+'pbwns34
+'
+Me.pbwns34.BackColor = System.Drawing.Color.Transparent
+Me.pbwns34.Enabled = false
+Me.pbwns34.Location = New System.Drawing.Point(382, 1333)
+Me.pbwns34.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns34.Name = "pbwns34"
+Me.pbwns34.Size = New System.Drawing.Size(380, 80)
+Me.pbwns34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns34.TabIndex = 69
+Me.pbwns34.TabStop = false
+'
+'pbwns35
+'
+Me.pbwns35.BackColor = System.Drawing.Color.Transparent
+Me.pbwns35.Enabled = false
+Me.pbwns35.Location = New System.Drawing.Point(0, 1418)
+Me.pbwns35.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns35.Name = "pbwns35"
+Me.pbwns35.Size = New System.Drawing.Size(380, 80)
+Me.pbwns35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns35.TabIndex = 56
+Me.pbwns35.TabStop = false
+'
+'pbwns36
+'
+Me.pbwns36.BackColor = System.Drawing.Color.Transparent
+Me.pbwns36.Enabled = false
+Me.pbwns36.Location = New System.Drawing.Point(382, 1418)
+Me.pbwns36.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwns36.Name = "pbwns36"
+Me.pbwns36.Size = New System.Drawing.Size(380, 80)
+Me.pbwns36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwns36.TabIndex = 57
+Me.pbwns36.TabStop = false
+'
 'tpWRS
 '
 Me.tpWRS.AutoScroll = true
@@ -2577,6 +3444,435 @@ Me.kpRSBackground.Name = "kpRSBackground"
 Me.kpRSBackground.Size = New System.Drawing.Size(2, 1480)
 Me.kpRSBackground.TabIndex = 72
 '
+'pbwrs1
+'
+Me.pbwrs1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pbwrs1.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs1.Enabled = false
+Me.pbwrs1.Location = New System.Drawing.Point(1, 3)
+Me.pbwrs1.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs1.MaximumSize = New System.Drawing.Size(380, 68)
+Me.pbwrs1.MinimumSize = New System.Drawing.Size(380, 68)
+Me.pbwrs1.Name = "pbwrs1"
+Me.pbwrs1.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs1.TabIndex = 10
+Me.pbwrs1.TabStop = false
+'
+'pbwrs2
+'
+Me.pbwrs2.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs2.Enabled = false
+Me.pbwrs2.Location = New System.Drawing.Point(382, 3)
+Me.pbwrs2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs2.Name = "pbwrs2"
+Me.pbwrs2.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs2.TabIndex = 11
+Me.pbwrs2.TabStop = false
+'
+'pbwrs3
+'
+Me.pbwrs3.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs3.Enabled = false
+Me.pbwrs3.Location = New System.Drawing.Point(1, 73)
+Me.pbwrs3.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs3.Name = "pbwrs3"
+Me.pbwrs3.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs3.TabIndex = 12
+Me.pbwrs3.TabStop = false
+'
+'pbwrs4
+'
+Me.pbwrs4.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs4.Enabled = false
+Me.pbwrs4.Location = New System.Drawing.Point(382, 73)
+Me.pbwrs4.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs4.Name = "pbwrs4"
+Me.pbwrs4.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs4.TabIndex = 13
+Me.pbwrs4.TabStop = false
+'
+'pbwrs5
+'
+Me.pbwrs5.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs5.Enabled = false
+Me.pbwrs5.Location = New System.Drawing.Point(1, 144)
+Me.pbwrs5.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs5.Name = "pbwrs5"
+Me.pbwrs5.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs5.TabIndex = 14
+Me.pbwrs5.TabStop = false
+'
+'pbwrs6
+'
+Me.pbwrs6.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs6.Enabled = false
+Me.pbwrs6.Location = New System.Drawing.Point(382, 144)
+Me.pbwrs6.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs6.Name = "pbwrs6"
+Me.pbwrs6.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs6.TabIndex = 15
+Me.pbwrs6.TabStop = false
+'
+'pbwrs7
+'
+Me.pbwrs7.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs7.Enabled = false
+Me.pbwrs7.Location = New System.Drawing.Point(1, 216)
+Me.pbwrs7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs7.Name = "pbwrs7"
+Me.pbwrs7.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs7.TabIndex = 22
+Me.pbwrs7.TabStop = false
+'
+'pbwrs8
+'
+Me.pbwrs8.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs8.Enabled = false
+Me.pbwrs8.Location = New System.Drawing.Point(382, 216)
+Me.pbwrs8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs8.Name = "pbwrs8"
+Me.pbwrs8.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs8.TabIndex = 23
+Me.pbwrs8.TabStop = false
+'
+'pbwrs9
+'
+Me.pbwrs9.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs9.Enabled = false
+Me.pbwrs9.Location = New System.Drawing.Point(1, 287)
+Me.pbwrs9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs9.Name = "pbwrs9"
+Me.pbwrs9.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs9.TabIndex = 24
+Me.pbwrs9.TabStop = false
+'
+'pbwrs10
+'
+Me.pbwrs10.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs10.Enabled = false
+Me.pbwrs10.Location = New System.Drawing.Point(382, 288)
+Me.pbwrs10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs10.Name = "pbwrs10"
+Me.pbwrs10.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs10.TabIndex = 25
+Me.pbwrs10.TabStop = false
+'
+'pbwrs11
+'
+Me.pbwrs11.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs11.Enabled = false
+Me.pbwrs11.Location = New System.Drawing.Point(1, 360)
+Me.pbwrs11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs11.Name = "pbwrs11"
+Me.pbwrs11.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs11.TabIndex = 32
+Me.pbwrs11.TabStop = false
+'
+'pbwrs12
+'
+Me.pbwrs12.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs12.Enabled = false
+Me.pbwrs12.Location = New System.Drawing.Point(382, 360)
+Me.pbwrs12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs12.Name = "pbwrs12"
+Me.pbwrs12.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs12.TabIndex = 33
+Me.pbwrs12.TabStop = false
+'
+'pbwrs13
+'
+Me.pbwrs13.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs13.Enabled = false
+Me.pbwrs13.Location = New System.Drawing.Point(1, 432)
+Me.pbwrs13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs13.Name = "pbwrs13"
+Me.pbwrs13.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs13.TabIndex = 38
+Me.pbwrs13.TabStop = false
+'
+'pbwrs14
+'
+Me.pbwrs14.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs14.Enabled = false
+Me.pbwrs14.Location = New System.Drawing.Point(382, 432)
+Me.pbwrs14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs14.Name = "pbwrs14"
+Me.pbwrs14.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs14.TabIndex = 39
+Me.pbwrs14.TabStop = false
+'
+'pbwrs15
+'
+Me.pbwrs15.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs15.Enabled = false
+Me.pbwrs15.Location = New System.Drawing.Point(1, 504)
+Me.pbwrs15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs15.Name = "pbwrs15"
+Me.pbwrs15.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs15.TabIndex = 42
+Me.pbwrs15.TabStop = false
+'
+'pbwrs16
+'
+Me.pbwrs16.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs16.Enabled = false
+Me.pbwrs16.Location = New System.Drawing.Point(382, 504)
+Me.pbwrs16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs16.Name = "pbwrs16"
+Me.pbwrs16.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs16.TabIndex = 43
+Me.pbwrs16.TabStop = false
+'
+'pbwrs17
+'
+Me.pbwrs17.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs17.Enabled = false
+Me.pbwrs17.Location = New System.Drawing.Point(1, 576)
+Me.pbwrs17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs17.Name = "pbwrs17"
+Me.pbwrs17.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs17.TabIndex = 44
+Me.pbwrs17.TabStop = false
+'
+'pbwrs18
+'
+Me.pbwrs18.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs18.Enabled = false
+Me.pbwrs18.Location = New System.Drawing.Point(382, 576)
+Me.pbwrs18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs18.Name = "pbwrs18"
+Me.pbwrs18.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs18.TabIndex = 45
+Me.pbwrs18.TabStop = false
+'
+'pbwrs19
+'
+Me.pbwrs19.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs19.Enabled = false
+Me.pbwrs19.Location = New System.Drawing.Point(1, 648)
+Me.pbwrs19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs19.Name = "pbwrs19"
+Me.pbwrs19.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs19.TabIndex = 50
+Me.pbwrs19.TabStop = false
+'
+'pbwrs20
+'
+Me.pbwrs20.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs20.Enabled = false
+Me.pbwrs20.Location = New System.Drawing.Point(382, 648)
+Me.pbwrs20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs20.Name = "pbwrs20"
+Me.pbwrs20.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs20.TabIndex = 51
+Me.pbwrs20.TabStop = false
+'
+'pbwrs21
+'
+Me.pbwrs21.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs21.Enabled = false
+Me.pbwrs21.Location = New System.Drawing.Point(1, 720)
+Me.pbwrs21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs21.Name = "pbwrs21"
+Me.pbwrs21.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs21.TabIndex = 54
+Me.pbwrs21.TabStop = false
+'
+'pbwrs22
+'
+Me.pbwrs22.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs22.Enabled = false
+Me.pbwrs22.Location = New System.Drawing.Point(382, 720)
+Me.pbwrs22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs22.Name = "pbwrs22"
+Me.pbwrs22.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs22.TabIndex = 55
+Me.pbwrs22.TabStop = false
+'
+'pbwrs23
+'
+Me.pbwrs23.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs23.Enabled = false
+Me.pbwrs23.Location = New System.Drawing.Point(1, 791)
+Me.pbwrs23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs23.Name = "pbwrs23"
+Me.pbwrs23.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs23.TabIndex = 58
+Me.pbwrs23.TabStop = false
+'
+'pbwrs24
+'
+Me.pbwrs24.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs24.Enabled = false
+Me.pbwrs24.Location = New System.Drawing.Point(382, 791)
+Me.pbwrs24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs24.Name = "pbwrs24"
+Me.pbwrs24.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs24.TabIndex = 59
+Me.pbwrs24.TabStop = false
+'
+'pbwrs25
+'
+Me.pbwrs25.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs25.Enabled = false
+Me.pbwrs25.Location = New System.Drawing.Point(1, 863)
+Me.pbwrs25.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs25.Name = "pbwrs25"
+Me.pbwrs25.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs25.TabIndex = 60
+Me.pbwrs25.TabStop = false
+'
+'pbwrs26
+'
+Me.pbwrs26.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs26.Enabled = false
+Me.pbwrs26.Location = New System.Drawing.Point(382, 863)
+Me.pbwrs26.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs26.Name = "pbwrs26"
+Me.pbwrs26.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs26.TabIndex = 61
+Me.pbwrs26.TabStop = false
+'
+'pbwrs27
+'
+Me.pbwrs27.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs27.Enabled = false
+Me.pbwrs27.Location = New System.Drawing.Point(0, 934)
+Me.pbwrs27.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs27.Name = "pbwrs27"
+Me.pbwrs27.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs27.TabIndex = 62
+Me.pbwrs27.TabStop = false
+'
+'pbwrs28
+'
+Me.pbwrs28.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs28.Enabled = false
+Me.pbwrs28.Location = New System.Drawing.Point(382, 934)
+Me.pbwrs28.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs28.Name = "pbwrs28"
+Me.pbwrs28.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs28.TabIndex = 63
+Me.pbwrs28.TabStop = false
+'
+'pbwrs29
+'
+Me.pbwrs29.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs29.Enabled = false
+Me.pbwrs29.Location = New System.Drawing.Point(0, 1005)
+Me.pbwrs29.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs29.Name = "pbwrs29"
+Me.pbwrs29.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs29.TabIndex = 64
+Me.pbwrs29.TabStop = false
+'
+'pbwrs30
+'
+Me.pbwrs30.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs30.Enabled = false
+Me.pbwrs30.Location = New System.Drawing.Point(382, 1005)
+Me.pbwrs30.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs30.Name = "pbwrs30"
+Me.pbwrs30.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs30.TabIndex = 65
+Me.pbwrs30.TabStop = false
+'
+'pbwrs31
+'
+Me.pbwrs31.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs31.Enabled = false
+Me.pbwrs31.Location = New System.Drawing.Point(0, 1076)
+Me.pbwrs31.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs31.Name = "pbwrs31"
+Me.pbwrs31.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs31.TabIndex = 66
+Me.pbwrs31.TabStop = false
+'
+'pbwrs32
+'
+Me.pbwrs32.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs32.Enabled = false
+Me.pbwrs32.Location = New System.Drawing.Point(382, 1076)
+Me.pbwrs32.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs32.Name = "pbwrs32"
+Me.pbwrs32.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs32.TabIndex = 67
+Me.pbwrs32.TabStop = false
+'
+'pbwrs33
+'
+Me.pbwrs33.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs33.Enabled = false
+Me.pbwrs33.Location = New System.Drawing.Point(0, 1147)
+Me.pbwrs33.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs33.Name = "pbwrs33"
+Me.pbwrs33.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs33.TabIndex = 68
+Me.pbwrs33.TabStop = false
+'
+'pbwrs34
+'
+Me.pbwrs34.BackColor = System.Drawing.Color.Transparent
+Me.pbwrs34.Enabled = false
+Me.pbwrs34.Location = New System.Drawing.Point(382, 1147)
+Me.pbwrs34.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrs34.Name = "pbwrs34"
+Me.pbwrs34.Size = New System.Drawing.Size(380, 68)
+Me.pbwrs34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrs34.TabIndex = 69
+Me.pbwrs34.TabStop = false
+'
+'pbwrs35
+'
+Me.pbwrs35.Location = New System.Drawing.Point(0, 0)
+Me.pbwrs35.Name = "pbwrs35"
+Me.pbwrs35.Size = New System.Drawing.Size(100, 50)
+Me.pbwrs35.TabIndex = 70
+Me.pbwrs35.TabStop = false
+'
+'pbwrs36
+'
+Me.pbwrs36.Location = New System.Drawing.Point(0, 0)
+Me.pbwrs36.Name = "pbwrs36"
+Me.pbwrs36.Size = New System.Drawing.Size(100, 50)
+Me.pbwrs36.TabIndex = 71
+Me.pbwrs36.TabStop = false
+'
 'tpWRSS
 '
 Me.tpWRSS.CausesValidation = false
@@ -2622,12 +3918,447 @@ Me.tpWRSS.Size = New System.Drawing.Size(786, 536)
 Me.tpWRSS.TabIndex = 4
 Me.tpWRSS.Text = "Rounded Shadow Scanlines"
 '
+'pbwrsscan1
+'
+Me.pbwrsscan1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pbwrsscan1.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan1.Enabled = false
+Me.pbwrsscan1.Location = New System.Drawing.Point(1, 1)
+Me.pbwrsscan1.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan1.MaximumSize = New System.Drawing.Size(380, 68)
+Me.pbwrsscan1.MinimumSize = New System.Drawing.Size(380, 68)
+Me.pbwrsscan1.Name = "pbwrsscan1"
+Me.pbwrsscan1.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan1.TabIndex = 10
+Me.pbwrsscan1.TabStop = false
+'
+'pbwrsscan2
+'
+Me.pbwrsscan2.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan2.Enabled = false
+Me.pbwrsscan2.Location = New System.Drawing.Point(383, 1)
+Me.pbwrsscan2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan2.Name = "pbwrsscan2"
+Me.pbwrsscan2.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan2.TabIndex = 11
+Me.pbwrsscan2.TabStop = false
+'
+'pbwrsscan3
+'
+Me.pbwrsscan3.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan3.Enabled = false
+Me.pbwrsscan3.Location = New System.Drawing.Point(1, 72)
+Me.pbwrsscan3.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan3.Name = "pbwrsscan3"
+Me.pbwrsscan3.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan3.TabIndex = 12
+Me.pbwrsscan3.TabStop = false
+'
+'pbwrsscan4
+'
+Me.pbwrsscan4.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan4.Enabled = false
+Me.pbwrsscan4.Location = New System.Drawing.Point(383, 72)
+Me.pbwrsscan4.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan4.Name = "pbwrsscan4"
+Me.pbwrsscan4.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan4.TabIndex = 13
+Me.pbwrsscan4.TabStop = false
+'
+'pbwrsscan5
+'
+Me.pbwrsscan5.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan5.Enabled = false
+Me.pbwrsscan5.Location = New System.Drawing.Point(1, 143)
+Me.pbwrsscan5.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan5.Name = "pbwrsscan5"
+Me.pbwrsscan5.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan5.TabIndex = 14
+Me.pbwrsscan5.TabStop = false
+'
+'pbwrsscan6
+'
+Me.pbwrsscan6.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan6.Enabled = false
+Me.pbwrsscan6.Location = New System.Drawing.Point(383, 143)
+Me.pbwrsscan6.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan6.Name = "pbwrsscan6"
+Me.pbwrsscan6.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan6.TabIndex = 15
+Me.pbwrsscan6.TabStop = false
+'
+'pbwrsscan7
+'
+Me.pbwrsscan7.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan7.Enabled = false
+Me.pbwrsscan7.Location = New System.Drawing.Point(1, 214)
+Me.pbwrsscan7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan7.Name = "pbwrsscan7"
+Me.pbwrsscan7.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan7.TabIndex = 22
+Me.pbwrsscan7.TabStop = false
+'
+'pbwrsscan8
+'
+Me.pbwrsscan8.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan8.Enabled = false
+Me.pbwrsscan8.Location = New System.Drawing.Point(383, 214)
+Me.pbwrsscan8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan8.Name = "pbwrsscan8"
+Me.pbwrsscan8.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan8.TabIndex = 23
+Me.pbwrsscan8.TabStop = false
+'
+'pbwrsscan9
+'
+Me.pbwrsscan9.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan9.Enabled = false
+Me.pbwrsscan9.Location = New System.Drawing.Point(1, 285)
+Me.pbwrsscan9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan9.Name = "pbwrsscan9"
+Me.pbwrsscan9.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan9.TabIndex = 24
+Me.pbwrsscan9.TabStop = false
+'
+'pbwrsscan10
+'
+Me.pbwrsscan10.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan10.Enabled = false
+Me.pbwrsscan10.Location = New System.Drawing.Point(383, 285)
+Me.pbwrsscan10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan10.Name = "pbwrsscan10"
+Me.pbwrsscan10.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan10.TabIndex = 25
+Me.pbwrsscan10.TabStop = false
+'
+'pbwrsscan11
+'
+Me.pbwrsscan11.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan11.Enabled = false
+Me.pbwrsscan11.Location = New System.Drawing.Point(1, 357)
+Me.pbwrsscan11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan11.Name = "pbwrsscan11"
+Me.pbwrsscan11.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan11.TabIndex = 32
+Me.pbwrsscan11.TabStop = false
+'
+'pbwrsscan12
+'
+Me.pbwrsscan12.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan12.Enabled = false
+Me.pbwrsscan12.Location = New System.Drawing.Point(383, 357)
+Me.pbwrsscan12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan12.Name = "pbwrsscan12"
+Me.pbwrsscan12.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan12.TabIndex = 33
+Me.pbwrsscan12.TabStop = false
+'
+'pbwrsscan13
+'
+Me.pbwrsscan13.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan13.Enabled = false
+Me.pbwrsscan13.Location = New System.Drawing.Point(1, 428)
+Me.pbwrsscan13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan13.Name = "pbwrsscan13"
+Me.pbwrsscan13.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan13.TabIndex = 38
+Me.pbwrsscan13.TabStop = false
+'
+'pbwrsscan14
+'
+Me.pbwrsscan14.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan14.Enabled = false
+Me.pbwrsscan14.Location = New System.Drawing.Point(383, 428)
+Me.pbwrsscan14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan14.Name = "pbwrsscan14"
+Me.pbwrsscan14.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan14.TabIndex = 39
+Me.pbwrsscan14.TabStop = false
+'
+'pbwrsscan15
+'
+Me.pbwrsscan15.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan15.Enabled = false
+Me.pbwrsscan15.Location = New System.Drawing.Point(1, 499)
+Me.pbwrsscan15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan15.Name = "pbwrsscan15"
+Me.pbwrsscan15.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan15.TabIndex = 42
+Me.pbwrsscan15.TabStop = false
+'
+'pbwrsscan16
+'
+Me.pbwrsscan16.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan16.Enabled = false
+Me.pbwrsscan16.Location = New System.Drawing.Point(383, 499)
+Me.pbwrsscan16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan16.Name = "pbwrsscan16"
+Me.pbwrsscan16.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan16.TabIndex = 43
+Me.pbwrsscan16.TabStop = false
+'
+'pbwrsscan17
+'
+Me.pbwrsscan17.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan17.Enabled = false
+Me.pbwrsscan17.Location = New System.Drawing.Point(1, 571)
+Me.pbwrsscan17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan17.Name = "pbwrsscan17"
+Me.pbwrsscan17.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan17.TabIndex = 44
+Me.pbwrsscan17.TabStop = false
+'
+'pbwrsscan18
+'
+Me.pbwrsscan18.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan18.Enabled = false
+Me.pbwrsscan18.Location = New System.Drawing.Point(383, 571)
+Me.pbwrsscan18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan18.Name = "pbwrsscan18"
+Me.pbwrsscan18.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan18.TabIndex = 45
+Me.pbwrsscan18.TabStop = false
+'
+'pbwrsscan19
+'
+Me.pbwrsscan19.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan19.Enabled = false
+Me.pbwrsscan19.Location = New System.Drawing.Point(1, 642)
+Me.pbwrsscan19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan19.Name = "pbwrsscan19"
+Me.pbwrsscan19.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan19.TabIndex = 50
+Me.pbwrsscan19.TabStop = false
+'
+'pbwrsscan20
+'
+Me.pbwrsscan20.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan20.Enabled = false
+Me.pbwrsscan20.Location = New System.Drawing.Point(383, 642)
+Me.pbwrsscan20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan20.Name = "pbwrsscan20"
+Me.pbwrsscan20.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan20.TabIndex = 51
+Me.pbwrsscan20.TabStop = false
+'
+'pbwrsscan21
+'
+Me.pbwrsscan21.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan21.Enabled = false
+Me.pbwrsscan21.Location = New System.Drawing.Point(1, 713)
+Me.pbwrsscan21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan21.Name = "pbwrsscan21"
+Me.pbwrsscan21.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan21.TabIndex = 54
+Me.pbwrsscan21.TabStop = false
+'
+'pbwrsscan22
+'
+Me.pbwrsscan22.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan22.Enabled = false
+Me.pbwrsscan22.Location = New System.Drawing.Point(383, 713)
+Me.pbwrsscan22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan22.Name = "pbwrsscan22"
+Me.pbwrsscan22.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan22.TabIndex = 55
+Me.pbwrsscan22.TabStop = false
+'
+'pbwrsscan23
+'
+Me.pbwrsscan23.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan23.Enabled = false
+Me.pbwrsscan23.Location = New System.Drawing.Point(1, 785)
+Me.pbwrsscan23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan23.Name = "pbwrsscan23"
+Me.pbwrsscan23.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan23.TabIndex = 58
+Me.pbwrsscan23.TabStop = false
+'
+'pbwrsscan24
+'
+Me.pbwrsscan24.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan24.Enabled = false
+Me.pbwrsscan24.Location = New System.Drawing.Point(383, 785)
+Me.pbwrsscan24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan24.Name = "pbwrsscan24"
+Me.pbwrsscan24.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan24.TabIndex = 59
+Me.pbwrsscan24.TabStop = false
+'
+'pbwrsscan25
+'
+Me.pbwrsscan25.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan25.Enabled = false
+Me.pbwrsscan25.Location = New System.Drawing.Point(1, 856)
+Me.pbwrsscan25.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan25.Name = "pbwrsscan25"
+Me.pbwrsscan25.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan25.TabIndex = 60
+Me.pbwrsscan25.TabStop = false
+'
+'pbwrsscan26
+'
+Me.pbwrsscan26.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan26.Enabled = false
+Me.pbwrsscan26.Location = New System.Drawing.Point(383, 856)
+Me.pbwrsscan26.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan26.Name = "pbwrsscan26"
+Me.pbwrsscan26.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan26.TabIndex = 61
+Me.pbwrsscan26.TabStop = false
+'
+'pbwrsscan27
+'
+Me.pbwrsscan27.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan27.Enabled = false
+Me.pbwrsscan27.Location = New System.Drawing.Point(1, 929)
+Me.pbwrsscan27.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan27.Name = "pbwrsscan27"
+Me.pbwrsscan27.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan27.TabIndex = 62
+Me.pbwrsscan27.TabStop = false
+'
+'pbwrsscan28
+'
+Me.pbwrsscan28.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan28.Enabled = false
+Me.pbwrsscan28.Location = New System.Drawing.Point(383, 929)
+Me.pbwrsscan28.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan28.Name = "pbwrsscan28"
+Me.pbwrsscan28.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan28.TabIndex = 63
+Me.pbwrsscan28.TabStop = false
+'
+'pbwrsscan29
+'
+Me.pbwrsscan29.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan29.Enabled = false
+Me.pbwrsscan29.Location = New System.Drawing.Point(1, 1001)
+Me.pbwrsscan29.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan29.Name = "pbwrsscan29"
+Me.pbwrsscan29.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan29.TabIndex = 64
+Me.pbwrsscan29.TabStop = false
+'
+'pbwrsscan30
+'
+Me.pbwrsscan30.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan30.Enabled = false
+Me.pbwrsscan30.Location = New System.Drawing.Point(383, 1001)
+Me.pbwrsscan30.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan30.Name = "pbwrsscan30"
+Me.pbwrsscan30.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan30.TabIndex = 65
+Me.pbwrsscan30.TabStop = false
+'
+'pbwrsscan31
+'
+Me.pbwrsscan31.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan31.Enabled = false
+Me.pbwrsscan31.Location = New System.Drawing.Point(1, 1074)
+Me.pbwrsscan31.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan31.Name = "pbwrsscan31"
+Me.pbwrsscan31.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan31.TabIndex = 66
+Me.pbwrsscan31.TabStop = false
+'
+'pbwrsscan32
+'
+Me.pbwrsscan32.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan32.Enabled = false
+Me.pbwrsscan32.Location = New System.Drawing.Point(383, 1074)
+Me.pbwrsscan32.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan32.Name = "pbwrsscan32"
+Me.pbwrsscan32.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan32.TabIndex = 67
+Me.pbwrsscan32.TabStop = false
+'
+'pbwrsscan33
+'
+Me.pbwrsscan33.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan33.Enabled = false
+Me.pbwrsscan33.Location = New System.Drawing.Point(1, 1148)
+Me.pbwrsscan33.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan33.Name = "pbwrsscan33"
+Me.pbwrsscan33.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan33.TabIndex = 68
+Me.pbwrsscan33.TabStop = false
+'
+'pbwrsscan34
+'
+Me.pbwrsscan34.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan34.Enabled = false
+Me.pbwrsscan34.Location = New System.Drawing.Point(383, 1148)
+Me.pbwrsscan34.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan34.Name = "pbwrsscan34"
+Me.pbwrsscan34.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbwrsscan34.TabIndex = 69
+Me.pbwrsscan34.TabStop = false
+'
+'pbwrsscan35
+'
+Me.pbwrsscan35.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan35.Enabled = false
+Me.pbwrsscan35.Location = New System.Drawing.Point(7, 1480)
+Me.pbwrsscan35.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan35.Name = "pbwrsscan35"
+Me.pbwrsscan35.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan35.TabIndex = 56
+Me.pbwrsscan35.TabStop = false
+'
+'pbwrsscan36
+'
+Me.pbwrsscan36.BackColor = System.Drawing.Color.Transparent
+Me.pbwrsscan36.Enabled = false
+Me.pbwrsscan36.Location = New System.Drawing.Point(474, 1480)
+Me.pbwrsscan36.Margin = New System.Windows.Forms.Padding(2)
+Me.pbwrsscan36.Name = "pbwrsscan36"
+Me.pbwrsscan36.Size = New System.Drawing.Size(380, 68)
+Me.pbwrsscan36.TabIndex = 57
+Me.pbwrsscan36.TabStop = false
+'
 'lbldebug
 '
 Me.lbldebug.Location = New System.Drawing.Point(32, 705)
 Me.lbldebug.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 Me.lbldebug.Name = "lbldebug"
-Me.lbldebug.Size = New System.Drawing.Size(64, 21)
+Me.lbldebug.Size = New System.Drawing.Size(59, 16)
 Me.lbldebug.TabIndex = 23
 Me.lbldebug.Text = "DebugLbl"
 Me.lbldebug.Values.ExtraText = ""
@@ -2670,6 +4401,198 @@ Me.tp5.Size = New System.Drawing.Size(804, 575)
 Me.tp5.TabIndex = 5
 Me.tp5.Text = "Square Icons"
 Me.tp5.UseVisualStyleBackColor = true
+'
+'spb24
+'
+Me.spb24.Location = New System.Drawing.Point(515, 1828)
+Me.spb24.Name = "spb24"
+Me.spb24.Size = New System.Drawing.Size(256, 256)
+Me.spb24.TabIndex = 29
+Me.spb24.TabStop = false
+'
+'spb23
+'
+Me.spb23.Location = New System.Drawing.Point(256, 1828)
+Me.spb23.Name = "spb23"
+Me.spb23.Size = New System.Drawing.Size(256, 256)
+Me.spb23.TabIndex = 28
+Me.spb23.TabStop = false
+'
+'spb22
+'
+Me.spb22.Location = New System.Drawing.Point(1, 1828)
+Me.spb22.Name = "spb22"
+Me.spb22.Size = New System.Drawing.Size(256, 256)
+Me.spb22.TabIndex = 27
+Me.spb22.TabStop = false
+'
+'spb21
+'
+Me.spb21.Location = New System.Drawing.Point(515, 1568)
+Me.spb21.Name = "spb21"
+Me.spb21.Size = New System.Drawing.Size(256, 256)
+Me.spb21.TabIndex = 26
+Me.spb21.TabStop = false
+'
+'spb20
+'
+Me.spb20.Location = New System.Drawing.Point(256, 1568)
+Me.spb20.Name = "spb20"
+Me.spb20.Size = New System.Drawing.Size(256, 256)
+Me.spb20.TabIndex = 25
+Me.spb20.TabStop = false
+'
+'spb19
+'
+Me.spb19.Location = New System.Drawing.Point(1, 1568)
+Me.spb19.Name = "spb19"
+Me.spb19.Size = New System.Drawing.Size(256, 256)
+Me.spb19.TabIndex = 24
+Me.spb19.TabStop = false
+'
+'spb18
+'
+Me.spb18.Location = New System.Drawing.Point(515, 1306)
+Me.spb18.Name = "spb18"
+Me.spb18.Size = New System.Drawing.Size(256, 256)
+Me.spb18.TabIndex = 23
+Me.spb18.TabStop = false
+'
+'spb17
+'
+Me.spb17.Location = New System.Drawing.Point(256, 1306)
+Me.spb17.Name = "spb17"
+Me.spb17.Size = New System.Drawing.Size(256, 256)
+Me.spb17.TabIndex = 22
+Me.spb17.TabStop = false
+'
+'spb16
+'
+Me.spb16.Location = New System.Drawing.Point(1, 1306)
+Me.spb16.Name = "spb16"
+Me.spb16.Size = New System.Drawing.Size(256, 256)
+Me.spb16.TabIndex = 21
+Me.spb16.TabStop = false
+'
+'spb15
+'
+Me.spb15.Location = New System.Drawing.Point(515, 1044)
+Me.spb15.Name = "spb15"
+Me.spb15.Size = New System.Drawing.Size(256, 256)
+Me.spb15.TabIndex = 20
+Me.spb15.TabStop = false
+'
+'spb14
+'
+Me.spb14.Location = New System.Drawing.Point(256, 1044)
+Me.spb14.Name = "spb14"
+Me.spb14.Size = New System.Drawing.Size(256, 256)
+Me.spb14.TabIndex = 19
+Me.spb14.TabStop = false
+'
+'spb13
+'
+Me.spb13.Location = New System.Drawing.Point(1, 1044)
+Me.spb13.Name = "spb13"
+Me.spb13.Size = New System.Drawing.Size(256, 256)
+Me.spb13.TabIndex = 18
+Me.spb13.TabStop = false
+'
+'spb12
+'
+Me.spb12.Location = New System.Drawing.Point(515, 785)
+Me.spb12.Name = "spb12"
+Me.spb12.Size = New System.Drawing.Size(256, 256)
+Me.spb12.TabIndex = 17
+Me.spb12.TabStop = false
+'
+'spb11
+'
+Me.spb11.Location = New System.Drawing.Point(256, 785)
+Me.spb11.Name = "spb11"
+Me.spb11.Size = New System.Drawing.Size(256, 256)
+Me.spb11.TabIndex = 16
+Me.spb11.TabStop = false
+'
+'spb10
+'
+Me.spb10.Location = New System.Drawing.Point(1, 785)
+Me.spb10.Name = "spb10"
+Me.spb10.Size = New System.Drawing.Size(256, 256)
+Me.spb10.TabIndex = 15
+Me.spb10.TabStop = false
+'
+'spb9
+'
+Me.spb9.Location = New System.Drawing.Point(517, 525)
+Me.spb9.Name = "spb9"
+Me.spb9.Size = New System.Drawing.Size(256, 256)
+Me.spb9.TabIndex = 14
+Me.spb9.TabStop = false
+'
+'spb8
+'
+Me.spb8.Location = New System.Drawing.Point(257, 524)
+Me.spb8.Name = "spb8"
+Me.spb8.Size = New System.Drawing.Size(256, 256)
+Me.spb8.TabIndex = 13
+Me.spb8.TabStop = false
+'
+'spb7
+'
+Me.spb7.Location = New System.Drawing.Point(1, 523)
+Me.spb7.Name = "spb7"
+Me.spb7.Size = New System.Drawing.Size(256, 256)
+Me.spb7.TabIndex = 12
+Me.spb7.TabStop = false
+'
+'spb6
+'
+Me.spb6.Location = New System.Drawing.Point(515, 265)
+Me.spb6.Name = "spb6"
+Me.spb6.Size = New System.Drawing.Size(256, 256)
+Me.spb6.TabIndex = 11
+Me.spb6.TabStop = false
+'
+'spb5
+'
+Me.spb5.Location = New System.Drawing.Point(258, 265)
+Me.spb5.Name = "spb5"
+Me.spb5.Size = New System.Drawing.Size(256, 256)
+Me.spb5.TabIndex = 10
+Me.spb5.TabStop = false
+'
+'spb4
+'
+Me.spb4.Location = New System.Drawing.Point(1, 265)
+Me.spb4.Name = "spb4"
+Me.spb4.Size = New System.Drawing.Size(256, 256)
+Me.spb4.TabIndex = 9
+Me.spb4.TabStop = false
+'
+'spb3
+'
+Me.spb3.Location = New System.Drawing.Point(515, 3)
+Me.spb3.Name = "spb3"
+Me.spb3.Size = New System.Drawing.Size(256, 256)
+Me.spb3.TabIndex = 8
+Me.spb3.TabStop = false
+'
+'spb2
+'
+Me.spb2.Location = New System.Drawing.Point(258, 3)
+Me.spb2.Name = "spb2"
+Me.spb2.Size = New System.Drawing.Size(256, 256)
+Me.spb2.TabIndex = 7
+Me.spb2.TabStop = false
+'
+'spb1
+'
+Me.spb1.Location = New System.Drawing.Point(1, 3)
+Me.spb1.Name = "spb1"
+Me.spb1.Size = New System.Drawing.Size(256, 256)
+Me.spb1.TabIndex = 6
+Me.spb1.TabStop = false
 '
 'tp6
 '
@@ -2785,6 +4708,750 @@ Me.kpBoxShots.Name = "kpBoxShots"
 Me.kpBoxShots.Size = New System.Drawing.Size(776, 8000)
 Me.kpBoxShots.TabIndex = 42
 '
+'bspb91
+'
+Me.bspb91.Location = New System.Drawing.Point(0, 7728)
+Me.bspb91.Name = "bspb91"
+Me.bspb91.Size = New System.Drawing.Size(256, 256)
+Me.bspb91.TabIndex = 70
+Me.bspb91.TabStop = false
+'
+'bspb88
+'
+Me.bspb88.Location = New System.Drawing.Point(0, 7470)
+Me.bspb88.Name = "bspb88"
+Me.bspb88.Size = New System.Drawing.Size(256, 256)
+Me.bspb88.TabIndex = 67
+Me.bspb88.TabStop = false
+'
+'bspb92
+'
+Me.bspb92.Location = New System.Drawing.Point(257, 7728)
+Me.bspb92.Name = "bspb92"
+Me.bspb92.Size = New System.Drawing.Size(256, 256)
+Me.bspb92.TabIndex = 71
+Me.bspb92.TabStop = false
+'
+'bspb79
+'
+Me.bspb79.Location = New System.Drawing.Point(1, 6696)
+Me.bspb79.Name = "bspb79"
+Me.bspb79.Size = New System.Drawing.Size(256, 256)
+Me.bspb79.TabIndex = 61
+Me.bspb79.TabStop = false
+'
+'bspb93
+'
+Me.bspb93.Location = New System.Drawing.Point(514, 7728)
+Me.bspb93.Name = "bspb93"
+Me.bspb93.Size = New System.Drawing.Size(256, 256)
+Me.bspb93.TabIndex = 72
+Me.bspb93.TabStop = false
+'
+'bspb89
+'
+Me.bspb89.Location = New System.Drawing.Point(257, 7470)
+Me.bspb89.Name = "bspb89"
+Me.bspb89.Size = New System.Drawing.Size(256, 256)
+Me.bspb89.TabIndex = 68
+Me.bspb89.TabStop = false
+'
+'bspb90
+'
+Me.bspb90.Location = New System.Drawing.Point(514, 7470)
+Me.bspb90.Name = "bspb90"
+Me.bspb90.Size = New System.Drawing.Size(256, 256)
+Me.bspb90.TabIndex = 69
+Me.bspb90.TabStop = false
+'
+'bspb70
+'
+Me.bspb70.Location = New System.Drawing.Point(2, 5922)
+Me.bspb70.Name = "bspb70"
+Me.bspb70.Size = New System.Drawing.Size(256, 256)
+Me.bspb70.TabIndex = 52
+Me.bspb70.TabStop = false
+'
+'bspb85
+'
+Me.bspb85.Location = New System.Drawing.Point(0, 7212)
+Me.bspb85.Name = "bspb85"
+Me.bspb85.Size = New System.Drawing.Size(256, 256)
+Me.bspb85.TabIndex = 64
+Me.bspb85.TabStop = false
+'
+'bspb80
+'
+Me.bspb80.Location = New System.Drawing.Point(258, 6696)
+Me.bspb80.Name = "bspb80"
+Me.bspb80.Size = New System.Drawing.Size(256, 256)
+Me.bspb80.TabIndex = 62
+Me.bspb80.TabStop = false
+'
+'bspb86
+'
+Me.bspb86.Location = New System.Drawing.Point(257, 7212)
+Me.bspb86.Name = "bspb86"
+Me.bspb86.Size = New System.Drawing.Size(256, 256)
+Me.bspb86.TabIndex = 65
+Me.bspb86.TabStop = false
+'
+'bspb61
+'
+Me.bspb61.Location = New System.Drawing.Point(2, 5148)
+Me.bspb61.Name = "bspb61"
+Me.bspb61.Size = New System.Drawing.Size(256, 256)
+Me.bspb61.TabIndex = 43
+Me.bspb61.TabStop = false
+'
+'bspb87
+'
+Me.bspb87.Location = New System.Drawing.Point(514, 7212)
+Me.bspb87.Name = "bspb87"
+Me.bspb87.Size = New System.Drawing.Size(256, 256)
+Me.bspb87.TabIndex = 66
+Me.bspb87.TabStop = false
+'
+'bspb81
+'
+Me.bspb81.Location = New System.Drawing.Point(515, 6696)
+Me.bspb81.Name = "bspb81"
+Me.bspb81.Size = New System.Drawing.Size(256, 256)
+Me.bspb81.TabIndex = 63
+Me.bspb81.TabStop = false
+'
+'bspb71
+'
+Me.bspb71.Location = New System.Drawing.Point(259, 5922)
+Me.bspb71.Name = "bspb71"
+Me.bspb71.Size = New System.Drawing.Size(256, 256)
+Me.bspb71.TabIndex = 53
+Me.bspb71.TabStop = false
+'
+'bspb82
+'
+Me.bspb82.Location = New System.Drawing.Point(0, 6954)
+Me.bspb82.Name = "bspb82"
+Me.bspb82.Size = New System.Drawing.Size(256, 256)
+Me.bspb82.TabIndex = 64
+Me.bspb82.TabStop = false
+'
+'bspb46
+'
+Me.bspb46.Location = New System.Drawing.Point(2, 3858)
+Me.bspb46.Name = "bspb46"
+Me.bspb46.Size = New System.Drawing.Size(256, 256)
+Me.bspb46.TabIndex = 0
+Me.bspb46.TabStop = false
+'
+'bspb83
+'
+Me.bspb83.Location = New System.Drawing.Point(257, 6954)
+Me.bspb83.Name = "bspb83"
+Me.bspb83.Size = New System.Drawing.Size(256, 256)
+Me.bspb83.TabIndex = 65
+Me.bspb83.TabStop = false
+'
+'bspb72
+'
+Me.bspb72.Location = New System.Drawing.Point(516, 5922)
+Me.bspb72.Name = "bspb72"
+Me.bspb72.Size = New System.Drawing.Size(256, 256)
+Me.bspb72.TabIndex = 54
+Me.bspb72.TabStop = false
+'
+'bspb84
+'
+Me.bspb84.Location = New System.Drawing.Point(514, 6954)
+Me.bspb84.Name = "bspb84"
+Me.bspb84.Size = New System.Drawing.Size(256, 256)
+Me.bspb84.TabIndex = 66
+Me.bspb84.TabStop = false
+'
+'bspb62
+'
+Me.bspb62.Location = New System.Drawing.Point(259, 5148)
+Me.bspb62.Name = "bspb62"
+Me.bspb62.Size = New System.Drawing.Size(256, 256)
+Me.bspb62.TabIndex = 44
+Me.bspb62.TabStop = false
+'
+'bspb73
+'
+Me.bspb73.Location = New System.Drawing.Point(2, 6180)
+Me.bspb73.Name = "bspb73"
+Me.bspb73.Size = New System.Drawing.Size(256, 256)
+Me.bspb73.TabIndex = 55
+Me.bspb73.TabStop = false
+'
+'bspb47
+'
+Me.bspb47.Location = New System.Drawing.Point(259, 3858)
+Me.bspb47.Name = "bspb47"
+Me.bspb47.Size = New System.Drawing.Size(256, 256)
+Me.bspb47.TabIndex = 1
+Me.bspb47.TabStop = false
+'
+'bspb74
+'
+Me.bspb74.Location = New System.Drawing.Point(259, 6180)
+Me.bspb74.Name = "bspb74"
+Me.bspb74.Size = New System.Drawing.Size(256, 256)
+Me.bspb74.TabIndex = 56
+Me.bspb74.TabStop = false
+'
+'bspb75
+'
+Me.bspb75.Location = New System.Drawing.Point(516, 6180)
+Me.bspb75.Name = "bspb75"
+Me.bspb75.Size = New System.Drawing.Size(256, 256)
+Me.bspb75.TabIndex = 57
+Me.bspb75.TabStop = false
+'
+'bspb63
+'
+Me.bspb63.Location = New System.Drawing.Point(516, 5148)
+Me.bspb63.Name = "bspb63"
+Me.bspb63.Size = New System.Drawing.Size(256, 256)
+Me.bspb63.TabIndex = 45
+Me.bspb63.TabStop = false
+'
+'bspb76
+'
+Me.bspb76.Location = New System.Drawing.Point(1, 6438)
+Me.bspb76.Name = "bspb76"
+Me.bspb76.Size = New System.Drawing.Size(256, 256)
+Me.bspb76.TabIndex = 58
+Me.bspb76.TabStop = false
+'
+'bspb48
+'
+Me.bspb48.Location = New System.Drawing.Point(516, 3858)
+Me.bspb48.Name = "bspb48"
+Me.bspb48.Size = New System.Drawing.Size(256, 256)
+Me.bspb48.TabIndex = 2
+Me.bspb48.TabStop = false
+'
+'bspb77
+'
+Me.bspb77.Location = New System.Drawing.Point(258, 6438)
+Me.bspb77.Name = "bspb77"
+Me.bspb77.Size = New System.Drawing.Size(256, 256)
+Me.bspb77.TabIndex = 59
+Me.bspb77.TabStop = false
+'
+'bspb64
+'
+Me.bspb64.Location = New System.Drawing.Point(2, 5406)
+Me.bspb64.Name = "bspb64"
+Me.bspb64.Size = New System.Drawing.Size(256, 256)
+Me.bspb64.TabIndex = 46
+Me.bspb64.TabStop = false
+'
+'bspb78
+'
+Me.bspb78.Location = New System.Drawing.Point(515, 6438)
+Me.bspb78.Name = "bspb78"
+Me.bspb78.Size = New System.Drawing.Size(256, 256)
+Me.bspb78.TabIndex = 60
+Me.bspb78.TabStop = false
+'
+'bspb65
+'
+Me.bspb65.Location = New System.Drawing.Point(259, 5406)
+Me.bspb65.Name = "bspb65"
+Me.bspb65.Size = New System.Drawing.Size(256, 256)
+Me.bspb65.TabIndex = 47
+Me.bspb65.TabStop = false
+'
+'bspb49
+'
+Me.bspb49.Location = New System.Drawing.Point(2, 4116)
+Me.bspb49.Name = "bspb49"
+Me.bspb49.Size = New System.Drawing.Size(256, 256)
+Me.bspb49.TabIndex = 3
+Me.bspb49.TabStop = false
+'
+'bspb66
+'
+Me.bspb66.Location = New System.Drawing.Point(516, 5406)
+Me.bspb66.Name = "bspb66"
+Me.bspb66.Size = New System.Drawing.Size(256, 256)
+Me.bspb66.TabIndex = 48
+Me.bspb66.TabStop = false
+'
+'bspb50
+'
+Me.bspb50.Location = New System.Drawing.Point(259, 4116)
+Me.bspb50.Name = "bspb50"
+Me.bspb50.Size = New System.Drawing.Size(256, 256)
+Me.bspb50.TabIndex = 4
+Me.bspb50.TabStop = false
+'
+'bspb67
+'
+Me.bspb67.Location = New System.Drawing.Point(2, 5664)
+Me.bspb67.Name = "bspb67"
+Me.bspb67.Size = New System.Drawing.Size(256, 256)
+Me.bspb67.TabIndex = 49
+Me.bspb67.TabStop = false
+'
+'bspb51
+'
+Me.bspb51.Location = New System.Drawing.Point(516, 4116)
+Me.bspb51.Name = "bspb51"
+Me.bspb51.Size = New System.Drawing.Size(256, 256)
+Me.bspb51.TabIndex = 5
+Me.bspb51.TabStop = false
+'
+'bspb68
+'
+Me.bspb68.Location = New System.Drawing.Point(259, 5664)
+Me.bspb68.Name = "bspb68"
+Me.bspb68.Size = New System.Drawing.Size(256, 256)
+Me.bspb68.TabIndex = 50
+Me.bspb68.TabStop = false
+'
+'bspb52
+'
+Me.bspb52.Location = New System.Drawing.Point(2, 4374)
+Me.bspb52.Name = "bspb52"
+Me.bspb52.Size = New System.Drawing.Size(256, 256)
+Me.bspb52.TabIndex = 6
+Me.bspb52.TabStop = false
+'
+'bspb69
+'
+Me.bspb69.Location = New System.Drawing.Point(516, 5664)
+Me.bspb69.Name = "bspb69"
+Me.bspb69.Size = New System.Drawing.Size(256, 256)
+Me.bspb69.TabIndex = 51
+Me.bspb69.TabStop = false
+'
+'bspb53
+'
+Me.bspb53.Location = New System.Drawing.Point(259, 4374)
+Me.bspb53.Name = "bspb53"
+Me.bspb53.Size = New System.Drawing.Size(256, 256)
+Me.bspb53.TabIndex = 7
+Me.bspb53.TabStop = false
+'
+'bspb54
+'
+Me.bspb54.Location = New System.Drawing.Point(516, 4374)
+Me.bspb54.Name = "bspb54"
+Me.bspb54.Size = New System.Drawing.Size(256, 256)
+Me.bspb54.TabIndex = 8
+Me.bspb54.TabStop = false
+'
+'bspb55
+'
+Me.bspb55.Location = New System.Drawing.Point(2, 4632)
+Me.bspb55.Name = "bspb55"
+Me.bspb55.Size = New System.Drawing.Size(256, 256)
+Me.bspb55.TabIndex = 9
+Me.bspb55.TabStop = false
+'
+'bspb56
+'
+Me.bspb56.Location = New System.Drawing.Point(259, 4632)
+Me.bspb56.Name = "bspb56"
+Me.bspb56.Size = New System.Drawing.Size(256, 256)
+Me.bspb56.TabIndex = 10
+Me.bspb56.TabStop = false
+'
+'bspb57
+'
+Me.bspb57.Location = New System.Drawing.Point(516, 4632)
+Me.bspb57.Name = "bspb57"
+Me.bspb57.Size = New System.Drawing.Size(256, 256)
+Me.bspb57.TabIndex = 11
+Me.bspb57.TabStop = false
+'
+'bspb58
+'
+Me.bspb58.Location = New System.Drawing.Point(2, 4890)
+Me.bspb58.Name = "bspb58"
+Me.bspb58.Size = New System.Drawing.Size(256, 256)
+Me.bspb58.TabIndex = 12
+Me.bspb58.TabStop = false
+'
+'bspb59
+'
+Me.bspb59.Location = New System.Drawing.Point(259, 4890)
+Me.bspb59.Name = "bspb59"
+Me.bspb59.Size = New System.Drawing.Size(256, 256)
+Me.bspb59.TabIndex = 13
+Me.bspb59.TabStop = false
+'
+'bspb60
+'
+Me.bspb60.Location = New System.Drawing.Point(516, 4890)
+Me.bspb60.Name = "bspb60"
+Me.bspb60.Size = New System.Drawing.Size(256, 256)
+Me.bspb60.TabIndex = 14
+Me.bspb60.TabStop = false
+'
+'bspb45
+'
+Me.bspb45.Location = New System.Drawing.Point(516, 3601)
+Me.bspb45.Name = "bspb45"
+Me.bspb45.Size = New System.Drawing.Size(256, 256)
+Me.bspb45.TabIndex = 51
+Me.bspb45.TabStop = false
+'
+'bspb3
+'
+Me.bspb3.Location = New System.Drawing.Point(516, 0)
+Me.bspb3.Name = "bspb3"
+Me.bspb3.Size = New System.Drawing.Size(256, 256)
+Me.bspb3.TabIndex = 20
+Me.bspb3.TabStop = false
+'
+'bspb9
+'
+Me.bspb9.Location = New System.Drawing.Point(516, 514)
+Me.bspb9.Name = "bspb9"
+Me.bspb9.Size = New System.Drawing.Size(256, 256)
+Me.bspb9.TabIndex = 26
+Me.bspb9.TabStop = false
+'
+'bspb2
+'
+Me.bspb2.Location = New System.Drawing.Point(259, 0)
+Me.bspb2.Name = "bspb2"
+Me.bspb2.Size = New System.Drawing.Size(256, 256)
+Me.bspb2.TabIndex = 19
+Me.bspb2.TabStop = false
+'
+'bspb1
+'
+Me.bspb1.Location = New System.Drawing.Point(2, 0)
+Me.bspb1.Name = "bspb1"
+Me.bspb1.Size = New System.Drawing.Size(256, 256)
+Me.bspb1.TabIndex = 18
+Me.bspb1.TabStop = false
+'
+'bspb8
+'
+Me.bspb8.Location = New System.Drawing.Point(259, 514)
+Me.bspb8.Name = "bspb8"
+Me.bspb8.Size = New System.Drawing.Size(256, 256)
+Me.bspb8.TabIndex = 25
+Me.bspb8.TabStop = false
+'
+'bspb15
+'
+Me.bspb15.Location = New System.Drawing.Point(516, 1028)
+Me.bspb15.Name = "bspb15"
+Me.bspb15.Size = New System.Drawing.Size(256, 256)
+Me.bspb15.TabIndex = 32
+Me.bspb15.TabStop = false
+'
+'bspb7
+'
+Me.bspb7.Location = New System.Drawing.Point(2, 514)
+Me.bspb7.Name = "bspb7"
+Me.bspb7.Size = New System.Drawing.Size(256, 256)
+Me.bspb7.TabIndex = 24
+Me.bspb7.TabStop = false
+'
+'bspb14
+'
+Me.bspb14.Location = New System.Drawing.Point(259, 1028)
+Me.bspb14.Name = "bspb14"
+Me.bspb14.Size = New System.Drawing.Size(256, 256)
+Me.bspb14.TabIndex = 31
+Me.bspb14.TabStop = false
+'
+'bspb6
+'
+Me.bspb6.Location = New System.Drawing.Point(516, 257)
+Me.bspb6.Name = "bspb6"
+Me.bspb6.Size = New System.Drawing.Size(256, 256)
+Me.bspb6.TabIndex = 23
+Me.bspb6.TabStop = false
+'
+'bspb21
+'
+Me.bspb21.Location = New System.Drawing.Point(516, 1543)
+Me.bspb21.Name = "bspb21"
+Me.bspb21.Size = New System.Drawing.Size(256, 256)
+Me.bspb21.TabIndex = 38
+Me.bspb21.TabStop = false
+'
+'bspb5
+'
+Me.bspb5.Location = New System.Drawing.Point(259, 257)
+Me.bspb5.Name = "bspb5"
+Me.bspb5.Size = New System.Drawing.Size(256, 256)
+Me.bspb5.TabIndex = 22
+Me.bspb5.TabStop = false
+'
+'bspb13
+'
+Me.bspb13.Location = New System.Drawing.Point(2, 1028)
+Me.bspb13.Name = "bspb13"
+Me.bspb13.Size = New System.Drawing.Size(256, 256)
+Me.bspb13.TabIndex = 30
+Me.bspb13.TabStop = false
+'
+'bspb4
+'
+Me.bspb4.Location = New System.Drawing.Point(2, 257)
+Me.bspb4.Name = "bspb4"
+Me.bspb4.Size = New System.Drawing.Size(256, 256)
+Me.bspb4.TabIndex = 21
+Me.bspb4.TabStop = false
+'
+'bspb24
+'
+Me.bspb24.Location = New System.Drawing.Point(516, 1800)
+Me.bspb24.Name = "bspb24"
+Me.bspb24.Size = New System.Drawing.Size(256, 256)
+Me.bspb24.TabIndex = 41
+Me.bspb24.TabStop = false
+'
+'bspb12
+'
+Me.bspb12.Location = New System.Drawing.Point(516, 771)
+Me.bspb12.Name = "bspb12"
+Me.bspb12.Size = New System.Drawing.Size(256, 256)
+Me.bspb12.TabIndex = 29
+Me.bspb12.TabStop = false
+'
+'bspb20
+'
+Me.bspb20.Location = New System.Drawing.Point(259, 1543)
+Me.bspb20.Name = "bspb20"
+Me.bspb20.Size = New System.Drawing.Size(256, 256)
+Me.bspb20.TabIndex = 37
+Me.bspb20.TabStop = false
+'
+'bspb11
+'
+Me.bspb11.Location = New System.Drawing.Point(259, 771)
+Me.bspb11.Name = "bspb11"
+Me.bspb11.Size = New System.Drawing.Size(256, 256)
+Me.bspb11.TabIndex = 28
+Me.bspb11.TabStop = false
+'
+'bspb19
+'
+Me.bspb19.Location = New System.Drawing.Point(2, 1543)
+Me.bspb19.Name = "bspb19"
+Me.bspb19.Size = New System.Drawing.Size(256, 256)
+Me.bspb19.TabIndex = 36
+Me.bspb19.TabStop = false
+'
+'bspb10
+'
+Me.bspb10.Location = New System.Drawing.Point(2, 771)
+Me.bspb10.Name = "bspb10"
+Me.bspb10.Size = New System.Drawing.Size(256, 256)
+Me.bspb10.TabIndex = 27
+Me.bspb10.TabStop = false
+'
+'bspb36
+'
+Me.bspb36.Location = New System.Drawing.Point(516, 2829)
+Me.bspb36.Name = "bspb36"
+Me.bspb36.Size = New System.Drawing.Size(256, 256)
+Me.bspb36.TabIndex = 48
+Me.bspb36.TabStop = false
+'
+'bspb18
+'
+Me.bspb18.Location = New System.Drawing.Point(516, 1285)
+Me.bspb18.Name = "bspb18"
+Me.bspb18.Size = New System.Drawing.Size(256, 256)
+Me.bspb18.TabIndex = 35
+Me.bspb18.TabStop = false
+'
+'bspb23
+'
+Me.bspb23.Location = New System.Drawing.Point(259, 1800)
+Me.bspb23.Name = "bspb23"
+Me.bspb23.Size = New System.Drawing.Size(256, 256)
+Me.bspb23.TabIndex = 40
+Me.bspb23.TabStop = false
+'
+'bspb17
+'
+Me.bspb17.Location = New System.Drawing.Point(259, 1285)
+Me.bspb17.Name = "bspb17"
+Me.bspb17.Size = New System.Drawing.Size(256, 256)
+Me.bspb17.TabIndex = 34
+Me.bspb17.TabStop = false
+'
+'bspb44
+'
+Me.bspb44.Location = New System.Drawing.Point(259, 3601)
+Me.bspb44.Name = "bspb44"
+Me.bspb44.Size = New System.Drawing.Size(256, 256)
+Me.bspb44.TabIndex = 50
+Me.bspb44.TabStop = false
+'
+'bspb16
+'
+Me.bspb16.Location = New System.Drawing.Point(2, 1285)
+Me.bspb16.Name = "bspb16"
+Me.bspb16.Size = New System.Drawing.Size(256, 256)
+Me.bspb16.TabIndex = 33
+Me.bspb16.TabStop = false
+'
+'bspb22
+'
+Me.bspb22.Location = New System.Drawing.Point(2, 1800)
+Me.bspb22.Name = "bspb22"
+Me.bspb22.Size = New System.Drawing.Size(256, 256)
+Me.bspb22.TabIndex = 39
+Me.bspb22.TabStop = false
+'
+'bspb43
+'
+Me.bspb43.Location = New System.Drawing.Point(2, 3601)
+Me.bspb43.Name = "bspb43"
+Me.bspb43.Size = New System.Drawing.Size(256, 256)
+Me.bspb43.TabIndex = 49
+Me.bspb43.TabStop = false
+'
+'bspb30
+'
+Me.bspb30.Location = New System.Drawing.Point(516, 2315)
+Me.bspb30.Name = "bspb30"
+Me.bspb30.Size = New System.Drawing.Size(256, 256)
+Me.bspb30.TabIndex = 48
+Me.bspb30.TabStop = false
+'
+'bspb42
+'
+Me.bspb42.Location = New System.Drawing.Point(516, 3344)
+Me.bspb42.Name = "bspb42"
+Me.bspb42.Size = New System.Drawing.Size(256, 256)
+Me.bspb42.TabIndex = 48
+Me.bspb42.TabStop = false
+'
+'bspb35
+'
+Me.bspb35.Location = New System.Drawing.Point(259, 2829)
+Me.bspb35.Name = "bspb35"
+Me.bspb35.Size = New System.Drawing.Size(256, 256)
+Me.bspb35.TabIndex = 47
+Me.bspb35.TabStop = false
+'
+'bspb41
+'
+Me.bspb41.Location = New System.Drawing.Point(259, 3344)
+Me.bspb41.Name = "bspb41"
+Me.bspb41.Size = New System.Drawing.Size(256, 256)
+Me.bspb41.TabIndex = 47
+Me.bspb41.TabStop = false
+'
+'bspb34
+'
+Me.bspb34.Location = New System.Drawing.Point(2, 2829)
+Me.bspb34.Name = "bspb34"
+Me.bspb34.Size = New System.Drawing.Size(256, 256)
+Me.bspb34.TabIndex = 46
+Me.bspb34.TabStop = false
+'
+'bspb40
+'
+Me.bspb40.Location = New System.Drawing.Point(2, 3344)
+Me.bspb40.Name = "bspb40"
+Me.bspb40.Size = New System.Drawing.Size(256, 256)
+Me.bspb40.TabIndex = 46
+Me.bspb40.TabStop = false
+'
+'bspb26
+'
+Me.bspb26.Location = New System.Drawing.Point(259, 2057)
+Me.bspb26.Name = "bspb26"
+Me.bspb26.Size = New System.Drawing.Size(256, 256)
+Me.bspb26.TabIndex = 44
+Me.bspb26.TabStop = false
+'
+'bspb39
+'
+Me.bspb39.Location = New System.Drawing.Point(516, 3087)
+Me.bspb39.Name = "bspb39"
+Me.bspb39.Size = New System.Drawing.Size(256, 256)
+Me.bspb39.TabIndex = 45
+Me.bspb39.TabStop = false
+'
+'bspb33
+'
+Me.bspb33.Location = New System.Drawing.Point(516, 2572)
+Me.bspb33.Name = "bspb33"
+Me.bspb33.Size = New System.Drawing.Size(256, 256)
+Me.bspb33.TabIndex = 45
+Me.bspb33.TabStop = false
+'
+'bspb38
+'
+Me.bspb38.Location = New System.Drawing.Point(259, 3087)
+Me.bspb38.Name = "bspb38"
+Me.bspb38.Size = New System.Drawing.Size(256, 256)
+Me.bspb38.TabIndex = 44
+Me.bspb38.TabStop = false
+'
+'bspb29
+'
+Me.bspb29.Location = New System.Drawing.Point(259, 2315)
+Me.bspb29.Name = "bspb29"
+Me.bspb29.Size = New System.Drawing.Size(256, 256)
+Me.bspb29.TabIndex = 47
+Me.bspb29.TabStop = false
+'
+'bspb37
+'
+Me.bspb37.Location = New System.Drawing.Point(2, 3087)
+Me.bspb37.Name = "bspb37"
+Me.bspb37.Size = New System.Drawing.Size(256, 256)
+Me.bspb37.TabIndex = 43
+Me.bspb37.TabStop = false
+'
+'bspb32
+'
+Me.bspb32.Location = New System.Drawing.Point(259, 2572)
+Me.bspb32.Name = "bspb32"
+Me.bspb32.Size = New System.Drawing.Size(256, 256)
+Me.bspb32.TabIndex = 44
+Me.bspb32.TabStop = false
+'
+'bspb25
+'
+Me.bspb25.Location = New System.Drawing.Point(2, 2057)
+Me.bspb25.Name = "bspb25"
+Me.bspb25.Size = New System.Drawing.Size(256, 256)
+Me.bspb25.TabIndex = 43
+Me.bspb25.TabStop = false
+'
+'bspb31
+'
+Me.bspb31.Location = New System.Drawing.Point(2, 2572)
+Me.bspb31.Name = "bspb31"
+Me.bspb31.Size = New System.Drawing.Size(256, 256)
+Me.bspb31.TabIndex = 43
+Me.bspb31.TabStop = false
+'
+'bspb28
+'
+Me.bspb28.Location = New System.Drawing.Point(2, 2315)
+Me.bspb28.Name = "bspb28"
+Me.bspb28.Size = New System.Drawing.Size(256, 256)
+Me.bspb28.TabIndex = 46
+Me.bspb28.TabStop = false
+'
+'bspb27
+'
+Me.bspb27.Location = New System.Drawing.Point(516, 2057)
+Me.bspb27.Name = "bspb27"
+Me.bspb27.Size = New System.Drawing.Size(256, 256)
+Me.bspb27.TabIndex = 45
+Me.bspb27.TabStop = false
+'
 'tp4
 '
 Me.tp4.AutoScroll = true
@@ -2809,6 +5476,102 @@ Me.tp4.Size = New System.Drawing.Size(804, 575)
 Me.tp4.TabIndex = 3
 Me.tp4.Text = "Token Style"
 Me.tp4.UseVisualStyleBackColor = true
+'
+'tpb12
+'
+Me.tpb12.Location = New System.Drawing.Point(518, 845)
+Me.tpb12.Name = "tpb12"
+Me.tpb12.Size = New System.Drawing.Size(256, 256)
+Me.tpb12.TabIndex = 11
+Me.tpb12.TabStop = false
+'
+'tpb11
+'
+Me.tpb11.Location = New System.Drawing.Point(260, 845)
+Me.tpb11.Name = "tpb11"
+Me.tpb11.Size = New System.Drawing.Size(256, 256)
+Me.tpb11.TabIndex = 10
+Me.tpb11.TabStop = false
+'
+'tpb10
+'
+Me.tpb10.Location = New System.Drawing.Point(3, 845)
+Me.tpb10.Name = "tpb10"
+Me.tpb10.Size = New System.Drawing.Size(256, 256)
+Me.tpb10.TabIndex = 9
+Me.tpb10.TabStop = false
+'
+'tpb9
+'
+Me.tpb9.Location = New System.Drawing.Point(518, 583)
+Me.tpb9.Name = "tpb9"
+Me.tpb9.Size = New System.Drawing.Size(256, 256)
+Me.tpb9.TabIndex = 8
+Me.tpb9.TabStop = false
+'
+'tpb8
+'
+Me.tpb8.Location = New System.Drawing.Point(260, 583)
+Me.tpb8.Name = "tpb8"
+Me.tpb8.Size = New System.Drawing.Size(256, 256)
+Me.tpb8.TabIndex = 7
+Me.tpb8.TabStop = false
+'
+'tpb7
+'
+Me.tpb7.Location = New System.Drawing.Point(2, 583)
+Me.tpb7.Name = "tpb7"
+Me.tpb7.Size = New System.Drawing.Size(256, 256)
+Me.tpb7.TabIndex = 6
+Me.tpb7.TabStop = false
+'
+'tpb6
+'
+Me.tpb6.Location = New System.Drawing.Point(513, 265)
+Me.tpb6.Name = "tpb6"
+Me.tpb6.Size = New System.Drawing.Size(256, 256)
+Me.tpb6.TabIndex = 5
+Me.tpb6.TabStop = false
+'
+'tpb5
+'
+Me.tpb5.Location = New System.Drawing.Point(257, 265)
+Me.tpb5.Name = "tpb5"
+Me.tpb5.Size = New System.Drawing.Size(256, 256)
+Me.tpb5.TabIndex = 4
+Me.tpb5.TabStop = false
+'
+'tpb4
+'
+Me.tpb4.Location = New System.Drawing.Point(1, 265)
+Me.tpb4.Name = "tpb4"
+Me.tpb4.Size = New System.Drawing.Size(256, 256)
+Me.tpb4.TabIndex = 3
+Me.tpb4.TabStop = false
+'
+'tpb3
+'
+Me.tpb3.Location = New System.Drawing.Point(514, 3)
+Me.tpb3.Name = "tpb3"
+Me.tpb3.Size = New System.Drawing.Size(256, 256)
+Me.tpb3.TabIndex = 2
+Me.tpb3.TabStop = false
+'
+'tpb2
+'
+Me.tpb2.Location = New System.Drawing.Point(257, 3)
+Me.tpb2.Name = "tpb2"
+Me.tpb2.Size = New System.Drawing.Size(256, 256)
+Me.tpb2.TabIndex = 1
+Me.tpb2.TabStop = false
+'
+'tpb1
+'
+Me.tpb1.Location = New System.Drawing.Point(1, 3)
+Me.tpb1.Name = "tpb1"
+Me.tpb1.Size = New System.Drawing.Size(256, 256)
+Me.tpb1.TabIndex = 0
+Me.tpb1.TabStop = false
 '
 'tp3
 '
@@ -3276,7 +6039,7 @@ Me.flpMoviesMI.Location = New System.Drawing.Point(0, 0)
 Me.flpMoviesMI.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
 Me.flpMoviesMI.MinimumSize = New System.Drawing.Size(0, 156)
 Me.flpMoviesMI.Name = "flpMoviesMI"
-Me.flpMoviesMI.Size = New System.Drawing.Size(785, 156)
+Me.flpMoviesMI.Size = New System.Drawing.Size(131, 156)
 Me.flpMoviesMI.TabIndex = 8
 '
 'kgCurMovieImageFolderjpg
@@ -3292,9 +6055,46 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(506, 481)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(514, 489)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
+'
+'pbCurIconUsed2
+'
+Me.pbCurIconUsed2.BackColor = System.Drawing.Color.Gray
+Me.pbCurIconUsed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.pbCurIconUsed2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+Me.pbCurIconUsed2.InitialImage = Nothing
+Me.pbCurIconUsed2.Location = New System.Drawing.Point(1, 1)
+Me.pbCurIconUsed2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbCurIconUsed2.MinimumSize = New System.Drawing.Size(82, 82)
+Me.pbCurIconUsed2.Name = "pbCurIconUsed2"
+Me.pbCurIconUsed2.Size = New System.Drawing.Size(166, 262)
+Me.pbCurIconUsed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbCurIconUsed2.TabIndex = 81
+Me.pbCurIconUsed2.TabStop = false
+Me.pbCurIconUsed2.Visible = false
+'
+'pbCurrentIconUsedNT
+'
+Me.pbCurrentIconUsedNT.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pbCurrentIconUsedNT.BackColor = System.Drawing.Color.Gray
+Me.pbCurrentIconUsedNT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.pbCurrentIconUsedNT.Enabled = false
+Me.pbCurrentIconUsedNT.Image = Global.movieinfoplus.My.Resources.Resources.ph
+Me.pbCurrentIconUsedNT.InitialImage = Nothing
+Me.pbCurrentIconUsedNT.Location = New System.Drawing.Point(0, 3)
+Me.pbCurrentIconUsedNT.Margin = New System.Windows.Forms.Padding(2)
+Me.pbCurrentIconUsedNT.MinimumSize = New System.Drawing.Size(82, 82)
+Me.pbCurrentIconUsedNT.Name = "pbCurrentIconUsedNT"
+Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 82)
+Me.pbCurrentIconUsedNT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+Me.pbCurrentIconUsedNT.TabIndex = 89
+Me.pbCurrentIconUsedNT.TabStop = false
+Me.pbCurrentIconUsedNT.Visible = false
+Me.pbCurrentIconUsedNT.WaitOnLoad = true
 '
 'kgCurMovieImagetbn
 '
@@ -3310,6 +6110,56 @@ Me.kgCurMovieImagetbn.Panel.Controls.Add(Me.pbCurTBNUsed2)
 Me.kgCurMovieImagetbn.Size = New System.Drawing.Size(141, 141)
 Me.kgCurMovieImagetbn.TabIndex = 113
 Me.kgCurMovieImagetbn.Visible = false
+'
+'pbCurTBNUsed2
+'
+Me.pbCurTBNUsed2.BackColor = System.Drawing.Color.Gray
+Me.pbCurTBNUsed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.pbCurTBNUsed2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+Me.pbCurTBNUsed2.InitialImage = Nothing
+Me.pbCurTBNUsed2.Location = New System.Drawing.Point(1, 1)
+Me.pbCurTBNUsed2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbCurTBNUsed2.MinimumSize = New System.Drawing.Size(82, 82)
+Me.pbCurTBNUsed2.Name = "pbCurTBNUsed2"
+Me.pbCurTBNUsed2.Size = New System.Drawing.Size(128, 128)
+Me.pbCurTBNUsed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbCurTBNUsed2.TabIndex = 106
+Me.pbCurTBNUsed2.TabStop = false
+Me.pbCurTBNUsed2.Visible = false
+'
+'pbCurTBNUsed
+'
+Me.pbCurTBNUsed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pbCurTBNUsed.BackColor = System.Drawing.Color.Gray
+Me.pbCurTBNUsed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.pbCurTBNUsed.Enabled = false
+Me.pbCurTBNUsed.Image = Global.movieinfoplus.My.Resources.Resources.ph
+Me.pbCurTBNUsed.InitialImage = Nothing
+Me.pbCurTBNUsed.Location = New System.Drawing.Point(1, 303)
+Me.pbCurTBNUsed.Margin = New System.Windows.Forms.Padding(2)
+Me.pbCurTBNUsed.MaximumSize = New System.Drawing.Size(512, 512)
+Me.pbCurTBNUsed.MinimumSize = New System.Drawing.Size(82, 82)
+Me.pbCurTBNUsed.Name = "pbCurTBNUsed"
+Me.pbCurTBNUsed.Size = New System.Drawing.Size(82, 82)
+Me.pbCurTBNUsed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+Me.pbCurTBNUsed.TabIndex = 107
+Me.pbCurTBNUsed.TabStop = false
+Me.pbCurTBNUsed.Visible = false
+Me.pbCurTBNUsed.WaitOnLoad = true
+'
+'pbFrameTBN
+'
+Me.pbFrameTBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+Me.pbFrameTBN.Image = CType(resources.GetObject("pbFrameTBN.Image"),System.Drawing.Image)
+Me.pbFrameTBN.Location = New System.Drawing.Point(-1, 287)
+Me.pbFrameTBN.Name = "pbFrameTBN"
+Me.pbFrameTBN.Size = New System.Drawing.Size(10, 10)
+Me.pbFrameTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFrameTBN.TabIndex = 105
+Me.pbFrameTBN.TabStop = false
+Me.pbFrameTBN.Visible = false
 '
 'kpMovieData
 '
@@ -3353,6 +6203,16 @@ Me.khbPlotGroup.ValuesPrimary.Image = Nothing
 Me.khbPlotGroup.ValuesSecondary.Description = ""
 Me.khbPlotGroup.ValuesSecondary.Heading = "Description"
 Me.khbPlotGroup.ValuesSecondary.Image = Nothing
+'
+'bshgRefreshMovieMediaInfo
+'
+Me.bshgRefreshMovieMediaInfo.ExtraText = ""
+Me.bshgRefreshMovieMediaInfo.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
+Me.bshgRefreshMovieMediaInfo.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(12,Byte),Integer), CType(CType(94,Byte),Integer), CType(CType(132,Byte),Integer))
+Me.bshgRefreshMovieMediaInfo.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
+Me.bshgRefreshMovieMediaInfo.Text = "Refresh"
+Me.bshgRefreshMovieMediaInfo.ToolTipTitle = "Reload Media Information"
+Me.bshgRefreshMovieMediaInfo.UniqueName = "1DD5B3F478B44BC71DD5B3F478B44BC7"
 '
 'buttonSpecHeaderGroup1
 '
@@ -3753,7 +6613,7 @@ Me.lblPlotOutline.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Norma
 Me.lblPlotOutline.Location = New System.Drawing.Point(3, 1)
 Me.lblPlotOutline.Name = "lblPlotOutline"
 Me.lblPlotOutline.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
-Me.lblPlotOutline.Size = New System.Drawing.Size(21, 82)
+Me.lblPlotOutline.Size = New System.Drawing.Size(16, 72)
 Me.lblPlotOutline.TabIndex = 75
 Me.lblPlotOutline.Text = "Plot Outline:"
 Me.lblPlotOutline.Values.ExtraText = ""
@@ -3952,6 +6812,18 @@ Me.Label18.Values.ExtraText = ""
 Me.Label18.Values.Image = Nothing
 Me.Label18.Values.Text = "Tagline:"
 '
+'pbFrame
+'
+Me.pbFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+Me.pbFrame.Image = CType(resources.GetObject("pbFrame.Image"),System.Drawing.Image)
+Me.pbFrame.Location = New System.Drawing.Point(0, 32)
+Me.pbFrame.Name = "pbFrame"
+Me.pbFrame.Size = New System.Drawing.Size(10, 10)
+Me.pbFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFrame.TabIndex = 97
+Me.pbFrame.TabStop = false
+Me.pbFrame.Visible = false
+'
 'llFDFileDetails
 '
 Me.llFDFileDetails.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -3978,6 +6850,28 @@ Me.tbMovieNameE.Name = "tbMovieNameE"
 Me.tbMovieNameE.Size = New System.Drawing.Size(100, 22)
 Me.tbMovieNameE.TabIndex = 40
 Me.tbMovieNameE.Visible = false
+'
+'pbCurIconUsed
+'
+Me.pbCurIconUsed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+Me.pbCurIconUsed.BackColor = System.Drawing.Color.Transparent
+Me.pbCurIconUsed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.pbCurIconUsed.Enabled = false
+Me.pbCurIconUsed.Image = Global.movieinfoplus.My.Resources.Resources.ph
+Me.pbCurIconUsed.InitialImage = Nothing
+Me.pbCurIconUsed.Location = New System.Drawing.Point(1, 30)
+Me.pbCurIconUsed.Margin = New System.Windows.Forms.Padding(2)
+Me.pbCurIconUsed.MaximumSize = New System.Drawing.Size(700, 512)
+Me.pbCurIconUsed.MinimumSize = New System.Drawing.Size(82, 82)
+Me.pbCurIconUsed.Name = "pbCurIconUsed"
+Me.pbCurIconUsed.Size = New System.Drawing.Size(82, 82)
+Me.pbCurIconUsed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+Me.pbCurIconUsed.TabIndex = 38
+Me.pbCurIconUsed.TabStop = false
+Me.pbCurIconUsed.Visible = false
+Me.pbCurIconUsed.WaitOnLoad = true
 '
 'tbCredits
 '
@@ -4026,45 +6920,641 @@ Me.tsCurrentMovieTools.Size = New System.Drawing.Size(814, 32)
 Me.tsCurrentMovieTools.TabIndex = 111
 Me.tsCurrentMovieTools.Text = "ToolStrip1"
 '
+'tsbMoviesLoadMovies
+'
+Me.tsbMoviesLoadMovies.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbMoviesLoadMovies.Image = CType(resources.GetObject("tsbMoviesLoadMovies.Image"),System.Drawing.Image)
+Me.tsbMoviesLoadMovies.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesLoadMovies.Name = "tsbMoviesLoadMovies"
+Me.tsbMoviesLoadMovies.Size = New System.Drawing.Size(72, 29)
+Me.tsbMoviesLoadMovies.Text = "Load Movies"
+'
 'ToolStripSeparator15
 '
 Me.ToolStripSeparator15.Name = "ToolStripSeparator15"
 Me.ToolStripSeparator15.Size = New System.Drawing.Size(6, 32)
+'
+'tsbMoviesPreCache
+'
+Me.tsbMoviesPreCache.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbMoviesPreCache.Image = CType(resources.GetObject("tsbMoviesPreCache.Image"),System.Drawing.Image)
+Me.tsbMoviesPreCache.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesPreCache.Name = "tsbMoviesPreCache"
+Me.tsbMoviesPreCache.Size = New System.Drawing.Size(58, 29)
+Me.tsbMoviesPreCache.Text = "PreCache"
 '
 'ToolStripSeparator16
 '
 Me.ToolStripSeparator16.Name = "ToolStripSeparator16"
 Me.ToolStripSeparator16.Size = New System.Drawing.Size(6, 32)
 '
+'tsbMoviesAutoPilot
+'
+Me.tsbMoviesAutoPilot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbMoviesAutoPilot.Image = CType(resources.GetObject("tsbMoviesAutoPilot.Image"),System.Drawing.Image)
+Me.tsbMoviesAutoPilot.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesAutoPilot.Name = "tsbMoviesAutoPilot"
+Me.tsbMoviesAutoPilot.Size = New System.Drawing.Size(56, 29)
+Me.tsbMoviesAutoPilot.Text = "Auto Pilot"
+'
 'ToolStripSeparator18
 '
 Me.ToolStripSeparator18.Name = "ToolStripSeparator18"
 Me.ToolStripSeparator18.Size = New System.Drawing.Size(6, 32)
+'
+'ToolStripButton1
+'
+Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"),System.Drawing.Image)
+Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.ToolStripButton1.Name = "ToolStripButton1"
+Me.ToolStripButton1.Size = New System.Drawing.Size(91, 29)
+Me.ToolStripButton1.Text = "Add Background"
+Me.ToolStripButton1.ToolTipText = "Add your own Background for this movie"
 '
 'ToolStripSeparator1
 '
 Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
 Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 32)
 '
+'ToolStripButton2
+'
+Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"),System.Drawing.Image)
+Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.ToolStripButton2.Name = "ToolStripButton2"
+Me.ToolStripButton2.Size = New System.Drawing.Size(63, 29)
+Me.ToolStripButton2.Text = "Add Poster"
+Me.ToolStripButton2.ToolTipText = "Add your own image for this movie"
+'
 'ToolStripSeparator2
 '
 Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
 Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 32)
+'
+'ToolStripDropDownButton1
+'
+Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tagdivx, Me.Tagxvid, Me.Tagdvd, Me.SDTag, Me.Tag720p, Me.Tag1080i, Me.Tag1080p, Me.TagBluRay, Me.SetupTagIconsToolStripMenuItem})
+Me.ToolStripDropDownButton1.Image = Global.movieinfoplus.My.Resources.Resources.tag
+Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(55, 29)
+Me.ToolStripDropDownButton1.Text = "Tag"
+Me.ToolStripDropDownButton1.ToolTipText = "Tag the Movie Image with Codec and Audio Information"
+'
+'Tagdivx
+'
+Me.Tagdivx.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.divxSmono, Me.divxSStereo, Me.divxSDD51, Me.divxSDD71, Me.divxSDTS, Me.divxSDTSES, Me.divxSHDAudio})
+Me.Tagdivx.Name = "Tagdivx"
+Me.Tagdivx.Size = New System.Drawing.Size(156, 22)
+Me.Tagdivx.Text = "Divx"
+'
+'divxSmono
+'
+Me.divxSmono.Name = "divxSmono"
+Me.divxSmono.Size = New System.Drawing.Size(123, 22)
+Me.divxSmono.Text = "Mono"
+'
+'divxSStereo
+'
+Me.divxSStereo.Name = "divxSStereo"
+Me.divxSStereo.Size = New System.Drawing.Size(123, 22)
+Me.divxSStereo.Text = "Stereo"
+'
+'divxSDD51
+'
+Me.divxSDD51.Name = "divxSDD51"
+Me.divxSDD51.Size = New System.Drawing.Size(123, 22)
+Me.divxSDD51.Text = "DD 5.1"
+'
+'divxSDD71
+'
+Me.divxSDD71.Name = "divxSDD71"
+Me.divxSDD71.Size = New System.Drawing.Size(123, 22)
+Me.divxSDD71.Text = "DD 7.1"
+'
+'divxSDTS
+'
+Me.divxSDTS.Name = "divxSDTS"
+Me.divxSDTS.Size = New System.Drawing.Size(123, 22)
+Me.divxSDTS.Text = "DTS"
+'
+'divxSDTSES
+'
+Me.divxSDTSES.Name = "divxSDTSES"
+Me.divxSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.divxSDTSES.Text = "DTS ES"
+'
+'divxSHDAudio
+'
+Me.divxSHDAudio.Name = "divxSHDAudio"
+Me.divxSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.divxSHDAudio.Text = "HD Audio"
+'
+'Tagxvid
+'
+Me.Tagxvid.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xvidSmono, Me.xvidSStereo, Me.xvidSDD51, Me.xvidSDD71, Me.xvidSDTS, Me.xvidSDTSES, Me.xvidSHDAudio})
+Me.Tagxvid.Name = "Tagxvid"
+Me.Tagxvid.Size = New System.Drawing.Size(156, 22)
+Me.Tagxvid.Text = "Xvid"
+'
+'xvidSmono
+'
+Me.xvidSmono.Name = "xvidSmono"
+Me.xvidSmono.Size = New System.Drawing.Size(123, 22)
+Me.xvidSmono.Text = "Mono"
+'
+'xvidSStereo
+'
+Me.xvidSStereo.Name = "xvidSStereo"
+Me.xvidSStereo.Size = New System.Drawing.Size(123, 22)
+Me.xvidSStereo.Text = "Stereo"
+'
+'xvidSDD51
+'
+Me.xvidSDD51.Name = "xvidSDD51"
+Me.xvidSDD51.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDD51.Text = "DD 5.1"
+'
+'xvidSDD71
+'
+Me.xvidSDD71.Name = "xvidSDD71"
+Me.xvidSDD71.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDD71.Text = "DD 7.1"
+'
+'xvidSDTS
+'
+Me.xvidSDTS.Name = "xvidSDTS"
+Me.xvidSDTS.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDTS.Text = "DTS"
+'
+'xvidSDTSES
+'
+Me.xvidSDTSES.Name = "xvidSDTSES"
+Me.xvidSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDTSES.Text = "DTS ES"
+'
+'xvidSHDAudio
+'
+Me.xvidSHDAudio.Name = "xvidSHDAudio"
+Me.xvidSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.xvidSHDAudio.Text = "HD Audio"
+'
+'Tagdvd
+'
+Me.Tagdvd.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dvdSmono, Me.dvdSStereo, Me.dvdSDD51, Me.dvdSDD71, Me.dvdSDTS, Me.DVDSDTSES, Me.DVDSHDAudio})
+Me.Tagdvd.Name = "Tagdvd"
+Me.Tagdvd.Size = New System.Drawing.Size(156, 22)
+Me.Tagdvd.Text = "DVD"
+'
+'dvdSmono
+'
+Me.dvdSmono.Name = "dvdSmono"
+Me.dvdSmono.Size = New System.Drawing.Size(123, 22)
+Me.dvdSmono.Text = "Mono"
+'
+'dvdSStereo
+'
+Me.dvdSStereo.Name = "dvdSStereo"
+Me.dvdSStereo.Size = New System.Drawing.Size(123, 22)
+Me.dvdSStereo.Text = "Stereo"
+'
+'dvdSDD51
+'
+Me.dvdSDD51.Name = "dvdSDD51"
+Me.dvdSDD51.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDD51.Text = "DD 5.1"
+'
+'dvdSDD71
+'
+Me.dvdSDD71.Name = "dvdSDD71"
+Me.dvdSDD71.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDD71.Text = "DD 7.1"
+'
+'dvdSDTS
+'
+Me.dvdSDTS.Name = "dvdSDTS"
+Me.dvdSDTS.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDTS.Text = "DTS"
+'
+'DVDSDTSES
+'
+Me.DVDSDTSES.Name = "DVDSDTSES"
+Me.DVDSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.DVDSDTSES.Text = "DTS ES"
+'
+'DVDSHDAudio
+'
+Me.DVDSHDAudio.Name = "DVDSHDAudio"
+Me.DVDSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.DVDSHDAudio.Text = "HD Audio"
+'
+'SDTag
+'
+Me.SDTag.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SDSmono, Me.SDSStereo, Me.SDSDD51, Me.SDSDD71, Me.SDSDTS, Me.SDSDTSES, Me.SDSHDAudio})
+Me.SDTag.Name = "SDTag"
+Me.SDTag.Size = New System.Drawing.Size(156, 22)
+Me.SDTag.Text = "SD"
+'
+'SDSmono
+'
+Me.SDSmono.Name = "SDSmono"
+Me.SDSmono.Size = New System.Drawing.Size(123, 22)
+Me.SDSmono.Text = "Mono"
+'
+'SDSStereo
+'
+Me.SDSStereo.Name = "SDSStereo"
+Me.SDSStereo.Size = New System.Drawing.Size(123, 22)
+Me.SDSStereo.Text = "Stereo"
+'
+'SDSDD51
+'
+Me.SDSDD51.Name = "SDSDD51"
+Me.SDSDD51.Size = New System.Drawing.Size(123, 22)
+Me.SDSDD51.Text = "DD 5.1"
+'
+'SDSDD71
+'
+Me.SDSDD71.Name = "SDSDD71"
+Me.SDSDD71.Size = New System.Drawing.Size(123, 22)
+Me.SDSDD71.Text = "DD 7.1"
+'
+'SDSDTS
+'
+Me.SDSDTS.Name = "SDSDTS"
+Me.SDSDTS.Size = New System.Drawing.Size(123, 22)
+Me.SDSDTS.Text = "DTS"
+'
+'SDSDTSES
+'
+Me.SDSDTSES.Name = "SDSDTSES"
+Me.SDSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.SDSDTSES.Text = "DTS ES"
+'
+'SDSHDAudio
+'
+Me.SDSHDAudio.Name = "SDSHDAudio"
+Me.SDSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.SDSHDAudio.Text = "HD Audio"
+'
+'Tag720p
+'
+Me.Tag720p.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd720pSmono, Me.hd720pSStereo, Me.hd720pSDD51, Me.hd720pSDD71, Me.hd720pSDTS, Me.hd720pSDTSES, Me.hd720pSHDAudio})
+Me.Tag720p.Name = "Tag720p"
+Me.Tag720p.Size = New System.Drawing.Size(156, 22)
+Me.Tag720p.Text = "720p"
+'
+'hd720pSmono
+'
+Me.hd720pSmono.Name = "hd720pSmono"
+Me.hd720pSmono.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSmono.Text = "Mono"
+'
+'hd720pSStereo
+'
+Me.hd720pSStereo.Name = "hd720pSStereo"
+Me.hd720pSStereo.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSStereo.Text = "Stereo"
+'
+'hd720pSDD51
+'
+Me.hd720pSDD51.Name = "hd720pSDD51"
+Me.hd720pSDD51.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDD51.Text = "DD 5.1"
+'
+'hd720pSDD71
+'
+Me.hd720pSDD71.Name = "hd720pSDD71"
+Me.hd720pSDD71.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDD71.Text = "DD 7.1"
+'
+'hd720pSDTS
+'
+Me.hd720pSDTS.Name = "hd720pSDTS"
+Me.hd720pSDTS.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDTS.Text = "DTS"
+'
+'hd720pSDTSES
+'
+Me.hd720pSDTSES.Name = "hd720pSDTSES"
+Me.hd720pSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDTSES.Text = "DTS ES"
+'
+'hd720pSHDAudio
+'
+Me.hd720pSHDAudio.Name = "hd720pSHDAudio"
+Me.hd720pSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSHDAudio.Text = "HD Audio"
+'
+'Tag1080i
+'
+Me.Tag1080i.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080iSmono, Me.hd1080iSStereo, Me.hd1080iSDD51, Me.hd1080iSDD71, Me.hd1080iSDTS, Me.hd1080iSDTSES, Me.hd1080iSHDAudio})
+Me.Tag1080i.Name = "Tag1080i"
+Me.Tag1080i.Size = New System.Drawing.Size(156, 22)
+Me.Tag1080i.Text = "1080i"
+'
+'hd1080iSmono
+'
+Me.hd1080iSmono.Name = "hd1080iSmono"
+Me.hd1080iSmono.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSmono.Text = "Mono"
+'
+'hd1080iSStereo
+'
+Me.hd1080iSStereo.Name = "hd1080iSStereo"
+Me.hd1080iSStereo.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSStereo.Text = "Stereo"
+'
+'hd1080iSDD51
+'
+Me.hd1080iSDD51.Name = "hd1080iSDD51"
+Me.hd1080iSDD51.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDD51.Text = "DD 5.1"
+'
+'hd1080iSDD71
+'
+Me.hd1080iSDD71.Name = "hd1080iSDD71"
+Me.hd1080iSDD71.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDD71.Text = "DD 7.1"
+'
+'hd1080iSDTS
+'
+Me.hd1080iSDTS.Name = "hd1080iSDTS"
+Me.hd1080iSDTS.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDTS.Text = "DTS"
+'
+'hd1080iSDTSES
+'
+Me.hd1080iSDTSES.Name = "hd1080iSDTSES"
+Me.hd1080iSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDTSES.Text = "DTS ES"
+'
+'hd1080iSHDAudio
+'
+Me.hd1080iSHDAudio.Name = "hd1080iSHDAudio"
+Me.hd1080iSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSHDAudio.Text = "HD Audio"
+'
+'Tag1080p
+'
+Me.Tag1080p.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080pSmono, Me.hd1080pSStereo, Me.hd1080pSDD51, Me.hd1080pSDD71, Me.hd1080pSDTS, Me.hd1080pSDTSES, Me.hd1080pSHDAudio})
+Me.Tag1080p.Name = "Tag1080p"
+Me.Tag1080p.Size = New System.Drawing.Size(156, 22)
+Me.Tag1080p.Text = "1080p"
+'
+'hd1080pSmono
+'
+Me.hd1080pSmono.Name = "hd1080pSmono"
+Me.hd1080pSmono.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSmono.Text = "Mono"
+'
+'hd1080pSStereo
+'
+Me.hd1080pSStereo.Name = "hd1080pSStereo"
+Me.hd1080pSStereo.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSStereo.Text = "Stereo"
+'
+'hd1080pSDD51
+'
+Me.hd1080pSDD51.Name = "hd1080pSDD51"
+Me.hd1080pSDD51.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDD51.Text = "DD 5.1"
+'
+'hd1080pSDD71
+'
+Me.hd1080pSDD71.Name = "hd1080pSDD71"
+Me.hd1080pSDD71.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDD71.Text = "DD 7.1"
+'
+'hd1080pSDTS
+'
+Me.hd1080pSDTS.Name = "hd1080pSDTS"
+Me.hd1080pSDTS.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDTS.Text = "DTS"
+'
+'hd1080pSDTSES
+'
+Me.hd1080pSDTSES.Name = "hd1080pSDTSES"
+Me.hd1080pSDTSES.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDTSES.Text = "DTS ES"
+'
+'hd1080pSHDAudio
+'
+Me.hd1080pSHDAudio.Name = "hd1080pSHDAudio"
+Me.hd1080pSHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSHDAudio.Text = "HD Audio"
+'
+'TagBluRay
+'
+Me.TagBluRay.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BluRaySmono, Me.BluRaySStereo, Me.BluRaySDD51, Me.BluRaySDD71, Me.BluRaySDTS, Me.BluRaySDTSES, Me.BluRaySHDAudio})
+Me.TagBluRay.Name = "TagBluRay"
+Me.TagBluRay.Size = New System.Drawing.Size(156, 22)
+Me.TagBluRay.Text = "Blu-Ray"
+'
+'BluRaySmono
+'
+Me.BluRaySmono.Name = "BluRaySmono"
+Me.BluRaySmono.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySmono.Text = "Mono"
+'
+'BluRaySStereo
+'
+Me.BluRaySStereo.Name = "BluRaySStereo"
+Me.BluRaySStereo.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySStereo.Text = "Stereo"
+'
+'BluRaySDD51
+'
+Me.BluRaySDD51.Name = "BluRaySDD51"
+Me.BluRaySDD51.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDD51.Text = "DD 5.1"
+'
+'BluRaySDD71
+'
+Me.BluRaySDD71.Name = "BluRaySDD71"
+Me.BluRaySDD71.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDD71.Text = "DD 7.1"
+'
+'BluRaySDTS
+'
+Me.BluRaySDTS.Name = "BluRaySDTS"
+Me.BluRaySDTS.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDTS.Text = "DTS"
+'
+'BluRaySDTSES
+'
+Me.BluRaySDTSES.Name = "BluRaySDTSES"
+Me.BluRaySDTSES.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDTSES.Text = "DTS ES"
+'
+'BluRaySHDAudio
+'
+Me.BluRaySHDAudio.Name = "BluRaySHDAudio"
+Me.BluRaySHDAudio.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySHDAudio.Text = "HD Audio"
+'
+'SetupTagIconsToolStripMenuItem
+'
+Me.SetupTagIconsToolStripMenuItem.Name = "SetupTagIconsToolStripMenuItem"
+Me.SetupTagIconsToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+Me.SetupTagIconsToolStripMenuItem.Text = "Setup Tag Icons"
 '
 'ToolStripSeparator17
 '
 Me.ToolStripSeparator17.Name = "ToolStripSeparator17"
 Me.ToolStripSeparator17.Size = New System.Drawing.Size(6, 32)
 '
+'tsbMoviesOpenCurMovieFolder
+'
+Me.tsbMoviesOpenCurMovieFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+Me.tsbMoviesOpenCurMovieFolder.Image = Global.movieinfoplus.My.Resources.Resources.folder_32x32
+Me.tsbMoviesOpenCurMovieFolder.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesOpenCurMovieFolder.Name = "tsbMoviesOpenCurMovieFolder"
+Me.tsbMoviesOpenCurMovieFolder.Size = New System.Drawing.Size(23, 29)
+Me.tsbMoviesOpenCurMovieFolder.Text = "Movie Folder"
+Me.tsbMoviesOpenCurMovieFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+Me.tsbMoviesOpenCurMovieFolder.ToolTipText = "Open Current Movie Folder"
+'
 'ToolStripSeparator14
 '
 Me.ToolStripSeparator14.Name = "ToolStripSeparator14"
 Me.ToolStripSeparator14.Size = New System.Drawing.Size(6, 32)
 '
+'tsbMoviesOpenImdbLink
+'
+Me.tsbMoviesOpenImdbLink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+Me.tsbMoviesOpenImdbLink.Image = Global.movieinfoplus.My.Resources.Resources.imdb_32x25
+Me.tsbMoviesOpenImdbLink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+Me.tsbMoviesOpenImdbLink.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+Me.tsbMoviesOpenImdbLink.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesOpenImdbLink.Name = "tsbMoviesOpenImdbLink"
+Me.tsbMoviesOpenImdbLink.Size = New System.Drawing.Size(77, 29)
+Me.tsbMoviesOpenImdbLink.Text = "IMDB"
+Me.tsbMoviesOpenImdbLink.ToolTipText = "Visit IMDB for this Movie"
+'
 'ToolStripSeparator4
 '
 Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
 Me.ToolStripSeparator4.Size = New System.Drawing.Size(6, 32)
+'
+'tsbMoviesOpenTMDBLink
+'
+Me.tsbMoviesOpenTMDBLink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+Me.tsbMoviesOpenTMDBLink.Image = Global.movieinfoplus.My.Resources.Resources.tmdb_32x25
+Me.tsbMoviesOpenTMDBLink.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+Me.tsbMoviesOpenTMDBLink.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMoviesOpenTMDBLink.Name = "tsbMoviesOpenTMDBLink"
+Me.tsbMoviesOpenTMDBLink.Size = New System.Drawing.Size(53, 29)
+Me.tsbMoviesOpenTMDBLink.Text = "ToolStripButton4"
+Me.tsbMoviesOpenTMDBLink.ToolTipText = "Open TMDb page for this movie"
+'
+'tsbtnMovieSettings
+'
+Me.tsbtnMovieSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+Me.tsbtnMovieSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem, Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem, Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem, Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem})
+Me.tsbtnMovieSettings.Image = CType(resources.GetObject("tsbtnMovieSettings.Image"),System.Drawing.Image)
+Me.tsbtnMovieSettings.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbtnMovieSettings.Name = "tsbtnMovieSettings"
+Me.tsbtnMovieSettings.Size = New System.Drawing.Size(134, 29)
+Me.tsbtnMovieSettings.Text = "Options and Settings"
+'
+'tsmimovieDoNotResizeTheImagesToolStripMenuItem
+'
+Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Name = "tsmimovieDoNotResizeTheImagesToolStripMenuItem"
+Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
+Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Text = "Do not resize the images"
+'
+'tsmimovieOpenConfigurationSettingsToolStripMenuItem
+'
+Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Name = "tsmimovieOpenConfigurationSettingsToolStripMenuItem"
+Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
+Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Text = "Setup and Configuration"
+'
+'tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem
+'
+Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Name = "tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem"
+Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
+Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Text = "Allow Media Image Selection to any type"
+'
+'tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem
+'
+Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Name = "tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem"
+Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
+Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Text = "Dont' switch tabs after selecting Media Images"
+'
+'ToolStripDropDownButton2
+'
+Me.ToolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+Me.ToolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_ResizeFanartImage, Me.tsmimovie_CompressFanartImage})
+Me.ToolStripDropDownButton2.Image = CType(resources.GetObject("ToolStripDropDownButton2.Image"),System.Drawing.Image)
+Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
+Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(46, 29)
+Me.ToolStripDropDownButton2.Text = "Tools"
+'
+'tsmimovie_ResizeFanartImage
+'
+Me.tsmimovie_ResizeFanartImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_fanart_r960x540, Me.tsmimovie_fanart_r1280x720, Me.tsmimovie_fanart_r1920x1080})
+Me.tsmimovie_ResizeFanartImage.Name = "tsmimovie_ResizeFanartImage"
+Me.tsmimovie_ResizeFanartImage.Size = New System.Drawing.Size(216, 22)
+Me.tsmimovie_ResizeFanartImage.Text = "Resize Background Image"
+'
+'tsmimovie_fanart_r960x540
+'
+Me.tsmimovie_fanart_r960x540.Name = "tsmimovie_fanart_r960x540"
+Me.tsmimovie_fanart_r960x540.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r960x540.Text = "960 x 540"
+'
+'tsmimovie_fanart_r1280x720
+'
+Me.tsmimovie_fanart_r1280x720.Name = "tsmimovie_fanart_r1280x720"
+Me.tsmimovie_fanart_r1280x720.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r1280x720.Text = "1280 x 720"
+'
+'tsmimovie_fanart_r1920x1080
+'
+Me.tsmimovie_fanart_r1920x1080.Name = "tsmimovie_fanart_r1920x1080"
+Me.tsmimovie_fanart_r1920x1080.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r1920x1080.Text = "1920 x 1080"
+'
+'tsmimovie_CompressFanartImage
+'
+Me.tsmimovie_CompressFanartImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_fanart_q60, Me.tsmimovie_fanart_q70, Me.tsmimovie_fanart_q80, Me.tsmimovie_fanart_q90, Me.tsmimovie_fanart_q95})
+Me.tsmimovie_CompressFanartImage.Name = "tsmimovie_CompressFanartImage"
+Me.tsmimovie_CompressFanartImage.Size = New System.Drawing.Size(216, 22)
+Me.tsmimovie_CompressFanartImage.Text = "Compress Background Image"
+'
+'tsmimovie_fanart_q60
+'
+Me.tsmimovie_fanart_q60.Name = "tsmimovie_fanart_q60"
+Me.tsmimovie_fanart_q60.Size = New System.Drawing.Size(132, 22)
+Me.tsmimovie_fanart_q60.Text = "60% Quality"
+'
+'tsmimovie_fanart_q70
+'
+Me.tsmimovie_fanart_q70.Name = "tsmimovie_fanart_q70"
+Me.tsmimovie_fanart_q70.Size = New System.Drawing.Size(132, 22)
+Me.tsmimovie_fanart_q70.Text = "70% Quality"
+'
+'tsmimovie_fanart_q80
+'
+Me.tsmimovie_fanart_q80.Name = "tsmimovie_fanart_q80"
+Me.tsmimovie_fanart_q80.Size = New System.Drawing.Size(132, 22)
+Me.tsmimovie_fanart_q80.Text = "80% Quality"
+'
+'tsmimovie_fanart_q90
+'
+Me.tsmimovie_fanart_q90.Name = "tsmimovie_fanart_q90"
+Me.tsmimovie_fanart_q90.Size = New System.Drawing.Size(132, 22)
+Me.tsmimovie_fanart_q90.Text = "90% Quality"
+'
+'tsmimovie_fanart_q95
+'
+Me.tsmimovie_fanart_q95.Name = "tsmimovie_fanart_q95"
+Me.tsmimovie_fanart_q95.Size = New System.Drawing.Size(132, 22)
+Me.tsmimovie_fanart_q95.Text = "95% Quality"
 '
 'gbThanks
 '
@@ -4086,9 +7576,9 @@ Me.gbThanks.Text = "Thanks to:"
 '
 Me.kllFreecovers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllFreecovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllFreecovers.Location = New System.Drawing.Point(447, 14)
+Me.kllFreecovers.Location = New System.Drawing.Point(447, 19)
 Me.kllFreecovers.Name = "kllFreecovers"
-Me.kllFreecovers.Size = New System.Drawing.Size(75, 21)
+Me.kllFreecovers.Size = New System.Drawing.Size(67, 16)
 Me.kllFreecovers.TabIndex = 105
 Me.kllFreecovers.Text = "Freecovers"
 Me.kllFreecovers.Values.ExtraText = ""
@@ -4099,9 +7589,9 @@ Me.kllFreecovers.Values.Text = "Freecovers"
 '
 Me.kllxbmc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllxbmc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllxbmc.Location = New System.Drawing.Point(6, 14)
+Me.kllxbmc.Location = New System.Drawing.Point(6, 19)
 Me.kllxbmc.Name = "kllxbmc"
-Me.kllxbmc.Size = New System.Drawing.Size(46, 21)
+Me.kllxbmc.Size = New System.Drawing.Size(43, 16)
 Me.kllxbmc.TabIndex = 100
 Me.kllxbmc.Text = "XBMC"
 Me.kllxbmc.Values.ExtraText = ""
@@ -4112,9 +7602,9 @@ Me.kllxbmc.Values.Text = "XBMC"
 '
 Me.kllMediaIcons.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllMediaIcons.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllMediaIcons.Location = New System.Drawing.Point(71, 14)
+Me.kllMediaIcons.Location = New System.Drawing.Point(71, 19)
 Me.kllMediaIcons.Name = "kllMediaIcons"
-Me.kllMediaIcons.Size = New System.Drawing.Size(81, 21)
+Me.kllMediaIcons.Size = New System.Drawing.Size(71, 16)
 Me.kllMediaIcons.TabIndex = 101
 Me.kllMediaIcons.Text = "Media Icons"
 Me.kllMediaIcons.Values.ExtraText = ""
@@ -4125,9 +7615,9 @@ Me.kllMediaIcons.Values.Text = "Media Icons"
 '
 Me.kllTheTVDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheTVDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheTVDB.Location = New System.Drawing.Point(169, 14)
+Me.kllTheTVDB.Location = New System.Drawing.Point(169, 19)
 Me.kllTheTVDB.Name = "kllTheTVDB"
-Me.kllTheTVDB.Size = New System.Drawing.Size(66, 21)
+Me.kllTheTVDB.Size = New System.Drawing.Size(60, 16)
 Me.kllTheTVDB.TabIndex = 103
 Me.kllTheTVDB.Text = "TheTVDB"
 Me.kllTheTVDB.Values.ExtraText = ""
@@ -4138,9 +7628,9 @@ Me.kllTheTVDB.Values.Text = "TheTVDB"
 '
 Me.kllimpawards.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllimpawards.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllimpawards.Location = New System.Drawing.Point(249, 14)
+Me.kllimpawards.Location = New System.Drawing.Point(249, 19)
 Me.kllimpawards.Name = "kllimpawards"
-Me.kllimpawards.Size = New System.Drawing.Size(74, 21)
+Me.kllimpawards.Size = New System.Drawing.Size(66, 16)
 Me.kllimpawards.TabIndex = 104
 Me.kllimpawards.Text = "Impawards"
 Me.kllimpawards.Values.ExtraText = ""
@@ -4151,14 +7641,29 @@ Me.kllimpawards.Values.Text = "Impawards"
 '
 Me.kllTheMovieDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheMovieDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 14)
+Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 19)
 Me.kllTheMovieDB.Name = "kllTheMovieDB"
-Me.kllTheMovieDB.Size = New System.Drawing.Size(87, 21)
+Me.kllTheMovieDB.Size = New System.Drawing.Size(79, 16)
 Me.kllTheMovieDB.TabIndex = 102
 Me.kllTheMovieDB.Text = "The MovieDB"
 Me.kllTheMovieDB.Values.ExtraText = ""
 Me.kllTheMovieDB.Values.Image = Nothing
 Me.kllTheMovieDB.Values.Text = "The MovieDB"
+'
+'fanartpb1
+'
+Me.fanartpb1.BackColor = System.Drawing.Color.Black
+Me.fanartpb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+Me.fanartpb1.Dock = System.Windows.Forms.DockStyle.Fill
+Me.fanartpb1.ErrorImage = Nothing
+Me.fanartpb1.Image = Global.movieinfoplus.My.Resources.Resources.mymovies
+Me.fanartpb1.InitialImage = Nothing
+Me.fanartpb1.Location = New System.Drawing.Point(0, 0)
+Me.fanartpb1.Name = "fanartpb1"
+Me.fanartpb1.Size = New System.Drawing.Size(814, 606)
+Me.fanartpb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.fanartpb1.TabIndex = 54
+Me.fanartpb1.TabStop = false
 '
 'tptv
 '
@@ -4224,7 +7729,7 @@ Me.klblTvShowName.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblTvShowName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
 Me.klblTvShowName.Location = New System.Drawing.Point(0, 0)
 Me.klblTvShowName.Name = "klblTvShowName"
-Me.klblTvShowName.Size = New System.Drawing.Size(150, 37)
+Me.klblTvShowName.Size = New System.Drawing.Size(150, 43)
 Me.klblTvShowName.TabIndex = 16
 Me.klblTvShowName.Text = "Click on ' Load TV Shows ' to start. Initially this may take a long time to downl"& _ 
     "oad everything."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"If more then 1 match is found, you will be prompted to select t"& _ 
@@ -4341,7 +7846,7 @@ Me.flpTVShowMI.ForeColor = System.Drawing.Color.Transparent
 Me.flpTVShowMI.Location = New System.Drawing.Point(0, 0)
 Me.flpTVShowMI.MinimumSize = New System.Drawing.Size(0, 162)
 Me.flpTVShowMI.Name = "flpTVShowMI"
-Me.flpTVShowMI.Size = New System.Drawing.Size(146, 162)
+Me.flpTVShowMI.Size = New System.Drawing.Size(148, 162)
 Me.flpTVShowMI.TabIndex = 8
 '
 'kgTvShowsCurImage
@@ -4359,6 +7864,39 @@ Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVWide)
 Me.kgTvShowsCurImage.Size = New System.Drawing.Size(444, 457)
 Me.kgTvShowsCurImage.TabIndex = 115
 '
+'pbTVSeasonPoster
+'
+Me.pbTVSeasonPoster.BackColor = System.Drawing.Color.Transparent
+Me.pbTVSeasonPoster.Location = New System.Drawing.Point(1, 1)
+Me.pbTVSeasonPoster.Name = "pbTVSeasonPoster"
+Me.pbTVSeasonPoster.Size = New System.Drawing.Size(308, 443)
+Me.pbTVSeasonPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbTVSeasonPoster.TabIndex = 3
+Me.pbTVSeasonPoster.TabStop = false
+Me.pbTVSeasonPoster.Visible = false
+'
+'pbTVPoster
+'
+Me.pbTVPoster.Location = New System.Drawing.Point(1, 1)
+Me.pbTVPoster.Name = "pbTVPoster"
+Me.pbTVPoster.Size = New System.Drawing.Size(308, 443)
+Me.pbTVPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbTVPoster.TabIndex = 2
+Me.pbTVPoster.TabStop = false
+Me.pbTVPoster.Visible = false
+'
+'pbTVWide
+'
+Me.pbTVWide.BackColor = System.Drawing.Color.Transparent
+Me.pbTVWide.Location = New System.Drawing.Point(1, 1)
+Me.pbTVWide.Margin = New System.Windows.Forms.Padding(0)
+Me.pbTVWide.Name = "pbTVWide"
+Me.pbTVWide.Size = New System.Drawing.Size(433, 92)
+Me.pbTVWide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbTVWide.TabIndex = 0
+Me.pbTVWide.TabStop = false
+Me.pbTVWide.Visible = false
+'
 'tsCurrentTVShowTools
 '
 Me.tsCurrentTVShowTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
@@ -4371,10 +7909,29 @@ Me.tsCurrentTVShowTools.Size = New System.Drawing.Size(808, 32)
 Me.tsCurrentTVShowTools.TabIndex = 113
 Me.tsCurrentTVShowTools.Text = "ToolStrip1"
 '
+'tsbShowsLoadShows
+'
+Me.tsbShowsLoadShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbShowsLoadShows.Image = CType(resources.GetObject("tsbShowsLoadShows.Image"),System.Drawing.Image)
+Me.tsbShowsLoadShows.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbShowsLoadShows.Name = "tsbShowsLoadShows"
+Me.tsbShowsLoadShows.Size = New System.Drawing.Size(70, 29)
+Me.tsbShowsLoadShows.Text = "Load Shows"
+Me.tsbShowsLoadShows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+'
 'ToolStripSeparator3
 '
 Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
 Me.ToolStripSeparator3.Size = New System.Drawing.Size(6, 32)
+'
+'tsbShowsUpdateShows
+'
+Me.tsbShowsUpdateShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbShowsUpdateShows.Image = CType(resources.GetObject("tsbShowsUpdateShows.Image"),System.Drawing.Image)
+Me.tsbShowsUpdateShows.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbShowsUpdateShows.Name = "tsbShowsUpdateShows"
+Me.tsbShowsUpdateShows.Size = New System.Drawing.Size(81, 29)
+Me.tsbShowsUpdateShows.Text = "Update Shows"
 '
 'ToolStripSeparator5
 '
@@ -4424,6 +7981,466 @@ Me.tsbtvAddImage.Visible = false
 Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
 Me.ToolStripSeparator8.Size = New System.Drawing.Size(6, 32)
 '
+'tsddbtvshowstag
+'
+Me.tsddbtvshowstag.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tagdivxtv, Me.Tagxvidtv, Me.Tagdvdtv, Me.SDTagtv, Me.Tag720ptv, Me.Tag1080itv, Me.Tag1080ptv, Me.TagBluRaytv, Me.SetupTagIconsToolStripMenuItemtv})
+Me.tsddbtvshowstag.Image = Global.movieinfoplus.My.Resources.Resources.tag
+Me.tsddbtvshowstag.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsddbtvshowstag.Name = "tsddbtvshowstag"
+Me.tsddbtvshowstag.Size = New System.Drawing.Size(146, 29)
+Me.tsddbtvshowstag.Text = "Tag the Episode Image"
+'
+'Tagdivxtv
+'
+Me.Tagdivxtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.divxSmonotv, Me.divxSStereotv, Me.divxSDD51tv, Me.divxSDD71tv, Me.divxSDTStv, Me.divxSDTSEStv, Me.divxSHDAudiotv})
+Me.Tagdivxtv.Name = "Tagdivxtv"
+Me.Tagdivxtv.Size = New System.Drawing.Size(156, 22)
+Me.Tagdivxtv.Text = "Divx"
+'
+'divxSmonotv
+'
+Me.divxSmonotv.Name = "divxSmonotv"
+Me.divxSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.divxSmonotv.Text = "Mono"
+'
+'divxSStereotv
+'
+Me.divxSStereotv.Name = "divxSStereotv"
+Me.divxSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.divxSStereotv.Text = "Stereo"
+'
+'divxSDD51tv
+'
+Me.divxSDD51tv.Name = "divxSDD51tv"
+Me.divxSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.divxSDD51tv.Text = "DD 5.1"
+'
+'divxSDD71tv
+'
+Me.divxSDD71tv.Name = "divxSDD71tv"
+Me.divxSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.divxSDD71tv.Text = "DD 7.1"
+'
+'divxSDTStv
+'
+Me.divxSDTStv.Name = "divxSDTStv"
+Me.divxSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.divxSDTStv.Text = "DTS"
+'
+'divxSDTSEStv
+'
+Me.divxSDTSEStv.Name = "divxSDTSEStv"
+Me.divxSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.divxSDTSEStv.Text = "DTS ES"
+'
+'divxSHDAudiotv
+'
+Me.divxSHDAudiotv.Name = "divxSHDAudiotv"
+Me.divxSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.divxSHDAudiotv.Text = "HD Audio"
+'
+'Tagxvidtv
+'
+Me.Tagxvidtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xvidSmonotv, Me.xvidSStereotv, Me.xvidSDD51tv, Me.xvidSDD71tv, Me.xvidSDTStv, Me.xvidSDTSEStv, Me.xvidSHDAudiotv})
+Me.Tagxvidtv.Name = "Tagxvidtv"
+Me.Tagxvidtv.Size = New System.Drawing.Size(156, 22)
+Me.Tagxvidtv.Text = "Xvid"
+'
+'xvidSmonotv
+'
+Me.xvidSmonotv.Name = "xvidSmonotv"
+Me.xvidSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSmonotv.Text = "Mono"
+'
+'xvidSStereotv
+'
+Me.xvidSStereotv.Name = "xvidSStereotv"
+Me.xvidSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSStereotv.Text = "Stereo"
+'
+'xvidSDD51tv
+'
+Me.xvidSDD51tv.Name = "xvidSDD51tv"
+Me.xvidSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDD51tv.Text = "DD 5.1"
+'
+'xvidSDD71tv
+'
+Me.xvidSDD71tv.Name = "xvidSDD71tv"
+Me.xvidSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDD71tv.Text = "DD 7.1"
+'
+'xvidSDTStv
+'
+Me.xvidSDTStv.Name = "xvidSDTStv"
+Me.xvidSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDTStv.Text = "DTS"
+'
+'xvidSDTSEStv
+'
+Me.xvidSDTSEStv.Name = "xvidSDTSEStv"
+Me.xvidSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSDTSEStv.Text = "DTS ES"
+'
+'xvidSHDAudiotv
+'
+Me.xvidSHDAudiotv.Name = "xvidSHDAudiotv"
+Me.xvidSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.xvidSHDAudiotv.Text = "HD Audio"
+'
+'Tagdvdtv
+'
+Me.Tagdvdtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dvdSmonotv, Me.dvdSStereotv, Me.dvdSDD51tv, Me.dvdSDD71tv, Me.dvdSDTStv, Me.DVDSDTSEStv, Me.DVDSHDAudiotv})
+Me.Tagdvdtv.Name = "Tagdvdtv"
+Me.Tagdvdtv.Size = New System.Drawing.Size(156, 22)
+Me.Tagdvdtv.Text = "DVD"
+'
+'dvdSmonotv
+'
+Me.dvdSmonotv.Name = "dvdSmonotv"
+Me.dvdSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.dvdSmonotv.Text = "Mono"
+'
+'dvdSStereotv
+'
+Me.dvdSStereotv.Name = "dvdSStereotv"
+Me.dvdSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.dvdSStereotv.Text = "Stereo"
+'
+'dvdSDD51tv
+'
+Me.dvdSDD51tv.Name = "dvdSDD51tv"
+Me.dvdSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDD51tv.Text = "DD 5.1"
+'
+'dvdSDD71tv
+'
+Me.dvdSDD71tv.Name = "dvdSDD71tv"
+Me.dvdSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDD71tv.Text = "DD 7.1"
+'
+'dvdSDTStv
+'
+Me.dvdSDTStv.Name = "dvdSDTStv"
+Me.dvdSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.dvdSDTStv.Text = "DTS"
+'
+'DVDSDTSEStv
+'
+Me.DVDSDTSEStv.Name = "DVDSDTSEStv"
+Me.DVDSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.DVDSDTSEStv.Text = "DTS ES"
+'
+'DVDSHDAudiotv
+'
+Me.DVDSHDAudiotv.Name = "DVDSHDAudiotv"
+Me.DVDSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.DVDSHDAudiotv.Text = "HD Audio"
+'
+'SDTagtv
+'
+Me.SDTagtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SDSmonotv, Me.SDSStereotv, Me.SDSDD51tv, Me.SDSDD71tv, Me.SDSDTStv, Me.SDSDTSEStv, Me.SDSHDAudiotv})
+Me.SDTagtv.Name = "SDTagtv"
+Me.SDTagtv.Size = New System.Drawing.Size(156, 22)
+Me.SDTagtv.Text = "SD"
+'
+'SDSmonotv
+'
+Me.SDSmonotv.Name = "SDSmonotv"
+Me.SDSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.SDSmonotv.Text = "Mono"
+'
+'SDSStereotv
+'
+Me.SDSStereotv.Name = "SDSStereotv"
+Me.SDSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.SDSStereotv.Text = "Stereo"
+'
+'SDSDD51tv
+'
+Me.SDSDD51tv.Name = "SDSDD51tv"
+Me.SDSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.SDSDD51tv.Text = "DD 5.1"
+'
+'SDSDD71tv
+'
+Me.SDSDD71tv.Name = "SDSDD71tv"
+Me.SDSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.SDSDD71tv.Text = "DD 7.1"
+'
+'SDSDTStv
+'
+Me.SDSDTStv.Name = "SDSDTStv"
+Me.SDSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.SDSDTStv.Text = "DTS"
+'
+'SDSDTSEStv
+'
+Me.SDSDTSEStv.Name = "SDSDTSEStv"
+Me.SDSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.SDSDTSEStv.Text = "DTS ES"
+'
+'SDSHDAudiotv
+'
+Me.SDSHDAudiotv.Name = "SDSHDAudiotv"
+Me.SDSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.SDSHDAudiotv.Text = "HD Audio"
+'
+'Tag720ptv
+'
+Me.Tag720ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd720pSmonotv, Me.hd720pSStereotv, Me.hd720pSDD51tv, Me.hd720pSDD71tv, Me.hd720pSDTStv, Me.hd720pSDTSEStv, Me.hd720pSHDAudiotv})
+Me.Tag720ptv.Name = "Tag720ptv"
+Me.Tag720ptv.Size = New System.Drawing.Size(156, 22)
+Me.Tag720ptv.Text = "720p"
+'
+'hd720pSmonotv
+'
+Me.hd720pSmonotv.Name = "hd720pSmonotv"
+Me.hd720pSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSmonotv.Text = "Mono"
+'
+'hd720pSStereotv
+'
+Me.hd720pSStereotv.Name = "hd720pSStereotv"
+Me.hd720pSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSStereotv.Text = "Stereo"
+'
+'hd720pSDD51tv
+'
+Me.hd720pSDD51tv.Name = "hd720pSDD51tv"
+Me.hd720pSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDD51tv.Text = "DD 5.1"
+'
+'hd720pSDD71tv
+'
+Me.hd720pSDD71tv.Name = "hd720pSDD71tv"
+Me.hd720pSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDD71tv.Text = "DD 7.1"
+'
+'hd720pSDTStv
+'
+Me.hd720pSDTStv.Name = "hd720pSDTStv"
+Me.hd720pSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDTStv.Text = "DTS"
+'
+'hd720pSDTSEStv
+'
+Me.hd720pSDTSEStv.Name = "hd720pSDTSEStv"
+Me.hd720pSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSDTSEStv.Text = "DTS ES"
+'
+'hd720pSHDAudiotv
+'
+Me.hd720pSHDAudiotv.Name = "hd720pSHDAudiotv"
+Me.hd720pSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.hd720pSHDAudiotv.Text = "HD Audio"
+'
+'Tag1080itv
+'
+Me.Tag1080itv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080iSmonotv, Me.hd1080iSStereotv, Me.hd1080iSDD51tv, Me.hd1080iSDD71tv, Me.hd1080iSDTStv, Me.hd1080iSDTSEStv, Me.hd1080iSHDAudiotv})
+Me.Tag1080itv.Name = "Tag1080itv"
+Me.Tag1080itv.Size = New System.Drawing.Size(156, 22)
+Me.Tag1080itv.Text = "1080i"
+'
+'hd1080iSmonotv
+'
+Me.hd1080iSmonotv.Name = "hd1080iSmonotv"
+Me.hd1080iSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSmonotv.Text = "Mono"
+'
+'hd1080iSStereotv
+'
+Me.hd1080iSStereotv.Name = "hd1080iSStereotv"
+Me.hd1080iSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSStereotv.Text = "Stereo"
+'
+'hd1080iSDD51tv
+'
+Me.hd1080iSDD51tv.Name = "hd1080iSDD51tv"
+Me.hd1080iSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDD51tv.Text = "DD 5.1"
+'
+'hd1080iSDD71tv
+'
+Me.hd1080iSDD71tv.Name = "hd1080iSDD71tv"
+Me.hd1080iSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDD71tv.Text = "DD 7.1"
+'
+'hd1080iSDTStv
+'
+Me.hd1080iSDTStv.Name = "hd1080iSDTStv"
+Me.hd1080iSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDTStv.Text = "DTS"
+'
+'hd1080iSDTSEStv
+'
+Me.hd1080iSDTSEStv.Name = "hd1080iSDTSEStv"
+Me.hd1080iSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSDTSEStv.Text = "DTS ES"
+'
+'hd1080iSHDAudiotv
+'
+Me.hd1080iSHDAudiotv.Name = "hd1080iSHDAudiotv"
+Me.hd1080iSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080iSHDAudiotv.Text = "HD Audio"
+'
+'Tag1080ptv
+'
+Me.Tag1080ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080pSmonotv, Me.hd1080pSStereotv, Me.hd1080pSDD51tv, Me.hd1080pSDD71tv, Me.hd1080pSDTStv, Me.hd1080pSDTSEStv, Me.hd1080pSHDAudiotv})
+Me.Tag1080ptv.Name = "Tag1080ptv"
+Me.Tag1080ptv.Size = New System.Drawing.Size(156, 22)
+Me.Tag1080ptv.Text = "1080p"
+'
+'hd1080pSmonotv
+'
+Me.hd1080pSmonotv.Name = "hd1080pSmonotv"
+Me.hd1080pSmonotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSmonotv.Text = "Mono"
+'
+'hd1080pSStereotv
+'
+Me.hd1080pSStereotv.Name = "hd1080pSStereotv"
+Me.hd1080pSStereotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSStereotv.Text = "Stereo"
+'
+'hd1080pSDD51tv
+'
+Me.hd1080pSDD51tv.Name = "hd1080pSDD51tv"
+Me.hd1080pSDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDD51tv.Text = "DD 5.1"
+'
+'hd1080pSDD71tv
+'
+Me.hd1080pSDD71tv.Name = "hd1080pSDD71tv"
+Me.hd1080pSDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDD71tv.Text = "DD 7.1"
+'
+'hd1080pSDTStv
+'
+Me.hd1080pSDTStv.Name = "hd1080pSDTStv"
+Me.hd1080pSDTStv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDTStv.Text = "DTS"
+'
+'hd1080pSDTSEStv
+'
+Me.hd1080pSDTSEStv.Name = "hd1080pSDTSEStv"
+Me.hd1080pSDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSDTSEStv.Text = "DTS ES"
+'
+'hd1080pSHDAudiotv
+'
+Me.hd1080pSHDAudiotv.Name = "hd1080pSHDAudiotv"
+Me.hd1080pSHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.hd1080pSHDAudiotv.Text = "HD Audio"
+'
+'TagBluRaytv
+'
+Me.TagBluRaytv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BluRaySmonotv, Me.BluRaySStereotv, Me.BluRaySDD51tv, Me.BluRaySDD71tv, Me.BluRaySDTStv, Me.BluRaySDTSEStv, Me.BluRaySHDAudiotv})
+Me.TagBluRaytv.Name = "TagBluRaytv"
+Me.TagBluRaytv.Size = New System.Drawing.Size(156, 22)
+Me.TagBluRaytv.Text = "Blu-Ray"
+'
+'BluRaySmonotv
+'
+Me.BluRaySmonotv.Name = "BluRaySmonotv"
+Me.BluRaySmonotv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySmonotv.Text = "Mono"
+'
+'BluRaySStereotv
+'
+Me.BluRaySStereotv.Name = "BluRaySStereotv"
+Me.BluRaySStereotv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySStereotv.Text = "Stereo"
+'
+'BluRaySDD51tv
+'
+Me.BluRaySDD51tv.Name = "BluRaySDD51tv"
+Me.BluRaySDD51tv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDD51tv.Text = "DD 5.1"
+'
+'BluRaySDD71tv
+'
+Me.BluRaySDD71tv.Name = "BluRaySDD71tv"
+Me.BluRaySDD71tv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDD71tv.Text = "DD 7.1"
+'
+'BluRaySDTStv
+'
+Me.BluRaySDTStv.Name = "BluRaySDTStv"
+Me.BluRaySDTStv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDTStv.Text = "DTS"
+'
+'BluRaySDTSEStv
+'
+Me.BluRaySDTSEStv.Name = "BluRaySDTSEStv"
+Me.BluRaySDTSEStv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySDTSEStv.Text = "DTS ES"
+'
+'BluRaySHDAudiotv
+'
+Me.BluRaySHDAudiotv.Name = "BluRaySHDAudiotv"
+Me.BluRaySHDAudiotv.Size = New System.Drawing.Size(123, 22)
+Me.BluRaySHDAudiotv.Text = "HD Audio"
+'
+'SetupTagIconsToolStripMenuItemtv
+'
+Me.SetupTagIconsToolStripMenuItemtv.Name = "SetupTagIconsToolStripMenuItemtv"
+Me.SetupTagIconsToolStripMenuItemtv.Size = New System.Drawing.Size(156, 22)
+Me.SetupTagIconsToolStripMenuItemtv.Text = "Setup Tag Icons"
+'
+'tsddTVShows_OptionsAndSettings
+'
+Me.tsddTVShows_OptionsAndSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+Me.tsddTVShows_OptionsAndSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem, Me.tsmiTVDebug, Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem, Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem})
+Me.tsddTVShows_OptionsAndSettings.Image = CType(resources.GetObject("tsddTVShows_OptionsAndSettings.Image"),System.Drawing.Image)
+Me.tsddTVShows_OptionsAndSettings.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsddTVShows_OptionsAndSettings.Name = "tsddTVShows_OptionsAndSettings"
+Me.tsddTVShows_OptionsAndSettings.Size = New System.Drawing.Size(134, 29)
+Me.tsddTVShows_OptionsAndSettings.Text = "Options and Settings"
+'
+'tsbTVShows_SetupAndConfigurationToolStripMenuItem
+'
+Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Name = "tsbTVShows_SetupAndConfigurationToolStripMenuItem"
+Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
+Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Text = "Setup and Configuration"
+'
+'tsmiTVDebug
+'
+Me.tsmiTVDebug.Name = "tsmiTVDebug"
+Me.tsmiTVDebug.Size = New System.Drawing.Size(285, 22)
+Me.tsmiTVDebug.Text = "Debug Mode Enabled"
+'
+'tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem
+'
+Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Name = "tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem"
+Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
+Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Text = "Allow Media Image Selection to any type"
+'
+'tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem
+'
+Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Name = "tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem"
+Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
+Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Text = "Dont change tabs after picking media image"
+'
+'tsbShowsOpenTVDBPage
+'
+Me.tsbShowsOpenTVDBPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+Me.tsbShowsOpenTVDBPage.Image = CType(resources.GetObject("tsbShowsOpenTVDBPage.Image"),System.Drawing.Image)
+Me.tsbShowsOpenTVDBPage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+Me.tsbShowsOpenTVDBPage.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbShowsOpenTVDBPage.Name = "tsbShowsOpenTVDBPage"
+Me.tsbShowsOpenTVDBPage.Size = New System.Drawing.Size(53, 29)
+Me.tsbShowsOpenTVDBPage.Text = "Open thetvdb.com page for this show"
+'
+'tsbShowsOpenFolder
+'
+Me.tsbShowsOpenFolder.Image = CType(resources.GetObject("tsbShowsOpenFolder.Image"),System.Drawing.Image)
+Me.tsbShowsOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbShowsOpenFolder.Name = "tsbShowsOpenFolder"
+Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 20)
+Me.tsbShowsOpenFolder.Text = "Open Folder"
+Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
+'
 'kpEpisodeData
 '
 Me.kpEpisodeData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -4436,7 +8453,7 @@ Me.kpEpisodeData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpEpisodeData.MinimumSize = New System.Drawing.Size(350, 40)
 Me.kpEpisodeData.Name = "kpEpisodeData"
 Me.kpEpisodeData.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient
-Me.kpEpisodeData.Size = New System.Drawing.Size(350, 657)
+Me.kpEpisodeData.Size = New System.Drawing.Size(350, 641)
 Me.kpEpisodeData.TabIndex = 111
 Me.kpEpisodeData.Visible = false
 '
@@ -4449,14 +8466,14 @@ Me.khbEpisodeThumbGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palett
 Me.khbEpisodeThumbGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderVisibleSecondary = false
-Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 410)
+Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 395)
 Me.khbEpisodeThumbGroup.Name = "khbEpisodeThumbGroup"
 '
 'khbEpisodeThumbGroup.Panel
 '
 Me.khbEpisodeThumbGroup.Panel.Controls.Add(Me.pbep_episodeimage)
 Me.khbEpisodeThumbGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 247)
+Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 246)
 Me.khbEpisodeThumbGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -4478,6 +8495,19 @@ Me.ButtonSpecHeaderGroup2.Style = ComponentFactory.Krypton.Toolkit.PaletteButton
 Me.ButtonSpecHeaderGroup2.Text = ""
 Me.ButtonSpecHeaderGroup2.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
 Me.ButtonSpecHeaderGroup2.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
+'
+'pbep_episodeimage
+'
+Me.pbep_episodeimage.BackColor = System.Drawing.Color.Transparent
+Me.pbep_episodeimage.Location = New System.Drawing.Point(0, 2)
+Me.pbep_episodeimage.Margin = New System.Windows.Forms.Padding(0)
+Me.pbep_episodeimage.MaximumSize = New System.Drawing.Size(512, 0)
+Me.pbep_episodeimage.MinimumSize = New System.Drawing.Size(256, 212)
+Me.pbep_episodeimage.Name = "pbep_episodeimage"
+Me.pbep_episodeimage.Size = New System.Drawing.Size(348, 212)
+Me.pbep_episodeimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbep_episodeimage.TabIndex = 0
+Me.pbep_episodeimage.TabStop = false
 '
 'khgEpisodeNameGroup
 '
@@ -4510,7 +8540,7 @@ Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_creditslbl)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_director)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_directorlbl)
 Me.khgEpisodeNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 0)
-Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 410)
+Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 395)
 Me.khgEpisodeNameGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -4584,7 +8614,7 @@ Me.zpanel1.Location = New System.Drawing.Point(2, 136)
 Me.zpanel1.MinimumSize = New System.Drawing.Size(344, 60)
 Me.zpanel1.Name = "zpanel1"
 Me.zpanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-Me.zpanel1.Size = New System.Drawing.Size(344, 234)
+Me.zpanel1.Size = New System.Drawing.Size(344, 225)
 Me.zpanel1.TabIndex = 116
 '
 'khgEpisodePlotDetails
@@ -4597,7 +8627,7 @@ Me.khgEpisodePlotDetails.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palet
 Me.khgEpisodePlotDetails.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderVisibleSecondary = false
-Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 203)
+Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 195)
 Me.khgEpisodePlotDetails.Margin = New System.Windows.Forms.Padding(0)
 Me.khgEpisodePlotDetails.MinimumSize = New System.Drawing.Size(274, 0)
 Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
@@ -4605,7 +8635,7 @@ Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
 'khgEpisodePlotDetails.Panel
 '
 Me.khgEpisodePlotDetails.Panel.Controls.Add(Me.krtbep_Overview)
-Me.khgEpisodePlotDetails.Size = New System.Drawing.Size(344, 31)
+Me.khgEpisodePlotDetails.Size = New System.Drawing.Size(344, 30)
 Me.khgEpisodePlotDetails.TabIndex = 112
 Me.khgEpisodePlotDetails.Text = "Plot"
 Me.khgEpisodePlotDetails.ValuesPrimary.Description = ""
@@ -4654,7 +8684,7 @@ Me.khbTVShowEPMediaGroup.Name = "khbTVShowEPMediaGroup"
 '
 Me.khbTVShowEPMediaGroup.Panel.Controls.Add(Me.kpTvEpMediaInfo)
 Me.khbTVShowEPMediaGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(344, 203)
+Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(344, 195)
 Me.khbTVShowEPMediaGroup.TabIndex = 114
 Me.khbTVShowEPMediaGroup.Text = "Episode Media Information"
 Me.khbTVShowEPMediaGroup.ValuesPrimary.Description = ""
@@ -4663,6 +8693,15 @@ Me.khbTVShowEPMediaGroup.ValuesPrimary.Image = Nothing
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Description = ""
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Heading = "Description"
 Me.khbTVShowEPMediaGroup.ValuesSecondary.Image = Nothing
+'
+'bshgShowsEpisodeMediaRefresh
+'
+Me.bshgShowsEpisodeMediaRefresh.ExtraText = ""
+Me.bshgShowsEpisodeMediaRefresh.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
+Me.bshgShowsEpisodeMediaRefresh.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
+Me.bshgShowsEpisodeMediaRefresh.Text = "Refresh"
+Me.bshgShowsEpisodeMediaRefresh.ToolTipTitle = "Reload Episode Media Information"
+Me.bshgShowsEpisodeMediaRefresh.UniqueName = "116AA6C9FBEC49BD116AA6C9FBEC49BD"
 '
 'buttonSpecHeaderGroupTVShow
 '
@@ -4699,7 +8738,7 @@ Me.pbarLoadingTVShowMediaInfo.Visible = false
 '
 Me.lblpbarLoadingTVShowMediaInfo.Location = New System.Drawing.Point(88, 93)
 Me.lblpbarLoadingTVShowMediaInfo.Name = "lblpbarLoadingTVShowMediaInfo"
-Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(182, 21)
+Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(160, 16)
 Me.lblpbarLoadingTVShowMediaInfo.TabIndex = 2
 Me.lblpbarLoadingTVShowMediaInfo.Text = "Loading Media Information .... "
 Me.lblpbarLoadingTVShowMediaInfo.Values.ExtraText = ""
@@ -4853,7 +8892,7 @@ Me.ktbep_director.TabIndex = 7
 '
 Me.klblep_directorlbl.Location = New System.Drawing.Point(1, 56)
 Me.klblep_directorlbl.Name = "klblep_directorlbl"
-Me.klblep_directorlbl.Size = New System.Drawing.Size(73, 24)
+Me.klblep_directorlbl.Size = New System.Drawing.Size(64, 21)
 Me.klblep_directorlbl.TabIndex = 6
 Me.klblep_directorlbl.Text = "Director:"
 Me.klblep_directorlbl.Values.ExtraText = ""
@@ -4877,14 +8916,40 @@ Me.kgpbSeasonAllposter.Visible = false
 'klblAllSeasonPosterStatic
 '
 Me.klblAllSeasonPosterStatic.Dock = System.Windows.Forms.DockStyle.Bottom
-Me.klblAllSeasonPosterStatic.Location = New System.Drawing.Point(0, 337)
+Me.klblAllSeasonPosterStatic.Location = New System.Drawing.Point(0, 339)
 Me.klblAllSeasonPosterStatic.Name = "klblAllSeasonPosterStatic"
-Me.klblAllSeasonPosterStatic.Size = New System.Drawing.Size(262, 21)
+Me.klblAllSeasonPosterStatic.Size = New System.Drawing.Size(264, 21)
 Me.klblAllSeasonPosterStatic.TabIndex = 113
 Me.klblAllSeasonPosterStatic.Text = "All Seasons Image"
 Me.klblAllSeasonPosterStatic.Values.ExtraText = ""
 Me.klblAllSeasonPosterStatic.Values.Image = Nothing
 Me.klblAllSeasonPosterStatic.Values.Text = "All Seasons Image"
+'
+'pbSeasonAllposter
+'
+Me.pbSeasonAllposter.BackColor = System.Drawing.Color.Transparent
+Me.pbSeasonAllposter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+Me.pbSeasonAllposter.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbSeasonAllposter.Location = New System.Drawing.Point(0, 0)
+Me.pbSeasonAllposter.Name = "pbSeasonAllposter"
+Me.pbSeasonAllposter.Size = New System.Drawing.Size(264, 360)
+Me.pbSeasonAllposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbSeasonAllposter.TabIndex = 112
+Me.pbSeasonAllposter.TabStop = false
+Me.pbSeasonAllposter.Visible = false
+'
+'pbTVFanart
+'
+Me.pbTVFanart.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbTVFanart.ErrorImage = Nothing
+Me.pbTVFanart.Image = Global.movieinfoplus.My.Resources.Resources.myshows
+Me.pbTVFanart.InitialImage = Nothing
+Me.pbTVFanart.Location = New System.Drawing.Point(0, 0)
+Me.pbTVFanart.Name = "pbTVFanart"
+Me.pbTVFanart.Size = New System.Drawing.Size(808, 527)
+Me.pbTVFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbTVFanart.TabIndex = 1
+Me.pbTVFanart.TabStop = false
 '
 'kgRatingStars
 '
@@ -4909,6 +8974,117 @@ Me.kgRatingStars.StateCommon.Draw = ComponentFactory.Krypton.Toolkit.InheritBool
 Me.kgRatingStars.StateCommon.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias
 Me.kgRatingStars.TabIndex = 15
 Me.kgRatingStars.Visible = false
+'
+'pbTVStar10
+'
+Me.pbTVStar10.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar10.Image = CType(resources.GetObject("pbTVStar10.Image"),System.Drawing.Image)
+Me.pbTVStar10.Location = New System.Drawing.Point(288, 0)
+Me.pbTVStar10.Name = "pbTVStar10"
+Me.pbTVStar10.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar10.TabIndex = 10
+Me.pbTVStar10.TabStop = false
+'
+'pbTVStar3
+'
+Me.pbTVStar3.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar3.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
+Me.pbTVStar3.Location = New System.Drawing.Point(64, 0)
+Me.pbTVStar3.Name = "pbTVStar3"
+Me.pbTVStar3.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar3.TabIndex = 3
+Me.pbTVStar3.TabStop = false
+'
+'pbTVStar6
+'
+Me.pbTVStar6.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar6.Image = Global.movieinfoplus.My.Resources.Resources.halfstar
+Me.pbTVStar6.Location = New System.Drawing.Point(160, 0)
+Me.pbTVStar6.Name = "pbTVStar6"
+Me.pbTVStar6.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar6.TabIndex = 6
+Me.pbTVStar6.TabStop = false
+'
+'pbTVStar1
+'
+Me.pbTVStar1.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar1.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
+Me.pbTVStar1.Location = New System.Drawing.Point(0, 0)
+Me.pbTVStar1.Name = "pbTVStar1"
+Me.pbTVStar1.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar1.TabIndex = 1
+Me.pbTVStar1.TabStop = false
+'
+'pbTVStar9
+'
+Me.pbTVStar9.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar9.Image = CType(resources.GetObject("pbTVStar9.Image"),System.Drawing.Image)
+Me.pbTVStar9.Location = New System.Drawing.Point(256, 0)
+Me.pbTVStar9.Name = "pbTVStar9"
+Me.pbTVStar9.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar9.TabIndex = 9
+Me.pbTVStar9.TabStop = false
+'
+'pbTVStar7
+'
+Me.pbTVStar7.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar7.Image = CType(resources.GetObject("pbTVStar7.Image"),System.Drawing.Image)
+Me.pbTVStar7.Location = New System.Drawing.Point(192, 0)
+Me.pbTVStar7.Name = "pbTVStar7"
+Me.pbTVStar7.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar7.TabIndex = 7
+Me.pbTVStar7.TabStop = false
+'
+'pbTVStar8
+'
+Me.pbTVStar8.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar8.Image = CType(resources.GetObject("pbTVStar8.Image"),System.Drawing.Image)
+Me.pbTVStar8.Location = New System.Drawing.Point(224, 0)
+Me.pbTVStar8.Name = "pbTVStar8"
+Me.pbTVStar8.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar8.TabIndex = 8
+Me.pbTVStar8.TabStop = false
+'
+'pbTVStar4
+'
+Me.pbTVStar4.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar4.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
+Me.pbTVStar4.InitialImage = Nothing
+Me.pbTVStar4.Location = New System.Drawing.Point(96, 0)
+Me.pbTVStar4.Name = "pbTVStar4"
+Me.pbTVStar4.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar4.TabIndex = 4
+Me.pbTVStar4.TabStop = false
+'
+'pbTVStar5
+'
+Me.pbTVStar5.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar5.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
+Me.pbTVStar5.Location = New System.Drawing.Point(128, 0)
+Me.pbTVStar5.Name = "pbTVStar5"
+Me.pbTVStar5.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar5.TabIndex = 5
+Me.pbTVStar5.TabStop = false
+'
+'pbTVStar2
+'
+Me.pbTVStar2.BackColor = System.Drawing.Color.Transparent
+Me.pbTVStar2.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
+Me.pbTVStar2.Location = New System.Drawing.Point(32, 0)
+Me.pbTVStar2.Name = "pbTVStar2"
+Me.pbTVStar2.Size = New System.Drawing.Size(32, 32)
+Me.pbTVStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbTVStar2.TabIndex = 2
+Me.pbTVStar2.TabStop = false
 '
 'ksctvMainRightBottomPortion
 '
@@ -4994,7 +9170,7 @@ Me.kpTVShowInfo.TabIndex = 6
 Me.klblInformationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
 Me.klblInformationlbl.Location = New System.Drawing.Point(64, 72)
 Me.klblInformationlbl.Name = "klblInformationlbl"
-Me.klblInformationlbl.Size = New System.Drawing.Size(81, 21)
+Me.klblInformationlbl.Size = New System.Drawing.Size(104, 24)
 Me.klblInformationlbl.TabIndex = 13
 Me.klblInformationlbl.Text = "Information"
 Me.klblInformationlbl.Values.ExtraText = ""
@@ -5005,7 +9181,7 @@ Me.klblInformationlbl.Values.Text = "Information"
 '
 Me.klFirstAiredlbl.Location = New System.Drawing.Point(13, 4)
 Me.klFirstAiredlbl.Name = "klFirstAiredlbl"
-Me.klFirstAiredlbl.Size = New System.Drawing.Size(79, 21)
+Me.klFirstAiredlbl.Size = New System.Drawing.Size(65, 16)
 Me.klFirstAiredlbl.TabIndex = 14
 Me.klFirstAiredlbl.Text = "First Aired:"
 Me.klFirstAiredlbl.Values.ExtraText = ""
@@ -5026,7 +9202,7 @@ Me.klbltvGenre.Values.Text = ""
 '
 Me.klblAirDaylbl.Location = New System.Drawing.Point(13, 142)
 Me.klblAirDaylbl.Name = "klblAirDaylbl"
-Me.klblAirDaylbl.Size = New System.Drawing.Size(58, 21)
+Me.klblAirDaylbl.Size = New System.Drawing.Size(50, 16)
 Me.klblAirDaylbl.TabIndex = 15
 Me.klblAirDaylbl.Text = "Air Day:"
 Me.klblAirDaylbl.Values.ExtraText = ""
@@ -5047,7 +9223,7 @@ Me.klbltvNetwork.Values.Text = ""
 '
 Me.klblAirTimelbl.Location = New System.Drawing.Point(13, 158)
 Me.klblAirTimelbl.Name = "klblAirTimelbl"
-Me.klblAirTimelbl.Size = New System.Drawing.Size(65, 21)
+Me.klblAirTimelbl.Size = New System.Drawing.Size(55, 16)
 Me.klblAirTimelbl.TabIndex = 16
 Me.klblAirTimelbl.Text = "Air Time:"
 Me.klblAirTimelbl.Values.ExtraText = ""
@@ -5068,7 +9244,7 @@ Me.klbltvRunTime.Values.Text = ""
 '
 Me.klblRunTimelbl.Location = New System.Drawing.Point(13, 20)
 Me.klblRunTimelbl.Name = "klblRunTimelbl"
-Me.klblRunTimelbl.Size = New System.Drawing.Size(61, 21)
+Me.klblRunTimelbl.Size = New System.Drawing.Size(56, 16)
 Me.klblRunTimelbl.TabIndex = 17
 Me.klblRunTimelbl.Text = "Runtime:"
 Me.klblRunTimelbl.Values.ExtraText = ""
@@ -5079,7 +9255,7 @@ Me.klblRunTimelbl.Values.Text = "Runtime:"
 '
 Me.klbltvAirTime.Location = New System.Drawing.Point(124, 158)
 Me.klbltvAirTime.Name = "klbltvAirTime"
-Me.klbltvAirTime.Size = New System.Drawing.Size(58, 21)
+Me.klbltvAirTime.Size = New System.Drawing.Size(52, 16)
 Me.klbltvAirTime.TabIndex = 22
 Me.klbltvAirTime.Text = "9:00 PM"
 Me.klbltvAirTime.Values.ExtraText = ""
@@ -5090,7 +9266,7 @@ Me.klbltvAirTime.Values.Text = "9:00 PM"
 '
 Me.klblNetworklbl.Location = New System.Drawing.Point(13, 35)
 Me.klblNetworklbl.Name = "klblNetworklbl"
-Me.klblNetworklbl.Size = New System.Drawing.Size(64, 21)
+Me.klblNetworklbl.Size = New System.Drawing.Size(55, 16)
 Me.klblNetworklbl.TabIndex = 18
 Me.klblNetworklbl.Text = "Network:"
 Me.klblNetworklbl.Values.ExtraText = ""
@@ -5101,7 +9277,7 @@ Me.klblNetworklbl.Values.Text = "Network:"
 '
 Me.klbltvAirDay.Location = New System.Drawing.Point(124, 142)
 Me.klbltvAirDay.Name = "klbltvAirDay"
-Me.klbltvAirDay.Size = New System.Drawing.Size(77, 21)
+Me.klbltvAirDay.Size = New System.Drawing.Size(70, 16)
 Me.klbltvAirDay.TabIndex = 21
 Me.klbltvAirDay.Text = "Wednesday"
 Me.klbltvAirDay.Values.ExtraText = ""
@@ -5112,7 +9288,7 @@ Me.klbltvAirDay.Values.Text = "Wednesday"
 '
 Me.klblGenrelbl.Location = New System.Drawing.Point(13, 51)
 Me.klblGenrelbl.Name = "klblGenrelbl"
-Me.klblGenrelbl.Size = New System.Drawing.Size(49, 21)
+Me.klblGenrelbl.Size = New System.Drawing.Size(45, 16)
 Me.klblGenrelbl.TabIndex = 19
 Me.klblGenrelbl.Text = "Genre:"
 Me.klblGenrelbl.Values.ExtraText = ""
@@ -5162,14 +9338,24 @@ Me.kgMusic_SongImage.Visible = false
 '
 Me.lblSongImage.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.lblSongImage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
-Me.lblSongImage.Location = New System.Drawing.Point(0, 339)
+Me.lblSongImage.Location = New System.Drawing.Point(0, 335)
 Me.lblSongImage.Name = "lblSongImage"
-Me.lblSongImage.Size = New System.Drawing.Size(359, 21)
+Me.lblSongImage.Size = New System.Drawing.Size(361, 27)
 Me.lblSongImage.TabIndex = 1
 Me.lblSongImage.Text = "Embedded Song Image"
 Me.lblSongImage.Values.ExtraText = ""
 Me.lblSongImage.Values.Image = Nothing
 Me.lblSongImage.Values.Text = "Embedded Song Image"
+'
+'pbMusic_CurSongImage
+'
+Me.pbMusic_CurSongImage.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbMusic_CurSongImage.Location = New System.Drawing.Point(0, 0)
+Me.pbMusic_CurSongImage.Name = "pbMusic_CurSongImage"
+Me.pbMusic_CurSongImage.Size = New System.Drawing.Size(361, 362)
+Me.pbMusic_CurSongImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbMusic_CurSongImage.TabIndex = 0
+Me.pbMusic_CurSongImage.TabStop = false
 '
 'kgMusicMI
 '
@@ -5194,7 +9380,7 @@ Me.flpMusicMI.Dock = System.Windows.Forms.DockStyle.Fill
 Me.flpMusicMI.ForeColor = System.Drawing.Color.Transparent
 Me.flpMusicMI.Location = New System.Drawing.Point(0, 0)
 Me.flpMusicMI.Name = "flpMusicMI"
-Me.flpMusicMI.Size = New System.Drawing.Size(802, 150)
+Me.flpMusicMI.Size = New System.Drawing.Size(804, 152)
 Me.flpMusicMI.TabIndex = 8
 '
 'kgArtistArtImage
@@ -5214,14 +9400,26 @@ Me.kgArtistArtImage.Visible = false
 '
 Me.lblArtistArtImage.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.lblArtistArtImage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
-Me.lblArtistArtImage.Location = New System.Drawing.Point(0, 317)
+Me.lblArtistArtImage.Location = New System.Drawing.Point(0, 313)
 Me.lblArtistArtImage.Name = "lblArtistArtImage"
-Me.lblArtistArtImage.Size = New System.Drawing.Size(338, 21)
+Me.lblArtistArtImage.Size = New System.Drawing.Size(340, 27)
 Me.lblArtistArtImage.TabIndex = 4
 Me.lblArtistArtImage.Text = "Album Image"
 Me.lblArtistArtImage.Values.ExtraText = ""
 Me.lblArtistArtImage.Values.Image = Nothing
 Me.lblArtistArtImage.Values.Text = "Album Image"
+'
+'pbCurAlbumArt
+'
+Me.pbCurAlbumArt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+Me.pbCurAlbumArt.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbCurAlbumArt.Location = New System.Drawing.Point(0, 0)
+Me.pbCurAlbumArt.Name = "pbCurAlbumArt"
+Me.pbCurAlbumArt.Size = New System.Drawing.Size(340, 340)
+Me.pbCurAlbumArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbCurAlbumArt.TabIndex = 3
+Me.pbCurAlbumArt.TabStop = false
+Me.pbCurAlbumArt.Visible = false
 '
 'kgMusicSongData
 '
@@ -5244,12 +9442,23 @@ Me.kgMusicSongData.Visible = false
 Me.lblCurSongExtV.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Custom1
 Me.lblCurSongExtV.Location = New System.Drawing.Point(300, 2)
 Me.lblCurSongExtV.Name = "lblCurSongExtV"
-Me.lblCurSongExtV.Size = New System.Drawing.Size(35, 21)
+Me.lblCurSongExtV.Size = New System.Drawing.Size(45, 27)
 Me.lblCurSongExtV.TabIndex = 3
 Me.lblCurSongExtV.Text = "MP3"
 Me.lblCurSongExtV.Values.ExtraText = ""
 Me.lblCurSongExtV.Values.Image = Nothing
 Me.lblCurSongExtV.Values.Text = "MP3"
+'
+'pbMusic_CurSongExtPic
+'
+Me.pbMusic_CurSongExtPic.BackColor = System.Drawing.Color.Transparent
+Me.pbMusic_CurSongExtPic.Location = New System.Drawing.Point(280, 1)
+Me.pbMusic_CurSongExtPic.Name = "pbMusic_CurSongExtPic"
+Me.pbMusic_CurSongExtPic.Size = New System.Drawing.Size(32, 22)
+Me.pbMusic_CurSongExtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbMusic_CurSongExtPic.TabIndex = 2
+Me.pbMusic_CurSongExtPic.TabStop = false
+Me.pbMusic_CurSongExtPic.Visible = false
 '
 'rtbMusic_SongData
 '
@@ -5265,7 +9474,7 @@ Me.rtbMusic_SongData.Text = "Song Data"
 Me.lblMusic_SongTitle.Dock = System.Windows.Forms.DockStyle.Top
 Me.lblMusic_SongTitle.Location = New System.Drawing.Point(0, 0)
 Me.lblMusic_SongTitle.Name = "lblMusic_SongTitle"
-Me.lblMusic_SongTitle.Size = New System.Drawing.Size(354, 21)
+Me.lblMusic_SongTitle.Size = New System.Drawing.Size(356, 21)
 Me.lblMusic_SongTitle.TabIndex = 0
 Me.lblMusic_SongTitle.Text = "Song Title"
 Me.lblMusic_SongTitle.Values.ExtraText = ""
@@ -5282,20 +9491,87 @@ Me.tstripMusicToolbar.Size = New System.Drawing.Size(814, 25)
 Me.tstripMusicToolbar.TabIndex = 2
 Me.tstripMusicToolbar.Text = "ToolStrip1"
 '
+'tsbLoadMyMusic
+'
+Me.tsbLoadMyMusic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbLoadMyMusic.Image = CType(resources.GetObject("tsbLoadMyMusic.Image"),System.Drawing.Image)
+Me.tsbLoadMyMusic.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbLoadMyMusic.Name = "tsbLoadMyMusic"
+Me.tsbLoadMyMusic.Size = New System.Drawing.Size(85, 22)
+Me.tsbLoadMyMusic.Text = "Load My Tunes"
+'
 'ToolStripSeparator9
 '
 Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
 Me.ToolStripSeparator9.Size = New System.Drawing.Size(6, 25)
+'
+'tsbAddMusicFanart
+'
+Me.tsbAddMusicFanart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbAddMusicFanart.Image = CType(resources.GetObject("tsbAddMusicFanart.Image"),System.Drawing.Image)
+Me.tsbAddMusicFanart.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbAddMusicFanart.Name = "tsbAddMusicFanart"
+Me.tsbAddMusicFanart.Size = New System.Drawing.Size(91, 22)
+Me.tsbAddMusicFanart.Text = "Add Background"
 '
 'ToolStripSeparator10
 '
 Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
 Me.ToolStripSeparator10.Size = New System.Drawing.Size(6, 25)
 '
+'tsbAddmyOwnAlbumart
+'
+Me.tsbAddmyOwnAlbumart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsbAddmyOwnAlbumart.Image = CType(resources.GetObject("tsbAddmyOwnAlbumart.Image"),System.Drawing.Image)
+Me.tsbAddmyOwnAlbumart.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbAddmyOwnAlbumart.Name = "tsbAddmyOwnAlbumart"
+Me.tsbAddmyOwnAlbumart.Size = New System.Drawing.Size(78, 22)
+Me.tsbAddmyOwnAlbumart.Text = "Add Album Art"
+'
 'ToolStripSeparator11
 '
 Me.ToolStripSeparator11.Name = "ToolStripSeparator11"
 Me.ToolStripSeparator11.Size = New System.Drawing.Size(6, 25)
+'
+'tsddbInjectImage
+'
+Me.tsddbInjectImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbInjectIntoCurSong, Me.tsbInjectIntoCurAlbum, Me.tsbInjectIntoCurArtist, Me.AutomaticOptionsToolStripMenuItem})
+Me.tsddbInjectImage.Image = CType(resources.GetObject("tsddbInjectImage.Image"),System.Drawing.Image)
+Me.tsddbInjectImage.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsddbInjectImage.Name = "tsddbInjectImage"
+Me.tsddbInjectImage.Size = New System.Drawing.Size(123, 22)
+Me.tsddbInjectImage.Text = "Inject Image into..."
+'
+'tsbInjectIntoCurSong
+'
+Me.tsbInjectIntoCurSong.Name = "tsbInjectIntoCurSong"
+Me.tsbInjectIntoCurSong.Size = New System.Drawing.Size(189, 22)
+Me.tsbInjectIntoCurSong.Text = "Current Song"
+'
+'tsbInjectIntoCurAlbum
+'
+Me.tsbInjectIntoCurAlbum.Name = "tsbInjectIntoCurAlbum"
+Me.tsbInjectIntoCurAlbum.Size = New System.Drawing.Size(189, 22)
+Me.tsbInjectIntoCurAlbum.Text = "Current Album"
+'
+'tsbInjectIntoCurArtist
+'
+Me.tsbInjectIntoCurArtist.Name = "tsbInjectIntoCurArtist"
+Me.tsbInjectIntoCurArtist.Size = New System.Drawing.Size(189, 22)
+Me.tsbInjectIntoCurArtist.Text = "All Albums for This Artist"
+'
+'AutomaticOptionsToolStripMenuItem
+'
+Me.AutomaticOptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tso_auto_addtoablumonnewart})
+Me.AutomaticOptionsToolStripMenuItem.Name = "AutomaticOptionsToolStripMenuItem"
+Me.AutomaticOptionsToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+Me.AutomaticOptionsToolStripMenuItem.Text = "Automatic Options"
+'
+'tso_auto_addtoablumonnewart
+'
+Me.tso_auto_addtoablumonnewart.Name = "tso_auto_addtoablumonnewart"
+Me.tso_auto_addtoablumonnewart.Size = New System.Drawing.Size(334, 22)
+Me.tso_auto_addtoablumonnewart.Text = "Inject Image Into Entire Album When Adding Album Art"
 '
 'ToolStripSeparator12
 '
@@ -5306,6 +9582,136 @@ Me.ToolStripSeparator12.Size = New System.Drawing.Size(6, 25)
 '
 Me.ToolStripSeparator13.Name = "ToolStripSeparator13"
 Me.ToolStripSeparator13.Size = New System.Drawing.Size(6, 25)
+'
+'movtbar_ddbut_optionsAndSettings
+'
+Me.movtbar_ddbut_optionsAndSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+Me.movtbar_ddbut_optionsAndSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1})
+Me.movtbar_ddbut_optionsAndSettings.Image = CType(resources.GetObject("movtbar_ddbut_optionsAndSettings.Image"),System.Drawing.Image)
+Me.movtbar_ddbut_optionsAndSettings.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.movtbar_ddbut_optionsAndSettings.Name = "movtbar_ddbut_optionsAndSettings"
+Me.movtbar_ddbut_optionsAndSettings.Size = New System.Drawing.Size(134, 22)
+Me.movtbar_ddbut_optionsAndSettings.Text = "Options and Settings"
+'
+'movtbar_tsb_SetupAndConfigurationToolStripMenuItem1
+'
+Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Name = "movtbar_tsb_SetupAndConfigurationToolStripMenuItem1"
+Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Size = New System.Drawing.Size(191, 22)
+Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Text = "Setup and Configuration"
+'
+'tsddbTools
+'
+Me.tsddbTools.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+Me.tsddbTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+Me.tsddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbMusicSortMyMusicToolStripMenuItem, Me.tsbMusicModifyAlbumDataToolStripMenuItem, Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem, Me.ResizeFanartImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem})
+Me.tsddbTools.Image = CType(resources.GetObject("tsddbTools.Image"),System.Drawing.Image)
+Me.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsddbTools.Name = "tsddbTools"
+Me.tsddbTools.Size = New System.Drawing.Size(46, 22)
+Me.tsddbTools.Text = "Tools"
+'
+'tsbMusicSortMyMusicToolStripMenuItem
+'
+Me.tsbMusicSortMyMusicToolStripMenuItem.Name = "tsbMusicSortMyMusicToolStripMenuItem"
+Me.tsbMusicSortMyMusicToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.tsbMusicSortMyMusicToolStripMenuItem.Text = "Start Music Sorting Wizard"
+'
+'tsbMusicModifyAlbumDataToolStripMenuItem
+'
+Me.tsbMusicModifyAlbumDataToolStripMenuItem.Name = "tsbMusicModifyAlbumDataToolStripMenuItem"
+Me.tsbMusicModifyAlbumDataToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.tsbMusicModifyAlbumDataToolStripMenuItem.Text = "Modify Album Data"
+'
+'ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem
+'
+Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Name = "ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem"
+Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Text = "Scan All Artists and check for Backgrounds (looks locally for backgrounds)"
+'
+'tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem
+'
+Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Name = "tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem"
+Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Text = "Extract Image from music file to artist image"
+'
+'tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem
+'
+Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Name = "tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem"
+Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Text = "Extract Image from music file to album image"
+'
+'ResizeFanartImageToolStripMenuItem
+'
+Me.ResizeFanartImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimusic_fanart_960x540, Me.tsmimusic_fanart_1280x720, Me.tsmimusic_fanart_1920x1080})
+Me.ResizeFanartImageToolStripMenuItem.Name = "ResizeFanartImageToolStripMenuItem"
+Me.ResizeFanartImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.ResizeFanartImageToolStripMenuItem.Text = "Resize Background Image"
+'
+'tsmimusic_fanart_960x540
+'
+Me.tsmimusic_fanart_960x540.Name = "tsmimusic_fanart_960x540"
+Me.tsmimusic_fanart_960x540.Size = New System.Drawing.Size(130, 22)
+Me.tsmimusic_fanart_960x540.Text = "960x540"
+'
+'tsmimusic_fanart_1280x720
+'
+Me.tsmimusic_fanart_1280x720.Name = "tsmimusic_fanart_1280x720"
+Me.tsmimusic_fanart_1280x720.Size = New System.Drawing.Size(130, 22)
+Me.tsmimusic_fanart_1280x720.Text = "1280x720"
+'
+'tsmimusic_fanart_1920x1080
+'
+Me.tsmimusic_fanart_1920x1080.Name = "tsmimusic_fanart_1920x1080"
+Me.tsmimusic_fanart_1920x1080.Size = New System.Drawing.Size(130, 22)
+Me.tsmimusic_fanart_1920x1080.Text = "1920x1080"
+'
+'CompressBackgroundImageToolStripMenuItem
+'
+Me.CompressBackgroundImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimusic_fanart_q60, Me.tsmimusic_fanart_q70, Me.tsmimusic_fanart_q80, Me.tsmishows_fanart_q90, Me.tsmimusic_fanart_q95})
+Me.CompressBackgroundImageToolStripMenuItem.Name = "CompressBackgroundImageToolStripMenuItem"
+Me.CompressBackgroundImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.CompressBackgroundImageToolStripMenuItem.Text = "Compress Background Image"
+'
+'tsmimusic_fanart_q60
+'
+Me.tsmimusic_fanart_q60.Name = "tsmimusic_fanart_q60"
+Me.tsmimusic_fanart_q60.Size = New System.Drawing.Size(132, 22)
+Me.tsmimusic_fanart_q60.Text = "60% Quality"
+'
+'tsmimusic_fanart_q70
+'
+Me.tsmimusic_fanart_q70.Name = "tsmimusic_fanart_q70"
+Me.tsmimusic_fanart_q70.Size = New System.Drawing.Size(132, 22)
+Me.tsmimusic_fanart_q70.Text = "70% Quality"
+'
+'tsmimusic_fanart_q80
+'
+Me.tsmimusic_fanart_q80.Name = "tsmimusic_fanart_q80"
+Me.tsmimusic_fanart_q80.Size = New System.Drawing.Size(132, 22)
+Me.tsmimusic_fanart_q80.Text = "80% Quality"
+'
+'tsmishows_fanart_q90
+'
+Me.tsmishows_fanart_q90.Name = "tsmishows_fanart_q90"
+Me.tsmishows_fanart_q90.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_fanart_q90.Text = "90% Quality"
+'
+'tsmimusic_fanart_q95
+'
+Me.tsmimusic_fanart_q95.Name = "tsmimusic_fanart_q95"
+Me.tsmimusic_fanart_q95.Size = New System.Drawing.Size(132, 22)
+Me.tsmimusic_fanart_q95.Text = "95% Quality"
+'
+'pbMusicCurFanart
+'
+Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
+Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 0)
+Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
+Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 606)
+Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbMusicCurFanart.TabIndex = 1
+Me.pbMusicCurFanart.TabStop = false
 '
 'tpFCDN
 '
@@ -5363,7 +9769,7 @@ Me.lblFreeCovers.Dock = System.Windows.Forms.DockStyle.Top
 Me.lblFreeCovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
 Me.lblFreeCovers.Location = New System.Drawing.Point(3, 3)
 Me.lblFreeCovers.Name = "lblFreeCovers"
-Me.lblFreeCovers.Size = New System.Drawing.Size(946, 20)
+Me.lblFreeCovers.Size = New System.Drawing.Size(943, 20)
 Me.lblFreeCovers.StateCommon.ShortText.Color1 = System.Drawing.Color.White
 Me.lblFreeCovers.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
 Me.lblFreeCovers.TabIndex = 20
@@ -5383,6 +9789,16 @@ Me.kgpbFront10.Panel.Controls.Add(Me.pbFront10)
 Me.kgpbFront10.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront10.TabIndex = 19
 '
+'pbFront10
+'
+Me.pbFront10.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront10.Location = New System.Drawing.Point(0, 0)
+Me.pbFront10.Name = "pbFront10"
+Me.pbFront10.Size = New System.Drawing.Size(463, 336)
+Me.pbFront10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront10.TabIndex = 9
+Me.pbFront10.TabStop = false
+'
 'kgpbFront9
 '
 Me.kgpbFront9.Location = New System.Drawing.Point(1, 1420)
@@ -5393,6 +9809,16 @@ Me.kgpbFront9.Name = "kgpbFront9"
 Me.kgpbFront9.Panel.Controls.Add(Me.pbFront9)
 Me.kgpbFront9.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront9.TabIndex = 18
+'
+'pbFront9
+'
+Me.pbFront9.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront9.Location = New System.Drawing.Point(0, 0)
+Me.pbFront9.Name = "pbFront9"
+Me.pbFront9.Size = New System.Drawing.Size(463, 336)
+Me.pbFront9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront9.TabIndex = 8
+Me.pbFront9.TabStop = false
 '
 'kgpbFront8
 '
@@ -5405,6 +9831,16 @@ Me.kgpbFront8.Panel.Controls.Add(Me.pbFront8)
 Me.kgpbFront8.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront8.TabIndex = 17
 '
+'pbFront8
+'
+Me.pbFront8.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront8.Location = New System.Drawing.Point(0, 0)
+Me.pbFront8.Name = "pbFront8"
+Me.pbFront8.Size = New System.Drawing.Size(463, 336)
+Me.pbFront8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront8.TabIndex = 7
+Me.pbFront8.TabStop = false
+'
 'kgpbFront7
 '
 Me.kgpbFront7.Location = New System.Drawing.Point(1, 1068)
@@ -5415,6 +9851,16 @@ Me.kgpbFront7.Name = "kgpbFront7"
 Me.kgpbFront7.Panel.Controls.Add(Me.pbFront7)
 Me.kgpbFront7.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront7.TabIndex = 16
+'
+'pbFront7
+'
+Me.pbFront7.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront7.Location = New System.Drawing.Point(0, 0)
+Me.pbFront7.Name = "pbFront7"
+Me.pbFront7.Size = New System.Drawing.Size(463, 336)
+Me.pbFront7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront7.TabIndex = 6
+Me.pbFront7.TabStop = false
 '
 'kgpbFront6
 '
@@ -5427,6 +9873,16 @@ Me.kgpbFront6.Panel.Controls.Add(Me.pbFront6)
 Me.kgpbFront6.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront6.TabIndex = 15
 '
+'pbFront6
+'
+Me.pbFront6.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront6.Location = New System.Drawing.Point(0, 0)
+Me.pbFront6.Name = "pbFront6"
+Me.pbFront6.Size = New System.Drawing.Size(463, 336)
+Me.pbFront6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront6.TabIndex = 5
+Me.pbFront6.TabStop = false
+'
 'kgpbFront5
 '
 Me.kgpbFront5.Location = New System.Drawing.Point(1, 719)
@@ -5437,6 +9893,16 @@ Me.kgpbFront5.Name = "kgpbFront5"
 Me.kgpbFront5.Panel.Controls.Add(Me.pbFront5)
 Me.kgpbFront5.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront5.TabIndex = 14
+'
+'pbFront5
+'
+Me.pbFront5.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront5.Location = New System.Drawing.Point(0, 0)
+Me.pbFront5.Name = "pbFront5"
+Me.pbFront5.Size = New System.Drawing.Size(463, 336)
+Me.pbFront5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront5.TabIndex = 4
+Me.pbFront5.TabStop = false
 '
 'kgpbFront4
 '
@@ -5449,6 +9915,15 @@ Me.kgpbFront4.Panel.Controls.Add(Me.pbFront4)
 Me.kgpbFront4.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront4.TabIndex = 13
 '
+'pbFront4
+'
+Me.pbFront4.Location = New System.Drawing.Point(3, 3)
+Me.pbFront4.Name = "pbFront4"
+Me.pbFront4.Size = New System.Drawing.Size(470, 331)
+Me.pbFront4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront4.TabIndex = 3
+Me.pbFront4.TabStop = false
+'
 'kgpbFront3
 '
 Me.kgpbFront3.Location = New System.Drawing.Point(1, 367)
@@ -5459,6 +9934,15 @@ Me.kgpbFront3.Name = "kgpbFront3"
 Me.kgpbFront3.Panel.Controls.Add(Me.pbFront3)
 Me.kgpbFront3.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront3.TabIndex = 12
+'
+'pbFront3
+'
+Me.pbFront3.Location = New System.Drawing.Point(3, 3)
+Me.pbFront3.Name = "pbFront3"
+Me.pbFront3.Size = New System.Drawing.Size(470, 331)
+Me.pbFront3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront3.TabIndex = 2
+Me.pbFront3.TabStop = false
 '
 'kgpbFront2
 '
@@ -5471,6 +9955,15 @@ Me.kgpbFront2.Panel.Controls.Add(Me.pbFront2)
 Me.kgpbFront2.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront2.TabIndex = 11
 '
+'pbFront2
+'
+Me.pbFront2.Location = New System.Drawing.Point(3, 3)
+Me.pbFront2.Name = "pbFront2"
+Me.pbFront2.Size = New System.Drawing.Size(470, 331)
+Me.pbFront2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront2.TabIndex = 1
+Me.pbFront2.TabStop = false
+'
 'kgpbFront1
 '
 Me.kgpbFront1.Location = New System.Drawing.Point(0, 22)
@@ -5481,6 +9974,16 @@ Me.kgpbFront1.Name = "kgpbFront1"
 Me.kgpbFront1.Panel.Controls.Add(Me.pbFront1)
 Me.kgpbFront1.Size = New System.Drawing.Size(473, 346)
 Me.kgpbFront1.TabIndex = 10
+'
+'pbFront1
+'
+Me.pbFront1.Dock = System.Windows.Forms.DockStyle.Fill
+Me.pbFront1.Location = New System.Drawing.Point(0, 0)
+Me.pbFront1.Name = "pbFront1"
+Me.pbFront1.Size = New System.Drawing.Size(463, 336)
+Me.pbFront1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbFront1.TabIndex = 0
+Me.pbFront1.TabStop = false
 '
 'tpFCDNBack
 '
@@ -5517,6 +10020,87 @@ Me.KryptonLabel1.Values.ExtraText = ""
 Me.KryptonLabel1.Values.Image = Nothing
 Me.KryptonLabel1.Values.Text = "Media Images Provided by Freecovers.net "
 '
+'pbBack9
+'
+Me.pbBack9.Location = New System.Drawing.Point(604, 407)
+Me.pbBack9.Name = "pbBack9"
+Me.pbBack9.Size = New System.Drawing.Size(300, 200)
+Me.pbBack9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack9.TabIndex = 17
+Me.pbBack9.TabStop = false
+'
+'pbBack8
+'
+Me.pbBack8.Location = New System.Drawing.Point(303, 407)
+Me.pbBack8.Name = "pbBack8"
+Me.pbBack8.Size = New System.Drawing.Size(300, 200)
+Me.pbBack8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack8.TabIndex = 16
+Me.pbBack8.TabStop = false
+'
+'pbBack7
+'
+Me.pbBack7.Location = New System.Drawing.Point(2, 407)
+Me.pbBack7.Name = "pbBack7"
+Me.pbBack7.Size = New System.Drawing.Size(300, 200)
+Me.pbBack7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack7.TabIndex = 15
+Me.pbBack7.TabStop = false
+'
+'pbBack6
+'
+Me.pbBack6.Location = New System.Drawing.Point(604, 204)
+Me.pbBack6.Name = "pbBack6"
+Me.pbBack6.Size = New System.Drawing.Size(300, 200)
+Me.pbBack6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack6.TabIndex = 14
+Me.pbBack6.TabStop = false
+'
+'pbBack5
+'
+Me.pbBack5.Location = New System.Drawing.Point(303, 204)
+Me.pbBack5.Name = "pbBack5"
+Me.pbBack5.Size = New System.Drawing.Size(300, 200)
+Me.pbBack5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack5.TabIndex = 13
+Me.pbBack5.TabStop = false
+'
+'pbBack4
+'
+Me.pbBack4.Location = New System.Drawing.Point(2, 204)
+Me.pbBack4.Name = "pbBack4"
+Me.pbBack4.Size = New System.Drawing.Size(300, 200)
+Me.pbBack4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack4.TabIndex = 12
+Me.pbBack4.TabStop = false
+'
+'pbBack3
+'
+Me.pbBack3.Location = New System.Drawing.Point(604, 0)
+Me.pbBack3.Name = "pbBack3"
+Me.pbBack3.Size = New System.Drawing.Size(300, 200)
+Me.pbBack3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack3.TabIndex = 11
+Me.pbBack3.TabStop = false
+'
+'pbBack2
+'
+Me.pbBack2.Location = New System.Drawing.Point(303, 0)
+Me.pbBack2.Name = "pbBack2"
+Me.pbBack2.Size = New System.Drawing.Size(300, 200)
+Me.pbBack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack2.TabIndex = 10
+Me.pbBack2.TabStop = false
+'
+'pbBack1
+'
+Me.pbBack1.Location = New System.Drawing.Point(2, 0)
+Me.pbBack1.Name = "pbBack1"
+Me.pbBack1.Size = New System.Drawing.Size(300, 200)
+Me.pbBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbBack1.TabIndex = 9
+Me.pbBack1.TabStop = false
+'
 'tpFCDNcd1
 '
 Me.tpFCDNcd1.AutoScroll = true
@@ -5550,6 +10134,87 @@ Me.KryptonLabel2.Text = "Media Images Provided by Freecovers.net "
 Me.KryptonLabel2.Values.ExtraText = ""
 Me.KryptonLabel2.Values.Image = Nothing
 Me.KryptonLabel2.Values.Text = "Media Images Provided by Freecovers.net "
+'
+'pbcdi9
+'
+Me.pbcdi9.Location = New System.Drawing.Point(614, 606)
+Me.pbcdi9.Name = "pbcdi9"
+Me.pbcdi9.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi9.TabIndex = 26
+Me.pbcdi9.TabStop = false
+'
+'pbcdi8
+'
+Me.pbcdi8.Location = New System.Drawing.Point(313, 606)
+Me.pbcdi8.Name = "pbcdi8"
+Me.pbcdi8.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi8.TabIndex = 25
+Me.pbcdi8.TabStop = false
+'
+'pbcdi7
+'
+Me.pbcdi7.Location = New System.Drawing.Point(12, 606)
+Me.pbcdi7.Name = "pbcdi7"
+Me.pbcdi7.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi7.TabIndex = 24
+Me.pbcdi7.TabStop = false
+'
+'pbcdi6
+'
+Me.pbcdi6.Location = New System.Drawing.Point(614, 303)
+Me.pbcdi6.Name = "pbcdi6"
+Me.pbcdi6.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi6.TabIndex = 23
+Me.pbcdi6.TabStop = false
+'
+'pbcdi5
+'
+Me.pbcdi5.Location = New System.Drawing.Point(313, 303)
+Me.pbcdi5.Name = "pbcdi5"
+Me.pbcdi5.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi5.TabIndex = 22
+Me.pbcdi5.TabStop = false
+'
+'pbcdi4
+'
+Me.pbcdi4.Location = New System.Drawing.Point(12, 303)
+Me.pbcdi4.Name = "pbcdi4"
+Me.pbcdi4.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi4.TabIndex = 21
+Me.pbcdi4.TabStop = false
+'
+'pbcdi3
+'
+Me.pbcdi3.Location = New System.Drawing.Point(615, 2)
+Me.pbcdi3.Name = "pbcdi3"
+Me.pbcdi3.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi3.TabIndex = 20
+Me.pbcdi3.TabStop = false
+'
+'pbcdi2
+'
+Me.pbcdi2.Location = New System.Drawing.Point(313, 2)
+Me.pbcdi2.Name = "pbcdi2"
+Me.pbcdi2.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi2.TabIndex = 19
+Me.pbcdi2.TabStop = false
+'
+'pbcdi1
+'
+Me.pbcdi1.Location = New System.Drawing.Point(12, 2)
+Me.pbcdi1.Name = "pbcdi1"
+Me.pbcdi1.Size = New System.Drawing.Size(300, 300)
+Me.pbcdi1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcdi1.TabIndex = 18
+Me.pbcdi1.TabStop = false
 '
 'tpFCDNcd2
 '
@@ -5585,6 +10250,87 @@ Me.KryptonLabel3.Values.ExtraText = ""
 Me.KryptonLabel3.Values.Image = Nothing
 Me.KryptonLabel3.Values.Text = "Media Images Provided by Freecovers.net "
 '
+'pbcd2i9
+'
+Me.pbcd2i9.Location = New System.Drawing.Point(605, 607)
+Me.pbcd2i9.Name = "pbcd2i9"
+Me.pbcd2i9.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i9.TabIndex = 35
+Me.pbcd2i9.TabStop = false
+'
+'pbcd2i8
+'
+Me.pbcd2i8.Location = New System.Drawing.Point(304, 607)
+Me.pbcd2i8.Name = "pbcd2i8"
+Me.pbcd2i8.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i8.TabIndex = 34
+Me.pbcd2i8.TabStop = false
+'
+'pbcd2i7
+'
+Me.pbcd2i7.Location = New System.Drawing.Point(3, 607)
+Me.pbcd2i7.Name = "pbcd2i7"
+Me.pbcd2i7.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i7.TabIndex = 33
+Me.pbcd2i7.TabStop = false
+'
+'pbcd2i6
+'
+Me.pbcd2i6.Location = New System.Drawing.Point(605, 304)
+Me.pbcd2i6.Name = "pbcd2i6"
+Me.pbcd2i6.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i6.TabIndex = 32
+Me.pbcd2i6.TabStop = false
+'
+'pbcd2i5
+'
+Me.pbcd2i5.Location = New System.Drawing.Point(304, 304)
+Me.pbcd2i5.Name = "pbcd2i5"
+Me.pbcd2i5.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i5.TabIndex = 31
+Me.pbcd2i5.TabStop = false
+'
+'pbcd2i4
+'
+Me.pbcd2i4.Location = New System.Drawing.Point(3, 304)
+Me.pbcd2i4.Name = "pbcd2i4"
+Me.pbcd2i4.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i4.TabIndex = 30
+Me.pbcd2i4.TabStop = false
+'
+'pbcd2i3
+'
+Me.pbcd2i3.Location = New System.Drawing.Point(606, 3)
+Me.pbcd2i3.Name = "pbcd2i3"
+Me.pbcd2i3.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i3.TabIndex = 29
+Me.pbcd2i3.TabStop = false
+'
+'pbcd2i2
+'
+Me.pbcd2i2.Location = New System.Drawing.Point(304, 3)
+Me.pbcd2i2.Name = "pbcd2i2"
+Me.pbcd2i2.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i2.TabIndex = 28
+Me.pbcd2i2.TabStop = false
+'
+'pbcd2i1
+'
+Me.pbcd2i1.Location = New System.Drawing.Point(3, 3)
+Me.pbcd2i1.Name = "pbcd2i1"
+Me.pbcd2i1.Size = New System.Drawing.Size(300, 300)
+Me.pbcd2i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd2i1.TabIndex = 27
+Me.pbcd2i1.TabStop = false
+'
 'tpFCDNcd3
 '
 Me.tpFCDNcd3.AutoScroll = true
@@ -5618,6 +10364,87 @@ Me.KryptonLabel4.Text = "Media Images Provided by Freecovers.net "
 Me.KryptonLabel4.Values.ExtraText = ""
 Me.KryptonLabel4.Values.Image = Nothing
 Me.KryptonLabel4.Values.Text = "Media Images Provided by Freecovers.net "
+'
+'pbcd3i9
+'
+Me.pbcd3i9.Location = New System.Drawing.Point(605, 607)
+Me.pbcd3i9.Name = "pbcd3i9"
+Me.pbcd3i9.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i9.TabIndex = 44
+Me.pbcd3i9.TabStop = false
+'
+'pbcd3i8
+'
+Me.pbcd3i8.Location = New System.Drawing.Point(304, 607)
+Me.pbcd3i8.Name = "pbcd3i8"
+Me.pbcd3i8.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i8.TabIndex = 43
+Me.pbcd3i8.TabStop = false
+'
+'pbcd3i7
+'
+Me.pbcd3i7.Location = New System.Drawing.Point(3, 607)
+Me.pbcd3i7.Name = "pbcd3i7"
+Me.pbcd3i7.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i7.TabIndex = 42
+Me.pbcd3i7.TabStop = false
+'
+'pbcd3i6
+'
+Me.pbcd3i6.Location = New System.Drawing.Point(605, 304)
+Me.pbcd3i6.Name = "pbcd3i6"
+Me.pbcd3i6.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i6.TabIndex = 41
+Me.pbcd3i6.TabStop = false
+'
+'pbcd3i5
+'
+Me.pbcd3i5.Location = New System.Drawing.Point(304, 304)
+Me.pbcd3i5.Name = "pbcd3i5"
+Me.pbcd3i5.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i5.TabIndex = 40
+Me.pbcd3i5.TabStop = false
+'
+'pbcd3i4
+'
+Me.pbcd3i4.Location = New System.Drawing.Point(3, 304)
+Me.pbcd3i4.Name = "pbcd3i4"
+Me.pbcd3i4.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i4.TabIndex = 39
+Me.pbcd3i4.TabStop = false
+'
+'pbcd3i3
+'
+Me.pbcd3i3.Location = New System.Drawing.Point(606, 3)
+Me.pbcd3i3.Name = "pbcd3i3"
+Me.pbcd3i3.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i3.TabIndex = 38
+Me.pbcd3i3.TabStop = false
+'
+'pbcd3i2
+'
+Me.pbcd3i2.Location = New System.Drawing.Point(304, 3)
+Me.pbcd3i2.Name = "pbcd3i2"
+Me.pbcd3i2.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i2.TabIndex = 37
+Me.pbcd3i2.TabStop = false
+'
+'pbcd3i1
+'
+Me.pbcd3i1.Location = New System.Drawing.Point(3, 3)
+Me.pbcd3i1.Name = "pbcd3i1"
+Me.pbcd3i1.Size = New System.Drawing.Size(300, 300)
+Me.pbcd3i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd3i1.TabIndex = 36
+Me.pbcd3i1.TabStop = false
 '
 'tpFCDNcd4
 '
@@ -5653,6 +10480,87 @@ Me.KryptonLabel6.Values.ExtraText = ""
 Me.KryptonLabel6.Values.Image = Nothing
 Me.KryptonLabel6.Values.Text = "Media Images Provided by Freecovers.net "
 '
+'pbcd4i9
+'
+Me.pbcd4i9.Location = New System.Drawing.Point(605, 607)
+Me.pbcd4i9.Name = "pbcd4i9"
+Me.pbcd4i9.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i9.TabIndex = 53
+Me.pbcd4i9.TabStop = false
+'
+'pbcd4i8
+'
+Me.pbcd4i8.Location = New System.Drawing.Point(304, 607)
+Me.pbcd4i8.Name = "pbcd4i8"
+Me.pbcd4i8.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i8.TabIndex = 52
+Me.pbcd4i8.TabStop = false
+'
+'pbcd4i7
+'
+Me.pbcd4i7.Location = New System.Drawing.Point(3, 607)
+Me.pbcd4i7.Name = "pbcd4i7"
+Me.pbcd4i7.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i7.TabIndex = 51
+Me.pbcd4i7.TabStop = false
+'
+'pbcd4i6
+'
+Me.pbcd4i6.Location = New System.Drawing.Point(605, 304)
+Me.pbcd4i6.Name = "pbcd4i6"
+Me.pbcd4i6.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i6.TabIndex = 50
+Me.pbcd4i6.TabStop = false
+'
+'pbcd4i5
+'
+Me.pbcd4i5.Location = New System.Drawing.Point(304, 304)
+Me.pbcd4i5.Name = "pbcd4i5"
+Me.pbcd4i5.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i5.TabIndex = 49
+Me.pbcd4i5.TabStop = false
+'
+'pbcd4i4
+'
+Me.pbcd4i4.Location = New System.Drawing.Point(3, 304)
+Me.pbcd4i4.Name = "pbcd4i4"
+Me.pbcd4i4.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i4.TabIndex = 48
+Me.pbcd4i4.TabStop = false
+'
+'pbcd4i3
+'
+Me.pbcd4i3.Location = New System.Drawing.Point(606, 3)
+Me.pbcd4i3.Name = "pbcd4i3"
+Me.pbcd4i3.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i3.TabIndex = 47
+Me.pbcd4i3.TabStop = false
+'
+'pbcd4i2
+'
+Me.pbcd4i2.Location = New System.Drawing.Point(304, 3)
+Me.pbcd4i2.Name = "pbcd4i2"
+Me.pbcd4i2.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i2.TabIndex = 46
+Me.pbcd4i2.TabStop = false
+'
+'pbcd4i1
+'
+Me.pbcd4i1.Location = New System.Drawing.Point(3, 3)
+Me.pbcd4i1.Name = "pbcd4i1"
+Me.pbcd4i1.Size = New System.Drawing.Size(300, 300)
+Me.pbcd4i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbcd4i1.TabIndex = 45
+Me.pbcd4i1.TabStop = false
+'
 'tpFCDNinsert
 '
 Me.tpFCDNinsert.AutoScroll = true
@@ -5687,6 +10595,87 @@ Me.KryptonLabel7.Values.ExtraText = ""
 Me.KryptonLabel7.Values.Image = Nothing
 Me.KryptonLabel7.Values.Text = "Media Images Provided by Freecovers.net "
 '
+'pbInsert9
+'
+Me.pbInsert9.Location = New System.Drawing.Point(605, 607)
+Me.pbInsert9.Name = "pbInsert9"
+Me.pbInsert9.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert9.TabIndex = 62
+Me.pbInsert9.TabStop = false
+'
+'pbInsert8
+'
+Me.pbInsert8.Location = New System.Drawing.Point(304, 607)
+Me.pbInsert8.Name = "pbInsert8"
+Me.pbInsert8.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert8.TabIndex = 61
+Me.pbInsert8.TabStop = false
+'
+'pbInsert7
+'
+Me.pbInsert7.Location = New System.Drawing.Point(3, 607)
+Me.pbInsert7.Name = "pbInsert7"
+Me.pbInsert7.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert7.TabIndex = 60
+Me.pbInsert7.TabStop = false
+'
+'pbInsert6
+'
+Me.pbInsert6.Location = New System.Drawing.Point(605, 304)
+Me.pbInsert6.Name = "pbInsert6"
+Me.pbInsert6.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert6.TabIndex = 59
+Me.pbInsert6.TabStop = false
+'
+'pbInsert5
+'
+Me.pbInsert5.Location = New System.Drawing.Point(304, 304)
+Me.pbInsert5.Name = "pbInsert5"
+Me.pbInsert5.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert5.TabIndex = 58
+Me.pbInsert5.TabStop = false
+'
+'pbInsert4
+'
+Me.pbInsert4.Location = New System.Drawing.Point(3, 304)
+Me.pbInsert4.Name = "pbInsert4"
+Me.pbInsert4.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert4.TabIndex = 57
+Me.pbInsert4.TabStop = false
+'
+'pbInsert3
+'
+Me.pbInsert3.Location = New System.Drawing.Point(606, 3)
+Me.pbInsert3.Name = "pbInsert3"
+Me.pbInsert3.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert3.TabIndex = 56
+Me.pbInsert3.TabStop = false
+'
+'pbInsert2
+'
+Me.pbInsert2.Location = New System.Drawing.Point(304, 3)
+Me.pbInsert2.Name = "pbInsert2"
+Me.pbInsert2.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert2.TabIndex = 55
+Me.pbInsert2.TabStop = false
+'
+'pbInsert1
+'
+Me.pbInsert1.Location = New System.Drawing.Point(3, 3)
+Me.pbInsert1.Name = "pbInsert1"
+Me.pbInsert1.Size = New System.Drawing.Size(300, 300)
+Me.pbInsert1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInsert1.TabIndex = 54
+Me.pbInsert1.TabStop = false
+'
 'tpFCDNinlay
 '
 Me.tpFCDNinlay.AutoScroll = true
@@ -5720,6 +10709,87 @@ Me.KryptonLabel8.Text = "Media Images Provided by Freecovers.net "
 Me.KryptonLabel8.Values.ExtraText = ""
 Me.KryptonLabel8.Values.Image = Nothing
 Me.KryptonLabel8.Values.Text = "Media Images Provided by Freecovers.net "
+'
+'pbInlay9
+'
+Me.pbInlay9.Location = New System.Drawing.Point(605, 607)
+Me.pbInlay9.Name = "pbInlay9"
+Me.pbInlay9.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay9.TabIndex = 71
+Me.pbInlay9.TabStop = false
+'
+'pbInlay8
+'
+Me.pbInlay8.Location = New System.Drawing.Point(304, 607)
+Me.pbInlay8.Name = "pbInlay8"
+Me.pbInlay8.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay8.TabIndex = 70
+Me.pbInlay8.TabStop = false
+'
+'pbInlay7
+'
+Me.pbInlay7.Location = New System.Drawing.Point(3, 607)
+Me.pbInlay7.Name = "pbInlay7"
+Me.pbInlay7.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay7.TabIndex = 69
+Me.pbInlay7.TabStop = false
+'
+'pbInlay6
+'
+Me.pbInlay6.Location = New System.Drawing.Point(605, 304)
+Me.pbInlay6.Name = "pbInlay6"
+Me.pbInlay6.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay6.TabIndex = 68
+Me.pbInlay6.TabStop = false
+'
+'pbInlay5
+'
+Me.pbInlay5.Location = New System.Drawing.Point(304, 304)
+Me.pbInlay5.Name = "pbInlay5"
+Me.pbInlay5.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay5.TabIndex = 67
+Me.pbInlay5.TabStop = false
+'
+'pbInlay4
+'
+Me.pbInlay4.Location = New System.Drawing.Point(3, 304)
+Me.pbInlay4.Name = "pbInlay4"
+Me.pbInlay4.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay4.TabIndex = 66
+Me.pbInlay4.TabStop = false
+'
+'pbInlay3
+'
+Me.pbInlay3.Location = New System.Drawing.Point(606, 3)
+Me.pbInlay3.Name = "pbInlay3"
+Me.pbInlay3.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay3.TabIndex = 65
+Me.pbInlay3.TabStop = false
+'
+'pbInlay2
+'
+Me.pbInlay2.Location = New System.Drawing.Point(304, 3)
+Me.pbInlay2.Name = "pbInlay2"
+Me.pbInlay2.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay2.TabIndex = 64
+Me.pbInlay2.TabStop = false
+'
+'pbInlay1
+'
+Me.pbInlay1.Location = New System.Drawing.Point(3, 3)
+Me.pbInlay1.Name = "pbInlay1"
+Me.pbInlay1.Size = New System.Drawing.Size(300, 300)
+Me.pbInlay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbInlay1.TabIndex = 63
+Me.pbInlay1.TabStop = false
 '
 'tpmipf
 '
@@ -5904,7 +10974,7 @@ Me.KryptonPanel1.TabIndex = 1
 '
 Me.lpbti72.Location = New System.Drawing.Point(855, 7266)
 Me.lpbti72.Name = "lpbti72"
-Me.lpbti72.Size = New System.Drawing.Size(26, 21)
+Me.lpbti72.Size = New System.Drawing.Size(23, 16)
 Me.lpbti72.TabIndex = 158
 Me.lpbti72.Text = "72"
 Me.lpbti72.Values.ExtraText = ""
@@ -5915,7 +10985,7 @@ Me.lpbti72.Values.Text = "72"
 '
 Me.lpbti71.Location = New System.Drawing.Point(586, 7266)
 Me.lpbti71.Name = "lpbti71"
-Me.lpbti71.Size = New System.Drawing.Size(24, 21)
+Me.lpbti71.Size = New System.Drawing.Size(23, 16)
 Me.lpbti71.TabIndex = 157
 Me.lpbti71.Text = "71"
 Me.lpbti71.Values.ExtraText = ""
@@ -5926,7 +10996,7 @@ Me.lpbti71.Values.Text = "71"
 '
 Me.lpbti70.Location = New System.Drawing.Point(329, 7266)
 Me.lpbti70.Name = "lpbti70"
-Me.lpbti70.Size = New System.Drawing.Size(26, 21)
+Me.lpbti70.Size = New System.Drawing.Size(23, 16)
 Me.lpbti70.TabIndex = 156
 Me.lpbti70.Text = "70"
 Me.lpbti70.Values.ExtraText = ""
@@ -5937,18 +11007,62 @@ Me.lpbti70.Values.Text = "70"
 '
 Me.lpbti69.Location = New System.Drawing.Point(85, 7266)
 Me.lpbti69.Name = "lpbti69"
-Me.lpbti69.Size = New System.Drawing.Size(26, 21)
+Me.lpbti69.Size = New System.Drawing.Size(23, 16)
 Me.lpbti69.TabIndex = 155
 Me.lpbti69.Text = "69"
 Me.lpbti69.Values.ExtraText = ""
 Me.lpbti69.Values.Image = Nothing
 Me.lpbti69.Values.Text = "69"
 '
+'pbti72
+'
+Me.pbti72.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti72.Location = New System.Drawing.Point(776, 6886)
+Me.pbti72.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti72.Name = "pbti72"
+Me.pbti72.Size = New System.Drawing.Size(250, 400)
+Me.pbti72.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti72.TabIndex = 154
+Me.pbti72.TabStop = false
+'
+'pbti71
+'
+Me.pbti71.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti71.Location = New System.Drawing.Point(520, 6886)
+Me.pbti71.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti71.Name = "pbti71"
+Me.pbti71.Size = New System.Drawing.Size(250, 400)
+Me.pbti71.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti71.TabIndex = 153
+Me.pbti71.TabStop = false
+'
+'pbti70
+'
+Me.pbti70.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti70.Location = New System.Drawing.Point(263, 6886)
+Me.pbti70.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti70.Name = "pbti70"
+Me.pbti70.Size = New System.Drawing.Size(250, 400)
+Me.pbti70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti70.TabIndex = 152
+Me.pbti70.TabStop = false
+'
+'pbti69
+'
+Me.pbti69.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti69.Location = New System.Drawing.Point(7, 6886)
+Me.pbti69.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti69.Name = "pbti69"
+Me.pbti69.Size = New System.Drawing.Size(250, 400)
+Me.pbti69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti69.TabIndex = 151
+Me.pbti69.TabStop = false
+'
 'lpbti68
 '
 Me.lpbti68.Location = New System.Drawing.Point(855, 6862)
 Me.lpbti68.Name = "lpbti68"
-Me.lpbti68.Size = New System.Drawing.Size(26, 21)
+Me.lpbti68.Size = New System.Drawing.Size(23, 16)
 Me.lpbti68.TabIndex = 150
 Me.lpbti68.Text = "68"
 Me.lpbti68.Values.ExtraText = ""
@@ -5959,7 +11073,7 @@ Me.lpbti68.Values.Text = "68"
 '
 Me.lpbti67.Location = New System.Drawing.Point(586, 6862)
 Me.lpbti67.Name = "lpbti67"
-Me.lpbti67.Size = New System.Drawing.Size(26, 21)
+Me.lpbti67.Size = New System.Drawing.Size(23, 16)
 Me.lpbti67.TabIndex = 149
 Me.lpbti67.Text = "67"
 Me.lpbti67.Values.ExtraText = ""
@@ -5970,7 +11084,7 @@ Me.lpbti67.Values.Text = "67"
 '
 Me.lpbti66.Location = New System.Drawing.Point(329, 6862)
 Me.lpbti66.Name = "lpbti66"
-Me.lpbti66.Size = New System.Drawing.Size(26, 21)
+Me.lpbti66.Size = New System.Drawing.Size(23, 16)
 Me.lpbti66.TabIndex = 148
 Me.lpbti66.Text = "66"
 Me.lpbti66.Values.ExtraText = ""
@@ -5981,18 +11095,62 @@ Me.lpbti66.Values.Text = "66"
 '
 Me.lpbti65.Location = New System.Drawing.Point(85, 6862)
 Me.lpbti65.Name = "lpbti65"
-Me.lpbti65.Size = New System.Drawing.Size(26, 21)
+Me.lpbti65.Size = New System.Drawing.Size(23, 16)
 Me.lpbti65.TabIndex = 147
 Me.lpbti65.Text = "65"
 Me.lpbti65.Values.ExtraText = ""
 Me.lpbti65.Values.Image = Nothing
 Me.lpbti65.Values.Text = "65"
 '
+'pbti68
+'
+Me.pbti68.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti68.Location = New System.Drawing.Point(776, 6482)
+Me.pbti68.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti68.Name = "pbti68"
+Me.pbti68.Size = New System.Drawing.Size(250, 400)
+Me.pbti68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti68.TabIndex = 146
+Me.pbti68.TabStop = false
+'
+'pbti67
+'
+Me.pbti67.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti67.Location = New System.Drawing.Point(520, 6482)
+Me.pbti67.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti67.Name = "pbti67"
+Me.pbti67.Size = New System.Drawing.Size(250, 400)
+Me.pbti67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti67.TabIndex = 145
+Me.pbti67.TabStop = false
+'
+'pbti66
+'
+Me.pbti66.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti66.Location = New System.Drawing.Point(263, 6482)
+Me.pbti66.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti66.Name = "pbti66"
+Me.pbti66.Size = New System.Drawing.Size(250, 400)
+Me.pbti66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti66.TabIndex = 144
+Me.pbti66.TabStop = false
+'
+'pbti65
+'
+Me.pbti65.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti65.Location = New System.Drawing.Point(7, 6482)
+Me.pbti65.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti65.Name = "pbti65"
+Me.pbti65.Size = New System.Drawing.Size(250, 400)
+Me.pbti65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti65.TabIndex = 143
+Me.pbti65.TabStop = false
+'
 'lpbti64
 '
 Me.lpbti64.Location = New System.Drawing.Point(855, 6457)
 Me.lpbti64.Name = "lpbti64"
-Me.lpbti64.Size = New System.Drawing.Size(26, 21)
+Me.lpbti64.Size = New System.Drawing.Size(23, 16)
 Me.lpbti64.TabIndex = 142
 Me.lpbti64.Text = "64"
 Me.lpbti64.Values.ExtraText = ""
@@ -6003,7 +11161,7 @@ Me.lpbti64.Values.Text = "64"
 '
 Me.lpbti63.Location = New System.Drawing.Point(586, 6457)
 Me.lpbti63.Name = "lpbti63"
-Me.lpbti63.Size = New System.Drawing.Size(26, 21)
+Me.lpbti63.Size = New System.Drawing.Size(23, 16)
 Me.lpbti63.TabIndex = 141
 Me.lpbti63.Text = "63"
 Me.lpbti63.Values.ExtraText = ""
@@ -6014,7 +11172,7 @@ Me.lpbti63.Values.Text = "63"
 '
 Me.lpbti62.Location = New System.Drawing.Point(329, 6457)
 Me.lpbti62.Name = "lpbti62"
-Me.lpbti62.Size = New System.Drawing.Size(26, 21)
+Me.lpbti62.Size = New System.Drawing.Size(23, 16)
 Me.lpbti62.TabIndex = 140
 Me.lpbti62.Text = "62"
 Me.lpbti62.Values.ExtraText = ""
@@ -6025,18 +11183,62 @@ Me.lpbti62.Values.Text = "62"
 '
 Me.lpbti61.Location = New System.Drawing.Point(85, 6457)
 Me.lpbti61.Name = "lpbti61"
-Me.lpbti61.Size = New System.Drawing.Size(24, 21)
+Me.lpbti61.Size = New System.Drawing.Size(23, 16)
 Me.lpbti61.TabIndex = 139
 Me.lpbti61.Text = "61"
 Me.lpbti61.Values.ExtraText = ""
 Me.lpbti61.Values.Image = Nothing
 Me.lpbti61.Values.Text = "61"
 '
+'pbti64
+'
+Me.pbti64.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti64.Location = New System.Drawing.Point(776, 6077)
+Me.pbti64.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti64.Name = "pbti64"
+Me.pbti64.Size = New System.Drawing.Size(250, 400)
+Me.pbti64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti64.TabIndex = 138
+Me.pbti64.TabStop = false
+'
+'pbti63
+'
+Me.pbti63.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti63.Location = New System.Drawing.Point(520, 6077)
+Me.pbti63.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti63.Name = "pbti63"
+Me.pbti63.Size = New System.Drawing.Size(250, 400)
+Me.pbti63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti63.TabIndex = 137
+Me.pbti63.TabStop = false
+'
+'pbti62
+'
+Me.pbti62.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti62.Location = New System.Drawing.Point(263, 6077)
+Me.pbti62.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti62.Name = "pbti62"
+Me.pbti62.Size = New System.Drawing.Size(250, 400)
+Me.pbti62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti62.TabIndex = 136
+Me.pbti62.TabStop = false
+'
+'pbti61
+'
+Me.pbti61.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti61.Location = New System.Drawing.Point(7, 6077)
+Me.pbti61.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti61.Name = "pbti61"
+Me.pbti61.Size = New System.Drawing.Size(250, 400)
+Me.pbti61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti61.TabIndex = 135
+Me.pbti61.TabStop = false
+'
 'lpbti60
 '
 Me.lpbti60.Location = New System.Drawing.Point(855, 6053)
 Me.lpbti60.Name = "lpbti60"
-Me.lpbti60.Size = New System.Drawing.Size(26, 21)
+Me.lpbti60.Size = New System.Drawing.Size(23, 16)
 Me.lpbti60.TabIndex = 134
 Me.lpbti60.Text = "60"
 Me.lpbti60.Values.ExtraText = ""
@@ -6047,7 +11249,7 @@ Me.lpbti60.Values.Text = "60"
 '
 Me.lpbti59.Location = New System.Drawing.Point(586, 6053)
 Me.lpbti59.Name = "lpbti59"
-Me.lpbti59.Size = New System.Drawing.Size(26, 21)
+Me.lpbti59.Size = New System.Drawing.Size(23, 16)
 Me.lpbti59.TabIndex = 133
 Me.lpbti59.Text = "59"
 Me.lpbti59.Values.ExtraText = ""
@@ -6058,7 +11260,7 @@ Me.lpbti59.Values.Text = "59"
 '
 Me.lpbti58.Location = New System.Drawing.Point(329, 6053)
 Me.lpbti58.Name = "lpbti58"
-Me.lpbti58.Size = New System.Drawing.Size(26, 21)
+Me.lpbti58.Size = New System.Drawing.Size(23, 16)
 Me.lpbti58.TabIndex = 132
 Me.lpbti58.Text = "58"
 Me.lpbti58.Values.ExtraText = ""
@@ -6069,18 +11271,62 @@ Me.lpbti58.Values.Text = "58"
 '
 Me.lpbti57.Location = New System.Drawing.Point(85, 6053)
 Me.lpbti57.Name = "lpbti57"
-Me.lpbti57.Size = New System.Drawing.Size(26, 21)
+Me.lpbti57.Size = New System.Drawing.Size(23, 16)
 Me.lpbti57.TabIndex = 131
 Me.lpbti57.Text = "57"
 Me.lpbti57.Values.ExtraText = ""
 Me.lpbti57.Values.Image = Nothing
 Me.lpbti57.Values.Text = "57"
 '
+'pbti60
+'
+Me.pbti60.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti60.Location = New System.Drawing.Point(776, 5673)
+Me.pbti60.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti60.Name = "pbti60"
+Me.pbti60.Size = New System.Drawing.Size(250, 400)
+Me.pbti60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti60.TabIndex = 130
+Me.pbti60.TabStop = false
+'
+'pbti59
+'
+Me.pbti59.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti59.Location = New System.Drawing.Point(520, 5673)
+Me.pbti59.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti59.Name = "pbti59"
+Me.pbti59.Size = New System.Drawing.Size(250, 400)
+Me.pbti59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti59.TabIndex = 129
+Me.pbti59.TabStop = false
+'
+'pbti58
+'
+Me.pbti58.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti58.Location = New System.Drawing.Point(263, 5673)
+Me.pbti58.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti58.Name = "pbti58"
+Me.pbti58.Size = New System.Drawing.Size(250, 400)
+Me.pbti58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti58.TabIndex = 128
+Me.pbti58.TabStop = false
+'
+'pbti57
+'
+Me.pbti57.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti57.Location = New System.Drawing.Point(7, 5673)
+Me.pbti57.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti57.Name = "pbti57"
+Me.pbti57.Size = New System.Drawing.Size(250, 400)
+Me.pbti57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti57.TabIndex = 127
+Me.pbti57.TabStop = false
+'
 'lpbti56
 '
 Me.lpbti56.Location = New System.Drawing.Point(855, 5647)
 Me.lpbti56.Name = "lpbti56"
-Me.lpbti56.Size = New System.Drawing.Size(26, 21)
+Me.lpbti56.Size = New System.Drawing.Size(23, 16)
 Me.lpbti56.TabIndex = 126
 Me.lpbti56.Text = "56"
 Me.lpbti56.Values.ExtraText = ""
@@ -6091,7 +11337,7 @@ Me.lpbti56.Values.Text = "56"
 '
 Me.lpbti55.Location = New System.Drawing.Point(586, 5647)
 Me.lpbti55.Name = "lpbti55"
-Me.lpbti55.Size = New System.Drawing.Size(26, 21)
+Me.lpbti55.Size = New System.Drawing.Size(23, 16)
 Me.lpbti55.TabIndex = 125
 Me.lpbti55.Text = "55"
 Me.lpbti55.Values.ExtraText = ""
@@ -6102,7 +11348,7 @@ Me.lpbti55.Values.Text = "55"
 '
 Me.lpbti54.Location = New System.Drawing.Point(329, 5647)
 Me.lpbti54.Name = "lpbti54"
-Me.lpbti54.Size = New System.Drawing.Size(26, 21)
+Me.lpbti54.Size = New System.Drawing.Size(23, 16)
 Me.lpbti54.TabIndex = 124
 Me.lpbti54.Text = "54"
 Me.lpbti54.Values.ExtraText = ""
@@ -6113,18 +11359,62 @@ Me.lpbti54.Values.Text = "54"
 '
 Me.lpbti53.Location = New System.Drawing.Point(85, 5647)
 Me.lpbti53.Name = "lpbti53"
-Me.lpbti53.Size = New System.Drawing.Size(26, 21)
+Me.lpbti53.Size = New System.Drawing.Size(23, 16)
 Me.lpbti53.TabIndex = 123
 Me.lpbti53.Text = "53"
 Me.lpbti53.Values.ExtraText = ""
 Me.lpbti53.Values.Image = Nothing
 Me.lpbti53.Values.Text = "53"
 '
+'pbti56
+'
+Me.pbti56.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti56.Location = New System.Drawing.Point(776, 5267)
+Me.pbti56.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti56.Name = "pbti56"
+Me.pbti56.Size = New System.Drawing.Size(250, 400)
+Me.pbti56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti56.TabIndex = 122
+Me.pbti56.TabStop = false
+'
+'pbti55
+'
+Me.pbti55.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti55.Location = New System.Drawing.Point(520, 5267)
+Me.pbti55.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti55.Name = "pbti55"
+Me.pbti55.Size = New System.Drawing.Size(250, 400)
+Me.pbti55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti55.TabIndex = 121
+Me.pbti55.TabStop = false
+'
+'pbti54
+'
+Me.pbti54.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti54.Location = New System.Drawing.Point(263, 5267)
+Me.pbti54.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti54.Name = "pbti54"
+Me.pbti54.Size = New System.Drawing.Size(250, 400)
+Me.pbti54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti54.TabIndex = 120
+Me.pbti54.TabStop = false
+'
+'pbti53
+'
+Me.pbti53.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti53.Location = New System.Drawing.Point(7, 5267)
+Me.pbti53.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti53.Name = "pbti53"
+Me.pbti53.Size = New System.Drawing.Size(250, 400)
+Me.pbti53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti53.TabIndex = 119
+Me.pbti53.TabStop = false
+'
 'lpbti52
 '
 Me.lpbti52.Location = New System.Drawing.Point(855, 5243)
 Me.lpbti52.Name = "lpbti52"
-Me.lpbti52.Size = New System.Drawing.Size(26, 21)
+Me.lpbti52.Size = New System.Drawing.Size(23, 16)
 Me.lpbti52.TabIndex = 118
 Me.lpbti52.Text = "52"
 Me.lpbti52.Values.ExtraText = ""
@@ -6135,7 +11425,7 @@ Me.lpbti52.Values.Text = "52"
 '
 Me.lpbti51.Location = New System.Drawing.Point(586, 5243)
 Me.lpbti51.Name = "lpbti51"
-Me.lpbti51.Size = New System.Drawing.Size(24, 21)
+Me.lpbti51.Size = New System.Drawing.Size(23, 16)
 Me.lpbti51.TabIndex = 117
 Me.lpbti51.Text = "51"
 Me.lpbti51.Values.ExtraText = ""
@@ -6146,7 +11436,7 @@ Me.lpbti51.Values.Text = "51"
 '
 Me.lpbti50.Location = New System.Drawing.Point(329, 5243)
 Me.lpbti50.Name = "lpbti50"
-Me.lpbti50.Size = New System.Drawing.Size(26, 21)
+Me.lpbti50.Size = New System.Drawing.Size(23, 16)
 Me.lpbti50.TabIndex = 116
 Me.lpbti50.Text = "50"
 Me.lpbti50.Values.ExtraText = ""
@@ -6157,18 +11447,62 @@ Me.lpbti50.Values.Text = "50"
 '
 Me.lpbti49.Location = New System.Drawing.Point(85, 5243)
 Me.lpbti49.Name = "lpbti49"
-Me.lpbti49.Size = New System.Drawing.Size(26, 21)
+Me.lpbti49.Size = New System.Drawing.Size(23, 16)
 Me.lpbti49.TabIndex = 115
 Me.lpbti49.Text = "49"
 Me.lpbti49.Values.ExtraText = ""
 Me.lpbti49.Values.Image = Nothing
 Me.lpbti49.Values.Text = "49"
 '
+'pbti52
+'
+Me.pbti52.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti52.Location = New System.Drawing.Point(776, 4863)
+Me.pbti52.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti52.Name = "pbti52"
+Me.pbti52.Size = New System.Drawing.Size(250, 400)
+Me.pbti52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti52.TabIndex = 114
+Me.pbti52.TabStop = false
+'
+'pbti51
+'
+Me.pbti51.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti51.Location = New System.Drawing.Point(520, 4863)
+Me.pbti51.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti51.Name = "pbti51"
+Me.pbti51.Size = New System.Drawing.Size(250, 400)
+Me.pbti51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti51.TabIndex = 113
+Me.pbti51.TabStop = false
+'
+'pbti50
+'
+Me.pbti50.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti50.Location = New System.Drawing.Point(263, 4863)
+Me.pbti50.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti50.Name = "pbti50"
+Me.pbti50.Size = New System.Drawing.Size(250, 400)
+Me.pbti50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti50.TabIndex = 112
+Me.pbti50.TabStop = false
+'
+'pbti49
+'
+Me.pbti49.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti49.Location = New System.Drawing.Point(7, 4863)
+Me.pbti49.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti49.Name = "pbti49"
+Me.pbti49.Size = New System.Drawing.Size(250, 400)
+Me.pbti49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti49.TabIndex = 111
+Me.pbti49.TabStop = false
+'
 'lpbti48
 '
 Me.lpbti48.Location = New System.Drawing.Point(855, 4837)
 Me.lpbti48.Name = "lpbti48"
-Me.lpbti48.Size = New System.Drawing.Size(26, 21)
+Me.lpbti48.Size = New System.Drawing.Size(23, 16)
 Me.lpbti48.TabIndex = 110
 Me.lpbti48.Text = "48"
 Me.lpbti48.Values.ExtraText = ""
@@ -6179,7 +11513,7 @@ Me.lpbti48.Values.Text = "48"
 '
 Me.lpbti47.Location = New System.Drawing.Point(586, 4837)
 Me.lpbti47.Name = "lpbti47"
-Me.lpbti47.Size = New System.Drawing.Size(26, 21)
+Me.lpbti47.Size = New System.Drawing.Size(23, 16)
 Me.lpbti47.TabIndex = 109
 Me.lpbti47.Text = "47"
 Me.lpbti47.Values.ExtraText = ""
@@ -6190,7 +11524,7 @@ Me.lpbti47.Values.Text = "47"
 '
 Me.lpbti46.Location = New System.Drawing.Point(329, 4837)
 Me.lpbti46.Name = "lpbti46"
-Me.lpbti46.Size = New System.Drawing.Size(26, 21)
+Me.lpbti46.Size = New System.Drawing.Size(23, 16)
 Me.lpbti46.TabIndex = 108
 Me.lpbti46.Text = "46"
 Me.lpbti46.Values.ExtraText = ""
@@ -6201,18 +11535,62 @@ Me.lpbti46.Values.Text = "46"
 '
 Me.lpbti45.Location = New System.Drawing.Point(85, 4837)
 Me.lpbti45.Name = "lpbti45"
-Me.lpbti45.Size = New System.Drawing.Size(26, 21)
+Me.lpbti45.Size = New System.Drawing.Size(23, 16)
 Me.lpbti45.TabIndex = 107
 Me.lpbti45.Text = "45"
 Me.lpbti45.Values.ExtraText = ""
 Me.lpbti45.Values.Image = Nothing
 Me.lpbti45.Values.Text = "45"
 '
+'pbti48
+'
+Me.pbti48.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti48.Location = New System.Drawing.Point(776, 4457)
+Me.pbti48.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti48.Name = "pbti48"
+Me.pbti48.Size = New System.Drawing.Size(250, 400)
+Me.pbti48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti48.TabIndex = 106
+Me.pbti48.TabStop = false
+'
+'pbti47
+'
+Me.pbti47.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti47.Location = New System.Drawing.Point(520, 4457)
+Me.pbti47.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti47.Name = "pbti47"
+Me.pbti47.Size = New System.Drawing.Size(250, 400)
+Me.pbti47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti47.TabIndex = 105
+Me.pbti47.TabStop = false
+'
+'pbti46
+'
+Me.pbti46.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti46.Location = New System.Drawing.Point(263, 4457)
+Me.pbti46.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti46.Name = "pbti46"
+Me.pbti46.Size = New System.Drawing.Size(250, 400)
+Me.pbti46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti46.TabIndex = 104
+Me.pbti46.TabStop = false
+'
+'pbti45
+'
+Me.pbti45.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti45.Location = New System.Drawing.Point(7, 4457)
+Me.pbti45.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti45.Name = "pbti45"
+Me.pbti45.Size = New System.Drawing.Size(250, 400)
+Me.pbti45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti45.TabIndex = 103
+Me.pbti45.TabStop = false
+'
 'lpbti44
 '
 Me.lpbti44.Location = New System.Drawing.Point(855, 4433)
 Me.lpbti44.Name = "lpbti44"
-Me.lpbti44.Size = New System.Drawing.Size(26, 21)
+Me.lpbti44.Size = New System.Drawing.Size(23, 16)
 Me.lpbti44.TabIndex = 102
 Me.lpbti44.Text = "44"
 Me.lpbti44.Values.ExtraText = ""
@@ -6223,7 +11601,7 @@ Me.lpbti44.Values.Text = "44"
 '
 Me.lpbti43.Location = New System.Drawing.Point(586, 4433)
 Me.lpbti43.Name = "lpbti43"
-Me.lpbti43.Size = New System.Drawing.Size(26, 21)
+Me.lpbti43.Size = New System.Drawing.Size(23, 16)
 Me.lpbti43.TabIndex = 101
 Me.lpbti43.Text = "43"
 Me.lpbti43.Values.ExtraText = ""
@@ -6234,7 +11612,7 @@ Me.lpbti43.Values.Text = "43"
 '
 Me.lpbti42.Location = New System.Drawing.Point(329, 4433)
 Me.lpbti42.Name = "lpbti42"
-Me.lpbti42.Size = New System.Drawing.Size(26, 21)
+Me.lpbti42.Size = New System.Drawing.Size(23, 16)
 Me.lpbti42.TabIndex = 100
 Me.lpbti42.Text = "42"
 Me.lpbti42.Values.ExtraText = ""
@@ -6245,18 +11623,62 @@ Me.lpbti42.Values.Text = "42"
 '
 Me.lpbti41.Location = New System.Drawing.Point(85, 4433)
 Me.lpbti41.Name = "lpbti41"
-Me.lpbti41.Size = New System.Drawing.Size(24, 21)
+Me.lpbti41.Size = New System.Drawing.Size(23, 16)
 Me.lpbti41.TabIndex = 99
 Me.lpbti41.Text = "41"
 Me.lpbti41.Values.ExtraText = ""
 Me.lpbti41.Values.Image = Nothing
 Me.lpbti41.Values.Text = "41"
 '
+'pbti44
+'
+Me.pbti44.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti44.Location = New System.Drawing.Point(776, 4053)
+Me.pbti44.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti44.Name = "pbti44"
+Me.pbti44.Size = New System.Drawing.Size(250, 400)
+Me.pbti44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti44.TabIndex = 98
+Me.pbti44.TabStop = false
+'
+'pbti43
+'
+Me.pbti43.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti43.Location = New System.Drawing.Point(520, 4053)
+Me.pbti43.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti43.Name = "pbti43"
+Me.pbti43.Size = New System.Drawing.Size(250, 400)
+Me.pbti43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti43.TabIndex = 97
+Me.pbti43.TabStop = false
+'
+'pbti42
+'
+Me.pbti42.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti42.Location = New System.Drawing.Point(263, 4053)
+Me.pbti42.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti42.Name = "pbti42"
+Me.pbti42.Size = New System.Drawing.Size(250, 400)
+Me.pbti42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti42.TabIndex = 96
+Me.pbti42.TabStop = false
+'
+'pbti41
+'
+Me.pbti41.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti41.Location = New System.Drawing.Point(7, 4053)
+Me.pbti41.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti41.Name = "pbti41"
+Me.pbti41.Size = New System.Drawing.Size(250, 400)
+Me.pbti41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti41.TabIndex = 95
+Me.pbti41.TabStop = false
+'
 'lpbti40
 '
 Me.lpbti40.Location = New System.Drawing.Point(855, 4029)
 Me.lpbti40.Name = "lpbti40"
-Me.lpbti40.Size = New System.Drawing.Size(26, 21)
+Me.lpbti40.Size = New System.Drawing.Size(23, 16)
 Me.lpbti40.TabIndex = 94
 Me.lpbti40.Text = "40"
 Me.lpbti40.Values.ExtraText = ""
@@ -6267,7 +11689,7 @@ Me.lpbti40.Values.Text = "40"
 '
 Me.lpbti39.Location = New System.Drawing.Point(586, 4029)
 Me.lpbti39.Name = "lpbti39"
-Me.lpbti39.Size = New System.Drawing.Size(26, 21)
+Me.lpbti39.Size = New System.Drawing.Size(23, 16)
 Me.lpbti39.TabIndex = 93
 Me.lpbti39.Text = "39"
 Me.lpbti39.Values.ExtraText = ""
@@ -6278,7 +11700,7 @@ Me.lpbti39.Values.Text = "39"
 '
 Me.lpbti38.Location = New System.Drawing.Point(329, 4029)
 Me.lpbti38.Name = "lpbti38"
-Me.lpbti38.Size = New System.Drawing.Size(26, 21)
+Me.lpbti38.Size = New System.Drawing.Size(23, 16)
 Me.lpbti38.TabIndex = 92
 Me.lpbti38.Text = "38"
 Me.lpbti38.Values.ExtraText = ""
@@ -6289,18 +11711,62 @@ Me.lpbti38.Values.Text = "38"
 '
 Me.lpbti37.Location = New System.Drawing.Point(85, 4029)
 Me.lpbti37.Name = "lpbti37"
-Me.lpbti37.Size = New System.Drawing.Size(26, 21)
+Me.lpbti37.Size = New System.Drawing.Size(23, 16)
 Me.lpbti37.TabIndex = 91
 Me.lpbti37.Text = "37"
 Me.lpbti37.Values.ExtraText = ""
 Me.lpbti37.Values.Image = Nothing
 Me.lpbti37.Values.Text = "37"
 '
+'pbti40
+'
+Me.pbti40.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti40.Location = New System.Drawing.Point(776, 3649)
+Me.pbti40.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti40.Name = "pbti40"
+Me.pbti40.Size = New System.Drawing.Size(250, 400)
+Me.pbti40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti40.TabIndex = 90
+Me.pbti40.TabStop = false
+'
+'pbti39
+'
+Me.pbti39.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti39.Location = New System.Drawing.Point(520, 3649)
+Me.pbti39.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti39.Name = "pbti39"
+Me.pbti39.Size = New System.Drawing.Size(250, 400)
+Me.pbti39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti39.TabIndex = 89
+Me.pbti39.TabStop = false
+'
+'pbti38
+'
+Me.pbti38.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti38.Location = New System.Drawing.Point(263, 3649)
+Me.pbti38.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti38.Name = "pbti38"
+Me.pbti38.Size = New System.Drawing.Size(250, 400)
+Me.pbti38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti38.TabIndex = 88
+Me.pbti38.TabStop = false
+'
+'pbti37
+'
+Me.pbti37.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti37.Location = New System.Drawing.Point(7, 3649)
+Me.pbti37.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti37.Name = "pbti37"
+Me.pbti37.Size = New System.Drawing.Size(250, 400)
+Me.pbti37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti37.TabIndex = 87
+Me.pbti37.TabStop = false
+'
 'lpbti36
 '
 Me.lpbti36.Location = New System.Drawing.Point(855, 3625)
 Me.lpbti36.Name = "lpbti36"
-Me.lpbti36.Size = New System.Drawing.Size(26, 21)
+Me.lpbti36.Size = New System.Drawing.Size(23, 16)
 Me.lpbti36.TabIndex = 86
 Me.lpbti36.Text = "36"
 Me.lpbti36.Values.ExtraText = ""
@@ -6311,7 +11777,7 @@ Me.lpbti36.Values.Text = "36"
 '
 Me.lpbti35.Location = New System.Drawing.Point(586, 3625)
 Me.lpbti35.Name = "lpbti35"
-Me.lpbti35.Size = New System.Drawing.Size(26, 21)
+Me.lpbti35.Size = New System.Drawing.Size(23, 16)
 Me.lpbti35.TabIndex = 85
 Me.lpbti35.Text = "35"
 Me.lpbti35.Values.ExtraText = ""
@@ -6322,7 +11788,7 @@ Me.lpbti35.Values.Text = "35"
 '
 Me.lpbti34.Location = New System.Drawing.Point(329, 3625)
 Me.lpbti34.Name = "lpbti34"
-Me.lpbti34.Size = New System.Drawing.Size(26, 21)
+Me.lpbti34.Size = New System.Drawing.Size(23, 16)
 Me.lpbti34.TabIndex = 84
 Me.lpbti34.Text = "34"
 Me.lpbti34.Values.ExtraText = ""
@@ -6333,18 +11799,62 @@ Me.lpbti34.Values.Text = "34"
 '
 Me.lpbti33.Location = New System.Drawing.Point(85, 3625)
 Me.lpbti33.Name = "lpbti33"
-Me.lpbti33.Size = New System.Drawing.Size(26, 21)
+Me.lpbti33.Size = New System.Drawing.Size(23, 16)
 Me.lpbti33.TabIndex = 83
 Me.lpbti33.Text = "33"
 Me.lpbti33.Values.ExtraText = ""
 Me.lpbti33.Values.Image = Nothing
 Me.lpbti33.Values.Text = "33"
 '
+'pbti36
+'
+Me.pbti36.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti36.Location = New System.Drawing.Point(776, 3245)
+Me.pbti36.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti36.Name = "pbti36"
+Me.pbti36.Size = New System.Drawing.Size(250, 400)
+Me.pbti36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti36.TabIndex = 82
+Me.pbti36.TabStop = false
+'
+'pbti35
+'
+Me.pbti35.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti35.Location = New System.Drawing.Point(520, 3245)
+Me.pbti35.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti35.Name = "pbti35"
+Me.pbti35.Size = New System.Drawing.Size(250, 400)
+Me.pbti35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti35.TabIndex = 81
+Me.pbti35.TabStop = false
+'
+'pbti34
+'
+Me.pbti34.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti34.Location = New System.Drawing.Point(263, 3245)
+Me.pbti34.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti34.Name = "pbti34"
+Me.pbti34.Size = New System.Drawing.Size(250, 400)
+Me.pbti34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti34.TabIndex = 80
+Me.pbti34.TabStop = false
+'
+'pbti33
+'
+Me.pbti33.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti33.Location = New System.Drawing.Point(7, 3245)
+Me.pbti33.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti33.Name = "pbti33"
+Me.pbti33.Size = New System.Drawing.Size(250, 400)
+Me.pbti33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti33.TabIndex = 79
+Me.pbti33.TabStop = false
+'
 'lpbti32
 '
 Me.lpbti32.Location = New System.Drawing.Point(855, 3221)
 Me.lpbti32.Name = "lpbti32"
-Me.lpbti32.Size = New System.Drawing.Size(102, 21)
+Me.lpbti32.Size = New System.Drawing.Size(90, 16)
 Me.lpbti32.TabIndex = 78
 Me.lpbti32.Text = "KryptonLabel24"
 Me.lpbti32.Values.ExtraText = ""
@@ -6355,7 +11865,7 @@ Me.lpbti32.Values.Text = "KryptonLabel24"
 '
 Me.lpbti31.Location = New System.Drawing.Point(586, 3221)
 Me.lpbti31.Name = "lpbti31"
-Me.lpbti31.Size = New System.Drawing.Size(102, 21)
+Me.lpbti31.Size = New System.Drawing.Size(90, 16)
 Me.lpbti31.TabIndex = 77
 Me.lpbti31.Text = "KryptonLabel23"
 Me.lpbti31.Values.ExtraText = ""
@@ -6366,7 +11876,7 @@ Me.lpbti31.Values.Text = "KryptonLabel23"
 '
 Me.lpbti30.Location = New System.Drawing.Point(329, 3221)
 Me.lpbti30.Name = "lpbti30"
-Me.lpbti30.Size = New System.Drawing.Size(102, 21)
+Me.lpbti30.Size = New System.Drawing.Size(90, 16)
 Me.lpbti30.TabIndex = 76
 Me.lpbti30.Text = "KryptonLabel22"
 Me.lpbti30.Values.ExtraText = ""
@@ -6377,18 +11887,62 @@ Me.lpbti30.Values.Text = "KryptonLabel22"
 '
 Me.lpbti29.Location = New System.Drawing.Point(85, 3221)
 Me.lpbti29.Name = "lpbti29"
-Me.lpbti29.Size = New System.Drawing.Size(100, 21)
+Me.lpbti29.Size = New System.Drawing.Size(90, 16)
 Me.lpbti29.TabIndex = 75
 Me.lpbti29.Text = "KryptonLabel21"
 Me.lpbti29.Values.ExtraText = ""
 Me.lpbti29.Values.Image = Nothing
 Me.lpbti29.Values.Text = "KryptonLabel21"
 '
+'pbti32
+'
+Me.pbti32.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti32.Location = New System.Drawing.Point(776, 2841)
+Me.pbti32.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti32.Name = "pbti32"
+Me.pbti32.Size = New System.Drawing.Size(250, 400)
+Me.pbti32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti32.TabIndex = 74
+Me.pbti32.TabStop = false
+'
+'pbti31
+'
+Me.pbti31.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti31.Location = New System.Drawing.Point(520, 2841)
+Me.pbti31.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti31.Name = "pbti31"
+Me.pbti31.Size = New System.Drawing.Size(250, 400)
+Me.pbti31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti31.TabIndex = 73
+Me.pbti31.TabStop = false
+'
+'pbti30
+'
+Me.pbti30.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti30.Location = New System.Drawing.Point(263, 2841)
+Me.pbti30.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti30.Name = "pbti30"
+Me.pbti30.Size = New System.Drawing.Size(250, 400)
+Me.pbti30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti30.TabIndex = 72
+Me.pbti30.TabStop = false
+'
+'pbti29
+'
+Me.pbti29.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti29.Location = New System.Drawing.Point(7, 2841)
+Me.pbti29.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti29.Name = "pbti29"
+Me.pbti29.Size = New System.Drawing.Size(250, 400)
+Me.pbti29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti29.TabIndex = 71
+Me.pbti29.TabStop = false
+'
 'lpbti28
 '
 Me.lpbti28.Location = New System.Drawing.Point(855, 2817)
 Me.lpbti28.Name = "lpbti28"
-Me.lpbti28.Size = New System.Drawing.Size(102, 21)
+Me.lpbti28.Size = New System.Drawing.Size(90, 16)
 Me.lpbti28.TabIndex = 70
 Me.lpbti28.Text = "KryptonLabel24"
 Me.lpbti28.Values.ExtraText = ""
@@ -6399,7 +11953,7 @@ Me.lpbti28.Values.Text = "KryptonLabel24"
 '
 Me.lpbti27.Location = New System.Drawing.Point(586, 2817)
 Me.lpbti27.Name = "lpbti27"
-Me.lpbti27.Size = New System.Drawing.Size(102, 21)
+Me.lpbti27.Size = New System.Drawing.Size(90, 16)
 Me.lpbti27.TabIndex = 69
 Me.lpbti27.Text = "KryptonLabel23"
 Me.lpbti27.Values.ExtraText = ""
@@ -6410,7 +11964,7 @@ Me.lpbti27.Values.Text = "KryptonLabel23"
 '
 Me.lpbti26.Location = New System.Drawing.Point(329, 2817)
 Me.lpbti26.Name = "lpbti26"
-Me.lpbti26.Size = New System.Drawing.Size(102, 21)
+Me.lpbti26.Size = New System.Drawing.Size(90, 16)
 Me.lpbti26.TabIndex = 68
 Me.lpbti26.Text = "KryptonLabel22"
 Me.lpbti26.Values.ExtraText = ""
@@ -6421,18 +11975,62 @@ Me.lpbti26.Values.Text = "KryptonLabel22"
 '
 Me.lpbti25.Location = New System.Drawing.Point(85, 2817)
 Me.lpbti25.Name = "lpbti25"
-Me.lpbti25.Size = New System.Drawing.Size(100, 21)
+Me.lpbti25.Size = New System.Drawing.Size(90, 16)
 Me.lpbti25.TabIndex = 67
 Me.lpbti25.Text = "KryptonLabel21"
 Me.lpbti25.Values.ExtraText = ""
 Me.lpbti25.Values.Image = Nothing
 Me.lpbti25.Values.Text = "KryptonLabel21"
 '
+'pbti28
+'
+Me.pbti28.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti28.Location = New System.Drawing.Point(776, 2437)
+Me.pbti28.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti28.Name = "pbti28"
+Me.pbti28.Size = New System.Drawing.Size(250, 400)
+Me.pbti28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti28.TabIndex = 66
+Me.pbti28.TabStop = false
+'
+'pbti27
+'
+Me.pbti27.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti27.Location = New System.Drawing.Point(520, 2437)
+Me.pbti27.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti27.Name = "pbti27"
+Me.pbti27.Size = New System.Drawing.Size(250, 400)
+Me.pbti27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti27.TabIndex = 65
+Me.pbti27.TabStop = false
+'
+'pbti26
+'
+Me.pbti26.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti26.Location = New System.Drawing.Point(263, 2437)
+Me.pbti26.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti26.Name = "pbti26"
+Me.pbti26.Size = New System.Drawing.Size(250, 400)
+Me.pbti26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti26.TabIndex = 64
+Me.pbti26.TabStop = false
+'
+'pbti25
+'
+Me.pbti25.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti25.Location = New System.Drawing.Point(7, 2437)
+Me.pbti25.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti25.Name = "pbti25"
+Me.pbti25.Size = New System.Drawing.Size(250, 400)
+Me.pbti25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti25.TabIndex = 63
+Me.pbti25.TabStop = false
+'
 'KryptonLabel5
 '
 Me.KryptonLabel5.Location = New System.Drawing.Point(180, 1)
 Me.KryptonLabel5.Name = "KryptonLabel5"
-Me.KryptonLabel5.Size = New System.Drawing.Size(556, 21)
+Me.KryptonLabel5.Size = New System.Drawing.Size(492, 16)
 Me.KryptonLabel5.TabIndex = 62
 Me.KryptonLabel5.Text = "Images provided by Impawards.com, themoviedb.com, calagregory.net and other onlin"& _ 
     "e sources"
@@ -6445,7 +12043,7 @@ Me.KryptonLabel5.Values.Text = "Images provided by Impawards.com, themoviedb.com
 '
 Me.lpbti24.Location = New System.Drawing.Point(855, 2412)
 Me.lpbti24.Name = "lpbti24"
-Me.lpbti24.Size = New System.Drawing.Size(102, 21)
+Me.lpbti24.Size = New System.Drawing.Size(90, 16)
 Me.lpbti24.TabIndex = 61
 Me.lpbti24.Text = "KryptonLabel24"
 Me.lpbti24.Values.ExtraText = ""
@@ -6456,7 +12054,7 @@ Me.lpbti24.Values.Text = "KryptonLabel24"
 '
 Me.lpbti23.Location = New System.Drawing.Point(586, 2412)
 Me.lpbti23.Name = "lpbti23"
-Me.lpbti23.Size = New System.Drawing.Size(102, 21)
+Me.lpbti23.Size = New System.Drawing.Size(90, 16)
 Me.lpbti23.TabIndex = 60
 Me.lpbti23.Text = "KryptonLabel23"
 Me.lpbti23.Values.ExtraText = ""
@@ -6467,7 +12065,7 @@ Me.lpbti23.Values.Text = "KryptonLabel23"
 '
 Me.lpbti22.Location = New System.Drawing.Point(329, 2412)
 Me.lpbti22.Name = "lpbti22"
-Me.lpbti22.Size = New System.Drawing.Size(102, 21)
+Me.lpbti22.Size = New System.Drawing.Size(90, 16)
 Me.lpbti22.TabIndex = 59
 Me.lpbti22.Text = "KryptonLabel22"
 Me.lpbti22.Values.ExtraText = ""
@@ -6478,7 +12076,7 @@ Me.lpbti22.Values.Text = "KryptonLabel22"
 '
 Me.lpbti21.Location = New System.Drawing.Point(85, 2412)
 Me.lpbti21.Name = "lpbti21"
-Me.lpbti21.Size = New System.Drawing.Size(100, 21)
+Me.lpbti21.Size = New System.Drawing.Size(90, 16)
 Me.lpbti21.TabIndex = 58
 Me.lpbti21.Text = "KryptonLabel21"
 Me.lpbti21.Values.ExtraText = ""
@@ -6489,7 +12087,7 @@ Me.lpbti21.Values.Text = "KryptonLabel21"
 '
 Me.lpbti20.Location = New System.Drawing.Point(843, 2008)
 Me.lpbti20.Name = "lpbti20"
-Me.lpbti20.Size = New System.Drawing.Size(102, 21)
+Me.lpbti20.Size = New System.Drawing.Size(90, 16)
 Me.lpbti20.TabIndex = 57
 Me.lpbti20.Text = "KryptonLabel20"
 Me.lpbti20.Values.ExtraText = ""
@@ -6500,7 +12098,7 @@ Me.lpbti20.Values.Text = "KryptonLabel20"
 '
 Me.lpbti19.Location = New System.Drawing.Point(586, 2008)
 Me.lpbti19.Name = "lpbti19"
-Me.lpbti19.Size = New System.Drawing.Size(100, 21)
+Me.lpbti19.Size = New System.Drawing.Size(90, 16)
 Me.lpbti19.TabIndex = 56
 Me.lpbti19.Text = "KryptonLabel19"
 Me.lpbti19.Values.ExtraText = ""
@@ -6511,7 +12109,7 @@ Me.lpbti19.Values.Text = "KryptonLabel19"
 '
 Me.lpbti18.Location = New System.Drawing.Point(341, 2007)
 Me.lpbti18.Name = "lpbti18"
-Me.lpbti18.Size = New System.Drawing.Size(100, 21)
+Me.lpbti18.Size = New System.Drawing.Size(90, 16)
 Me.lpbti18.TabIndex = 55
 Me.lpbti18.Text = "KryptonLabel18"
 Me.lpbti18.Values.ExtraText = ""
@@ -6522,7 +12120,7 @@ Me.lpbti18.Values.Text = "KryptonLabel18"
 '
 Me.lpbti17.Location = New System.Drawing.Point(72, 2007)
 Me.lpbti17.Name = "lpbti17"
-Me.lpbti17.Size = New System.Drawing.Size(100, 21)
+Me.lpbti17.Size = New System.Drawing.Size(90, 16)
 Me.lpbti17.TabIndex = 54
 Me.lpbti17.Text = "KryptonLabel17"
 Me.lpbti17.Values.ExtraText = ""
@@ -6533,7 +12131,7 @@ Me.lpbti17.Values.Text = "KryptonLabel17"
 '
 Me.lpbti16.Location = New System.Drawing.Point(843, 1601)
 Me.lpbti16.Name = "lpbti16"
-Me.lpbti16.Size = New System.Drawing.Size(100, 21)
+Me.lpbti16.Size = New System.Drawing.Size(90, 16)
 Me.lpbti16.TabIndex = 53
 Me.lpbti16.Text = "KryptonLabel16"
 Me.lpbti16.Values.ExtraText = ""
@@ -6544,7 +12142,7 @@ Me.lpbti16.Values.Text = "KryptonLabel16"
 '
 Me.lpbti15.Location = New System.Drawing.Point(598, 1601)
 Me.lpbti15.Name = "lpbti15"
-Me.lpbti15.Size = New System.Drawing.Size(100, 21)
+Me.lpbti15.Size = New System.Drawing.Size(90, 16)
 Me.lpbti15.TabIndex = 52
 Me.lpbti15.Text = "KryptonLabel15"
 Me.lpbti15.Values.ExtraText = ""
@@ -6555,7 +12153,7 @@ Me.lpbti15.Values.Text = "KryptonLabel15"
 '
 Me.lpbti14.Location = New System.Drawing.Point(329, 1601)
 Me.lpbti14.Name = "lpbti14"
-Me.lpbti14.Size = New System.Drawing.Size(100, 21)
+Me.lpbti14.Size = New System.Drawing.Size(90, 16)
 Me.lpbti14.TabIndex = 51
 Me.lpbti14.Text = "KryptonLabel14"
 Me.lpbti14.Values.ExtraText = ""
@@ -6566,7 +12164,7 @@ Me.lpbti14.Values.Text = "KryptonLabel14"
 '
 Me.lpbti13.Location = New System.Drawing.Point(72, 1601)
 Me.lpbti13.Name = "lpbti13"
-Me.lpbti13.Size = New System.Drawing.Size(100, 21)
+Me.lpbti13.Size = New System.Drawing.Size(90, 16)
 Me.lpbti13.TabIndex = 50
 Me.lpbti13.Text = "KryptonLabel13"
 Me.lpbti13.Values.ExtraText = ""
@@ -6577,7 +12175,7 @@ Me.lpbti13.Values.Text = "KryptonLabel13"
 '
 Me.lpbti12.Location = New System.Drawing.Point(855, 1197)
 Me.lpbti12.Name = "lpbti12"
-Me.lpbti12.Size = New System.Drawing.Size(100, 21)
+Me.lpbti12.Size = New System.Drawing.Size(90, 16)
 Me.lpbti12.TabIndex = 49
 Me.lpbti12.Text = "KryptonLabel12"
 Me.lpbti12.Values.ExtraText = ""
@@ -6588,7 +12186,7 @@ Me.lpbti12.Values.Text = "KryptonLabel12"
 '
 Me.lpbti11.Location = New System.Drawing.Point(586, 1197)
 Me.lpbti11.Name = "lpbti11"
-Me.lpbti11.Size = New System.Drawing.Size(98, 21)
+Me.lpbti11.Size = New System.Drawing.Size(90, 16)
 Me.lpbti11.TabIndex = 48
 Me.lpbti11.Text = "KryptonLabel11"
 Me.lpbti11.Values.ExtraText = ""
@@ -6599,7 +12197,7 @@ Me.lpbti11.Values.Text = "KryptonLabel11"
 '
 Me.lpbti10.Location = New System.Drawing.Point(329, 1197)
 Me.lpbti10.Name = "lpbti10"
-Me.lpbti10.Size = New System.Drawing.Size(100, 21)
+Me.lpbti10.Size = New System.Drawing.Size(90, 16)
 Me.lpbti10.TabIndex = 47
 Me.lpbti10.Text = "KryptonLabel10"
 Me.lpbti10.Values.ExtraText = ""
@@ -6610,7 +12208,7 @@ Me.lpbti10.Values.Text = "KryptonLabel10"
 '
 Me.lpbti9.Location = New System.Drawing.Point(84, 1198)
 Me.lpbti9.Name = "lpbti9"
-Me.lpbti9.Size = New System.Drawing.Size(94, 21)
+Me.lpbti9.Size = New System.Drawing.Size(83, 16)
 Me.lpbti9.TabIndex = 46
 Me.lpbti9.Text = "KryptonLabel9"
 Me.lpbti9.Values.ExtraText = ""
@@ -6621,7 +12219,7 @@ Me.lpbti9.Values.Text = "KryptonLabel9"
 '
 Me.lpbti8.Location = New System.Drawing.Point(843, 794)
 Me.lpbti8.Name = "lpbti8"
-Me.lpbti8.Size = New System.Drawing.Size(94, 21)
+Me.lpbti8.Size = New System.Drawing.Size(83, 16)
 Me.lpbti8.TabIndex = 45
 Me.lpbti8.Text = "KryptonLabel8"
 Me.lpbti8.Values.ExtraText = ""
@@ -6632,7 +12230,7 @@ Me.lpbti8.Values.Text = "KryptonLabel8"
 '
 Me.lpbti7.Location = New System.Drawing.Point(586, 794)
 Me.lpbti7.Name = "lpbti7"
-Me.lpbti7.Size = New System.Drawing.Size(94, 21)
+Me.lpbti7.Size = New System.Drawing.Size(83, 16)
 Me.lpbti7.TabIndex = 44
 Me.lpbti7.Text = "KryptonLabel7"
 Me.lpbti7.Values.ExtraText = ""
@@ -6643,7 +12241,7 @@ Me.lpbti7.Values.Text = "KryptonLabel7"
 '
 Me.lpbti6.Location = New System.Drawing.Point(341, 794)
 Me.lpbti6.Name = "lpbti6"
-Me.lpbti6.Size = New System.Drawing.Size(94, 21)
+Me.lpbti6.Size = New System.Drawing.Size(83, 16)
 Me.lpbti6.TabIndex = 43
 Me.lpbti6.Text = "KryptonLabel6"
 Me.lpbti6.Values.ExtraText = ""
@@ -6654,7 +12252,7 @@ Me.lpbti6.Values.Text = "KryptonLabel6"
 '
 Me.lpbti5.Location = New System.Drawing.Point(72, 794)
 Me.lpbti5.Name = "lpbti5"
-Me.lpbti5.Size = New System.Drawing.Size(94, 21)
+Me.lpbti5.Size = New System.Drawing.Size(83, 16)
 Me.lpbti5.TabIndex = 42
 Me.lpbti5.Text = "KryptonLabel5"
 Me.lpbti5.Values.ExtraText = ""
@@ -6665,7 +12263,7 @@ Me.lpbti5.Values.Text = "KryptonLabel5"
 '
 Me.lpbti4.Location = New System.Drawing.Point(867, 386)
 Me.lpbti4.Name = "lpbti4"
-Me.lpbti4.Size = New System.Drawing.Size(94, 21)
+Me.lpbti4.Size = New System.Drawing.Size(83, 16)
 Me.lpbti4.TabIndex = 41
 Me.lpbti4.Text = "KryptonLabel4"
 Me.lpbti4.Values.ExtraText = ""
@@ -6676,7 +12274,7 @@ Me.lpbti4.Values.Text = "KryptonLabel4"
 '
 Me.lpbti3.Location = New System.Drawing.Point(598, 386)
 Me.lpbti3.Name = "lpbti3"
-Me.lpbti3.Size = New System.Drawing.Size(94, 21)
+Me.lpbti3.Size = New System.Drawing.Size(83, 16)
 Me.lpbti3.TabIndex = 40
 Me.lpbti3.Text = "KryptonLabel3"
 Me.lpbti3.Values.ExtraText = ""
@@ -6687,7 +12285,7 @@ Me.lpbti3.Values.Text = "KryptonLabel3"
 '
 Me.lpbti2.Location = New System.Drawing.Point(329, 386)
 Me.lpbti2.Name = "lpbti2"
-Me.lpbti2.Size = New System.Drawing.Size(94, 21)
+Me.lpbti2.Size = New System.Drawing.Size(83, 16)
 Me.lpbti2.TabIndex = 39
 Me.lpbti2.Text = "KryptonLabel2"
 Me.lpbti2.Values.ExtraText = ""
@@ -6698,12 +12296,264 @@ Me.lpbti2.Values.Text = "KryptonLabel2"
 '
 Me.lpbti1.Location = New System.Drawing.Point(72, 386)
 Me.lpbti1.Name = "lpbti1"
-Me.lpbti1.Size = New System.Drawing.Size(94, 21)
+Me.lpbti1.Size = New System.Drawing.Size(83, 16)
 Me.lpbti1.TabIndex = 38
 Me.lpbti1.Text = "KryptonLabel2"
 Me.lpbti1.Values.ExtraText = ""
 Me.lpbti1.Values.Image = Nothing
 Me.lpbti1.Values.Text = "KryptonLabel2"
+'
+'pbti6
+'
+Me.pbti6.Location = New System.Drawing.Point(263, 412)
+Me.pbti6.Name = "pbti6"
+Me.pbti6.Size = New System.Drawing.Size(250, 400)
+Me.pbti6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti6.TabIndex = 37
+Me.pbti6.TabStop = false
+'
+'pbti5
+'
+Me.pbti5.Location = New System.Drawing.Point(6, 412)
+Me.pbti5.Name = "pbti5"
+Me.pbti5.Size = New System.Drawing.Size(250, 400)
+Me.pbti5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti5.TabIndex = 36
+Me.pbti5.TabStop = false
+'
+'pbti4
+'
+Me.pbti4.Location = New System.Drawing.Point(776, 6)
+Me.pbti4.Name = "pbti4"
+Me.pbti4.Size = New System.Drawing.Size(250, 400)
+Me.pbti4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti4.TabIndex = 35
+Me.pbti4.TabStop = false
+'
+'pbti3
+'
+Me.pbti3.Location = New System.Drawing.Point(520, 6)
+Me.pbti3.Name = "pbti3"
+Me.pbti3.Size = New System.Drawing.Size(250, 400)
+Me.pbti3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti3.TabIndex = 34
+Me.pbti3.TabStop = false
+'
+'pbti2
+'
+Me.pbti2.Location = New System.Drawing.Point(263, 6)
+Me.pbti2.Name = "pbti2"
+Me.pbti2.Size = New System.Drawing.Size(250, 400)
+Me.pbti2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti2.TabIndex = 33
+Me.pbti2.TabStop = false
+'
+'pbti1
+'
+Me.pbti1.Location = New System.Drawing.Point(6, 6)
+Me.pbti1.Name = "pbti1"
+Me.pbti1.Size = New System.Drawing.Size(250, 400)
+Me.pbti1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti1.TabIndex = 32
+Me.pbti1.TabStop = false
+'
+'pbti24
+'
+Me.pbti24.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti24.Location = New System.Drawing.Point(776, 2032)
+Me.pbti24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti24.Name = "pbti24"
+Me.pbti24.Size = New System.Drawing.Size(250, 400)
+Me.pbti24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti24.TabIndex = 37
+Me.pbti24.TabStop = false
+'
+'pbti23
+'
+Me.pbti23.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti23.Location = New System.Drawing.Point(520, 2032)
+Me.pbti23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti23.Name = "pbti23"
+Me.pbti23.Size = New System.Drawing.Size(250, 400)
+Me.pbti23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti23.TabIndex = 36
+Me.pbti23.TabStop = false
+'
+'pbti22
+'
+Me.pbti22.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti22.Location = New System.Drawing.Point(263, 2032)
+Me.pbti22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti22.Name = "pbti22"
+Me.pbti22.Size = New System.Drawing.Size(250, 400)
+Me.pbti22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti22.TabIndex = 35
+Me.pbti22.TabStop = false
+'
+'pbti21
+'
+Me.pbti21.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti21.Location = New System.Drawing.Point(7, 2032)
+Me.pbti21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti21.Name = "pbti21"
+Me.pbti21.Size = New System.Drawing.Size(250, 400)
+Me.pbti21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti21.TabIndex = 34
+Me.pbti21.TabStop = false
+'
+'pbti20
+'
+Me.pbti20.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti20.Location = New System.Drawing.Point(776, 1627)
+Me.pbti20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti20.Name = "pbti20"
+Me.pbti20.Size = New System.Drawing.Size(250, 400)
+Me.pbti20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti20.TabIndex = 33
+Me.pbti20.TabStop = false
+'
+'pbti19
+'
+Me.pbti19.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti19.Location = New System.Drawing.Point(520, 1627)
+Me.pbti19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti19.Name = "pbti19"
+Me.pbti19.Size = New System.Drawing.Size(250, 400)
+Me.pbti19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti19.TabIndex = 32
+Me.pbti19.TabStop = false
+'
+'pbti18
+'
+Me.pbti18.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti18.Location = New System.Drawing.Point(263, 1627)
+Me.pbti18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti18.Name = "pbti18"
+Me.pbti18.Size = New System.Drawing.Size(250, 400)
+Me.pbti18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti18.TabIndex = 31
+Me.pbti18.TabStop = false
+'
+'pbti17
+'
+Me.pbti17.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti17.Location = New System.Drawing.Point(6, 1627)
+Me.pbti17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti17.Name = "pbti17"
+Me.pbti17.Size = New System.Drawing.Size(250, 400)
+Me.pbti17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti17.TabIndex = 30
+Me.pbti17.TabStop = false
+'
+'pbti16
+'
+Me.pbti16.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti16.Location = New System.Drawing.Point(776, 1222)
+Me.pbti16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti16.Name = "pbti16"
+Me.pbti16.Size = New System.Drawing.Size(250, 400)
+Me.pbti16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti16.TabIndex = 29
+Me.pbti16.TabStop = false
+'
+'pbti15
+'
+Me.pbti15.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti15.Location = New System.Drawing.Point(520, 1222)
+Me.pbti15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti15.Name = "pbti15"
+Me.pbti15.Size = New System.Drawing.Size(250, 400)
+Me.pbti15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti15.TabIndex = 28
+Me.pbti15.TabStop = false
+'
+'pbti14
+'
+Me.pbti14.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti14.Location = New System.Drawing.Point(263, 1222)
+Me.pbti14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti14.Name = "pbti14"
+Me.pbti14.Size = New System.Drawing.Size(250, 400)
+Me.pbti14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti14.TabIndex = 27
+Me.pbti14.TabStop = false
+'
+'pbti13
+'
+Me.pbti13.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti13.Location = New System.Drawing.Point(6, 1222)
+Me.pbti13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti13.Name = "pbti13"
+Me.pbti13.Size = New System.Drawing.Size(250, 400)
+Me.pbti13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti13.TabIndex = 26
+Me.pbti13.TabStop = false
+'
+'pbti12
+'
+Me.pbti12.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti12.Location = New System.Drawing.Point(776, 817)
+Me.pbti12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti12.Name = "pbti12"
+Me.pbti12.Size = New System.Drawing.Size(250, 400)
+Me.pbti12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti12.TabIndex = 25
+Me.pbti12.TabStop = false
+'
+'pbti11
+'
+Me.pbti11.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti11.Location = New System.Drawing.Point(520, 817)
+Me.pbti11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti11.Name = "pbti11"
+Me.pbti11.Size = New System.Drawing.Size(250, 400)
+Me.pbti11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti11.TabIndex = 24
+Me.pbti11.TabStop = false
+'
+'pbti10
+'
+Me.pbti10.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti10.Location = New System.Drawing.Point(263, 817)
+Me.pbti10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti10.Name = "pbti10"
+Me.pbti10.Size = New System.Drawing.Size(250, 400)
+Me.pbti10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti10.TabIndex = 23
+Me.pbti10.TabStop = false
+'
+'pbti9
+'
+Me.pbti9.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti9.Location = New System.Drawing.Point(6, 817)
+Me.pbti9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti9.Name = "pbti9"
+Me.pbti9.Size = New System.Drawing.Size(250, 400)
+Me.pbti9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti9.TabIndex = 22
+Me.pbti9.TabStop = false
+'
+'pbti8
+'
+Me.pbti8.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti8.Location = New System.Drawing.Point(776, 412)
+Me.pbti8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti8.Name = "pbti8"
+Me.pbti8.Size = New System.Drawing.Size(250, 400)
+Me.pbti8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti8.TabIndex = 18
+Me.pbti8.TabStop = false
+'
+'pbti7
+'
+Me.pbti7.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbti7.Location = New System.Drawing.Point(520, 412)
+Me.pbti7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbti7.Name = "pbti7"
+Me.pbti7.Size = New System.Drawing.Size(250, 400)
+Me.pbti7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbti7.TabIndex = 17
+Me.pbti7.TabStop = false
 '
 'tpFanart
 '
@@ -6860,6 +12710,60 @@ Me.klblfatmdb31.Values.ExtraText = ""
 Me.klblfatmdb31.Values.Image = Nothing
 Me.klblfatmdb31.Values.Text = ""
 '
+'pbfatmdb31
+'
+Me.pbfatmdb31.Location = New System.Drawing.Point(-1, 3284)
+Me.pbfatmdb31.Name = "pbfatmdb31"
+Me.pbfatmdb31.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb31.TabIndex = 66
+Me.pbfatmdb31.TabStop = false
+'
+'pbfatmdb35
+'
+Me.pbfatmdb35.Location = New System.Drawing.Point(-1, 3721)
+Me.pbfatmdb35.Name = "pbfatmdb35"
+Me.pbfatmdb35.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb35.TabIndex = 71
+Me.pbfatmdb35.TabStop = false
+'
+'pbfatmdb36
+'
+Me.pbfatmdb36.Location = New System.Drawing.Point(387, 3721)
+Me.pbfatmdb36.Name = "pbfatmdb36"
+Me.pbfatmdb36.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb36.TabIndex = 70
+Me.pbfatmdb36.TabStop = false
+'
+'pbfatmdb34
+'
+Me.pbfatmdb34.Location = New System.Drawing.Point(387, 3502)
+Me.pbfatmdb34.Name = "pbfatmdb34"
+Me.pbfatmdb34.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb34.TabIndex = 69
+Me.pbfatmdb34.TabStop = false
+'
+'pbfatmdb33
+'
+Me.pbfatmdb33.Location = New System.Drawing.Point(-1, 3502)
+Me.pbfatmdb33.Name = "pbfatmdb33"
+Me.pbfatmdb33.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb33.TabIndex = 68
+Me.pbfatmdb33.TabStop = false
+'
+'pbfatmdb32
+'
+Me.pbfatmdb32.Location = New System.Drawing.Point(387, 3284)
+Me.pbfatmdb32.Name = "pbfatmdb32"
+Me.pbfatmdb32.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb32.TabIndex = 67
+Me.pbfatmdb32.TabStop = false
+'
 'klblfatmdb30
 '
 Me.klblfatmdb30.Location = New System.Drawing.Point(517, 3264)
@@ -6919,6 +12823,60 @@ Me.klblfatmdb25.TabIndex = 60
 Me.klblfatmdb25.Values.ExtraText = ""
 Me.klblfatmdb25.Values.Image = Nothing
 Me.klblfatmdb25.Values.Text = ""
+'
+'pbfatmdb25
+'
+Me.pbfatmdb25.Location = New System.Drawing.Point(-1, 2628)
+Me.pbfatmdb25.Name = "pbfatmdb25"
+Me.pbfatmdb25.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb25.TabIndex = 54
+Me.pbfatmdb25.TabStop = false
+'
+'pbfatmdb29
+'
+Me.pbfatmdb29.Location = New System.Drawing.Point(-1, 3065)
+Me.pbfatmdb29.Name = "pbfatmdb29"
+Me.pbfatmdb29.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb29.TabIndex = 59
+Me.pbfatmdb29.TabStop = false
+'
+'pbfatmdb30
+'
+Me.pbfatmdb30.Location = New System.Drawing.Point(387, 3065)
+Me.pbfatmdb30.Name = "pbfatmdb30"
+Me.pbfatmdb30.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb30.TabIndex = 58
+Me.pbfatmdb30.TabStop = false
+'
+'pbfatmdb28
+'
+Me.pbfatmdb28.Location = New System.Drawing.Point(387, 2846)
+Me.pbfatmdb28.Name = "pbfatmdb28"
+Me.pbfatmdb28.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb28.TabIndex = 57
+Me.pbfatmdb28.TabStop = false
+'
+'pbfatmdb27
+'
+Me.pbfatmdb27.Location = New System.Drawing.Point(-1, 2846)
+Me.pbfatmdb27.Name = "pbfatmdb27"
+Me.pbfatmdb27.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb27.TabIndex = 56
+Me.pbfatmdb27.TabStop = false
+'
+'pbfatmdb26
+'
+Me.pbfatmdb26.Location = New System.Drawing.Point(387, 2628)
+Me.pbfatmdb26.Name = "pbfatmdb26"
+Me.pbfatmdb26.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb26.TabIndex = 55
+Me.pbfatmdb26.TabStop = false
 '
 'klblfatmdb24
 '
@@ -7164,7 +13122,7 @@ Me.klblfatmdb1.Values.Text = ""
 '
 Me.klblFanartProvider.Location = New System.Drawing.Point(110, 4)
 Me.klblFanartProvider.Name = "klblFanartProvider"
-Me.klblFanartProvider.Size = New System.Drawing.Size(584, 21)
+Me.klblFanartProvider.Size = New System.Drawing.Size(520, 16)
 Me.klblFanartProvider.TabIndex = 29
 Me.klblFanartProvider.Text = "Movie Fanart Provided by: The Movie DB  www.Themoviedb.com - Music Fanart by HtBa"& _ 
     "ckdrops.com"
@@ -7172,6 +13130,223 @@ Me.klblFanartProvider.Values.ExtraText = ""
 Me.klblFanartProvider.Values.Image = Nothing
 Me.klblFanartProvider.Values.Text = "Movie Fanart Provided by: The Movie DB  www.Themoviedb.com - Music Fanart by HtBa"& _ 
     "ckdrops.com"
+'
+'pbfatmdb8
+'
+Me.pbfatmdb8.Location = New System.Drawing.Point(388, 659)
+Me.pbfatmdb8.Name = "pbfatmdb8"
+Me.pbfatmdb8.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb8.TabIndex = 11
+Me.pbfatmdb8.TabStop = false
+'
+'pbfatmdb17
+'
+Me.pbfatmdb17.Location = New System.Drawing.Point(0, 1754)
+Me.pbfatmdb17.Name = "pbfatmdb17"
+Me.pbfatmdb17.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb17.TabIndex = 22
+Me.pbfatmdb17.TabStop = false
+'
+'pbfatmdb18
+'
+Me.pbfatmdb18.Location = New System.Drawing.Point(388, 1754)
+Me.pbfatmdb18.Name = "pbfatmdb18"
+Me.pbfatmdb18.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb18.TabIndex = 21
+Me.pbfatmdb18.TabStop = false
+'
+'pbfatmdb19
+'
+Me.pbfatmdb19.Location = New System.Drawing.Point(0, 1973)
+Me.pbfatmdb19.Name = "pbfatmdb19"
+Me.pbfatmdb19.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb19.TabIndex = 23
+Me.pbfatmdb19.TabStop = false
+'
+'pbfatmdb10
+'
+Me.pbfatmdb10.Location = New System.Drawing.Point(388, 878)
+Me.pbfatmdb10.Name = "pbfatmdb10"
+Me.pbfatmdb10.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb10.TabIndex = 14
+Me.pbfatmdb10.TabStop = false
+'
+'pbfatmdb23
+'
+Me.pbfatmdb23.Location = New System.Drawing.Point(0, 2410)
+Me.pbfatmdb23.Name = "pbfatmdb23"
+Me.pbfatmdb23.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb23.TabIndex = 28
+Me.pbfatmdb23.TabStop = false
+'
+'pbfatmdb9
+'
+Me.pbfatmdb9.Location = New System.Drawing.Point(0, 878)
+Me.pbfatmdb9.Name = "pbfatmdb9"
+Me.pbfatmdb9.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb9.TabIndex = 13
+Me.pbfatmdb9.TabStop = false
+'
+'pbfatmdb16
+'
+Me.pbfatmdb16.Location = New System.Drawing.Point(388, 1535)
+Me.pbfatmdb16.Name = "pbfatmdb16"
+Me.pbfatmdb16.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb16.TabIndex = 20
+Me.pbfatmdb16.TabStop = false
+'
+'pbfatmdb3
+'
+Me.pbfatmdb3.Location = New System.Drawing.Point(0, 221)
+Me.pbfatmdb3.Name = "pbfatmdb3"
+Me.pbfatmdb3.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb3.TabIndex = 2
+Me.pbfatmdb3.TabStop = false
+'
+'pbfatmdb15
+'
+Me.pbfatmdb15.Location = New System.Drawing.Point(0, 1535)
+Me.pbfatmdb15.Name = "pbfatmdb15"
+Me.pbfatmdb15.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb15.TabIndex = 19
+Me.pbfatmdb15.TabStop = false
+'
+'pbfatmdb24
+'
+Me.pbfatmdb24.Location = New System.Drawing.Point(388, 2410)
+Me.pbfatmdb24.Name = "pbfatmdb24"
+Me.pbfatmdb24.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb24.TabIndex = 27
+Me.pbfatmdb24.TabStop = false
+'
+'pbfatmdb14
+'
+Me.pbfatmdb14.Location = New System.Drawing.Point(388, 1316)
+Me.pbfatmdb14.Name = "pbfatmdb14"
+Me.pbfatmdb14.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb14.TabIndex = 18
+Me.pbfatmdb14.TabStop = false
+'
+'pbfatmdb5
+'
+Me.pbfatmdb5.Location = New System.Drawing.Point(0, 440)
+Me.pbfatmdb5.Name = "pbfatmdb5"
+Me.pbfatmdb5.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb5.TabIndex = 5
+Me.pbfatmdb5.TabStop = false
+'
+'pbfatmdb13
+'
+Me.pbfatmdb13.Location = New System.Drawing.Point(0, 1316)
+Me.pbfatmdb13.Name = "pbfatmdb13"
+Me.pbfatmdb13.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb13.TabIndex = 17
+Me.pbfatmdb13.TabStop = false
+'
+'pbfatmdb22
+'
+Me.pbfatmdb22.Location = New System.Drawing.Point(388, 2191)
+Me.pbfatmdb22.Name = "pbfatmdb22"
+Me.pbfatmdb22.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb22.TabIndex = 26
+Me.pbfatmdb22.TabStop = false
+'
+'pbfatmdb11
+'
+Me.pbfatmdb11.Location = New System.Drawing.Point(0, 1097)
+Me.pbfatmdb11.Name = "pbfatmdb11"
+Me.pbfatmdb11.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb11.TabIndex = 16
+Me.pbfatmdb11.TabStop = false
+'
+'pbfatmdb4
+'
+Me.pbfatmdb4.Location = New System.Drawing.Point(388, 221)
+Me.pbfatmdb4.Name = "pbfatmdb4"
+Me.pbfatmdb4.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb4.TabIndex = 3
+Me.pbfatmdb4.TabStop = false
+'
+'pbfatmdb12
+'
+Me.pbfatmdb12.Location = New System.Drawing.Point(388, 1097)
+Me.pbfatmdb12.Name = "pbfatmdb12"
+Me.pbfatmdb12.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb12.TabIndex = 15
+Me.pbfatmdb12.TabStop = false
+'
+'pbfatmdb21
+'
+Me.pbfatmdb21.Location = New System.Drawing.Point(0, 2191)
+Me.pbfatmdb21.Name = "pbfatmdb21"
+Me.pbfatmdb21.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb21.TabIndex = 25
+Me.pbfatmdb21.TabStop = false
+'
+'pbfatmdb6
+'
+Me.pbfatmdb6.Location = New System.Drawing.Point(388, 440)
+Me.pbfatmdb6.Name = "pbfatmdb6"
+Me.pbfatmdb6.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb6.TabIndex = 4
+Me.pbfatmdb6.TabStop = false
+'
+'pbfatmdb20
+'
+Me.pbfatmdb20.Location = New System.Drawing.Point(388, 1973)
+Me.pbfatmdb20.Name = "pbfatmdb20"
+Me.pbfatmdb20.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb20.TabIndex = 24
+Me.pbfatmdb20.TabStop = false
+'
+'pbfatmdb7
+'
+Me.pbfatmdb7.Location = New System.Drawing.Point(0, 659)
+Me.pbfatmdb7.Name = "pbfatmdb7"
+Me.pbfatmdb7.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb7.TabIndex = 12
+Me.pbfatmdb7.TabStop = false
+'
+'pbfatmdb1
+'
+Me.pbfatmdb1.InitialImage = Nothing
+Me.pbfatmdb1.Location = New System.Drawing.Point(0, 2)
+Me.pbfatmdb1.Name = "pbfatmdb1"
+Me.pbfatmdb1.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb1.TabIndex = 0
+Me.pbfatmdb1.TabStop = false
+'
+'pbfatmdb2
+'
+Me.pbfatmdb2.Location = New System.Drawing.Point(388, 2)
+Me.pbfatmdb2.Name = "pbfatmdb2"
+Me.pbfatmdb2.Size = New System.Drawing.Size(387, 217)
+Me.pbfatmdb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbfatmdb2.TabIndex = 1
+Me.pbfatmdb2.TabStop = false
 '
 'tpmmn
 '
@@ -7194,6 +13369,15 @@ Me.tpmmn.Size = New System.Drawing.Size(814, 606)
 Me.tpmmn.TabIndex = 1
 Me.tpmmn.Text = " Rename     "
 Me.tpmmn.ToolTipText = "Modify the name of the movie"
+'
+'pbCustomImageTemp
+'
+Me.pbCustomImageTemp.Location = New System.Drawing.Point(6, 141)
+Me.pbCustomImageTemp.Name = "pbCustomImageTemp"
+Me.pbCustomImageTemp.Size = New System.Drawing.Size(100, 50)
+Me.pbCustomImageTemp.TabIndex = 94
+Me.pbCustomImageTemp.TabStop = false
+Me.pbCustomImageTemp.Visible = false
 '
 'btnUpdatePosters
 '
@@ -7369,6 +13553,294 @@ Me.kptvwide.Name = "kptvwide"
 Me.kptvwide.Size = New System.Drawing.Size(776, 1015)
 Me.kptvwide.TabIndex = 16
 '
+'pbtvwide24
+'
+Me.pbtvwide24.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide24.Enabled = false
+Me.pbtvwide24.Location = New System.Drawing.Point(386, 930)
+Me.pbtvwide24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide24.Name = "pbtvwide24"
+Me.pbtvwide24.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide24.TabIndex = 30
+Me.pbtvwide24.TabStop = false
+'
+'pbtvwide23
+'
+Me.pbtvwide23.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide23.Enabled = false
+Me.pbtvwide23.Location = New System.Drawing.Point(2, 930)
+Me.pbtvwide23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide23.Name = "pbtvwide23"
+Me.pbtvwide23.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide23.TabIndex = 29
+Me.pbtvwide23.TabStop = false
+'
+'pbtvwide10
+'
+Me.pbtvwide10.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide10.Enabled = false
+Me.pbtvwide10.Location = New System.Drawing.Point(386, 341)
+Me.pbtvwide10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide10.Name = "pbtvwide10"
+Me.pbtvwide10.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide10.TabIndex = 26
+Me.pbtvwide10.TabStop = false
+'
+'pbtvwide1
+'
+Me.pbtvwide1.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide1.Enabled = false
+Me.pbtvwide1.Location = New System.Drawing.Point(2, 2)
+Me.pbtvwide1.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide1.Name = "pbtvwide1"
+Me.pbtvwide1.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide1.TabIndex = 15
+Me.pbtvwide1.TabStop = false
+'
+'pbtvwide22
+'
+Me.pbtvwide22.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide22.Enabled = false
+Me.pbtvwide22.Location = New System.Drawing.Point(386, 845)
+Me.pbtvwide22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide22.Name = "pbtvwide22"
+Me.pbtvwide22.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide22.TabIndex = 28
+Me.pbtvwide22.TabStop = false
+'
+'pbtvwide21
+'
+Me.pbtvwide21.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide21.Enabled = false
+Me.pbtvwide21.Location = New System.Drawing.Point(2, 845)
+Me.pbtvwide21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide21.Name = "pbtvwide21"
+Me.pbtvwide21.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide21.TabIndex = 27
+Me.pbtvwide21.TabStop = false
+'
+'pbtvwide9
+'
+Me.pbtvwide9.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide9.Enabled = false
+Me.pbtvwide9.Location = New System.Drawing.Point(2, 341)
+Me.pbtvwide9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide9.Name = "pbtvwide9"
+Me.pbtvwide9.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide9.TabIndex = 25
+Me.pbtvwide9.TabStop = false
+'
+'pbtvwide20
+'
+Me.pbtvwide20.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide20.Enabled = false
+Me.pbtvwide20.Location = New System.Drawing.Point(386, 761)
+Me.pbtvwide20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide20.Name = "pbtvwide20"
+Me.pbtvwide20.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide20.TabIndex = 26
+Me.pbtvwide20.TabStop = false
+'
+'pbtvwide2
+'
+Me.pbtvwide2.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide2.Enabled = false
+Me.pbtvwide2.Location = New System.Drawing.Point(386, 2)
+Me.pbtvwide2.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide2.Name = "pbtvwide2"
+Me.pbtvwide2.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide2.TabIndex = 18
+Me.pbtvwide2.TabStop = false
+'
+'pbtvwide19
+'
+Me.pbtvwide19.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide19.Enabled = false
+Me.pbtvwide19.Location = New System.Drawing.Point(2, 761)
+Me.pbtvwide19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide19.Name = "pbtvwide19"
+Me.pbtvwide19.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide19.TabIndex = 25
+Me.pbtvwide19.TabStop = false
+'
+'pbtvwide8
+'
+Me.pbtvwide8.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide8.Enabled = false
+Me.pbtvwide8.Location = New System.Drawing.Point(386, 256)
+Me.pbtvwide8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide8.Name = "pbtvwide8"
+Me.pbtvwide8.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide8.TabIndex = 24
+Me.pbtvwide8.TabStop = false
+'
+'pbtvwide18
+'
+Me.pbtvwide18.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide18.Enabled = false
+Me.pbtvwide18.Location = New System.Drawing.Point(386, 677)
+Me.pbtvwide18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide18.Name = "pbtvwide18"
+Me.pbtvwide18.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide18.TabIndex = 24
+Me.pbtvwide18.TabStop = false
+'
+'pbtvwide3
+'
+Me.pbtvwide3.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide3.Enabled = false
+Me.pbtvwide3.Location = New System.Drawing.Point(2, 86)
+Me.pbtvwide3.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide3.Name = "pbtvwide3"
+Me.pbtvwide3.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide3.TabIndex = 19
+Me.pbtvwide3.TabStop = false
+'
+'pbtvwide17
+'
+Me.pbtvwide17.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide17.Enabled = false
+Me.pbtvwide17.Location = New System.Drawing.Point(2, 677)
+Me.pbtvwide17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide17.Name = "pbtvwide17"
+Me.pbtvwide17.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide17.TabIndex = 23
+Me.pbtvwide17.TabStop = false
+'
+'pbtvwide7
+'
+Me.pbtvwide7.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide7.Enabled = false
+Me.pbtvwide7.Location = New System.Drawing.Point(2, 256)
+Me.pbtvwide7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide7.Name = "pbtvwide7"
+Me.pbtvwide7.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide7.TabIndex = 23
+Me.pbtvwide7.TabStop = false
+'
+'pbtvwide16
+'
+Me.pbtvwide16.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide16.Enabled = false
+Me.pbtvwide16.Location = New System.Drawing.Point(386, 593)
+Me.pbtvwide16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide16.Name = "pbtvwide16"
+Me.pbtvwide16.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide16.TabIndex = 22
+Me.pbtvwide16.TabStop = false
+'
+'pbtvwide4
+'
+Me.pbtvwide4.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide4.Enabled = false
+Me.pbtvwide4.Location = New System.Drawing.Point(386, 86)
+Me.pbtvwide4.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide4.Name = "pbtvwide4"
+Me.pbtvwide4.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide4.TabIndex = 20
+Me.pbtvwide4.TabStop = false
+'
+'pbtvwide15
+'
+Me.pbtvwide15.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide15.Enabled = false
+Me.pbtvwide15.Location = New System.Drawing.Point(2, 593)
+Me.pbtvwide15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide15.Name = "pbtvwide15"
+Me.pbtvwide15.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide15.TabIndex = 21
+Me.pbtvwide15.TabStop = false
+'
+'pbtvwide6
+'
+Me.pbtvwide6.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide6.Enabled = false
+Me.pbtvwide6.Location = New System.Drawing.Point(386, 170)
+Me.pbtvwide6.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide6.Name = "pbtvwide6"
+Me.pbtvwide6.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide6.TabIndex = 22
+Me.pbtvwide6.TabStop = false
+'
+'pbtvwide14
+'
+Me.pbtvwide14.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide14.Enabled = false
+Me.pbtvwide14.Location = New System.Drawing.Point(386, 509)
+Me.pbtvwide14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide14.Name = "pbtvwide14"
+Me.pbtvwide14.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide14.TabIndex = 20
+Me.pbtvwide14.TabStop = false
+'
+'pbtvwide5
+'
+Me.pbtvwide5.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide5.Enabled = false
+Me.pbtvwide5.Location = New System.Drawing.Point(2, 170)
+Me.pbtvwide5.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide5.Name = "pbtvwide5"
+Me.pbtvwide5.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide5.TabIndex = 21
+Me.pbtvwide5.TabStop = false
+'
+'pbtvwide13
+'
+Me.pbtvwide13.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide13.Enabled = false
+Me.pbtvwide13.Location = New System.Drawing.Point(2, 509)
+Me.pbtvwide13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide13.Name = "pbtvwide13"
+Me.pbtvwide13.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide13.TabIndex = 19
+Me.pbtvwide13.TabStop = false
+'
+'pbtvwide11
+'
+Me.pbtvwide11.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide11.Enabled = false
+Me.pbtvwide11.Location = New System.Drawing.Point(2, 425)
+Me.pbtvwide11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide11.Name = "pbtvwide11"
+Me.pbtvwide11.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide11.TabIndex = 17
+Me.pbtvwide11.TabStop = false
+'
+'pbtvwide12
+'
+Me.pbtvwide12.BackColor = System.Drawing.Color.Transparent
+Me.pbtvwide12.Enabled = false
+Me.pbtvwide12.Location = New System.Drawing.Point(386, 425)
+Me.pbtvwide12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbtvwide12.Name = "pbtvwide12"
+Me.pbtvwide12.Size = New System.Drawing.Size(380, 80)
+Me.pbtvwide12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbtvwide12.TabIndex = 18
+Me.pbtvwide12.TabStop = false
+'
 'tpIMPPosters
 '
 Me.tpIMPPosters.AutoScroll = true
@@ -7440,7 +13912,7 @@ Me.kpIMPPosterSelection.TabIndex = 0
 '
 Me.lblImpaposters.Location = New System.Drawing.Point(313, 1)
 Me.lblImpaposters.Name = "lblImpaposters"
-Me.lblImpaposters.Size = New System.Drawing.Size(179, 21)
+Me.lblImpaposters.Size = New System.Drawing.Size(157, 16)
 Me.lblImpaposters.TabIndex = 62
 Me.lblImpaposters.Text = "Posters from Impawards.com"
 Me.lblImpaposters.Values.ExtraText = ""
@@ -7451,7 +13923,7 @@ Me.lblImpaposters.Values.Text = "Posters from Impawards.com"
 '
 Me.klblposterIMP24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterIMP24.Name = "klblposterIMP24"
-Me.klblposterIMP24.Size = New System.Drawing.Size(102, 21)
+Me.klblposterIMP24.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP24.TabIndex = 61
 Me.klblposterIMP24.Text = "KryptonLabel24"
 Me.klblposterIMP24.Values.ExtraText = ""
@@ -7462,7 +13934,7 @@ Me.klblposterIMP24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterIMP23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterIMP23.Name = "klblposterIMP23"
-Me.klblposterIMP23.Size = New System.Drawing.Size(102, 21)
+Me.klblposterIMP23.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP23.TabIndex = 60
 Me.klblposterIMP23.Text = "KryptonLabel23"
 Me.klblposterIMP23.Values.ExtraText = ""
@@ -7473,7 +13945,7 @@ Me.klblposterIMP23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterIMP22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterIMP22.Name = "klblposterIMP22"
-Me.klblposterIMP22.Size = New System.Drawing.Size(102, 21)
+Me.klblposterIMP22.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP22.TabIndex = 59
 Me.klblposterIMP22.Text = "KryptonLabel22"
 Me.klblposterIMP22.Values.ExtraText = ""
@@ -7484,7 +13956,7 @@ Me.klblposterIMP22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterIMP21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterIMP21.Name = "klblposterIMP21"
-Me.klblposterIMP21.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP21.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP21.TabIndex = 58
 Me.klblposterIMP21.Text = "KryptonLabel21"
 Me.klblposterIMP21.Values.ExtraText = ""
@@ -7495,7 +13967,7 @@ Me.klblposterIMP21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterIMP20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterIMP20.Name = "klblposterIMP20"
-Me.klblposterIMP20.Size = New System.Drawing.Size(102, 21)
+Me.klblposterIMP20.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP20.TabIndex = 57
 Me.klblposterIMP20.Text = "KryptonLabel20"
 Me.klblposterIMP20.Values.ExtraText = ""
@@ -7506,7 +13978,7 @@ Me.klblposterIMP20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterIMP19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterIMP19.Name = "klblposterIMP19"
-Me.klblposterIMP19.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP19.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP19.TabIndex = 56
 Me.klblposterIMP19.Text = "KryptonLabel19"
 Me.klblposterIMP19.Values.ExtraText = ""
@@ -7517,7 +13989,7 @@ Me.klblposterIMP19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterIMP18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterIMP18.Name = "klblposterIMP18"
-Me.klblposterIMP18.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP18.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP18.TabIndex = 55
 Me.klblposterIMP18.Text = "KryptonLabel18"
 Me.klblposterIMP18.Values.ExtraText = ""
@@ -7528,7 +14000,7 @@ Me.klblposterIMP18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterIMP17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterIMP17.Name = "klblposterIMP17"
-Me.klblposterIMP17.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP17.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP17.TabIndex = 54
 Me.klblposterIMP17.Text = "KryptonLabel17"
 Me.klblposterIMP17.Values.ExtraText = ""
@@ -7539,7 +14011,7 @@ Me.klblposterIMP17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterIMP16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterIMP16.Name = "klblposterIMP16"
-Me.klblposterIMP16.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP16.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP16.TabIndex = 53
 Me.klblposterIMP16.Text = "KryptonLabel16"
 Me.klblposterIMP16.Values.ExtraText = ""
@@ -7550,7 +14022,7 @@ Me.klblposterIMP16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterIMP15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterIMP15.Name = "klblposterIMP15"
-Me.klblposterIMP15.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP15.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP15.TabIndex = 52
 Me.klblposterIMP15.Text = "KryptonLabel15"
 Me.klblposterIMP15.Values.ExtraText = ""
@@ -7561,7 +14033,7 @@ Me.klblposterIMP15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterIMP14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterIMP14.Name = "klblposterIMP14"
-Me.klblposterIMP14.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP14.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP14.TabIndex = 51
 Me.klblposterIMP14.Text = "KryptonLabel14"
 Me.klblposterIMP14.Values.ExtraText = ""
@@ -7572,7 +14044,7 @@ Me.klblposterIMP14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterIMP13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterIMP13.Name = "klblposterIMP13"
-Me.klblposterIMP13.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP13.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP13.TabIndex = 50
 Me.klblposterIMP13.Text = "KryptonLabel13"
 Me.klblposterIMP13.Values.ExtraText = ""
@@ -7583,7 +14055,7 @@ Me.klblposterIMP13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterIMP12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterIMP12.Name = "klblposterIMP12"
-Me.klblposterIMP12.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP12.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP12.TabIndex = 49
 Me.klblposterIMP12.Text = "KryptonLabel12"
 Me.klblposterIMP12.Values.ExtraText = ""
@@ -7594,7 +14066,7 @@ Me.klblposterIMP12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterIMP11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterIMP11.Name = "klblposterIMP11"
-Me.klblposterIMP11.Size = New System.Drawing.Size(98, 21)
+Me.klblposterIMP11.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP11.TabIndex = 48
 Me.klblposterIMP11.Text = "KryptonLabel11"
 Me.klblposterIMP11.Values.ExtraText = ""
@@ -7605,7 +14077,7 @@ Me.klblposterIMP11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterIMP10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterIMP10.Name = "klblposterIMP10"
-Me.klblposterIMP10.Size = New System.Drawing.Size(100, 21)
+Me.klblposterIMP10.Size = New System.Drawing.Size(90, 16)
 Me.klblposterIMP10.TabIndex = 47
 Me.klblposterIMP10.Text = "KryptonLabel10"
 Me.klblposterIMP10.Values.ExtraText = ""
@@ -7616,7 +14088,7 @@ Me.klblposterIMP10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterIMP9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterIMP9.Name = "klblposterIMP9"
-Me.klblposterIMP9.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP9.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP9.TabIndex = 46
 Me.klblposterIMP9.Text = "KryptonLabel9"
 Me.klblposterIMP9.Values.ExtraText = ""
@@ -7627,7 +14099,7 @@ Me.klblposterIMP9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterIMP8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterIMP8.Name = "klblposterIMP8"
-Me.klblposterIMP8.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP8.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP8.TabIndex = 45
 Me.klblposterIMP8.Text = "KryptonLabel8"
 Me.klblposterIMP8.Values.ExtraText = ""
@@ -7638,7 +14110,7 @@ Me.klblposterIMP8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterIMP7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterIMP7.Name = "klblposterIMP7"
-Me.klblposterIMP7.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP7.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP7.TabIndex = 44
 Me.klblposterIMP7.Text = "KryptonLabel7"
 Me.klblposterIMP7.Values.ExtraText = ""
@@ -7649,7 +14121,7 @@ Me.klblposterIMP7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterIMP6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterIMP6.Name = "klblposterIMP6"
-Me.klblposterIMP6.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP6.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP6.TabIndex = 43
 Me.klblposterIMP6.Text = "KryptonLabel6"
 Me.klblposterIMP6.Values.ExtraText = ""
@@ -7660,7 +14132,7 @@ Me.klblposterIMP6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterIMP5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterIMP5.Name = "klblposterIMP5"
-Me.klblposterIMP5.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP5.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP5.TabIndex = 42
 Me.klblposterIMP5.Text = "KryptonLabel5"
 Me.klblposterIMP5.Values.ExtraText = ""
@@ -7671,7 +14143,7 @@ Me.klblposterIMP5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterIMP4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterIMP4.Name = "klblposterIMP4"
-Me.klblposterIMP4.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP4.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP4.TabIndex = 41
 Me.klblposterIMP4.Text = "KryptonLabel4"
 Me.klblposterIMP4.Values.ExtraText = ""
@@ -7682,7 +14154,7 @@ Me.klblposterIMP4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterIMP3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterIMP3.Name = "klblposterIMP3"
-Me.klblposterIMP3.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP3.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP3.TabIndex = 40
 Me.klblposterIMP3.Text = "KryptonLabel3"
 Me.klblposterIMP3.Values.ExtraText = ""
@@ -7693,7 +14165,7 @@ Me.klblposterIMP3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterIMP2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterIMP2.Name = "klblposterIMP2"
-Me.klblposterIMP2.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP2.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP2.TabIndex = 39
 Me.klblposterIMP2.Text = "KryptonLabel2"
 Me.klblposterIMP2.Values.ExtraText = ""
@@ -7704,12 +14176,264 @@ Me.klblposterIMP2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterIMP1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterIMP1.Name = "klblposterIMP1"
-Me.klblposterIMP1.Size = New System.Drawing.Size(94, 21)
+Me.klblposterIMP1.Size = New System.Drawing.Size(83, 16)
 Me.klblposterIMP1.TabIndex = 38
 Me.klblposterIMP1.Text = "KryptonLabel2"
 Me.klblposterIMP1.Values.ExtraText = ""
 Me.klblposterIMP1.Values.Image = Nothing
 Me.klblposterIMP1.Values.Text = "KryptonLabel2"
+'
+'pbposterIMP6
+'
+Me.pbposterIMP6.Location = New System.Drawing.Point(520, 412)
+Me.pbposterIMP6.Name = "pbposterIMP6"
+Me.pbposterIMP6.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP6.TabIndex = 37
+Me.pbposterIMP6.TabStop = false
+'
+'pbposterIMP5
+'
+Me.pbposterIMP5.Location = New System.Drawing.Point(263, 412)
+Me.pbposterIMP5.Name = "pbposterIMP5"
+Me.pbposterIMP5.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP5.TabIndex = 36
+Me.pbposterIMP5.TabStop = false
+'
+'pbposterIMP4
+'
+Me.pbposterIMP4.Location = New System.Drawing.Point(7, 412)
+Me.pbposterIMP4.Name = "pbposterIMP4"
+Me.pbposterIMP4.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP4.TabIndex = 35
+Me.pbposterIMP4.TabStop = false
+'
+'pbposterIMP3
+'
+Me.pbposterIMP3.Location = New System.Drawing.Point(520, 6)
+Me.pbposterIMP3.Name = "pbposterIMP3"
+Me.pbposterIMP3.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP3.TabIndex = 34
+Me.pbposterIMP3.TabStop = false
+'
+'pbposterIMP2
+'
+Me.pbposterIMP2.Location = New System.Drawing.Point(263, 6)
+Me.pbposterIMP2.Name = "pbposterIMP2"
+Me.pbposterIMP2.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP2.TabIndex = 33
+Me.pbposterIMP2.TabStop = false
+'
+'pbposterIMP1
+'
+Me.pbposterIMP1.Location = New System.Drawing.Point(7, 6)
+Me.pbposterIMP1.Name = "pbposterIMP1"
+Me.pbposterIMP1.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP1.TabIndex = 32
+Me.pbposterIMP1.TabStop = false
+'
+'pbposterIMP24
+'
+Me.pbposterIMP24.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP24.Location = New System.Drawing.Point(520, 2846)
+Me.pbposterIMP24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP24.Name = "pbposterIMP24"
+Me.pbposterIMP24.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP24.TabIndex = 37
+Me.pbposterIMP24.TabStop = false
+'
+'pbposterIMP23
+'
+Me.pbposterIMP23.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP23.Location = New System.Drawing.Point(263, 2846)
+Me.pbposterIMP23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP23.Name = "pbposterIMP23"
+Me.pbposterIMP23.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP23.TabIndex = 36
+Me.pbposterIMP23.TabStop = false
+'
+'pbposterIMP22
+'
+Me.pbposterIMP22.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP22.Location = New System.Drawing.Point(6, 2846)
+Me.pbposterIMP22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP22.Name = "pbposterIMP22"
+Me.pbposterIMP22.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP22.TabIndex = 35
+Me.pbposterIMP22.TabStop = false
+'
+'pbposterIMP21
+'
+Me.pbposterIMP21.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP21.Location = New System.Drawing.Point(520, 2442)
+Me.pbposterIMP21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP21.Name = "pbposterIMP21"
+Me.pbposterIMP21.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP21.TabIndex = 34
+Me.pbposterIMP21.TabStop = false
+'
+'pbposterIMP20
+'
+Me.pbposterIMP20.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP20.Location = New System.Drawing.Point(263, 2442)
+Me.pbposterIMP20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP20.Name = "pbposterIMP20"
+Me.pbposterIMP20.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP20.TabIndex = 33
+Me.pbposterIMP20.TabStop = false
+'
+'pbposterIMP19
+'
+Me.pbposterIMP19.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP19.Location = New System.Drawing.Point(6, 2442)
+Me.pbposterIMP19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP19.Name = "pbposterIMP19"
+Me.pbposterIMP19.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP19.TabIndex = 32
+Me.pbposterIMP19.TabStop = false
+'
+'pbposterIMP18
+'
+Me.pbposterIMP18.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP18.Location = New System.Drawing.Point(520, 2036)
+Me.pbposterIMP18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP18.Name = "pbposterIMP18"
+Me.pbposterIMP18.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP18.TabIndex = 31
+Me.pbposterIMP18.TabStop = false
+'
+'pbposterIMP17
+'
+Me.pbposterIMP17.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP17.Location = New System.Drawing.Point(263, 2036)
+Me.pbposterIMP17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP17.Name = "pbposterIMP17"
+Me.pbposterIMP17.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP17.TabIndex = 30
+Me.pbposterIMP17.TabStop = false
+'
+'pbposterIMP16
+'
+Me.pbposterIMP16.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP16.Location = New System.Drawing.Point(6, 2036)
+Me.pbposterIMP16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP16.Name = "pbposterIMP16"
+Me.pbposterIMP16.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP16.TabIndex = 29
+Me.pbposterIMP16.TabStop = false
+'
+'pbposterIMP15
+'
+Me.pbposterIMP15.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP15.Location = New System.Drawing.Point(520, 1631)
+Me.pbposterIMP15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP15.Name = "pbposterIMP15"
+Me.pbposterIMP15.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP15.TabIndex = 28
+Me.pbposterIMP15.TabStop = false
+'
+'pbposterIMP14
+'
+Me.pbposterIMP14.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP14.Location = New System.Drawing.Point(263, 1631)
+Me.pbposterIMP14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP14.Name = "pbposterIMP14"
+Me.pbposterIMP14.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP14.TabIndex = 27
+Me.pbposterIMP14.TabStop = false
+'
+'pbposterIMP13
+'
+Me.pbposterIMP13.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP13.Location = New System.Drawing.Point(6, 1631)
+Me.pbposterIMP13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP13.Name = "pbposterIMP13"
+Me.pbposterIMP13.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP13.TabIndex = 26
+Me.pbposterIMP13.TabStop = false
+'
+'pbposterIMP12
+'
+Me.pbposterIMP12.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP12.Location = New System.Drawing.Point(520, 1224)
+Me.pbposterIMP12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP12.Name = "pbposterIMP12"
+Me.pbposterIMP12.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP12.TabIndex = 25
+Me.pbposterIMP12.TabStop = false
+'
+'pbposterIMP11
+'
+Me.pbposterIMP11.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP11.Location = New System.Drawing.Point(263, 1224)
+Me.pbposterIMP11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP11.Name = "pbposterIMP11"
+Me.pbposterIMP11.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP11.TabIndex = 24
+Me.pbposterIMP11.TabStop = false
+'
+'pbposterIMP10
+'
+Me.pbposterIMP10.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP10.Location = New System.Drawing.Point(6, 1224)
+Me.pbposterIMP10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP10.Name = "pbposterIMP10"
+Me.pbposterIMP10.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP10.TabIndex = 23
+Me.pbposterIMP10.TabStop = false
+'
+'pbposterIMP9
+'
+Me.pbposterIMP9.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP9.Location = New System.Drawing.Point(520, 817)
+Me.pbposterIMP9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP9.Name = "pbposterIMP9"
+Me.pbposterIMP9.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP9.TabIndex = 22
+Me.pbposterIMP9.TabStop = false
+'
+'pbposterIMP8
+'
+Me.pbposterIMP8.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP8.Location = New System.Drawing.Point(263, 817)
+Me.pbposterIMP8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP8.Name = "pbposterIMP8"
+Me.pbposterIMP8.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP8.TabIndex = 18
+Me.pbposterIMP8.TabStop = false
+'
+'pbposterIMP7
+'
+Me.pbposterIMP7.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterIMP7.Location = New System.Drawing.Point(6, 817)
+Me.pbposterIMP7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterIMP7.Name = "pbposterIMP7"
+Me.pbposterIMP7.Size = New System.Drawing.Size(250, 400)
+Me.pbposterIMP7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterIMP7.TabIndex = 17
+Me.pbposterIMP7.TabStop = false
 '
 'tpTMDBPosters
 '
@@ -7782,7 +14506,7 @@ Me.kpTMDBPostersSelection.TabIndex = 0
 '
 Me.klblPostersByTMDB.Location = New System.Drawing.Point(329, 0)
 Me.klblPostersByTMDB.Name = "klblPostersByTMDB"
-Me.klblPostersByTMDB.Size = New System.Drawing.Size(126, 21)
+Me.klblPostersByTMDB.Size = New System.Drawing.Size(109, 16)
 Me.klblPostersByTMDB.TabIndex = 0
 Me.klblPostersByTMDB.Text = "Posters from TMDB"
 Me.klblPostersByTMDB.Values.ExtraText = ""
@@ -7793,7 +14517,7 @@ Me.klblPostersByTMDB.Values.Text = "Posters from TMDB"
 '
 Me.klblposterTMDB24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterTMDB24.Name = "klblposterTMDB24"
-Me.klblposterTMDB24.Size = New System.Drawing.Size(102, 21)
+Me.klblposterTMDB24.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB24.TabIndex = 61
 Me.klblposterTMDB24.Text = "KryptonLabel24"
 Me.klblposterTMDB24.Values.ExtraText = ""
@@ -7804,7 +14528,7 @@ Me.klblposterTMDB24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterTMDB23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterTMDB23.Name = "klblposterTMDB23"
-Me.klblposterTMDB23.Size = New System.Drawing.Size(102, 21)
+Me.klblposterTMDB23.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB23.TabIndex = 60
 Me.klblposterTMDB23.Text = "KryptonLabel23"
 Me.klblposterTMDB23.Values.ExtraText = ""
@@ -7815,7 +14539,7 @@ Me.klblposterTMDB23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterTMDB22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterTMDB22.Name = "klblposterTMDB22"
-Me.klblposterTMDB22.Size = New System.Drawing.Size(102, 21)
+Me.klblposterTMDB22.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB22.TabIndex = 59
 Me.klblposterTMDB22.Text = "KryptonLabel22"
 Me.klblposterTMDB22.Values.ExtraText = ""
@@ -7826,7 +14550,7 @@ Me.klblposterTMDB22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterTMDB21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterTMDB21.Name = "klblposterTMDB21"
-Me.klblposterTMDB21.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB21.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB21.TabIndex = 58
 Me.klblposterTMDB21.Text = "KryptonLabel21"
 Me.klblposterTMDB21.Values.ExtraText = ""
@@ -7837,7 +14561,7 @@ Me.klblposterTMDB21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterTMDB20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterTMDB20.Name = "klblposterTMDB20"
-Me.klblposterTMDB20.Size = New System.Drawing.Size(102, 21)
+Me.klblposterTMDB20.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB20.TabIndex = 57
 Me.klblposterTMDB20.Text = "KryptonLabel20"
 Me.klblposterTMDB20.Values.ExtraText = ""
@@ -7848,7 +14572,7 @@ Me.klblposterTMDB20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterTMDB19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterTMDB19.Name = "klblposterTMDB19"
-Me.klblposterTMDB19.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB19.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB19.TabIndex = 56
 Me.klblposterTMDB19.Text = "KryptonLabel19"
 Me.klblposterTMDB19.Values.ExtraText = ""
@@ -7859,7 +14583,7 @@ Me.klblposterTMDB19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterTMDB18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterTMDB18.Name = "klblposterTMDB18"
-Me.klblposterTMDB18.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB18.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB18.TabIndex = 55
 Me.klblposterTMDB18.Text = "KryptonLabel18"
 Me.klblposterTMDB18.Values.ExtraText = ""
@@ -7870,7 +14594,7 @@ Me.klblposterTMDB18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterTMDB17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterTMDB17.Name = "klblposterTMDB17"
-Me.klblposterTMDB17.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB17.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB17.TabIndex = 54
 Me.klblposterTMDB17.Text = "KryptonLabel17"
 Me.klblposterTMDB17.Values.ExtraText = ""
@@ -7881,7 +14605,7 @@ Me.klblposterTMDB17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterTMDB16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterTMDB16.Name = "klblposterTMDB16"
-Me.klblposterTMDB16.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB16.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB16.TabIndex = 53
 Me.klblposterTMDB16.Text = "KryptonLabel16"
 Me.klblposterTMDB16.Values.ExtraText = ""
@@ -7892,7 +14616,7 @@ Me.klblposterTMDB16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterTMDB15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterTMDB15.Name = "klblposterTMDB15"
-Me.klblposterTMDB15.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB15.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB15.TabIndex = 52
 Me.klblposterTMDB15.Text = "KryptonLabel15"
 Me.klblposterTMDB15.Values.ExtraText = ""
@@ -7903,7 +14627,7 @@ Me.klblposterTMDB15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterTMDB14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterTMDB14.Name = "klblposterTMDB14"
-Me.klblposterTMDB14.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB14.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB14.TabIndex = 51
 Me.klblposterTMDB14.Text = "KryptonLabel14"
 Me.klblposterTMDB14.Values.ExtraText = ""
@@ -7914,7 +14638,7 @@ Me.klblposterTMDB14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterTMDB13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterTMDB13.Name = "klblposterTMDB13"
-Me.klblposterTMDB13.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB13.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB13.TabIndex = 50
 Me.klblposterTMDB13.Text = "KryptonLabel13"
 Me.klblposterTMDB13.Values.ExtraText = ""
@@ -7925,7 +14649,7 @@ Me.klblposterTMDB13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterTMDB12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterTMDB12.Name = "klblposterTMDB12"
-Me.klblposterTMDB12.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB12.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB12.TabIndex = 49
 Me.klblposterTMDB12.Text = "KryptonLabel12"
 Me.klblposterTMDB12.Values.ExtraText = ""
@@ -7936,7 +14660,7 @@ Me.klblposterTMDB12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterTMDB11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterTMDB11.Name = "klblposterTMDB11"
-Me.klblposterTMDB11.Size = New System.Drawing.Size(98, 21)
+Me.klblposterTMDB11.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB11.TabIndex = 48
 Me.klblposterTMDB11.Text = "KryptonLabel11"
 Me.klblposterTMDB11.Values.ExtraText = ""
@@ -7947,7 +14671,7 @@ Me.klblposterTMDB11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterTMDB10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterTMDB10.Name = "klblposterTMDB10"
-Me.klblposterTMDB10.Size = New System.Drawing.Size(100, 21)
+Me.klblposterTMDB10.Size = New System.Drawing.Size(90, 16)
 Me.klblposterTMDB10.TabIndex = 47
 Me.klblposterTMDB10.Text = "KryptonLabel10"
 Me.klblposterTMDB10.Values.ExtraText = ""
@@ -7958,7 +14682,7 @@ Me.klblposterTMDB10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterTMDB9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterTMDB9.Name = "klblposterTMDB9"
-Me.klblposterTMDB9.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB9.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB9.TabIndex = 46
 Me.klblposterTMDB9.Text = "KryptonLabel9"
 Me.klblposterTMDB9.Values.ExtraText = ""
@@ -7969,7 +14693,7 @@ Me.klblposterTMDB9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterTMDB8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterTMDB8.Name = "klblposterTMDB8"
-Me.klblposterTMDB8.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB8.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB8.TabIndex = 45
 Me.klblposterTMDB8.Text = "KryptonLabel8"
 Me.klblposterTMDB8.Values.ExtraText = ""
@@ -7980,7 +14704,7 @@ Me.klblposterTMDB8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterTMDB7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterTMDB7.Name = "klblposterTMDB7"
-Me.klblposterTMDB7.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB7.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB7.TabIndex = 44
 Me.klblposterTMDB7.Text = "KryptonLabel7"
 Me.klblposterTMDB7.Values.ExtraText = ""
@@ -7991,7 +14715,7 @@ Me.klblposterTMDB7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterTMDB6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterTMDB6.Name = "klblposterTMDB6"
-Me.klblposterTMDB6.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB6.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB6.TabIndex = 43
 Me.klblposterTMDB6.Text = "KryptonLabel6"
 Me.klblposterTMDB6.Values.ExtraText = ""
@@ -8002,7 +14726,7 @@ Me.klblposterTMDB6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterTMDB5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterTMDB5.Name = "klblposterTMDB5"
-Me.klblposterTMDB5.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB5.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB5.TabIndex = 42
 Me.klblposterTMDB5.Text = "KryptonLabel5"
 Me.klblposterTMDB5.Values.ExtraText = ""
@@ -8013,7 +14737,7 @@ Me.klblposterTMDB5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterTMDB4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterTMDB4.Name = "klblposterTMDB4"
-Me.klblposterTMDB4.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB4.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB4.TabIndex = 41
 Me.klblposterTMDB4.Text = "KryptonLabel4"
 Me.klblposterTMDB4.Values.ExtraText = ""
@@ -8024,7 +14748,7 @@ Me.klblposterTMDB4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterTMDB3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterTMDB3.Name = "klblposterTMDB3"
-Me.klblposterTMDB3.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB3.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB3.TabIndex = 40
 Me.klblposterTMDB3.Text = "KryptonLabel3"
 Me.klblposterTMDB3.Values.ExtraText = ""
@@ -8035,7 +14759,7 @@ Me.klblposterTMDB3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterTMDB2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterTMDB2.Name = "klblposterTMDB2"
-Me.klblposterTMDB2.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB2.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB2.TabIndex = 39
 Me.klblposterTMDB2.Text = "KryptonLabel2"
 Me.klblposterTMDB2.Values.ExtraText = ""
@@ -8046,12 +14770,264 @@ Me.klblposterTMDB2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterTMDB1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterTMDB1.Name = "klblposterTMDB1"
-Me.klblposterTMDB1.Size = New System.Drawing.Size(94, 21)
+Me.klblposterTMDB1.Size = New System.Drawing.Size(83, 16)
 Me.klblposterTMDB1.TabIndex = 38
 Me.klblposterTMDB1.Text = "KryptonLabel2"
 Me.klblposterTMDB1.Values.ExtraText = ""
 Me.klblposterTMDB1.Values.Image = Nothing
 Me.klblposterTMDB1.Values.Text = "KryptonLabel2"
+'
+'pbposterTMDB1
+'
+Me.pbposterTMDB1.Location = New System.Drawing.Point(7, 6)
+Me.pbposterTMDB1.Name = "pbposterTMDB1"
+Me.pbposterTMDB1.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB1.TabIndex = 32
+Me.pbposterTMDB1.TabStop = false
+'
+'pbposterTMDB2
+'
+Me.pbposterTMDB2.Location = New System.Drawing.Point(263, 6)
+Me.pbposterTMDB2.Name = "pbposterTMDB2"
+Me.pbposterTMDB2.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB2.TabIndex = 33
+Me.pbposterTMDB2.TabStop = false
+'
+'pbposterTMDB3
+'
+Me.pbposterTMDB3.Location = New System.Drawing.Point(520, 6)
+Me.pbposterTMDB3.Name = "pbposterTMDB3"
+Me.pbposterTMDB3.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB3.TabIndex = 34
+Me.pbposterTMDB3.TabStop = false
+'
+'pbposterTMDB4
+'
+Me.pbposterTMDB4.Location = New System.Drawing.Point(7, 412)
+Me.pbposterTMDB4.Name = "pbposterTMDB4"
+Me.pbposterTMDB4.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB4.TabIndex = 35
+Me.pbposterTMDB4.TabStop = false
+'
+'pbposterTMDB5
+'
+Me.pbposterTMDB5.Location = New System.Drawing.Point(263, 412)
+Me.pbposterTMDB5.Name = "pbposterTMDB5"
+Me.pbposterTMDB5.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB5.TabIndex = 36
+Me.pbposterTMDB5.TabStop = false
+'
+'pbposterTMDB6
+'
+Me.pbposterTMDB6.Location = New System.Drawing.Point(520, 412)
+Me.pbposterTMDB6.Name = "pbposterTMDB6"
+Me.pbposterTMDB6.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB6.TabIndex = 37
+Me.pbposterTMDB6.TabStop = false
+'
+'pbposterTMDB7
+'
+Me.pbposterTMDB7.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB7.Location = New System.Drawing.Point(6, 817)
+Me.pbposterTMDB7.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB7.Name = "pbposterTMDB7"
+Me.pbposterTMDB7.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB7.TabIndex = 17
+Me.pbposterTMDB7.TabStop = false
+'
+'pbposterTMDB8
+'
+Me.pbposterTMDB8.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB8.Location = New System.Drawing.Point(263, 817)
+Me.pbposterTMDB8.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB8.Name = "pbposterTMDB8"
+Me.pbposterTMDB8.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB8.TabIndex = 18
+Me.pbposterTMDB8.TabStop = false
+'
+'pbposterTMDB9
+'
+Me.pbposterTMDB9.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB9.Location = New System.Drawing.Point(520, 817)
+Me.pbposterTMDB9.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB9.Name = "pbposterTMDB9"
+Me.pbposterTMDB9.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB9.TabIndex = 22
+Me.pbposterTMDB9.TabStop = false
+'
+'pbposterTMDB10
+'
+Me.pbposterTMDB10.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB10.Location = New System.Drawing.Point(6, 1224)
+Me.pbposterTMDB10.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB10.Name = "pbposterTMDB10"
+Me.pbposterTMDB10.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB10.TabIndex = 23
+Me.pbposterTMDB10.TabStop = false
+'
+'pbposterTMDB11
+'
+Me.pbposterTMDB11.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB11.Location = New System.Drawing.Point(263, 1224)
+Me.pbposterTMDB11.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB11.Name = "pbposterTMDB11"
+Me.pbposterTMDB11.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB11.TabIndex = 24
+Me.pbposterTMDB11.TabStop = false
+'
+'pbposterTMDB12
+'
+Me.pbposterTMDB12.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB12.Location = New System.Drawing.Point(520, 1224)
+Me.pbposterTMDB12.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB12.Name = "pbposterTMDB12"
+Me.pbposterTMDB12.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB12.TabIndex = 25
+Me.pbposterTMDB12.TabStop = false
+'
+'pbposterTMDB13
+'
+Me.pbposterTMDB13.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB13.Location = New System.Drawing.Point(6, 1631)
+Me.pbposterTMDB13.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB13.Name = "pbposterTMDB13"
+Me.pbposterTMDB13.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB13.TabIndex = 26
+Me.pbposterTMDB13.TabStop = false
+'
+'pbposterTMDB14
+'
+Me.pbposterTMDB14.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB14.Location = New System.Drawing.Point(263, 1631)
+Me.pbposterTMDB14.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB14.Name = "pbposterTMDB14"
+Me.pbposterTMDB14.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB14.TabIndex = 27
+Me.pbposterTMDB14.TabStop = false
+'
+'pbposterTMDB15
+'
+Me.pbposterTMDB15.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB15.Location = New System.Drawing.Point(520, 1631)
+Me.pbposterTMDB15.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB15.Name = "pbposterTMDB15"
+Me.pbposterTMDB15.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB15.TabIndex = 28
+Me.pbposterTMDB15.TabStop = false
+'
+'pbposterTMDB16
+'
+Me.pbposterTMDB16.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB16.Location = New System.Drawing.Point(6, 2036)
+Me.pbposterTMDB16.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB16.Name = "pbposterTMDB16"
+Me.pbposterTMDB16.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB16.TabIndex = 29
+Me.pbposterTMDB16.TabStop = false
+'
+'pbposterTMDB17
+'
+Me.pbposterTMDB17.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB17.Location = New System.Drawing.Point(263, 2036)
+Me.pbposterTMDB17.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB17.Name = "pbposterTMDB17"
+Me.pbposterTMDB17.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB17.TabIndex = 30
+Me.pbposterTMDB17.TabStop = false
+'
+'pbposterTMDB18
+'
+Me.pbposterTMDB18.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB18.Location = New System.Drawing.Point(520, 2036)
+Me.pbposterTMDB18.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB18.Name = "pbposterTMDB18"
+Me.pbposterTMDB18.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB18.TabIndex = 31
+Me.pbposterTMDB18.TabStop = false
+'
+'pbposterTMDB19
+'
+Me.pbposterTMDB19.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB19.Location = New System.Drawing.Point(6, 2442)
+Me.pbposterTMDB19.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB19.Name = "pbposterTMDB19"
+Me.pbposterTMDB19.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB19.TabIndex = 32
+Me.pbposterTMDB19.TabStop = false
+'
+'pbposterTMDB20
+'
+Me.pbposterTMDB20.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB20.Location = New System.Drawing.Point(263, 2442)
+Me.pbposterTMDB20.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB20.Name = "pbposterTMDB20"
+Me.pbposterTMDB20.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB20.TabIndex = 33
+Me.pbposterTMDB20.TabStop = false
+'
+'pbposterTMDB21
+'
+Me.pbposterTMDB21.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB21.Location = New System.Drawing.Point(520, 2442)
+Me.pbposterTMDB21.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB21.Name = "pbposterTMDB21"
+Me.pbposterTMDB21.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB21.TabIndex = 34
+Me.pbposterTMDB21.TabStop = false
+'
+'pbposterTMDB22
+'
+Me.pbposterTMDB22.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB22.Location = New System.Drawing.Point(6, 2846)
+Me.pbposterTMDB22.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB22.Name = "pbposterTMDB22"
+Me.pbposterTMDB22.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB22.TabIndex = 35
+Me.pbposterTMDB22.TabStop = false
+'
+'pbposterTMDB23
+'
+Me.pbposterTMDB23.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB23.Location = New System.Drawing.Point(263, 2846)
+Me.pbposterTMDB23.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB23.Name = "pbposterTMDB23"
+Me.pbposterTMDB23.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB23.TabIndex = 36
+Me.pbposterTMDB23.TabStop = false
+'
+'pbposterTMDB24
+'
+Me.pbposterTMDB24.Cursor = System.Windows.Forms.Cursors.Default
+Me.pbposterTMDB24.Location = New System.Drawing.Point(520, 2846)
+Me.pbposterTMDB24.Margin = New System.Windows.Forms.Padding(2)
+Me.pbposterTMDB24.Name = "pbposterTMDB24"
+Me.pbposterTMDB24.Size = New System.Drawing.Size(250, 400)
+Me.pbposterTMDB24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+Me.pbposterTMDB24.TabIndex = 37
+Me.pbposterTMDB24.TabStop = false
 '
 'TabPageEX1
 '
@@ -8812,7 +15788,7 @@ Me.lblFDMovieFile12.ForeColor = System.Drawing.Color.Black
 Me.lblFDMovieFile12.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDMovieFile12.Location = New System.Drawing.Point(406, 24)
 Me.lblFDMovieFile12.Name = "lblFDMovieFile12"
-Me.lblFDMovieFile12.Size = New System.Drawing.Size(50, 24)
+Me.lblFDMovieFile12.Size = New System.Drawing.Size(44, 21)
 Me.lblFDMovieFile12.TabIndex = 102
 Me.lblFDMovieFile12.Text = "Movie"
 Me.lblFDMovieFile12.Values.ExtraText = ""
@@ -8826,7 +15802,7 @@ Me.lblFDFanartFile2.ForeColor = System.Drawing.Color.Black
 Me.lblFDFanartFile2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDFanartFile2.Location = New System.Drawing.Point(-3, 55)
 Me.lblFDFanartFile2.Name = "lblFDFanartFile2"
-Me.lblFDFanartFile2.Size = New System.Drawing.Size(56, 24)
+Me.lblFDFanartFile2.Size = New System.Drawing.Size(49, 21)
 Me.lblFDFanartFile2.TabIndex = 101
 Me.lblFDFanartFile2.Text = "Fanart"
 Me.lblFDFanartFile2.Values.ExtraText = ""
@@ -8840,7 +15816,7 @@ Me.lblFDTrailer2.ForeColor = System.Drawing.Color.Black
 Me.lblFDTrailer2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.lblFDTrailer2.Location = New System.Drawing.Point(406, 40)
 Me.lblFDTrailer2.Name = "lblFDTrailer2"
-Me.lblFDTrailer2.Size = New System.Drawing.Size(58, 24)
+Me.lblFDTrailer2.Size = New System.Drawing.Size(51, 21)
 Me.lblFDTrailer2.TabIndex = 103
 Me.lblFDTrailer2.Text = "Trailer"
 Me.lblFDTrailer2.Values.ExtraText = ""
@@ -9272,6 +16248,411 @@ Me.bwFolderData.WorkerReportsProgress = true
 Me.kManager.GlobalPalette = Me.kpaletteBlue
 Me.kManager.GlobalPaletteMode = ComponentFactory.Krypton.Toolkit.PaletteModeManager.Custom
 '
+'kpaletteBlue
+'
+Me.kpaletteBlue.AllowFormChrome = ComponentFactory.Krypton.Toolkit.InheritBool.[True]
+Me.kpaletteBlue.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
+Me.kpaletteBlue.BaseRenderMode = ComponentFactory.Krypton.Toolkit.RendererMode.Sparkle
+Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.Rounding = 2
+Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1
+Me.kpaletteBlue.ButtonStyles.ButtonStandalone.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
+Me.kpaletteBlue.ButtonStyles.ButtonStandalone.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
+Me.kpaletteBlue.Common.StateCommon.Border.Color1 = System.Drawing.Color.Blue
+Me.kpaletteBlue.Common.StateCommon.Border.Color2 = System.Drawing.Color.Black
+Me.kpaletteBlue.Common.StateCommon.Border.ColorAngle = 60!
+Me.kpaletteBlue.Common.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear50
+Me.kpaletteBlue.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kpaletteBlue.Common.StateCommon.Border.Rounding = 7
+Me.kpaletteBlue.Common.StateCommon.Border.Width = 2
+Me.kpaletteBlue.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.Color1 = System.Drawing.Color.Blue
+Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.Color2 = System.Drawing.Color.Black
+Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.ColorAngle = 60!
+Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kpaletteBlue.DragDrop.DropDockActive = System.Drawing.Color.Empty
+Me.kpaletteBlue.DragDrop.DropDockBack = System.Drawing.Color.Empty
+Me.kpaletteBlue.DragDrop.DropDockBorder = System.Drawing.Color.Empty
+Me.kpaletteBlue.DragDrop.DropDockInactive = System.Drawing.Color.Empty
+Me.kpaletteBlue.DragDrop.SolidBack = System.Drawing.Color.Empty
+Me.kpaletteBlue.DragDrop.SolidBorder = System.Drawing.Color.Empty
+Me.kpaletteBlue.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kpaletteBlue.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kpaletteBlue.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kpaletteBlue.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.ColorAngle = 220!
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Content.LongText.Font = New System.Drawing.Font("Verdana", 8.25!)
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateDisabled.Content.LongText.Font = New System.Drawing.Font("Verdana", 8.25!)
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Verdana", 8.25!)
+Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Verdana", 8.25!)
+Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateDisabled.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
+Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateNormal.Content.Padding = New System.Windows.Forms.Padding(0)
+Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
+Me.kpaletteBlue.HeaderStyles.HeaderPrimary.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
+Me.kpaletteBlue.HeaderStyles.HeaderPrimary.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.Rounding = 2
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.Width = 0
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.Rounding = 2
+Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.Width = 0
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Color1 = System.Drawing.Color.Black
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Color2 = System.Drawing.Color.Blue
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.Blue
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.ColorAngle = 60!
+Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
+Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.Blue
+Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.ColorAngle = 60!
+Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.Blue
+Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.ColorAngle = 60!
+Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear33
+Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.Blue
+Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.Color2 = System.Drawing.Color.Black
+Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.ColorAngle = 60!
+Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
+Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
+'
 'kPaletteBlueSkulls
 '
 Me.kPaletteBlueSkulls.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparklePurple
@@ -9331,7 +16712,7 @@ Me.kPaletteBlueSkulls.ButtonStyles.ButtonCommon.StateTracking.Border.Color2 = Sy
 Me.kPaletteBlueSkulls.ButtonStyles.ButtonCommon.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPaletteBlueSkulls.Common.StateCommon.Back.Image = CType(resources.GetObject("kPaletteFire.Common.StateCommon.Back.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.Common.StateCommon.Back.Image = CType(resources.GetObject("kPaletteBlueSkulls.Common.StateCommon.Back.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.Common.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
 Me.kPaletteBlueSkulls.Common.StateCommon.Border.Color1 = System.Drawing.Color.DarkBlue
 Me.kPaletteBlueSkulls.Common.StateCommon.Border.Color2 = System.Drawing.Color.DarkCyan
@@ -9368,7 +16749,7 @@ Me.kPaletteBlueSkulls.ControlStyles.ControlClient.StateCommon.Border.Color2 = Sy
 Me.kPaletteBlueSkulls.ControlStyles.ControlClient.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kPaletteBlueSkulls.ControlStyles.ControlCustom1.StateCommon.Back.Image = CType(resources.GetObject("kPaletteFire.ControlStyles.ControlCustom1.StateCommon.Back.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.ControlStyles.ControlCustom1.StateCommon.Back.Image = CType(resources.GetObject("kPaletteBlueSkulls.ControlStyles.ControlCustom1.StateCommon.Back.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.ControlStyles.ControlCustom1.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Tile
 Me.kPaletteBlueSkulls.DragDrop.DropDockActive = System.Drawing.Color.Empty
 Me.kPaletteBlueSkulls.DragDrop.DropDockBack = System.Drawing.Color.Empty
@@ -9384,7 +16765,7 @@ Me.kPaletteBlueSkulls.FormStyles.FormCommon.StateActive.Border.DrawBorders = CTy
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.kPaletteBlueSkulls.FormStyles.FormCustom1.StateActive.Back.Color1 = System.Drawing.SystemColors.GradientActiveCaption
 Me.kPaletteBlueSkulls.FormStyles.FormCustom1.StateActive.Back.Color2 = System.Drawing.SystemColors.GradientInactiveCaption
-Me.kPaletteBlueSkulls.FormStyles.FormCustom1.StateActive.Back.Image = CType(resources.GetObject("kPaletteFire.FormStyles.FormCustom1.StateActive.Back.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.FormStyles.FormCustom1.StateActive.Back.Image = CType(resources.GetObject("kPaletteBlueSkulls.FormStyles.FormCustom1.StateActive.Back.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
 Me.kPaletteBlueSkulls.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
 Me.kPaletteBlueSkulls.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
@@ -9415,13 +16796,13 @@ Me.kPaletteBlueSkulls.InputControlStyles.InputControlCommon.StateCommon.Border.D
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
 Me.kPaletteBlueSkulls.PanelStyles.PanelAlternate.StateNormal.Color1 = System.Drawing.Color.LightSkyBlue
-Me.kPaletteBlueSkulls.PanelStyles.PanelAlternate.StateNormal.Image = CType(resources.GetObject("kPaletteFire.PanelStyles.PanelAlternate.StateNormal.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.PanelStyles.PanelAlternate.StateNormal.Image = CType(resources.GetObject("kPaletteBlueSkulls.PanelStyles.PanelAlternate.StateNormal.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.PanelStyles.PanelAlternate.StateNormal.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
 Me.kPaletteBlueSkulls.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPaletteBlueSkulls.PanelStyles.PanelClient.StateCommon.Image = CType(resources.GetObject("kPaletteFire.PanelStyles.PanelClient.StateCommon.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.PanelStyles.PanelClient.StateCommon.Image = CType(resources.GetObject("kPaletteBlueSkulls.PanelStyles.PanelClient.StateCommon.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.PanelStyles.PanelClient.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
 Me.kPaletteBlueSkulls.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
-Me.kPaletteBlueSkulls.PanelStyles.PanelCommon.StateCommon.Image = CType(resources.GetObject("kPaletteFire.PanelStyles.PanelCommon.StateCommon.Image"),System.Drawing.Image)
+Me.kPaletteBlueSkulls.PanelStyles.PanelCommon.StateCommon.Image = CType(resources.GetObject("kPaletteBlueSkulls.PanelStyles.PanelCommon.StateCommon.Image"),System.Drawing.Image)
 Me.kPaletteBlueSkulls.PanelStyles.PanelCommon.StateCommon.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
 Me.kPaletteBlueSkulls.PanelStyles.PanelCommon.StateNormal.Color1 = System.Drawing.Color.FromArgb(CType(CType(223,Byte),Integer), CType(CType(233,Byte),Integer), CType(CType(245,Byte),Integer))
 Me.kPaletteBlueSkulls.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.SteelBlue
@@ -11295,7 +18676,7 @@ Me.lbEpisodesMissing.ForeColor = System.Drawing.Color.Red
 Me.lbEpisodesMissing.FormattingEnabled = true
 Me.lbEpisodesMissing.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodesMissing.Name = "lbEpisodesMissing"
-Me.lbEpisodesMissing.Size = New System.Drawing.Size(173, 17)
+Me.lbEpisodesMissing.Size = New System.Drawing.Size(175, 17)
 Me.lbEpisodesMissing.TabIndex = 98
 '
 'bwFolderDataTDM
@@ -11327,18 +18708,84 @@ Me.kgQCIcons.Panel.Controls.Add(Me.pbFDFanart)
 Me.kgQCIcons.Size = New System.Drawing.Size(189, 90)
 Me.kgQCIcons.TabIndex = 105
 '
+'pbFDFolderJpg
+'
+Me.pbFDFolderJpg.BackColor = System.Drawing.Color.Transparent
+Me.pbFDFolderJpg.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDFolderJpg.Location = New System.Drawing.Point(-4, 18)
+Me.pbFDFolderJpg.Name = "pbFDFolderJpg"
+Me.pbFDFolderJpg.Size = New System.Drawing.Size(21, 19)
+Me.pbFDFolderJpg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDFolderJpg.TabIndex = 97
+Me.pbFDFolderJpg.TabStop = false
+'
+'pbFDNFO
+'
+Me.pbFDNFO.BackColor = System.Drawing.Color.Transparent
+Me.pbFDNFO.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDNFO.Location = New System.Drawing.Point(99, 18)
+Me.pbFDNFO.Name = "pbFDNFO"
+Me.pbFDNFO.Size = New System.Drawing.Size(21, 19)
+Me.pbFDNFO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDNFO.TabIndex = 98
+Me.pbFDNFO.TabStop = false
+'
+'pbFDMovieFile1
+'
+Me.pbFDMovieFile1.BackColor = System.Drawing.Color.Transparent
+Me.pbFDMovieFile1.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDMovieFile1.Location = New System.Drawing.Point(98, 38)
+Me.pbFDMovieFile1.Name = "pbFDMovieFile1"
+Me.pbFDMovieFile1.Size = New System.Drawing.Size(21, 19)
+Me.pbFDMovieFile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDMovieFile1.TabIndex = 98
+Me.pbFDMovieFile1.TabStop = false
+'
+'pbFDTrailer
+'
+Me.pbFDTrailer.BackColor = System.Drawing.Color.Transparent
+Me.pbFDTrailer.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDTrailer.Location = New System.Drawing.Point(98, 58)
+Me.pbFDTrailer.Name = "pbFDTrailer"
+Me.pbFDTrailer.Size = New System.Drawing.Size(21, 19)
+Me.pbFDTrailer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDTrailer.TabIndex = 100
+Me.pbFDTrailer.TabStop = false
+'
 'klblMovieFolderContent
 '
 Me.klblMovieFolderContent.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblMovieFolderContent.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblMovieFolderContent.Location = New System.Drawing.Point(0, 0)
 Me.klblMovieFolderContent.Name = "klblMovieFolderContent"
-Me.klblMovieFolderContent.Size = New System.Drawing.Size(177, 21)
+Me.klblMovieFolderContent.Size = New System.Drawing.Size(179, 21)
 Me.klblMovieFolderContent.TabIndex = 48
 Me.klblMovieFolderContent.Text = "Movie Folder Content"
 Me.klblMovieFolderContent.Values.ExtraText = ""
 Me.klblMovieFolderContent.Values.Image = Nothing
 Me.klblMovieFolderContent.Values.Text = "Movie Folder Content"
+'
+'pbFDTBN
+'
+Me.pbFDTBN.BackColor = System.Drawing.Color.Transparent
+Me.pbFDTBN.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDTBN.Location = New System.Drawing.Point(-4, 38)
+Me.pbFDTBN.Name = "pbFDTBN"
+Me.pbFDTBN.Size = New System.Drawing.Size(21, 19)
+Me.pbFDTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDTBN.TabIndex = 98
+Me.pbFDTBN.TabStop = false
+'
+'pbFDFanart
+'
+Me.pbFDFanart.BackColor = System.Drawing.Color.Transparent
+Me.pbFDFanart.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
+Me.pbFDFanart.Location = New System.Drawing.Point(-4, 58)
+Me.pbFDFanart.Name = "pbFDFanart"
+Me.pbFDFanart.Size = New System.Drawing.Size(21, 19)
+Me.pbFDFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+Me.pbFDFanart.TabIndex = 98
+Me.pbFDFanart.TabStop = false
 '
 'lblPbar
 '
@@ -11595,6 +19042,17 @@ Me.ToolStrip1.Size = New System.Drawing.Size(142, 32)
 Me.ToolStrip1.TabIndex = 0
 Me.ToolStrip1.Text = "ToolStrip1"
 '
+'tsbMainDonate
+'
+Me.tsbMainDonate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+Me.tsbMainDonate.Image = Global.movieinfoplus.My.Resources.Resources.paypal
+Me.tsbMainDonate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+Me.tsbMainDonate.ImageTransparentColor = System.Drawing.Color.Magenta
+Me.tsbMainDonate.Name = "tsbMainDonate"
+Me.tsbMainDonate.Size = New System.Drawing.Size(128, 29)
+Me.tsbMainDonate.Text = "Donate"
+Me.tsbMainDonate.ToolTipText = "Show your support for active development of Media Info Plus"
+'
 'kscTopRightNavRightSideTop
 '
 Me.kscTopRightNavRightSideTop.ContainerBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient
@@ -11704,411 +19162,6 @@ Me.curtvshowlocationlbl.Text = "-- TV Show Location --"
 Me.curtvshowlocationlbl.Values.ExtraText = ""
 Me.curtvshowlocationlbl.Values.Image = Nothing
 Me.curtvshowlocationlbl.Values.Text = "-- TV Show Location --"
-'
-'kpaletteBlue
-'
-Me.kpaletteBlue.AllowFormChrome = ComponentFactory.Krypton.Toolkit.InheritBool.[True]
-Me.kpaletteBlue.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
-Me.kpaletteBlue.BaseRenderMode = ComponentFactory.Krypton.Toolkit.RendererMode.Sparkle
-Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.Rounding = 2
-Me.kpaletteBlue.ButtonStyles.ButtonCommon.StateCommon.Border.Width = 1
-Me.kpaletteBlue.ButtonStyles.ButtonStandalone.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
-Me.kpaletteBlue.ButtonStyles.ButtonStandalone.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
-Me.kpaletteBlue.Common.StateCommon.Border.Color1 = System.Drawing.Color.Blue
-Me.kpaletteBlue.Common.StateCommon.Border.Color2 = System.Drawing.Color.Black
-Me.kpaletteBlue.Common.StateCommon.Border.ColorAngle = 60!
-Me.kpaletteBlue.Common.StateCommon.Border.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear50
-Me.kpaletteBlue.Common.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteBlue.Common.StateCommon.Border.Rounding = 7
-Me.kpaletteBlue.Common.StateCommon.Border.Width = 2
-Me.kpaletteBlue.Common.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.Color1 = System.Drawing.Color.Blue
-Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.Color2 = System.Drawing.Color.Black
-Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.ColorAngle = 60!
-Me.kpaletteBlue.ControlStyles.ControlCommon.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
-Me.kpaletteBlue.DragDrop.DropDockActive = System.Drawing.Color.Empty
-Me.kpaletteBlue.DragDrop.DropDockBack = System.Drawing.Color.Empty
-Me.kpaletteBlue.DragDrop.DropDockBorder = System.Drawing.Color.Empty
-Me.kpaletteBlue.DragDrop.DropDockInactive = System.Drawing.Color.Empty
-Me.kpaletteBlue.DragDrop.SolidBack = System.Drawing.Color.Empty
-Me.kpaletteBlue.DragDrop.SolidBorder = System.Drawing.Color.Empty
-Me.kpaletteBlue.GridStyles.GridCommon.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteBlue.GridStyles.GridCustom1.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteBlue.GridStyles.GridList.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteBlue.GridStyles.GridSheet.StateCommon.BackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.ColorAngle = 220!
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Back.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.GlassBottom
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateCommon.Content.LongText.Font = New System.Drawing.Font("Verdana", 8.25!)
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateDisabled.Content.LongText.Font = New System.Drawing.Font("Verdana", 8.25!)
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Verdana", 8.25!)
-Me.kpaletteBlue.HeaderStyles.HeaderCommon.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Verdana", 8.25!)
-Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateDisabled.Content.Padding = New System.Windows.Forms.Padding(0)
-Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateDisabled.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
-Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateNormal.Content.Padding = New System.Windows.Forms.Padding(0)
-Me.kpaletteBlue.HeaderStyles.HeaderCustom1.StateNormal.Content.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 9.75!)
-Me.kpaletteBlue.HeaderStyles.HeaderPrimary.StateCommon.Back.Color1 = System.Drawing.Color.DarkBlue
-Me.kpaletteBlue.HeaderStyles.HeaderPrimary.StateCommon.Back.Color2 = System.Drawing.Color.Gainsboro
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.Rounding = 2
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateActive.Border.Width = 0
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.Rounding = 2
-Me.kpaletteBlue.InputControlStyles.InputControlCommon.StateCommon.Border.Width = 0
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Color1 = System.Drawing.Color.Black
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Color2 = System.Drawing.Color.Blue
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.LongText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Color2 = System.Drawing.Color.Blue
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.ColorAngle = 60!
-Me.kpaletteBlue.LabelStyles.LabelCustom1.StateCommon.ShortText.Font = New System.Drawing.Font("Comic Sans MS", 12!)
-Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.Color1 = System.Drawing.Color.Blue
-Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.Color2 = System.Drawing.Color.Black
-Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.ColorAngle = 60!
-Me.kpaletteBlue.PanelStyles.PanelAlternate.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
-Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.Color1 = System.Drawing.Color.Blue
-Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.Color2 = System.Drawing.Color.Black
-Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.ColorAngle = 60!
-Me.kpaletteBlue.PanelStyles.PanelCommon.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear33
-Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.Color1 = System.Drawing.Color.Blue
-Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.Color2 = System.Drawing.Color.Black
-Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.ColorAngle = 60!
-Me.kpaletteBlue.PanelStyles.PanelCustom1.StateCommon.ColorStyle = ComponentFactory.Krypton.Toolkit.PaletteColorStyle.Linear
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StatePressed.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppButton.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocs.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocsEntry.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuDocsTitle.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuInner.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonAppMenuOuter.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBack.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGalleryBorder.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.DisabledDark = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.DisabledLight = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupDialogDark = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupDialogLight = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupSeparatorDark = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.GroupSeparatorLight = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.MinimizeBarDarkColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.MinimizeBarLightColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.QATButtonDarkColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.QATButtonLightColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.TabSeparatorColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGeneral.TabSeparatorContextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupArea.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCheckBoxText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBack.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedFrameBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateContextNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupCollapsedText.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupLabelText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalBorder.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupNormalTitle.StateTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateDisabled.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonGroupRadioButtonText.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATFullbar.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateActive.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATMinibar.StateInactive.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonQATOverflow.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.OverrideFocus.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCheckedTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateCommon.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextCheckedTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateContextTracking.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateNormal.TextColor = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor1 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor2 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor3 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor4 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.BackColor5 = System.Drawing.Color.Empty
-Me.kpaletteBlue.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.Color.Empty
 '
 'bwDisplayMovieData
 '
@@ -13850,7059 +20903,6 @@ Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.
 Me.bwAutopilot.WorkerReportsProgress = true
 Me.bwAutopilot.WorkerSupportsCancellation = true
 '
-'pbFDFolderJpg
-'
-Me.pbFDFolderJpg.BackColor = System.Drawing.Color.Transparent
-Me.pbFDFolderJpg.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDFolderJpg.Location = New System.Drawing.Point(-4, 18)
-Me.pbFDFolderJpg.Name = "pbFDFolderJpg"
-Me.pbFDFolderJpg.Size = New System.Drawing.Size(21, 19)
-Me.pbFDFolderJpg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDFolderJpg.TabIndex = 97
-Me.pbFDFolderJpg.TabStop = false
-'
-'pbFDNFO
-'
-Me.pbFDNFO.BackColor = System.Drawing.Color.Transparent
-Me.pbFDNFO.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDNFO.Location = New System.Drawing.Point(99, 18)
-Me.pbFDNFO.Name = "pbFDNFO"
-Me.pbFDNFO.Size = New System.Drawing.Size(21, 19)
-Me.pbFDNFO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDNFO.TabIndex = 98
-Me.pbFDNFO.TabStop = false
-'
-'pbFDMovieFile1
-'
-Me.pbFDMovieFile1.BackColor = System.Drawing.Color.Transparent
-Me.pbFDMovieFile1.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDMovieFile1.Location = New System.Drawing.Point(98, 38)
-Me.pbFDMovieFile1.Name = "pbFDMovieFile1"
-Me.pbFDMovieFile1.Size = New System.Drawing.Size(21, 19)
-Me.pbFDMovieFile1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDMovieFile1.TabIndex = 98
-Me.pbFDMovieFile1.TabStop = false
-'
-'pbFDTrailer
-'
-Me.pbFDTrailer.BackColor = System.Drawing.Color.Transparent
-Me.pbFDTrailer.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDTrailer.Location = New System.Drawing.Point(98, 58)
-Me.pbFDTrailer.Name = "pbFDTrailer"
-Me.pbFDTrailer.Size = New System.Drawing.Size(21, 19)
-Me.pbFDTrailer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDTrailer.TabIndex = 100
-Me.pbFDTrailer.TabStop = false
-'
-'pbFDTBN
-'
-Me.pbFDTBN.BackColor = System.Drawing.Color.Transparent
-Me.pbFDTBN.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDTBN.Location = New System.Drawing.Point(-4, 38)
-Me.pbFDTBN.Name = "pbFDTBN"
-Me.pbFDTBN.Size = New System.Drawing.Size(21, 19)
-Me.pbFDTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDTBN.TabIndex = 98
-Me.pbFDTBN.TabStop = false
-'
-'pbFDFanart
-'
-Me.pbFDFanart.BackColor = System.Drawing.Color.Transparent
-Me.pbFDFanart.Image = Global.movieinfoplus.My.Resources.Resources.questionmark
-Me.pbFDFanart.Location = New System.Drawing.Point(-4, 58)
-Me.pbFDFanart.Name = "pbFDFanart"
-Me.pbFDFanart.Size = New System.Drawing.Size(21, 19)
-Me.pbFDFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFDFanart.TabIndex = 98
-Me.pbFDFanart.TabStop = false
-'
-'tsbMainDonate
-'
-Me.tsbMainDonate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tsbMainDonate.Image = Global.movieinfoplus.My.Resources.Resources.paypal
-Me.tsbMainDonate.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-Me.tsbMainDonate.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMainDonate.Name = "tsbMainDonate"
-Me.tsbMainDonate.Size = New System.Drawing.Size(128, 29)
-Me.tsbMainDonate.Text = "Donate"
-Me.tsbMainDonate.ToolTipText = "Show your support for active development of Media Info Plus"
-'
-'pbCurIconUsed2
-'
-Me.pbCurIconUsed2.BackColor = System.Drawing.Color.Gray
-Me.pbCurIconUsed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.pbCurIconUsed2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-Me.pbCurIconUsed2.InitialImage = Nothing
-Me.pbCurIconUsed2.Location = New System.Drawing.Point(1, 1)
-Me.pbCurIconUsed2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbCurIconUsed2.MinimumSize = New System.Drawing.Size(82, 82)
-Me.pbCurIconUsed2.Name = "pbCurIconUsed2"
-Me.pbCurIconUsed2.Size = New System.Drawing.Size(166, 262)
-Me.pbCurIconUsed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbCurIconUsed2.TabIndex = 81
-Me.pbCurIconUsed2.TabStop = false
-Me.pbCurIconUsed2.Visible = false
-'
-'pbCurrentIconUsedNT
-'
-Me.pbCurrentIconUsedNT.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pbCurrentIconUsedNT.BackColor = System.Drawing.Color.Gray
-Me.pbCurrentIconUsedNT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.pbCurrentIconUsedNT.Enabled = false
-Me.pbCurrentIconUsedNT.Image = Global.movieinfoplus.My.Resources.Resources.ph
-Me.pbCurrentIconUsedNT.InitialImage = Nothing
-Me.pbCurrentIconUsedNT.Location = New System.Drawing.Point(0, 3)
-Me.pbCurrentIconUsedNT.Margin = New System.Windows.Forms.Padding(2)
-Me.pbCurrentIconUsedNT.MinimumSize = New System.Drawing.Size(82, 82)
-Me.pbCurrentIconUsedNT.Name = "pbCurrentIconUsedNT"
-Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 82)
-Me.pbCurrentIconUsedNT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-Me.pbCurrentIconUsedNT.TabIndex = 89
-Me.pbCurrentIconUsedNT.TabStop = false
-Me.pbCurrentIconUsedNT.Visible = false
-Me.pbCurrentIconUsedNT.WaitOnLoad = true
-'
-'pbCurTBNUsed2
-'
-Me.pbCurTBNUsed2.BackColor = System.Drawing.Color.Gray
-Me.pbCurTBNUsed2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.pbCurTBNUsed2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-Me.pbCurTBNUsed2.InitialImage = Nothing
-Me.pbCurTBNUsed2.Location = New System.Drawing.Point(1, 1)
-Me.pbCurTBNUsed2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbCurTBNUsed2.MinimumSize = New System.Drawing.Size(82, 82)
-Me.pbCurTBNUsed2.Name = "pbCurTBNUsed2"
-Me.pbCurTBNUsed2.Size = New System.Drawing.Size(128, 128)
-Me.pbCurTBNUsed2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbCurTBNUsed2.TabIndex = 106
-Me.pbCurTBNUsed2.TabStop = false
-Me.pbCurTBNUsed2.Visible = false
-'
-'pbCurTBNUsed
-'
-Me.pbCurTBNUsed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pbCurTBNUsed.BackColor = System.Drawing.Color.Gray
-Me.pbCurTBNUsed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.pbCurTBNUsed.Enabled = false
-Me.pbCurTBNUsed.Image = Global.movieinfoplus.My.Resources.Resources.ph
-Me.pbCurTBNUsed.InitialImage = Nothing
-Me.pbCurTBNUsed.Location = New System.Drawing.Point(1, 303)
-Me.pbCurTBNUsed.Margin = New System.Windows.Forms.Padding(2)
-Me.pbCurTBNUsed.MaximumSize = New System.Drawing.Size(512, 512)
-Me.pbCurTBNUsed.MinimumSize = New System.Drawing.Size(82, 82)
-Me.pbCurTBNUsed.Name = "pbCurTBNUsed"
-Me.pbCurTBNUsed.Size = New System.Drawing.Size(82, 82)
-Me.pbCurTBNUsed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-Me.pbCurTBNUsed.TabIndex = 107
-Me.pbCurTBNUsed.TabStop = false
-Me.pbCurTBNUsed.Visible = false
-Me.pbCurTBNUsed.WaitOnLoad = true
-'
-'pbFrameTBN
-'
-Me.pbFrameTBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-Me.pbFrameTBN.Image = CType(resources.GetObject("pbFrameTBN.Image"),System.Drawing.Image)
-Me.pbFrameTBN.Location = New System.Drawing.Point(-1, 287)
-Me.pbFrameTBN.Name = "pbFrameTBN"
-Me.pbFrameTBN.Size = New System.Drawing.Size(10, 10)
-Me.pbFrameTBN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFrameTBN.TabIndex = 105
-Me.pbFrameTBN.TabStop = false
-Me.pbFrameTBN.Visible = false
-'
-'bshgRefreshMovieMediaInfo
-'
-Me.bshgRefreshMovieMediaInfo.ExtraText = ""
-Me.bshgRefreshMovieMediaInfo.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
-Me.bshgRefreshMovieMediaInfo.ImageTransparentColor = System.Drawing.Color.FromArgb(CType(CType(12,Byte),Integer), CType(CType(94,Byte),Integer), CType(CType(132,Byte),Integer))
-Me.bshgRefreshMovieMediaInfo.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
-Me.bshgRefreshMovieMediaInfo.Text = "Refresh"
-Me.bshgRefreshMovieMediaInfo.ToolTipTitle = "Reload Media Information"
-Me.bshgRefreshMovieMediaInfo.UniqueName = "1DD5B3F478B44BC71DD5B3F478B44BC7"
-'
-'pbFrame
-'
-Me.pbFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-Me.pbFrame.Image = CType(resources.GetObject("pbFrame.Image"),System.Drawing.Image)
-Me.pbFrame.Location = New System.Drawing.Point(0, 32)
-Me.pbFrame.Name = "pbFrame"
-Me.pbFrame.Size = New System.Drawing.Size(10, 10)
-Me.pbFrame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbFrame.TabIndex = 97
-Me.pbFrame.TabStop = false
-Me.pbFrame.Visible = false
-'
-'pbCurIconUsed
-'
-Me.pbCurIconUsed.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pbCurIconUsed.BackColor = System.Drawing.Color.Transparent
-Me.pbCurIconUsed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.pbCurIconUsed.Enabled = false
-Me.pbCurIconUsed.Image = Global.movieinfoplus.My.Resources.Resources.ph
-Me.pbCurIconUsed.InitialImage = Nothing
-Me.pbCurIconUsed.Location = New System.Drawing.Point(1, 30)
-Me.pbCurIconUsed.Margin = New System.Windows.Forms.Padding(2)
-Me.pbCurIconUsed.MaximumSize = New System.Drawing.Size(700, 512)
-Me.pbCurIconUsed.MinimumSize = New System.Drawing.Size(82, 82)
-Me.pbCurIconUsed.Name = "pbCurIconUsed"
-Me.pbCurIconUsed.Size = New System.Drawing.Size(82, 82)
-Me.pbCurIconUsed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-Me.pbCurIconUsed.TabIndex = 38
-Me.pbCurIconUsed.TabStop = false
-Me.pbCurIconUsed.Visible = false
-Me.pbCurIconUsed.WaitOnLoad = true
-'
-'tsbMoviesLoadMovies
-'
-Me.tsbMoviesLoadMovies.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbMoviesLoadMovies.Image = CType(resources.GetObject("tsbMoviesLoadMovies.Image"),System.Drawing.Image)
-Me.tsbMoviesLoadMovies.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesLoadMovies.Name = "tsbMoviesLoadMovies"
-Me.tsbMoviesLoadMovies.Size = New System.Drawing.Size(72, 29)
-Me.tsbMoviesLoadMovies.Text = "Load Movies"
-'
-'tsbMoviesPreCache
-'
-Me.tsbMoviesPreCache.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbMoviesPreCache.Image = CType(resources.GetObject("tsbMoviesPreCache.Image"),System.Drawing.Image)
-Me.tsbMoviesPreCache.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesPreCache.Name = "tsbMoviesPreCache"
-Me.tsbMoviesPreCache.Size = New System.Drawing.Size(58, 29)
-Me.tsbMoviesPreCache.Text = "PreCache"
-'
-'tsbMoviesAutoPilot
-'
-Me.tsbMoviesAutoPilot.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbMoviesAutoPilot.Image = CType(resources.GetObject("tsbMoviesAutoPilot.Image"),System.Drawing.Image)
-Me.tsbMoviesAutoPilot.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesAutoPilot.Name = "tsbMoviesAutoPilot"
-Me.tsbMoviesAutoPilot.Size = New System.Drawing.Size(56, 29)
-Me.tsbMoviesAutoPilot.Text = "Auto Pilot"
-'
-'ToolStripButton1
-'
-Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"),System.Drawing.Image)
-Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.ToolStripButton1.Name = "ToolStripButton1"
-Me.ToolStripButton1.Size = New System.Drawing.Size(91, 29)
-Me.ToolStripButton1.Text = "Add Background"
-Me.ToolStripButton1.ToolTipText = "Add your own Background for this movie"
-'
-'ToolStripButton2
-'
-Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"),System.Drawing.Image)
-Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.ToolStripButton2.Name = "ToolStripButton2"
-Me.ToolStripButton2.Size = New System.Drawing.Size(63, 29)
-Me.ToolStripButton2.Text = "Add Poster"
-Me.ToolStripButton2.ToolTipText = "Add your own image for this movie"
-'
-'ToolStripDropDownButton1
-'
-Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tagdivx, Me.Tagxvid, Me.Tagdvd, Me.SDTag, Me.Tag720p, Me.Tag1080i, Me.Tag1080p, Me.TagBluRay, Me.SetupTagIconsToolStripMenuItem})
-Me.ToolStripDropDownButton1.Image = Global.movieinfoplus.My.Resources.Resources.tag
-Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(55, 29)
-Me.ToolStripDropDownButton1.Text = "Tag"
-Me.ToolStripDropDownButton1.ToolTipText = "Tag the Movie Image with Codec and Audio Information"
-'
-'Tagdivx
-'
-Me.Tagdivx.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.divxSmono, Me.divxSStereo, Me.divxSDD51, Me.divxSDD71, Me.divxSDTS, Me.divxSDTSES, Me.divxSHDAudio})
-Me.Tagdivx.Name = "Tagdivx"
-Me.Tagdivx.Size = New System.Drawing.Size(156, 22)
-Me.Tagdivx.Text = "Divx"
-'
-'divxSmono
-'
-Me.divxSmono.Name = "divxSmono"
-Me.divxSmono.Size = New System.Drawing.Size(123, 22)
-Me.divxSmono.Text = "Mono"
-'
-'divxSStereo
-'
-Me.divxSStereo.Name = "divxSStereo"
-Me.divxSStereo.Size = New System.Drawing.Size(123, 22)
-Me.divxSStereo.Text = "Stereo"
-'
-'divxSDD51
-'
-Me.divxSDD51.Name = "divxSDD51"
-Me.divxSDD51.Size = New System.Drawing.Size(123, 22)
-Me.divxSDD51.Text = "DD 5.1"
-'
-'divxSDD71
-'
-Me.divxSDD71.Name = "divxSDD71"
-Me.divxSDD71.Size = New System.Drawing.Size(123, 22)
-Me.divxSDD71.Text = "DD 7.1"
-'
-'divxSDTS
-'
-Me.divxSDTS.Name = "divxSDTS"
-Me.divxSDTS.Size = New System.Drawing.Size(123, 22)
-Me.divxSDTS.Text = "DTS"
-'
-'divxSDTSES
-'
-Me.divxSDTSES.Name = "divxSDTSES"
-Me.divxSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.divxSDTSES.Text = "DTS ES"
-'
-'divxSHDAudio
-'
-Me.divxSHDAudio.Name = "divxSHDAudio"
-Me.divxSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.divxSHDAudio.Text = "HD Audio"
-'
-'Tagxvid
-'
-Me.Tagxvid.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xvidSmono, Me.xvidSStereo, Me.xvidSDD51, Me.xvidSDD71, Me.xvidSDTS, Me.xvidSDTSES, Me.xvidSHDAudio})
-Me.Tagxvid.Name = "Tagxvid"
-Me.Tagxvid.Size = New System.Drawing.Size(156, 22)
-Me.Tagxvid.Text = "Xvid"
-'
-'xvidSmono
-'
-Me.xvidSmono.Name = "xvidSmono"
-Me.xvidSmono.Size = New System.Drawing.Size(123, 22)
-Me.xvidSmono.Text = "Mono"
-'
-'xvidSStereo
-'
-Me.xvidSStereo.Name = "xvidSStereo"
-Me.xvidSStereo.Size = New System.Drawing.Size(123, 22)
-Me.xvidSStereo.Text = "Stereo"
-'
-'xvidSDD51
-'
-Me.xvidSDD51.Name = "xvidSDD51"
-Me.xvidSDD51.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDD51.Text = "DD 5.1"
-'
-'xvidSDD71
-'
-Me.xvidSDD71.Name = "xvidSDD71"
-Me.xvidSDD71.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDD71.Text = "DD 7.1"
-'
-'xvidSDTS
-'
-Me.xvidSDTS.Name = "xvidSDTS"
-Me.xvidSDTS.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDTS.Text = "DTS"
-'
-'xvidSDTSES
-'
-Me.xvidSDTSES.Name = "xvidSDTSES"
-Me.xvidSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDTSES.Text = "DTS ES"
-'
-'xvidSHDAudio
-'
-Me.xvidSHDAudio.Name = "xvidSHDAudio"
-Me.xvidSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.xvidSHDAudio.Text = "HD Audio"
-'
-'Tagdvd
-'
-Me.Tagdvd.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dvdSmono, Me.dvdSStereo, Me.dvdSDD51, Me.dvdSDD71, Me.dvdSDTS, Me.DVDSDTSES, Me.DVDSHDAudio})
-Me.Tagdvd.Name = "Tagdvd"
-Me.Tagdvd.Size = New System.Drawing.Size(156, 22)
-Me.Tagdvd.Text = "DVD"
-'
-'dvdSmono
-'
-Me.dvdSmono.Name = "dvdSmono"
-Me.dvdSmono.Size = New System.Drawing.Size(123, 22)
-Me.dvdSmono.Text = "Mono"
-'
-'dvdSStereo
-'
-Me.dvdSStereo.Name = "dvdSStereo"
-Me.dvdSStereo.Size = New System.Drawing.Size(123, 22)
-Me.dvdSStereo.Text = "Stereo"
-'
-'dvdSDD51
-'
-Me.dvdSDD51.Name = "dvdSDD51"
-Me.dvdSDD51.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDD51.Text = "DD 5.1"
-'
-'dvdSDD71
-'
-Me.dvdSDD71.Name = "dvdSDD71"
-Me.dvdSDD71.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDD71.Text = "DD 7.1"
-'
-'dvdSDTS
-'
-Me.dvdSDTS.Name = "dvdSDTS"
-Me.dvdSDTS.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDTS.Text = "DTS"
-'
-'DVDSDTSES
-'
-Me.DVDSDTSES.Name = "DVDSDTSES"
-Me.DVDSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.DVDSDTSES.Text = "DTS ES"
-'
-'DVDSHDAudio
-'
-Me.DVDSHDAudio.Name = "DVDSHDAudio"
-Me.DVDSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.DVDSHDAudio.Text = "HD Audio"
-'
-'SDTag
-'
-Me.SDTag.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SDSmono, Me.SDSStereo, Me.SDSDD51, Me.SDSDD71, Me.SDSDTS, Me.SDSDTSES, Me.SDSHDAudio})
-Me.SDTag.Name = "SDTag"
-Me.SDTag.Size = New System.Drawing.Size(156, 22)
-Me.SDTag.Text = "SD"
-'
-'SDSmono
-'
-Me.SDSmono.Name = "SDSmono"
-Me.SDSmono.Size = New System.Drawing.Size(123, 22)
-Me.SDSmono.Text = "Mono"
-'
-'SDSStereo
-'
-Me.SDSStereo.Name = "SDSStereo"
-Me.SDSStereo.Size = New System.Drawing.Size(123, 22)
-Me.SDSStereo.Text = "Stereo"
-'
-'SDSDD51
-'
-Me.SDSDD51.Name = "SDSDD51"
-Me.SDSDD51.Size = New System.Drawing.Size(123, 22)
-Me.SDSDD51.Text = "DD 5.1"
-'
-'SDSDD71
-'
-Me.SDSDD71.Name = "SDSDD71"
-Me.SDSDD71.Size = New System.Drawing.Size(123, 22)
-Me.SDSDD71.Text = "DD 7.1"
-'
-'SDSDTS
-'
-Me.SDSDTS.Name = "SDSDTS"
-Me.SDSDTS.Size = New System.Drawing.Size(123, 22)
-Me.SDSDTS.Text = "DTS"
-'
-'SDSDTSES
-'
-Me.SDSDTSES.Name = "SDSDTSES"
-Me.SDSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.SDSDTSES.Text = "DTS ES"
-'
-'SDSHDAudio
-'
-Me.SDSHDAudio.Name = "SDSHDAudio"
-Me.SDSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.SDSHDAudio.Text = "HD Audio"
-'
-'Tag720p
-'
-Me.Tag720p.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd720pSmono, Me.hd720pSStereo, Me.hd720pSDD51, Me.hd720pSDD71, Me.hd720pSDTS, Me.hd720pSDTSES, Me.hd720pSHDAudio})
-Me.Tag720p.Name = "Tag720p"
-Me.Tag720p.Size = New System.Drawing.Size(156, 22)
-Me.Tag720p.Text = "720p"
-'
-'hd720pSmono
-'
-Me.hd720pSmono.Name = "hd720pSmono"
-Me.hd720pSmono.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSmono.Text = "Mono"
-'
-'hd720pSStereo
-'
-Me.hd720pSStereo.Name = "hd720pSStereo"
-Me.hd720pSStereo.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSStereo.Text = "Stereo"
-'
-'hd720pSDD51
-'
-Me.hd720pSDD51.Name = "hd720pSDD51"
-Me.hd720pSDD51.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDD51.Text = "DD 5.1"
-'
-'hd720pSDD71
-'
-Me.hd720pSDD71.Name = "hd720pSDD71"
-Me.hd720pSDD71.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDD71.Text = "DD 7.1"
-'
-'hd720pSDTS
-'
-Me.hd720pSDTS.Name = "hd720pSDTS"
-Me.hd720pSDTS.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDTS.Text = "DTS"
-'
-'hd720pSDTSES
-'
-Me.hd720pSDTSES.Name = "hd720pSDTSES"
-Me.hd720pSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDTSES.Text = "DTS ES"
-'
-'hd720pSHDAudio
-'
-Me.hd720pSHDAudio.Name = "hd720pSHDAudio"
-Me.hd720pSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSHDAudio.Text = "HD Audio"
-'
-'Tag1080i
-'
-Me.Tag1080i.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080iSmono, Me.hd1080iSStereo, Me.hd1080iSDD51, Me.hd1080iSDD71, Me.hd1080iSDTS, Me.hd1080iSDTSES, Me.hd1080iSHDAudio})
-Me.Tag1080i.Name = "Tag1080i"
-Me.Tag1080i.Size = New System.Drawing.Size(156, 22)
-Me.Tag1080i.Text = "1080i"
-'
-'hd1080iSmono
-'
-Me.hd1080iSmono.Name = "hd1080iSmono"
-Me.hd1080iSmono.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSmono.Text = "Mono"
-'
-'hd1080iSStereo
-'
-Me.hd1080iSStereo.Name = "hd1080iSStereo"
-Me.hd1080iSStereo.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSStereo.Text = "Stereo"
-'
-'hd1080iSDD51
-'
-Me.hd1080iSDD51.Name = "hd1080iSDD51"
-Me.hd1080iSDD51.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDD51.Text = "DD 5.1"
-'
-'hd1080iSDD71
-'
-Me.hd1080iSDD71.Name = "hd1080iSDD71"
-Me.hd1080iSDD71.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDD71.Text = "DD 7.1"
-'
-'hd1080iSDTS
-'
-Me.hd1080iSDTS.Name = "hd1080iSDTS"
-Me.hd1080iSDTS.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDTS.Text = "DTS"
-'
-'hd1080iSDTSES
-'
-Me.hd1080iSDTSES.Name = "hd1080iSDTSES"
-Me.hd1080iSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDTSES.Text = "DTS ES"
-'
-'hd1080iSHDAudio
-'
-Me.hd1080iSHDAudio.Name = "hd1080iSHDAudio"
-Me.hd1080iSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSHDAudio.Text = "HD Audio"
-'
-'Tag1080p
-'
-Me.Tag1080p.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080pSmono, Me.hd1080pSStereo, Me.hd1080pSDD51, Me.hd1080pSDD71, Me.hd1080pSDTS, Me.hd1080pSDTSES, Me.hd1080pSHDAudio})
-Me.Tag1080p.Name = "Tag1080p"
-Me.Tag1080p.Size = New System.Drawing.Size(156, 22)
-Me.Tag1080p.Text = "1080p"
-'
-'hd1080pSmono
-'
-Me.hd1080pSmono.Name = "hd1080pSmono"
-Me.hd1080pSmono.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSmono.Text = "Mono"
-'
-'hd1080pSStereo
-'
-Me.hd1080pSStereo.Name = "hd1080pSStereo"
-Me.hd1080pSStereo.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSStereo.Text = "Stereo"
-'
-'hd1080pSDD51
-'
-Me.hd1080pSDD51.Name = "hd1080pSDD51"
-Me.hd1080pSDD51.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDD51.Text = "DD 5.1"
-'
-'hd1080pSDD71
-'
-Me.hd1080pSDD71.Name = "hd1080pSDD71"
-Me.hd1080pSDD71.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDD71.Text = "DD 7.1"
-'
-'hd1080pSDTS
-'
-Me.hd1080pSDTS.Name = "hd1080pSDTS"
-Me.hd1080pSDTS.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDTS.Text = "DTS"
-'
-'hd1080pSDTSES
-'
-Me.hd1080pSDTSES.Name = "hd1080pSDTSES"
-Me.hd1080pSDTSES.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDTSES.Text = "DTS ES"
-'
-'hd1080pSHDAudio
-'
-Me.hd1080pSHDAudio.Name = "hd1080pSHDAudio"
-Me.hd1080pSHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSHDAudio.Text = "HD Audio"
-'
-'TagBluRay
-'
-Me.TagBluRay.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BluRaySmono, Me.BluRaySStereo, Me.BluRaySDD51, Me.BluRaySDD71, Me.BluRaySDTS, Me.BluRaySDTSES, Me.BluRaySHDAudio})
-Me.TagBluRay.Name = "TagBluRay"
-Me.TagBluRay.Size = New System.Drawing.Size(156, 22)
-Me.TagBluRay.Text = "Blu-Ray"
-'
-'BluRaySmono
-'
-Me.BluRaySmono.Name = "BluRaySmono"
-Me.BluRaySmono.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySmono.Text = "Mono"
-'
-'BluRaySStereo
-'
-Me.BluRaySStereo.Name = "BluRaySStereo"
-Me.BluRaySStereo.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySStereo.Text = "Stereo"
-'
-'BluRaySDD51
-'
-Me.BluRaySDD51.Name = "BluRaySDD51"
-Me.BluRaySDD51.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDD51.Text = "DD 5.1"
-'
-'BluRaySDD71
-'
-Me.BluRaySDD71.Name = "BluRaySDD71"
-Me.BluRaySDD71.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDD71.Text = "DD 7.1"
-'
-'BluRaySDTS
-'
-Me.BluRaySDTS.Name = "BluRaySDTS"
-Me.BluRaySDTS.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDTS.Text = "DTS"
-'
-'BluRaySDTSES
-'
-Me.BluRaySDTSES.Name = "BluRaySDTSES"
-Me.BluRaySDTSES.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDTSES.Text = "DTS ES"
-'
-'BluRaySHDAudio
-'
-Me.BluRaySHDAudio.Name = "BluRaySHDAudio"
-Me.BluRaySHDAudio.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySHDAudio.Text = "HD Audio"
-'
-'SetupTagIconsToolStripMenuItem
-'
-Me.SetupTagIconsToolStripMenuItem.Name = "SetupTagIconsToolStripMenuItem"
-Me.SetupTagIconsToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-Me.SetupTagIconsToolStripMenuItem.Text = "Setup Tag Icons"
-'
-'tsbMoviesOpenCurMovieFolder
-'
-Me.tsbMoviesOpenCurMovieFolder.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-Me.tsbMoviesOpenCurMovieFolder.Image = Global.movieinfoplus.My.Resources.Resources.folder_32x32
-Me.tsbMoviesOpenCurMovieFolder.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesOpenCurMovieFolder.Name = "tsbMoviesOpenCurMovieFolder"
-Me.tsbMoviesOpenCurMovieFolder.Size = New System.Drawing.Size(23, 29)
-Me.tsbMoviesOpenCurMovieFolder.Text = "Movie Folder"
-Me.tsbMoviesOpenCurMovieFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-Me.tsbMoviesOpenCurMovieFolder.ToolTipText = "Open Current Movie Folder"
-'
-'tsbMoviesOpenImdbLink
-'
-Me.tsbMoviesOpenImdbLink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-Me.tsbMoviesOpenImdbLink.Image = Global.movieinfoplus.My.Resources.Resources.imdb_32x25
-Me.tsbMoviesOpenImdbLink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-Me.tsbMoviesOpenImdbLink.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-Me.tsbMoviesOpenImdbLink.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesOpenImdbLink.Name = "tsbMoviesOpenImdbLink"
-Me.tsbMoviesOpenImdbLink.Size = New System.Drawing.Size(77, 29)
-Me.tsbMoviesOpenImdbLink.Text = "IMDB"
-Me.tsbMoviesOpenImdbLink.ToolTipText = "Visit IMDB for this Movie"
-'
-'tsbMoviesOpenTMDBLink
-'
-Me.tsbMoviesOpenTMDBLink.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-Me.tsbMoviesOpenTMDBLink.Image = Global.movieinfoplus.My.Resources.Resources.tmdb_32x25
-Me.tsbMoviesOpenTMDBLink.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-Me.tsbMoviesOpenTMDBLink.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbMoviesOpenTMDBLink.Name = "tsbMoviesOpenTMDBLink"
-Me.tsbMoviesOpenTMDBLink.Size = New System.Drawing.Size(53, 29)
-Me.tsbMoviesOpenTMDBLink.Text = "ToolStripButton4"
-Me.tsbMoviesOpenTMDBLink.ToolTipText = "Open TMDb page for this movie"
-'
-'tsbtnMovieSettings
-'
-Me.tsbtnMovieSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-Me.tsbtnMovieSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem, Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem, Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem, Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem})
-Me.tsbtnMovieSettings.Image = CType(resources.GetObject("tsbtnMovieSettings.Image"),System.Drawing.Image)
-Me.tsbtnMovieSettings.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbtnMovieSettings.Name = "tsbtnMovieSettings"
-Me.tsbtnMovieSettings.Size = New System.Drawing.Size(134, 29)
-Me.tsbtnMovieSettings.Text = "Options and Settings"
-'
-'tsmimovieDoNotResizeTheImagesToolStripMenuItem
-'
-Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Name = "tsmimovieDoNotResizeTheImagesToolStripMenuItem"
-Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
-Me.tsmimovieDoNotResizeTheImagesToolStripMenuItem.Text = "Do not resize the images"
-'
-'tsmimovieOpenConfigurationSettingsToolStripMenuItem
-'
-Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Name = "tsmimovieOpenConfigurationSettingsToolStripMenuItem"
-Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
-Me.tsmimovieOpenConfigurationSettingsToolStripMenuItem.Text = "Setup and Configuration"
-'
-'tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem
-'
-Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Name = "tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem"
-Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
-Me.tsmimovieAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Text = "Allow Media Image Selection to any type"
-'
-'tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem
-'
-Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Name = "tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem"
-Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Size = New System.Drawing.Size(296, 22)
-Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Text = "Dont' switch tabs after selecting Media Images"
-'
-'ToolStripDropDownButton2
-'
-Me.ToolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-Me.ToolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_ResizeFanartImage, Me.tsmimovie_CompressFanartImage})
-Me.ToolStripDropDownButton2.Image = CType(resources.GetObject("ToolStripDropDownButton2.Image"),System.Drawing.Image)
-Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
-Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(46, 29)
-Me.ToolStripDropDownButton2.Text = "Tools"
-'
-'tsmimovie_ResizeFanartImage
-'
-Me.tsmimovie_ResizeFanartImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_fanart_r960x540, Me.tsmimovie_fanart_r1280x720, Me.tsmimovie_fanart_r1920x1080})
-Me.tsmimovie_ResizeFanartImage.Name = "tsmimovie_ResizeFanartImage"
-Me.tsmimovie_ResizeFanartImage.Size = New System.Drawing.Size(216, 22)
-Me.tsmimovie_ResizeFanartImage.Text = "Resize Background Image"
-'
-'tsmimovie_fanart_r960x540
-'
-Me.tsmimovie_fanart_r960x540.Name = "tsmimovie_fanart_r960x540"
-Me.tsmimovie_fanart_r960x540.Size = New System.Drawing.Size(136, 22)
-Me.tsmimovie_fanart_r960x540.Text = "960 x 540"
-'
-'tsmimovie_fanart_r1280x720
-'
-Me.tsmimovie_fanart_r1280x720.Name = "tsmimovie_fanart_r1280x720"
-Me.tsmimovie_fanart_r1280x720.Size = New System.Drawing.Size(136, 22)
-Me.tsmimovie_fanart_r1280x720.Text = "1280 x 720"
-'
-'tsmimovie_fanart_r1920x1080
-'
-Me.tsmimovie_fanart_r1920x1080.Name = "tsmimovie_fanart_r1920x1080"
-Me.tsmimovie_fanart_r1920x1080.Size = New System.Drawing.Size(136, 22)
-Me.tsmimovie_fanart_r1920x1080.Text = "1920 x 1080"
-'
-'tsmimovie_CompressFanartImage
-'
-Me.tsmimovie_CompressFanartImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_fanart_q60, Me.tsmimovie_fanart_q70, Me.tsmimovie_fanart_q80, Me.tsmimovie_fanart_q90, Me.tsmimovie_fanart_q95})
-Me.tsmimovie_CompressFanartImage.Name = "tsmimovie_CompressFanartImage"
-Me.tsmimovie_CompressFanartImage.Size = New System.Drawing.Size(216, 22)
-Me.tsmimovie_CompressFanartImage.Text = "Compress Background Image"
-'
-'tsmimovie_fanart_q60
-'
-Me.tsmimovie_fanart_q60.Name = "tsmimovie_fanart_q60"
-Me.tsmimovie_fanart_q60.Size = New System.Drawing.Size(132, 22)
-Me.tsmimovie_fanart_q60.Text = "60% Quality"
-'
-'tsmimovie_fanart_q70
-'
-Me.tsmimovie_fanart_q70.Name = "tsmimovie_fanart_q70"
-Me.tsmimovie_fanart_q70.Size = New System.Drawing.Size(132, 22)
-Me.tsmimovie_fanart_q70.Text = "70% Quality"
-'
-'tsmimovie_fanart_q80
-'
-Me.tsmimovie_fanart_q80.Name = "tsmimovie_fanart_q80"
-Me.tsmimovie_fanart_q80.Size = New System.Drawing.Size(132, 22)
-Me.tsmimovie_fanart_q80.Text = "80% Quality"
-'
-'tsmimovie_fanart_q90
-'
-Me.tsmimovie_fanart_q90.Name = "tsmimovie_fanart_q90"
-Me.tsmimovie_fanart_q90.Size = New System.Drawing.Size(132, 22)
-Me.tsmimovie_fanart_q90.Text = "90% Quality"
-'
-'tsmimovie_fanart_q95
-'
-Me.tsmimovie_fanart_q95.Name = "tsmimovie_fanart_q95"
-Me.tsmimovie_fanart_q95.Size = New System.Drawing.Size(132, 22)
-Me.tsmimovie_fanart_q95.Text = "95% Quality"
-'
-'fanartpb1
-'
-Me.fanartpb1.BackColor = System.Drawing.Color.Black
-Me.fanartpb1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.fanartpb1.Dock = System.Windows.Forms.DockStyle.Fill
-Me.fanartpb1.ErrorImage = Nothing
-Me.fanartpb1.Image = Global.movieinfoplus.My.Resources.Resources.mymovies
-Me.fanartpb1.InitialImage = Nothing
-Me.fanartpb1.Location = New System.Drawing.Point(0, 0)
-Me.fanartpb1.Name = "fanartpb1"
-Me.fanartpb1.Size = New System.Drawing.Size(814, 606)
-Me.fanartpb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.fanartpb1.TabIndex = 54
-Me.fanartpb1.TabStop = false
-'
-'pbTVSeasonPoster
-'
-Me.pbTVSeasonPoster.BackColor = System.Drawing.Color.Transparent
-Me.pbTVSeasonPoster.Location = New System.Drawing.Point(1, 1)
-Me.pbTVSeasonPoster.Name = "pbTVSeasonPoster"
-Me.pbTVSeasonPoster.Size = New System.Drawing.Size(308, 443)
-Me.pbTVSeasonPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbTVSeasonPoster.TabIndex = 3
-Me.pbTVSeasonPoster.TabStop = false
-Me.pbTVSeasonPoster.Visible = false
-'
-'pbTVPoster
-'
-Me.pbTVPoster.Location = New System.Drawing.Point(1, 1)
-Me.pbTVPoster.Name = "pbTVPoster"
-Me.pbTVPoster.Size = New System.Drawing.Size(308, 443)
-Me.pbTVPoster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbTVPoster.TabIndex = 2
-Me.pbTVPoster.TabStop = false
-Me.pbTVPoster.Visible = false
-'
-'pbTVWide
-'
-Me.pbTVWide.BackColor = System.Drawing.Color.Transparent
-Me.pbTVWide.Location = New System.Drawing.Point(1, 1)
-Me.pbTVWide.Margin = New System.Windows.Forms.Padding(0)
-Me.pbTVWide.Name = "pbTVWide"
-Me.pbTVWide.Size = New System.Drawing.Size(433, 92)
-Me.pbTVWide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbTVWide.TabIndex = 0
-Me.pbTVWide.TabStop = false
-Me.pbTVWide.Visible = false
-'
-'tsbShowsLoadShows
-'
-Me.tsbShowsLoadShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbShowsLoadShows.Image = CType(resources.GetObject("tsbShowsLoadShows.Image"),System.Drawing.Image)
-Me.tsbShowsLoadShows.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbShowsLoadShows.Name = "tsbShowsLoadShows"
-Me.tsbShowsLoadShows.Size = New System.Drawing.Size(70, 29)
-Me.tsbShowsLoadShows.Text = "Load Shows"
-Me.tsbShowsLoadShows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-'
-'tsbShowsUpdateShows
-'
-Me.tsbShowsUpdateShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbShowsUpdateShows.Image = CType(resources.GetObject("tsbShowsUpdateShows.Image"),System.Drawing.Image)
-Me.tsbShowsUpdateShows.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbShowsUpdateShows.Name = "tsbShowsUpdateShows"
-Me.tsbShowsUpdateShows.Size = New System.Drawing.Size(81, 29)
-Me.tsbShowsUpdateShows.Text = "Update Shows"
-'
-'tsddbtvshowstag
-'
-Me.tsddbtvshowstag.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Tagdivxtv, Me.Tagxvidtv, Me.Tagdvdtv, Me.SDTagtv, Me.Tag720ptv, Me.Tag1080itv, Me.Tag1080ptv, Me.TagBluRaytv, Me.SetupTagIconsToolStripMenuItemtv})
-Me.tsddbtvshowstag.Image = Global.movieinfoplus.My.Resources.Resources.tag
-Me.tsddbtvshowstag.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsddbtvshowstag.Name = "tsddbtvshowstag"
-Me.tsddbtvshowstag.Size = New System.Drawing.Size(146, 29)
-Me.tsddbtvshowstag.Text = "Tag the Episode Image"
-'
-'Tagdivxtv
-'
-Me.Tagdivxtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.divxSmonotv, Me.divxSStereotv, Me.divxSDD51tv, Me.divxSDD71tv, Me.divxSDTStv, Me.divxSDTSEStv, Me.divxSHDAudiotv})
-Me.Tagdivxtv.Name = "Tagdivxtv"
-Me.Tagdivxtv.Size = New System.Drawing.Size(156, 22)
-Me.Tagdivxtv.Text = "Divx"
-'
-'divxSmonotv
-'
-Me.divxSmonotv.Name = "divxSmonotv"
-Me.divxSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.divxSmonotv.Text = "Mono"
-'
-'divxSStereotv
-'
-Me.divxSStereotv.Name = "divxSStereotv"
-Me.divxSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.divxSStereotv.Text = "Stereo"
-'
-'divxSDD51tv
-'
-Me.divxSDD51tv.Name = "divxSDD51tv"
-Me.divxSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.divxSDD51tv.Text = "DD 5.1"
-'
-'divxSDD71tv
-'
-Me.divxSDD71tv.Name = "divxSDD71tv"
-Me.divxSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.divxSDD71tv.Text = "DD 7.1"
-'
-'divxSDTStv
-'
-Me.divxSDTStv.Name = "divxSDTStv"
-Me.divxSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.divxSDTStv.Text = "DTS"
-'
-'divxSDTSEStv
-'
-Me.divxSDTSEStv.Name = "divxSDTSEStv"
-Me.divxSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.divxSDTSEStv.Text = "DTS ES"
-'
-'divxSHDAudiotv
-'
-Me.divxSHDAudiotv.Name = "divxSHDAudiotv"
-Me.divxSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.divxSHDAudiotv.Text = "HD Audio"
-'
-'Tagxvidtv
-'
-Me.Tagxvidtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xvidSmonotv, Me.xvidSStereotv, Me.xvidSDD51tv, Me.xvidSDD71tv, Me.xvidSDTStv, Me.xvidSDTSEStv, Me.xvidSHDAudiotv})
-Me.Tagxvidtv.Name = "Tagxvidtv"
-Me.Tagxvidtv.Size = New System.Drawing.Size(156, 22)
-Me.Tagxvidtv.Text = "Xvid"
-'
-'xvidSmonotv
-'
-Me.xvidSmonotv.Name = "xvidSmonotv"
-Me.xvidSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSmonotv.Text = "Mono"
-'
-'xvidSStereotv
-'
-Me.xvidSStereotv.Name = "xvidSStereotv"
-Me.xvidSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSStereotv.Text = "Stereo"
-'
-'xvidSDD51tv
-'
-Me.xvidSDD51tv.Name = "xvidSDD51tv"
-Me.xvidSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDD51tv.Text = "DD 5.1"
-'
-'xvidSDD71tv
-'
-Me.xvidSDD71tv.Name = "xvidSDD71tv"
-Me.xvidSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDD71tv.Text = "DD 7.1"
-'
-'xvidSDTStv
-'
-Me.xvidSDTStv.Name = "xvidSDTStv"
-Me.xvidSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDTStv.Text = "DTS"
-'
-'xvidSDTSEStv
-'
-Me.xvidSDTSEStv.Name = "xvidSDTSEStv"
-Me.xvidSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSDTSEStv.Text = "DTS ES"
-'
-'xvidSHDAudiotv
-'
-Me.xvidSHDAudiotv.Name = "xvidSHDAudiotv"
-Me.xvidSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.xvidSHDAudiotv.Text = "HD Audio"
-'
-'Tagdvdtv
-'
-Me.Tagdvdtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dvdSmonotv, Me.dvdSStereotv, Me.dvdSDD51tv, Me.dvdSDD71tv, Me.dvdSDTStv, Me.DVDSDTSEStv, Me.DVDSHDAudiotv})
-Me.Tagdvdtv.Name = "Tagdvdtv"
-Me.Tagdvdtv.Size = New System.Drawing.Size(156, 22)
-Me.Tagdvdtv.Text = "DVD"
-'
-'dvdSmonotv
-'
-Me.dvdSmonotv.Name = "dvdSmonotv"
-Me.dvdSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.dvdSmonotv.Text = "Mono"
-'
-'dvdSStereotv
-'
-Me.dvdSStereotv.Name = "dvdSStereotv"
-Me.dvdSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.dvdSStereotv.Text = "Stereo"
-'
-'dvdSDD51tv
-'
-Me.dvdSDD51tv.Name = "dvdSDD51tv"
-Me.dvdSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDD51tv.Text = "DD 5.1"
-'
-'dvdSDD71tv
-'
-Me.dvdSDD71tv.Name = "dvdSDD71tv"
-Me.dvdSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDD71tv.Text = "DD 7.1"
-'
-'dvdSDTStv
-'
-Me.dvdSDTStv.Name = "dvdSDTStv"
-Me.dvdSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.dvdSDTStv.Text = "DTS"
-'
-'DVDSDTSEStv
-'
-Me.DVDSDTSEStv.Name = "DVDSDTSEStv"
-Me.DVDSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.DVDSDTSEStv.Text = "DTS ES"
-'
-'DVDSHDAudiotv
-'
-Me.DVDSHDAudiotv.Name = "DVDSHDAudiotv"
-Me.DVDSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.DVDSHDAudiotv.Text = "HD Audio"
-'
-'SDTagtv
-'
-Me.SDTagtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SDSmonotv, Me.SDSStereotv, Me.SDSDD51tv, Me.SDSDD71tv, Me.SDSDTStv, Me.SDSDTSEStv, Me.SDSHDAudiotv})
-Me.SDTagtv.Name = "SDTagtv"
-Me.SDTagtv.Size = New System.Drawing.Size(156, 22)
-Me.SDTagtv.Text = "SD"
-'
-'SDSmonotv
-'
-Me.SDSmonotv.Name = "SDSmonotv"
-Me.SDSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.SDSmonotv.Text = "Mono"
-'
-'SDSStereotv
-'
-Me.SDSStereotv.Name = "SDSStereotv"
-Me.SDSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.SDSStereotv.Text = "Stereo"
-'
-'SDSDD51tv
-'
-Me.SDSDD51tv.Name = "SDSDD51tv"
-Me.SDSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.SDSDD51tv.Text = "DD 5.1"
-'
-'SDSDD71tv
-'
-Me.SDSDD71tv.Name = "SDSDD71tv"
-Me.SDSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.SDSDD71tv.Text = "DD 7.1"
-'
-'SDSDTStv
-'
-Me.SDSDTStv.Name = "SDSDTStv"
-Me.SDSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.SDSDTStv.Text = "DTS"
-'
-'SDSDTSEStv
-'
-Me.SDSDTSEStv.Name = "SDSDTSEStv"
-Me.SDSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.SDSDTSEStv.Text = "DTS ES"
-'
-'SDSHDAudiotv
-'
-Me.SDSHDAudiotv.Name = "SDSHDAudiotv"
-Me.SDSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.SDSHDAudiotv.Text = "HD Audio"
-'
-'Tag720ptv
-'
-Me.Tag720ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd720pSmonotv, Me.hd720pSStereotv, Me.hd720pSDD51tv, Me.hd720pSDD71tv, Me.hd720pSDTStv, Me.hd720pSDTSEStv, Me.hd720pSHDAudiotv})
-Me.Tag720ptv.Name = "Tag720ptv"
-Me.Tag720ptv.Size = New System.Drawing.Size(156, 22)
-Me.Tag720ptv.Text = "720p"
-'
-'hd720pSmonotv
-'
-Me.hd720pSmonotv.Name = "hd720pSmonotv"
-Me.hd720pSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSmonotv.Text = "Mono"
-'
-'hd720pSStereotv
-'
-Me.hd720pSStereotv.Name = "hd720pSStereotv"
-Me.hd720pSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSStereotv.Text = "Stereo"
-'
-'hd720pSDD51tv
-'
-Me.hd720pSDD51tv.Name = "hd720pSDD51tv"
-Me.hd720pSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDD51tv.Text = "DD 5.1"
-'
-'hd720pSDD71tv
-'
-Me.hd720pSDD71tv.Name = "hd720pSDD71tv"
-Me.hd720pSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDD71tv.Text = "DD 7.1"
-'
-'hd720pSDTStv
-'
-Me.hd720pSDTStv.Name = "hd720pSDTStv"
-Me.hd720pSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDTStv.Text = "DTS"
-'
-'hd720pSDTSEStv
-'
-Me.hd720pSDTSEStv.Name = "hd720pSDTSEStv"
-Me.hd720pSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSDTSEStv.Text = "DTS ES"
-'
-'hd720pSHDAudiotv
-'
-Me.hd720pSHDAudiotv.Name = "hd720pSHDAudiotv"
-Me.hd720pSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.hd720pSHDAudiotv.Text = "HD Audio"
-'
-'Tag1080itv
-'
-Me.Tag1080itv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080iSmonotv, Me.hd1080iSStereotv, Me.hd1080iSDD51tv, Me.hd1080iSDD71tv, Me.hd1080iSDTStv, Me.hd1080iSDTSEStv, Me.hd1080iSHDAudiotv})
-Me.Tag1080itv.Name = "Tag1080itv"
-Me.Tag1080itv.Size = New System.Drawing.Size(156, 22)
-Me.Tag1080itv.Text = "1080i"
-'
-'hd1080iSmonotv
-'
-Me.hd1080iSmonotv.Name = "hd1080iSmonotv"
-Me.hd1080iSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSmonotv.Text = "Mono"
-'
-'hd1080iSStereotv
-'
-Me.hd1080iSStereotv.Name = "hd1080iSStereotv"
-Me.hd1080iSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSStereotv.Text = "Stereo"
-'
-'hd1080iSDD51tv
-'
-Me.hd1080iSDD51tv.Name = "hd1080iSDD51tv"
-Me.hd1080iSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDD51tv.Text = "DD 5.1"
-'
-'hd1080iSDD71tv
-'
-Me.hd1080iSDD71tv.Name = "hd1080iSDD71tv"
-Me.hd1080iSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDD71tv.Text = "DD 7.1"
-'
-'hd1080iSDTStv
-'
-Me.hd1080iSDTStv.Name = "hd1080iSDTStv"
-Me.hd1080iSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDTStv.Text = "DTS"
-'
-'hd1080iSDTSEStv
-'
-Me.hd1080iSDTSEStv.Name = "hd1080iSDTSEStv"
-Me.hd1080iSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSDTSEStv.Text = "DTS ES"
-'
-'hd1080iSHDAudiotv
-'
-Me.hd1080iSHDAudiotv.Name = "hd1080iSHDAudiotv"
-Me.hd1080iSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080iSHDAudiotv.Text = "HD Audio"
-'
-'Tag1080ptv
-'
-Me.Tag1080ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080pSmonotv, Me.hd1080pSStereotv, Me.hd1080pSDD51tv, Me.hd1080pSDD71tv, Me.hd1080pSDTStv, Me.hd1080pSDTSEStv, Me.hd1080pSHDAudiotv})
-Me.Tag1080ptv.Name = "Tag1080ptv"
-Me.Tag1080ptv.Size = New System.Drawing.Size(156, 22)
-Me.Tag1080ptv.Text = "1080p"
-'
-'hd1080pSmonotv
-'
-Me.hd1080pSmonotv.Name = "hd1080pSmonotv"
-Me.hd1080pSmonotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSmonotv.Text = "Mono"
-'
-'hd1080pSStereotv
-'
-Me.hd1080pSStereotv.Name = "hd1080pSStereotv"
-Me.hd1080pSStereotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSStereotv.Text = "Stereo"
-'
-'hd1080pSDD51tv
-'
-Me.hd1080pSDD51tv.Name = "hd1080pSDD51tv"
-Me.hd1080pSDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDD51tv.Text = "DD 5.1"
-'
-'hd1080pSDD71tv
-'
-Me.hd1080pSDD71tv.Name = "hd1080pSDD71tv"
-Me.hd1080pSDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDD71tv.Text = "DD 7.1"
-'
-'hd1080pSDTStv
-'
-Me.hd1080pSDTStv.Name = "hd1080pSDTStv"
-Me.hd1080pSDTStv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDTStv.Text = "DTS"
-'
-'hd1080pSDTSEStv
-'
-Me.hd1080pSDTSEStv.Name = "hd1080pSDTSEStv"
-Me.hd1080pSDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSDTSEStv.Text = "DTS ES"
-'
-'hd1080pSHDAudiotv
-'
-Me.hd1080pSHDAudiotv.Name = "hd1080pSHDAudiotv"
-Me.hd1080pSHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.hd1080pSHDAudiotv.Text = "HD Audio"
-'
-'TagBluRaytv
-'
-Me.TagBluRaytv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BluRaySmonotv, Me.BluRaySStereotv, Me.BluRaySDD51tv, Me.BluRaySDD71tv, Me.BluRaySDTStv, Me.BluRaySDTSEStv, Me.BluRaySHDAudiotv})
-Me.TagBluRaytv.Name = "TagBluRaytv"
-Me.TagBluRaytv.Size = New System.Drawing.Size(156, 22)
-Me.TagBluRaytv.Text = "Blu-Ray"
-'
-'BluRaySmonotv
-'
-Me.BluRaySmonotv.Name = "BluRaySmonotv"
-Me.BluRaySmonotv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySmonotv.Text = "Mono"
-'
-'BluRaySStereotv
-'
-Me.BluRaySStereotv.Name = "BluRaySStereotv"
-Me.BluRaySStereotv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySStereotv.Text = "Stereo"
-'
-'BluRaySDD51tv
-'
-Me.BluRaySDD51tv.Name = "BluRaySDD51tv"
-Me.BluRaySDD51tv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDD51tv.Text = "DD 5.1"
-'
-'BluRaySDD71tv
-'
-Me.BluRaySDD71tv.Name = "BluRaySDD71tv"
-Me.BluRaySDD71tv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDD71tv.Text = "DD 7.1"
-'
-'BluRaySDTStv
-'
-Me.BluRaySDTStv.Name = "BluRaySDTStv"
-Me.BluRaySDTStv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDTStv.Text = "DTS"
-'
-'BluRaySDTSEStv
-'
-Me.BluRaySDTSEStv.Name = "BluRaySDTSEStv"
-Me.BluRaySDTSEStv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySDTSEStv.Text = "DTS ES"
-'
-'BluRaySHDAudiotv
-'
-Me.BluRaySHDAudiotv.Name = "BluRaySHDAudiotv"
-Me.BluRaySHDAudiotv.Size = New System.Drawing.Size(123, 22)
-Me.BluRaySHDAudiotv.Text = "HD Audio"
-'
-'SetupTagIconsToolStripMenuItemtv
-'
-Me.SetupTagIconsToolStripMenuItemtv.Name = "SetupTagIconsToolStripMenuItemtv"
-Me.SetupTagIconsToolStripMenuItemtv.Size = New System.Drawing.Size(156, 22)
-Me.SetupTagIconsToolStripMenuItemtv.Text = "Setup Tag Icons"
-'
-'tsddTVShows_OptionsAndSettings
-'
-Me.tsddTVShows_OptionsAndSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-Me.tsddTVShows_OptionsAndSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem, Me.tsmiTVDebug, Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem, Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem})
-Me.tsddTVShows_OptionsAndSettings.Image = CType(resources.GetObject("tsddTVShows_OptionsAndSettings.Image"),System.Drawing.Image)
-Me.tsddTVShows_OptionsAndSettings.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsddTVShows_OptionsAndSettings.Name = "tsddTVShows_OptionsAndSettings"
-Me.tsddTVShows_OptionsAndSettings.Size = New System.Drawing.Size(134, 29)
-Me.tsddTVShows_OptionsAndSettings.Text = "Options and Settings"
-'
-'tsbTVShows_SetupAndConfigurationToolStripMenuItem
-'
-Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Name = "tsbTVShows_SetupAndConfigurationToolStripMenuItem"
-Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
-Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Text = "Setup and Configuration"
-'
-'tsmiTVDebug
-'
-Me.tsmiTVDebug.Name = "tsmiTVDebug"
-Me.tsmiTVDebug.Size = New System.Drawing.Size(285, 22)
-Me.tsmiTVDebug.Text = "Debug Mode Enabled"
-'
-'tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem
-'
-Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Name = "tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem"
-Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
-Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Text = "Allow Media Image Selection to any type"
-'
-'tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem
-'
-Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Name = "tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem"
-Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Size = New System.Drawing.Size(285, 22)
-Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Text = "Dont change tabs after picking media image"
-'
-'tsbShowsOpenTVDBPage
-'
-Me.tsbShowsOpenTVDBPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-Me.tsbShowsOpenTVDBPage.Image = CType(resources.GetObject("tsbShowsOpenTVDBPage.Image"),System.Drawing.Image)
-Me.tsbShowsOpenTVDBPage.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-Me.tsbShowsOpenTVDBPage.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbShowsOpenTVDBPage.Name = "tsbShowsOpenTVDBPage"
-Me.tsbShowsOpenTVDBPage.Size = New System.Drawing.Size(53, 29)
-Me.tsbShowsOpenTVDBPage.Text = "Open thetvdb.com page for this show"
-'
-'tsbShowsOpenFolder
-'
-Me.tsbShowsOpenFolder.Image = CType(resources.GetObject("tsbShowsOpenFolder.Image"),System.Drawing.Image)
-Me.tsbShowsOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbShowsOpenFolder.Name = "tsbShowsOpenFolder"
-Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 29)
-Me.tsbShowsOpenFolder.Text = "Open Folder"
-Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
-'
-'pbep_episodeimage
-'
-Me.pbep_episodeimage.BackColor = System.Drawing.Color.Transparent
-Me.pbep_episodeimage.Location = New System.Drawing.Point(0, 2)
-Me.pbep_episodeimage.Margin = New System.Windows.Forms.Padding(0)
-Me.pbep_episodeimage.MaximumSize = New System.Drawing.Size(512, 0)
-Me.pbep_episodeimage.MinimumSize = New System.Drawing.Size(256, 212)
-Me.pbep_episodeimage.Name = "pbep_episodeimage"
-Me.pbep_episodeimage.Size = New System.Drawing.Size(348, 212)
-Me.pbep_episodeimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbep_episodeimage.TabIndex = 0
-Me.pbep_episodeimage.TabStop = false
-'
-'bshgShowsEpisodeMediaRefresh
-'
-Me.bshgShowsEpisodeMediaRefresh.ExtraText = ""
-Me.bshgShowsEpisodeMediaRefresh.Image = Global.movieinfoplus.My.Resources.Resources.refresh24
-Me.bshgShowsEpisodeMediaRefresh.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
-Me.bshgShowsEpisodeMediaRefresh.Text = "Refresh"
-Me.bshgShowsEpisodeMediaRefresh.ToolTipTitle = "Reload Episode Media Information"
-Me.bshgShowsEpisodeMediaRefresh.UniqueName = "116AA6C9FBEC49BD116AA6C9FBEC49BD"
-'
-'pbSeasonAllposter
-'
-Me.pbSeasonAllposter.BackColor = System.Drawing.Color.Transparent
-Me.pbSeasonAllposter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-Me.pbSeasonAllposter.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbSeasonAllposter.Location = New System.Drawing.Point(0, 0)
-Me.pbSeasonAllposter.Name = "pbSeasonAllposter"
-Me.pbSeasonAllposter.Size = New System.Drawing.Size(262, 358)
-Me.pbSeasonAllposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbSeasonAllposter.TabIndex = 112
-Me.pbSeasonAllposter.TabStop = false
-Me.pbSeasonAllposter.Visible = false
-'
-'pbTVFanart
-'
-Me.pbTVFanart.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbTVFanart.ErrorImage = Nothing
-Me.pbTVFanart.Image = Global.movieinfoplus.My.Resources.Resources.myshows
-Me.pbTVFanart.InitialImage = Nothing
-Me.pbTVFanart.Location = New System.Drawing.Point(0, 0)
-Me.pbTVFanart.Name = "pbTVFanart"
-Me.pbTVFanart.Size = New System.Drawing.Size(808, 527)
-Me.pbTVFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbTVFanart.TabIndex = 1
-Me.pbTVFanart.TabStop = false
-'
-'pbTVStar10
-'
-Me.pbTVStar10.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar10.Image = CType(resources.GetObject("pbTVStar10.Image"),System.Drawing.Image)
-Me.pbTVStar10.Location = New System.Drawing.Point(288, 0)
-Me.pbTVStar10.Name = "pbTVStar10"
-Me.pbTVStar10.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar10.TabIndex = 10
-Me.pbTVStar10.TabStop = false
-'
-'pbTVStar3
-'
-Me.pbTVStar3.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar3.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
-Me.pbTVStar3.Location = New System.Drawing.Point(64, 0)
-Me.pbTVStar3.Name = "pbTVStar3"
-Me.pbTVStar3.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar3.TabIndex = 3
-Me.pbTVStar3.TabStop = false
-'
-'pbTVStar6
-'
-Me.pbTVStar6.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar6.Image = Global.movieinfoplus.My.Resources.Resources.halfstar
-Me.pbTVStar6.Location = New System.Drawing.Point(160, 0)
-Me.pbTVStar6.Name = "pbTVStar6"
-Me.pbTVStar6.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar6.TabIndex = 6
-Me.pbTVStar6.TabStop = false
-'
-'pbTVStar1
-'
-Me.pbTVStar1.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar1.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
-Me.pbTVStar1.Location = New System.Drawing.Point(0, 0)
-Me.pbTVStar1.Name = "pbTVStar1"
-Me.pbTVStar1.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar1.TabIndex = 1
-Me.pbTVStar1.TabStop = false
-'
-'pbTVStar9
-'
-Me.pbTVStar9.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar9.Image = CType(resources.GetObject("pbTVStar9.Image"),System.Drawing.Image)
-Me.pbTVStar9.Location = New System.Drawing.Point(256, 0)
-Me.pbTVStar9.Name = "pbTVStar9"
-Me.pbTVStar9.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar9.TabIndex = 9
-Me.pbTVStar9.TabStop = false
-'
-'pbTVStar7
-'
-Me.pbTVStar7.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar7.Image = CType(resources.GetObject("pbTVStar7.Image"),System.Drawing.Image)
-Me.pbTVStar7.Location = New System.Drawing.Point(192, 0)
-Me.pbTVStar7.Name = "pbTVStar7"
-Me.pbTVStar7.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar7.TabIndex = 7
-Me.pbTVStar7.TabStop = false
-'
-'pbTVStar8
-'
-Me.pbTVStar8.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar8.Image = CType(resources.GetObject("pbTVStar8.Image"),System.Drawing.Image)
-Me.pbTVStar8.Location = New System.Drawing.Point(224, 0)
-Me.pbTVStar8.Name = "pbTVStar8"
-Me.pbTVStar8.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar8.TabIndex = 8
-Me.pbTVStar8.TabStop = false
-'
-'pbTVStar4
-'
-Me.pbTVStar4.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar4.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
-Me.pbTVStar4.InitialImage = Nothing
-Me.pbTVStar4.Location = New System.Drawing.Point(96, 0)
-Me.pbTVStar4.Name = "pbTVStar4"
-Me.pbTVStar4.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar4.TabIndex = 4
-Me.pbTVStar4.TabStop = false
-'
-'pbTVStar5
-'
-Me.pbTVStar5.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar5.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
-Me.pbTVStar5.Location = New System.Drawing.Point(128, 0)
-Me.pbTVStar5.Name = "pbTVStar5"
-Me.pbTVStar5.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar5.TabIndex = 5
-Me.pbTVStar5.TabStop = false
-'
-'pbTVStar2
-'
-Me.pbTVStar2.BackColor = System.Drawing.Color.Transparent
-Me.pbTVStar2.Image = Global.movieinfoplus.My.Resources.Resources.fullstar
-Me.pbTVStar2.Location = New System.Drawing.Point(32, 0)
-Me.pbTVStar2.Name = "pbTVStar2"
-Me.pbTVStar2.Size = New System.Drawing.Size(32, 32)
-Me.pbTVStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbTVStar2.TabIndex = 2
-Me.pbTVStar2.TabStop = false
-'
-'pbMusic_CurSongImage
-'
-Me.pbMusic_CurSongImage.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbMusic_CurSongImage.Location = New System.Drawing.Point(0, 0)
-Me.pbMusic_CurSongImage.Name = "pbMusic_CurSongImage"
-Me.pbMusic_CurSongImage.Size = New System.Drawing.Size(359, 360)
-Me.pbMusic_CurSongImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbMusic_CurSongImage.TabIndex = 0
-Me.pbMusic_CurSongImage.TabStop = false
-'
-'pbCurAlbumArt
-'
-Me.pbCurAlbumArt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-Me.pbCurAlbumArt.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbCurAlbumArt.Location = New System.Drawing.Point(0, 0)
-Me.pbCurAlbumArt.Name = "pbCurAlbumArt"
-Me.pbCurAlbumArt.Size = New System.Drawing.Size(338, 338)
-Me.pbCurAlbumArt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbCurAlbumArt.TabIndex = 3
-Me.pbCurAlbumArt.TabStop = false
-Me.pbCurAlbumArt.Visible = false
-'
-'pbMusic_CurSongExtPic
-'
-Me.pbMusic_CurSongExtPic.BackColor = System.Drawing.Color.Transparent
-Me.pbMusic_CurSongExtPic.Location = New System.Drawing.Point(280, 1)
-Me.pbMusic_CurSongExtPic.Name = "pbMusic_CurSongExtPic"
-Me.pbMusic_CurSongExtPic.Size = New System.Drawing.Size(32, 22)
-Me.pbMusic_CurSongExtPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbMusic_CurSongExtPic.TabIndex = 2
-Me.pbMusic_CurSongExtPic.TabStop = false
-Me.pbMusic_CurSongExtPic.Visible = false
-'
-'tsbLoadMyMusic
-'
-Me.tsbLoadMyMusic.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbLoadMyMusic.Image = CType(resources.GetObject("tsbLoadMyMusic.Image"),System.Drawing.Image)
-Me.tsbLoadMyMusic.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbLoadMyMusic.Name = "tsbLoadMyMusic"
-Me.tsbLoadMyMusic.Size = New System.Drawing.Size(85, 22)
-Me.tsbLoadMyMusic.Text = "Load My Tunes"
-'
-'tsbAddMusicFanart
-'
-Me.tsbAddMusicFanart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbAddMusicFanart.Image = CType(resources.GetObject("tsbAddMusicFanart.Image"),System.Drawing.Image)
-Me.tsbAddMusicFanart.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbAddMusicFanart.Name = "tsbAddMusicFanart"
-Me.tsbAddMusicFanart.Size = New System.Drawing.Size(91, 22)
-Me.tsbAddMusicFanart.Text = "Add Background"
-'
-'tsbAddmyOwnAlbumart
-'
-Me.tsbAddmyOwnAlbumart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsbAddmyOwnAlbumart.Image = CType(resources.GetObject("tsbAddmyOwnAlbumart.Image"),System.Drawing.Image)
-Me.tsbAddmyOwnAlbumart.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsbAddmyOwnAlbumart.Name = "tsbAddmyOwnAlbumart"
-Me.tsbAddmyOwnAlbumart.Size = New System.Drawing.Size(78, 22)
-Me.tsbAddmyOwnAlbumart.Text = "Add Album Art"
-'
-'tsddbInjectImage
-'
-Me.tsddbInjectImage.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbInjectIntoCurSong, Me.tsbInjectIntoCurAlbum, Me.tsbInjectIntoCurArtist, Me.AutomaticOptionsToolStripMenuItem})
-Me.tsddbInjectImage.Image = CType(resources.GetObject("tsddbInjectImage.Image"),System.Drawing.Image)
-Me.tsddbInjectImage.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsddbInjectImage.Name = "tsddbInjectImage"
-Me.tsddbInjectImage.Size = New System.Drawing.Size(123, 22)
-Me.tsddbInjectImage.Text = "Inject Image into..."
-'
-'tsbInjectIntoCurSong
-'
-Me.tsbInjectIntoCurSong.Name = "tsbInjectIntoCurSong"
-Me.tsbInjectIntoCurSong.Size = New System.Drawing.Size(189, 22)
-Me.tsbInjectIntoCurSong.Text = "Current Song"
-'
-'tsbInjectIntoCurAlbum
-'
-Me.tsbInjectIntoCurAlbum.Name = "tsbInjectIntoCurAlbum"
-Me.tsbInjectIntoCurAlbum.Size = New System.Drawing.Size(189, 22)
-Me.tsbInjectIntoCurAlbum.Text = "Current Album"
-'
-'tsbInjectIntoCurArtist
-'
-Me.tsbInjectIntoCurArtist.Name = "tsbInjectIntoCurArtist"
-Me.tsbInjectIntoCurArtist.Size = New System.Drawing.Size(189, 22)
-Me.tsbInjectIntoCurArtist.Text = "All Albums for This Artist"
-'
-'AutomaticOptionsToolStripMenuItem
-'
-Me.AutomaticOptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tso_auto_addtoablumonnewart})
-Me.AutomaticOptionsToolStripMenuItem.Name = "AutomaticOptionsToolStripMenuItem"
-Me.AutomaticOptionsToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
-Me.AutomaticOptionsToolStripMenuItem.Text = "Automatic Options"
-'
-'tso_auto_addtoablumonnewart
-'
-Me.tso_auto_addtoablumonnewart.Name = "tso_auto_addtoablumonnewart"
-Me.tso_auto_addtoablumonnewart.Size = New System.Drawing.Size(334, 22)
-Me.tso_auto_addtoablumonnewart.Text = "Inject Image Into Entire Album When Adding Album Art"
-'
-'movtbar_ddbut_optionsAndSettings
-'
-Me.movtbar_ddbut_optionsAndSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-Me.movtbar_ddbut_optionsAndSettings.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1})
-Me.movtbar_ddbut_optionsAndSettings.Image = CType(resources.GetObject("movtbar_ddbut_optionsAndSettings.Image"),System.Drawing.Image)
-Me.movtbar_ddbut_optionsAndSettings.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.movtbar_ddbut_optionsAndSettings.Name = "movtbar_ddbut_optionsAndSettings"
-Me.movtbar_ddbut_optionsAndSettings.Size = New System.Drawing.Size(134, 22)
-Me.movtbar_ddbut_optionsAndSettings.Text = "Options and Settings"
-'
-'movtbar_tsb_SetupAndConfigurationToolStripMenuItem1
-'
-Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Name = "movtbar_tsb_SetupAndConfigurationToolStripMenuItem1"
-Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Size = New System.Drawing.Size(191, 22)
-Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Text = "Setup and Configuration"
-'
-'tsddbTools
-'
-Me.tsddbTools.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-Me.tsddbTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbMusicSortMyMusicToolStripMenuItem, Me.tsbMusicModifyAlbumDataToolStripMenuItem, Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem, Me.ResizeFanartImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem})
-Me.tsddbTools.Image = CType(resources.GetObject("tsddbTools.Image"),System.Drawing.Image)
-Me.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
-Me.tsddbTools.Name = "tsddbTools"
-Me.tsddbTools.Size = New System.Drawing.Size(46, 22)
-Me.tsddbTools.Text = "Tools"
-'
-'tsbMusicSortMyMusicToolStripMenuItem
-'
-Me.tsbMusicSortMyMusicToolStripMenuItem.Name = "tsbMusicSortMyMusicToolStripMenuItem"
-Me.tsbMusicSortMyMusicToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.tsbMusicSortMyMusicToolStripMenuItem.Text = "Start Music Sorting Wizard"
-'
-'tsbMusicModifyAlbumDataToolStripMenuItem
-'
-Me.tsbMusicModifyAlbumDataToolStripMenuItem.Name = "tsbMusicModifyAlbumDataToolStripMenuItem"
-Me.tsbMusicModifyAlbumDataToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.tsbMusicModifyAlbumDataToolStripMenuItem.Text = "Modify Album Data"
-'
-'ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem
-'
-Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Name = "ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem"
-Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Text = "Scan All Artists and check for Backgrounds (looks locally for backgrounds)"
-'
-'tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem
-'
-Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Name = "tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem"
-Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem.Text = "Extract Image from music file to artist image"
-'
-'tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem
-'
-Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Name = "tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem"
-Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem.Text = "Extract Image from music file to album image"
-'
-'ResizeFanartImageToolStripMenuItem
-'
-Me.ResizeFanartImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimusic_fanart_960x540, Me.tsmimusic_fanart_1280x720, Me.tsmimusic_fanart_1920x1080})
-Me.ResizeFanartImageToolStripMenuItem.Name = "ResizeFanartImageToolStripMenuItem"
-Me.ResizeFanartImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.ResizeFanartImageToolStripMenuItem.Text = "Resize Background Image"
-'
-'tsmimusic_fanart_960x540
-'
-Me.tsmimusic_fanart_960x540.Name = "tsmimusic_fanart_960x540"
-Me.tsmimusic_fanart_960x540.Size = New System.Drawing.Size(130, 22)
-Me.tsmimusic_fanart_960x540.Text = "960x540"
-'
-'tsmimusic_fanart_1280x720
-'
-Me.tsmimusic_fanart_1280x720.Name = "tsmimusic_fanart_1280x720"
-Me.tsmimusic_fanart_1280x720.Size = New System.Drawing.Size(130, 22)
-Me.tsmimusic_fanart_1280x720.Text = "1280x720"
-'
-'tsmimusic_fanart_1920x1080
-'
-Me.tsmimusic_fanart_1920x1080.Name = "tsmimusic_fanart_1920x1080"
-Me.tsmimusic_fanart_1920x1080.Size = New System.Drawing.Size(130, 22)
-Me.tsmimusic_fanart_1920x1080.Text = "1920x1080"
-'
-'CompressBackgroundImageToolStripMenuItem
-'
-Me.CompressBackgroundImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimusic_fanart_q60, Me.tsmimusic_fanart_q70, Me.tsmimusic_fanart_q80, Me.tsmishows_fanart_q90, Me.tsmimusic_fanart_q95})
-Me.CompressBackgroundImageToolStripMenuItem.Name = "CompressBackgroundImageToolStripMenuItem"
-Me.CompressBackgroundImageToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
-Me.CompressBackgroundImageToolStripMenuItem.Text = "Compress Background Image"
-'
-'tsmimusic_fanart_q60
-'
-Me.tsmimusic_fanart_q60.Name = "tsmimusic_fanart_q60"
-Me.tsmimusic_fanart_q60.Size = New System.Drawing.Size(132, 22)
-Me.tsmimusic_fanart_q60.Text = "60% Quality"
-'
-'tsmimusic_fanart_q70
-'
-Me.tsmimusic_fanart_q70.Name = "tsmimusic_fanart_q70"
-Me.tsmimusic_fanart_q70.Size = New System.Drawing.Size(132, 22)
-Me.tsmimusic_fanart_q70.Text = "70% Quality"
-'
-'tsmimusic_fanart_q80
-'
-Me.tsmimusic_fanart_q80.Name = "tsmimusic_fanart_q80"
-Me.tsmimusic_fanart_q80.Size = New System.Drawing.Size(132, 22)
-Me.tsmimusic_fanart_q80.Text = "80% Quality"
-'
-'tsmishows_fanart_q90
-'
-Me.tsmishows_fanart_q90.Name = "tsmishows_fanart_q90"
-Me.tsmishows_fanart_q90.Size = New System.Drawing.Size(132, 22)
-Me.tsmishows_fanart_q90.Text = "90% Quality"
-'
-'tsmimusic_fanart_q95
-'
-Me.tsmimusic_fanart_q95.Name = "tsmimusic_fanart_q95"
-Me.tsmimusic_fanart_q95.Size = New System.Drawing.Size(132, 22)
-Me.tsmimusic_fanart_q95.Text = "95% Quality"
-'
-'pbMusicCurFanart
-'
-Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
-Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 0)
-Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
-Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 606)
-Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbMusicCurFanart.TabIndex = 1
-Me.pbMusicCurFanart.TabStop = false
-'
-'pbFront10
-'
-Me.pbFront10.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront10.Location = New System.Drawing.Point(0, 0)
-Me.pbFront10.Name = "pbFront10"
-Me.pbFront10.Size = New System.Drawing.Size(461, 334)
-Me.pbFront10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront10.TabIndex = 9
-Me.pbFront10.TabStop = false
-'
-'pbFront9
-'
-Me.pbFront9.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront9.Location = New System.Drawing.Point(0, 0)
-Me.pbFront9.Name = "pbFront9"
-Me.pbFront9.Size = New System.Drawing.Size(461, 334)
-Me.pbFront9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront9.TabIndex = 8
-Me.pbFront9.TabStop = false
-'
-'pbFront8
-'
-Me.pbFront8.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront8.Location = New System.Drawing.Point(0, 0)
-Me.pbFront8.Name = "pbFront8"
-Me.pbFront8.Size = New System.Drawing.Size(461, 334)
-Me.pbFront8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront8.TabIndex = 7
-Me.pbFront8.TabStop = false
-'
-'pbFront7
-'
-Me.pbFront7.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront7.Location = New System.Drawing.Point(0, 0)
-Me.pbFront7.Name = "pbFront7"
-Me.pbFront7.Size = New System.Drawing.Size(461, 334)
-Me.pbFront7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront7.TabIndex = 6
-Me.pbFront7.TabStop = false
-'
-'pbFront6
-'
-Me.pbFront6.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront6.Location = New System.Drawing.Point(0, 0)
-Me.pbFront6.Name = "pbFront6"
-Me.pbFront6.Size = New System.Drawing.Size(461, 334)
-Me.pbFront6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront6.TabIndex = 5
-Me.pbFront6.TabStop = false
-'
-'pbFront5
-'
-Me.pbFront5.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront5.Location = New System.Drawing.Point(0, 0)
-Me.pbFront5.Name = "pbFront5"
-Me.pbFront5.Size = New System.Drawing.Size(461, 334)
-Me.pbFront5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront5.TabIndex = 4
-Me.pbFront5.TabStop = false
-'
-'pbFront4
-'
-Me.pbFront4.Location = New System.Drawing.Point(3, 3)
-Me.pbFront4.Name = "pbFront4"
-Me.pbFront4.Size = New System.Drawing.Size(470, 331)
-Me.pbFront4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront4.TabIndex = 3
-Me.pbFront4.TabStop = false
-'
-'pbFront3
-'
-Me.pbFront3.Location = New System.Drawing.Point(3, 3)
-Me.pbFront3.Name = "pbFront3"
-Me.pbFront3.Size = New System.Drawing.Size(470, 331)
-Me.pbFront3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront3.TabIndex = 2
-Me.pbFront3.TabStop = false
-'
-'pbFront2
-'
-Me.pbFront2.Location = New System.Drawing.Point(3, 3)
-Me.pbFront2.Name = "pbFront2"
-Me.pbFront2.Size = New System.Drawing.Size(470, 331)
-Me.pbFront2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront2.TabIndex = 1
-Me.pbFront2.TabStop = false
-'
-'pbFront1
-'
-Me.pbFront1.Dock = System.Windows.Forms.DockStyle.Fill
-Me.pbFront1.Location = New System.Drawing.Point(0, 0)
-Me.pbFront1.Name = "pbFront1"
-Me.pbFront1.Size = New System.Drawing.Size(461, 334)
-Me.pbFront1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbFront1.TabIndex = 0
-Me.pbFront1.TabStop = false
-'
-'pbBack9
-'
-Me.pbBack9.Location = New System.Drawing.Point(604, 407)
-Me.pbBack9.Name = "pbBack9"
-Me.pbBack9.Size = New System.Drawing.Size(300, 200)
-Me.pbBack9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack9.TabIndex = 17
-Me.pbBack9.TabStop = false
-'
-'pbBack8
-'
-Me.pbBack8.Location = New System.Drawing.Point(303, 407)
-Me.pbBack8.Name = "pbBack8"
-Me.pbBack8.Size = New System.Drawing.Size(300, 200)
-Me.pbBack8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack8.TabIndex = 16
-Me.pbBack8.TabStop = false
-'
-'pbBack7
-'
-Me.pbBack7.Location = New System.Drawing.Point(2, 407)
-Me.pbBack7.Name = "pbBack7"
-Me.pbBack7.Size = New System.Drawing.Size(300, 200)
-Me.pbBack7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack7.TabIndex = 15
-Me.pbBack7.TabStop = false
-'
-'pbBack6
-'
-Me.pbBack6.Location = New System.Drawing.Point(604, 204)
-Me.pbBack6.Name = "pbBack6"
-Me.pbBack6.Size = New System.Drawing.Size(300, 200)
-Me.pbBack6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack6.TabIndex = 14
-Me.pbBack6.TabStop = false
-'
-'pbBack5
-'
-Me.pbBack5.Location = New System.Drawing.Point(303, 204)
-Me.pbBack5.Name = "pbBack5"
-Me.pbBack5.Size = New System.Drawing.Size(300, 200)
-Me.pbBack5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack5.TabIndex = 13
-Me.pbBack5.TabStop = false
-'
-'pbBack4
-'
-Me.pbBack4.Location = New System.Drawing.Point(2, 204)
-Me.pbBack4.Name = "pbBack4"
-Me.pbBack4.Size = New System.Drawing.Size(300, 200)
-Me.pbBack4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack4.TabIndex = 12
-Me.pbBack4.TabStop = false
-'
-'pbBack3
-'
-Me.pbBack3.Location = New System.Drawing.Point(604, 0)
-Me.pbBack3.Name = "pbBack3"
-Me.pbBack3.Size = New System.Drawing.Size(300, 200)
-Me.pbBack3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack3.TabIndex = 11
-Me.pbBack3.TabStop = false
-'
-'pbBack2
-'
-Me.pbBack2.Location = New System.Drawing.Point(303, 0)
-Me.pbBack2.Name = "pbBack2"
-Me.pbBack2.Size = New System.Drawing.Size(300, 200)
-Me.pbBack2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack2.TabIndex = 10
-Me.pbBack2.TabStop = false
-'
-'pbBack1
-'
-Me.pbBack1.Location = New System.Drawing.Point(2, 0)
-Me.pbBack1.Name = "pbBack1"
-Me.pbBack1.Size = New System.Drawing.Size(300, 200)
-Me.pbBack1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbBack1.TabIndex = 9
-Me.pbBack1.TabStop = false
-'
-'pbcdi9
-'
-Me.pbcdi9.Location = New System.Drawing.Point(614, 606)
-Me.pbcdi9.Name = "pbcdi9"
-Me.pbcdi9.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi9.TabIndex = 26
-Me.pbcdi9.TabStop = false
-'
-'pbcdi8
-'
-Me.pbcdi8.Location = New System.Drawing.Point(313, 606)
-Me.pbcdi8.Name = "pbcdi8"
-Me.pbcdi8.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi8.TabIndex = 25
-Me.pbcdi8.TabStop = false
-'
-'pbcdi7
-'
-Me.pbcdi7.Location = New System.Drawing.Point(12, 606)
-Me.pbcdi7.Name = "pbcdi7"
-Me.pbcdi7.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi7.TabIndex = 24
-Me.pbcdi7.TabStop = false
-'
-'pbcdi6
-'
-Me.pbcdi6.Location = New System.Drawing.Point(614, 303)
-Me.pbcdi6.Name = "pbcdi6"
-Me.pbcdi6.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi6.TabIndex = 23
-Me.pbcdi6.TabStop = false
-'
-'pbcdi5
-'
-Me.pbcdi5.Location = New System.Drawing.Point(313, 303)
-Me.pbcdi5.Name = "pbcdi5"
-Me.pbcdi5.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi5.TabIndex = 22
-Me.pbcdi5.TabStop = false
-'
-'pbcdi4
-'
-Me.pbcdi4.Location = New System.Drawing.Point(12, 303)
-Me.pbcdi4.Name = "pbcdi4"
-Me.pbcdi4.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi4.TabIndex = 21
-Me.pbcdi4.TabStop = false
-'
-'pbcdi3
-'
-Me.pbcdi3.Location = New System.Drawing.Point(615, 2)
-Me.pbcdi3.Name = "pbcdi3"
-Me.pbcdi3.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi3.TabIndex = 20
-Me.pbcdi3.TabStop = false
-'
-'pbcdi2
-'
-Me.pbcdi2.Location = New System.Drawing.Point(313, 2)
-Me.pbcdi2.Name = "pbcdi2"
-Me.pbcdi2.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi2.TabIndex = 19
-Me.pbcdi2.TabStop = false
-'
-'pbcdi1
-'
-Me.pbcdi1.Location = New System.Drawing.Point(12, 2)
-Me.pbcdi1.Name = "pbcdi1"
-Me.pbcdi1.Size = New System.Drawing.Size(300, 300)
-Me.pbcdi1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcdi1.TabIndex = 18
-Me.pbcdi1.TabStop = false
-'
-'pbcd2i9
-'
-Me.pbcd2i9.Location = New System.Drawing.Point(605, 607)
-Me.pbcd2i9.Name = "pbcd2i9"
-Me.pbcd2i9.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i9.TabIndex = 35
-Me.pbcd2i9.TabStop = false
-'
-'pbcd2i8
-'
-Me.pbcd2i8.Location = New System.Drawing.Point(304, 607)
-Me.pbcd2i8.Name = "pbcd2i8"
-Me.pbcd2i8.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i8.TabIndex = 34
-Me.pbcd2i8.TabStop = false
-'
-'pbcd2i7
-'
-Me.pbcd2i7.Location = New System.Drawing.Point(3, 607)
-Me.pbcd2i7.Name = "pbcd2i7"
-Me.pbcd2i7.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i7.TabIndex = 33
-Me.pbcd2i7.TabStop = false
-'
-'pbcd2i6
-'
-Me.pbcd2i6.Location = New System.Drawing.Point(605, 304)
-Me.pbcd2i6.Name = "pbcd2i6"
-Me.pbcd2i6.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i6.TabIndex = 32
-Me.pbcd2i6.TabStop = false
-'
-'pbcd2i5
-'
-Me.pbcd2i5.Location = New System.Drawing.Point(304, 304)
-Me.pbcd2i5.Name = "pbcd2i5"
-Me.pbcd2i5.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i5.TabIndex = 31
-Me.pbcd2i5.TabStop = false
-'
-'pbcd2i4
-'
-Me.pbcd2i4.Location = New System.Drawing.Point(3, 304)
-Me.pbcd2i4.Name = "pbcd2i4"
-Me.pbcd2i4.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i4.TabIndex = 30
-Me.pbcd2i4.TabStop = false
-'
-'pbcd2i3
-'
-Me.pbcd2i3.Location = New System.Drawing.Point(606, 3)
-Me.pbcd2i3.Name = "pbcd2i3"
-Me.pbcd2i3.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i3.TabIndex = 29
-Me.pbcd2i3.TabStop = false
-'
-'pbcd2i2
-'
-Me.pbcd2i2.Location = New System.Drawing.Point(304, 3)
-Me.pbcd2i2.Name = "pbcd2i2"
-Me.pbcd2i2.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i2.TabIndex = 28
-Me.pbcd2i2.TabStop = false
-'
-'pbcd2i1
-'
-Me.pbcd2i1.Location = New System.Drawing.Point(3, 3)
-Me.pbcd2i1.Name = "pbcd2i1"
-Me.pbcd2i1.Size = New System.Drawing.Size(300, 300)
-Me.pbcd2i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd2i1.TabIndex = 27
-Me.pbcd2i1.TabStop = false
-'
-'pbcd3i9
-'
-Me.pbcd3i9.Location = New System.Drawing.Point(605, 607)
-Me.pbcd3i9.Name = "pbcd3i9"
-Me.pbcd3i9.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i9.TabIndex = 44
-Me.pbcd3i9.TabStop = false
-'
-'pbcd3i8
-'
-Me.pbcd3i8.Location = New System.Drawing.Point(304, 607)
-Me.pbcd3i8.Name = "pbcd3i8"
-Me.pbcd3i8.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i8.TabIndex = 43
-Me.pbcd3i8.TabStop = false
-'
-'pbcd3i7
-'
-Me.pbcd3i7.Location = New System.Drawing.Point(3, 607)
-Me.pbcd3i7.Name = "pbcd3i7"
-Me.pbcd3i7.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i7.TabIndex = 42
-Me.pbcd3i7.TabStop = false
-'
-'pbcd3i6
-'
-Me.pbcd3i6.Location = New System.Drawing.Point(605, 304)
-Me.pbcd3i6.Name = "pbcd3i6"
-Me.pbcd3i6.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i6.TabIndex = 41
-Me.pbcd3i6.TabStop = false
-'
-'pbcd3i5
-'
-Me.pbcd3i5.Location = New System.Drawing.Point(304, 304)
-Me.pbcd3i5.Name = "pbcd3i5"
-Me.pbcd3i5.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i5.TabIndex = 40
-Me.pbcd3i5.TabStop = false
-'
-'pbcd3i4
-'
-Me.pbcd3i4.Location = New System.Drawing.Point(3, 304)
-Me.pbcd3i4.Name = "pbcd3i4"
-Me.pbcd3i4.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i4.TabIndex = 39
-Me.pbcd3i4.TabStop = false
-'
-'pbcd3i3
-'
-Me.pbcd3i3.Location = New System.Drawing.Point(606, 3)
-Me.pbcd3i3.Name = "pbcd3i3"
-Me.pbcd3i3.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i3.TabIndex = 38
-Me.pbcd3i3.TabStop = false
-'
-'pbcd3i2
-'
-Me.pbcd3i2.Location = New System.Drawing.Point(304, 3)
-Me.pbcd3i2.Name = "pbcd3i2"
-Me.pbcd3i2.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i2.TabIndex = 37
-Me.pbcd3i2.TabStop = false
-'
-'pbcd3i1
-'
-Me.pbcd3i1.Location = New System.Drawing.Point(3, 3)
-Me.pbcd3i1.Name = "pbcd3i1"
-Me.pbcd3i1.Size = New System.Drawing.Size(300, 300)
-Me.pbcd3i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd3i1.TabIndex = 36
-Me.pbcd3i1.TabStop = false
-'
-'pbcd4i9
-'
-Me.pbcd4i9.Location = New System.Drawing.Point(605, 607)
-Me.pbcd4i9.Name = "pbcd4i9"
-Me.pbcd4i9.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i9.TabIndex = 53
-Me.pbcd4i9.TabStop = false
-'
-'pbcd4i8
-'
-Me.pbcd4i8.Location = New System.Drawing.Point(304, 607)
-Me.pbcd4i8.Name = "pbcd4i8"
-Me.pbcd4i8.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i8.TabIndex = 52
-Me.pbcd4i8.TabStop = false
-'
-'pbcd4i7
-'
-Me.pbcd4i7.Location = New System.Drawing.Point(3, 607)
-Me.pbcd4i7.Name = "pbcd4i7"
-Me.pbcd4i7.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i7.TabIndex = 51
-Me.pbcd4i7.TabStop = false
-'
-'pbcd4i6
-'
-Me.pbcd4i6.Location = New System.Drawing.Point(605, 304)
-Me.pbcd4i6.Name = "pbcd4i6"
-Me.pbcd4i6.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i6.TabIndex = 50
-Me.pbcd4i6.TabStop = false
-'
-'pbcd4i5
-'
-Me.pbcd4i5.Location = New System.Drawing.Point(304, 304)
-Me.pbcd4i5.Name = "pbcd4i5"
-Me.pbcd4i5.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i5.TabIndex = 49
-Me.pbcd4i5.TabStop = false
-'
-'pbcd4i4
-'
-Me.pbcd4i4.Location = New System.Drawing.Point(3, 304)
-Me.pbcd4i4.Name = "pbcd4i4"
-Me.pbcd4i4.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i4.TabIndex = 48
-Me.pbcd4i4.TabStop = false
-'
-'pbcd4i3
-'
-Me.pbcd4i3.Location = New System.Drawing.Point(606, 3)
-Me.pbcd4i3.Name = "pbcd4i3"
-Me.pbcd4i3.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i3.TabIndex = 47
-Me.pbcd4i3.TabStop = false
-'
-'pbcd4i2
-'
-Me.pbcd4i2.Location = New System.Drawing.Point(304, 3)
-Me.pbcd4i2.Name = "pbcd4i2"
-Me.pbcd4i2.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i2.TabIndex = 46
-Me.pbcd4i2.TabStop = false
-'
-'pbcd4i1
-'
-Me.pbcd4i1.Location = New System.Drawing.Point(3, 3)
-Me.pbcd4i1.Name = "pbcd4i1"
-Me.pbcd4i1.Size = New System.Drawing.Size(300, 300)
-Me.pbcd4i1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbcd4i1.TabIndex = 45
-Me.pbcd4i1.TabStop = false
-'
-'pbInsert9
-'
-Me.pbInsert9.Location = New System.Drawing.Point(605, 607)
-Me.pbInsert9.Name = "pbInsert9"
-Me.pbInsert9.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert9.TabIndex = 62
-Me.pbInsert9.TabStop = false
-'
-'pbInsert8
-'
-Me.pbInsert8.Location = New System.Drawing.Point(304, 607)
-Me.pbInsert8.Name = "pbInsert8"
-Me.pbInsert8.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert8.TabIndex = 61
-Me.pbInsert8.TabStop = false
-'
-'pbInsert7
-'
-Me.pbInsert7.Location = New System.Drawing.Point(3, 607)
-Me.pbInsert7.Name = "pbInsert7"
-Me.pbInsert7.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert7.TabIndex = 60
-Me.pbInsert7.TabStop = false
-'
-'pbInsert6
-'
-Me.pbInsert6.Location = New System.Drawing.Point(605, 304)
-Me.pbInsert6.Name = "pbInsert6"
-Me.pbInsert6.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert6.TabIndex = 59
-Me.pbInsert6.TabStop = false
-'
-'pbInsert5
-'
-Me.pbInsert5.Location = New System.Drawing.Point(304, 304)
-Me.pbInsert5.Name = "pbInsert5"
-Me.pbInsert5.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert5.TabIndex = 58
-Me.pbInsert5.TabStop = false
-'
-'pbInsert4
-'
-Me.pbInsert4.Location = New System.Drawing.Point(3, 304)
-Me.pbInsert4.Name = "pbInsert4"
-Me.pbInsert4.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert4.TabIndex = 57
-Me.pbInsert4.TabStop = false
-'
-'pbInsert3
-'
-Me.pbInsert3.Location = New System.Drawing.Point(606, 3)
-Me.pbInsert3.Name = "pbInsert3"
-Me.pbInsert3.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert3.TabIndex = 56
-Me.pbInsert3.TabStop = false
-'
-'pbInsert2
-'
-Me.pbInsert2.Location = New System.Drawing.Point(304, 3)
-Me.pbInsert2.Name = "pbInsert2"
-Me.pbInsert2.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert2.TabIndex = 55
-Me.pbInsert2.TabStop = false
-'
-'pbInsert1
-'
-Me.pbInsert1.Location = New System.Drawing.Point(3, 3)
-Me.pbInsert1.Name = "pbInsert1"
-Me.pbInsert1.Size = New System.Drawing.Size(300, 300)
-Me.pbInsert1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInsert1.TabIndex = 54
-Me.pbInsert1.TabStop = false
-'
-'pbInlay9
-'
-Me.pbInlay9.Location = New System.Drawing.Point(605, 607)
-Me.pbInlay9.Name = "pbInlay9"
-Me.pbInlay9.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay9.TabIndex = 71
-Me.pbInlay9.TabStop = false
-'
-'pbInlay8
-'
-Me.pbInlay8.Location = New System.Drawing.Point(304, 607)
-Me.pbInlay8.Name = "pbInlay8"
-Me.pbInlay8.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay8.TabIndex = 70
-Me.pbInlay8.TabStop = false
-'
-'pbInlay7
-'
-Me.pbInlay7.Location = New System.Drawing.Point(3, 607)
-Me.pbInlay7.Name = "pbInlay7"
-Me.pbInlay7.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay7.TabIndex = 69
-Me.pbInlay7.TabStop = false
-'
-'pbInlay6
-'
-Me.pbInlay6.Location = New System.Drawing.Point(605, 304)
-Me.pbInlay6.Name = "pbInlay6"
-Me.pbInlay6.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay6.TabIndex = 68
-Me.pbInlay6.TabStop = false
-'
-'pbInlay5
-'
-Me.pbInlay5.Location = New System.Drawing.Point(304, 304)
-Me.pbInlay5.Name = "pbInlay5"
-Me.pbInlay5.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay5.TabIndex = 67
-Me.pbInlay5.TabStop = false
-'
-'pbInlay4
-'
-Me.pbInlay4.Location = New System.Drawing.Point(3, 304)
-Me.pbInlay4.Name = "pbInlay4"
-Me.pbInlay4.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay4.TabIndex = 66
-Me.pbInlay4.TabStop = false
-'
-'pbInlay3
-'
-Me.pbInlay3.Location = New System.Drawing.Point(606, 3)
-Me.pbInlay3.Name = "pbInlay3"
-Me.pbInlay3.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay3.TabIndex = 65
-Me.pbInlay3.TabStop = false
-'
-'pbInlay2
-'
-Me.pbInlay2.Location = New System.Drawing.Point(304, 3)
-Me.pbInlay2.Name = "pbInlay2"
-Me.pbInlay2.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay2.TabIndex = 64
-Me.pbInlay2.TabStop = false
-'
-'pbInlay1
-'
-Me.pbInlay1.Location = New System.Drawing.Point(3, 3)
-Me.pbInlay1.Name = "pbInlay1"
-Me.pbInlay1.Size = New System.Drawing.Size(300, 300)
-Me.pbInlay1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbInlay1.TabIndex = 63
-Me.pbInlay1.TabStop = false
-'
-'pb36
-'
-Me.pb36.BackColor = System.Drawing.Color.Transparent
-Me.pb36.Enabled = false
-Me.pb36.Location = New System.Drawing.Point(380, 1206)
-Me.pb36.Margin = New System.Windows.Forms.Padding(2)
-Me.pb36.Name = "pb36"
-Me.pb36.Size = New System.Drawing.Size(380, 68)
-Me.pb36.TabIndex = 57
-Me.pb36.TabStop = false
-'
-'pb35
-'
-Me.pb35.BackColor = System.Drawing.Color.Transparent
-Me.pb35.Enabled = false
-Me.pb35.Location = New System.Drawing.Point(0, 1206)
-Me.pb35.Margin = New System.Windows.Forms.Padding(2)
-Me.pb35.Name = "pb35"
-Me.pb35.Size = New System.Drawing.Size(380, 68)
-Me.pb35.TabIndex = 56
-Me.pb35.TabStop = false
-'
-'pb9
-'
-Me.pb9.BackColor = System.Drawing.Color.Transparent
-Me.pb9.Enabled = false
-Me.pb9.Location = New System.Drawing.Point(0, 283)
-Me.pb9.Margin = New System.Windows.Forms.Padding(2)
-Me.pb9.Name = "pb9"
-Me.pb9.Size = New System.Drawing.Size(380, 68)
-Me.pb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb9.TabIndex = 24
-Me.pb9.TabStop = false
-'
-'pb34
-'
-Me.pb34.BackColor = System.Drawing.Color.Transparent
-Me.pb34.Enabled = false
-Me.pb34.Location = New System.Drawing.Point(381, 1134)
-Me.pb34.Margin = New System.Windows.Forms.Padding(2)
-Me.pb34.Name = "pb34"
-Me.pb34.Size = New System.Drawing.Size(380, 68)
-Me.pb34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb34.TabIndex = 69
-Me.pb34.TabStop = false
-'
-'pb5
-'
-Me.pb5.BackColor = System.Drawing.Color.Transparent
-Me.pb5.Enabled = false
-Me.pb5.Location = New System.Drawing.Point(0, 141)
-Me.pb5.Margin = New System.Windows.Forms.Padding(2)
-Me.pb5.Name = "pb5"
-Me.pb5.Size = New System.Drawing.Size(380, 68)
-Me.pb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb5.TabIndex = 14
-Me.pb5.TabStop = false
-'
-'pb22
-'
-Me.pb22.BackColor = System.Drawing.Color.Transparent
-Me.pb22.Enabled = false
-Me.pb22.Location = New System.Drawing.Point(381, 708)
-Me.pb22.Margin = New System.Windows.Forms.Padding(2)
-Me.pb22.Name = "pb22"
-Me.pb22.Size = New System.Drawing.Size(380, 68)
-Me.pb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb22.TabIndex = 55
-Me.pb22.TabStop = false
-'
-'pb32
-'
-Me.pb32.BackColor = System.Drawing.Color.Transparent
-Me.pb32.Enabled = false
-Me.pb32.Location = New System.Drawing.Point(381, 1063)
-Me.pb32.Margin = New System.Windows.Forms.Padding(2)
-Me.pb32.Name = "pb32"
-Me.pb32.Size = New System.Drawing.Size(380, 68)
-Me.pb32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb32.TabIndex = 67
-Me.pb32.TabStop = false
-'
-'pb20
-'
-Me.pb20.BackColor = System.Drawing.Color.Transparent
-Me.pb20.Enabled = false
-Me.pb20.Location = New System.Drawing.Point(381, 637)
-Me.pb20.Margin = New System.Windows.Forms.Padding(2)
-Me.pb20.Name = "pb20"
-Me.pb20.Size = New System.Drawing.Size(380, 68)
-Me.pb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb20.TabIndex = 51
-Me.pb20.TabStop = false
-'
-'pb33
-'
-Me.pb33.BackColor = System.Drawing.Color.Transparent
-Me.pb33.Enabled = false
-Me.pb33.Location = New System.Drawing.Point(0, 1134)
-Me.pb33.Margin = New System.Windows.Forms.Padding(2)
-Me.pb33.Name = "pb33"
-Me.pb33.Size = New System.Drawing.Size(380, 68)
-Me.pb33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb33.TabIndex = 68
-Me.pb33.TabStop = false
-'
-'pb30
-'
-Me.pb30.BackColor = System.Drawing.Color.Transparent
-Me.pb30.Enabled = false
-Me.pb30.Location = New System.Drawing.Point(381, 992)
-Me.pb30.Margin = New System.Windows.Forms.Padding(2)
-Me.pb30.Name = "pb30"
-Me.pb30.Size = New System.Drawing.Size(380, 68)
-Me.pb30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb30.TabIndex = 65
-Me.pb30.TabStop = false
-'
-'pb3
-'
-Me.pb3.BackColor = System.Drawing.Color.Transparent
-Me.pb3.Enabled = false
-Me.pb3.Location = New System.Drawing.Point(0, 70)
-Me.pb3.Margin = New System.Windows.Forms.Padding(2)
-Me.pb3.Name = "pb3"
-Me.pb3.Size = New System.Drawing.Size(380, 68)
-Me.pb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb3.TabIndex = 12
-Me.pb3.TabStop = false
-'
-'pb28
-'
-Me.pb28.BackColor = System.Drawing.Color.Transparent
-Me.pb28.Enabled = false
-Me.pb28.Location = New System.Drawing.Point(381, 921)
-Me.pb28.Margin = New System.Windows.Forms.Padding(2)
-Me.pb28.Name = "pb28"
-Me.pb28.Size = New System.Drawing.Size(380, 68)
-Me.pb28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb28.TabIndex = 63
-Me.pb28.TabStop = false
-'
-'pb18
-'
-Me.pb18.BackColor = System.Drawing.Color.Transparent
-Me.pb18.Enabled = false
-Me.pb18.Location = New System.Drawing.Point(381, 566)
-Me.pb18.Margin = New System.Windows.Forms.Padding(2)
-Me.pb18.Name = "pb18"
-Me.pb18.Size = New System.Drawing.Size(380, 68)
-Me.pb18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb18.TabIndex = 45
-Me.pb18.TabStop = false
-'
-'pb1
-'
-Me.pb1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pb1.BackColor = System.Drawing.Color.Transparent
-Me.pb1.Enabled = false
-Me.pb1.Location = New System.Drawing.Point(0, 1)
-Me.pb1.Margin = New System.Windows.Forms.Padding(2)
-Me.pb1.MaximumSize = New System.Drawing.Size(380, 68)
-Me.pb1.MinimumSize = New System.Drawing.Size(380, 68)
-Me.pb1.Name = "pb1"
-Me.pb1.Size = New System.Drawing.Size(380, 68)
-Me.pb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb1.TabIndex = 10
-Me.pb1.TabStop = false
-'
-'pb16
-'
-Me.pb16.BackColor = System.Drawing.Color.Transparent
-Me.pb16.Enabled = false
-Me.pb16.Location = New System.Drawing.Point(381, 496)
-Me.pb16.Margin = New System.Windows.Forms.Padding(2)
-Me.pb16.Name = "pb16"
-Me.pb16.Size = New System.Drawing.Size(380, 68)
-Me.pb16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb16.TabIndex = 43
-Me.pb16.TabStop = false
-'
-'pb8
-'
-Me.pb8.BackColor = System.Drawing.Color.Transparent
-Me.pb8.Enabled = false
-Me.pb8.Location = New System.Drawing.Point(381, 212)
-Me.pb8.Margin = New System.Windows.Forms.Padding(2)
-Me.pb8.Name = "pb8"
-Me.pb8.Size = New System.Drawing.Size(380, 68)
-Me.pb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb8.TabIndex = 23
-Me.pb8.TabStop = false
-'
-'pb26
-'
-Me.pb26.BackColor = System.Drawing.Color.Transparent
-Me.pb26.Enabled = false
-Me.pb26.Location = New System.Drawing.Point(381, 850)
-Me.pb26.Margin = New System.Windows.Forms.Padding(2)
-Me.pb26.Name = "pb26"
-Me.pb26.Size = New System.Drawing.Size(380, 68)
-Me.pb26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb26.TabIndex = 61
-Me.pb26.TabStop = false
-'
-'pb24
-'
-Me.pb24.BackColor = System.Drawing.Color.Transparent
-Me.pb24.Enabled = false
-Me.pb24.Location = New System.Drawing.Point(381, 779)
-Me.pb24.Margin = New System.Windows.Forms.Padding(2)
-Me.pb24.Name = "pb24"
-Me.pb24.Size = New System.Drawing.Size(380, 68)
-Me.pb24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb24.TabIndex = 59
-Me.pb24.TabStop = false
-'
-'pb14
-'
-Me.pb14.BackColor = System.Drawing.Color.Transparent
-Me.pb14.Enabled = false
-Me.pb14.Location = New System.Drawing.Point(381, 425)
-Me.pb14.Margin = New System.Windows.Forms.Padding(2)
-Me.pb14.Name = "pb14"
-Me.pb14.Size = New System.Drawing.Size(380, 68)
-Me.pb14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb14.TabIndex = 39
-Me.pb14.TabStop = false
-'
-'pb31
-'
-Me.pb31.BackColor = System.Drawing.Color.Transparent
-Me.pb31.Enabled = false
-Me.pb31.Location = New System.Drawing.Point(0, 1063)
-Me.pb31.Margin = New System.Windows.Forms.Padding(2)
-Me.pb31.Name = "pb31"
-Me.pb31.Size = New System.Drawing.Size(380, 68)
-Me.pb31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb31.TabIndex = 66
-Me.pb31.TabStop = false
-'
-'pb2
-'
-Me.pb2.BackColor = System.Drawing.Color.Transparent
-Me.pb2.Enabled = false
-Me.pb2.Location = New System.Drawing.Point(381, 1)
-Me.pb2.Margin = New System.Windows.Forms.Padding(2)
-Me.pb2.Name = "pb2"
-Me.pb2.Size = New System.Drawing.Size(380, 68)
-Me.pb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb2.TabIndex = 11
-Me.pb2.TabStop = false
-'
-'pb12
-'
-Me.pb12.BackColor = System.Drawing.Color.Transparent
-Me.pb12.Enabled = false
-Me.pb12.Location = New System.Drawing.Point(381, 354)
-Me.pb12.Margin = New System.Windows.Forms.Padding(2)
-Me.pb12.Name = "pb12"
-Me.pb12.Size = New System.Drawing.Size(380, 68)
-Me.pb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb12.TabIndex = 33
-Me.pb12.TabStop = false
-'
-'pb6
-'
-Me.pb6.BackColor = System.Drawing.Color.Transparent
-Me.pb6.Enabled = false
-Me.pb6.Location = New System.Drawing.Point(381, 141)
-Me.pb6.Margin = New System.Windows.Forms.Padding(2)
-Me.pb6.Name = "pb6"
-Me.pb6.Size = New System.Drawing.Size(380, 68)
-Me.pb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb6.TabIndex = 15
-Me.pb6.TabStop = false
-'
-'pb7
-'
-Me.pb7.BackColor = System.Drawing.Color.Transparent
-Me.pb7.Enabled = false
-Me.pb7.Location = New System.Drawing.Point(0, 212)
-Me.pb7.Margin = New System.Windows.Forms.Padding(2)
-Me.pb7.Name = "pb7"
-Me.pb7.Size = New System.Drawing.Size(380, 68)
-Me.pb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb7.TabIndex = 22
-Me.pb7.TabStop = false
-'
-'pb4
-'
-Me.pb4.BackColor = System.Drawing.Color.Transparent
-Me.pb4.Enabled = false
-Me.pb4.Location = New System.Drawing.Point(381, 70)
-Me.pb4.Margin = New System.Windows.Forms.Padding(2)
-Me.pb4.Name = "pb4"
-Me.pb4.Size = New System.Drawing.Size(380, 68)
-Me.pb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb4.TabIndex = 13
-Me.pb4.TabStop = false
-'
-'pb11
-'
-Me.pb11.BackColor = System.Drawing.Color.Transparent
-Me.pb11.Enabled = false
-Me.pb11.Location = New System.Drawing.Point(0, 354)
-Me.pb11.Margin = New System.Windows.Forms.Padding(2)
-Me.pb11.Name = "pb11"
-Me.pb11.Size = New System.Drawing.Size(380, 68)
-Me.pb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb11.TabIndex = 32
-Me.pb11.TabStop = false
-'
-'pb29
-'
-Me.pb29.BackColor = System.Drawing.Color.Transparent
-Me.pb29.Enabled = false
-Me.pb29.Location = New System.Drawing.Point(0, 992)
-Me.pb29.Margin = New System.Windows.Forms.Padding(2)
-Me.pb29.Name = "pb29"
-Me.pb29.Size = New System.Drawing.Size(380, 68)
-Me.pb29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb29.TabIndex = 64
-Me.pb29.TabStop = false
-'
-'pb27
-'
-Me.pb27.BackColor = System.Drawing.Color.Transparent
-Me.pb27.Enabled = false
-Me.pb27.Location = New System.Drawing.Point(0, 921)
-Me.pb27.Margin = New System.Windows.Forms.Padding(2)
-Me.pb27.Name = "pb27"
-Me.pb27.Size = New System.Drawing.Size(380, 68)
-Me.pb27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb27.TabIndex = 62
-Me.pb27.TabStop = false
-'
-'pb10
-'
-Me.pb10.BackColor = System.Drawing.Color.Transparent
-Me.pb10.Enabled = false
-Me.pb10.Location = New System.Drawing.Point(381, 283)
-Me.pb10.Margin = New System.Windows.Forms.Padding(2)
-Me.pb10.Name = "pb10"
-Me.pb10.Size = New System.Drawing.Size(380, 68)
-Me.pb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb10.TabIndex = 25
-Me.pb10.TabStop = false
-'
-'pb23
-'
-Me.pb23.BackColor = System.Drawing.Color.Transparent
-Me.pb23.Enabled = false
-Me.pb23.Location = New System.Drawing.Point(0, 779)
-Me.pb23.Margin = New System.Windows.Forms.Padding(2)
-Me.pb23.Name = "pb23"
-Me.pb23.Size = New System.Drawing.Size(380, 68)
-Me.pb23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb23.TabIndex = 58
-Me.pb23.TabStop = false
-'
-'pb25
-'
-Me.pb25.BackColor = System.Drawing.Color.Transparent
-Me.pb25.Enabled = false
-Me.pb25.Location = New System.Drawing.Point(0, 850)
-Me.pb25.Margin = New System.Windows.Forms.Padding(2)
-Me.pb25.Name = "pb25"
-Me.pb25.Size = New System.Drawing.Size(380, 68)
-Me.pb25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb25.TabIndex = 60
-Me.pb25.TabStop = false
-'
-'pb21
-'
-Me.pb21.BackColor = System.Drawing.Color.Transparent
-Me.pb21.Enabled = false
-Me.pb21.Location = New System.Drawing.Point(0, 708)
-Me.pb21.Margin = New System.Windows.Forms.Padding(2)
-Me.pb21.Name = "pb21"
-Me.pb21.Size = New System.Drawing.Size(380, 68)
-Me.pb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb21.TabIndex = 54
-Me.pb21.TabStop = false
-'
-'pb17
-'
-Me.pb17.BackColor = System.Drawing.Color.Transparent
-Me.pb17.Enabled = false
-Me.pb17.Location = New System.Drawing.Point(0, 566)
-Me.pb17.Margin = New System.Windows.Forms.Padding(2)
-Me.pb17.Name = "pb17"
-Me.pb17.Size = New System.Drawing.Size(380, 68)
-Me.pb17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb17.TabIndex = 44
-Me.pb17.TabStop = false
-'
-'pb19
-'
-Me.pb19.BackColor = System.Drawing.Color.Transparent
-Me.pb19.Enabled = false
-Me.pb19.Location = New System.Drawing.Point(0, 637)
-Me.pb19.Margin = New System.Windows.Forms.Padding(2)
-Me.pb19.Name = "pb19"
-Me.pb19.Size = New System.Drawing.Size(380, 68)
-Me.pb19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb19.TabIndex = 50
-Me.pb19.TabStop = false
-'
-'pb13
-'
-Me.pb13.BackColor = System.Drawing.Color.Transparent
-Me.pb13.Enabled = false
-Me.pb13.Location = New System.Drawing.Point(0, 425)
-Me.pb13.Margin = New System.Windows.Forms.Padding(2)
-Me.pb13.Name = "pb13"
-Me.pb13.Size = New System.Drawing.Size(380, 68)
-Me.pb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb13.TabIndex = 38
-Me.pb13.TabStop = false
-'
-'pb15
-'
-Me.pb15.BackColor = System.Drawing.Color.Transparent
-Me.pb15.Enabled = false
-Me.pb15.Location = New System.Drawing.Point(0, 496)
-Me.pb15.Margin = New System.Windows.Forms.Padding(2)
-Me.pb15.Name = "pb15"
-Me.pb15.Size = New System.Drawing.Size(380, 68)
-Me.pb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pb15.TabIndex = 42
-Me.pb15.TabStop = false
-'
-'pbwns1
-'
-Me.pbwns1.BackColor = System.Drawing.Color.Transparent
-Me.pbwns1.Enabled = false
-Me.pbwns1.Location = New System.Drawing.Point(0, 1)
-Me.pbwns1.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns1.Name = "pbwns1"
-Me.pbwns1.Size = New System.Drawing.Size(380, 80)
-Me.pbwns1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns1.TabIndex = 10
-Me.pbwns1.TabStop = false
-'
-'pbwns2
-'
-Me.pbwns2.BackColor = System.Drawing.Color.Transparent
-Me.pbwns2.Enabled = false
-Me.pbwns2.Location = New System.Drawing.Point(382, 2)
-Me.pbwns2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns2.Name = "pbwns2"
-Me.pbwns2.Size = New System.Drawing.Size(380, 80)
-Me.pbwns2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns2.TabIndex = 11
-Me.pbwns2.TabStop = false
-'
-'pbwns3
-'
-Me.pbwns3.BackColor = System.Drawing.Color.Transparent
-Me.pbwns3.Enabled = false
-Me.pbwns3.Location = New System.Drawing.Point(0, 84)
-Me.pbwns3.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns3.Name = "pbwns3"
-Me.pbwns3.Size = New System.Drawing.Size(380, 80)
-Me.pbwns3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns3.TabIndex = 12
-Me.pbwns3.TabStop = false
-'
-'pbwns4
-'
-Me.pbwns4.BackColor = System.Drawing.Color.Transparent
-Me.pbwns4.Enabled = false
-Me.pbwns4.Location = New System.Drawing.Point(382, 84)
-Me.pbwns4.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns4.Name = "pbwns4"
-Me.pbwns4.Size = New System.Drawing.Size(380, 80)
-Me.pbwns4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns4.TabIndex = 13
-Me.pbwns4.TabStop = false
-'
-'pbwns5
-'
-Me.pbwns5.BackColor = System.Drawing.Color.Transparent
-Me.pbwns5.Enabled = false
-Me.pbwns5.Location = New System.Drawing.Point(0, 167)
-Me.pbwns5.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns5.Name = "pbwns5"
-Me.pbwns5.Size = New System.Drawing.Size(380, 80)
-Me.pbwns5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns5.TabIndex = 14
-Me.pbwns5.TabStop = false
-'
-'pbwns6
-'
-Me.pbwns6.BackColor = System.Drawing.Color.Transparent
-Me.pbwns6.Enabled = false
-Me.pbwns6.Location = New System.Drawing.Point(382, 167)
-Me.pbwns6.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns6.Name = "pbwns6"
-Me.pbwns6.Size = New System.Drawing.Size(380, 80)
-Me.pbwns6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns6.TabIndex = 15
-Me.pbwns6.TabStop = false
-'
-'pbwns7
-'
-Me.pbwns7.BackColor = System.Drawing.Color.Transparent
-Me.pbwns7.Enabled = false
-Me.pbwns7.Location = New System.Drawing.Point(0, 250)
-Me.pbwns7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns7.Name = "pbwns7"
-Me.pbwns7.Size = New System.Drawing.Size(380, 80)
-Me.pbwns7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns7.TabIndex = 22
-Me.pbwns7.TabStop = false
-'
-'pbwns8
-'
-Me.pbwns8.BackColor = System.Drawing.Color.Transparent
-Me.pbwns8.Enabled = false
-Me.pbwns8.Location = New System.Drawing.Point(382, 250)
-Me.pbwns8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns8.Name = "pbwns8"
-Me.pbwns8.Size = New System.Drawing.Size(380, 80)
-Me.pbwns8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns8.TabIndex = 23
-Me.pbwns8.TabStop = false
-'
-'pbwns9
-'
-Me.pbwns9.BackColor = System.Drawing.Color.Transparent
-Me.pbwns9.Enabled = false
-Me.pbwns9.Location = New System.Drawing.Point(0, 333)
-Me.pbwns9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns9.Name = "pbwns9"
-Me.pbwns9.Size = New System.Drawing.Size(380, 80)
-Me.pbwns9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns9.TabIndex = 24
-Me.pbwns9.TabStop = false
-'
-'pbwns10
-'
-Me.pbwns10.BackColor = System.Drawing.Color.Transparent
-Me.pbwns10.Enabled = false
-Me.pbwns10.Location = New System.Drawing.Point(382, 333)
-Me.pbwns10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns10.Name = "pbwns10"
-Me.pbwns10.Size = New System.Drawing.Size(380, 80)
-Me.pbwns10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns10.TabIndex = 25
-Me.pbwns10.TabStop = false
-'
-'pbwns11
-'
-Me.pbwns11.BackColor = System.Drawing.Color.Transparent
-Me.pbwns11.Enabled = false
-Me.pbwns11.Location = New System.Drawing.Point(0, 416)
-Me.pbwns11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns11.Name = "pbwns11"
-Me.pbwns11.Size = New System.Drawing.Size(380, 80)
-Me.pbwns11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns11.TabIndex = 32
-Me.pbwns11.TabStop = false
-'
-'pbwns12
-'
-Me.pbwns12.BackColor = System.Drawing.Color.Transparent
-Me.pbwns12.Enabled = false
-Me.pbwns12.Location = New System.Drawing.Point(382, 416)
-Me.pbwns12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns12.Name = "pbwns12"
-Me.pbwns12.Size = New System.Drawing.Size(380, 80)
-Me.pbwns12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns12.TabIndex = 33
-Me.pbwns12.TabStop = false
-'
-'pbwns13
-'
-Me.pbwns13.BackColor = System.Drawing.Color.Transparent
-Me.pbwns13.Enabled = false
-Me.pbwns13.Location = New System.Drawing.Point(0, 499)
-Me.pbwns13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns13.Name = "pbwns13"
-Me.pbwns13.Size = New System.Drawing.Size(380, 80)
-Me.pbwns13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns13.TabIndex = 38
-Me.pbwns13.TabStop = false
-'
-'pbwns14
-'
-Me.pbwns14.BackColor = System.Drawing.Color.Transparent
-Me.pbwns14.Enabled = false
-Me.pbwns14.Location = New System.Drawing.Point(382, 499)
-Me.pbwns14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns14.Name = "pbwns14"
-Me.pbwns14.Size = New System.Drawing.Size(380, 80)
-Me.pbwns14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns14.TabIndex = 39
-Me.pbwns14.TabStop = false
-'
-'pbwns15
-'
-Me.pbwns15.BackColor = System.Drawing.Color.Transparent
-Me.pbwns15.Enabled = false
-Me.pbwns15.Location = New System.Drawing.Point(0, 583)
-Me.pbwns15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns15.Name = "pbwns15"
-Me.pbwns15.Size = New System.Drawing.Size(380, 80)
-Me.pbwns15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns15.TabIndex = 42
-Me.pbwns15.TabStop = false
-'
-'pbwns16
-'
-Me.pbwns16.BackColor = System.Drawing.Color.Transparent
-Me.pbwns16.Enabled = false
-Me.pbwns16.Location = New System.Drawing.Point(382, 583)
-Me.pbwns16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns16.Name = "pbwns16"
-Me.pbwns16.Size = New System.Drawing.Size(380, 80)
-Me.pbwns16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns16.TabIndex = 43
-Me.pbwns16.TabStop = false
-'
-'pbwns17
-'
-Me.pbwns17.BackColor = System.Drawing.Color.Transparent
-Me.pbwns17.Enabled = false
-Me.pbwns17.Location = New System.Drawing.Point(0, 667)
-Me.pbwns17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns17.Name = "pbwns17"
-Me.pbwns17.Size = New System.Drawing.Size(380, 80)
-Me.pbwns17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns17.TabIndex = 44
-Me.pbwns17.TabStop = false
-'
-'pbwns18
-'
-Me.pbwns18.BackColor = System.Drawing.Color.Transparent
-Me.pbwns18.Enabled = false
-Me.pbwns18.Location = New System.Drawing.Point(382, 667)
-Me.pbwns18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns18.Name = "pbwns18"
-Me.pbwns18.Size = New System.Drawing.Size(380, 80)
-Me.pbwns18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns18.TabIndex = 45
-Me.pbwns18.TabStop = false
-'
-'pbwns19
-'
-Me.pbwns19.BackColor = System.Drawing.Color.Transparent
-Me.pbwns19.Enabled = false
-Me.pbwns19.Location = New System.Drawing.Point(0, 750)
-Me.pbwns19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns19.Name = "pbwns19"
-Me.pbwns19.Size = New System.Drawing.Size(380, 80)
-Me.pbwns19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns19.TabIndex = 50
-Me.pbwns19.TabStop = false
-'
-'pbwns20
-'
-Me.pbwns20.BackColor = System.Drawing.Color.Transparent
-Me.pbwns20.Enabled = false
-Me.pbwns20.Location = New System.Drawing.Point(382, 750)
-Me.pbwns20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns20.Name = "pbwns20"
-Me.pbwns20.Size = New System.Drawing.Size(380, 80)
-Me.pbwns20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns20.TabIndex = 51
-Me.pbwns20.TabStop = false
-'
-'pbwns21
-'
-Me.pbwns21.BackColor = System.Drawing.Color.Transparent
-Me.pbwns21.Enabled = false
-Me.pbwns21.Location = New System.Drawing.Point(0, 833)
-Me.pbwns21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns21.Name = "pbwns21"
-Me.pbwns21.Size = New System.Drawing.Size(380, 80)
-Me.pbwns21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns21.TabIndex = 54
-Me.pbwns21.TabStop = false
-'
-'pbwns22
-'
-Me.pbwns22.BackColor = System.Drawing.Color.Transparent
-Me.pbwns22.Enabled = false
-Me.pbwns22.Location = New System.Drawing.Point(382, 833)
-Me.pbwns22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns22.Name = "pbwns22"
-Me.pbwns22.Size = New System.Drawing.Size(380, 80)
-Me.pbwns22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns22.TabIndex = 55
-Me.pbwns22.TabStop = false
-'
-'pbwns23
-'
-Me.pbwns23.BackColor = System.Drawing.Color.Transparent
-Me.pbwns23.Enabled = false
-Me.pbwns23.Location = New System.Drawing.Point(0, 915)
-Me.pbwns23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns23.Name = "pbwns23"
-Me.pbwns23.Size = New System.Drawing.Size(380, 80)
-Me.pbwns23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns23.TabIndex = 58
-Me.pbwns23.TabStop = false
-'
-'pbwns24
-'
-Me.pbwns24.BackColor = System.Drawing.Color.Transparent
-Me.pbwns24.Enabled = false
-Me.pbwns24.Location = New System.Drawing.Point(382, 915)
-Me.pbwns24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns24.Name = "pbwns24"
-Me.pbwns24.Size = New System.Drawing.Size(380, 80)
-Me.pbwns24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns24.TabIndex = 59
-Me.pbwns24.TabStop = false
-'
-'pbwns25
-'
-Me.pbwns25.BackColor = System.Drawing.Color.Transparent
-Me.pbwns25.Enabled = false
-Me.pbwns25.Location = New System.Drawing.Point(0, 998)
-Me.pbwns25.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns25.Name = "pbwns25"
-Me.pbwns25.Size = New System.Drawing.Size(380, 80)
-Me.pbwns25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns25.TabIndex = 60
-Me.pbwns25.TabStop = false
-'
-'pbwns26
-'
-Me.pbwns26.BackColor = System.Drawing.Color.Transparent
-Me.pbwns26.Enabled = false
-Me.pbwns26.Location = New System.Drawing.Point(382, 998)
-Me.pbwns26.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns26.Name = "pbwns26"
-Me.pbwns26.Size = New System.Drawing.Size(380, 80)
-Me.pbwns26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns26.TabIndex = 61
-Me.pbwns26.TabStop = false
-'
-'pbwns27
-'
-Me.pbwns27.BackColor = System.Drawing.Color.Transparent
-Me.pbwns27.Enabled = false
-Me.pbwns27.Location = New System.Drawing.Point(0, 1081)
-Me.pbwns27.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns27.Name = "pbwns27"
-Me.pbwns27.Size = New System.Drawing.Size(380, 80)
-Me.pbwns27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns27.TabIndex = 62
-Me.pbwns27.TabStop = false
-'
-'pbwns28
-'
-Me.pbwns28.BackColor = System.Drawing.Color.Transparent
-Me.pbwns28.Enabled = false
-Me.pbwns28.Location = New System.Drawing.Point(382, 1081)
-Me.pbwns28.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns28.Name = "pbwns28"
-Me.pbwns28.Size = New System.Drawing.Size(380, 80)
-Me.pbwns28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns28.TabIndex = 63
-Me.pbwns28.TabStop = false
-'
-'pbwns29
-'
-Me.pbwns29.BackColor = System.Drawing.Color.Transparent
-Me.pbwns29.Enabled = false
-Me.pbwns29.Location = New System.Drawing.Point(0, 1164)
-Me.pbwns29.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns29.Name = "pbwns29"
-Me.pbwns29.Size = New System.Drawing.Size(380, 80)
-Me.pbwns29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns29.TabIndex = 64
-Me.pbwns29.TabStop = false
-'
-'pbwns30
-'
-Me.pbwns30.BackColor = System.Drawing.Color.Transparent
-Me.pbwns30.Enabled = false
-Me.pbwns30.Location = New System.Drawing.Point(382, 1164)
-Me.pbwns30.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns30.Name = "pbwns30"
-Me.pbwns30.Size = New System.Drawing.Size(380, 80)
-Me.pbwns30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns30.TabIndex = 65
-Me.pbwns30.TabStop = false
-'
-'pbwns31
-'
-Me.pbwns31.BackColor = System.Drawing.Color.Transparent
-Me.pbwns31.Enabled = false
-Me.pbwns31.Location = New System.Drawing.Point(0, 1249)
-Me.pbwns31.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns31.Name = "pbwns31"
-Me.pbwns31.Size = New System.Drawing.Size(380, 80)
-Me.pbwns31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns31.TabIndex = 66
-Me.pbwns31.TabStop = false
-'
-'pbwns32
-'
-Me.pbwns32.BackColor = System.Drawing.Color.Transparent
-Me.pbwns32.Enabled = false
-Me.pbwns32.Location = New System.Drawing.Point(382, 1249)
-Me.pbwns32.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns32.Name = "pbwns32"
-Me.pbwns32.Size = New System.Drawing.Size(380, 80)
-Me.pbwns32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns32.TabIndex = 67
-Me.pbwns32.TabStop = false
-'
-'pbwns33
-'
-Me.pbwns33.BackColor = System.Drawing.Color.Transparent
-Me.pbwns33.Enabled = false
-Me.pbwns33.Location = New System.Drawing.Point(0, 1333)
-Me.pbwns33.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns33.Name = "pbwns33"
-Me.pbwns33.Size = New System.Drawing.Size(380, 80)
-Me.pbwns33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns33.TabIndex = 68
-Me.pbwns33.TabStop = false
-'
-'pbwns34
-'
-Me.pbwns34.BackColor = System.Drawing.Color.Transparent
-Me.pbwns34.Enabled = false
-Me.pbwns34.Location = New System.Drawing.Point(382, 1333)
-Me.pbwns34.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns34.Name = "pbwns34"
-Me.pbwns34.Size = New System.Drawing.Size(380, 80)
-Me.pbwns34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns34.TabIndex = 69
-Me.pbwns34.TabStop = false
-'
-'pbwns35
-'
-Me.pbwns35.BackColor = System.Drawing.Color.Transparent
-Me.pbwns35.Enabled = false
-Me.pbwns35.Location = New System.Drawing.Point(0, 1418)
-Me.pbwns35.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns35.Name = "pbwns35"
-Me.pbwns35.Size = New System.Drawing.Size(380, 80)
-Me.pbwns35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns35.TabIndex = 56
-Me.pbwns35.TabStop = false
-'
-'pbwns36
-'
-Me.pbwns36.BackColor = System.Drawing.Color.Transparent
-Me.pbwns36.Enabled = false
-Me.pbwns36.Location = New System.Drawing.Point(382, 1418)
-Me.pbwns36.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwns36.Name = "pbwns36"
-Me.pbwns36.Size = New System.Drawing.Size(380, 80)
-Me.pbwns36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwns36.TabIndex = 57
-Me.pbwns36.TabStop = false
-'
-'pbwrs1
-'
-Me.pbwrs1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pbwrs1.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs1.Enabled = false
-Me.pbwrs1.Location = New System.Drawing.Point(1, 3)
-Me.pbwrs1.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs1.MaximumSize = New System.Drawing.Size(380, 68)
-Me.pbwrs1.MinimumSize = New System.Drawing.Size(380, 68)
-Me.pbwrs1.Name = "pbwrs1"
-Me.pbwrs1.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs1.TabIndex = 10
-Me.pbwrs1.TabStop = false
-'
-'pbwrs2
-'
-Me.pbwrs2.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs2.Enabled = false
-Me.pbwrs2.Location = New System.Drawing.Point(382, 3)
-Me.pbwrs2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs2.Name = "pbwrs2"
-Me.pbwrs2.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs2.TabIndex = 11
-Me.pbwrs2.TabStop = false
-'
-'pbwrs3
-'
-Me.pbwrs3.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs3.Enabled = false
-Me.pbwrs3.Location = New System.Drawing.Point(1, 73)
-Me.pbwrs3.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs3.Name = "pbwrs3"
-Me.pbwrs3.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs3.TabIndex = 12
-Me.pbwrs3.TabStop = false
-'
-'pbwrs4
-'
-Me.pbwrs4.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs4.Enabled = false
-Me.pbwrs4.Location = New System.Drawing.Point(382, 73)
-Me.pbwrs4.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs4.Name = "pbwrs4"
-Me.pbwrs4.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs4.TabIndex = 13
-Me.pbwrs4.TabStop = false
-'
-'pbwrs5
-'
-Me.pbwrs5.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs5.Enabled = false
-Me.pbwrs5.Location = New System.Drawing.Point(1, 144)
-Me.pbwrs5.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs5.Name = "pbwrs5"
-Me.pbwrs5.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs5.TabIndex = 14
-Me.pbwrs5.TabStop = false
-'
-'pbwrs6
-'
-Me.pbwrs6.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs6.Enabled = false
-Me.pbwrs6.Location = New System.Drawing.Point(382, 144)
-Me.pbwrs6.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs6.Name = "pbwrs6"
-Me.pbwrs6.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs6.TabIndex = 15
-Me.pbwrs6.TabStop = false
-'
-'pbwrs7
-'
-Me.pbwrs7.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs7.Enabled = false
-Me.pbwrs7.Location = New System.Drawing.Point(1, 216)
-Me.pbwrs7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs7.Name = "pbwrs7"
-Me.pbwrs7.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs7.TabIndex = 22
-Me.pbwrs7.TabStop = false
-'
-'pbwrs8
-'
-Me.pbwrs8.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs8.Enabled = false
-Me.pbwrs8.Location = New System.Drawing.Point(382, 216)
-Me.pbwrs8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs8.Name = "pbwrs8"
-Me.pbwrs8.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs8.TabIndex = 23
-Me.pbwrs8.TabStop = false
-'
-'pbwrs9
-'
-Me.pbwrs9.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs9.Enabled = false
-Me.pbwrs9.Location = New System.Drawing.Point(1, 287)
-Me.pbwrs9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs9.Name = "pbwrs9"
-Me.pbwrs9.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs9.TabIndex = 24
-Me.pbwrs9.TabStop = false
-'
-'pbwrs10
-'
-Me.pbwrs10.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs10.Enabled = false
-Me.pbwrs10.Location = New System.Drawing.Point(382, 288)
-Me.pbwrs10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs10.Name = "pbwrs10"
-Me.pbwrs10.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs10.TabIndex = 25
-Me.pbwrs10.TabStop = false
-'
-'pbwrs11
-'
-Me.pbwrs11.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs11.Enabled = false
-Me.pbwrs11.Location = New System.Drawing.Point(1, 360)
-Me.pbwrs11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs11.Name = "pbwrs11"
-Me.pbwrs11.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs11.TabIndex = 32
-Me.pbwrs11.TabStop = false
-'
-'pbwrs12
-'
-Me.pbwrs12.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs12.Enabled = false
-Me.pbwrs12.Location = New System.Drawing.Point(382, 360)
-Me.pbwrs12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs12.Name = "pbwrs12"
-Me.pbwrs12.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs12.TabIndex = 33
-Me.pbwrs12.TabStop = false
-'
-'pbwrs13
-'
-Me.pbwrs13.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs13.Enabled = false
-Me.pbwrs13.Location = New System.Drawing.Point(1, 432)
-Me.pbwrs13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs13.Name = "pbwrs13"
-Me.pbwrs13.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs13.TabIndex = 38
-Me.pbwrs13.TabStop = false
-'
-'pbwrs14
-'
-Me.pbwrs14.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs14.Enabled = false
-Me.pbwrs14.Location = New System.Drawing.Point(382, 432)
-Me.pbwrs14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs14.Name = "pbwrs14"
-Me.pbwrs14.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs14.TabIndex = 39
-Me.pbwrs14.TabStop = false
-'
-'pbwrs15
-'
-Me.pbwrs15.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs15.Enabled = false
-Me.pbwrs15.Location = New System.Drawing.Point(1, 504)
-Me.pbwrs15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs15.Name = "pbwrs15"
-Me.pbwrs15.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs15.TabIndex = 42
-Me.pbwrs15.TabStop = false
-'
-'pbwrs16
-'
-Me.pbwrs16.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs16.Enabled = false
-Me.pbwrs16.Location = New System.Drawing.Point(382, 504)
-Me.pbwrs16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs16.Name = "pbwrs16"
-Me.pbwrs16.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs16.TabIndex = 43
-Me.pbwrs16.TabStop = false
-'
-'pbwrs17
-'
-Me.pbwrs17.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs17.Enabled = false
-Me.pbwrs17.Location = New System.Drawing.Point(1, 576)
-Me.pbwrs17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs17.Name = "pbwrs17"
-Me.pbwrs17.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs17.TabIndex = 44
-Me.pbwrs17.TabStop = false
-'
-'pbwrs18
-'
-Me.pbwrs18.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs18.Enabled = false
-Me.pbwrs18.Location = New System.Drawing.Point(382, 576)
-Me.pbwrs18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs18.Name = "pbwrs18"
-Me.pbwrs18.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs18.TabIndex = 45
-Me.pbwrs18.TabStop = false
-'
-'pbwrs19
-'
-Me.pbwrs19.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs19.Enabled = false
-Me.pbwrs19.Location = New System.Drawing.Point(1, 648)
-Me.pbwrs19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs19.Name = "pbwrs19"
-Me.pbwrs19.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs19.TabIndex = 50
-Me.pbwrs19.TabStop = false
-'
-'pbwrs20
-'
-Me.pbwrs20.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs20.Enabled = false
-Me.pbwrs20.Location = New System.Drawing.Point(382, 648)
-Me.pbwrs20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs20.Name = "pbwrs20"
-Me.pbwrs20.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs20.TabIndex = 51
-Me.pbwrs20.TabStop = false
-'
-'pbwrs21
-'
-Me.pbwrs21.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs21.Enabled = false
-Me.pbwrs21.Location = New System.Drawing.Point(1, 720)
-Me.pbwrs21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs21.Name = "pbwrs21"
-Me.pbwrs21.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs21.TabIndex = 54
-Me.pbwrs21.TabStop = false
-'
-'pbwrs22
-'
-Me.pbwrs22.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs22.Enabled = false
-Me.pbwrs22.Location = New System.Drawing.Point(382, 720)
-Me.pbwrs22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs22.Name = "pbwrs22"
-Me.pbwrs22.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs22.TabIndex = 55
-Me.pbwrs22.TabStop = false
-'
-'pbwrs23
-'
-Me.pbwrs23.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs23.Enabled = false
-Me.pbwrs23.Location = New System.Drawing.Point(1, 791)
-Me.pbwrs23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs23.Name = "pbwrs23"
-Me.pbwrs23.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs23.TabIndex = 58
-Me.pbwrs23.TabStop = false
-'
-'pbwrs24
-'
-Me.pbwrs24.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs24.Enabled = false
-Me.pbwrs24.Location = New System.Drawing.Point(382, 791)
-Me.pbwrs24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs24.Name = "pbwrs24"
-Me.pbwrs24.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs24.TabIndex = 59
-Me.pbwrs24.TabStop = false
-'
-'pbwrs25
-'
-Me.pbwrs25.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs25.Enabled = false
-Me.pbwrs25.Location = New System.Drawing.Point(1, 863)
-Me.pbwrs25.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs25.Name = "pbwrs25"
-Me.pbwrs25.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs25.TabIndex = 60
-Me.pbwrs25.TabStop = false
-'
-'pbwrs26
-'
-Me.pbwrs26.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs26.Enabled = false
-Me.pbwrs26.Location = New System.Drawing.Point(382, 863)
-Me.pbwrs26.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs26.Name = "pbwrs26"
-Me.pbwrs26.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs26.TabIndex = 61
-Me.pbwrs26.TabStop = false
-'
-'pbwrs27
-'
-Me.pbwrs27.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs27.Enabled = false
-Me.pbwrs27.Location = New System.Drawing.Point(0, 934)
-Me.pbwrs27.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs27.Name = "pbwrs27"
-Me.pbwrs27.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs27.TabIndex = 62
-Me.pbwrs27.TabStop = false
-'
-'pbwrs28
-'
-Me.pbwrs28.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs28.Enabled = false
-Me.pbwrs28.Location = New System.Drawing.Point(382, 934)
-Me.pbwrs28.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs28.Name = "pbwrs28"
-Me.pbwrs28.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs28.TabIndex = 63
-Me.pbwrs28.TabStop = false
-'
-'pbwrs29
-'
-Me.pbwrs29.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs29.Enabled = false
-Me.pbwrs29.Location = New System.Drawing.Point(0, 1005)
-Me.pbwrs29.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs29.Name = "pbwrs29"
-Me.pbwrs29.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs29.TabIndex = 64
-Me.pbwrs29.TabStop = false
-'
-'pbwrs30
-'
-Me.pbwrs30.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs30.Enabled = false
-Me.pbwrs30.Location = New System.Drawing.Point(382, 1005)
-Me.pbwrs30.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs30.Name = "pbwrs30"
-Me.pbwrs30.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs30.TabIndex = 65
-Me.pbwrs30.TabStop = false
-'
-'pbwrs31
-'
-Me.pbwrs31.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs31.Enabled = false
-Me.pbwrs31.Location = New System.Drawing.Point(0, 1076)
-Me.pbwrs31.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs31.Name = "pbwrs31"
-Me.pbwrs31.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs31.TabIndex = 66
-Me.pbwrs31.TabStop = false
-'
-'pbwrs32
-'
-Me.pbwrs32.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs32.Enabled = false
-Me.pbwrs32.Location = New System.Drawing.Point(382, 1076)
-Me.pbwrs32.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs32.Name = "pbwrs32"
-Me.pbwrs32.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs32.TabIndex = 67
-Me.pbwrs32.TabStop = false
-'
-'pbwrs33
-'
-Me.pbwrs33.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs33.Enabled = false
-Me.pbwrs33.Location = New System.Drawing.Point(0, 1147)
-Me.pbwrs33.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs33.Name = "pbwrs33"
-Me.pbwrs33.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs33.TabIndex = 68
-Me.pbwrs33.TabStop = false
-'
-'pbwrs34
-'
-Me.pbwrs34.BackColor = System.Drawing.Color.Transparent
-Me.pbwrs34.Enabled = false
-Me.pbwrs34.Location = New System.Drawing.Point(382, 1147)
-Me.pbwrs34.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrs34.Name = "pbwrs34"
-Me.pbwrs34.Size = New System.Drawing.Size(380, 68)
-Me.pbwrs34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrs34.TabIndex = 69
-Me.pbwrs34.TabStop = false
-'
-'pbwrs35
-'
-Me.pbwrs35.Location = New System.Drawing.Point(0, 0)
-Me.pbwrs35.Name = "pbwrs35"
-Me.pbwrs35.Size = New System.Drawing.Size(100, 50)
-Me.pbwrs35.TabIndex = 70
-Me.pbwrs35.TabStop = false
-'
-'pbwrs36
-'
-Me.pbwrs36.Location = New System.Drawing.Point(0, 0)
-Me.pbwrs36.Name = "pbwrs36"
-Me.pbwrs36.Size = New System.Drawing.Size(100, 50)
-Me.pbwrs36.TabIndex = 71
-Me.pbwrs36.TabStop = false
-'
-'pbwrsscan1
-'
-Me.pbwrsscan1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
-            Or System.Windows.Forms.AnchorStyles.Left)  _
-            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-Me.pbwrsscan1.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan1.Enabled = false
-Me.pbwrsscan1.Location = New System.Drawing.Point(1, 1)
-Me.pbwrsscan1.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan1.MaximumSize = New System.Drawing.Size(380, 68)
-Me.pbwrsscan1.MinimumSize = New System.Drawing.Size(380, 68)
-Me.pbwrsscan1.Name = "pbwrsscan1"
-Me.pbwrsscan1.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan1.TabIndex = 10
-Me.pbwrsscan1.TabStop = false
-'
-'pbwrsscan2
-'
-Me.pbwrsscan2.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan2.Enabled = false
-Me.pbwrsscan2.Location = New System.Drawing.Point(383, 1)
-Me.pbwrsscan2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan2.Name = "pbwrsscan2"
-Me.pbwrsscan2.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan2.TabIndex = 11
-Me.pbwrsscan2.TabStop = false
-'
-'pbwrsscan3
-'
-Me.pbwrsscan3.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan3.Enabled = false
-Me.pbwrsscan3.Location = New System.Drawing.Point(1, 72)
-Me.pbwrsscan3.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan3.Name = "pbwrsscan3"
-Me.pbwrsscan3.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan3.TabIndex = 12
-Me.pbwrsscan3.TabStop = false
-'
-'pbwrsscan4
-'
-Me.pbwrsscan4.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan4.Enabled = false
-Me.pbwrsscan4.Location = New System.Drawing.Point(383, 72)
-Me.pbwrsscan4.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan4.Name = "pbwrsscan4"
-Me.pbwrsscan4.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan4.TabIndex = 13
-Me.pbwrsscan4.TabStop = false
-'
-'pbwrsscan5
-'
-Me.pbwrsscan5.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan5.Enabled = false
-Me.pbwrsscan5.Location = New System.Drawing.Point(1, 143)
-Me.pbwrsscan5.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan5.Name = "pbwrsscan5"
-Me.pbwrsscan5.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan5.TabIndex = 14
-Me.pbwrsscan5.TabStop = false
-'
-'pbwrsscan6
-'
-Me.pbwrsscan6.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan6.Enabled = false
-Me.pbwrsscan6.Location = New System.Drawing.Point(383, 143)
-Me.pbwrsscan6.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan6.Name = "pbwrsscan6"
-Me.pbwrsscan6.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan6.TabIndex = 15
-Me.pbwrsscan6.TabStop = false
-'
-'pbwrsscan7
-'
-Me.pbwrsscan7.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan7.Enabled = false
-Me.pbwrsscan7.Location = New System.Drawing.Point(1, 214)
-Me.pbwrsscan7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan7.Name = "pbwrsscan7"
-Me.pbwrsscan7.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan7.TabIndex = 22
-Me.pbwrsscan7.TabStop = false
-'
-'pbwrsscan8
-'
-Me.pbwrsscan8.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan8.Enabled = false
-Me.pbwrsscan8.Location = New System.Drawing.Point(383, 214)
-Me.pbwrsscan8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan8.Name = "pbwrsscan8"
-Me.pbwrsscan8.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan8.TabIndex = 23
-Me.pbwrsscan8.TabStop = false
-'
-'pbwrsscan9
-'
-Me.pbwrsscan9.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan9.Enabled = false
-Me.pbwrsscan9.Location = New System.Drawing.Point(1, 285)
-Me.pbwrsscan9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan9.Name = "pbwrsscan9"
-Me.pbwrsscan9.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan9.TabIndex = 24
-Me.pbwrsscan9.TabStop = false
-'
-'pbwrsscan10
-'
-Me.pbwrsscan10.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan10.Enabled = false
-Me.pbwrsscan10.Location = New System.Drawing.Point(383, 285)
-Me.pbwrsscan10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan10.Name = "pbwrsscan10"
-Me.pbwrsscan10.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan10.TabIndex = 25
-Me.pbwrsscan10.TabStop = false
-'
-'pbwrsscan11
-'
-Me.pbwrsscan11.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan11.Enabled = false
-Me.pbwrsscan11.Location = New System.Drawing.Point(1, 357)
-Me.pbwrsscan11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan11.Name = "pbwrsscan11"
-Me.pbwrsscan11.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan11.TabIndex = 32
-Me.pbwrsscan11.TabStop = false
-'
-'pbwrsscan12
-'
-Me.pbwrsscan12.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan12.Enabled = false
-Me.pbwrsscan12.Location = New System.Drawing.Point(383, 357)
-Me.pbwrsscan12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan12.Name = "pbwrsscan12"
-Me.pbwrsscan12.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan12.TabIndex = 33
-Me.pbwrsscan12.TabStop = false
-'
-'pbwrsscan13
-'
-Me.pbwrsscan13.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan13.Enabled = false
-Me.pbwrsscan13.Location = New System.Drawing.Point(1, 428)
-Me.pbwrsscan13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan13.Name = "pbwrsscan13"
-Me.pbwrsscan13.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan13.TabIndex = 38
-Me.pbwrsscan13.TabStop = false
-'
-'pbwrsscan14
-'
-Me.pbwrsscan14.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan14.Enabled = false
-Me.pbwrsscan14.Location = New System.Drawing.Point(383, 428)
-Me.pbwrsscan14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan14.Name = "pbwrsscan14"
-Me.pbwrsscan14.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan14.TabIndex = 39
-Me.pbwrsscan14.TabStop = false
-'
-'pbwrsscan15
-'
-Me.pbwrsscan15.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan15.Enabled = false
-Me.pbwrsscan15.Location = New System.Drawing.Point(1, 499)
-Me.pbwrsscan15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan15.Name = "pbwrsscan15"
-Me.pbwrsscan15.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan15.TabIndex = 42
-Me.pbwrsscan15.TabStop = false
-'
-'pbwrsscan16
-'
-Me.pbwrsscan16.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan16.Enabled = false
-Me.pbwrsscan16.Location = New System.Drawing.Point(383, 499)
-Me.pbwrsscan16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan16.Name = "pbwrsscan16"
-Me.pbwrsscan16.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan16.TabIndex = 43
-Me.pbwrsscan16.TabStop = false
-'
-'pbwrsscan17
-'
-Me.pbwrsscan17.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan17.Enabled = false
-Me.pbwrsscan17.Location = New System.Drawing.Point(1, 571)
-Me.pbwrsscan17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan17.Name = "pbwrsscan17"
-Me.pbwrsscan17.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan17.TabIndex = 44
-Me.pbwrsscan17.TabStop = false
-'
-'pbwrsscan18
-'
-Me.pbwrsscan18.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan18.Enabled = false
-Me.pbwrsscan18.Location = New System.Drawing.Point(383, 571)
-Me.pbwrsscan18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan18.Name = "pbwrsscan18"
-Me.pbwrsscan18.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan18.TabIndex = 45
-Me.pbwrsscan18.TabStop = false
-'
-'pbwrsscan19
-'
-Me.pbwrsscan19.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan19.Enabled = false
-Me.pbwrsscan19.Location = New System.Drawing.Point(1, 642)
-Me.pbwrsscan19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan19.Name = "pbwrsscan19"
-Me.pbwrsscan19.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan19.TabIndex = 50
-Me.pbwrsscan19.TabStop = false
-'
-'pbwrsscan20
-'
-Me.pbwrsscan20.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan20.Enabled = false
-Me.pbwrsscan20.Location = New System.Drawing.Point(383, 642)
-Me.pbwrsscan20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan20.Name = "pbwrsscan20"
-Me.pbwrsscan20.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan20.TabIndex = 51
-Me.pbwrsscan20.TabStop = false
-'
-'pbwrsscan21
-'
-Me.pbwrsscan21.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan21.Enabled = false
-Me.pbwrsscan21.Location = New System.Drawing.Point(1, 713)
-Me.pbwrsscan21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan21.Name = "pbwrsscan21"
-Me.pbwrsscan21.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan21.TabIndex = 54
-Me.pbwrsscan21.TabStop = false
-'
-'pbwrsscan22
-'
-Me.pbwrsscan22.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan22.Enabled = false
-Me.pbwrsscan22.Location = New System.Drawing.Point(383, 713)
-Me.pbwrsscan22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan22.Name = "pbwrsscan22"
-Me.pbwrsscan22.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan22.TabIndex = 55
-Me.pbwrsscan22.TabStop = false
-'
-'pbwrsscan23
-'
-Me.pbwrsscan23.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan23.Enabled = false
-Me.pbwrsscan23.Location = New System.Drawing.Point(1, 785)
-Me.pbwrsscan23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan23.Name = "pbwrsscan23"
-Me.pbwrsscan23.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan23.TabIndex = 58
-Me.pbwrsscan23.TabStop = false
-'
-'pbwrsscan24
-'
-Me.pbwrsscan24.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan24.Enabled = false
-Me.pbwrsscan24.Location = New System.Drawing.Point(383, 785)
-Me.pbwrsscan24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan24.Name = "pbwrsscan24"
-Me.pbwrsscan24.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan24.TabIndex = 59
-Me.pbwrsscan24.TabStop = false
-'
-'pbwrsscan25
-'
-Me.pbwrsscan25.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan25.Enabled = false
-Me.pbwrsscan25.Location = New System.Drawing.Point(1, 856)
-Me.pbwrsscan25.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan25.Name = "pbwrsscan25"
-Me.pbwrsscan25.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan25.TabIndex = 60
-Me.pbwrsscan25.TabStop = false
-'
-'pbwrsscan26
-'
-Me.pbwrsscan26.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan26.Enabled = false
-Me.pbwrsscan26.Location = New System.Drawing.Point(383, 856)
-Me.pbwrsscan26.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan26.Name = "pbwrsscan26"
-Me.pbwrsscan26.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan26.TabIndex = 61
-Me.pbwrsscan26.TabStop = false
-'
-'pbwrsscan27
-'
-Me.pbwrsscan27.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan27.Enabled = false
-Me.pbwrsscan27.Location = New System.Drawing.Point(1, 929)
-Me.pbwrsscan27.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan27.Name = "pbwrsscan27"
-Me.pbwrsscan27.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan27.TabIndex = 62
-Me.pbwrsscan27.TabStop = false
-'
-'pbwrsscan28
-'
-Me.pbwrsscan28.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan28.Enabled = false
-Me.pbwrsscan28.Location = New System.Drawing.Point(383, 929)
-Me.pbwrsscan28.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan28.Name = "pbwrsscan28"
-Me.pbwrsscan28.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan28.TabIndex = 63
-Me.pbwrsscan28.TabStop = false
-'
-'pbwrsscan29
-'
-Me.pbwrsscan29.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan29.Enabled = false
-Me.pbwrsscan29.Location = New System.Drawing.Point(1, 1001)
-Me.pbwrsscan29.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan29.Name = "pbwrsscan29"
-Me.pbwrsscan29.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan29.TabIndex = 64
-Me.pbwrsscan29.TabStop = false
-'
-'pbwrsscan30
-'
-Me.pbwrsscan30.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan30.Enabled = false
-Me.pbwrsscan30.Location = New System.Drawing.Point(383, 1001)
-Me.pbwrsscan30.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan30.Name = "pbwrsscan30"
-Me.pbwrsscan30.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan30.TabIndex = 65
-Me.pbwrsscan30.TabStop = false
-'
-'pbwrsscan31
-'
-Me.pbwrsscan31.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan31.Enabled = false
-Me.pbwrsscan31.Location = New System.Drawing.Point(1, 1074)
-Me.pbwrsscan31.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan31.Name = "pbwrsscan31"
-Me.pbwrsscan31.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan31.TabIndex = 66
-Me.pbwrsscan31.TabStop = false
-'
-'pbwrsscan32
-'
-Me.pbwrsscan32.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan32.Enabled = false
-Me.pbwrsscan32.Location = New System.Drawing.Point(383, 1074)
-Me.pbwrsscan32.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan32.Name = "pbwrsscan32"
-Me.pbwrsscan32.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan32.TabIndex = 67
-Me.pbwrsscan32.TabStop = false
-'
-'pbwrsscan33
-'
-Me.pbwrsscan33.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan33.Enabled = false
-Me.pbwrsscan33.Location = New System.Drawing.Point(1, 1148)
-Me.pbwrsscan33.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan33.Name = "pbwrsscan33"
-Me.pbwrsscan33.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan33.TabIndex = 68
-Me.pbwrsscan33.TabStop = false
-'
-'pbwrsscan34
-'
-Me.pbwrsscan34.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan34.Enabled = false
-Me.pbwrsscan34.Location = New System.Drawing.Point(383, 1148)
-Me.pbwrsscan34.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan34.Name = "pbwrsscan34"
-Me.pbwrsscan34.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbwrsscan34.TabIndex = 69
-Me.pbwrsscan34.TabStop = false
-'
-'pbwrsscan35
-'
-Me.pbwrsscan35.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan35.Enabled = false
-Me.pbwrsscan35.Location = New System.Drawing.Point(7, 1480)
-Me.pbwrsscan35.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan35.Name = "pbwrsscan35"
-Me.pbwrsscan35.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan35.TabIndex = 56
-Me.pbwrsscan35.TabStop = false
-'
-'pbwrsscan36
-'
-Me.pbwrsscan36.BackColor = System.Drawing.Color.Transparent
-Me.pbwrsscan36.Enabled = false
-Me.pbwrsscan36.Location = New System.Drawing.Point(474, 1480)
-Me.pbwrsscan36.Margin = New System.Windows.Forms.Padding(2)
-Me.pbwrsscan36.Name = "pbwrsscan36"
-Me.pbwrsscan36.Size = New System.Drawing.Size(380, 68)
-Me.pbwrsscan36.TabIndex = 57
-Me.pbwrsscan36.TabStop = false
-'
-'spb24
-'
-Me.spb24.Location = New System.Drawing.Point(515, 1828)
-Me.spb24.Name = "spb24"
-Me.spb24.Size = New System.Drawing.Size(256, 256)
-Me.spb24.TabIndex = 29
-Me.spb24.TabStop = false
-'
-'spb23
-'
-Me.spb23.Location = New System.Drawing.Point(256, 1828)
-Me.spb23.Name = "spb23"
-Me.spb23.Size = New System.Drawing.Size(256, 256)
-Me.spb23.TabIndex = 28
-Me.spb23.TabStop = false
-'
-'spb22
-'
-Me.spb22.Location = New System.Drawing.Point(1, 1828)
-Me.spb22.Name = "spb22"
-Me.spb22.Size = New System.Drawing.Size(256, 256)
-Me.spb22.TabIndex = 27
-Me.spb22.TabStop = false
-'
-'spb21
-'
-Me.spb21.Location = New System.Drawing.Point(515, 1568)
-Me.spb21.Name = "spb21"
-Me.spb21.Size = New System.Drawing.Size(256, 256)
-Me.spb21.TabIndex = 26
-Me.spb21.TabStop = false
-'
-'spb20
-'
-Me.spb20.Location = New System.Drawing.Point(256, 1568)
-Me.spb20.Name = "spb20"
-Me.spb20.Size = New System.Drawing.Size(256, 256)
-Me.spb20.TabIndex = 25
-Me.spb20.TabStop = false
-'
-'spb19
-'
-Me.spb19.Location = New System.Drawing.Point(1, 1568)
-Me.spb19.Name = "spb19"
-Me.spb19.Size = New System.Drawing.Size(256, 256)
-Me.spb19.TabIndex = 24
-Me.spb19.TabStop = false
-'
-'spb18
-'
-Me.spb18.Location = New System.Drawing.Point(515, 1306)
-Me.spb18.Name = "spb18"
-Me.spb18.Size = New System.Drawing.Size(256, 256)
-Me.spb18.TabIndex = 23
-Me.spb18.TabStop = false
-'
-'spb17
-'
-Me.spb17.Location = New System.Drawing.Point(256, 1306)
-Me.spb17.Name = "spb17"
-Me.spb17.Size = New System.Drawing.Size(256, 256)
-Me.spb17.TabIndex = 22
-Me.spb17.TabStop = false
-'
-'spb16
-'
-Me.spb16.Location = New System.Drawing.Point(1, 1306)
-Me.spb16.Name = "spb16"
-Me.spb16.Size = New System.Drawing.Size(256, 256)
-Me.spb16.TabIndex = 21
-Me.spb16.TabStop = false
-'
-'spb15
-'
-Me.spb15.Location = New System.Drawing.Point(515, 1044)
-Me.spb15.Name = "spb15"
-Me.spb15.Size = New System.Drawing.Size(256, 256)
-Me.spb15.TabIndex = 20
-Me.spb15.TabStop = false
-'
-'spb14
-'
-Me.spb14.Location = New System.Drawing.Point(256, 1044)
-Me.spb14.Name = "spb14"
-Me.spb14.Size = New System.Drawing.Size(256, 256)
-Me.spb14.TabIndex = 19
-Me.spb14.TabStop = false
-'
-'spb13
-'
-Me.spb13.Location = New System.Drawing.Point(1, 1044)
-Me.spb13.Name = "spb13"
-Me.spb13.Size = New System.Drawing.Size(256, 256)
-Me.spb13.TabIndex = 18
-Me.spb13.TabStop = false
-'
-'spb12
-'
-Me.spb12.Location = New System.Drawing.Point(515, 785)
-Me.spb12.Name = "spb12"
-Me.spb12.Size = New System.Drawing.Size(256, 256)
-Me.spb12.TabIndex = 17
-Me.spb12.TabStop = false
-'
-'spb11
-'
-Me.spb11.Location = New System.Drawing.Point(256, 785)
-Me.spb11.Name = "spb11"
-Me.spb11.Size = New System.Drawing.Size(256, 256)
-Me.spb11.TabIndex = 16
-Me.spb11.TabStop = false
-'
-'spb10
-'
-Me.spb10.Location = New System.Drawing.Point(1, 785)
-Me.spb10.Name = "spb10"
-Me.spb10.Size = New System.Drawing.Size(256, 256)
-Me.spb10.TabIndex = 15
-Me.spb10.TabStop = false
-'
-'spb9
-'
-Me.spb9.Location = New System.Drawing.Point(517, 525)
-Me.spb9.Name = "spb9"
-Me.spb9.Size = New System.Drawing.Size(256, 256)
-Me.spb9.TabIndex = 14
-Me.spb9.TabStop = false
-'
-'spb8
-'
-Me.spb8.Location = New System.Drawing.Point(257, 524)
-Me.spb8.Name = "spb8"
-Me.spb8.Size = New System.Drawing.Size(256, 256)
-Me.spb8.TabIndex = 13
-Me.spb8.TabStop = false
-'
-'spb7
-'
-Me.spb7.Location = New System.Drawing.Point(1, 523)
-Me.spb7.Name = "spb7"
-Me.spb7.Size = New System.Drawing.Size(256, 256)
-Me.spb7.TabIndex = 12
-Me.spb7.TabStop = false
-'
-'spb6
-'
-Me.spb6.Location = New System.Drawing.Point(515, 265)
-Me.spb6.Name = "spb6"
-Me.spb6.Size = New System.Drawing.Size(256, 256)
-Me.spb6.TabIndex = 11
-Me.spb6.TabStop = false
-'
-'spb5
-'
-Me.spb5.Location = New System.Drawing.Point(258, 265)
-Me.spb5.Name = "spb5"
-Me.spb5.Size = New System.Drawing.Size(256, 256)
-Me.spb5.TabIndex = 10
-Me.spb5.TabStop = false
-'
-'spb4
-'
-Me.spb4.Location = New System.Drawing.Point(1, 265)
-Me.spb4.Name = "spb4"
-Me.spb4.Size = New System.Drawing.Size(256, 256)
-Me.spb4.TabIndex = 9
-Me.spb4.TabStop = false
-'
-'spb3
-'
-Me.spb3.Location = New System.Drawing.Point(515, 3)
-Me.spb3.Name = "spb3"
-Me.spb3.Size = New System.Drawing.Size(256, 256)
-Me.spb3.TabIndex = 8
-Me.spb3.TabStop = false
-'
-'spb2
-'
-Me.spb2.Location = New System.Drawing.Point(258, 3)
-Me.spb2.Name = "spb2"
-Me.spb2.Size = New System.Drawing.Size(256, 256)
-Me.spb2.TabIndex = 7
-Me.spb2.TabStop = false
-'
-'spb1
-'
-Me.spb1.Location = New System.Drawing.Point(1, 3)
-Me.spb1.Name = "spb1"
-Me.spb1.Size = New System.Drawing.Size(256, 256)
-Me.spb1.TabIndex = 6
-Me.spb1.TabStop = false
-'
-'bspb91
-'
-Me.bspb91.Location = New System.Drawing.Point(0, 7728)
-Me.bspb91.Name = "bspb91"
-Me.bspb91.Size = New System.Drawing.Size(256, 256)
-Me.bspb91.TabIndex = 70
-Me.bspb91.TabStop = false
-'
-'bspb88
-'
-Me.bspb88.Location = New System.Drawing.Point(0, 7470)
-Me.bspb88.Name = "bspb88"
-Me.bspb88.Size = New System.Drawing.Size(256, 256)
-Me.bspb88.TabIndex = 67
-Me.bspb88.TabStop = false
-'
-'bspb92
-'
-Me.bspb92.Location = New System.Drawing.Point(257, 7728)
-Me.bspb92.Name = "bspb92"
-Me.bspb92.Size = New System.Drawing.Size(256, 256)
-Me.bspb92.TabIndex = 71
-Me.bspb92.TabStop = false
-'
-'bspb79
-'
-Me.bspb79.Location = New System.Drawing.Point(1, 6696)
-Me.bspb79.Name = "bspb79"
-Me.bspb79.Size = New System.Drawing.Size(256, 256)
-Me.bspb79.TabIndex = 61
-Me.bspb79.TabStop = false
-'
-'bspb93
-'
-Me.bspb93.Location = New System.Drawing.Point(514, 7728)
-Me.bspb93.Name = "bspb93"
-Me.bspb93.Size = New System.Drawing.Size(256, 256)
-Me.bspb93.TabIndex = 72
-Me.bspb93.TabStop = false
-'
-'bspb89
-'
-Me.bspb89.Location = New System.Drawing.Point(257, 7470)
-Me.bspb89.Name = "bspb89"
-Me.bspb89.Size = New System.Drawing.Size(256, 256)
-Me.bspb89.TabIndex = 68
-Me.bspb89.TabStop = false
-'
-'bspb90
-'
-Me.bspb90.Location = New System.Drawing.Point(514, 7470)
-Me.bspb90.Name = "bspb90"
-Me.bspb90.Size = New System.Drawing.Size(256, 256)
-Me.bspb90.TabIndex = 69
-Me.bspb90.TabStop = false
-'
-'bspb70
-'
-Me.bspb70.Location = New System.Drawing.Point(2, 5922)
-Me.bspb70.Name = "bspb70"
-Me.bspb70.Size = New System.Drawing.Size(256, 256)
-Me.bspb70.TabIndex = 52
-Me.bspb70.TabStop = false
-'
-'bspb85
-'
-Me.bspb85.Location = New System.Drawing.Point(0, 7212)
-Me.bspb85.Name = "bspb85"
-Me.bspb85.Size = New System.Drawing.Size(256, 256)
-Me.bspb85.TabIndex = 64
-Me.bspb85.TabStop = false
-'
-'bspb80
-'
-Me.bspb80.Location = New System.Drawing.Point(258, 6696)
-Me.bspb80.Name = "bspb80"
-Me.bspb80.Size = New System.Drawing.Size(256, 256)
-Me.bspb80.TabIndex = 62
-Me.bspb80.TabStop = false
-'
-'bspb86
-'
-Me.bspb86.Location = New System.Drawing.Point(257, 7212)
-Me.bspb86.Name = "bspb86"
-Me.bspb86.Size = New System.Drawing.Size(256, 256)
-Me.bspb86.TabIndex = 65
-Me.bspb86.TabStop = false
-'
-'bspb61
-'
-Me.bspb61.Location = New System.Drawing.Point(2, 5148)
-Me.bspb61.Name = "bspb61"
-Me.bspb61.Size = New System.Drawing.Size(256, 256)
-Me.bspb61.TabIndex = 43
-Me.bspb61.TabStop = false
-'
-'bspb87
-'
-Me.bspb87.Location = New System.Drawing.Point(514, 7212)
-Me.bspb87.Name = "bspb87"
-Me.bspb87.Size = New System.Drawing.Size(256, 256)
-Me.bspb87.TabIndex = 66
-Me.bspb87.TabStop = false
-'
-'bspb81
-'
-Me.bspb81.Location = New System.Drawing.Point(515, 6696)
-Me.bspb81.Name = "bspb81"
-Me.bspb81.Size = New System.Drawing.Size(256, 256)
-Me.bspb81.TabIndex = 63
-Me.bspb81.TabStop = false
-'
-'bspb71
-'
-Me.bspb71.Location = New System.Drawing.Point(259, 5922)
-Me.bspb71.Name = "bspb71"
-Me.bspb71.Size = New System.Drawing.Size(256, 256)
-Me.bspb71.TabIndex = 53
-Me.bspb71.TabStop = false
-'
-'bspb82
-'
-Me.bspb82.Location = New System.Drawing.Point(0, 6954)
-Me.bspb82.Name = "bspb82"
-Me.bspb82.Size = New System.Drawing.Size(256, 256)
-Me.bspb82.TabIndex = 64
-Me.bspb82.TabStop = false
-'
-'bspb46
-'
-Me.bspb46.Location = New System.Drawing.Point(2, 3858)
-Me.bspb46.Name = "bspb46"
-Me.bspb46.Size = New System.Drawing.Size(256, 256)
-Me.bspb46.TabIndex = 0
-Me.bspb46.TabStop = false
-'
-'bspb83
-'
-Me.bspb83.Location = New System.Drawing.Point(257, 6954)
-Me.bspb83.Name = "bspb83"
-Me.bspb83.Size = New System.Drawing.Size(256, 256)
-Me.bspb83.TabIndex = 65
-Me.bspb83.TabStop = false
-'
-'bspb72
-'
-Me.bspb72.Location = New System.Drawing.Point(516, 5922)
-Me.bspb72.Name = "bspb72"
-Me.bspb72.Size = New System.Drawing.Size(256, 256)
-Me.bspb72.TabIndex = 54
-Me.bspb72.TabStop = false
-'
-'bspb84
-'
-Me.bspb84.Location = New System.Drawing.Point(514, 6954)
-Me.bspb84.Name = "bspb84"
-Me.bspb84.Size = New System.Drawing.Size(256, 256)
-Me.bspb84.TabIndex = 66
-Me.bspb84.TabStop = false
-'
-'bspb62
-'
-Me.bspb62.Location = New System.Drawing.Point(259, 5148)
-Me.bspb62.Name = "bspb62"
-Me.bspb62.Size = New System.Drawing.Size(256, 256)
-Me.bspb62.TabIndex = 44
-Me.bspb62.TabStop = false
-'
-'bspb73
-'
-Me.bspb73.Location = New System.Drawing.Point(2, 6180)
-Me.bspb73.Name = "bspb73"
-Me.bspb73.Size = New System.Drawing.Size(256, 256)
-Me.bspb73.TabIndex = 55
-Me.bspb73.TabStop = false
-'
-'bspb47
-'
-Me.bspb47.Location = New System.Drawing.Point(259, 3858)
-Me.bspb47.Name = "bspb47"
-Me.bspb47.Size = New System.Drawing.Size(256, 256)
-Me.bspb47.TabIndex = 1
-Me.bspb47.TabStop = false
-'
-'bspb74
-'
-Me.bspb74.Location = New System.Drawing.Point(259, 6180)
-Me.bspb74.Name = "bspb74"
-Me.bspb74.Size = New System.Drawing.Size(256, 256)
-Me.bspb74.TabIndex = 56
-Me.bspb74.TabStop = false
-'
-'bspb75
-'
-Me.bspb75.Location = New System.Drawing.Point(516, 6180)
-Me.bspb75.Name = "bspb75"
-Me.bspb75.Size = New System.Drawing.Size(256, 256)
-Me.bspb75.TabIndex = 57
-Me.bspb75.TabStop = false
-'
-'bspb63
-'
-Me.bspb63.Location = New System.Drawing.Point(516, 5148)
-Me.bspb63.Name = "bspb63"
-Me.bspb63.Size = New System.Drawing.Size(256, 256)
-Me.bspb63.TabIndex = 45
-Me.bspb63.TabStop = false
-'
-'bspb76
-'
-Me.bspb76.Location = New System.Drawing.Point(1, 6438)
-Me.bspb76.Name = "bspb76"
-Me.bspb76.Size = New System.Drawing.Size(256, 256)
-Me.bspb76.TabIndex = 58
-Me.bspb76.TabStop = false
-'
-'bspb48
-'
-Me.bspb48.Location = New System.Drawing.Point(516, 3858)
-Me.bspb48.Name = "bspb48"
-Me.bspb48.Size = New System.Drawing.Size(256, 256)
-Me.bspb48.TabIndex = 2
-Me.bspb48.TabStop = false
-'
-'bspb77
-'
-Me.bspb77.Location = New System.Drawing.Point(258, 6438)
-Me.bspb77.Name = "bspb77"
-Me.bspb77.Size = New System.Drawing.Size(256, 256)
-Me.bspb77.TabIndex = 59
-Me.bspb77.TabStop = false
-'
-'bspb64
-'
-Me.bspb64.Location = New System.Drawing.Point(2, 5406)
-Me.bspb64.Name = "bspb64"
-Me.bspb64.Size = New System.Drawing.Size(256, 256)
-Me.bspb64.TabIndex = 46
-Me.bspb64.TabStop = false
-'
-'bspb78
-'
-Me.bspb78.Location = New System.Drawing.Point(515, 6438)
-Me.bspb78.Name = "bspb78"
-Me.bspb78.Size = New System.Drawing.Size(256, 256)
-Me.bspb78.TabIndex = 60
-Me.bspb78.TabStop = false
-'
-'bspb65
-'
-Me.bspb65.Location = New System.Drawing.Point(259, 5406)
-Me.bspb65.Name = "bspb65"
-Me.bspb65.Size = New System.Drawing.Size(256, 256)
-Me.bspb65.TabIndex = 47
-Me.bspb65.TabStop = false
-'
-'bspb49
-'
-Me.bspb49.Location = New System.Drawing.Point(2, 4116)
-Me.bspb49.Name = "bspb49"
-Me.bspb49.Size = New System.Drawing.Size(256, 256)
-Me.bspb49.TabIndex = 3
-Me.bspb49.TabStop = false
-'
-'bspb66
-'
-Me.bspb66.Location = New System.Drawing.Point(516, 5406)
-Me.bspb66.Name = "bspb66"
-Me.bspb66.Size = New System.Drawing.Size(256, 256)
-Me.bspb66.TabIndex = 48
-Me.bspb66.TabStop = false
-'
-'bspb50
-'
-Me.bspb50.Location = New System.Drawing.Point(259, 4116)
-Me.bspb50.Name = "bspb50"
-Me.bspb50.Size = New System.Drawing.Size(256, 256)
-Me.bspb50.TabIndex = 4
-Me.bspb50.TabStop = false
-'
-'bspb67
-'
-Me.bspb67.Location = New System.Drawing.Point(2, 5664)
-Me.bspb67.Name = "bspb67"
-Me.bspb67.Size = New System.Drawing.Size(256, 256)
-Me.bspb67.TabIndex = 49
-Me.bspb67.TabStop = false
-'
-'bspb51
-'
-Me.bspb51.Location = New System.Drawing.Point(516, 4116)
-Me.bspb51.Name = "bspb51"
-Me.bspb51.Size = New System.Drawing.Size(256, 256)
-Me.bspb51.TabIndex = 5
-Me.bspb51.TabStop = false
-'
-'bspb68
-'
-Me.bspb68.Location = New System.Drawing.Point(259, 5664)
-Me.bspb68.Name = "bspb68"
-Me.bspb68.Size = New System.Drawing.Size(256, 256)
-Me.bspb68.TabIndex = 50
-Me.bspb68.TabStop = false
-'
-'bspb52
-'
-Me.bspb52.Location = New System.Drawing.Point(2, 4374)
-Me.bspb52.Name = "bspb52"
-Me.bspb52.Size = New System.Drawing.Size(256, 256)
-Me.bspb52.TabIndex = 6
-Me.bspb52.TabStop = false
-'
-'bspb69
-'
-Me.bspb69.Location = New System.Drawing.Point(516, 5664)
-Me.bspb69.Name = "bspb69"
-Me.bspb69.Size = New System.Drawing.Size(256, 256)
-Me.bspb69.TabIndex = 51
-Me.bspb69.TabStop = false
-'
-'bspb53
-'
-Me.bspb53.Location = New System.Drawing.Point(259, 4374)
-Me.bspb53.Name = "bspb53"
-Me.bspb53.Size = New System.Drawing.Size(256, 256)
-Me.bspb53.TabIndex = 7
-Me.bspb53.TabStop = false
-'
-'bspb54
-'
-Me.bspb54.Location = New System.Drawing.Point(516, 4374)
-Me.bspb54.Name = "bspb54"
-Me.bspb54.Size = New System.Drawing.Size(256, 256)
-Me.bspb54.TabIndex = 8
-Me.bspb54.TabStop = false
-'
-'bspb55
-'
-Me.bspb55.Location = New System.Drawing.Point(2, 4632)
-Me.bspb55.Name = "bspb55"
-Me.bspb55.Size = New System.Drawing.Size(256, 256)
-Me.bspb55.TabIndex = 9
-Me.bspb55.TabStop = false
-'
-'bspb56
-'
-Me.bspb56.Location = New System.Drawing.Point(259, 4632)
-Me.bspb56.Name = "bspb56"
-Me.bspb56.Size = New System.Drawing.Size(256, 256)
-Me.bspb56.TabIndex = 10
-Me.bspb56.TabStop = false
-'
-'bspb57
-'
-Me.bspb57.Location = New System.Drawing.Point(516, 4632)
-Me.bspb57.Name = "bspb57"
-Me.bspb57.Size = New System.Drawing.Size(256, 256)
-Me.bspb57.TabIndex = 11
-Me.bspb57.TabStop = false
-'
-'bspb58
-'
-Me.bspb58.Location = New System.Drawing.Point(2, 4890)
-Me.bspb58.Name = "bspb58"
-Me.bspb58.Size = New System.Drawing.Size(256, 256)
-Me.bspb58.TabIndex = 12
-Me.bspb58.TabStop = false
-'
-'bspb59
-'
-Me.bspb59.Location = New System.Drawing.Point(259, 4890)
-Me.bspb59.Name = "bspb59"
-Me.bspb59.Size = New System.Drawing.Size(256, 256)
-Me.bspb59.TabIndex = 13
-Me.bspb59.TabStop = false
-'
-'bspb60
-'
-Me.bspb60.Location = New System.Drawing.Point(516, 4890)
-Me.bspb60.Name = "bspb60"
-Me.bspb60.Size = New System.Drawing.Size(256, 256)
-Me.bspb60.TabIndex = 14
-Me.bspb60.TabStop = false
-'
-'bspb45
-'
-Me.bspb45.Location = New System.Drawing.Point(516, 3601)
-Me.bspb45.Name = "bspb45"
-Me.bspb45.Size = New System.Drawing.Size(256, 256)
-Me.bspb45.TabIndex = 51
-Me.bspb45.TabStop = false
-'
-'bspb3
-'
-Me.bspb3.Location = New System.Drawing.Point(516, 0)
-Me.bspb3.Name = "bspb3"
-Me.bspb3.Size = New System.Drawing.Size(256, 256)
-Me.bspb3.TabIndex = 20
-Me.bspb3.TabStop = false
-'
-'bspb9
-'
-Me.bspb9.Location = New System.Drawing.Point(516, 514)
-Me.bspb9.Name = "bspb9"
-Me.bspb9.Size = New System.Drawing.Size(256, 256)
-Me.bspb9.TabIndex = 26
-Me.bspb9.TabStop = false
-'
-'bspb2
-'
-Me.bspb2.Location = New System.Drawing.Point(259, 0)
-Me.bspb2.Name = "bspb2"
-Me.bspb2.Size = New System.Drawing.Size(256, 256)
-Me.bspb2.TabIndex = 19
-Me.bspb2.TabStop = false
-'
-'bspb1
-'
-Me.bspb1.Location = New System.Drawing.Point(2, 0)
-Me.bspb1.Name = "bspb1"
-Me.bspb1.Size = New System.Drawing.Size(256, 256)
-Me.bspb1.TabIndex = 18
-Me.bspb1.TabStop = false
-'
-'bspb8
-'
-Me.bspb8.Location = New System.Drawing.Point(259, 514)
-Me.bspb8.Name = "bspb8"
-Me.bspb8.Size = New System.Drawing.Size(256, 256)
-Me.bspb8.TabIndex = 25
-Me.bspb8.TabStop = false
-'
-'bspb15
-'
-Me.bspb15.Location = New System.Drawing.Point(516, 1028)
-Me.bspb15.Name = "bspb15"
-Me.bspb15.Size = New System.Drawing.Size(256, 256)
-Me.bspb15.TabIndex = 32
-Me.bspb15.TabStop = false
-'
-'bspb7
-'
-Me.bspb7.Location = New System.Drawing.Point(2, 514)
-Me.bspb7.Name = "bspb7"
-Me.bspb7.Size = New System.Drawing.Size(256, 256)
-Me.bspb7.TabIndex = 24
-Me.bspb7.TabStop = false
-'
-'bspb14
-'
-Me.bspb14.Location = New System.Drawing.Point(259, 1028)
-Me.bspb14.Name = "bspb14"
-Me.bspb14.Size = New System.Drawing.Size(256, 256)
-Me.bspb14.TabIndex = 31
-Me.bspb14.TabStop = false
-'
-'bspb6
-'
-Me.bspb6.Location = New System.Drawing.Point(516, 257)
-Me.bspb6.Name = "bspb6"
-Me.bspb6.Size = New System.Drawing.Size(256, 256)
-Me.bspb6.TabIndex = 23
-Me.bspb6.TabStop = false
-'
-'bspb21
-'
-Me.bspb21.Location = New System.Drawing.Point(516, 1543)
-Me.bspb21.Name = "bspb21"
-Me.bspb21.Size = New System.Drawing.Size(256, 256)
-Me.bspb21.TabIndex = 38
-Me.bspb21.TabStop = false
-'
-'bspb5
-'
-Me.bspb5.Location = New System.Drawing.Point(259, 257)
-Me.bspb5.Name = "bspb5"
-Me.bspb5.Size = New System.Drawing.Size(256, 256)
-Me.bspb5.TabIndex = 22
-Me.bspb5.TabStop = false
-'
-'bspb13
-'
-Me.bspb13.Location = New System.Drawing.Point(2, 1028)
-Me.bspb13.Name = "bspb13"
-Me.bspb13.Size = New System.Drawing.Size(256, 256)
-Me.bspb13.TabIndex = 30
-Me.bspb13.TabStop = false
-'
-'bspb4
-'
-Me.bspb4.Location = New System.Drawing.Point(2, 257)
-Me.bspb4.Name = "bspb4"
-Me.bspb4.Size = New System.Drawing.Size(256, 256)
-Me.bspb4.TabIndex = 21
-Me.bspb4.TabStop = false
-'
-'bspb24
-'
-Me.bspb24.Location = New System.Drawing.Point(516, 1800)
-Me.bspb24.Name = "bspb24"
-Me.bspb24.Size = New System.Drawing.Size(256, 256)
-Me.bspb24.TabIndex = 41
-Me.bspb24.TabStop = false
-'
-'bspb12
-'
-Me.bspb12.Location = New System.Drawing.Point(516, 771)
-Me.bspb12.Name = "bspb12"
-Me.bspb12.Size = New System.Drawing.Size(256, 256)
-Me.bspb12.TabIndex = 29
-Me.bspb12.TabStop = false
-'
-'bspb20
-'
-Me.bspb20.Location = New System.Drawing.Point(259, 1543)
-Me.bspb20.Name = "bspb20"
-Me.bspb20.Size = New System.Drawing.Size(256, 256)
-Me.bspb20.TabIndex = 37
-Me.bspb20.TabStop = false
-'
-'bspb11
-'
-Me.bspb11.Location = New System.Drawing.Point(259, 771)
-Me.bspb11.Name = "bspb11"
-Me.bspb11.Size = New System.Drawing.Size(256, 256)
-Me.bspb11.TabIndex = 28
-Me.bspb11.TabStop = false
-'
-'bspb19
-'
-Me.bspb19.Location = New System.Drawing.Point(2, 1543)
-Me.bspb19.Name = "bspb19"
-Me.bspb19.Size = New System.Drawing.Size(256, 256)
-Me.bspb19.TabIndex = 36
-Me.bspb19.TabStop = false
-'
-'bspb10
-'
-Me.bspb10.Location = New System.Drawing.Point(2, 771)
-Me.bspb10.Name = "bspb10"
-Me.bspb10.Size = New System.Drawing.Size(256, 256)
-Me.bspb10.TabIndex = 27
-Me.bspb10.TabStop = false
-'
-'bspb36
-'
-Me.bspb36.Location = New System.Drawing.Point(516, 2829)
-Me.bspb36.Name = "bspb36"
-Me.bspb36.Size = New System.Drawing.Size(256, 256)
-Me.bspb36.TabIndex = 48
-Me.bspb36.TabStop = false
-'
-'bspb18
-'
-Me.bspb18.Location = New System.Drawing.Point(516, 1285)
-Me.bspb18.Name = "bspb18"
-Me.bspb18.Size = New System.Drawing.Size(256, 256)
-Me.bspb18.TabIndex = 35
-Me.bspb18.TabStop = false
-'
-'bspb23
-'
-Me.bspb23.Location = New System.Drawing.Point(259, 1800)
-Me.bspb23.Name = "bspb23"
-Me.bspb23.Size = New System.Drawing.Size(256, 256)
-Me.bspb23.TabIndex = 40
-Me.bspb23.TabStop = false
-'
-'bspb17
-'
-Me.bspb17.Location = New System.Drawing.Point(259, 1285)
-Me.bspb17.Name = "bspb17"
-Me.bspb17.Size = New System.Drawing.Size(256, 256)
-Me.bspb17.TabIndex = 34
-Me.bspb17.TabStop = false
-'
-'bspb44
-'
-Me.bspb44.Location = New System.Drawing.Point(259, 3601)
-Me.bspb44.Name = "bspb44"
-Me.bspb44.Size = New System.Drawing.Size(256, 256)
-Me.bspb44.TabIndex = 50
-Me.bspb44.TabStop = false
-'
-'bspb16
-'
-Me.bspb16.Location = New System.Drawing.Point(2, 1285)
-Me.bspb16.Name = "bspb16"
-Me.bspb16.Size = New System.Drawing.Size(256, 256)
-Me.bspb16.TabIndex = 33
-Me.bspb16.TabStop = false
-'
-'bspb22
-'
-Me.bspb22.Location = New System.Drawing.Point(2, 1800)
-Me.bspb22.Name = "bspb22"
-Me.bspb22.Size = New System.Drawing.Size(256, 256)
-Me.bspb22.TabIndex = 39
-Me.bspb22.TabStop = false
-'
-'bspb43
-'
-Me.bspb43.Location = New System.Drawing.Point(2, 3601)
-Me.bspb43.Name = "bspb43"
-Me.bspb43.Size = New System.Drawing.Size(256, 256)
-Me.bspb43.TabIndex = 49
-Me.bspb43.TabStop = false
-'
-'bspb30
-'
-Me.bspb30.Location = New System.Drawing.Point(516, 2315)
-Me.bspb30.Name = "bspb30"
-Me.bspb30.Size = New System.Drawing.Size(256, 256)
-Me.bspb30.TabIndex = 48
-Me.bspb30.TabStop = false
-'
-'bspb42
-'
-Me.bspb42.Location = New System.Drawing.Point(516, 3344)
-Me.bspb42.Name = "bspb42"
-Me.bspb42.Size = New System.Drawing.Size(256, 256)
-Me.bspb42.TabIndex = 48
-Me.bspb42.TabStop = false
-'
-'bspb35
-'
-Me.bspb35.Location = New System.Drawing.Point(259, 2829)
-Me.bspb35.Name = "bspb35"
-Me.bspb35.Size = New System.Drawing.Size(256, 256)
-Me.bspb35.TabIndex = 47
-Me.bspb35.TabStop = false
-'
-'bspb41
-'
-Me.bspb41.Location = New System.Drawing.Point(259, 3344)
-Me.bspb41.Name = "bspb41"
-Me.bspb41.Size = New System.Drawing.Size(256, 256)
-Me.bspb41.TabIndex = 47
-Me.bspb41.TabStop = false
-'
-'bspb34
-'
-Me.bspb34.Location = New System.Drawing.Point(2, 2829)
-Me.bspb34.Name = "bspb34"
-Me.bspb34.Size = New System.Drawing.Size(256, 256)
-Me.bspb34.TabIndex = 46
-Me.bspb34.TabStop = false
-'
-'bspb40
-'
-Me.bspb40.Location = New System.Drawing.Point(2, 3344)
-Me.bspb40.Name = "bspb40"
-Me.bspb40.Size = New System.Drawing.Size(256, 256)
-Me.bspb40.TabIndex = 46
-Me.bspb40.TabStop = false
-'
-'bspb26
-'
-Me.bspb26.Location = New System.Drawing.Point(259, 2057)
-Me.bspb26.Name = "bspb26"
-Me.bspb26.Size = New System.Drawing.Size(256, 256)
-Me.bspb26.TabIndex = 44
-Me.bspb26.TabStop = false
-'
-'bspb39
-'
-Me.bspb39.Location = New System.Drawing.Point(516, 3087)
-Me.bspb39.Name = "bspb39"
-Me.bspb39.Size = New System.Drawing.Size(256, 256)
-Me.bspb39.TabIndex = 45
-Me.bspb39.TabStop = false
-'
-'bspb33
-'
-Me.bspb33.Location = New System.Drawing.Point(516, 2572)
-Me.bspb33.Name = "bspb33"
-Me.bspb33.Size = New System.Drawing.Size(256, 256)
-Me.bspb33.TabIndex = 45
-Me.bspb33.TabStop = false
-'
-'bspb38
-'
-Me.bspb38.Location = New System.Drawing.Point(259, 3087)
-Me.bspb38.Name = "bspb38"
-Me.bspb38.Size = New System.Drawing.Size(256, 256)
-Me.bspb38.TabIndex = 44
-Me.bspb38.TabStop = false
-'
-'bspb29
-'
-Me.bspb29.Location = New System.Drawing.Point(259, 2315)
-Me.bspb29.Name = "bspb29"
-Me.bspb29.Size = New System.Drawing.Size(256, 256)
-Me.bspb29.TabIndex = 47
-Me.bspb29.TabStop = false
-'
-'bspb37
-'
-Me.bspb37.Location = New System.Drawing.Point(2, 3087)
-Me.bspb37.Name = "bspb37"
-Me.bspb37.Size = New System.Drawing.Size(256, 256)
-Me.bspb37.TabIndex = 43
-Me.bspb37.TabStop = false
-'
-'bspb32
-'
-Me.bspb32.Location = New System.Drawing.Point(259, 2572)
-Me.bspb32.Name = "bspb32"
-Me.bspb32.Size = New System.Drawing.Size(256, 256)
-Me.bspb32.TabIndex = 44
-Me.bspb32.TabStop = false
-'
-'bspb25
-'
-Me.bspb25.Location = New System.Drawing.Point(2, 2057)
-Me.bspb25.Name = "bspb25"
-Me.bspb25.Size = New System.Drawing.Size(256, 256)
-Me.bspb25.TabIndex = 43
-Me.bspb25.TabStop = false
-'
-'bspb31
-'
-Me.bspb31.Location = New System.Drawing.Point(2, 2572)
-Me.bspb31.Name = "bspb31"
-Me.bspb31.Size = New System.Drawing.Size(256, 256)
-Me.bspb31.TabIndex = 43
-Me.bspb31.TabStop = false
-'
-'bspb28
-'
-Me.bspb28.Location = New System.Drawing.Point(2, 2315)
-Me.bspb28.Name = "bspb28"
-Me.bspb28.Size = New System.Drawing.Size(256, 256)
-Me.bspb28.TabIndex = 46
-Me.bspb28.TabStop = false
-'
-'bspb27
-'
-Me.bspb27.Location = New System.Drawing.Point(516, 2057)
-Me.bspb27.Name = "bspb27"
-Me.bspb27.Size = New System.Drawing.Size(256, 256)
-Me.bspb27.TabIndex = 45
-Me.bspb27.TabStop = false
-'
-'tpb12
-'
-Me.tpb12.Location = New System.Drawing.Point(518, 845)
-Me.tpb12.Name = "tpb12"
-Me.tpb12.Size = New System.Drawing.Size(256, 256)
-Me.tpb12.TabIndex = 11
-Me.tpb12.TabStop = false
-'
-'tpb11
-'
-Me.tpb11.Location = New System.Drawing.Point(260, 845)
-Me.tpb11.Name = "tpb11"
-Me.tpb11.Size = New System.Drawing.Size(256, 256)
-Me.tpb11.TabIndex = 10
-Me.tpb11.TabStop = false
-'
-'tpb10
-'
-Me.tpb10.Location = New System.Drawing.Point(3, 845)
-Me.tpb10.Name = "tpb10"
-Me.tpb10.Size = New System.Drawing.Size(256, 256)
-Me.tpb10.TabIndex = 9
-Me.tpb10.TabStop = false
-'
-'tpb9
-'
-Me.tpb9.Location = New System.Drawing.Point(518, 583)
-Me.tpb9.Name = "tpb9"
-Me.tpb9.Size = New System.Drawing.Size(256, 256)
-Me.tpb9.TabIndex = 8
-Me.tpb9.TabStop = false
-'
-'tpb8
-'
-Me.tpb8.Location = New System.Drawing.Point(260, 583)
-Me.tpb8.Name = "tpb8"
-Me.tpb8.Size = New System.Drawing.Size(256, 256)
-Me.tpb8.TabIndex = 7
-Me.tpb8.TabStop = false
-'
-'tpb7
-'
-Me.tpb7.Location = New System.Drawing.Point(2, 583)
-Me.tpb7.Name = "tpb7"
-Me.tpb7.Size = New System.Drawing.Size(256, 256)
-Me.tpb7.TabIndex = 6
-Me.tpb7.TabStop = false
-'
-'tpb6
-'
-Me.tpb6.Location = New System.Drawing.Point(513, 265)
-Me.tpb6.Name = "tpb6"
-Me.tpb6.Size = New System.Drawing.Size(256, 256)
-Me.tpb6.TabIndex = 5
-Me.tpb6.TabStop = false
-'
-'tpb5
-'
-Me.tpb5.Location = New System.Drawing.Point(257, 265)
-Me.tpb5.Name = "tpb5"
-Me.tpb5.Size = New System.Drawing.Size(256, 256)
-Me.tpb5.TabIndex = 4
-Me.tpb5.TabStop = false
-'
-'tpb4
-'
-Me.tpb4.Location = New System.Drawing.Point(1, 265)
-Me.tpb4.Name = "tpb4"
-Me.tpb4.Size = New System.Drawing.Size(256, 256)
-Me.tpb4.TabIndex = 3
-Me.tpb4.TabStop = false
-'
-'tpb3
-'
-Me.tpb3.Location = New System.Drawing.Point(514, 3)
-Me.tpb3.Name = "tpb3"
-Me.tpb3.Size = New System.Drawing.Size(256, 256)
-Me.tpb3.TabIndex = 2
-Me.tpb3.TabStop = false
-'
-'tpb2
-'
-Me.tpb2.Location = New System.Drawing.Point(257, 3)
-Me.tpb2.Name = "tpb2"
-Me.tpb2.Size = New System.Drawing.Size(256, 256)
-Me.tpb2.TabIndex = 1
-Me.tpb2.TabStop = false
-'
-'tpb1
-'
-Me.tpb1.Location = New System.Drawing.Point(1, 3)
-Me.tpb1.Name = "tpb1"
-Me.tpb1.Size = New System.Drawing.Size(256, 256)
-Me.tpb1.TabIndex = 0
-Me.tpb1.TabStop = false
-'
-'pbti72
-'
-Me.pbti72.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti72.Location = New System.Drawing.Point(776, 6886)
-Me.pbti72.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti72.Name = "pbti72"
-Me.pbti72.Size = New System.Drawing.Size(250, 400)
-Me.pbti72.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti72.TabIndex = 154
-Me.pbti72.TabStop = false
-'
-'pbti71
-'
-Me.pbti71.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti71.Location = New System.Drawing.Point(520, 6886)
-Me.pbti71.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti71.Name = "pbti71"
-Me.pbti71.Size = New System.Drawing.Size(250, 400)
-Me.pbti71.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti71.TabIndex = 153
-Me.pbti71.TabStop = false
-'
-'pbti70
-'
-Me.pbti70.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti70.Location = New System.Drawing.Point(263, 6886)
-Me.pbti70.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti70.Name = "pbti70"
-Me.pbti70.Size = New System.Drawing.Size(250, 400)
-Me.pbti70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti70.TabIndex = 152
-Me.pbti70.TabStop = false
-'
-'pbti69
-'
-Me.pbti69.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti69.Location = New System.Drawing.Point(7, 6886)
-Me.pbti69.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti69.Name = "pbti69"
-Me.pbti69.Size = New System.Drawing.Size(250, 400)
-Me.pbti69.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti69.TabIndex = 151
-Me.pbti69.TabStop = false
-'
-'pbti68
-'
-Me.pbti68.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti68.Location = New System.Drawing.Point(776, 6482)
-Me.pbti68.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti68.Name = "pbti68"
-Me.pbti68.Size = New System.Drawing.Size(250, 400)
-Me.pbti68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti68.TabIndex = 146
-Me.pbti68.TabStop = false
-'
-'pbti67
-'
-Me.pbti67.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti67.Location = New System.Drawing.Point(520, 6482)
-Me.pbti67.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti67.Name = "pbti67"
-Me.pbti67.Size = New System.Drawing.Size(250, 400)
-Me.pbti67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti67.TabIndex = 145
-Me.pbti67.TabStop = false
-'
-'pbti66
-'
-Me.pbti66.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti66.Location = New System.Drawing.Point(263, 6482)
-Me.pbti66.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti66.Name = "pbti66"
-Me.pbti66.Size = New System.Drawing.Size(250, 400)
-Me.pbti66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti66.TabIndex = 144
-Me.pbti66.TabStop = false
-'
-'pbti65
-'
-Me.pbti65.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti65.Location = New System.Drawing.Point(7, 6482)
-Me.pbti65.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti65.Name = "pbti65"
-Me.pbti65.Size = New System.Drawing.Size(250, 400)
-Me.pbti65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti65.TabIndex = 143
-Me.pbti65.TabStop = false
-'
-'pbti64
-'
-Me.pbti64.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti64.Location = New System.Drawing.Point(776, 6077)
-Me.pbti64.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti64.Name = "pbti64"
-Me.pbti64.Size = New System.Drawing.Size(250, 400)
-Me.pbti64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti64.TabIndex = 138
-Me.pbti64.TabStop = false
-'
-'pbti63
-'
-Me.pbti63.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti63.Location = New System.Drawing.Point(520, 6077)
-Me.pbti63.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti63.Name = "pbti63"
-Me.pbti63.Size = New System.Drawing.Size(250, 400)
-Me.pbti63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti63.TabIndex = 137
-Me.pbti63.TabStop = false
-'
-'pbti62
-'
-Me.pbti62.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti62.Location = New System.Drawing.Point(263, 6077)
-Me.pbti62.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti62.Name = "pbti62"
-Me.pbti62.Size = New System.Drawing.Size(250, 400)
-Me.pbti62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti62.TabIndex = 136
-Me.pbti62.TabStop = false
-'
-'pbti61
-'
-Me.pbti61.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti61.Location = New System.Drawing.Point(7, 6077)
-Me.pbti61.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti61.Name = "pbti61"
-Me.pbti61.Size = New System.Drawing.Size(250, 400)
-Me.pbti61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti61.TabIndex = 135
-Me.pbti61.TabStop = false
-'
-'pbti60
-'
-Me.pbti60.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti60.Location = New System.Drawing.Point(776, 5673)
-Me.pbti60.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti60.Name = "pbti60"
-Me.pbti60.Size = New System.Drawing.Size(250, 400)
-Me.pbti60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti60.TabIndex = 130
-Me.pbti60.TabStop = false
-'
-'pbti59
-'
-Me.pbti59.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti59.Location = New System.Drawing.Point(520, 5673)
-Me.pbti59.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti59.Name = "pbti59"
-Me.pbti59.Size = New System.Drawing.Size(250, 400)
-Me.pbti59.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti59.TabIndex = 129
-Me.pbti59.TabStop = false
-'
-'pbti58
-'
-Me.pbti58.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti58.Location = New System.Drawing.Point(263, 5673)
-Me.pbti58.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti58.Name = "pbti58"
-Me.pbti58.Size = New System.Drawing.Size(250, 400)
-Me.pbti58.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti58.TabIndex = 128
-Me.pbti58.TabStop = false
-'
-'pbti57
-'
-Me.pbti57.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti57.Location = New System.Drawing.Point(7, 5673)
-Me.pbti57.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti57.Name = "pbti57"
-Me.pbti57.Size = New System.Drawing.Size(250, 400)
-Me.pbti57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti57.TabIndex = 127
-Me.pbti57.TabStop = false
-'
-'pbti56
-'
-Me.pbti56.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti56.Location = New System.Drawing.Point(776, 5267)
-Me.pbti56.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti56.Name = "pbti56"
-Me.pbti56.Size = New System.Drawing.Size(250, 400)
-Me.pbti56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti56.TabIndex = 122
-Me.pbti56.TabStop = false
-'
-'pbti55
-'
-Me.pbti55.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti55.Location = New System.Drawing.Point(520, 5267)
-Me.pbti55.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti55.Name = "pbti55"
-Me.pbti55.Size = New System.Drawing.Size(250, 400)
-Me.pbti55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti55.TabIndex = 121
-Me.pbti55.TabStop = false
-'
-'pbti54
-'
-Me.pbti54.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti54.Location = New System.Drawing.Point(263, 5267)
-Me.pbti54.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti54.Name = "pbti54"
-Me.pbti54.Size = New System.Drawing.Size(250, 400)
-Me.pbti54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti54.TabIndex = 120
-Me.pbti54.TabStop = false
-'
-'pbti53
-'
-Me.pbti53.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti53.Location = New System.Drawing.Point(7, 5267)
-Me.pbti53.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti53.Name = "pbti53"
-Me.pbti53.Size = New System.Drawing.Size(250, 400)
-Me.pbti53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti53.TabIndex = 119
-Me.pbti53.TabStop = false
-'
-'pbti52
-'
-Me.pbti52.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti52.Location = New System.Drawing.Point(776, 4863)
-Me.pbti52.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti52.Name = "pbti52"
-Me.pbti52.Size = New System.Drawing.Size(250, 400)
-Me.pbti52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti52.TabIndex = 114
-Me.pbti52.TabStop = false
-'
-'pbti51
-'
-Me.pbti51.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti51.Location = New System.Drawing.Point(520, 4863)
-Me.pbti51.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti51.Name = "pbti51"
-Me.pbti51.Size = New System.Drawing.Size(250, 400)
-Me.pbti51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti51.TabIndex = 113
-Me.pbti51.TabStop = false
-'
-'pbti50
-'
-Me.pbti50.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti50.Location = New System.Drawing.Point(263, 4863)
-Me.pbti50.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti50.Name = "pbti50"
-Me.pbti50.Size = New System.Drawing.Size(250, 400)
-Me.pbti50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti50.TabIndex = 112
-Me.pbti50.TabStop = false
-'
-'pbti49
-'
-Me.pbti49.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti49.Location = New System.Drawing.Point(7, 4863)
-Me.pbti49.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti49.Name = "pbti49"
-Me.pbti49.Size = New System.Drawing.Size(250, 400)
-Me.pbti49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti49.TabIndex = 111
-Me.pbti49.TabStop = false
-'
-'pbti48
-'
-Me.pbti48.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti48.Location = New System.Drawing.Point(776, 4457)
-Me.pbti48.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti48.Name = "pbti48"
-Me.pbti48.Size = New System.Drawing.Size(250, 400)
-Me.pbti48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti48.TabIndex = 106
-Me.pbti48.TabStop = false
-'
-'pbti47
-'
-Me.pbti47.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti47.Location = New System.Drawing.Point(520, 4457)
-Me.pbti47.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti47.Name = "pbti47"
-Me.pbti47.Size = New System.Drawing.Size(250, 400)
-Me.pbti47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti47.TabIndex = 105
-Me.pbti47.TabStop = false
-'
-'pbti46
-'
-Me.pbti46.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti46.Location = New System.Drawing.Point(263, 4457)
-Me.pbti46.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti46.Name = "pbti46"
-Me.pbti46.Size = New System.Drawing.Size(250, 400)
-Me.pbti46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti46.TabIndex = 104
-Me.pbti46.TabStop = false
-'
-'pbti45
-'
-Me.pbti45.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti45.Location = New System.Drawing.Point(7, 4457)
-Me.pbti45.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti45.Name = "pbti45"
-Me.pbti45.Size = New System.Drawing.Size(250, 400)
-Me.pbti45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti45.TabIndex = 103
-Me.pbti45.TabStop = false
-'
-'pbti44
-'
-Me.pbti44.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti44.Location = New System.Drawing.Point(776, 4053)
-Me.pbti44.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti44.Name = "pbti44"
-Me.pbti44.Size = New System.Drawing.Size(250, 400)
-Me.pbti44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti44.TabIndex = 98
-Me.pbti44.TabStop = false
-'
-'pbti43
-'
-Me.pbti43.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti43.Location = New System.Drawing.Point(520, 4053)
-Me.pbti43.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti43.Name = "pbti43"
-Me.pbti43.Size = New System.Drawing.Size(250, 400)
-Me.pbti43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti43.TabIndex = 97
-Me.pbti43.TabStop = false
-'
-'pbti42
-'
-Me.pbti42.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti42.Location = New System.Drawing.Point(263, 4053)
-Me.pbti42.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti42.Name = "pbti42"
-Me.pbti42.Size = New System.Drawing.Size(250, 400)
-Me.pbti42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti42.TabIndex = 96
-Me.pbti42.TabStop = false
-'
-'pbti41
-'
-Me.pbti41.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti41.Location = New System.Drawing.Point(7, 4053)
-Me.pbti41.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti41.Name = "pbti41"
-Me.pbti41.Size = New System.Drawing.Size(250, 400)
-Me.pbti41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti41.TabIndex = 95
-Me.pbti41.TabStop = false
-'
-'pbti40
-'
-Me.pbti40.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti40.Location = New System.Drawing.Point(776, 3649)
-Me.pbti40.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti40.Name = "pbti40"
-Me.pbti40.Size = New System.Drawing.Size(250, 400)
-Me.pbti40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti40.TabIndex = 90
-Me.pbti40.TabStop = false
-'
-'pbti39
-'
-Me.pbti39.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti39.Location = New System.Drawing.Point(520, 3649)
-Me.pbti39.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti39.Name = "pbti39"
-Me.pbti39.Size = New System.Drawing.Size(250, 400)
-Me.pbti39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti39.TabIndex = 89
-Me.pbti39.TabStop = false
-'
-'pbti38
-'
-Me.pbti38.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti38.Location = New System.Drawing.Point(263, 3649)
-Me.pbti38.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti38.Name = "pbti38"
-Me.pbti38.Size = New System.Drawing.Size(250, 400)
-Me.pbti38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti38.TabIndex = 88
-Me.pbti38.TabStop = false
-'
-'pbti37
-'
-Me.pbti37.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti37.Location = New System.Drawing.Point(7, 3649)
-Me.pbti37.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti37.Name = "pbti37"
-Me.pbti37.Size = New System.Drawing.Size(250, 400)
-Me.pbti37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti37.TabIndex = 87
-Me.pbti37.TabStop = false
-'
-'pbti36
-'
-Me.pbti36.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti36.Location = New System.Drawing.Point(776, 3245)
-Me.pbti36.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti36.Name = "pbti36"
-Me.pbti36.Size = New System.Drawing.Size(250, 400)
-Me.pbti36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti36.TabIndex = 82
-Me.pbti36.TabStop = false
-'
-'pbti35
-'
-Me.pbti35.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti35.Location = New System.Drawing.Point(520, 3245)
-Me.pbti35.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti35.Name = "pbti35"
-Me.pbti35.Size = New System.Drawing.Size(250, 400)
-Me.pbti35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti35.TabIndex = 81
-Me.pbti35.TabStop = false
-'
-'pbti34
-'
-Me.pbti34.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti34.Location = New System.Drawing.Point(263, 3245)
-Me.pbti34.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti34.Name = "pbti34"
-Me.pbti34.Size = New System.Drawing.Size(250, 400)
-Me.pbti34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti34.TabIndex = 80
-Me.pbti34.TabStop = false
-'
-'pbti33
-'
-Me.pbti33.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti33.Location = New System.Drawing.Point(7, 3245)
-Me.pbti33.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti33.Name = "pbti33"
-Me.pbti33.Size = New System.Drawing.Size(250, 400)
-Me.pbti33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti33.TabIndex = 79
-Me.pbti33.TabStop = false
-'
-'pbti32
-'
-Me.pbti32.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti32.Location = New System.Drawing.Point(776, 2841)
-Me.pbti32.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti32.Name = "pbti32"
-Me.pbti32.Size = New System.Drawing.Size(250, 400)
-Me.pbti32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti32.TabIndex = 74
-Me.pbti32.TabStop = false
-'
-'pbti31
-'
-Me.pbti31.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti31.Location = New System.Drawing.Point(520, 2841)
-Me.pbti31.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti31.Name = "pbti31"
-Me.pbti31.Size = New System.Drawing.Size(250, 400)
-Me.pbti31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti31.TabIndex = 73
-Me.pbti31.TabStop = false
-'
-'pbti30
-'
-Me.pbti30.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti30.Location = New System.Drawing.Point(263, 2841)
-Me.pbti30.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti30.Name = "pbti30"
-Me.pbti30.Size = New System.Drawing.Size(250, 400)
-Me.pbti30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti30.TabIndex = 72
-Me.pbti30.TabStop = false
-'
-'pbti29
-'
-Me.pbti29.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti29.Location = New System.Drawing.Point(7, 2841)
-Me.pbti29.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti29.Name = "pbti29"
-Me.pbti29.Size = New System.Drawing.Size(250, 400)
-Me.pbti29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti29.TabIndex = 71
-Me.pbti29.TabStop = false
-'
-'pbti28
-'
-Me.pbti28.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti28.Location = New System.Drawing.Point(776, 2437)
-Me.pbti28.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti28.Name = "pbti28"
-Me.pbti28.Size = New System.Drawing.Size(250, 400)
-Me.pbti28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti28.TabIndex = 66
-Me.pbti28.TabStop = false
-'
-'pbti27
-'
-Me.pbti27.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti27.Location = New System.Drawing.Point(520, 2437)
-Me.pbti27.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti27.Name = "pbti27"
-Me.pbti27.Size = New System.Drawing.Size(250, 400)
-Me.pbti27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti27.TabIndex = 65
-Me.pbti27.TabStop = false
-'
-'pbti26
-'
-Me.pbti26.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti26.Location = New System.Drawing.Point(263, 2437)
-Me.pbti26.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti26.Name = "pbti26"
-Me.pbti26.Size = New System.Drawing.Size(250, 400)
-Me.pbti26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti26.TabIndex = 64
-Me.pbti26.TabStop = false
-'
-'pbti25
-'
-Me.pbti25.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti25.Location = New System.Drawing.Point(7, 2437)
-Me.pbti25.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti25.Name = "pbti25"
-Me.pbti25.Size = New System.Drawing.Size(250, 400)
-Me.pbti25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti25.TabIndex = 63
-Me.pbti25.TabStop = false
-'
-'pbti6
-'
-Me.pbti6.Location = New System.Drawing.Point(263, 412)
-Me.pbti6.Name = "pbti6"
-Me.pbti6.Size = New System.Drawing.Size(250, 400)
-Me.pbti6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti6.TabIndex = 37
-Me.pbti6.TabStop = false
-'
-'pbti5
-'
-Me.pbti5.Location = New System.Drawing.Point(6, 412)
-Me.pbti5.Name = "pbti5"
-Me.pbti5.Size = New System.Drawing.Size(250, 400)
-Me.pbti5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti5.TabIndex = 36
-Me.pbti5.TabStop = false
-'
-'pbti4
-'
-Me.pbti4.Location = New System.Drawing.Point(776, 6)
-Me.pbti4.Name = "pbti4"
-Me.pbti4.Size = New System.Drawing.Size(250, 400)
-Me.pbti4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti4.TabIndex = 35
-Me.pbti4.TabStop = false
-'
-'pbti3
-'
-Me.pbti3.Location = New System.Drawing.Point(520, 6)
-Me.pbti3.Name = "pbti3"
-Me.pbti3.Size = New System.Drawing.Size(250, 400)
-Me.pbti3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti3.TabIndex = 34
-Me.pbti3.TabStop = false
-'
-'pbti2
-'
-Me.pbti2.Location = New System.Drawing.Point(263, 6)
-Me.pbti2.Name = "pbti2"
-Me.pbti2.Size = New System.Drawing.Size(250, 400)
-Me.pbti2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti2.TabIndex = 33
-Me.pbti2.TabStop = false
-'
-'pbti1
-'
-Me.pbti1.Location = New System.Drawing.Point(6, 6)
-Me.pbti1.Name = "pbti1"
-Me.pbti1.Size = New System.Drawing.Size(250, 400)
-Me.pbti1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti1.TabIndex = 32
-Me.pbti1.TabStop = false
-'
-'pbti24
-'
-Me.pbti24.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti24.Location = New System.Drawing.Point(776, 2032)
-Me.pbti24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti24.Name = "pbti24"
-Me.pbti24.Size = New System.Drawing.Size(250, 400)
-Me.pbti24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti24.TabIndex = 37
-Me.pbti24.TabStop = false
-'
-'pbti23
-'
-Me.pbti23.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti23.Location = New System.Drawing.Point(520, 2032)
-Me.pbti23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti23.Name = "pbti23"
-Me.pbti23.Size = New System.Drawing.Size(250, 400)
-Me.pbti23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti23.TabIndex = 36
-Me.pbti23.TabStop = false
-'
-'pbti22
-'
-Me.pbti22.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti22.Location = New System.Drawing.Point(263, 2032)
-Me.pbti22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti22.Name = "pbti22"
-Me.pbti22.Size = New System.Drawing.Size(250, 400)
-Me.pbti22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti22.TabIndex = 35
-Me.pbti22.TabStop = false
-'
-'pbti21
-'
-Me.pbti21.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti21.Location = New System.Drawing.Point(7, 2032)
-Me.pbti21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti21.Name = "pbti21"
-Me.pbti21.Size = New System.Drawing.Size(250, 400)
-Me.pbti21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti21.TabIndex = 34
-Me.pbti21.TabStop = false
-'
-'pbti20
-'
-Me.pbti20.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti20.Location = New System.Drawing.Point(776, 1627)
-Me.pbti20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti20.Name = "pbti20"
-Me.pbti20.Size = New System.Drawing.Size(250, 400)
-Me.pbti20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti20.TabIndex = 33
-Me.pbti20.TabStop = false
-'
-'pbti19
-'
-Me.pbti19.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti19.Location = New System.Drawing.Point(520, 1627)
-Me.pbti19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti19.Name = "pbti19"
-Me.pbti19.Size = New System.Drawing.Size(250, 400)
-Me.pbti19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti19.TabIndex = 32
-Me.pbti19.TabStop = false
-'
-'pbti18
-'
-Me.pbti18.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti18.Location = New System.Drawing.Point(263, 1627)
-Me.pbti18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti18.Name = "pbti18"
-Me.pbti18.Size = New System.Drawing.Size(250, 400)
-Me.pbti18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti18.TabIndex = 31
-Me.pbti18.TabStop = false
-'
-'pbti17
-'
-Me.pbti17.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti17.Location = New System.Drawing.Point(6, 1627)
-Me.pbti17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti17.Name = "pbti17"
-Me.pbti17.Size = New System.Drawing.Size(250, 400)
-Me.pbti17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti17.TabIndex = 30
-Me.pbti17.TabStop = false
-'
-'pbti16
-'
-Me.pbti16.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti16.Location = New System.Drawing.Point(776, 1222)
-Me.pbti16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti16.Name = "pbti16"
-Me.pbti16.Size = New System.Drawing.Size(250, 400)
-Me.pbti16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti16.TabIndex = 29
-Me.pbti16.TabStop = false
-'
-'pbti15
-'
-Me.pbti15.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti15.Location = New System.Drawing.Point(520, 1222)
-Me.pbti15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti15.Name = "pbti15"
-Me.pbti15.Size = New System.Drawing.Size(250, 400)
-Me.pbti15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti15.TabIndex = 28
-Me.pbti15.TabStop = false
-'
-'pbti14
-'
-Me.pbti14.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti14.Location = New System.Drawing.Point(263, 1222)
-Me.pbti14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti14.Name = "pbti14"
-Me.pbti14.Size = New System.Drawing.Size(250, 400)
-Me.pbti14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti14.TabIndex = 27
-Me.pbti14.TabStop = false
-'
-'pbti13
-'
-Me.pbti13.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti13.Location = New System.Drawing.Point(6, 1222)
-Me.pbti13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti13.Name = "pbti13"
-Me.pbti13.Size = New System.Drawing.Size(250, 400)
-Me.pbti13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti13.TabIndex = 26
-Me.pbti13.TabStop = false
-'
-'pbti12
-'
-Me.pbti12.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti12.Location = New System.Drawing.Point(776, 817)
-Me.pbti12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti12.Name = "pbti12"
-Me.pbti12.Size = New System.Drawing.Size(250, 400)
-Me.pbti12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti12.TabIndex = 25
-Me.pbti12.TabStop = false
-'
-'pbti11
-'
-Me.pbti11.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti11.Location = New System.Drawing.Point(520, 817)
-Me.pbti11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti11.Name = "pbti11"
-Me.pbti11.Size = New System.Drawing.Size(250, 400)
-Me.pbti11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti11.TabIndex = 24
-Me.pbti11.TabStop = false
-'
-'pbti10
-'
-Me.pbti10.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti10.Location = New System.Drawing.Point(263, 817)
-Me.pbti10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti10.Name = "pbti10"
-Me.pbti10.Size = New System.Drawing.Size(250, 400)
-Me.pbti10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti10.TabIndex = 23
-Me.pbti10.TabStop = false
-'
-'pbti9
-'
-Me.pbti9.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti9.Location = New System.Drawing.Point(6, 817)
-Me.pbti9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti9.Name = "pbti9"
-Me.pbti9.Size = New System.Drawing.Size(250, 400)
-Me.pbti9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti9.TabIndex = 22
-Me.pbti9.TabStop = false
-'
-'pbti8
-'
-Me.pbti8.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti8.Location = New System.Drawing.Point(776, 412)
-Me.pbti8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti8.Name = "pbti8"
-Me.pbti8.Size = New System.Drawing.Size(250, 400)
-Me.pbti8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti8.TabIndex = 18
-Me.pbti8.TabStop = false
-'
-'pbti7
-'
-Me.pbti7.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbti7.Location = New System.Drawing.Point(520, 412)
-Me.pbti7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbti7.Name = "pbti7"
-Me.pbti7.Size = New System.Drawing.Size(250, 400)
-Me.pbti7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbti7.TabIndex = 17
-Me.pbti7.TabStop = false
-'
-'pbfatmdb31
-'
-Me.pbfatmdb31.Location = New System.Drawing.Point(-1, 3284)
-Me.pbfatmdb31.Name = "pbfatmdb31"
-Me.pbfatmdb31.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb31.TabIndex = 66
-Me.pbfatmdb31.TabStop = false
-'
-'pbfatmdb35
-'
-Me.pbfatmdb35.Location = New System.Drawing.Point(-1, 3721)
-Me.pbfatmdb35.Name = "pbfatmdb35"
-Me.pbfatmdb35.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb35.TabIndex = 71
-Me.pbfatmdb35.TabStop = false
-'
-'pbfatmdb36
-'
-Me.pbfatmdb36.Location = New System.Drawing.Point(387, 3721)
-Me.pbfatmdb36.Name = "pbfatmdb36"
-Me.pbfatmdb36.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb36.TabIndex = 70
-Me.pbfatmdb36.TabStop = false
-'
-'pbfatmdb34
-'
-Me.pbfatmdb34.Location = New System.Drawing.Point(387, 3502)
-Me.pbfatmdb34.Name = "pbfatmdb34"
-Me.pbfatmdb34.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb34.TabIndex = 69
-Me.pbfatmdb34.TabStop = false
-'
-'pbfatmdb33
-'
-Me.pbfatmdb33.Location = New System.Drawing.Point(-1, 3502)
-Me.pbfatmdb33.Name = "pbfatmdb33"
-Me.pbfatmdb33.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb33.TabIndex = 68
-Me.pbfatmdb33.TabStop = false
-'
-'pbfatmdb32
-'
-Me.pbfatmdb32.Location = New System.Drawing.Point(387, 3284)
-Me.pbfatmdb32.Name = "pbfatmdb32"
-Me.pbfatmdb32.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb32.TabIndex = 67
-Me.pbfatmdb32.TabStop = false
-'
-'pbfatmdb25
-'
-Me.pbfatmdb25.Location = New System.Drawing.Point(-1, 2628)
-Me.pbfatmdb25.Name = "pbfatmdb25"
-Me.pbfatmdb25.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb25.TabIndex = 54
-Me.pbfatmdb25.TabStop = false
-'
-'pbfatmdb29
-'
-Me.pbfatmdb29.Location = New System.Drawing.Point(-1, 3065)
-Me.pbfatmdb29.Name = "pbfatmdb29"
-Me.pbfatmdb29.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb29.TabIndex = 59
-Me.pbfatmdb29.TabStop = false
-'
-'pbfatmdb30
-'
-Me.pbfatmdb30.Location = New System.Drawing.Point(387, 3065)
-Me.pbfatmdb30.Name = "pbfatmdb30"
-Me.pbfatmdb30.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb30.TabIndex = 58
-Me.pbfatmdb30.TabStop = false
-'
-'pbfatmdb28
-'
-Me.pbfatmdb28.Location = New System.Drawing.Point(387, 2846)
-Me.pbfatmdb28.Name = "pbfatmdb28"
-Me.pbfatmdb28.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb28.TabIndex = 57
-Me.pbfatmdb28.TabStop = false
-'
-'pbfatmdb27
-'
-Me.pbfatmdb27.Location = New System.Drawing.Point(-1, 2846)
-Me.pbfatmdb27.Name = "pbfatmdb27"
-Me.pbfatmdb27.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb27.TabIndex = 56
-Me.pbfatmdb27.TabStop = false
-'
-'pbfatmdb26
-'
-Me.pbfatmdb26.Location = New System.Drawing.Point(387, 2628)
-Me.pbfatmdb26.Name = "pbfatmdb26"
-Me.pbfatmdb26.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb26.TabIndex = 55
-Me.pbfatmdb26.TabStop = false
-'
-'pbfatmdb8
-'
-Me.pbfatmdb8.Location = New System.Drawing.Point(388, 659)
-Me.pbfatmdb8.Name = "pbfatmdb8"
-Me.pbfatmdb8.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb8.TabIndex = 11
-Me.pbfatmdb8.TabStop = false
-'
-'pbfatmdb17
-'
-Me.pbfatmdb17.Location = New System.Drawing.Point(0, 1754)
-Me.pbfatmdb17.Name = "pbfatmdb17"
-Me.pbfatmdb17.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb17.TabIndex = 22
-Me.pbfatmdb17.TabStop = false
-'
-'pbfatmdb18
-'
-Me.pbfatmdb18.Location = New System.Drawing.Point(388, 1754)
-Me.pbfatmdb18.Name = "pbfatmdb18"
-Me.pbfatmdb18.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb18.TabIndex = 21
-Me.pbfatmdb18.TabStop = false
-'
-'pbfatmdb19
-'
-Me.pbfatmdb19.Location = New System.Drawing.Point(0, 1973)
-Me.pbfatmdb19.Name = "pbfatmdb19"
-Me.pbfatmdb19.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb19.TabIndex = 23
-Me.pbfatmdb19.TabStop = false
-'
-'pbfatmdb10
-'
-Me.pbfatmdb10.Location = New System.Drawing.Point(388, 878)
-Me.pbfatmdb10.Name = "pbfatmdb10"
-Me.pbfatmdb10.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb10.TabIndex = 14
-Me.pbfatmdb10.TabStop = false
-'
-'pbfatmdb23
-'
-Me.pbfatmdb23.Location = New System.Drawing.Point(0, 2410)
-Me.pbfatmdb23.Name = "pbfatmdb23"
-Me.pbfatmdb23.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb23.TabIndex = 28
-Me.pbfatmdb23.TabStop = false
-'
-'pbfatmdb9
-'
-Me.pbfatmdb9.Location = New System.Drawing.Point(0, 878)
-Me.pbfatmdb9.Name = "pbfatmdb9"
-Me.pbfatmdb9.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb9.TabIndex = 13
-Me.pbfatmdb9.TabStop = false
-'
-'pbfatmdb16
-'
-Me.pbfatmdb16.Location = New System.Drawing.Point(388, 1535)
-Me.pbfatmdb16.Name = "pbfatmdb16"
-Me.pbfatmdb16.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb16.TabIndex = 20
-Me.pbfatmdb16.TabStop = false
-'
-'pbfatmdb3
-'
-Me.pbfatmdb3.Location = New System.Drawing.Point(0, 221)
-Me.pbfatmdb3.Name = "pbfatmdb3"
-Me.pbfatmdb3.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb3.TabIndex = 2
-Me.pbfatmdb3.TabStop = false
-'
-'pbfatmdb15
-'
-Me.pbfatmdb15.Location = New System.Drawing.Point(0, 1535)
-Me.pbfatmdb15.Name = "pbfatmdb15"
-Me.pbfatmdb15.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb15.TabIndex = 19
-Me.pbfatmdb15.TabStop = false
-'
-'pbfatmdb24
-'
-Me.pbfatmdb24.Location = New System.Drawing.Point(388, 2410)
-Me.pbfatmdb24.Name = "pbfatmdb24"
-Me.pbfatmdb24.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb24.TabIndex = 27
-Me.pbfatmdb24.TabStop = false
-'
-'pbfatmdb14
-'
-Me.pbfatmdb14.Location = New System.Drawing.Point(388, 1316)
-Me.pbfatmdb14.Name = "pbfatmdb14"
-Me.pbfatmdb14.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb14.TabIndex = 18
-Me.pbfatmdb14.TabStop = false
-'
-'pbfatmdb5
-'
-Me.pbfatmdb5.Location = New System.Drawing.Point(0, 440)
-Me.pbfatmdb5.Name = "pbfatmdb5"
-Me.pbfatmdb5.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb5.TabIndex = 5
-Me.pbfatmdb5.TabStop = false
-'
-'pbfatmdb13
-'
-Me.pbfatmdb13.Location = New System.Drawing.Point(0, 1316)
-Me.pbfatmdb13.Name = "pbfatmdb13"
-Me.pbfatmdb13.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb13.TabIndex = 17
-Me.pbfatmdb13.TabStop = false
-'
-'pbfatmdb22
-'
-Me.pbfatmdb22.Location = New System.Drawing.Point(388, 2191)
-Me.pbfatmdb22.Name = "pbfatmdb22"
-Me.pbfatmdb22.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb22.TabIndex = 26
-Me.pbfatmdb22.TabStop = false
-'
-'pbfatmdb11
-'
-Me.pbfatmdb11.Location = New System.Drawing.Point(0, 1097)
-Me.pbfatmdb11.Name = "pbfatmdb11"
-Me.pbfatmdb11.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb11.TabIndex = 16
-Me.pbfatmdb11.TabStop = false
-'
-'pbfatmdb4
-'
-Me.pbfatmdb4.Location = New System.Drawing.Point(388, 221)
-Me.pbfatmdb4.Name = "pbfatmdb4"
-Me.pbfatmdb4.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb4.TabIndex = 3
-Me.pbfatmdb4.TabStop = false
-'
-'pbfatmdb12
-'
-Me.pbfatmdb12.Location = New System.Drawing.Point(388, 1097)
-Me.pbfatmdb12.Name = "pbfatmdb12"
-Me.pbfatmdb12.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb12.TabIndex = 15
-Me.pbfatmdb12.TabStop = false
-'
-'pbfatmdb21
-'
-Me.pbfatmdb21.Location = New System.Drawing.Point(0, 2191)
-Me.pbfatmdb21.Name = "pbfatmdb21"
-Me.pbfatmdb21.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb21.TabIndex = 25
-Me.pbfatmdb21.TabStop = false
-'
-'pbfatmdb6
-'
-Me.pbfatmdb6.Location = New System.Drawing.Point(388, 440)
-Me.pbfatmdb6.Name = "pbfatmdb6"
-Me.pbfatmdb6.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb6.TabIndex = 4
-Me.pbfatmdb6.TabStop = false
-'
-'pbfatmdb20
-'
-Me.pbfatmdb20.Location = New System.Drawing.Point(388, 1973)
-Me.pbfatmdb20.Name = "pbfatmdb20"
-Me.pbfatmdb20.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb20.TabIndex = 24
-Me.pbfatmdb20.TabStop = false
-'
-'pbfatmdb7
-'
-Me.pbfatmdb7.Location = New System.Drawing.Point(0, 659)
-Me.pbfatmdb7.Name = "pbfatmdb7"
-Me.pbfatmdb7.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb7.TabIndex = 12
-Me.pbfatmdb7.TabStop = false
-'
-'pbfatmdb1
-'
-Me.pbfatmdb1.InitialImage = Nothing
-Me.pbfatmdb1.Location = New System.Drawing.Point(0, 2)
-Me.pbfatmdb1.Name = "pbfatmdb1"
-Me.pbfatmdb1.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb1.TabIndex = 0
-Me.pbfatmdb1.TabStop = false
-'
-'pbfatmdb2
-'
-Me.pbfatmdb2.Location = New System.Drawing.Point(388, 2)
-Me.pbfatmdb2.Name = "pbfatmdb2"
-Me.pbfatmdb2.Size = New System.Drawing.Size(387, 217)
-Me.pbfatmdb2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbfatmdb2.TabIndex = 1
-Me.pbfatmdb2.TabStop = false
-'
-'pbCustomImageTemp
-'
-Me.pbCustomImageTemp.Location = New System.Drawing.Point(6, 141)
-Me.pbCustomImageTemp.Name = "pbCustomImageTemp"
-Me.pbCustomImageTemp.Size = New System.Drawing.Size(100, 50)
-Me.pbCustomImageTemp.TabIndex = 94
-Me.pbCustomImageTemp.TabStop = false
-Me.pbCustomImageTemp.Visible = false
-'
-'pbtvwide24
-'
-Me.pbtvwide24.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide24.Enabled = false
-Me.pbtvwide24.Location = New System.Drawing.Point(386, 930)
-Me.pbtvwide24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide24.Name = "pbtvwide24"
-Me.pbtvwide24.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide24.TabIndex = 30
-Me.pbtvwide24.TabStop = false
-'
-'pbtvwide23
-'
-Me.pbtvwide23.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide23.Enabled = false
-Me.pbtvwide23.Location = New System.Drawing.Point(2, 930)
-Me.pbtvwide23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide23.Name = "pbtvwide23"
-Me.pbtvwide23.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide23.TabIndex = 29
-Me.pbtvwide23.TabStop = false
-'
-'pbtvwide10
-'
-Me.pbtvwide10.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide10.Enabled = false
-Me.pbtvwide10.Location = New System.Drawing.Point(386, 341)
-Me.pbtvwide10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide10.Name = "pbtvwide10"
-Me.pbtvwide10.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide10.TabIndex = 26
-Me.pbtvwide10.TabStop = false
-'
-'pbtvwide1
-'
-Me.pbtvwide1.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide1.Enabled = false
-Me.pbtvwide1.Location = New System.Drawing.Point(2, 2)
-Me.pbtvwide1.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide1.Name = "pbtvwide1"
-Me.pbtvwide1.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide1.TabIndex = 15
-Me.pbtvwide1.TabStop = false
-'
-'pbtvwide22
-'
-Me.pbtvwide22.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide22.Enabled = false
-Me.pbtvwide22.Location = New System.Drawing.Point(386, 845)
-Me.pbtvwide22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide22.Name = "pbtvwide22"
-Me.pbtvwide22.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide22.TabIndex = 28
-Me.pbtvwide22.TabStop = false
-'
-'pbtvwide21
-'
-Me.pbtvwide21.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide21.Enabled = false
-Me.pbtvwide21.Location = New System.Drawing.Point(2, 845)
-Me.pbtvwide21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide21.Name = "pbtvwide21"
-Me.pbtvwide21.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide21.TabIndex = 27
-Me.pbtvwide21.TabStop = false
-'
-'pbtvwide9
-'
-Me.pbtvwide9.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide9.Enabled = false
-Me.pbtvwide9.Location = New System.Drawing.Point(2, 341)
-Me.pbtvwide9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide9.Name = "pbtvwide9"
-Me.pbtvwide9.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide9.TabIndex = 25
-Me.pbtvwide9.TabStop = false
-'
-'pbtvwide20
-'
-Me.pbtvwide20.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide20.Enabled = false
-Me.pbtvwide20.Location = New System.Drawing.Point(386, 761)
-Me.pbtvwide20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide20.Name = "pbtvwide20"
-Me.pbtvwide20.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide20.TabIndex = 26
-Me.pbtvwide20.TabStop = false
-'
-'pbtvwide2
-'
-Me.pbtvwide2.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide2.Enabled = false
-Me.pbtvwide2.Location = New System.Drawing.Point(386, 2)
-Me.pbtvwide2.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide2.Name = "pbtvwide2"
-Me.pbtvwide2.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide2.TabIndex = 18
-Me.pbtvwide2.TabStop = false
-'
-'pbtvwide19
-'
-Me.pbtvwide19.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide19.Enabled = false
-Me.pbtvwide19.Location = New System.Drawing.Point(2, 761)
-Me.pbtvwide19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide19.Name = "pbtvwide19"
-Me.pbtvwide19.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide19.TabIndex = 25
-Me.pbtvwide19.TabStop = false
-'
-'pbtvwide8
-'
-Me.pbtvwide8.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide8.Enabled = false
-Me.pbtvwide8.Location = New System.Drawing.Point(386, 256)
-Me.pbtvwide8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide8.Name = "pbtvwide8"
-Me.pbtvwide8.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide8.TabIndex = 24
-Me.pbtvwide8.TabStop = false
-'
-'pbtvwide18
-'
-Me.pbtvwide18.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide18.Enabled = false
-Me.pbtvwide18.Location = New System.Drawing.Point(386, 677)
-Me.pbtvwide18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide18.Name = "pbtvwide18"
-Me.pbtvwide18.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide18.TabIndex = 24
-Me.pbtvwide18.TabStop = false
-'
-'pbtvwide3
-'
-Me.pbtvwide3.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide3.Enabled = false
-Me.pbtvwide3.Location = New System.Drawing.Point(2, 86)
-Me.pbtvwide3.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide3.Name = "pbtvwide3"
-Me.pbtvwide3.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide3.TabIndex = 19
-Me.pbtvwide3.TabStop = false
-'
-'pbtvwide17
-'
-Me.pbtvwide17.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide17.Enabled = false
-Me.pbtvwide17.Location = New System.Drawing.Point(2, 677)
-Me.pbtvwide17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide17.Name = "pbtvwide17"
-Me.pbtvwide17.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide17.TabIndex = 23
-Me.pbtvwide17.TabStop = false
-'
-'pbtvwide7
-'
-Me.pbtvwide7.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide7.Enabled = false
-Me.pbtvwide7.Location = New System.Drawing.Point(2, 256)
-Me.pbtvwide7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide7.Name = "pbtvwide7"
-Me.pbtvwide7.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide7.TabIndex = 23
-Me.pbtvwide7.TabStop = false
-'
-'pbtvwide16
-'
-Me.pbtvwide16.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide16.Enabled = false
-Me.pbtvwide16.Location = New System.Drawing.Point(386, 593)
-Me.pbtvwide16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide16.Name = "pbtvwide16"
-Me.pbtvwide16.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide16.TabIndex = 22
-Me.pbtvwide16.TabStop = false
-'
-'pbtvwide4
-'
-Me.pbtvwide4.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide4.Enabled = false
-Me.pbtvwide4.Location = New System.Drawing.Point(386, 86)
-Me.pbtvwide4.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide4.Name = "pbtvwide4"
-Me.pbtvwide4.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide4.TabIndex = 20
-Me.pbtvwide4.TabStop = false
-'
-'pbtvwide15
-'
-Me.pbtvwide15.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide15.Enabled = false
-Me.pbtvwide15.Location = New System.Drawing.Point(2, 593)
-Me.pbtvwide15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide15.Name = "pbtvwide15"
-Me.pbtvwide15.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide15.TabIndex = 21
-Me.pbtvwide15.TabStop = false
-'
-'pbtvwide6
-'
-Me.pbtvwide6.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide6.Enabled = false
-Me.pbtvwide6.Location = New System.Drawing.Point(386, 170)
-Me.pbtvwide6.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide6.Name = "pbtvwide6"
-Me.pbtvwide6.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide6.TabIndex = 22
-Me.pbtvwide6.TabStop = false
-'
-'pbtvwide14
-'
-Me.pbtvwide14.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide14.Enabled = false
-Me.pbtvwide14.Location = New System.Drawing.Point(386, 509)
-Me.pbtvwide14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide14.Name = "pbtvwide14"
-Me.pbtvwide14.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide14.TabIndex = 20
-Me.pbtvwide14.TabStop = false
-'
-'pbtvwide5
-'
-Me.pbtvwide5.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide5.Enabled = false
-Me.pbtvwide5.Location = New System.Drawing.Point(2, 170)
-Me.pbtvwide5.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide5.Name = "pbtvwide5"
-Me.pbtvwide5.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide5.TabIndex = 21
-Me.pbtvwide5.TabStop = false
-'
-'pbtvwide13
-'
-Me.pbtvwide13.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide13.Enabled = false
-Me.pbtvwide13.Location = New System.Drawing.Point(2, 509)
-Me.pbtvwide13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide13.Name = "pbtvwide13"
-Me.pbtvwide13.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide13.TabIndex = 19
-Me.pbtvwide13.TabStop = false
-'
-'pbtvwide11
-'
-Me.pbtvwide11.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide11.Enabled = false
-Me.pbtvwide11.Location = New System.Drawing.Point(2, 425)
-Me.pbtvwide11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide11.Name = "pbtvwide11"
-Me.pbtvwide11.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide11.TabIndex = 17
-Me.pbtvwide11.TabStop = false
-'
-'pbtvwide12
-'
-Me.pbtvwide12.BackColor = System.Drawing.Color.Transparent
-Me.pbtvwide12.Enabled = false
-Me.pbtvwide12.Location = New System.Drawing.Point(386, 425)
-Me.pbtvwide12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbtvwide12.Name = "pbtvwide12"
-Me.pbtvwide12.Size = New System.Drawing.Size(380, 80)
-Me.pbtvwide12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-Me.pbtvwide12.TabIndex = 18
-Me.pbtvwide12.TabStop = false
-'
-'pbposterIMP6
-'
-Me.pbposterIMP6.Location = New System.Drawing.Point(520, 412)
-Me.pbposterIMP6.Name = "pbposterIMP6"
-Me.pbposterIMP6.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP6.TabIndex = 37
-Me.pbposterIMP6.TabStop = false
-'
-'pbposterIMP5
-'
-Me.pbposterIMP5.Location = New System.Drawing.Point(263, 412)
-Me.pbposterIMP5.Name = "pbposterIMP5"
-Me.pbposterIMP5.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP5.TabIndex = 36
-Me.pbposterIMP5.TabStop = false
-'
-'pbposterIMP4
-'
-Me.pbposterIMP4.Location = New System.Drawing.Point(7, 412)
-Me.pbposterIMP4.Name = "pbposterIMP4"
-Me.pbposterIMP4.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP4.TabIndex = 35
-Me.pbposterIMP4.TabStop = false
-'
-'pbposterIMP3
-'
-Me.pbposterIMP3.Location = New System.Drawing.Point(520, 6)
-Me.pbposterIMP3.Name = "pbposterIMP3"
-Me.pbposterIMP3.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP3.TabIndex = 34
-Me.pbposterIMP3.TabStop = false
-'
-'pbposterIMP2
-'
-Me.pbposterIMP2.Location = New System.Drawing.Point(263, 6)
-Me.pbposterIMP2.Name = "pbposterIMP2"
-Me.pbposterIMP2.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP2.TabIndex = 33
-Me.pbposterIMP2.TabStop = false
-'
-'pbposterIMP1
-'
-Me.pbposterIMP1.Location = New System.Drawing.Point(7, 6)
-Me.pbposterIMP1.Name = "pbposterIMP1"
-Me.pbposterIMP1.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP1.TabIndex = 32
-Me.pbposterIMP1.TabStop = false
-'
-'pbposterIMP24
-'
-Me.pbposterIMP24.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP24.Location = New System.Drawing.Point(520, 2846)
-Me.pbposterIMP24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP24.Name = "pbposterIMP24"
-Me.pbposterIMP24.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP24.TabIndex = 37
-Me.pbposterIMP24.TabStop = false
-'
-'pbposterIMP23
-'
-Me.pbposterIMP23.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP23.Location = New System.Drawing.Point(263, 2846)
-Me.pbposterIMP23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP23.Name = "pbposterIMP23"
-Me.pbposterIMP23.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP23.TabIndex = 36
-Me.pbposterIMP23.TabStop = false
-'
-'pbposterIMP22
-'
-Me.pbposterIMP22.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP22.Location = New System.Drawing.Point(6, 2846)
-Me.pbposterIMP22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP22.Name = "pbposterIMP22"
-Me.pbposterIMP22.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP22.TabIndex = 35
-Me.pbposterIMP22.TabStop = false
-'
-'pbposterIMP21
-'
-Me.pbposterIMP21.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP21.Location = New System.Drawing.Point(520, 2442)
-Me.pbposterIMP21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP21.Name = "pbposterIMP21"
-Me.pbposterIMP21.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP21.TabIndex = 34
-Me.pbposterIMP21.TabStop = false
-'
-'pbposterIMP20
-'
-Me.pbposterIMP20.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP20.Location = New System.Drawing.Point(263, 2442)
-Me.pbposterIMP20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP20.Name = "pbposterIMP20"
-Me.pbposterIMP20.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP20.TabIndex = 33
-Me.pbposterIMP20.TabStop = false
-'
-'pbposterIMP19
-'
-Me.pbposterIMP19.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP19.Location = New System.Drawing.Point(6, 2442)
-Me.pbposterIMP19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP19.Name = "pbposterIMP19"
-Me.pbposterIMP19.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP19.TabIndex = 32
-Me.pbposterIMP19.TabStop = false
-'
-'pbposterIMP18
-'
-Me.pbposterIMP18.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP18.Location = New System.Drawing.Point(520, 2036)
-Me.pbposterIMP18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP18.Name = "pbposterIMP18"
-Me.pbposterIMP18.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP18.TabIndex = 31
-Me.pbposterIMP18.TabStop = false
-'
-'pbposterIMP17
-'
-Me.pbposterIMP17.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP17.Location = New System.Drawing.Point(263, 2036)
-Me.pbposterIMP17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP17.Name = "pbposterIMP17"
-Me.pbposterIMP17.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP17.TabIndex = 30
-Me.pbposterIMP17.TabStop = false
-'
-'pbposterIMP16
-'
-Me.pbposterIMP16.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP16.Location = New System.Drawing.Point(6, 2036)
-Me.pbposterIMP16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP16.Name = "pbposterIMP16"
-Me.pbposterIMP16.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP16.TabIndex = 29
-Me.pbposterIMP16.TabStop = false
-'
-'pbposterIMP15
-'
-Me.pbposterIMP15.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP15.Location = New System.Drawing.Point(520, 1631)
-Me.pbposterIMP15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP15.Name = "pbposterIMP15"
-Me.pbposterIMP15.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP15.TabIndex = 28
-Me.pbposterIMP15.TabStop = false
-'
-'pbposterIMP14
-'
-Me.pbposterIMP14.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP14.Location = New System.Drawing.Point(263, 1631)
-Me.pbposterIMP14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP14.Name = "pbposterIMP14"
-Me.pbposterIMP14.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP14.TabIndex = 27
-Me.pbposterIMP14.TabStop = false
-'
-'pbposterIMP13
-'
-Me.pbposterIMP13.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP13.Location = New System.Drawing.Point(6, 1631)
-Me.pbposterIMP13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP13.Name = "pbposterIMP13"
-Me.pbposterIMP13.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP13.TabIndex = 26
-Me.pbposterIMP13.TabStop = false
-'
-'pbposterIMP12
-'
-Me.pbposterIMP12.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP12.Location = New System.Drawing.Point(520, 1224)
-Me.pbposterIMP12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP12.Name = "pbposterIMP12"
-Me.pbposterIMP12.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP12.TabIndex = 25
-Me.pbposterIMP12.TabStop = false
-'
-'pbposterIMP11
-'
-Me.pbposterIMP11.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP11.Location = New System.Drawing.Point(263, 1224)
-Me.pbposterIMP11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP11.Name = "pbposterIMP11"
-Me.pbposterIMP11.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP11.TabIndex = 24
-Me.pbposterIMP11.TabStop = false
-'
-'pbposterIMP10
-'
-Me.pbposterIMP10.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP10.Location = New System.Drawing.Point(6, 1224)
-Me.pbposterIMP10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP10.Name = "pbposterIMP10"
-Me.pbposterIMP10.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP10.TabIndex = 23
-Me.pbposterIMP10.TabStop = false
-'
-'pbposterIMP9
-'
-Me.pbposterIMP9.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP9.Location = New System.Drawing.Point(520, 817)
-Me.pbposterIMP9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP9.Name = "pbposterIMP9"
-Me.pbposterIMP9.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP9.TabIndex = 22
-Me.pbposterIMP9.TabStop = false
-'
-'pbposterIMP8
-'
-Me.pbposterIMP8.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP8.Location = New System.Drawing.Point(263, 817)
-Me.pbposterIMP8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP8.Name = "pbposterIMP8"
-Me.pbposterIMP8.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP8.TabIndex = 18
-Me.pbposterIMP8.TabStop = false
-'
-'pbposterIMP7
-'
-Me.pbposterIMP7.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterIMP7.Location = New System.Drawing.Point(6, 817)
-Me.pbposterIMP7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterIMP7.Name = "pbposterIMP7"
-Me.pbposterIMP7.Size = New System.Drawing.Size(250, 400)
-Me.pbposterIMP7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterIMP7.TabIndex = 17
-Me.pbposterIMP7.TabStop = false
-'
-'pbposterTMDB1
-'
-Me.pbposterTMDB1.Location = New System.Drawing.Point(7, 6)
-Me.pbposterTMDB1.Name = "pbposterTMDB1"
-Me.pbposterTMDB1.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB1.TabIndex = 32
-Me.pbposterTMDB1.TabStop = false
-'
-'pbposterTMDB2
-'
-Me.pbposterTMDB2.Location = New System.Drawing.Point(263, 6)
-Me.pbposterTMDB2.Name = "pbposterTMDB2"
-Me.pbposterTMDB2.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB2.TabIndex = 33
-Me.pbposterTMDB2.TabStop = false
-'
-'pbposterTMDB3
-'
-Me.pbposterTMDB3.Location = New System.Drawing.Point(520, 6)
-Me.pbposterTMDB3.Name = "pbposterTMDB3"
-Me.pbposterTMDB3.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB3.TabIndex = 34
-Me.pbposterTMDB3.TabStop = false
-'
-'pbposterTMDB4
-'
-Me.pbposterTMDB4.Location = New System.Drawing.Point(7, 412)
-Me.pbposterTMDB4.Name = "pbposterTMDB4"
-Me.pbposterTMDB4.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB4.TabIndex = 35
-Me.pbposterTMDB4.TabStop = false
-'
-'pbposterTMDB5
-'
-Me.pbposterTMDB5.Location = New System.Drawing.Point(263, 412)
-Me.pbposterTMDB5.Name = "pbposterTMDB5"
-Me.pbposterTMDB5.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB5.TabIndex = 36
-Me.pbposterTMDB5.TabStop = false
-'
-'pbposterTMDB6
-'
-Me.pbposterTMDB6.Location = New System.Drawing.Point(520, 412)
-Me.pbposterTMDB6.Name = "pbposterTMDB6"
-Me.pbposterTMDB6.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB6.TabIndex = 37
-Me.pbposterTMDB6.TabStop = false
-'
-'pbposterTMDB7
-'
-Me.pbposterTMDB7.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB7.Location = New System.Drawing.Point(6, 817)
-Me.pbposterTMDB7.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB7.Name = "pbposterTMDB7"
-Me.pbposterTMDB7.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB7.TabIndex = 17
-Me.pbposterTMDB7.TabStop = false
-'
-'pbposterTMDB8
-'
-Me.pbposterTMDB8.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB8.Location = New System.Drawing.Point(263, 817)
-Me.pbposterTMDB8.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB8.Name = "pbposterTMDB8"
-Me.pbposterTMDB8.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB8.TabIndex = 18
-Me.pbposterTMDB8.TabStop = false
-'
-'pbposterTMDB9
-'
-Me.pbposterTMDB9.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB9.Location = New System.Drawing.Point(520, 817)
-Me.pbposterTMDB9.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB9.Name = "pbposterTMDB9"
-Me.pbposterTMDB9.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB9.TabIndex = 22
-Me.pbposterTMDB9.TabStop = false
-'
-'pbposterTMDB10
-'
-Me.pbposterTMDB10.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB10.Location = New System.Drawing.Point(6, 1224)
-Me.pbposterTMDB10.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB10.Name = "pbposterTMDB10"
-Me.pbposterTMDB10.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB10.TabIndex = 23
-Me.pbposterTMDB10.TabStop = false
-'
-'pbposterTMDB11
-'
-Me.pbposterTMDB11.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB11.Location = New System.Drawing.Point(263, 1224)
-Me.pbposterTMDB11.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB11.Name = "pbposterTMDB11"
-Me.pbposterTMDB11.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB11.TabIndex = 24
-Me.pbposterTMDB11.TabStop = false
-'
-'pbposterTMDB12
-'
-Me.pbposterTMDB12.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB12.Location = New System.Drawing.Point(520, 1224)
-Me.pbposterTMDB12.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB12.Name = "pbposterTMDB12"
-Me.pbposterTMDB12.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB12.TabIndex = 25
-Me.pbposterTMDB12.TabStop = false
-'
-'pbposterTMDB13
-'
-Me.pbposterTMDB13.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB13.Location = New System.Drawing.Point(6, 1631)
-Me.pbposterTMDB13.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB13.Name = "pbposterTMDB13"
-Me.pbposterTMDB13.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB13.TabIndex = 26
-Me.pbposterTMDB13.TabStop = false
-'
-'pbposterTMDB14
-'
-Me.pbposterTMDB14.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB14.Location = New System.Drawing.Point(263, 1631)
-Me.pbposterTMDB14.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB14.Name = "pbposterTMDB14"
-Me.pbposterTMDB14.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB14.TabIndex = 27
-Me.pbposterTMDB14.TabStop = false
-'
-'pbposterTMDB15
-'
-Me.pbposterTMDB15.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB15.Location = New System.Drawing.Point(520, 1631)
-Me.pbposterTMDB15.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB15.Name = "pbposterTMDB15"
-Me.pbposterTMDB15.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB15.TabIndex = 28
-Me.pbposterTMDB15.TabStop = false
-'
-'pbposterTMDB16
-'
-Me.pbposterTMDB16.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB16.Location = New System.Drawing.Point(6, 2036)
-Me.pbposterTMDB16.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB16.Name = "pbposterTMDB16"
-Me.pbposterTMDB16.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB16.TabIndex = 29
-Me.pbposterTMDB16.TabStop = false
-'
-'pbposterTMDB17
-'
-Me.pbposterTMDB17.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB17.Location = New System.Drawing.Point(263, 2036)
-Me.pbposterTMDB17.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB17.Name = "pbposterTMDB17"
-Me.pbposterTMDB17.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB17.TabIndex = 30
-Me.pbposterTMDB17.TabStop = false
-'
-'pbposterTMDB18
-'
-Me.pbposterTMDB18.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB18.Location = New System.Drawing.Point(520, 2036)
-Me.pbposterTMDB18.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB18.Name = "pbposterTMDB18"
-Me.pbposterTMDB18.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB18.TabIndex = 31
-Me.pbposterTMDB18.TabStop = false
-'
-'pbposterTMDB19
-'
-Me.pbposterTMDB19.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB19.Location = New System.Drawing.Point(6, 2442)
-Me.pbposterTMDB19.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB19.Name = "pbposterTMDB19"
-Me.pbposterTMDB19.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB19.TabIndex = 32
-Me.pbposterTMDB19.TabStop = false
-'
-'pbposterTMDB20
-'
-Me.pbposterTMDB20.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB20.Location = New System.Drawing.Point(263, 2442)
-Me.pbposterTMDB20.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB20.Name = "pbposterTMDB20"
-Me.pbposterTMDB20.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB20.TabIndex = 33
-Me.pbposterTMDB20.TabStop = false
-'
-'pbposterTMDB21
-'
-Me.pbposterTMDB21.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB21.Location = New System.Drawing.Point(520, 2442)
-Me.pbposterTMDB21.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB21.Name = "pbposterTMDB21"
-Me.pbposterTMDB21.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB21.TabIndex = 34
-Me.pbposterTMDB21.TabStop = false
-'
-'pbposterTMDB22
-'
-Me.pbposterTMDB22.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB22.Location = New System.Drawing.Point(6, 2846)
-Me.pbposterTMDB22.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB22.Name = "pbposterTMDB22"
-Me.pbposterTMDB22.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB22.TabIndex = 35
-Me.pbposterTMDB22.TabStop = false
-'
-'pbposterTMDB23
-'
-Me.pbposterTMDB23.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB23.Location = New System.Drawing.Point(263, 2846)
-Me.pbposterTMDB23.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB23.Name = "pbposterTMDB23"
-Me.pbposterTMDB23.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB23.TabIndex = 36
-Me.pbposterTMDB23.TabStop = false
-'
-'pbposterTMDB24
-'
-Me.pbposterTMDB24.Cursor = System.Windows.Forms.Cursors.Default
-Me.pbposterTMDB24.Location = New System.Drawing.Point(520, 2846)
-Me.pbposterTMDB24.Margin = New System.Windows.Forms.Padding(2)
-Me.pbposterTMDB24.Name = "pbposterTMDB24"
-Me.pbposterTMDB24.Size = New System.Drawing.Size(250, 400)
-Me.pbposterTMDB24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-Me.pbposterTMDB24.TabIndex = 37
-Me.pbposterTMDB24.TabStop = false
-'
 'maincollection
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -20923,16 +20923,289 @@ Me.tp1.PerformLayout
 Me.tcWide.ResumeLayout(false)
 Me.tpWRSG.ResumeLayout(false)
 CType(Me.kpRSGBG,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb36,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pb15,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpWNS.ResumeLayout(false)
 CType(Me.kpWNSBackground,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwns36,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpWRS.ResumeLayout(false)
 CType(Me.kpRSBackground,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrs36,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpWRSS.ResumeLayout(false)
+CType(Me.pbwrsscan1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbwrsscan36,System.ComponentModel.ISupportInitialize).EndInit
 Me.tp5.ResumeLayout(false)
+CType(Me.spb24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.spb1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tp6.ResumeLayout(false)
 CType(Me.kpBoxShots,System.ComponentModel.ISupportInitialize).EndInit
 Me.kpBoxShots.ResumeLayout(false)
+CType(Me.bspb91,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb88,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb92,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb79,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb93,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb89,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb90,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb70,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb85,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb80,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb86,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb61,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb87,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb81,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb71,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb82,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb46,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb83,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb72,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb84,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb62,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb73,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb47,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb74,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb75,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb63,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb76,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb48,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb77,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb64,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb78,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb65,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb49,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb66,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb50,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb67,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb51,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb68,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb52,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb69,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb53,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb54,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb55,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb56,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb57,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb58,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb59,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb60,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb45,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb36,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb44,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb43,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb42,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb41,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb40,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb39,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb38,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb37,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.bspb27,System.ComponentModel.ISupportInitialize).EndInit
 Me.tp4.ResumeLayout(false)
+CType(Me.tpb12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.tpb1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tp3.ResumeLayout(false)
 Me.tp3.PerformLayout
 CType(Me.gbDisplay.Panel,System.ComponentModel.ISupportInitialize).EndInit
@@ -20959,10 +21232,15 @@ Me.kgCurMovieImageFolderjpg.Panel.ResumeLayout(false)
 Me.kgCurMovieImageFolderjpg.Panel.PerformLayout
 CType(Me.kgCurMovieImageFolderjpg,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgCurMovieImageFolderjpg.ResumeLayout(false)
+CType(Me.pbCurIconUsed2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbCurrentIconUsedNT,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgCurMovieImagetbn.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgCurMovieImagetbn.Panel.ResumeLayout(false)
 CType(Me.kgCurMovieImagetbn,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgCurMovieImagetbn.ResumeLayout(false)
+CType(Me.pbCurTBNUsed2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbCurTBNUsed,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFrameTBN,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kpMovieData,System.ComponentModel.ISupportInitialize).EndInit
 Me.kpMovieData.ResumeLayout(false)
 Me.kpMovieData.PerformLayout
@@ -20983,10 +21261,13 @@ Me.khbMoviePlotBtm.Panel.ResumeLayout(false)
 Me.khbMoviePlotBtm.Panel.PerformLayout
 CType(Me.khbMoviePlotBtm,System.ComponentModel.ISupportInitialize).EndInit
 Me.khbMoviePlotBtm.ResumeLayout(false)
+CType(Me.pbFrame,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbCurIconUsed,System.ComponentModel.ISupportInitialize).EndInit
 Me.tsCurrentMovieTools.ResumeLayout(false)
 Me.tsCurrentMovieTools.PerformLayout
 Me.gbThanks.ResumeLayout(false)
 Me.gbThanks.PerformLayout
+CType(Me.fanartpb1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tptv.ResumeLayout(false)
 CType(Me.TVCurrentTVRightMain.Panel1,System.ComponentModel.ISupportInitialize).EndInit
 Me.TVCurrentTVRightMain.Panel1.ResumeLayout(false)
@@ -21021,6 +21302,9 @@ CType(Me.kgTvShowsCurImage.Panel,System.ComponentModel.ISupportInitialize).EndIn
 Me.kgTvShowsCurImage.Panel.ResumeLayout(false)
 CType(Me.kgTvShowsCurImage,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgTvShowsCurImage.ResumeLayout(false)
+CType(Me.pbTVSeasonPoster,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVPoster,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVWide,System.ComponentModel.ISupportInitialize).EndInit
 Me.tsCurrentTVShowTools.ResumeLayout(false)
 Me.tsCurrentTVShowTools.PerformLayout
 CType(Me.kpEpisodeData,System.ComponentModel.ISupportInitialize).EndInit
@@ -21030,6 +21314,7 @@ CType(Me.khbEpisodeThumbGroup.Panel,System.ComponentModel.ISupportInitialize).En
 Me.khbEpisodeThumbGroup.Panel.ResumeLayout(false)
 CType(Me.khbEpisodeThumbGroup,System.ComponentModel.ISupportInitialize).EndInit
 Me.khbEpisodeThumbGroup.ResumeLayout(false)
+CType(Me.pbep_episodeimage,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.khgEpisodeNameGroup.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.khgEpisodeNameGroup.Panel.ResumeLayout(false)
 Me.khgEpisodeNameGroup.Panel.PerformLayout
@@ -21054,8 +21339,20 @@ Me.kgpbSeasonAllposter.Panel.ResumeLayout(false)
 Me.kgpbSeasonAllposter.Panel.PerformLayout
 CType(Me.kgpbSeasonAllposter,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbSeasonAllposter.ResumeLayout(false)
+CType(Me.pbSeasonAllposter,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVFanart,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgRatingStars,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgRatingStars.ResumeLayout(false)
+CType(Me.pbTVStar10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbTVStar2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.ksctvMainRightBottomPortion.Panel1,System.ComponentModel.ISupportInitialize).EndInit
 Me.ksctvMainRightBottomPortion.Panel1.ResumeLayout(false)
 CType(Me.ksctvMainRightBottomPortion.Panel2,System.ComponentModel.ISupportInitialize).EndInit
@@ -21079,6 +21376,7 @@ Me.kgMusic_SongImage.Panel.ResumeLayout(false)
 Me.kgMusic_SongImage.Panel.PerformLayout
 CType(Me.kgMusic_SongImage,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgMusic_SongImage.ResumeLayout(false)
+CType(Me.pbMusic_CurSongImage,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgMusicMI.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgMusicMI.Panel.ResumeLayout(false)
 Me.kgMusicMI.Panel.PerformLayout
@@ -21089,13 +21387,16 @@ Me.kgArtistArtImage.Panel.ResumeLayout(false)
 Me.kgArtistArtImage.Panel.PerformLayout
 CType(Me.kgArtistArtImage,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgArtistArtImage.ResumeLayout(false)
+CType(Me.pbCurAlbumArt,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgMusicSongData.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgMusicSongData.Panel.ResumeLayout(false)
 Me.kgMusicSongData.Panel.PerformLayout
 CType(Me.kgMusicSongData,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgMusicSongData.ResumeLayout(false)
+CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).EndInit
 Me.tstripMusicToolbar.ResumeLayout(false)
 Me.tstripMusicToolbar.PerformLayout
+CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDN.ResumeLayout(false)
 Me.tcFCDN.ResumeLayout(false)
 Me.tpFCDNFront.ResumeLayout(false)
@@ -21104,80 +21405,334 @@ CType(Me.kgpbFront10.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront10.Panel.ResumeLayout(false)
 CType(Me.kgpbFront10,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront10.ResumeLayout(false)
+CType(Me.pbFront10,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront9.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront9.Panel.ResumeLayout(false)
 CType(Me.kgpbFront9,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront9.ResumeLayout(false)
+CType(Me.pbFront9,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront8.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront8.Panel.ResumeLayout(false)
 CType(Me.kgpbFront8,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront8.ResumeLayout(false)
+CType(Me.pbFront8,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront7.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront7.Panel.ResumeLayout(false)
 CType(Me.kgpbFront7,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront7.ResumeLayout(false)
+CType(Me.pbFront7,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront6.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront6.Panel.ResumeLayout(false)
 CType(Me.kgpbFront6,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront6.ResumeLayout(false)
+CType(Me.pbFront6,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront5.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront5.Panel.ResumeLayout(false)
 CType(Me.kgpbFront5,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront5.ResumeLayout(false)
+CType(Me.pbFront5,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront4.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront4.Panel.ResumeLayout(false)
 CType(Me.kgpbFront4,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront4.ResumeLayout(false)
+CType(Me.pbFront4,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront3.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront3.Panel.ResumeLayout(false)
 CType(Me.kgpbFront3,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront3.ResumeLayout(false)
+CType(Me.pbFront3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront2.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront2.Panel.ResumeLayout(false)
 CType(Me.kgpbFront2,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront2.ResumeLayout(false)
+CType(Me.pbFront2,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kgpbFront1.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront1.Panel.ResumeLayout(false)
 CType(Me.kgpbFront1,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgpbFront1.ResumeLayout(false)
+CType(Me.pbFront1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNBack.ResumeLayout(false)
 Me.tpFCDNBack.PerformLayout
+CType(Me.pbBack9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbBack1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd1.ResumeLayout(false)
 Me.tpFCDNcd1.PerformLayout
+CType(Me.pbcdi9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcdi1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd2.ResumeLayout(false)
 Me.tpFCDNcd2.PerformLayout
+CType(Me.pbcd2i9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd2i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd3.ResumeLayout(false)
 Me.tpFCDNcd3.PerformLayout
+CType(Me.pbcd3i9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd3i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNcd4.ResumeLayout(false)
 Me.tpFCDNcd4.PerformLayout
+CType(Me.pbcd4i9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbcd4i1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNinsert.ResumeLayout(false)
 Me.tpFCDNinsert.PerformLayout
+CType(Me.pbInsert9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInsert1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFCDNinlay.ResumeLayout(false)
 Me.tpFCDNinlay.PerformLayout
+CType(Me.pbInlay9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbInlay1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpmipf.ResumeLayout(false)
 Me.tpTallImages.ResumeLayout(false)
 CType(Me.KryptonPanel1,System.ComponentModel.ISupportInitialize).EndInit
 Me.KryptonPanel1.ResumeLayout(false)
 Me.KryptonPanel1.PerformLayout
+CType(Me.pbti72,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti71,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti70,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti69,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti68,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti67,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti66,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti65,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti64,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti63,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti62,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti61,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti60,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti59,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti58,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti57,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti56,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti55,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti54,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti53,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti52,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti51,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti50,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti49,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti48,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti47,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti46,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti45,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti44,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti43,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti42,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti41,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti40,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti39,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti38,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti37,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti36,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbti7,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpFanart.ResumeLayout(false)
 CType(Me.kpFanartSelection,System.ComponentModel.ISupportInitialize).EndInit
 Me.kpFanartSelection.ResumeLayout(false)
 Me.kpFanartSelection.PerformLayout
+CType(Me.pbfatmdb31,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb35,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb36,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb34,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb33,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb32,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb25,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb29,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb30,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb28,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb27,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb26,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbfatmdb2,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpmmn.ResumeLayout(false)
 Me.tpmmn.PerformLayout
+CType(Me.pbCustomImageTemp,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpPosters.ResumeLayout(false)
 Me.tcPosters.ResumeLayout(false)
 Me.tpTVWideIcons.ResumeLayout(false)
 CType(Me.kptvwide,System.ComponentModel.ISupportInitialize).EndInit
 Me.kptvwide.ResumeLayout(false)
+CType(Me.pbtvwide24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbtvwide12,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpIMPPosters.ResumeLayout(false)
 CType(Me.kpIMPPosterSelection,System.ComponentModel.ISupportInitialize).EndInit
 Me.kpIMPPosterSelection.ResumeLayout(false)
 Me.kpIMPPosterSelection.PerformLayout
+CType(Me.pbposterIMP6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP24,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterIMP7,System.ComponentModel.ISupportInitialize).EndInit
 Me.tpTMDBPosters.ResumeLayout(false)
 CType(Me.kpTMDBPostersSelection,System.ComponentModel.ISupportInitialize).EndInit
 Me.kpTMDBPostersSelection.ResumeLayout(false)
 Me.kpTMDBPostersSelection.PerformLayout
+CType(Me.pbposterTMDB1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB3,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB4,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB5,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB6,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB7,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB8,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB9,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB10,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB11,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB12,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB13,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB14,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB15,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB16,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB17,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB18,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB19,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB20,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB21,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB22,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB23,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbposterTMDB24,System.ComponentModel.ISupportInitialize).EndInit
 Me.TabPageEX1.ResumeLayout(false)
 Me.TabPageEX1.PerformLayout
 CType(Me.kgMusicLeftNav.Panel,System.ComponentModel.ISupportInitialize).EndInit
@@ -21279,6 +21834,12 @@ Me.kgQCIcons.Panel.ResumeLayout(false)
 Me.kgQCIcons.Panel.PerformLayout
 CType(Me.kgQCIcons,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgQCIcons.ResumeLayout(false)
+CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.kscMain.Panel1,System.ComponentModel.ISupportInitialize).EndInit
 Me.kscMain.Panel1.ResumeLayout(false)
 CType(Me.kscMain.Panel2,System.ComponentModel.ISupportInitialize).EndInit
@@ -21356,567 +21917,6 @@ Me.kgTvShowCurrentLocationIconSettings.Panel.ResumeLayout(false)
 Me.kgTvShowCurrentLocationIconSettings.Panel.PerformLayout
 CType(Me.kgTvShowCurrentLocationIconSettings,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgTvShowCurrentLocationIconSettings.ResumeLayout(false)
-CType(Me.pbFDFolderJpg,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDNFO,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDMovieFile1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDTrailer,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDTBN,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFDFanart,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurIconUsed2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurrentIconUsedNT,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurTBNUsed2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurTBNUsed,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFrameTBN,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFrame,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurIconUsed,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.fanartpb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVSeasonPoster,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVPoster,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVWide,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbep_episodeimage,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbSeasonAllposter,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVFanart,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbTVStar2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbMusic_CurSongImage,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCurAlbumArt,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbMusic_CurSongExtPic,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbMusicCurFanart,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbFront1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbBack1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcdi1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd2i1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd3i1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbcd4i1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInsert1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbInlay1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pb15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwns36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrs36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbwrsscan36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.spb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb91,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb88,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb92,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb79,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb93,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb89,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb90,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb70,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb85,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb80,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb86,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb61,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb87,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb81,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb71,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb82,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb46,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb83,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb72,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb84,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb62,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb73,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb47,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb74,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb75,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb63,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb76,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb48,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb77,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb64,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb78,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb65,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb49,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb66,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb50,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb67,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb51,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb68,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb52,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb69,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb53,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb54,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb55,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb56,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb57,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb58,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb59,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb60,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb45,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb44,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb43,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb42,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb41,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb40,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb39,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb38,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb37,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.bspb27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.tpb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti72,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti71,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti70,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti69,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti68,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti67,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti66,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti65,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti64,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti63,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti62,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti61,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti60,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti59,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti58,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti57,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti56,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti55,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti54,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti53,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti52,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti51,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti50,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti49,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti48,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti47,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti46,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti45,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti44,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti43,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti42,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti41,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti40,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti39,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti38,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti37,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbti7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb31,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb35,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb36,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb34,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb33,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb32,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb25,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb29,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb30,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb28,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb27,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb26,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbfatmdb2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbCustomImageTemp,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbtvwide12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP24,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterIMP7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB1,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB2,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB4,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB5,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB6,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB7,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB8,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB9,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB10,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB11,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB12,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB13,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB14,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB15,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB16,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB17,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB18,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB19,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB20,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB21,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB22,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB23,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.pbposterTMDB24,System.ComponentModel.ISupportInitialize).EndInit
 Me.ResumeLayout(false)
 
 End Sub

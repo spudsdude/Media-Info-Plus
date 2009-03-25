@@ -142,9 +142,6 @@
   <data name="mytunes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mytunes.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fire_tall_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fire_tall_small.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="f2s8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f2s8.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -273,8 +270,5 @@
   </data>
   <data name="tvbgExample2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tvbgExample2.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pirate_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pirate_small.jpeg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
