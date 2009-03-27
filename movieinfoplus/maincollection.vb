@@ -2475,7 +2475,7 @@ Public Class maincollection
                 Dim stringofimdbpage As String = getimdbidsearch(dname)
                 If Me.messageprompts Then lblPbar.Text = "Searching IMDB for information for " + tmovie.getmoviename.ToString + "--__ "
                 'If Me.messageprompts Then Me.Refresh()()
-                tmovie.pimdbnumber = snagimdbid(dname, tmovie, stringofimdbpage)
+                tmovie.pimdbnumber = snagimdbid_dlg(dname, tmovie, stringofimdbpage)
             Else
                 'do not grab the data, we know the id already
                 'hasnfoalready = True
@@ -2493,7 +2493,7 @@ Public Class maincollection
                         'no nfo so get the data
                         'getimdbidsearch(dname)
                         Dim tstringofimdbpage As String = getimdbidsearch(dname)
-                        tmovie.pimdbnumber = snagimdbid(dname, tmovie, tstringofimdbpage)
+                        tmovie.pimdbnumber = snagimdbid_dlg(dname, tmovie, tstringofimdbpage)
                         snagyear(dname, tmovie, tstringofimdbpage)
                     End If
                     ' getimdbdata(tmovie)
@@ -14763,21 +14763,33 @@ Public Class maincollection
         End If
         fanartpb1.Image = Nothing
         fanartpb1.ImageLocation = Nothing
+        GC.Collect()
         'MsgBox(currentfanart.ImageLocation)
         Dim curfaused As String = ""
+        Dim curloc As String = ""
+        If currentfanart.AccessibleName Is Nothing Then
+            If Not currentfanart.ImageLocation Is Nothing Then
+                curloc = currentfanart.ImageLocation
+            Else
+                Exit Sub
+            End If
+        Else
+            'use imagelocation
+            curloc = currentfanart.AccessibleName
+        End If
 
         If moviemode = "file" Then
-            File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
+            File.Copy(curloc, currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg", True)
             curfaused = currentmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + "-fanart.jpg"
         End If
 
         If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
-            File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
+            File.Copy(curloc, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
             curfaused = currentmovie.getmoviepath + "\" + currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg"
         End If
 
         If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
-            File.Copy(currentfanart.AccessibleName, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
+            File.Copy(curloc, currentmovie.getmoviepath + "\" + "fanart.jpg", True)
             curfaused = currentmovie.getmoviepath + "\" + "fanart.jpg"
         End If
 
@@ -14911,9 +14923,9 @@ Public Class maincollection
         'saving the new files
         Dim curloc As String = ""
         Try
-            curloc = selectedicon.ImageLocation
-            If curloc = "" Then
-                curloc = selectedicon.AccessibleName
+            curloc = selectedicon.AccessibleName
+            If curloc Is Nothing Then
+                curloc = selectedicon.ImageLocation
             End If
             If Not curloc = "" Then
                 If rconf.pcbmusicfanartresize Then
@@ -14935,7 +14947,7 @@ Public Class maincollection
             End If
 
         Catch ex As Exception
-            MessageBox.Show("music artist fanart image, check permissions on the files in the folder", "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("music artist fanart image, check permissions on the files in the folder" & "resize: " & rconf.pcbmusicfanartresize.ToString & "curloc: " & curloc & vbNewLine & "dest: " & imagelocationandname & vbNewLine & vbNewLine & ex.ToString, "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
         'If rconf.pcbmusicfanartresize Then
@@ -20831,10 +20843,23 @@ Public Class maincollection
     End Sub
 
     Private Function cleanmusicnameforsearch(ByVal texttoclean As String) As String
-        Dim restr As String
-        restr = Strings.Replace(texttoclean, "'", "")
-        restr = Strings.Replace(texttoclean, "&", "")
-        restr = Strings.Replace(texttoclean, "@", "")
+        Dim restr As String = texttoclean
+        restr = Strings.Replace(restr, "'", "")
+        restr = Strings.Replace(restr, "&", "")
+        restr = Strings.Replace(restr, "@", "")
+        restr = Strings.Replace(restr, """", "")
+        restr = Strings.Replace(restr, ";", "")
+        restr = Strings.Replace(restr, "~", "")
+        restr = Strings.Replace(restr, ">", "")
+        restr = Strings.Replace(restr, "<", "")
+        restr = Strings.Replace(restr, "?", "")
+        restr = Strings.Replace(restr, "�", "")
+        restr = Strings.Replace(restr, ":", "")
+        restr = Strings.Replace(restr, "\", "")
+        restr = Strings.Replace(restr, "/", "")
+        restr = Strings.Replace(restr, "?", "")
+        restr = Strings.Replace(restr, "|", "")
+        restr = Strings.Replace(restr, "*", "")
         Return restr
     End Function
     Private Sub lbmusicSongs_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbmusicSongs.Click
@@ -25335,7 +25360,7 @@ Public Class maincollection
         tvMainRightMiddle.Panel2Collapsed = True 'right panel no longer used, but kept for future gui changes
         'tvMainRightMiddle.SplitterDistance = tvMainRightMiddle.Panel1.Width - 100
 
-
+        flpTVShowMI.Visible = False
         Dim curseasonas2digitid As String
         Dim curseasonas1or2digitid As String
         If curtvseason.seasonnumber.Length = 1 Then
@@ -25508,7 +25533,7 @@ Public Class maincollection
         lbEpisodesMissing.DisplayMember = "Episode Number"
         lbEpisodesMissing.DataSource = dtcurrentshowepisodesmissing.DefaultView
         lbEpisodesMissing.SelectedIndex = -1
-
+        flpTVShowMI.Visible = True
         If Not Directory.Exists(addfiletofolder(gvcurrenttvseasonpath, "extras")) Then Directory.CreateDirectory(addfiletofolder(gvcurrenttvseasonpath, "extras"))
         displayAndLoadMIThumbs(addfiletofolder(gvcurrenttvseasonpath, "extras"), flpTVShowMI)
 
@@ -25693,13 +25718,13 @@ Public Class maincollection
             ktbep_epRating.Text = gvcurrenttvepisode.Rating
             If Not gvcurrenttvepisode.fileinfo.version = 1.2 Then
                 Me.messageprompts = True
-                krtbTVShowMediaInfo.Text = "Multi-part epsiodes can't be re-scanned at this time." & vbNewLine & "If this is not a multipart episode, check the filename for -2 .. or any - and a number, x and a number, or e and a number."
+                krtbTVShowMediaInfo.Text = "Multi-part episodes can't be re-scanned at this time." & vbNewLine & "If this is not a multipart episode, check the filename for -2 .. or any - and a number, x and a number, or e and a number."
                 'gettvepmediainfo_bw()
                 'save nfo ?
 
             Else
                 'display the data
-                krtbTVShowMediaInfo.Text = "Multi-part epsiodes can't be re-scanned at this time." & vbNewLine & "If this is not a multipart episode, check the filename for -2 .. or any - and a number, x and a number, or e and a number." 'krtbTVShowMediaInfo.Text = "Multi-part epsiodes can't be scanned at this time." 'gvcurrenttvepisode.fileinfo.objtostring(gvcurrenttvepisode.fileinfo)
+                krtbTVShowMediaInfo.Text = "Multi-part episodes can't be re-scanned at this time." & vbNewLine & "If this is not a multipart episode, check the filename for -2 .. or any - and a number, x and a number, or e and a number." 'krtbTVShowMediaInfo.Text = "Multi-part episodes can't be scanned at this time." 'gvcurrenttvepisode.fileinfo.objtostring(gvcurrenttvepisode.fileinfo)
             End If
             'krtbTVShowMediaInfo.Text = xbmccurep.fileinfo.objtostring(xbmccurep.fileinfo)
         End If
@@ -29846,10 +29871,10 @@ Public Class maincollection
             Try
                 curmusiccachelist.readxml(rconf.tempfolder + "musiccachedata/mymusicdata.nfo", curmusiccachelist)
             Catch ex As Exception
-                MsgBox("Loading Music Cached Data Failed!")
+                MsgBox("Loading Music Cached Data Failed!" & vbNewLine & ex.ToString)
             End Try
         End If
-        MsgBox("counter: " & curmusiccachelist.musiclist.Count.ToString)
+        ' MsgBox("counter: " & curmusiccachelist.musiclist.Count.ToString)
         'setup the hash table
         Dim curmusichashcache As New Hashtable
         For Each curMus As Music In curmusiccachelist.musiclist
@@ -29871,9 +29896,9 @@ Public Class maincollection
             Dim rescan As Boolean = False
             Dim curmusicitem As New Music
             curmusicitem.Filename = musicfile
-            Dim nfofilename As String = cleanimdbdata(musicfile) '+ ".nfo"
-            Dim hashedname As String = nfofilename.GetHashCode.ToString
-            curmusicitem.md5 = hashedname
+            'Dim nfofilename As String = cleanimdbdata(musicfile) '+ ".nfo"
+            ' Dim hashedname As String = nfofilename.GetHashCode.ToString
+            curmusicitem.md5 = curmd5
             'Dim nfoloc As String = rconf.tempfolder + "musicdata/" + hashedname + ".nfo"
             'try to add hashtable based on hashstring, if that fails, it doesn't need to be scanned
             Try
@@ -29882,6 +29907,8 @@ Public Class maincollection
                 rescan = True
             Catch ex As Exception
                 rescan = False
+                'get data from hashtable for cur music file
+                curmusicitem = CType(curmusichashcache.Item(curmd5), Music)
                 'Debug.Print("Non-Crit Failure: failed to pull from hashtable based on hashstring")
             End Try
             'If File.Exists(nfoloc) Then
@@ -31550,6 +31577,97 @@ Public Class maincollection
     End Sub
 
 
+    Private Sub bshMovieWrongMovie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieWrongMovie.Click
+        If currentmovie Is Nothing Then Exit Sub
+        Dim curnonfochangprompt As Boolean = rconf.pcbNoNfoChangePrompt
+        rconf.pcbNoNfoChangePrompt = True
+        saveNfoFromGuiText()
+        rconf.pcbNoNfoChangePrompt = curnonfochangprompt
+        Me.tbIMDBID.Text = ""
+        currentmovie.pdatafromnfo = False
+        currentmovie.pimdbnumber = ""
+        'remove .nfo files
+        Dim filelevelname As String
+        If currentmovie.pfilemode Then
+            'file mode, only <moviename>.nfo
+            Dim filteredname As String = ""
+            Dim lmoviename As String = currentmovie.preservedmoviename
+            'strip out cd multipart
+            Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
+            lmoviename = Strings.Replace(lmoviename, RegexObj.Match(lmoviename).Groups(1).Value, "")
+            'strip out dvd multipart
+            Dim RegexObj2 As New Regex("(([ _\.-]+dvd)[ _\.-]*([0-9a-d]+))")
+            lmoviename = Strings.Replace(lmoviename, RegexObj2.Match(lmoviename).Groups(1).Value, "")
+            'strip out part multipart
+            Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
+            lmoviename = Strings.Replace(lmoviename, RegexObj3.Match(lmoviename).Groups(1).Value, "")
+            Dim retstr As String = ""
+            If Not lmoviename = Nothing Then
+                If lmoviename.Length > 5 Then
+                    If Strings.Left(Strings.Right(lmoviename, 3), 1) = "." Then
+                        retstr = Strings.Left(lmoviename, lmoviename.Length - 3)
+                    Else
+                        retstr = Strings.Left(lmoviename, lmoviename.Length - 4)
+                    End If
+
+                End If
+            End If
+            filelevelname = retstr + ".nfo"
+            If File.Exists(filelevelname) Then File.Delete(filelevelname)
+        Else
+            'both
+            Dim mnnfo As String = ""
+            Dim mnfo As String = ""
+            mnnfo = addfiletofolder(currentmovie.getmoviepath, currentmovie.getmoviename + ".nfo")
+            mnfo = addfiletofolder(currentmovie.getmoviepath, "movie.nfo")
+            If Not mnnfo Is Nothing Then
+                If Not mnnfo = "" Then
+                    If File.Exists(mnnfo) Then File.Delete(mnnfo)
+                End If
+            End If
+            If Not mnfo Is Nothing Then
+                If Not mnfo = "" Then
+                    If File.Exists(mnfo) Then File.Delete(mnfo)
+                End If
+            End If
+        End If
+        'Dim checkid As String = Me.tbIMDBID.Text
+        'If checkid = Nothing Then
+        '    'MsgBox("can't save a movie without an imdb id number")
+        '    Exit Sub
+        'End If
+        'If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+        '    Try
+        '        File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+        '    Catch ex As Exception
+
+        '    End Try
+        '    Try
+        '        File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+        '    Catch ex As Exception
+
+        '    End Try
+        'End If
+        'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
+        '    Try
+        '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+        '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+        '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+        '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+        '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+        '    Catch ex As Exception
+        '        MsgBox(ex.ToString)
+        '    End Try
+        '    Try
+        '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
+        '    Catch ex As Exception
+        '        MsgBox(ex.ToString)
+        '    End Try
+        'End If
+        currentmovie.pdatafromnfo = False
+        movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
+        processdropdownitems()
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"

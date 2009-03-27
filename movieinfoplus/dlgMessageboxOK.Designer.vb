@@ -95,7 +95,7 @@ Partial Class dlgMessageboxOK
         Me.message.Location = New System.Drawing.Point(0, 0)
         Me.message.Name = "message"
         Me.message.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
-        Me.message.Size = New System.Drawing.Size(936, 147)
+        Me.message.Size = New System.Drawing.Size(930, 141)
         Me.message.TabIndex = 2
         '
         'kscmain

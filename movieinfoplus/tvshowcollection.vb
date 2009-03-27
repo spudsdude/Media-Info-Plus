@@ -948,11 +948,43 @@ Public Class tvshowcollection
                 Return 39
             Case "wgn"
                 Return 40
+            Case "Syndicated"
+                Return 41
             Case Else
                 Return 0
         End Select
 
     End Function
+
+    Private Shared Function getFileSizeExact(ByVal vFile As String) As Double
+        'Dim curFile As FileInfo
+        Dim curfile As FileInfo = My.Computer.FileSystem.GetFileInfo(vFile)
+        Dim fileSize As Double = curfile.Length
+        Return fileSize
+    End Function
+
+
+    Public Shared Sub checkzerofilesize(ByVal filename As String)
+        'make sure it's not a 0k file
+        If File.Exists(filename) Then
+            'check it's size, 0k files need to be removed
+            Try
+                File.SetAttributes(filename, FileAttributes.Normal)
+            Catch ex As Exception
+                Console.Out.WriteLine(ex.ToString)
+            End Try
+
+            Try
+                If getFileSizeExact(filename) < 1 Then
+                    'Console.Out.WriteLine("Image invalid - Deleteing " & Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                    File.Delete(filename)
+                End If
+
+            Catch ex As Exception
+                Console.Out.WriteLine(ex.ToString)
+            End Try
+        End If
+    End Sub
     Public Sub updatetvshows()
         'Dim stpw2 As New Stopwatch
         'stpw2.Start()
@@ -1033,6 +1065,8 @@ Public Class tvshowcollection
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "parser for : " + item.ToString + " : Result was : " + tfname.ToString
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
+                                    tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
                                     Dim haveseason As Boolean = False
@@ -1167,12 +1201,17 @@ Public Class tvshowcollection
                                                 End If
                                                 If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
                                                     'we should now have it in cache
+
+                                                    'make sure it's not a 0k file
+                                                    checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                     'check episode thumb overwrite option in conf
                                                     If rconf.tv_episode_overwrite_tbn Then
                                                         File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
                                                     Else
                                                         Try
                                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                            'make sure it's not a 0k file
+                                                             checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         Catch ex As Exception
                                                             'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                             Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
@@ -1194,7 +1233,7 @@ Public Class tvshowcollection
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
-                                                
+
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror)
                                                 xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
@@ -1246,12 +1285,14 @@ Public Class tvshowcollection
                                                     End If
                                                     If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
                                                         'we should now have it in cache
+                                                        checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         'check episode thumb overwrite option in conf
                                                         If rconf.tv_episode_overwrite_tbn Then
                                                             File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
                                                         Else
                                                             Try
                                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                                checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                             Catch ex As Exception
                                                                 'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                                 Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
@@ -1853,6 +1894,8 @@ Public Class tvshowcollection
 
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1)
+                                    tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                     Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
