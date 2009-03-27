@@ -128,10 +128,10 @@ Partial Class dialogTvShowSelect
         '
         'klblInformationlbl
         '
-        Me.klblInformationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
+        Me.klblInformationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblInformationlbl.Location = New System.Drawing.Point(3, 3)
         Me.klblInformationlbl.Name = "klblInformationlbl"
-        Me.klblInformationlbl.Size = New System.Drawing.Size(154, 24)
+        Me.klblInformationlbl.Size = New System.Drawing.Size(115, 21)
         Me.klblInformationlbl.TabIndex = 13
         Me.klblInformationlbl.Text = "Show Information"
         Me.klblInformationlbl.Values.ExtraText = ""
@@ -140,9 +140,10 @@ Partial Class dialogTvShowSelect
         '
         'klFirstAiredlbl
         '
+        Me.klFirstAiredlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klFirstAiredlbl.Location = New System.Drawing.Point(6, 24)
         Me.klFirstAiredlbl.Name = "klFirstAiredlbl"
-        Me.klFirstAiredlbl.Size = New System.Drawing.Size(65, 16)
+        Me.klFirstAiredlbl.Size = New System.Drawing.Size(79, 21)
         Me.klFirstAiredlbl.TabIndex = 14
         Me.klFirstAiredlbl.Text = "First Aired:"
         Me.klFirstAiredlbl.Values.ExtraText = ""
@@ -161,9 +162,10 @@ Partial Class dialogTvShowSelect
         '
         'klblAirDaylbl
         '
+        Me.klblAirDaylbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblAirDaylbl.Location = New System.Drawing.Point(6, 40)
         Me.klblAirDaylbl.Name = "klblAirDaylbl"
-        Me.klblAirDaylbl.Size = New System.Drawing.Size(50, 16)
+        Me.klblAirDaylbl.Size = New System.Drawing.Size(58, 21)
         Me.klblAirDaylbl.TabIndex = 15
         Me.klblAirDaylbl.Text = "Air Day:"
         Me.klblAirDaylbl.Values.ExtraText = ""
@@ -182,9 +184,10 @@ Partial Class dialogTvShowSelect
         '
         'klblAirTimelbl
         '
+        Me.klblAirTimelbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblAirTimelbl.Location = New System.Drawing.Point(6, 56)
         Me.klblAirTimelbl.Name = "klblAirTimelbl"
-        Me.klblAirTimelbl.Size = New System.Drawing.Size(55, 16)
+        Me.klblAirTimelbl.Size = New System.Drawing.Size(65, 21)
         Me.klblAirTimelbl.TabIndex = 16
         Me.klblAirTimelbl.Text = "Air Time:"
         Me.klblAirTimelbl.Values.ExtraText = ""
@@ -193,9 +196,10 @@ Partial Class dialogTvShowSelect
         '
         'klblRunTime
         '
+        Me.klblRunTime.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblRunTime.Location = New System.Drawing.Point(70, 74)
         Me.klblRunTime.Name = "klblRunTime"
-        Me.klblRunTime.Size = New System.Drawing.Size(44, 16)
+        Me.klblRunTime.Size = New System.Drawing.Size(50, 21)
         Me.klblRunTime.TabIndex = 23
         Me.klblRunTime.Text = "60 Min"
         Me.klblRunTime.Values.ExtraText = ""
@@ -204,9 +208,10 @@ Partial Class dialogTvShowSelect
         '
         'klblRunTimelbl
         '
+        Me.klblRunTimelbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblRunTimelbl.Location = New System.Drawing.Point(6, 72)
         Me.klblRunTimelbl.Name = "klblRunTimelbl"
-        Me.klblRunTimelbl.Size = New System.Drawing.Size(56, 16)
+        Me.klblRunTimelbl.Size = New System.Drawing.Size(61, 21)
         Me.klblRunTimelbl.TabIndex = 17
         Me.klblRunTimelbl.Text = "Runtime:"
         Me.klblRunTimelbl.Values.ExtraText = ""
@@ -215,9 +220,10 @@ Partial Class dialogTvShowSelect
         '
         'klblAirTime
         '
+        Me.klblAirTime.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblAirTime.Location = New System.Drawing.Point(70, 58)
         Me.klblAirTime.Name = "klblAirTime"
-        Me.klblAirTime.Size = New System.Drawing.Size(52, 16)
+        Me.klblAirTime.Size = New System.Drawing.Size(58, 21)
         Me.klblAirTime.TabIndex = 22
         Me.klblAirTime.Text = "9:00 PM"
         Me.klblAirTime.Values.ExtraText = ""
@@ -226,9 +232,10 @@ Partial Class dialogTvShowSelect
         '
         'klbllanglbl
         '
+        Me.klbllanglbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klbllanglbl.Location = New System.Drawing.Point(6, 87)
         Me.klbllanglbl.Name = "klbllanglbl"
-        Me.klbllanglbl.Size = New System.Drawing.Size(64, 16)
+        Me.klbllanglbl.Size = New System.Drawing.Size(66, 21)
         Me.klbllanglbl.TabIndex = 18
         Me.klbllanglbl.Text = "Language:"
         Me.klbllanglbl.Values.ExtraText = ""
@@ -237,9 +244,10 @@ Partial Class dialogTvShowSelect
         '
         'klblAirDay
         '
+        Me.klblAirDay.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblAirDay.Location = New System.Drawing.Point(70, 42)
         Me.klblAirDay.Name = "klblAirDay"
-        Me.klblAirDay.Size = New System.Drawing.Size(70, 16)
+        Me.klblAirDay.Size = New System.Drawing.Size(77, 21)
         Me.klblAirDay.TabIndex = 21
         Me.klblAirDay.Text = "Wednesday"
         Me.klblAirDay.Values.ExtraText = ""
@@ -248,9 +256,10 @@ Partial Class dialogTvShowSelect
         '
         'klblImdbidlbl
         '
+        Me.klblImdbidlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblImdbidlbl.Location = New System.Drawing.Point(6, 103)
         Me.klblImdbidlbl.Name = "klblImdbidlbl"
-        Me.klblImdbidlbl.Size = New System.Drawing.Size(53, 16)
+        Me.klblImdbidlbl.Size = New System.Drawing.Size(64, 21)
         Me.klblImdbidlbl.TabIndex = 19
         Me.klblImdbidlbl.Text = "IMDBID:"
         Me.klblImdbidlbl.Values.ExtraText = ""
@@ -259,9 +268,10 @@ Partial Class dialogTvShowSelect
         '
         'klblFirstAired
         '
+        Me.klblFirstAired.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblFirstAired.Location = New System.Drawing.Point(70, 26)
         Me.klblFirstAired.Name = "klblFirstAired"
-        Me.klblFirstAired.Size = New System.Drawing.Size(105, 16)
+        Me.klblFirstAired.Size = New System.Drawing.Size(121, 21)
         Me.klblFirstAired.TabIndex = 20
         Me.klblFirstAired.Text = "Month - Day - Year"
         Me.klblFirstAired.Values.ExtraText = ""
@@ -303,9 +313,9 @@ Partial Class dialogTvShowSelect
         'pbBanner
         '
         Me.pbBanner.ErrorImage = CType(resources.GetObject("pbBanner.ErrorImage"), System.Drawing.Image)
-        Me.pbBanner.Location = New System.Drawing.Point(270, 89)
+        Me.pbBanner.Location = New System.Drawing.Point(270, 113)
         Me.pbBanner.Name = "pbBanner"
-        Me.pbBanner.Size = New System.Drawing.Size(555, 152)
+        Me.pbBanner.Size = New System.Drawing.Size(555, 128)
         Me.pbBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbBanner.TabIndex = 27
         Me.pbBanner.TabStop = False
@@ -313,11 +323,10 @@ Partial Class dialogTvShowSelect
         'klbltvCurShow
         '
         Me.klbltvCurShow.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.klbltvCurShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
+        Me.klbltvCurShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
         Me.klbltvCurShow.Location = New System.Drawing.Point(0, 0)
         Me.klbltvCurShow.Name = "klbltvCurShow"
-        Me.klbltvCurShow.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Blue
-        Me.klbltvCurShow.Size = New System.Drawing.Size(545, 76)
+        Me.klbltvCurShow.Size = New System.Drawing.Size(545, 92)
         Me.klbltvCurShow.StateCommon.LongText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center
         Me.klbltvCurShow.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center
         Me.klbltvCurShow.StateNormal.LongText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center
@@ -331,9 +340,10 @@ Partial Class dialogTvShowSelect
         'klbltvCurShowPath
         '
         Me.klbltvCurShowPath.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.klbltvCurShowPath.Location = New System.Drawing.Point(0, 60)
+        Me.klbltvCurShowPath.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.klbltvCurShowPath.Location = New System.Drawing.Point(0, 71)
         Me.klbltvCurShowPath.Name = "klbltvCurShowPath"
-        Me.klbltvCurShowPath.Size = New System.Drawing.Size(545, 16)
+        Me.klbltvCurShowPath.Size = New System.Drawing.Size(545, 21)
         Me.klbltvCurShowPath.StateCommon.LongText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center
         Me.klbltvCurShowPath.StateCommon.ShortText.TextH = ComponentFactory.Krypton.Toolkit.PaletteRelativeAlign.Center
         Me.klbltvCurShowPath.TabIndex = 29
@@ -352,7 +362,7 @@ Partial Class dialogTvShowSelect
         Me.KryptonGroup2.Panel.Controls.Add(Me.klblgenerictext1)
         Me.KryptonGroup2.Panel.Controls.Add(Me.klbltvCurShowPath)
         Me.KryptonGroup2.Panel.Controls.Add(Me.klbltvCurShow)
-        Me.KryptonGroup2.Size = New System.Drawing.Size(557, 88)
+        Me.KryptonGroup2.Size = New System.Drawing.Size(557, 104)
         Me.KryptonGroup2.StateCommon.Border.Color1 = System.Drawing.Color.SteelBlue
         Me.KryptonGroup2.StateCommon.Border.Color2 = System.Drawing.Color.Black
         Me.KryptonGroup2.StateCommon.Border.ColorAngle = 220.0!
@@ -366,9 +376,10 @@ Partial Class dialogTvShowSelect
         '
         'klblgenerictext1
         '
+        Me.klblgenerictext1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblgenerictext1.Location = New System.Drawing.Point(35, -2)
         Me.klblgenerictext1.Name = "klblgenerictext1"
-        Me.klblgenerictext1.Size = New System.Drawing.Size(487, 29)
+        Me.klblgenerictext1.Size = New System.Drawing.Size(556, 37)
         Me.klblgenerictext1.TabIndex = 30
         Me.klblgenerictext1.Text = "More then 1 TV Show was found, pick the correct one and click OK, or cancel addin" & _
             "g this show." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                             You slected the following TV Show in " & _
@@ -403,10 +414,10 @@ Partial Class dialogTvShowSelect
         '
         'klblPickTheRightShow
         '
-        Me.klblPickTheRightShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
+        Me.klblPickTheRightShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.klblPickTheRightShow.Location = New System.Drawing.Point(11, 4)
         Me.klblPickTheRightShow.Name = "klblPickTheRightShow"
-        Me.klblPickTheRightShow.Size = New System.Drawing.Size(220, 24)
+        Me.klblPickTheRightShow.Size = New System.Drawing.Size(160, 21)
         Me.klblPickTheRightShow.TabIndex = 31
         Me.klblPickTheRightShow.Text = "Pick the Correct TV Show"
         Me.klblPickTheRightShow.Values.ExtraText = ""

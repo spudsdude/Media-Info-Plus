@@ -1378,6 +1378,7 @@ Public Class maincollection
         'End If
         'Me.pbar1mv(10)
         If pclogging Then pclog.WriteLine("Starting download of xml at: " + url)
+        Debug.Print("Starting download of xml at: " + url)
         Filename = rconf.xmlfolder + Convert.ToString(MovieName) + "f" + format + "c" + catagory + "s" + style + ".xml"
         Try
             Dim binfilelocal As String = rconf.wgetfolder + "wget.exe"
@@ -2358,8 +2359,8 @@ Public Class maincollection
         If lbMyMovies.SelectedIndex = -1 Then
             lbMyMovies.SelectedIndex = 0
         End If
-
-
+        autopilotdialog.Dispose()
+        Me.Refresh()
         bwAutopilot = New System.ComponentModel.BackgroundWorker
         bwAutopilot.WorkerReportsProgress = True
         bwAutopilot.WorkerSupportsCancellation = True
@@ -5465,6 +5466,7 @@ Public Class maincollection
         bspb93.ImageLocation = Nothing
         bspb93.Enabled = False
         bspb93.Image = Nothing
+        GC.Collect()
     End Sub
     Public Function FileExists(ByVal FileFullPath As String) _
      As Boolean
@@ -7655,13 +7657,7 @@ Public Class maincollection
         validatefoldercontents()
     End Sub
 
-    Private Function addfiletofolder(ByVal tvar_path As String, ByVal tvar_filename As String) As String
-        If Not Strings.Right(tvar_path, 1) = "\" Then
-            tvar_path += "\"
-        End If
-        Dim rFullPath As String = tvar_path + tvar_filename
-        Return rFullPath
-    End Function
+    
 
     Private Sub getfanart(ByRef tmovie As movie, ByRef ais As Boolean, ByRef singlefiledownload As Boolean, Optional ByVal linksonly As Boolean = False, Optional ByVal nonewdatacheck As Boolean = False)
         'get fanart
@@ -12984,9 +12980,9 @@ Public Class maincollection
         Try
             If File.Exists(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") Then
                 Debug.Print(File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").ToString)
-                Debug.Print(File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(90).ToString)
+                Debug.Print(File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(360).ToString)
                 Debug.Print(Date.Now.ToString)
-                If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(90) < Date.Now Then
+                If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(360) < Date.Now Then
                     lblPbar.Text = "Checking for new mediaicons"
                     ''If Me.messageprompts Then Me.Refresh()()
                     File.SetAttributes(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml", FileAttributes.Normal) 'change attributes
@@ -16299,20 +16295,7 @@ Public Class maincollection
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         createtestfoldersfromposterxmls()
     End Sub
-    Function cleanname(ByVal name As String) As String
-        Dim cleanedname As String = name
-        cleanedname = Strings.Replace(cleanedname, "�", "")
-        cleanedname = Strings.Replace(cleanedname, "<", "")
-        cleanedname = Strings.Replace(cleanedname, ">", "")
-        cleanedname = Strings.Replace(cleanedname, ":", "")
-        cleanedname = Strings.Replace(cleanedname, "\", "")
-        cleanedname = Strings.Replace(cleanedname, "/", "")
-        cleanedname = Strings.Replace(cleanedname, "?", "")
-        cleanedname = Strings.Replace(cleanedname, "|", "")
-        cleanedname = Strings.Replace(cleanedname, "*", "")
-        cleanedname = Strings.Replace(cleanedname, """", "")
-        Return cleanedname
-    End Function
+   
     Public Sub getimdbids()
         Dim imdbbase As String = "http://www.imdb.com/title/tt"
         Dim counter As Integer = 127280
@@ -17742,45 +17725,7 @@ Public Class maincollection
         'Dim tStringResult As String = Regex.Replace(tString, "(\r\n\s*?){2,}", Environment.NewLine)
         Return tStringResult
     End Function
-    Private Shared Function cleanimdbdata(ByVal strData As String) As String
-        Dim strClean As String = ""
-        If strData Is Nothing Then Return ""
-        If strData = "" Then Return ""
-        strClean = Strings.Replace(strData, "&#183;", "-")
-        'remove char codes
-        Try
-            Dim rObj1 As New Regex("(&#\d{1,3};)")
-            Dim mObj1 As Match = rObj1.Match(strClean)
-            While mObj1.Success
-                strClean = Strings.Replace(strClean, mObj1.Value, "")
-                mObj1 = mObj1.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            Debug.Print(ex.ToString)
-            'Syntax error in the regular expression
-        End Try
-        Try
-            Dim rObj2 As New Regex("</?a.*?>")
-            Dim mObj2 As Match = rObj2.Match(strClean)
-            While mObj2.Success
-                strClean = Strings.Replace(strClean, mObj2.Value, "")
-                mObj2 = mObj2.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-        End Try
-        strClean = Strings.Replace(strClean, "</a>", "")
-        If Strings.Right(strClean, 2) = "| " Then
-            strClean = Strings.Left(strClean, strClean.Length - 2)
-        End If
-        If Strings.Right(strClean, 1) = "|" Then
-            strClean = Strings.Left(strClean, strClean.Length - 1)
-        End If
-        If Not strClean Is Nothing Then
-            If strClean.Contains("</div>") Then strClean = Regex.Match(strClean, "(.*?)</div>").Groups(1).Value
-        End If
-        Return strClean
-    End Function
+   
     Shared Function imdbparse(ByRef imdbid As String) As IMDB
         'get imdbid data using imdbid
         Dim imdbtxt As String = getimdbbyid(imdbid + "/")
@@ -20842,26 +20787,7 @@ Public Class maincollection
         End If
     End Sub
 
-    Private Function cleanmusicnameforsearch(ByVal texttoclean As String) As String
-        Dim restr As String = texttoclean
-        restr = Strings.Replace(restr, "'", "")
-        restr = Strings.Replace(restr, "&", "")
-        restr = Strings.Replace(restr, "@", "")
-        restr = Strings.Replace(restr, """", "")
-        restr = Strings.Replace(restr, ";", "")
-        restr = Strings.Replace(restr, "~", "")
-        restr = Strings.Replace(restr, ">", "")
-        restr = Strings.Replace(restr, "<", "")
-        restr = Strings.Replace(restr, "?", "")
-        restr = Strings.Replace(restr, "�", "")
-        restr = Strings.Replace(restr, ":", "")
-        restr = Strings.Replace(restr, "\", "")
-        restr = Strings.Replace(restr, "/", "")
-        restr = Strings.Replace(restr, "?", "")
-        restr = Strings.Replace(restr, "|", "")
-        restr = Strings.Replace(restr, "*", "")
-        Return restr
-    End Function
+   
     Private Sub lbmusicSongs_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbmusicSongs.Click
         If lbmusicSongs.SelectedValue Is Nothing Then Exit Sub
         pbMusic_CurSongImage.Image = Nothing
@@ -25534,7 +25460,7 @@ Public Class maincollection
         lbEpisodesMissing.DataSource = dtcurrentshowepisodesmissing.DefaultView
         lbEpisodesMissing.SelectedIndex = -1
         flpTVShowMI.Visible = True
-        If Not Directory.Exists(addfiletofolder(gvcurrenttvseasonpath, "extras")) Then Directory.CreateDirectory(addfiletofolder(gvcurrenttvseasonpath, "extras"))
+        'If Not Directory.Exists(addfiletofolder(gvcurrenttvseasonpath, "extras")) Then Directory.CreateDirectory(addfiletofolder(gvcurrenttvseasonpath, "extras"))
         displayAndLoadMIThumbs(addfiletofolder(gvcurrenttvseasonpath, "extras"), flpTVShowMI)
 
         Dim curlang As String = rconf.tv_curlang
@@ -31295,9 +31221,16 @@ Public Class maincollection
     End Sub
 
     Private Sub bwAutopilot_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwAutopilot.DoWork
-        autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly)
-    End Sub
 
+        'dlgAutoPilotRunning.Show()
+        System.Threading.Thread.Sleep(200)
+    End Sub
+    Private Sub bwAutopilot_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwAutopilot.RunWorkerCompleted
+        kscMain.Enabled = False
+        autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly)
+        'dlgAutoPilotRunning.Dispose()
+        kscMain.Enabled = True
+    End Sub
     Private Sub bshgReloadEPData_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgReloadEPData.Click
         If gvcurrenttvepisode Is Nothing Then Exit Sub
         updatesinglespisode(gvcurrenttvepisode)
@@ -31410,30 +31343,56 @@ Public Class maincollection
         compressfanartimage(fanartpb1, "95")
     End Sub
 
-    Private Sub tsmishows_960x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_960x540.Click
+    Private Sub tsmimusic_960x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_960x540.Click
         resizefanartimage(pbMusicCurFanart, "960x540")
     End Sub
-    Private Sub tsmishows_1280x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1280x720.Click
+    Private Sub tsmimusic_1280x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1280x720.Click
         resizefanartimage(pbMusicCurFanart, "1280x720")
     End Sub
-    Private Sub tsmishows_1920x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1920x1080.Click
+    Private Sub tsmimusic_1920x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_1920x1080.Click
         resizefanartimage(pbMusicCurFanart, "1920x1080")
     End Sub
 
-    Private Sub tsmishows_fanart_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q60.Click
+    Private Sub tsmimusic_fanart_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q60.Click
         compressfanartimage(pbMusicCurFanart, "60")
     End Sub
-    Private Sub tsmishows_fanart_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q70.Click
+    Private Sub tsmimusic_fanart_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q70.Click
         compressfanartimage(pbMusicCurFanart, "70")
     End Sub
-    Private Sub tsmishows_fanart_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q80.Click
+    Private Sub tsmimusic_fanart_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q80.Click
         compressfanartimage(pbMusicCurFanart, "80")
     End Sub
-    Private Sub tsmishows_fanart_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q90.Click
+    Private Sub tsmimusic_fanart_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q90.Click
         compressfanartimage(pbMusicCurFanart, "90")
     End Sub
-    Private Sub tsmishows_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q95.Click
+    Private Sub tsmimusic_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimusic_fanart_q95.Click
         compressfanartimage(pbMusicCurFanart, "95")
+    End Sub
+
+    Private Sub tsmishows_960x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_r960x540.Click
+        resizefanartimage(pbTVFanart, "960x540")
+    End Sub
+    Private Sub tsmishows_1280x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_r1280x720.Click
+        resizefanartimage(pbTVFanart, "1280x720")
+    End Sub
+    Private Sub tsmishows_1920x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_r1920x1080.Click
+        resizefanartimage(pbTVFanart, "1920x1080")
+    End Sub
+
+    Private Sub tsmishows_fanart_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q60.Click
+        compressfanartimage(pbTVFanart, "60")
+    End Sub
+    Private Sub tsmishows_fanart_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q70.Click
+        compressfanartimage(pbTVFanart, "70")
+    End Sub
+    Private Sub tsmishows_fanart_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q80.Click
+        compressfanartimage(pbTVFanart, "80")
+    End Sub
+    Private Sub tsmishows_fanart_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q900.Click
+        compressfanartimage(pbTVFanart, "90")
+    End Sub
+    Private Sub tsmishows_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q95.Click
+        compressfanartimage(pbTVFanart, "95")
     End Sub
     Private Sub compressfanartimage(ByRef currentpb As PictureBox, ByVal amount As String)
         If currentpb.ImageLocation = Nothing Then Exit Sub
@@ -31668,6 +31627,8 @@ Public Class maincollection
         movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
         processdropdownitems()
     End Sub
+
+
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"

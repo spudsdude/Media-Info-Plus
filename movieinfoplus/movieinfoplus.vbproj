@@ -134,6 +134,12 @@
     <Compile Include="dlbPreviewPrintMediaImage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="dlgAutoPilotRunning.Designer.vb">
+      <DependentUpon>dlgAutoPilotRunning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dlgAutoPilotRunning.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="dlgConfiguration.Designer.vb">
       <DependentUpon>dlgConfiguration.vb</DependentUpon>
     </Compile>
@@ -268,6 +274,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MediaInfo.vb" />
+    <Compile Include="modFileUtils.vb" />
+    <Compile Include="modStringUtils.vb" />
     <Compile Include="movie2.vb" />
     <Compile Include="moviesDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -407,6 +415,9 @@
     <EmbeddedResource Include="dlbPreviewPrintMediaImage.resx">
       <DependentUpon>dlbPreviewPrintMediaImage.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgAutoPilotRunning.resx">
+      <DependentUpon>dlgAutoPilotRunning.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgConfiguration.resx">
       <DependentUpon>dlgConfiguration.vb</DependentUpon>

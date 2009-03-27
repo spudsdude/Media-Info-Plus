@@ -61,6 +61,7 @@ Partial Class autopilotdialog
         Me.pbsecondaryposter = New System.Windows.Forms.PictureBox
         Me.pbsecondaryiconsquare = New System.Windows.Forms.PictureBox
         Me.btnMediaDataOnly = New ComponentFactory.Krypton.Toolkit.KryptonButton
+        Me.bwDoAutoPilot = New System.ComponentModel.BackgroundWorker
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -617,5 +618,6 @@ Partial Class autopilotdialog
     Friend WithEvents cboverwriteexistingicons As System.Windows.Forms.CheckBox
     Friend WithEvents rbp9 As System.Windows.Forms.RadioButton
     Friend WithEvents btnMediaDataOnly As ComponentFactory.Krypton.Toolkit.KryptonButton
+    Friend WithEvents bwDoAutoPilot As System.ComponentModel.BackgroundWorker
 
 End Class

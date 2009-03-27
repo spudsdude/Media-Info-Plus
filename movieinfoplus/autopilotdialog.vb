@@ -3,6 +3,19 @@
 Public Class autopilotdialog
     Dim primaryselected As String = ""
     Dim secondaryselected As String = "none"
+
+    'autopilot background worker items
+    Dim gv_bwap_primary As String
+    Dim gv_bwap_secondary As String
+    Dim gv_bwap_posterTru As Boolean
+    Dim gv_bwap_fanartTru As Boolean
+    Dim gv_bwap_tbnTru As Boolean
+    Dim gv_bwap_nfoTru As Boolean
+    Dim gv_bwap_overwritenfoTru As Boolean
+    Dim gv_bwap_overwritefolderjpg As Boolean
+    Dim gv_bwap_mediaonly As Boolean
+
+
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
@@ -167,7 +180,8 @@ Public Class autopilotdialog
             Debug.Print("Secondary set to: " + secondaryselected)
             Debug.Print("use poster: " + buseposter.ToString + "use fanart: " + busefanart.ToString + "create tbn: " + bctbn.ToString + "create nfo: " + bcnfo.ToString + "overwrite nfo:" + bonfo.ToString)
 
-            maincollection.autopilotfromform(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
+            maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
+            'doautopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
         End If
 
 
@@ -296,7 +310,22 @@ Public Class autopilotdialog
 
     End Sub
 
+    Private Sub doautopilotbw(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, Optional ByVal mediaonly As Boolean = False)
+        gv_bwap_primary = primary
+        gv_bwap_secondary = secondary
+        gv_bwap_posterTru = posterTru
+        gv_bwap_fanartTru = fanartTru
+        gv_bwap_tbnTru = tbnTru
+        gv_bwap_nfoTru = nfoTru
+        gv_bwap_overwritenfoTru = overwritenfoTru
+        gv_bwap_overwritefolderjpg = overwritefolderjpg
+        gv_bwap_mediaonly = mediaonly
+        bwDoAutoPilot = New System.ComponentModel.BackgroundWorker
+        bwDoAutoPilot.WorkerReportsProgress = True
+        bwDoAutoPilot.WorkerSupportsCancellation = True
+        bwDoAutoPilot.RunWorkerAsync()
 
+    End Sub
    
     Private Sub rbp9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbp9.CheckedChanged
         cbimpaposter.Checked = False
@@ -339,10 +368,15 @@ Public Class autopilotdialog
         '    Debug.Print("Primary set to: " + primaryselected)
         '    Debug.Print("Secondary set to: " + secondaryselected)
         '    Debug.Print("use poster: " + buseposter.ToString + "use fanart: " + busefanart.ToString + "create tbn: " + bctbn.ToString + "create nfo: " + bcnfo.ToString + "overwrite nfo:" + bonfo.ToString)
-        maincollection.autopilotfromform(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True)
+        maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True)
+        'doautopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True)
         'End If
 
 
 
+    End Sub
+
+    Private Sub bwDoAutoPilot_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwDoAutoPilot.DoWork
+        maincollection.autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly)
     End Sub
 End Class

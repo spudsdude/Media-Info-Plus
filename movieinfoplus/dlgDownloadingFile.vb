@@ -549,6 +549,7 @@ Public Class dlgDownloadingFile
                 'End Try
 
                 curitemcounter += 1
+                checkzerofilesize(item.Destination)
                 If Not File.Exists(item.Destination) Then
                     Dim filenameuri As String = item.URL
                     Dim pro1 As Process = New Process()
@@ -581,7 +582,7 @@ Public Class dlgDownloadingFile
                     Catch ex As Exception
 
                     End Try
-
+                    checkzerofilesize(item.Destination)
                 End If
             Next
             Dim itemF As New miplibfc.mip.dlobject
@@ -637,6 +638,7 @@ Public Class dlgDownloadingFile
                 '    Debug.Print(ex.ToString)
                 'End Try
                 curitemcounter += 1
+                checkzerofilesize(item.Destination)
                 If Not File.Exists(item.Destination) Then
                     Dim filenameuri As String = item.URL
                     Dim pro2 As Process = New Process()
@@ -670,7 +672,7 @@ Public Class dlgDownloadingFile
                     Catch ex As Exception
 
                     End Try
-
+                    checkzerofilesize(item.Destination)
                 End If
             Next
             Dim itemF As New miplibfc.mip.dlobject
@@ -747,6 +749,7 @@ Public Class dlgDownloadingFile
                 '    Debug.Print(ex.ToString)
                 'End Try
                 curitemcounter += 1
+                checkzerofilesize(item.Destination)
                 If Not File.Exists(item.Destination) Then
                     Dim filenameuri As String = item.URL
                     Dim pro3 As Process = New Process()
@@ -780,7 +783,7 @@ Public Class dlgDownloadingFile
                     Catch ex As Exception
 
                     End Try
-
+                    checkzerofilesize(item.Destination)
                 End If
             Next
             Dim itemF As New miplibfc.mip.dlobject
@@ -835,6 +838,7 @@ Public Class dlgDownloadingFile
                 '    Debug.Print(ex.ToString)
                 'End Try
                 curitemcounter += 1
+                checkzerofilesize(item.Destination)
                 If Not File.Exists(item.Destination) Then
                     Dim filenameuri As String = item.URL
                     Dim pro4 As Process = New Process()
@@ -868,7 +872,7 @@ Public Class dlgDownloadingFile
                     Catch ex As Exception
 
                     End Try
-
+                    checkzerofilesize(item.Destination)
                 End If
             Next
             Dim itemF As New miplibfc.mip.dlobject
@@ -924,6 +928,7 @@ Public Class dlgDownloadingFile
                 '    Debug.Print(ex.ToString)
                 'End Try
                 curitemcounter += 1
+                checkzerofilesize(item.Destination)
                 If Not File.Exists(item.Destination) Then
                     Dim filenameuri As String = item.URL
                     Dim pro5 As Process = New Process()
@@ -957,7 +962,7 @@ Public Class dlgDownloadingFile
                     Catch ex As Exception
 
                     End Try
-
+                    checkzerofilesize(item.Destination)
                 End If
             Next
             Dim itemF As New miplibfc.mip.dlobject

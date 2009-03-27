@@ -956,35 +956,7 @@ Public Class tvshowcollection
 
     End Function
 
-    Private Shared Function getFileSizeExact(ByVal vFile As String) As Double
-        'Dim curFile As FileInfo
-        Dim curfile As FileInfo = My.Computer.FileSystem.GetFileInfo(vFile)
-        Dim fileSize As Double = curfile.Length
-        Return fileSize
-    End Function
-
-
-    Public Shared Sub checkzerofilesize(ByVal filename As String)
-        'make sure it's not a 0k file
-        If File.Exists(filename) Then
-            'check it's size, 0k files need to be removed
-            Try
-                File.SetAttributes(filename, FileAttributes.Normal)
-            Catch ex As Exception
-                Console.Out.WriteLine(ex.ToString)
-            End Try
-
-            Try
-                If getFileSizeExact(filename) < 1 Then
-                    'Console.Out.WriteLine("Image invalid - Deleteing " & Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                    File.Delete(filename)
-                End If
-
-            Catch ex As Exception
-                Console.Out.WriteLine(ex.ToString)
-            End Try
-        End If
-    End Sub
+  
     Public Sub updatetvshows()
         'Dim stpw2 As New Stopwatch
         'stpw2.Start()
@@ -1064,7 +1036,7 @@ Public Class tvshowcollection
                                 Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "parser for : " + item.ToString + " : Result was : " + tfname.ToString
                                     'have a movie file, parse it for season and episode
-                                    Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
+                                    Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                     Debug.Print(tfnameoffile)
@@ -1893,7 +1865,7 @@ Public Class tvshowcollection
                                 Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
 
                                     'have a movie file, parse it for season and episode
-                                    Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1)
+                                    Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                     Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)

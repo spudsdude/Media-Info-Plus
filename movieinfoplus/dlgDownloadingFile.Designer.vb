@@ -111,7 +111,7 @@ Partial Class dlgDownloadingFile
         '
         Me.downloaderLabel1.Location = New System.Drawing.Point(405, 61)
         Me.downloaderLabel1.Name = "downloaderLabel1"
-        Me.downloaderLabel1.Size = New System.Drawing.Size(92, 21)
+        Me.downloaderLabel1.Size = New System.Drawing.Size(83, 16)
         Me.downloaderLabel1.TabIndex = 3
         Me.downloaderLabel1.Text = "KryptonLabel1"
         Me.downloaderLabel1.Values.ExtraText = ""
@@ -201,7 +201,7 @@ Partial Class dlgDownloadingFile
         Me.downloaderlblAmountDownloaded.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.downloaderlblAmountDownloaded.Location = New System.Drawing.Point(12, 586)
         Me.downloaderlblAmountDownloaded.Name = "downloaderlblAmountDownloaded"
-        Me.downloaderlblAmountDownloaded.Size = New System.Drawing.Size(92, 21)
+        Me.downloaderlblAmountDownloaded.Size = New System.Drawing.Size(84, 16)
         Me.downloaderlblAmountDownloaded.TabIndex = 6
         Me.downloaderlblAmountDownloaded.Text = "Downloaded --"
         Me.downloaderlblAmountDownloaded.Values.ExtraText = ""
@@ -580,7 +580,7 @@ Partial Class dlgDownloadingFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gray
+        Me.BackColor = System.Drawing.Color.Silver
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(690, 501)

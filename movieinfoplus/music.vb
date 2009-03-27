@@ -125,6 +125,7 @@ Public Class [Music]
     Private p_element_filesize As System.String
     Private p_element_coverart As System.String
     Private p_element_md5 As String
+
     Public Sub writexml(ByRef folderlocationandname As String)
         Dim serializer As New XmlSerializer(Me.GetType())
         Try
@@ -151,7 +152,7 @@ Public Class [Music]
             Return Me.p_element_title
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_title = Value
+            Me.p_element_title = sanitizestring(Value)
         End Set
     End Property
     Public Property md5() As System.String
@@ -159,7 +160,7 @@ Public Class [Music]
             Return Me.p_element_md5
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_md5 = Value
+            Me.p_element_md5 = sanitizestring(Value)
         End Set
     End Property
     Public Property genre() As String
@@ -167,7 +168,7 @@ Public Class [Music]
             Return p_element_genre
         End Get
         Set(ByVal value As String)
-            p_element_genre = value
+            p_element_genre = sanitizestring(value)
         End Set
     End Property
     ' <summary>String artist element.</summary>
@@ -177,7 +178,7 @@ Public Class [Music]
             Return Me.p_element_artist
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_artist = Value
+            Me.p_element_artist = sanitizestring(Value)
         End Set
     End Property
 
@@ -188,7 +189,7 @@ Public Class [Music]
             Return Me.p_element_album
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_album = Value
+            Me.p_element_album = sanitizestring(Value)
         End Set
     End Property
 
@@ -199,7 +200,7 @@ Public Class [Music]
             Return Me.p_element_year
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_year = Value
+            Me.p_element_year = sanitizestring(Value)
         End Set
     End Property
 
@@ -210,7 +211,7 @@ Public Class [Music]
             Return Me.p_element_comment
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_comment = Value
+            Me.p_element_comment = sanitizestring(Value)
         End Set
     End Property
 
@@ -221,7 +222,7 @@ Public Class [Music]
             Return Me.p_element_tracknum
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_tracknum = Value
+            Me.p_element_tracknum = sanitizestring(Value)
         End Set
     End Property
 
@@ -233,7 +234,11 @@ Public Class [Music]
             Return Me.p_element_genres
         End Get
         Set(ByVal Value As List(Of System.String))
-            Me.p_element_genres = Value
+            Dim templist As New List(Of System.String)
+            For Each curstring As String In Value
+                templist.Add(sanitizestring(curstring))
+            Next
+            Me.p_element_genres = templist
         End Set
     End Property
 
@@ -244,7 +249,7 @@ Public Class [Music]
             Return Me.p_element_filename
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_filename = Value
+            Me.p_element_filename = sanitizestring(Value)
         End Set
     End Property
 
@@ -255,7 +260,7 @@ Public Class [Music]
             Return Me.p_element_location
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_location = Value
+            Me.p_element_location = sanitizestring(Value)
         End Set
     End Property
 
@@ -266,7 +271,7 @@ Public Class [Music]
             Return Me.p_element_duration
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_duration = Value
+            Me.p_element_duration = sanitizestring(Value)
         End Set
     End Property
 
@@ -277,7 +282,7 @@ Public Class [Music]
             Return Me.p_element_bitrate
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_bitrate = Value
+            Me.p_element_bitrate = sanitizestring(Value)
         End Set
     End Property
 
@@ -288,7 +293,7 @@ Public Class [Music]
             Return Me.p_element_encoder
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_encoder = Value
+            Me.p_element_encoder = sanitizestring(Value)
         End Set
     End Property
 
@@ -299,7 +304,7 @@ Public Class [Music]
             Return Me.p_element_filesize
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_filesize = Value
+            Me.p_element_filesize = sanitizestring(Value)
         End Set
     End Property
 
@@ -310,7 +315,7 @@ Public Class [Music]
             Return Me.p_element_coverart
         End Get
         Set(ByVal Value As System.String)
-            Me.p_element_coverart = Value
+            Me.p_element_coverart = sanitizestring(Value)
         End Set
     End Property
 End Class

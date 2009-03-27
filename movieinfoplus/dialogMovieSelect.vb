@@ -166,4 +166,24 @@ Public Class dialogMovieSelect
     Private Sub btnCancelLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelLoad.Click
         bwloadimage.CancelAsync()
     End Sub
+
+    Private Sub dialogMovieSelect_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.tbDirector.Text = "" 'g_curdispmovie.pdirector
+        Me.tbGenre.Text = "" 'g_curdispmovie.pgenre
+        Me.tbIMDBID.Text = "" 'g_curdispmovie.pimdbnumber
+        Me.tbMpaa.Text = "" 'g_curdispmovie.pmpaa
+        'Me.rtbPlotOutline.Text = curdispmovie.pplotoutline
+        Me.rtbplot.Text = "" 'g_curdispmovie.pplot
+        Me.tbRating.Text = "" 'g_curdispmovie.prating
+        Me.tbOriginalTitle.Text = "" 'g_curdispmovie.poriginaltitle
+        Me.tbRuntime.Text = "" 'g_curdispmovie.pruntime
+        Me.rtbTagline.Text = "" 'g_curdispmovie.ptagline
+        Me.tbVotes.Text = "" 'g_curdispmovie.pvotes
+        Me.tbStudio.Text = "" 'g_curdispmovie.pstudio 'tmovie.ptitle
+        Me.tbyear.Text = "" 'g_curdispmovie.pyear.ToString
+        Me.tbTop250.Text = "" 'g_curdispmovie.ptop250
+        Me.tbTrailer.Text = "" 'g_curdispmovie.ptrailer
+        pbPreviewImage.Image = Nothing
+        pbPreviewImage.ImageLocation = Nothing
+    End Sub
 End Class

@@ -11,7 +11,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Media Info Plus")> 
-<Assembly: AssemblyDescription("Rev 2816")> 
+<Assembly: AssemblyDescription("Rev 2820")> 
 <Assembly: AssemblyCompany("MDI")> 
 <Assembly: AssemblyProduct("Media Info Plus")> 
 <Assembly: AssemblyCopyright("Copyright ©  2009")> 
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.0.0.2816")> 
-<Assembly: AssemblyFileVersion("2.0.0.2816")> 
+<Assembly: AssemblyVersion("2.0.0.2820")> 
+<Assembly: AssemblyFileVersion("2.0.0.2820")> 
 
 <Assembly: NeutralResourcesLanguageAttribute("en")> 

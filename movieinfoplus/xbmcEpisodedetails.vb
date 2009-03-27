@@ -26,7 +26,6 @@ Namespace xbmc
             'If overwrite Then
             'writefile = True
             'End If
-
             If writefile Then
                 'System.Xml.Serialization.XmlSerialize
                 Dim serializer As New XmlSerializer(Me.GetType())
@@ -127,6 +126,7 @@ Namespace xbmc
             'If overwrite Then
             'writefile = True
             'End If
+
 
             If writefile Then
                 'System.Xml.Serialization.XmlSerialize
