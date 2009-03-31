@@ -38,6 +38,7 @@ Namespace mip.mov
         Private p_element_watched As System.String
         Private p_element_actor As New List(Of Actor)
         Private p_element_fileinfo As New xbmcMediaInfo.Fileinfo
+        Private p_element_certification As String
 
         'Fileinfo element
         <XmlElement("fileinfo")> _
@@ -178,6 +179,17 @@ Namespace mip.mov
             End Get
             Set(ByVal Value As System.String)
                 Me.p_element_mpaa = Value
+            End Set
+        End Property
+
+        ' String mpaa element.
+        <XmlElement("certification")> _
+        Public Property [Certification]() As System.String
+            Get
+                Return Me.p_element_certification
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_certification = Value
             End Set
         End Property
 

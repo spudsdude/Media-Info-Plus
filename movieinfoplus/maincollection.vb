@@ -6612,7 +6612,12 @@ Public Class maincollection
         Me.tbDirector.Text = currentmovie.pdirector
         Me.tbGenre.Text = currentmovie.pgenre
         Me.tbIMDBID.Text = currentmovie.pimdbnumber
-        Me.tbMpaa.Text = currentmovie.pmpaa
+        If rconf.pcbmovie_use_certification_for_mpaa Then
+            Me.tbMpaa.Text = currentmovie.certification
+        Else
+            Me.tbMpaa.Text = currentmovie.pmpaa
+        End If
+
         Me.rtbPlotOutline.Text = currentmovie.pplotoutline
         Me.rtbPlot.Text = currentmovie.pplot
         Me.tbRating.Text = currentmovie.prating
@@ -17790,20 +17795,25 @@ Public Class maincollection
         nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
         'Debug.Print("MPAA is: " + nimdb.mpaa)
 
-        'Certification 
-        'Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-        'Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
-        'While MatchResultsR.Success
-        '    'US only option, remove if statment to list all
-        '    If MatchResultsR.Groups(1).Value.Contains("USA") Then
-        '        nimdb.certification += MatchResultsR.Groups(1).Value
-        '        MatchResultsR = MatchResultsR.NextMatch()
-        '    Else
-        '        MatchResultsR = MatchResultsR.NextMatch()
-        '    End If
+        'Certification()
+        Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*):([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+        Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
+        While MatchResultsR.Success
+            'US only option, remove if statment to list all
+            If MatchResultsR.Groups(1).Value.ToLower.Contains(rconf.pcbMoviesCertificationLang.ToLower) Then
+                nimdb.certification += MatchResultsR.Groups(2).Value
+                MatchResultsR = MatchResultsR.NextMatch()
+            Else
+                MatchResultsR = MatchResultsR.NextMatch()
+            End If
 
-        'End While
-        'nimdb.certification = clb(nimdb.certification)
+        End While
+        If Not nimdb.certification Is Nothing Then
+            nimdb.certification = clb(nimdb.certification)
+        Else
+            nimdb.certification = ""
+        End If
+
 
         'playcount
         nimdb.playcount = ""
@@ -32846,6 +32856,7 @@ Public Property [Actors]() As List(Of Actor)
         'If Me.title = Nothing Then tmovie2.pmoviename = "" Else tmovie2.pmoviename = Me.title
         tmovie2.pstudio = Me.studio
         tmovie2.Actors = Me.Actors
+        tmovie2.certification = Me.certification
         ''Unassigned properties
         'Debug.Print(Me.watched)
         'Debug.Print(Me.playcount)
@@ -33497,6 +33508,7 @@ Public Property [Actors]() As List(Of Actor)
         nm.Runtime = tmovie.pruntime
         nm.Thumb = ""
 
+
         'TMDB Fanart update - beta 2
         nm.Fanart.Url = "http://www.themoviedb.org/"
         'for reference, original is the only sized passed back to the movie object as the others can be easy derived from it
@@ -33522,6 +33534,10 @@ Public Property [Actors]() As List(Of Actor)
         End While
 
         nm.Mpaa = tmovie.pmpaa
+        If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
+            nm.Mpaa = tmovie.certification
+        End If
+
         nm.Playcount = ""
         nm.File = ""
         nm.Path = ""
@@ -34008,7 +34024,24 @@ Public Class configuration
     Private element_dontreturnaftermediaimagepick As Boolean = False
     Private tso_auto_addtoablumonnewart As Boolean
 
-
+    Private p_element_pcbmovie_use_certification_for_mpaa As Boolean = False
+    Private p_element_pcertification As String = "USA"
+    Property pcbmovie_use_certification_for_mpaa() As Boolean
+        Get
+            Return p_element_pcbmovie_use_certification_for_mpaa
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbmovie_use_certification_for_mpaa = value
+        End Set
+    End Property
+    Property pcbMoviesCertificationLang() As String
+        Get
+            Return p_element_pcertification
+        End Get
+        Set(ByVal value As String)
+            p_element_pcertification = value
+        End Set
+    End Property
     'movie - cache settings
     Private cbIgnoreparans, cbf1s0, cbf1s3, cbf1s9, cbf2s0, cbf2s2, cbf2s8, cbf2s10, cbf3s0, cbGetFanart, cbSaveNFO, cbOverwriteNFO, cbGenTBN As Boolean 'true or false for each type
 

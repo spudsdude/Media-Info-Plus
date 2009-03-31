@@ -730,6 +730,7 @@ Public Class dlgConfiguration
             cbFilterNameFileModeEverythingBeforeDash.Checked = trconf.pcbFilterNameFileModeEverythingBeforeDash
             cbGetMusicFanartFromHTBackdrops.Checked = trconf.pcbGetMusicFanartFromHTBackdrops
             cbtv_lang.SelectedText = trconf.tv_curlang ' = cbtv_lang.SelectedItem.ToString
+            cbMoviesCertificationLang.SelectedText = trconf.pcbMoviesCertificationLang
             cbGeneralSupportSkinBasedFlagging.Checked = rconf.pcbGeneralSupportSkinBasedFlagging
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
@@ -825,6 +826,9 @@ Public Class dlgConfiguration
             tvgs_knud_season_banners_download_maxnumber.Value = trconf.tv_season_banners_download_maxnumber_integer
             tvgs_combobox_season_banners_download_type.SelectedValue = trconf.tv_season_banners_download_type_string
             cbtv_lang.SelectedValue = trconf.tv_curlang
+            cbMoviesCertificationLang.SelectedValue = trconf.pcbMoviesCertificationLang
+            cbmovie_use_certification_for_mpaa.Checked = trconf.pcbmovie_use_certification_for_mpaa
+
             'tvgs_combobox_season_banners_download_type.SelectedValue = trconf.tv_season_banners_download_type_string' = "season"
             tvgs_cb_season_posters_download.Checked = trconf.tv_season_posters_download_boolean
             tvgs_knud_season_posters_download_maxnumber.Value = trconf.tv_season_posters_download_maxnumber_integer
@@ -1571,5 +1575,12 @@ Public Class dlgConfiguration
 
     Private Sub pcbGeneralSupportSkinBasedFlagging_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbGeneralSupportSkinBasedFlagging.Click
         rconf.pcbGeneralSupportSkinBasedFlagging = cbGeneralSupportSkinBasedFlagging.Checked
+    End Sub
+
+    Private Sub cbmovie_use_certification_for_mpaa_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbmovie_use_certification_for_mpaa.CheckedChanged
+        rconf.pcbmovie_use_certification_for_mpaa = cbmovie_use_certification_for_mpaa.Checked
+    End Sub
+    Private Sub cbMoviesCertificationLang_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMoviesCertificationLang.SelectedIndexChanged
+        rconf.pcbMoviesCertificationLang = cbMoviesCertificationLang.SelectedItem.ToString
     End Sub
 End Class
