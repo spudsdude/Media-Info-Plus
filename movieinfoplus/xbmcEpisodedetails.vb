@@ -60,6 +60,7 @@ Namespace xbmc
         Private p_element_episodeid As String
         Private p_element_seriesid As String
         Private p_element_seasonid As String
+        Private p_element_votes As String
         Private p_element_fileinfo As New xbmcMediaInfo.Fileinfo
         <XmlIgnore()> _
         Property seasonid() As String
@@ -261,6 +262,16 @@ Namespace xbmc
             End Get
             Set(ByVal Value As List(Of mip.mov.Actor))
                 Me.p_element_actor = Value
+            End Set
+        End Property
+
+        <XmlElement("votes")> _
+       Public Property [Votes]() As String
+            Get
+                Return Me.p_element_votes
+            End Get
+            Set(ByVal Value As String)
+                Me.p_element_votes = Value
             End Set
         End Property
     End Class

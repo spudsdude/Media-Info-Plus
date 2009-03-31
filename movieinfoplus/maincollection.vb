@@ -32825,10 +32825,8 @@ Public Property [Actors]() As List(Of Actor)
         If Me.genre = Nothing Then tmovie2.pgenre = "" Else tmovie2.pgenre = Me.genre
         If Me.id = Nothing Then tmovie2.pimdbnumber = "" Else tmovie2.pimdbnumber = Me.id
         If Me.mpaa = Nothing Then tmovie2.pmpaa = "" Else tmovie2.pmpaa = Me.mpaa
-
         If Me.outline = Nothing Then tmovie2.pplotoutline = "" Else tmovie2.pplotoutline = cleanimdbdata(Me.outline)
         If Me.plot = Nothing Then tmovie2.pplot = "" Else tmovie2.pplot = cleanimdbdata(Me.plot)
-
         If Me.rating = Nothing Then tmovie2.prating = "" Else tmovie2.prating = Me.rating
         If Me.originaltitle = Nothing Then tmovie2.poriginaltitle = "" Else tmovie2.poriginaltitle = Me.originaltitle
         If Me.votes = Nothing Then tmovie2.pvotes = "" Else tmovie2.pvotes = Me.votes
@@ -33547,6 +33545,9 @@ Public Property [Actors]() As List(Of Actor)
 
         'add fileinfo
         nm.fileinfo = tmovie.fileinfo
+        If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
+            nm.Credits = Strings.Replace(tmovie.studio, " ", "_") & " - " & tmovie.fileinfo.toTagData(tmovie.fileinfo)
+        End If
 
         'rev 2401 generate the nfo files
         Dim nfonamepath As String = tmovie.getmoviepath + "\"
@@ -34120,7 +34121,16 @@ Public Class configuration
     Private p_element_pcbshowfanartresize As Boolean
     Private p_element_pnudshowfanartwidth As Double
 
-
+    'support skin based flagging
+    Private p_element_pcbGeneralSupportSkinBasedFlagging As Boolean
+    Property pcbGeneralSupportSkinBasedFlagging() As Boolean
+        Get
+            Return p_element_pcbGeneralSupportSkinBasedFlagging
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbGeneralSupportSkinBasedFlagging = value
+        End Set
+    End Property
     Property pcbmusicfanartresize() As Boolean
         Get
             Return p_element_pcbmusicfanartresize

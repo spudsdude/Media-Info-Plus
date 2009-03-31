@@ -131,7 +131,7 @@ Property fullfilenameandpath() As String
             curtvdblangEpisode = gRvtvdblangData
         End Sub
 
-        Public Sub tvdblangepisode2xbmcTvepisode(ByRef tls As tvdblangEpisode, ByRef xbmctvepisode As xbmc.xbmcEpisodedetails, ByRef theactors As List(Of movieinfoplus.mip.mov.Actor), ByRef currentmirror As String)
+        Public Sub tvdblangepisode2xbmcTvepisode(ByRef tls As tvdblangEpisode, ByRef xbmctvepisode As xbmc.xbmcEpisodedetails, ByRef theactors As List(Of movieinfoplus.mip.mov.Actor), ByRef currentmirror As String, ByRef curstudio As String)
             'Dim ccount As Integer = 0
             'While ccount < theactors.Actors.Count
             '    Dim tactor As New mip.mov.Actor
@@ -158,6 +158,7 @@ Property fullfilenameandpath() As String
             xbmctvepisode.episodeid = tls.Id
             xbmctvepisode.seriesid = tls.Seriesid
             xbmctvepisode.seasonid = tls.Seasonid
+            xbmctvepisode.Votes = Strings.Replace(curstudio, " ", "_") & " - " & tls.fileinfo.toTagData(tls.fileinfo)
         End Sub
 
         Public Sub tvdblangepisode2xbmcTvepisodeManualFromGUI(ByRef tls As tvdblangEpisode, ByRef xbmctvepisode As xbmc.xbmcEpisodedetails)

@@ -36,9 +36,94 @@ Namespace xbmcMediaInfo
                 p_element_streamdata = value
             End Set
         End Property
+        Public Function toTagData(ByRef xmifi As xbmcMediaInfo.Fileinfo) As String
+            Dim retStr As String = ""
+            Dim statusStr As String = ""
+            If Not xmifi.streamdetails Is Nothing Then
+                retStr += "Video Streams: " & xmifi.streamdetails.Video.Count & vbNewLine
+                retStr += "Audio Streams: " & xmifi.streamdetails.Audio.Count & vbNewLine
+                retStr += "Subtitle Streams: " & xmifi.streamdetails.Subtitle.Count & vbNewLine
+                retStr += vbNewLine
+                Dim couVS As Integer = 0
+                Dim couAS As Integer = 0
+                Dim couSS As Integer = 0
+                Dim vwidthmax As Double = 0
+                Dim achanmax As Double = 0
+                Dim accodec As String = ""
+                Dim alang As String = ""
+                Dim scantype As String = ""
+                Dim subtitleLang As String = ""
+                For Each curVS As Video In xmifi.streamdetails.Video
+                    couVS += 1
+                    retStr += "Video Stream " + couVS.ToString + vbNewLine
+                    retStr += "   Width: " + curVS.Width + " -x- "
+                    If CDbl(curVS.Width) > vwidthmax Then
+                        vwidthmax = CDbl(curVS.Width)
+                        If curVS.Scantype.ToLower.Contains("progressive") Then
+                            scantype = "p"
+                        Else
+                            scantype = "i"
+                        End If
+                    End If
+                    retStr += "Height: " + curVS.Height + vbNewLine
+                    retStr += "   Codec: " + curVS.Codec + vbNewLine
+                    retStr += "   Format Info: " + curVS.Formatinfo + vbNewLine
+                    retStr += "   Duration/String1: " + curVS.Duration + vbNewLine
+                    retStr += "   BitRate: " + curVS.Bitrate + vbNewLine
+                    retStr += "   BitRate_Mode/String: " + curVS.Bitratemode + vbNewLine
+                    retStr += "   BitRate_Maximum: " + curVS.Bitratemax + vbNewLine
+                    retStr += "   CodecID: " + curVS.Codecid + vbNewLine
+                    retStr += "   CodecID/Info: " + curVS.Codecidinfo + vbNewLine 'Format_Version
+                    retStr += "   Scan type: " + curVS.Scantype + vbNewLine
+                    'To_Display += "   Container: " + "This is the extension of the file" + vbNewLine
 
+                Next
+                For Each curAS As Audio In xmifi.streamdetails.Audio
+                    couAS += 1
+                    'audio
+                    retStr += "Audio Stream " + couAS.ToString + vbNewLine
+                    retStr += "   Codec: " + curAS.Codec + vbNewLine
+                    retStr += "   Channels: " + curAS.Channels + vbNewLine
+                    If CDbl(curAS.Channels) > achanmax Then
+                        accodec = curAS.Codec
+                        achanmax = CDbl(curAS.Channels)
+                        alang = curAS.Language
+                    End If
+                    retStr += "   BitRate/String: " + curAS.Bitrate + vbNewLine
+                    retStr += "   Language: " + curAS.Language + vbNewLine
+
+                Next
+                For Each curSS As Subtitle In xmifi.streamdetails.Subtitle
+                    couSS += 1
+                    'audio
+                    retStr += "Subtitle " + couSS.ToString + vbNewLine
+                    retStr += "   Language: " + curSS.Language + vbNewLine
+                    subtitleLang += " sub" + curSS.Language
+                Next
+                retStr += vbNewLine
+                retStr += "Last Scanned: " & lastupdate.ToString
+                retStr += vbNewLine
+                retStr += "Scanner Version: " & version.ToString
+                If Not couVS = 0 Then 'no video streams, don't write any tag data
+                    statusStr = getrezfromsize(vwidthmax) & scantype & " " & accodec & " " & achanmax & "ch " & alang & subtitleLang
+                End If
+            End If
+            Debug.Print(retStr)
+            Debug.Print(statusStr)
+            Return statusStr
+        End Function
+        Private Function getrezfromsize(ByVal curwidth As Double) As String
+            If curwidth < 20 Then Return ""
+            If curwidth < 641 Then Return "SD"
+            If curwidth < 853 Then Return "480"
+            If curwidth < 961 Then Return "540"
+            If curwidth > 961 And curwidth < 1281 Then Return "720"
+            If curwidth > 1281 Then Return "1080"
+            Return ""
+        End Function
         Public Function objtostring(ByRef xmifi As xbmcMediaInfo.Fileinfo) As String
             Dim To_Display As String = ""
+            To_Display += "TagData: " & toTagData(xmifi) & vbNewLine
             If Not xmifi.streamdetails Is Nothing Then
                 To_Display += "Video Streams: " & xmifi.streamdetails.Video.Count & vbNewLine
                 To_Display += "Audio Streams: " & xmifi.streamdetails.Audio.Count & vbNewLine

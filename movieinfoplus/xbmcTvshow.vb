@@ -20,6 +20,7 @@ Namespace xbmc
         Private p_element_displayseason As String
         Private p_element_displayepisode As String
         Private p_element_episodeguideurl As String
+        Private p_element_episodeguide As String
         Private p_element_plot As String
         Private p_element_thumb As String
         Private p_element_mpaa As String
@@ -32,12 +33,17 @@ Namespace xbmc
         Private p_element_actor As New List(Of Actor)
 
         Public Sub readXML(ByVal xmllocationandfilename As String, ByRef vxbmcTvshow As xbmcTvshow)
-            Dim xmlfile As String = xmllocationandfilename
-            Dim serializer As New XmlSerializer(Me.GetType())
-            Dim gROReader As New StreamReader(xmlfile)
-            Dim gRxbmcTvshow As xbmcTvshow = CType(serializer.Deserialize(gROReader), xbmcTvshow)
-            gROReader.Close()
-            vxbmcTvshow = gRxbmcTvshow
+            Try
+                Dim xmlfile As String = xmllocationandfilename
+                Dim serializer As New XmlSerializer(Me.GetType())
+                Dim gROReader As New StreamReader(xmlfile)
+                Dim gRxbmcTvshow As xbmcTvshow = CType(serializer.Deserialize(gROReader), xbmcTvshow)
+                gROReader.Close()
+                vxbmcTvshow = gRxbmcTvshow
+            Catch ex As Exception
+                vxbmcTvshow.Tvdbid = ""
+            End Try
+
         End Sub
 
         Public Sub writeXML(ByRef folderlocation As String)
@@ -138,6 +144,16 @@ Namespace xbmc
             End Get
             Set(ByVal Value As String)
                 Me.p_element_episodeguideurl = Value
+            End Set
+        End Property
+        ' <summary>String episodeguideurl element.</summary>
+        <XmlElement("episodeguide")> _
+        Public Property [Episodeguide]() As String
+            Get
+                Return Me.p_element_episodeguide
+            End Get
+            Set(ByVal Value As String)
+                Me.p_element_episodeguide = Value
             End Set
         End Property
 

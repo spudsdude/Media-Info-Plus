@@ -730,6 +730,7 @@ Public Class dlgConfiguration
             cbFilterNameFileModeEverythingBeforeDash.Checked = trconf.pcbFilterNameFileModeEverythingBeforeDash
             cbGetMusicFanartFromHTBackdrops.Checked = trconf.pcbGetMusicFanartFromHTBackdrops
             cbtv_lang.SelectedText = trconf.tv_curlang ' = cbtv_lang.SelectedItem.ToString
+            cbGeneralSupportSkinBasedFlagging.Checked = rconf.pcbGeneralSupportSkinBasedFlagging
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
                 maincollection.dltype = "med"
@@ -1564,7 +1565,11 @@ Public Class dlgConfiguration
         rconf.pcbmusicfanartresize = cbMusicResizeMusicFanart.Checked
     End Sub
 
-    Private Sub cbshows_UseStudioasRating_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbshows_UseStudioasRating.CheckedChanged
+    Private Sub cbshows_UseStudioasRating_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbshows_UseStudioasRating.Click
         rconf.pcbshows_UseStudioasRating = cbshows_UseStudioasRating.Checked
+    End Sub
+
+    Private Sub pcbGeneralSupportSkinBasedFlagging_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbGeneralSupportSkinBasedFlagging.Click
+        rconf.pcbGeneralSupportSkinBasedFlagging = cbGeneralSupportSkinBasedFlagging.Checked
     End Sub
 End Class
