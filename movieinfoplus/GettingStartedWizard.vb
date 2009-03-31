@@ -142,6 +142,18 @@ Public Class GettingStartedWizard
 
         End If
 
+        Dim lenFiles As Integer = clbPathsFile.Items.Count
+        If lenFiles = 0 Then
+            'nothing to process
+        Else
+            Dim countFiles As Integer = 0
+            While countFiles < lenFiles
+                curConfig.pclbPathsFileMode.Add(clbPathsFile.Items(countFiles))
+                countFiles += 1
+            End While
+
+        End If
+
         Dim lentv As Integer = lbTVShows.Items.Count
         If lentv = 0 Then
             'nothing to process
@@ -200,7 +212,41 @@ Public Class GettingStartedWizard
         addtolist()
 
     End Sub
+    Private Sub btnMoviesAddFolderByPathFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoviesAddFolderByPathFile.Click
+        addtolistFile()
 
+    End Sub
+    Private Sub addtolistFile()
+        'check the added path to make sure it's valid on the system
+        'TODO add check
+        Try
+
+            If Directory.Exists(tbFolderFile.Text) Then
+                'MsgBox("valid")
+            Else
+                MsgBox("No such directory on system, check the path you entered in the box above")
+                Exit Sub
+
+            End If
+            'create array of item in list
+            Dim clbarray As New ArrayList
+
+            For Each listedpath In clbPathsFile.Items
+                clbarray.Add(listedpath)
+            Next
+
+            If clbarray.Contains(tbFolderFile.Text) Then
+                MsgBox("Path already added to list")
+                Exit Sub
+            Else
+                clbPaths.Items.Add(tbFolderFile.Text, True)
+                OK_Button.Enabled = True
+            End If
+
+        Catch ex As Exception
+            clbPathsFile.Items.Add(tbFolderFile.Text, True)
+        End Try
+    End Sub
     Private Sub addtolist()
         'check the added path to make sure it's valid on the system
         'TODO add check
@@ -327,14 +373,26 @@ Public Class GettingStartedWizard
         tbFolder.Text = FolderBrowserDialog1.SelectedPath
         addtolist()
     End Sub
-
+    Private Sub btnMoviesBrowseForFolderFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoviesBrowseForFolderFile.Click
+        FolderBrowserDialog1.ShowDialog()
+        tbFolderFile.Text = FolderBrowserDialog1.SelectedPath
+        addtolistFile()
+    End Sub
     Private Sub btnMoviesClearFolderList_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoviesClearFolderList.Click
         clbPaths.Items.Clear()
         Dim haveapath As Boolean = False
-        'If clbPaths.Items.Count > 0 Then haveapath = True
+        If clbPathsFile.Items.Count > 0 Then haveapath = True
         If lbTVShows.Items.Count > 0 Then haveapath = True
+        If lbMusic.Items.Count > 0 Then haveapath = True
         If haveapath Then OK_Button.Enabled = True Else OK_Button.Enabled = False
-
+    End Sub
+    Private Sub btnMoviesClearFolderListFile_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoviesClearFolderListFile.Click
+        clbPathsFile.Items.Clear()
+        Dim haveapath As Boolean = False
+        If clbPaths.Items.Count > 0 Then haveapath = True
+        If lbTVShows.Items.Count > 0 Then haveapath = True
+        If lbMusic.Items.Count > 0 Then haveapath = True
+        If haveapath Then OK_Button.Enabled = True Else OK_Button.Enabled = False
     End Sub
 
     Private Sub btnTVAddPath_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTVAddPath.Click
@@ -351,7 +409,8 @@ Public Class GettingStartedWizard
         lbTVShows.Items.Clear()
         Dim haveapath As Boolean = False
         If clbPaths.Items.Count > 0 Then haveapath = True
-        'If lbTVShows.Items.Count > 0 Then haveapath = True
+        If clbPathsFile.Items.Count > 0 Then haveapath = True
+        If lbMusic.Items.Count > 0 Then haveapath = True
         If haveapath Then OK_Button.Enabled = True Else OK_Button.Enabled = False
 
     End Sub
@@ -359,7 +418,8 @@ Public Class GettingStartedWizard
         lbMusic.Items.Clear()
         Dim haveapath As Boolean = False
         If clbPaths.Items.Count > 0 Then haveapath = True
-        'If lbTVShows.Items.Count > 0 Then haveapath = True
+        If lbTVShows.Items.Count > 0 Then haveapath = True
+        If clbPathsFile.Items.Count > 0 Then haveapath = True
         If haveapath Then OK_Button.Enabled = True Else OK_Button.Enabled = False
 
     End Sub

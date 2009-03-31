@@ -391,7 +391,7 @@ Partial Class dialogMovieSelect
         Me.tbStudio.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbStudio.Location = New System.Drawing.Point(61, 123)
         Me.tbStudio.Name = "tbStudio"
-        Me.tbStudio.Size = New System.Drawing.Size(234, 26)
+        Me.tbStudio.Size = New System.Drawing.Size(234, 24)
         Me.tbStudio.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -415,7 +415,7 @@ Partial Class dialogMovieSelect
         Me.tbOriginalTitle.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbOriginalTitle.Location = New System.Drawing.Point(69, 21)
         Me.tbOriginalTitle.Name = "tbOriginalTitle"
-        Me.tbOriginalTitle.Size = New System.Drawing.Size(226, 26)
+        Me.tbOriginalTitle.Size = New System.Drawing.Size(226, 24)
         Me.tbOriginalTitle.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -428,7 +428,7 @@ Partial Class dialogMovieSelect
         Me.tbVotes.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbVotes.Location = New System.Drawing.Point(156, 72)
         Me.tbVotes.Name = "tbVotes"
-        Me.tbVotes.Size = New System.Drawing.Size(56, 26)
+        Me.tbVotes.Size = New System.Drawing.Size(56, 24)
         Me.tbVotes.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -441,7 +441,7 @@ Partial Class dialogMovieSelect
         Me.tbTop250.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbTop250.Location = New System.Drawing.Point(71, 72)
         Me.tbTop250.Name = "tbTop250"
-        Me.tbTop250.Size = New System.Drawing.Size(29, 26)
+        Me.tbTop250.Size = New System.Drawing.Size(29, 24)
         Me.tbTop250.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -454,7 +454,7 @@ Partial Class dialogMovieSelect
         Me.tbMpaa.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbMpaa.Location = New System.Drawing.Point(143, 97)
         Me.tbMpaa.Name = "tbMpaa"
-        Me.tbMpaa.Size = New System.Drawing.Size(152, 26)
+        Me.tbMpaa.Size = New System.Drawing.Size(152, 24)
         Me.tbMpaa.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -467,7 +467,7 @@ Partial Class dialogMovieSelect
         Me.tbyear.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbyear.Location = New System.Drawing.Point(47, 96)
         Me.tbyear.Name = "tbyear"
-        Me.tbyear.Size = New System.Drawing.Size(46, 26)
+        Me.tbyear.Size = New System.Drawing.Size(46, 24)
         Me.tbyear.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -480,7 +480,7 @@ Partial Class dialogMovieSelect
         Me.tbIMDBID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbIMDBID.Location = New System.Drawing.Point(71, 46)
         Me.tbIMDBID.Name = "tbIMDBID"
-        Me.tbIMDBID.Size = New System.Drawing.Size(83, 26)
+        Me.tbIMDBID.Size = New System.Drawing.Size(83, 24)
         Me.tbIMDBID.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -493,7 +493,7 @@ Partial Class dialogMovieSelect
         Me.tbRuntime.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbRuntime.Location = New System.Drawing.Point(221, 46)
         Me.tbRuntime.Name = "tbRuntime"
-        Me.tbRuntime.Size = New System.Drawing.Size(74, 26)
+        Me.tbRuntime.Size = New System.Drawing.Size(74, 24)
         Me.tbRuntime.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -506,7 +506,7 @@ Partial Class dialogMovieSelect
         Me.tbRating.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbRating.Location = New System.Drawing.Point(268, 72)
         Me.tbRating.Name = "tbRating"
-        Me.tbRating.Size = New System.Drawing.Size(26, 26)
+        Me.tbRating.Size = New System.Drawing.Size(26, 24)
         Me.tbRating.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -519,7 +519,7 @@ Partial Class dialogMovieSelect
         Me.tbTrailer.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbTrailer.Location = New System.Drawing.Point(85, 198)
         Me.tbTrailer.Name = "tbTrailer"
-        Me.tbTrailer.Size = New System.Drawing.Size(209, 26)
+        Me.tbTrailer.Size = New System.Drawing.Size(209, 24)
         Me.tbTrailer.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -532,7 +532,7 @@ Partial Class dialogMovieSelect
         Me.tbGenre.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbGenre.Location = New System.Drawing.Point(64, 173)
         Me.tbGenre.Name = "tbGenre"
-        Me.tbGenre.Size = New System.Drawing.Size(230, 26)
+        Me.tbGenre.Size = New System.Drawing.Size(230, 24)
         Me.tbGenre.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -545,7 +545,7 @@ Partial Class dialogMovieSelect
         Me.tbDirector.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbDirector.Location = New System.Drawing.Point(71, 148)
         Me.tbDirector.Name = "tbDirector"
-        Me.tbDirector.Size = New System.Drawing.Size(224, 26)
+        Me.tbDirector.Size = New System.Drawing.Size(224, 24)
         Me.tbDirector.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) _
                     Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right), ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -707,6 +707,7 @@ Partial Class dialogMovieSelect
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "More then movie was found in the search, pick the correct one or cancel adding th" & _
             "is Movie"
+        Me.TopMost = True
         CType(Me.kgPickCorrectShow.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgPickCorrectShow.Panel.ResumeLayout(False)
         CType(Me.kgPickCorrectShow, System.ComponentModel.ISupportInitialize).EndInit()

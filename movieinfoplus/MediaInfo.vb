@@ -256,7 +256,7 @@ Public Class MediaInfo
         'open the file
         MI.Open(moviefilename)
         currentmovie.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentmovie.fileinfo.version = 1.2
+        currentmovie.fileinfo.version = 1.3
         currentmovie.fileinfo.lastupdate = Now()
         Debug.Print(currentmovie.fileinfo.lastupdate.ToString)
         'find the longest stream in the file
@@ -286,7 +286,7 @@ Public Class MediaInfo
             vidstream.Codecidinfo = MI.Get_(StreamKind.Visual, curVS, "CodecID/Info")
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(moviefilename, 4) '"This is the extension of the file"
-
+            vidstream.Aspectdisplayratio = MI.Get_(StreamKind.Visual, curVS, "DisplayAspectRatio")
             curVS = False
             With vidstream
                 If Not .Bitrate Is Nothing Then
@@ -1459,7 +1459,7 @@ Public Class MediaInfo
         'open the file
         MI.Open(curtvepfilename)
         currentshow.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentshow.fileinfo.version = 1.2
+        currentshow.fileinfo.version = 1.3
         currentshow.fileinfo.lastupdate = Now()
         'find the longest stream in the file
         'find the number of video streams in the video file
@@ -1488,6 +1488,7 @@ Public Class MediaInfo
             vidstream.Codecidinfo = MI.Get_(StreamKind.Visual, curVS, "CodecID/Info")
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(curtvepfilename, 4) '"This is the extension of the file"
+            vidstream.Aspectdisplayratio = MI.Get_(StreamKind.Visual, curVS, "DisplayAspectRatio")
             If Not vidstream.Container Is Nothing Then
                 If vidstream.Container.Length = 4 Then
                     If Not Strings.Left(vidstream.Container, 1) = "." Then
@@ -1660,7 +1661,7 @@ Public Class MediaInfo
         'open the file
         MI.Open(curtvepfilename)
         currentshow.fileinfo = New xbmcMediaInfo.Fileinfo
-        currentshow.fileinfo.version = 1.2
+        currentshow.fileinfo.version = 1.3
         currentshow.fileinfo.lastupdate = Now()
         'find the longest stream in the file
         'find the number of video streams in the video file
@@ -1689,7 +1690,7 @@ Public Class MediaInfo
             vidstream.Codecidinfo = MI.Get_(StreamKind.Visual, curVS, "CodecID/Info")
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(curtvepfilename, 4) '"This is the extension of the file"
-
+            vidstream.Aspectdisplayratio = MI.Get_(StreamKind.Visual, curVS, "DisplayAspectRatio")
             curVS = False
             With vidstream
                 If Not .Bitrate Is Nothing Then

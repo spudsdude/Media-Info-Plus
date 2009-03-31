@@ -269,6 +269,7 @@
     </Compile>
     <Compile Include="MediaInfo.vb" />
     <Compile Include="modFileUtils.vb" />
+    <Compile Include="modNfoData.vb" />
     <Compile Include="modStringUtils.vb" />
     <Compile Include="movie2.vb" />
     <Compile Include="moviesDataSet.Designer.vb">

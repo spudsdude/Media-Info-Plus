@@ -30,4 +30,19 @@ Module modFileUtils
             End Try
         End If
     End Sub
+
+    Public Function removeextension(ByRef filename As String) As String
+        Dim retstr As String = "none"
+        If Not filename = Nothing Then
+            If filename.Length > 5 Then
+                If Strings.Left(Strings.Right(filename, 3), 1) = "." Then
+                    retstr = Strings.Left(filename, filename.Length - 3)
+                Else
+                    retstr = Strings.Left(filename, filename.Length - 4)
+                End If
+                'retstr = Strings.Left(filename, filename.Length - 4)
+            End If
+        End If
+        Return retstr
+    End Function
 End Module

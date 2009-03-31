@@ -1727,6 +1727,9 @@
   <metadata name="kManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>733, 38</value>
   </metadata>
+  <metadata name="kPalettePink.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>700, 112</value>
+  </metadata>
   <metadata name="kPaletteBlueSkulls.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>171, 22</value>
   </metadata>
@@ -2249,9 +2252,6 @@
   </data>
   <metadata name="kpaletteBlue.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>587, 112</value>
-  </metadata>
-  <metadata name="kPalettePink.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>700, 112</value>
   </metadata>
   <metadata name="kPaletteBling.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>345, 38</value>

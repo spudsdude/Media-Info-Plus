@@ -48,6 +48,8 @@ Namespace xbmcMediaInfo
                 Dim couAS As Integer = 0
                 Dim couSS As Integer = 0
                 Dim vwidthmax As Double = 0
+                Dim vheightmax As Double = 0
+                Dim vaspectdisplayratio As Double = 0
                 Dim achanmax As Double = 0
                 Dim accodec As String = ""
                 Dim alang As String = ""
@@ -59,6 +61,14 @@ Namespace xbmcMediaInfo
                     retStr += "   Width: " + curVS.Width + " -x- "
                     If CDbl(curVS.Width) > vwidthmax Then
                         vwidthmax = CDbl(curVS.Width)
+                        vheightmax = CDbl(curVS.Height)
+                        Dim car As Double = 0
+                        If curVS.Aspectdisplayratio = "" Then
+                            car = 0
+                        Else
+                            car = CDbl(curVS.Aspectdisplayratio)
+                        End If
+                        vaspectdisplayratio = CDbl(car)
                         If curVS.Scantype.ToLower.Contains("progressive") Then
                             scantype = "p"
                         Else
@@ -105,14 +115,53 @@ Namespace xbmcMediaInfo
                 retStr += vbNewLine
                 retStr += "Scanner Version: " & version.ToString
                 If Not couVS = 0 Then 'no video streams, don't write any tag data
-                    statusStr = getrezfromsize(vwidthmax) & scantype & " " & accodec & " " & achanmax & "ch " & alang & subtitleLang
+                    Try
+                        statusStr = getrezfromsize(vwidthmax, vheightmax, vaspectdisplayratio) & scantype & " " & accodec & " " & achanmax & "ch " & alang & subtitleLang
+                    Catch ex As Exception
+                        Debug.Print("Failed to process media information to tag data.")
+                        Return ""
+                    End Try
                 End If
             End If
             Debug.Print(retStr)
             Debug.Print(statusStr)
             Return statusStr
         End Function
-        Private Function getrezfromsize(ByVal curwidth As Double) As String
+        Private Function getrezfromsize(ByVal curwidth As Double, ByVal curheight As Double, ByVal curar As Double) As String
+            'detect Aspect Ratio 
+            Dim calulatedcurar As Double = curwidth / curheight
+            'curar is from the media file and is passed into the function, this is pulled from the media file data in the video
+
+            'strict format
+            If curwidth = 1920 And curheight = 1080 Then Return "1080"
+            If curwidth = 1280 And curheight = 720 Then Return "720"
+            If curwidth = 720 And curheight = 576 Then Return "576"
+            If curwidth = 720 And curheight = 480 Then Return "480"
+            If curwidth = 960 And curheight = 720 Then Return "720"
+            If curwidth = 1366 And curheight = 768 Then Return "768"
+
+            'closest based on widescreen
+            'ask about ar from file
+            Dim arcalcheight As Double
+            Dim maxheight As Double
+            If curar > 1.34 And Not curar = 0 Then
+                arcalcheight = curwidth / 1.777
+                If curheight > arcalcheight Then
+                    maxheight = curheight
+                Else
+                    maxheight = arcalcheight
+                End If
+                If maxheight > 1000 Then Return "1080"
+                If maxheight > 730 Then Return "768"
+                If maxheight > 700 Then Return "720"
+                If maxheight > 550 Then Return "576"
+                If maxheight > 530 Then Return "540"
+                If maxheight > 400 Then Return "480"
+            End If
+
+            'loose format
+            If curwidth = 1920 And curheight > 700 Then Return "1080"
+            If curwidth = 1280 And curheight > 400 Then Return "720"
             If curwidth < 20 Then Return ""
             If curwidth < 641 Then Return "SD"
             If curwidth < 853 Then Return "480"
@@ -135,8 +184,9 @@ Namespace xbmcMediaInfo
                 For Each curVS As Video In xmifi.streamdetails.Video
                     couVS += 1
                     To_Display += "Video Stream " + couVS.ToString + vbNewLine
-                    To_Display += "   Width: " + curVS.Width + " -x- "
-                    To_Display += "Height: " + curVS.Height + vbNewLine
+                    To_Display += "   Size: " + curVS.Width + "x" + curVS.Height
+                    To_Display += "   Display Aspect Ratio: " + curVS.Aspectdisplayratio + vbNewLine
+                    'To_Display += "Height: " + curVS.Height + vbNewLine
                     To_Display += "   Codec: " + curVS.Codec + vbNewLine
                     To_Display += "   Format Info: " + curVS.Formatinfo + vbNewLine
                     To_Display += "   Duration/String1: " + curVS.Duration + vbNewLine
@@ -277,7 +327,7 @@ Namespace xbmcMediaInfo
         Private p_element_codecid As System.String
         Private p_element_codecidinfo As System.String
         Private p_element_scantype As System.String
-
+        Private p_element_aspectdisplayratio As System.String
         ' <summary>String width element.</summary>
         <XmlElement("width")> _
         Public Property Width() As System.String
@@ -409,6 +459,17 @@ Namespace xbmcMediaInfo
                 Me.p_element_scantype = Value
             End Set
         End Property
+
+        <XmlElement("aspectdisplayratio")> _
+        Public Property Aspectdisplayratio() As System.String
+            Get
+                Return Me.p_element_aspectdisplayratio
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_aspectdisplayratio = Value
+            End Set
+        End Property
+
     End Class
 
     ' <summary>Represents a fileinfo.audio node.</summary>

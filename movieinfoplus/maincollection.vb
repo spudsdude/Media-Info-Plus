@@ -67,7 +67,7 @@ Public Class maincollection
     Public lconcat As String = "&"
     Public dltype As String = "large"
     Dim allmovieslist As New ArrayList
-    Private messageprompts As Boolean = True
+    Public Shared messageprompts As Boolean = True
     Private showposter As Boolean = True
     Private showfanart As Boolean = True
     Dim currentmovie As movie
@@ -80,7 +80,7 @@ Public Class maincollection
     Public curtvshowiconsetting As String = ""
     Public currentTVShowSelectedNameXMLfile As String = ""
     Public curtvshowpicturboxtoupdate As PictureBox
-    Public moviemode As String = "folder" 'either file or folder, folder is default
+    Public Shared moviemode As String = "folder" 'either file or folder, folder is default
     Public curtmdbfacount As Integer = 0
     Public curtmdbpostercounter As Integer = 0
     Public curtimppostercounter As Integer = 0
@@ -221,7 +221,7 @@ Public Class maincollection
         'lblPbar.BringToFront()
         
         bwDisplayMovieData.ReportProgress(1, "-- Working On: " + dname + "--") 'lblPbar.Text = "-- Working On: " + dname + "--"
-            'If Me.messageprompts Then Me.Refresh()()
+            'If messageprompts Then Me.Refresh()()
 
             ' ---- IMDB AND NFO -----
             Dim hasnfoalready As Boolean = False
@@ -245,15 +245,15 @@ Public Class maincollection
 
             '-------------------------------- IMDB Information and .nfo file creation 
         If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-            'If Me.messageprompts Then lblPbar.Text = "-- Getting IMDB for " + tmovie.getmoviename.ToString + "--"
-            ''If Me.messageprompts Then Me.Refresh()()
+            'If messageprompts Then lblPbar.Text = "-- Getting IMDB for " + tmovie.getmoviename.ToString + "--"
+            ''If messageprompts Then Me.Refresh()()
             If currentmovie.pimdbnumber = "" Then
                 bwDisplayMovieData.ReportProgress(2, "no id in movie, grabbing imdb info")
                 bwDisplayMovieData.ReportProgress(3, "-- Connecting to IMDB: " + dname + "--")
-                'If Me.messageprompts Then Me.Refresh()()
+                'If messageprompts Then Me.Refresh()()
                 Dim tstringofimdbpage As String = getimdbidsearch(dname)
                 bwDisplayMovieData.ReportProgress(4, " -- Searching IMDB for: " + dname + "--")
-                'If Me.messageprompts Then Me.Refresh()()
+                'If messageprompts Then Me.Refresh()()
                 currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
             Else
                 'do not grab the data, we know the id already
@@ -269,14 +269,14 @@ Public Class maincollection
                     bwDisplayMovieData.ReportProgress(6, ".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
                 Else
                     bwDisplayMovieData.ReportProgress(7, "NO XML: Connecting to IMDB ") ' " + dname + "--")
-                    'If Me.messageprompts Then Me.Refresh()()
+                    'If messageprompts Then Me.Refresh()()
                     If Not haveidonly Then
                         'no nfo so get the data
                         bwDisplayMovieData.ReportProgress(8, "-- Searching IMDB -- ") '  + dname + "--")
-                        'If Me.messageprompts Then Me.Refresh()()
+                        'If messageprompts Then Me.Refresh()()
                         Dim tstringofimdbpage As String = getimdbidsearch(dname)
                         bwDisplayMovieData.ReportProgress(9, "-- Gathering IMDB -- ") ' + dname + "--")
-                        'If Me.messageprompts Then Me.Refresh()()
+                        'If messageprompts Then Me.Refresh()()
                         currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
                         snagyear(dname, currentmovie, tstringofimdbpage)
                     End If
@@ -284,11 +284,11 @@ Public Class maincollection
                     Dim imdbinfo As New IMDB
                     Dim imdbidtemp As String = currentmovie.getimdbid
                     If imdbidtemp = "" Then
-                        If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+                        If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
                         bwDisplayMovieData.ReportProgress(10, "NO IMDB DATA FOUND") ', UNABLE TO SAVE NFO FILE")
                     Else
                         bwDisplayMovieData.ReportProgress(11, "-- Parsing IMDB -- ") ' + dname + "--")
-                        'If Me.messageprompts Then Me.Refresh()()
+                        'If messageprompts Then Me.Refresh()()
                         imdbinfo = imdbparse(imdbidtemp)
                         'save xml to imdbcache reguardless of gui setting to write nfo
                         ' tmovie.Actors = imdbinfo.Actors
@@ -314,7 +314,7 @@ Public Class maincollection
                 Dim impaname As String = cleanname(dname)
             If rconf.pcbDownloadPoster Then
                 bwDisplayMovieData.ReportProgress(21, "-- Gathering IMP Poster Data -- ") ' + dname + "--")
-                'If Me.messageprompts Then Me.Refresh()()
+                'If messageprompts Then Me.Refresh()()
                 Dim nolinksinxml As Boolean = False
                 If File.Exists(rconf.xmlfolderposters + impaname + ".xml") Then
                     Dim curposter As New posters
@@ -333,8 +333,8 @@ Public Class maincollection
                 End If
 
                 If nolinksinxml = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     Debug.Print("When Getting Posters: Blank XML or No XML for: " + impaname)
                     'no poster xml, revert to older method of finding poster 
                     
@@ -345,29 +345,29 @@ Public Class maincollection
         '-- END NEW POSTER CODE --
             'get fanart - first check to see if it's enabled
         If rconf.pcbGetTMDBPosters Then
-            If Me.messageprompts Then lblPbar.Text = "-- Getting TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
-            'If Me.messageprompts Then Me.Refresh()()
+            If messageprompts Then lblPbar.Text = "-- Getting TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
+            'If messageprompts Then Me.Refresh()()
             getpostersfromtmdb(currentmovie, ais, True) 'move this to the correct location once a gui option is there for it
         End If
         bwDisplayMovieData.ReportProgress(40, "-- Completed IMP Poster Data -- ")
             'get fanart - first check to see if it's enabled
             If rconf.pcbGetFanart Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Fanart: " + currentmovie.getmoviename.ToString + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Fanart: " + currentmovie.getmoviename.ToString + "--"
+                'If messageprompts Then Me.Refresh()()
                 getfanart(currentmovie, ais, True)
             End If
 
 
         If rconf.pdisplayfanart Then
-            If Me.messageprompts Then lblPbar.Text = "-- Preparing Fanart for " + dname + "--"
+            If messageprompts Then lblPbar.Text = "-- Preparing Fanart for " + dname + "--"
             Dim haslocalfanart As Boolean = False
             If FileExists(curpath + "\" + tbnewname.Text + "-fanart.jpg") Then
-                Debug.Print("Fanart file already exists: " + lblCurMovieFolder.Text + "\" + dname + "-fanart.jpg")
+                'Debug.Print("Fanart file already exists: " + lblCurMovieFolder.Text + "\" + dname + "-fanart.jpg")
                 haslocalfanart = True
             Else
                 If rconf.pcbGetFanart Then 'get fanart checked
-                    If Me.messageprompts Then lblPbar.Text = "-- Sorting Fanart for " + dname + "--__ "
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Sorting Fanart for " + dname + "--__ "
+                    'If messageprompts Then Me.Refresh()()
                     If rbem.Checked = True Then 'working online 
                         If currentmovie.pimdbnumber = "" Then
                             Debug.Print("No Imdb id in movie object tmovie, no attempt made to download - Fanart ")
@@ -406,8 +406,8 @@ Public Class maincollection
         'end of fanart
         'display movie name and information in gui
         'read up .nfo file from xml
-            If Me.messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
-            'If Me.messageprompts Then Me.Refresh()()
+            If messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
+            'If messageprompts Then Me.Refresh()()
             If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") And Not currentmovie.pdatafromnfo Then 'tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo") Then
                 Dim timdb As New IMDB
             timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder) 'parses movie from the xml file
@@ -427,64 +427,64 @@ Public Class maincollection
                 Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
                 If rconf.pcbf1s0 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                     End If
                     getdisplayimages(selectedNameXMLfile, "1", "2", "0")
                 End If
                 If rconf.pcbf1s3 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                     End If
                     getdisplayimages(selectedNameXMLfile, "1", "2", "3")
                 End If
                 If rconf.pcbf1s9 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                     End If
                     getdisplayimages(selectedNameXMLfile, "1", "2", "9")
                 End If
                 If rconf.pcbf2s0 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                     End If
                     getdisplayimages(selectedNameXMLfile, "2", "2", "0")
                 End If
                 If rconf.pcbf2s2 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                     End If
                     getdisplayimages(selectedNameXMLfile, "2", "2", "2")
                 End If
                 If rconf.pcbf2s8 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                     End If
                     getdisplayimages(selectedNameXMLfile, "2", "2", "8")
                 End If
                 If rconf.pcbf2s10 Then
                     If rbem.Checked = True Then
-                        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                        If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                        'If messageprompts Then Me.gbDisplay.Refresh()
                         xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                     End If
                     getdisplayimages(selectedNameXMLfile, "2", "2", "10")
                 End If
             'If rconf.cbf3s0 Then
             '    If rbem.Checked = True Then
-            '        If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-            '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+            '        If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+            '        'If messageprompts Then Me.gbDisplay.Refresh()
             '        xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
             '    End If
             '    getdisplayimages(selectedNameXMLfile, "3", "2", "0")
@@ -623,8 +623,8 @@ Public Class maincollection
                             pbCurIconUsed2.BringToFront()
                             'do not attempt transparency
                         Else
-                            If Me.messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
-                            'If Me.messageprompts Then Me.Refresh()()
+                            If messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
+                            'If messageprompts Then Me.Refresh()()
                             Debug.Print("start: " + TimeString())
                             Dim bmp As New Bitmap(currentmovie.getmoviepath + "\folder.jpg")
                             Dim gp As New System.Drawing.Drawing2D.GraphicsPath
@@ -729,7 +729,7 @@ Public Class maincollection
         Dim tmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
         lblPbar.Visible = True
         lblPbar.Text = " ____---- WORKING ON: " + tmovie.getmoviename.ToString + "----____ "
-        If Me.messageprompts Then Me.gbDisplay.Refresh()
+        If messageprompts Then Me.gbDisplay.Refresh()
         'see if a folder icon exsists 
         Dim Path As String = tmovie.getmoviepath
         'pbCurIconUsed.ImageLocation = Path + "\folder.jpg"
@@ -1607,260 +1607,9 @@ Public Class maincollection
         ' mymovies.Show()
 
     End Sub
-    Public Function stripstackforfilemode(ByVal moviename As String) As String
-        Dim filteredname As String = ""
-        If Not moviemode = "file" Then
-            Return moviename
-            Exit Function
-        End If
+   
 
-        ''strip out anything in parans
-        'Try
-        '    moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
-        'Catch ex As Exception
-        '    Debug.Print(ex.ToString)
-        'End Try
-
-        'strip out cd multipart
-        Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj.Match(moviename).Groups(1).Value, "")
-        'strip out dvd multipart
-        Dim RegexObj2 As New Regex("(([ _\.-]+dvd)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj2.Match(moviename).Groups(1).Value, "")
-        'strip out part multipart
-        Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
-        Return moviename
-        'End If
-
-    End Function
-
-    Private Function namefilterforfilemode(ByVal moviename As String) As String
-        Dim filteredname As String = ""
-        'If moviemode = "file" Then
-        'strip out anything in parans
-        Try
-            moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
-        Catch ex As Exception
-            Debug.Print(ex.ToString)
-        End Try
-
-        'strip out cd multipart
-        Dim RegexObj As New Regex("(([ _\.-]+cd)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj.Match(moviename).Groups(1).Value, "")
-        'strip out dvd multipart
-        Dim RegexObj2 As New Regex("(([ _\.-]+dvd)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj2.Match(moviename).Groups(1).Value, "")
-        'strip out part multipart
-        Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
-        moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
-        ''strip out dvd 
-        'Dim RegexObj3 As New Regex("(([ _\.-]+part)[ _\.-]*([0-9a-d]+))")
-        'moviename = Strings.Replace(moviename, RegexObj3.Match(moviename).Groups(1).Value, "")
-        'strip out use selected objects (like divx, xvid, ac3, etc) .. not yet configured
-        'TODO: Add user selectable options here
-
-        'strip out anything past a token that parses moviename
-        'Try
-        '    Dim RegexObj4 As New Regex("[_-]+.*")
-        '    moviename = RegexObj4.Match(moviename).Groups(1).Value
-        'Catch ex As ArgumentException
-        '    'Syntax error in the regular expression
-        'End Try
-
-        If rconf.pcbFilterNameFileModeEverythingBeforeh264 Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)h264", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBeforex264 Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)x264", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBefore720p Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)720p", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBefore1080i Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)1080i", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBefore1080p Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)1080p", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBeforeYear Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)[\\([]{0,1}\d{4}", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-
-        If rconf.pcbFilterNameFileModeEverythingBeforeDash Then
-            Dim ResultString As String = ""
-            Try
-                Dim RegexObjDate As New Regex("(.*)-", RegexOptions.IgnoreCase)
-                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If Not String.IsNullOrEmpty(ResultString) Then
-                moviename = ResultString
-            End If
-        End If
-        'change periods to spaces
-        moviename = Strings.Replace(moviename, ".", " ")
-        'change underscores to spaces
-        moviename = Strings.Replace(moviename, "_", " ")
-
-        'make sure there's not a space at the end of the name, check 3 times
-        moviename = Strings.Trim(moviename)
-
-
-        'End If
-
-        filteredname = moviename
-        Return filteredname
-    End Function
-    Private Function namefilter(ByVal moviename As String) As String
-        Dim filteredname As String = ""
-
-        If rconf.pcbFilterUnderscoreDot Then
-            moviename = Strings.Replace(moviename, "_", " ")
-            moviename = Strings.Replace(moviename, ".", " ")
-        End If
-
-        If rconf.pcbFilter1080p Then
-            moviename = Strings.Replace(moviename, " (1080p)", "")
-            moviename = Strings.Replace(moviename, " (1080P)", "")
-        End If
-        If rconf.pcbFilter720p Then
-            moviename = Strings.Replace(moviename, " (720p)", "")
-            moviename = Strings.Replace(moviename, " (720P)", "")
-        End If
-        If rconf.pcbFilterAvi Then
-            moviename = Strings.Replace(moviename, " (Avi)", "")
-            moviename = Strings.Replace(moviename, " (avi)", "")
-        End If
-        If rconf.pcbFilterBluRay Then
-            moviename = Strings.Replace(moviename, " (blu-ray)", "")
-            moviename = Strings.Replace(moviename, " (Blu-ray)", "")
-            moviename = Strings.Replace(moviename, " (Blu-Ray)", "")
-        End If
-        If rconf.pcbFilterCustom1_enabled Then
-            moviename = Strings.Replace(moviename, rconf.pcbFilterCustom1, "")
-        End If
-        If rconf.pcbFilterCustom2_enabled Then
-            moviename = Strings.Replace(moviename, rconf.pcbFilterCustom2, "")
-        End If
-        If rconf.pcbFilterCustom3_enabled Then
-            moviename = Strings.Replace(moviename, rconf.pcbFilterCustom3, "")
-        End If
-        If rconf.pcbFilterCustom4_enabled Then
-            moviename = Strings.Replace(moviename, rconf.pcbFilterCustom4, "")
-        End If
-        If rconf.pcbFilterCustom5_enabled Then
-            moviename = Strings.Replace(moviename, rconf.pcbFilterCustom5, "")
-        End If
-        If rconf.pcbFilterDivx Then
-            moviename = Strings.Replace(moviename, " (Divx)", "")
-            moviename = Strings.Replace(moviename, " (divx)", "")
-        End If
-        If rconf.pcbFilterDVD Then
-            moviename = Strings.Replace(moviename, " (DVD)", "")
-            moviename = Strings.Replace(moviename, " (dvd)", "")
-        End If
-        If rconf.pcbFilterH264 Then
-            moviename = Strings.Replace(moviename, " (H264)", "")
-            moviename = Strings.Replace(moviename, " (h264)", "")
-        End If
-        If rconf.pcbFilterHidef Then
-            moviename = Strings.Replace(moviename, " (hidef)", "")
-        End If
-        If rconf.pcbFilterLq Then
-            moviename = Strings.Replace(moviename, " (lq)", "")
-            moviename = Strings.Replace(moviename, " (LQ)", "")
-        End If
-        If rconf.pcbFilterXvid Then
-            moviename = Strings.Replace(moviename, " (xvid)", "")
-            moviename = Strings.Replace(moviename, " (Xvid)", "")
-        End If
-        If rconf.pcbFilter1080i Then
-            moviename = Strings.Replace(moviename, " (1080i)", "")
-            moviename = Strings.Replace(moviename, " (1080I)", "")
-        End If
-        If rconf.pcbFilterYears Then
-            Try
-                moviename = Strings.Replace(moviename, Regex.Match(moviename, "( \(\d{4}\))").Groups(1).Value, "")
-            Catch ex As Exception
-                Debug.Print(ex.ToString)
-            End Try
-        End If
-        If rconf.pcbIgnoreparans Then
-            Try
-                moviename = Strings.Replace(moviename, Regex.Match(moviename, "(\(.*?\))").Groups(1).Value, "")
-            Catch ex As Exception
-                Debug.Print(ex.ToString)
-            End Try
-        End If
-        moviename = Strings.Trim(moviename)
-        'strip out the ( and ) from moviename
-        'moviename = Strings.Replace(moviename, "(", "")
-        'moviename = Strings.Replace(moviename, ")", "")
-        filteredname = moviename
-        Return filteredname
-
-    End Function
+   
     Public Sub readfolderdatafordropdown()
 
         'Exit Sub
@@ -2277,7 +2026,7 @@ Public Class maincollection
         ''set config to imdb only config (ic)
         'setactiveconf(ic)
         ''set messageprompts boolean to false so no prompts are done
-        'Me.messageprompts = False
+        'messageprompts = False
         'Me.showposter = False
 
         'for dev or major update use remove all cached xmls
@@ -2325,7 +2074,7 @@ Public Class maincollection
         'bkconf = bkconf.getconfig("config-backup")
         'setactiveconf(bkconf)
         'MsgBox("Done Updating Nfo files")
-        'Me.messageprompts = True
+        'messageprompts = True
         'Me.showposter = True
         'fwdbackbuttons()
     End Sub
@@ -2395,10 +2144,9 @@ Public Class maincollection
 
     End Sub
     Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean)
-        Me.messageprompts = True
-        If Me.messageprompts Then resetanddisableimages()
+        messageprompts = True
+        If messageprompts Then resetanddisableimages()
         Me.pbar1.Visible = True
-        ''If Me.messageprompts Then Me.Refresh()()
         pbar1.Value = pbar1.Maximum
         lblPbar.Visible = True
 
@@ -2407,8 +2155,7 @@ Public Class maincollection
         Dim cursettingOverwrite As Boolean = rconf.pcbOverwriteNFO
         rconf.pcbOverwriteNFO = overwritenfoTru
 
-        Dim tmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
-        currentmovie = tmovie
+        Dim currentmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
         If currentmovie.pfilemode = True Then
             moviemode = "file"
         Else
@@ -2416,171 +2163,168 @@ Public Class maincollection
         End If
         Dim cmpath As String = currentmovie.getmoviepath
         Dim dname As String
-        dname = tmovie.getmoviename
+        dname = currentmovie.getmoviename
         lblPbar.Text = "WORKING ON: " + dname
-        If Me.messageprompts Then Me.Refresh()
-        Dim Path As String = tmovie.getmoviepath
-        Debug.Print(Path)
-
-        'hide cur icons, no gui display update used in autopilot
+        If messageprompts Then Me.Refresh()
+        
         pbCurIconUsed.Hide()
         pbCurIconUsed2.Hide()
 
-        'see if nfo file exsists for movie, first in the folder, then in the poster xmls
-        Dim hasidonly As Boolean = checkforIMDBIDinnfofile(tmovie)
-        If Not hasidonly Then
-            'if there is no nfo file, check for a poster file (they have the imdbid in them)
-            hasidonly = checkforposterfiletogetimdbid(tmovie)
-        End If
+        ''see if nfo file exsists for movie, first in the folder, then in the poster xmls
+        'Dim hasidonly As Boolean = checkforIMDBIDinnfofile(currentmovie)
+        'If Not hasidonly Then
+        '    'if there is no nfo file, check for a poster file (they have the imdbid in them)
+        '    hasidonly = checkforposterfiletogetimdbid(currentmovie)
+        'End If
 
-        Dim selectedName As String = tmovie.getmoviename
-        tbnewname.Text = selectedName
+        Dim selectedName As String = currentmovie.getmoviename
+        'tbnewname.Text = selectedName
 
-        'you must always set the lblCurMovieFolder, it's used everywhere
-        lblCurMovieFolder.Text = tmovie.getmoviepath
+        ''you must always set the lblCurMovieFolder, it's used everywhere
+        ' lblCurMovieFolder.Text = currentmovie.getmoviepath
         Dim selectedNameXMLfile As String
         selectedNameXMLfile = Strings.Replace(selectedName, " ", ".")
-        tmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
+        currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
+
+        checknfodata(currentmovie, dname, rbem.Checked)
+
+        '' '' ''---
+        '' '' '' ---- IMDB AND NFO -----
+        ' '' ''Dim hasnfoalready As Boolean = False
+        ' '' ''Dim haveidonly As Boolean = False
+        '' '' ''see if movie data was loaded from nfo file during folder scan
+        ' '' ''If Not currentmovie.pdatafromnfo Then
+        ' '' ''    'we don't have data so try to get it
+        ' '' ''    'see if nfo file exsists for movie, if it does, read it up to speed it up
+        ' '' ''    haveidonly = checkforIMDBIDinnfofile(currentmovie)
+        ' '' ''    If Not haveidonly Then
+        ' '' ''        'if there is no nfo file, check for a poster file (they have the imdbid in them)
+        ' '' ''        haveidonly = checkforposterfiletogetimdbid(currentmovie)
+        ' '' ''    End If
+        ' '' ''Else
+        ' '' ''    hasnfoalready = True
+        ' '' ''End If
+        '' '' ''see if a folder icon exsists 
+
+        '' '' ''?        pbCurIconUsed.Enabled = True
 
 
+        '' '' ''-------------------------------- IMDB Information and .nfo file creation 
+        ' '' ''If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
+        ' '' ''    If messageprompts Then lblPbar.Text = "Getting IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
+        ' '' ''    'If messageprompts Then Me.Refresh()()
+        ' '' ''    If currentmovie.pimdbnumber = "" Then
+        ' '' ''        Debug.Print("no id in movie, grabbing imdb info")
+        ' '' ''        If messageprompts Then lblPbar.Text = "Connecting to IMDB for information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
+        ' '' ''        'If messageprompts Then Me.Refresh()()
+        ' '' ''        Dim stringofimdbpage As String = getimdbidsearch(dname)
+        ' '' ''        If messageprompts Then lblPbar.Text = "Searching IMDB for information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
+        ' '' ''        'If messageprompts Then Me.Refresh()()
+        ' '' ''        currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, stringofimdbpage)
+        ' '' ''    Else
+        ' '' ''        'do not grab the data, we know the id already
+        ' '' ''        'hasnfoalready = True
+        ' '' ''        Debug.Print("we have an id, not parseing imdb again for it")
+        ' '' ''    End If
+        ' '' ''    'getimdbidsearchwithwget(currentmovie)
 
-        '---
-        ' ---- IMDB AND NFO -----
-        Dim hasnfoalready As Boolean = False
-        Dim haveidonly As Boolean = False
-        'see if movie data was loaded from nfo file during folder scan
-        If Not tmovie.pdatafromnfo Then
-            'we don't have data so try to get it
-            'see if nfo file exsists for movie, if it does, read it up to speed it up
-            haveidonly = checkforIMDBIDinnfofile(tmovie)
-            If Not haveidonly Then
-                'if there is no nfo file, check for a poster file (they have the imdbid in them)
-                haveidonly = checkforposterfiletogetimdbid(tmovie)
-            End If
-        Else
-            hasnfoalready = True
-        End If
-        'see if a folder icon exsists 
-
-        '?        pbCurIconUsed.Enabled = True
-
-
-        '-------------------------------- IMDB Information and .nfo file creation 
-        If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-            If Me.messageprompts Then lblPbar.Text = "Getting IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-            'If Me.messageprompts Then Me.Refresh()()
-            If tmovie.pimdbnumber = "" Then
-                Debug.Print("no id in movie, grabbing imdb info")
-                If Me.messageprompts Then lblPbar.Text = "Connecting to IMDB for information for " + tmovie.getmoviename.ToString + "--__ "
-                'If Me.messageprompts Then Me.Refresh()()
-                Dim stringofimdbpage As String = getimdbidsearch(dname)
-                If Me.messageprompts Then lblPbar.Text = "Searching IMDB for information for " + tmovie.getmoviename.ToString + "--__ "
-                'If Me.messageprompts Then Me.Refresh()()
-                tmovie.pimdbnumber = snagimdbid_dlg(dname, tmovie, stringofimdbpage)
-            Else
-                'do not grab the data, we know the id already
-                'hasnfoalready = True
-                Debug.Print("we have an id, not parseing imdb again for it")
-            End If
-            'getimdbidsearchwithwget(tmovie)
-
-            If rbem.Checked = True Then 'download mode
-                If File.Exists(rconf.imdbcachefolder + "/" + tmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-                    'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-                    'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-                    Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-                Else
-                    If Not haveidonly Then
-                        'no nfo so get the data
-                        'getimdbidsearch(dname)
-                        Dim tstringofimdbpage As String = getimdbidsearch(dname)
-                        tmovie.pimdbnumber = snagimdbid_dlg(dname, tmovie, tstringofimdbpage)
-                        snagyear(dname, tmovie, tstringofimdbpage)
-                    End If
-                    ' getimdbdata(tmovie)
-                    Dim imdbinfo As New IMDB
-                    Dim imdbidtemp As String = tmovie.getimdbid
-                    If imdbidtemp = "" Then
-                        ' If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                        Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                    Else
-                        imdbinfo = imdbparse(imdbidtemp)
-                        'save xml to imdbcache reguardless of gui setting to write nfo
-                        ' tmovie.Actors = imdbinfo.Actors
-                        imdbinfo.writeIMDBXML(imdbinfo, tmovie, rconf.imdbcachefolder, True)
-                        'If cbSaveNFO.Checked Then
-                        '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-                        '    tmovie.saveimdbinfo(tmovie)
-                        'End If
-                    End If
-                End If
-            End If
-        End If
-        '---
-        '-----IMDB Information and .nfo file creation 
-        'Dim hasnfoalready As Boolean = False
-        'If rconf.pcbGetIMDBInfo Then 'get imdb info
-        '    lblPbar.Text = " __-- Getting IMDB Information for " + dname + "--__ "
-        '    ' Me.Refresh()
-        '    If tmovie.pimdbnumber = "" Then
-        '        Debug.Print("no id in movie, grabbing imdb info")
-        '        getimdbidsearch(tmovie.getmoviename)
-        '        snagimdbid(tmovie.getmoviename, tmovie)
-        '    Else
-        '        'do not grab the data, we know the id already
-        '        hasnfoalready = True
-        '        Debug.Print("we have an id, not parseing imdb again for it")
-        '    End If
-        '    'getimdbidsearchwithwget(tmovie)
-        '    If rbem.Checked = True Then
-        '        If File.Exists(rconf.imdbcachefolder + "/" + tmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-        '            'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-        '            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-        '            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-        '        Else
-        '            If Not hasnfoalready Then
-        '                'no nfo so get the data
-        '                getimdbidsearch(tmovie.getmoviename)
-        '                snagimdbid(tmovie.getmoviename, tmovie)
-        '                snagyear(tmovie.getmoviename, tmovie)
-        '            End If
-        '            ' getimdbdata(tmovie)
-        '            Dim imdbinfo As New IMDB
-        '            Dim imdbidtemp As String = tmovie.getimdbid
-        '            If imdbidtemp = "" Then
-        '                If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        '                Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        '            Else
-        '                imdbinfo = imdbparse(imdbidtemp)
-        '                'save xml to imdbcache reguardless of gui setting to write nfo
-        '                imdbinfo.writeIMDBXML(imdbinfo, tmovie, rconf.imdbcachefolder, True)
-        '                'If cbSaveNFO.Checked Then
-        '                '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-        '                '    tmovie.saveimdbinfo(tmovie)
-        '                'End If
-        '            End If
-        '        End If
-        '    End If
-        'End If
+        ' '' ''    If rbem.Checked = True Then 'download mode
+        ' '' ''        If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
+        ' '' ''            'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
+        ' '' ''            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
+        ' '' ''            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
+        ' '' ''        Else
+        ' '' ''            If Not haveidonly Then
+        ' '' ''                'no nfo so get the data
+        ' '' ''                'getimdbidsearch(dname)
+        ' '' ''                Dim tstringofimdbpage As String = getimdbidsearch(dname)
+        ' '' ''                currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
+        ' '' ''                snagyear(dname, currentmovie, tstringofimdbpage)
+        ' '' ''            End If
+        ' '' ''            ' getimdbdata(currentmovie)
+        ' '' ''            Dim imdbinfo As New IMDB
+        ' '' ''            Dim imdbidtemp As String = currentmovie.getimdbid
+        ' '' ''            If imdbidtemp = "" Then
+        ' '' ''                ' If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+        ' '' ''                Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+        ' '' ''            Else
+        ' '' ''                imdbinfo = imdbparse(imdbidtemp)
+        ' '' ''                'save xml to imdbcache reguardless of gui setting to write nfo
+        ' '' ''                ' currentmovie.Actors = imdbinfo.Actors
+        ' '' ''                imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
+        ' '' ''                'If cbSaveNFO.Checked Then
+        ' '' ''                '    'imdbinfo.writeIMDBXML(imdbinfo, currentmovie)
+        ' '' ''                '    currentmovie.saveimdbinfo(currentmovie)
+        ' '' ''                'End If
+        ' '' ''            End If
+        ' '' ''        End If
+        ' '' ''    End If
+        ' '' ''End If
+        '' '' ''---
+        '' '' ''-----IMDB Information and .nfo file creation 
+        '' '' ''Dim hasnfoalready As Boolean = False
+        '' '' ''If rconf.pcbGetIMDBInfo Then 'get imdb info
+        '' '' ''    lblPbar.Text = " __-- Getting IMDB Information for " + dname + "--__ "
+        '' '' ''    ' Me.Refresh()
+        '' '' ''    If currentmovie.pimdbnumber = "" Then
+        '' '' ''        Debug.Print("no id in movie, grabbing imdb info")
+        '' '' ''        getimdbidsearch(currentmovie.gecurrentmoviename)
+        '' '' ''        snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
+        '' '' ''    Else
+        '' '' ''        'do not grab the data, we know the id already
+        '' '' ''        hasnfoalready = True
+        '' '' ''        Debug.Print("we have an id, not parseing imdb again for it")
+        '' '' ''    End If
+        '' '' ''    'getimdbidsearchwithwget(currentmovie)
+        '' '' ''    If rbem.Checked = True Then
+        '' '' ''        If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
+        '' '' ''            'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
+        '' '' ''            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
+        '' '' ''            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
+        '' '' ''        Else
+        '' '' ''            If Not hasnfoalready Then
+        '' '' ''                'no nfo so get the data
+        '' '' ''                getimdbidsearch(currentmovie.gecurrentmoviename)
+        '' '' ''                snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
+        '' '' ''                snagyear(currentmovie.gecurrentmoviename, currentmovie)
+        '' '' ''            End If
+        '' '' ''            ' getimdbdata(currentmovie)
+        '' '' ''            Dim imdbinfo As New IMDB
+        '' '' ''            Dim imdbidtemp As String = currentmovie.getimdbid
+        '' '' ''            If imdbidtemp = "" Then
+        '' '' ''                If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+        '' '' ''                Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+        '' '' ''            Else
+        '' '' ''                imdbinfo = imdbparse(imdbidtemp)
+        '' '' ''                'save xml to imdbcache reguardless of gui setting to write nfo
+        '' '' ''                imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
+        '' '' ''                'If cbSaveNFO.Checked Then
+        '' '' ''                '    'imdbinfo.writeIMDBXML(imdbinfo, currentmovie)
+        '' '' ''                '    currentmovie.saveimdbinfo(currentmovie)
+        '' '' ''                'End If
+        '' '' ''            End If
+        '' '' ''        End If
+        '' '' ''    End If
+        '' '' ''End If
 
         'get fanart
         If fanartTru Then
-            If Me.messageprompts Then lblPbar.Text = " -- Fanart -- "
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then lblPbar.Text = " -- Fanart -- "
+            If messageprompts Then Me.Refresh()
             'try local first
             Dim haslocalfanart As Boolean = False
             If FileExists(cmpath + "\" + dname + "-fanart.jpg") Or File.Exists(cmpath + "\fanart.jpg") Or File.Exists(cmpath + "\fanart.png") Then
                 Debug.Print("Fanart file already exists: ") ' + cmpath + "\" + dname + "-fanart.jpg")
                 haslocalfanart = True
             Else
-                If Me.messageprompts Then lblPbar.Text = " -- Getting Fanart for " + dname + "-- "
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then lblPbar.Text = " -- Getting Fanart for " + dname + "-- "
+                If messageprompts Then Me.Refresh()
 
                 If rbem.Checked = True Then 'working online 
-                    If tmovie.pimdbnumber = "" Then
-                        Debug.Print("No Imdb id in movie object tmovie, no attempt made to download - Fanart ")
+                    If currentmovie.pimdbnumber = "" Then
+                        Debug.Print("No Imdb id in movie object currentmovie, no attempt made to download - Fanart ")
                     Else
-                        getfanart(tmovie, True, True)
+                        getfanart(currentmovie, True, True)
                         If Not pbfatmdb1.ImageLocation = "" Then
                             savecfa(pbfatmdb1)
                         End If
@@ -2593,11 +2337,11 @@ Public Class maincollection
 
         'display movie name and information in gui
         'read up .nfo file
-        If Me.messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
-        If Me.messageprompts Then Me.gbDisplay.Refresh()
-        If File.Exists(rconf.imdbcachefolder + tmovie.pimdbnumber + ".xml") Then 'tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo") Then
+        If messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
+        If messageprompts Then Me.gbDisplay.Refresh()
+        If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then 'currentmovie.gecurrentmoviepath + "\" + currentmovie.gecurrentmoviename + ".nfo") Then
             Dim timdb As New IMDB
-            timdb.readIMDBXML(tmovie, rconf.imdbcachefolder)
+            timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder)
         Else
             Debug.Print("display movie name and info - no movie nfo file found")
         End If
@@ -2605,56 +2349,56 @@ Public Class maincollection
         'save info if true, we are always pulling it since we need the data for other areas
         Dim mediapullTru As Boolean = True
         If nfoTru Then
-            'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
+            'imdbinfo.writeIMDBXML(imdbinfo, currentmovie)
             If mediapullTru Then
                 Dim MI As New MediaInfo
-                MI.getdata(tmovie, moviemode)
-                'Debug.Print(tmovie.fileinfo.Video.Height.ToString)
+                MI.getdata(currentmovie, moviemode)
+                'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
                 Debug.Print("UPDATED MEDIA INFO IN .nfo FILE")
             End If
-            If Not tmovie.pimdbnumber = Nothing Then tmovie.saveimdbinfomanual(tmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
         End If
 
         If mediaonly Then
             Dim MI As New MediaInfo
-            MI.getdata(tmovie, moviemode)
-            'Debug.Print(tmovie.fileinfo.Video.Height.ToString)
+            MI.getdata(currentmovie, moviemode)
+            'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
             Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
-            If Not tmovie.pimdbnumber = Nothing Then tmovie.saveimdbinfomanual(tmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
         End If
         'display imdb info
-        gbDisplay.Parent.Text = tmovie.getmoviename
-        Me.tbMovieName.Text = tmovie.getmoviename
-        Me.tbMovieNameE.Text = tmovie.getmoviename
-        Me.tbCredits.Text = tmovie.pcredits
-        Me.tbDirector.Text = tmovie.pdirector
-        Me.tbGenre.Text = tmovie.pgenre
-        Me.tbIMDBID.Text = tmovie.pimdbnumber
-        Me.tbMpaa.Text = tmovie.pmpaa
-        Me.rtbPlotOutline.Text = tmovie.pplotoutline
-        Me.rtbPlot.Text = tmovie.pplot
-        Me.tbRating.Text = tmovie.prating
-        Me.tbOriginalTitle.Text = tmovie.poriginaltitle
-        Me.tbRuntime.Text = tmovie.pruntime
-        Me.rtbTagline.Text = tmovie.ptagline
-        Me.tbVotes.Text = tmovie.pvotes
-        Me.tbStudio.Text = tmovie.pstudio 'tmovie.ptitle
-        Me.tbyear.Text = tmovie.pyear.ToString
-        Me.tbTop250.Text = tmovie.ptop250
-        Me.tbTrailer.Text = tmovie.ptrailer
+        gbDisplay.Parent.Text = currentmovie.getmoviename
+        Me.tbMovieName.Text = currentmovie.getmoviename
+        Me.tbMovieNameE.Text = currentmovie.getmoviename
+        Me.tbCredits.Text = currentmovie.pcredits
+        Me.tbDirector.Text = currentmovie.pdirector
+        Me.tbGenre.Text = currentmovie.pgenre
+        Me.tbIMDBID.Text = currentmovie.pimdbnumber
+        Me.tbMpaa.Text = currentmovie.pmpaa
+        Me.rtbPlotOutline.Text = currentmovie.pplotoutline
+        Me.rtbPlot.Text = currentmovie.pplot
+        Me.tbRating.Text = currentmovie.prating
+        Me.tbOriginalTitle.Text = currentmovie.poriginaltitle
+        Me.tbRuntime.Text = currentmovie.pruntime
+        Me.rtbTagline.Text = currentmovie.ptagline
+        Me.tbVotes.Text = currentmovie.pvotes
+        Me.tbStudio.Text = currentmovie.pstudio 'currentmovie.ptitle
+        Me.tbyear.Text = currentmovie.pyear.ToString
+        Me.tbTop250.Text = currentmovie.ptop250
+        Me.tbTrailer.Text = currentmovie.ptrailer
         Me.tcMain.TabPages("tpcm").Refresh()
 
         'get Movie Poster
         'check to see if posterTru was set
         If posterTru Then
-            Dim impaname As String = cleanname(tmovie.getmoviename)
+            Dim impaname As String = cleanname(currentmovie.getmoviename)
             If rconf.pcbDownloadPoster Then
                 Dim nolinksinxml As Boolean = False
                 'see if the posterxml file exsists in the posters folder
-                If File.Exists(rconf.xmlfolderposters + tmovie.pimdbnumber + ".xml") Then
+                If File.Exists(rconf.xmlfolderposters + currentmovie.pimdbnumber + ".xml") Then
                     Dim curposter As New posters
                     curposter.pmoviename = impaname
-                    curposter.readxml(curposter, rconf.xmlfolderposters, True, tmovie.pimdbnumber)
+                    curposter.readxml(curposter, rconf.xmlfolderposters, True, currentmovie.pimdbnumber)
                     'precacheposter(curposter)
                     If curposter.pposters.Count = 0 Then
                         nolinksinxml = True
@@ -2668,7 +2412,7 @@ Public Class maincollection
 
                 'If nolinksinxml = True Then
                 '    lblPbar.Text = " __-- Getting Poster for " + dname + "--__ "
-                '    If Me.messageprompts Then Me.gbDisplay.Refresh()
+                '    If messageprompts Then Me.gbDisplay.Refresh()
                 '    Debug.Print("When Getting Posters: Blank XML or No XML for: " + impaname)
                 '    'no poster xml, revert to older method of finding poster
                 '    If rconf.pcbGetIMDBInfo Then
@@ -2676,19 +2420,19 @@ Public Class maincollection
                 '    Else
                 '        'get imdb info since we need the movie year
                 '        If rbem.Checked = True Then
-                '            getimdbidsearch(tmovie.getmoviename)
-                '            snagimdbid(tmovie.getmoviename, tmovie)
-                '            snagyear(tmovie.getmoviename, tmovie)
+                '            getimdbidsearch(currentmovie.gecurrentmoviename)
+                '            snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
+                '            snagyear(currentmovie.gecurrentmoviename, currentmovie)
                 '        End If
                 '    End If
 
                 '    'old method of posters, used when no poster xml is found, limited to 2 posters to speed up processing
                 '    If rbem.Checked = True Then
                 '        Dim postericons As New icontoxml
-                '        postericons.seticon1("http://www.impawards.com/" + Convert.ToString(tmovie.getyear) + "/posters/" + impaname + ".jpg")
-                '        postericons.seticon2("http://www.impawards.com/" + Convert.ToString(tmovie.getyear) + "/posters/" + impaname + "_ver1.jpg")
-                '        postericons.seticon3("http://www.impawards.com/" + Convert.ToString(tmovie.getyear) + "/posters/" + impaname + "_ver2.jpg")
-                '        postericons.seticon4("http://www.impawards.com/" + Convert.ToString(tmovie.getyear) + "/posters/" + impaname + "_ver3.jpg")
+                '        postericons.seticon1("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + ".jpg")
+                '        postericons.seticon2("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver1.jpg")
+                '        postericons.seticon3("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver2.jpg")
+                '        postericons.seticon4("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver3.jpg")
                 '        postericons.savexmliconwriter(postericons, selectedNameXMLfile, "070", "0", "0")
                 '    End If
 
@@ -2758,28 +2502,28 @@ Public Class maincollection
             'case primary switch
             Select Case primary
                 Case "f1s0"
-                    xmlDownload(tmovie, xmltemppathname, "1", "2", "0") 'square no style
+                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                     getdisplayimages(selectedNameXMLfile, "1", "2", "0")
                 Case "f1s3"
-                    xmlDownload(tmovie, xmltemppathname, "1", "2", "3") 'square box shot
+                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                     getdisplayimages(selectedNameXMLfile, "1", "2", "3")
                 Case "f1s9"
-                    xmlDownload(tmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
+                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                     getdisplayimages(selectedNameXMLfile, "1", "2", "9")
                 Case "f2s0"
-                    xmlDownload(tmovie, xmltemppathname, "2", "2", "0") 'wide no style
+                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                     getdisplayimages(selectedNameXMLfile, "2", "2", "0")
                 Case "f2s2"
-                    xmlDownload(tmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
+                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                     getdisplayimages(selectedNameXMLfile, "2", "2", "2")
                 Case "f2s8"
-                    xmlDownload(tmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
+                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                     getdisplayimages(selectedNameXMLfile, "2", "2", "8")
                 Case "f2s10"
-                    xmlDownload(tmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
+                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                     getdisplayimages(selectedNameXMLfile, "2", "2", "10")
                 Case "f3s0" ' not used yet ' tall icons
-                    'xmlDownload(tmovie, xmltemppathname, "3", "2", "0") 'tall no style
+                    'xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
                     'getdisplayimages(selectedNameXMLfile, "3", "2", "0")
                 Case "poster"
                     'nothing to download here, it's done already
@@ -2949,28 +2693,28 @@ Public Class maincollection
                 Debug.Print("-------------------------- SECONDARY ICON USED ---------------------------")
                 Select Case secondary
                     Case "f1s0"
-                        xmlDownload(tmovie, xmltemppathname, "1", "2", "0") 'square no style
+                        xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                         getdisplayimages(selectedNameXMLfile, "1", "2", "0")
                     Case "f1s3"
-                        xmlDownload(tmovie, xmltemppathname, "1", "2", "3") 'square box shot
+                        xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                         getdisplayimages(selectedNameXMLfile, "1", "2", "3")
                     Case "f1s9"
-                        xmlDownload(tmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
+                        xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                         getdisplayimages(selectedNameXMLfile, "1", "2", "9")
                     Case "f2s0"
-                        xmlDownload(tmovie, xmltemppathname, "2", "2", "0") 'wide no style
+                        xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                         getdisplayimages(selectedNameXMLfile, "2", "2", "0")
                     Case "f2s2"
-                        xmlDownload(tmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
+                        xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                         getdisplayimages(selectedNameXMLfile, "2", "2", "2")
                     Case "f2s8"
-                        xmlDownload(tmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
+                        xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                         getdisplayimages(selectedNameXMLfile, "2", "2", "8")
                     Case "f2s10"
-                        xmlDownload(tmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
+                        xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                         getdisplayimages(selectedNameXMLfile, "2", "2", "10")
                     Case "f3s0" ' not used yet ' tall icons
-                        'xmlDownload(tmovie, xmltemppathname, "3", "2", "0") 'tall no style
+                        'xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
                         'getdisplayimages(selectedNameXMLfile, "3", "2", "0")
                     Case "poster"
                         'nothing to download here, it's done already
@@ -3069,7 +2813,7 @@ Public Class maincollection
         'cbOverwriteNFO.Checked = cursettingOverwrite
         ''reset max icons to display
         'rconf.pcbMaxIconsToDisplay = cursettingmaxDisplayedIcons
-        ''MsgBox(tmovie.getmoviename + " ------- " + tmovie.getthumbxml)
+        ''MsgBox(currentmovie.gecurrentmoviename + " ------- " + currentmovie.getthumbxml)
         'btnRetryName.Enabled = True
         'tbnewname.Enabled = True
         'pbTick.Stop()
@@ -3077,7 +2821,7 @@ Public Class maincollection
         'lblPbar.Visible = False
         ''reload movie list
         'bwloadfolderdata()
-        ''currentmovie = tmovie
+        ''currentmovie = currentmovie
         validatefoldercontents()
     End Sub
     Private Sub savecia(ByRef selectedicon As PictureBox)
@@ -3169,8 +2913,8 @@ Public Class maincollection
 
 
         'Debug.Print("saved: " + selectedicon.ImageLocation + selectedicon.ToString)
-        If Me.messageprompts Then lblPbar.Visible = True
-        If Me.messageprompts Then lblPbar.Text = Date.Now.ToString + " - Icon saved --" '+ selectedicon.ImageLocation
+        If messageprompts Then lblPbar.Visible = True
+        If messageprompts Then lblPbar.Text = Date.Now.ToString + " - Icon saved --" '+ selectedicon.ImageLocation
 
     End Sub
     Private Sub validatefoldercontents()
@@ -5493,7 +5237,7 @@ Public Class maincollection
         curpath = currentmovie.getmoviepath
 
         lblPbar.Text = "-- Working On: " + dname + "--"
-        ''If Me.messageprompts Then Me.Refresh()()
+        ''If messageprompts Then Me.Refresh()()
 
         ' ---- IMDB AND NFO -----
         Dim hasnfoalready As Boolean = False
@@ -5514,15 +5258,15 @@ Public Class maincollection
 
         '-------------------------------- IMDB Information and .nfo file creation 
         If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-            'If Me.messageprompts Then lblPbar.Text = "-- Getting IMDB for " + tmovie.getmoviename.ToString + "--"
-            ''If Me.messageprompts Then Me.Refresh()()
+            'If messageprompts Then lblPbar.Text = "-- Getting IMDB for " + tmovie.getmoviename.ToString + "--"
+            ''If messageprompts Then Me.Refresh()()
             If currentmovie.pimdbnumber = "" Then
                 Debug.Print("no id in movie, grabbing imdb info")
-                If Me.messageprompts Then lblPbar.Text = "-- Connecting to IMDB: " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Connecting to IMDB: " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 Dim tstringofimdbpage As String = getimdbidsearch(dname)
-                If Me.messageprompts Then lblPbar.Text = " -- Searching IMDB for: " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = " -- Searching IMDB for: " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
             Else
                 'do not grab the data, we know the id already
@@ -5537,15 +5281,15 @@ Public Class maincollection
                     'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
                     Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
                 Else
-                    If Me.messageprompts Then lblPbar.Text = "-- NO XML Cached: Connecting to IMDB: " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- NO XML Cached: Connecting to IMDB: " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     If Not haveidonly Then
                         'no nfo so get the data
-                        If Me.messageprompts Then lblPbar.Text = "-- Searching IMDB: " + dname + "--"
-                        'If Me.messageprompts Then Me.Refresh()()
+                        If messageprompts Then lblPbar.Text = "-- Searching IMDB: " + dname + "--"
+                        'If messageprompts Then Me.Refresh()()
                         Dim tstringofimdbpage As String = getimdbidsearch(dname)
-                        If Me.messageprompts Then lblPbar.Text = "-- Gathering IMDB: " + dname + "--"
-                        'If Me.messageprompts Then Me.Refresh()()
+                        If messageprompts Then lblPbar.Text = "-- Gathering IMDB: " + dname + "--"
+                        'If messageprompts Then Me.Refresh()()
                         currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
                         snagyear(dname, currentmovie, tstringofimdbpage)
                     End If
@@ -5553,11 +5297,11 @@ Public Class maincollection
                     Dim imdbinfo As New IMDB
                     Dim imdbidtemp As String = currentmovie.getimdbid
                     If imdbidtemp = "" Then
-                        If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+                        If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
                         Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
                     Else
-                        If Me.messageprompts Then lblPbar.Text = "-- Parsing IMDB: " + dname + "--"
-                        'If Me.messageprompts Then Me.Refresh()()
+                        If messageprompts Then lblPbar.Text = "-- Parsing IMDB: " + dname + "--"
+                        'If messageprompts Then Me.Refresh()()
                         imdbinfo = imdbparse(imdbidtemp)
                         'save xml to imdbcache reguardless of gui setting to write nfo
                         ' tmovie.Actors = imdbinfo.Actors
@@ -5596,9 +5340,9 @@ Public Class maincollection
     Public Sub processdropdownitems_debug()
         dlgMovieDebug.Show()
         'reset curtmdbfacount
-        If Me.messageprompts Then curtmdbfacount = 0
-        If Me.messageprompts Then curtmdbpostercounter = 0
-        If Me.messageprompts Then curtimppostercounter = 0
+        If messageprompts Then curtmdbfacount = 0
+        If messageprompts Then curtmdbpostercounter = 0
+        If messageprompts Then curtimppostercounter = 0
         'reset curtmdbpostercount
 
         'bwStartupDisplayMovieData()
@@ -5655,7 +5399,7 @@ Public Class maincollection
         lblPbar.Visible = True
         lblPbar.BringToFront()
         lblPbar.Text = "-- Working On: " + dname + "--"
-        'If Me.messageprompts then me.refresh()()
+        'If messageprompts then me.refresh()()
 
         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + " ---- IMDB AND NFO -----"
         Dim hasnfoalready As Boolean = False
@@ -5736,14 +5480,14 @@ Public Class maincollection
         '-------------------------------- IMDB Information and .nfo file creation 
         If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
             dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Getting IMDB for " + currentmovie.getmoviename.ToString + "--"
-            'If Me.messageprompts then me.refresh()()
+            'If messageprompts then me.refresh()()
             If currentmovie.pimdbnumber = "" Then
                 dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "no id in movie, grabbing imdb info"
                 dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Connecting to IMDB: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then Me.Refresh()
                 Dim tstringofimdbpage As String = getimdbidsearch(dname)
                 dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + " -- Searching IMDB for: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then Me.Refresh()
                 currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
             Else
                 'do not grab the data, we know the id already
@@ -5759,14 +5503,14 @@ Public Class maincollection
                     dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + ".xml already exsists" ' + cbOverwriteNFO.Checked.ToString)
                 Else
                     dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- NO XML Cached: Connecting to IMDB: " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    'If messageprompts Then Me.Refresh()()
                     If Not haveidonly Then
                         'no nfo so get the data
                         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Searching IMDB: " + dname + "--"
-                        If Me.messageprompts Then Me.Refresh()
+                        If messageprompts Then Me.Refresh()
                         Dim tstringofimdbpage As String = getimdbidsearch(dname)
                         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Gathering IMDB: " + dname + "--"
-                        If Me.messageprompts Then Me.Refresh()
+                        If messageprompts Then Me.Refresh()
                         currentmovie.pimdbnumber = snagimdbid(dname, currentmovie, tstringofimdbpage)
                         snagyear(dname, currentmovie, tstringofimdbpage)
                     End If
@@ -5778,7 +5522,7 @@ Public Class maincollection
                         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE"
                     Else
                         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Parsing IMDB: " + dname + "--"
-                        'If Me.messageprompts Then Me.Refresh()
+                        'If messageprompts Then Me.Refresh()
                         imdbinfo = imdbparse(imdbidtemp)
                         'save xml to imdbcache reguardless of gui setting to write nfo
                         ' tmovie.Actors = imdbinfo.Actors
@@ -5803,7 +5547,7 @@ Public Class maincollection
             Dim impaname As String = cleanname(dname)
             If rconf.pcbDownloadPoster Then
                 dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Gathering IMP Poster Data: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then Me.Refresh()
                 Dim nolinksinxml As Boolean = False
                 Dim curposterxmlname As String = ""
                 Dim useimdbid As Boolean = False
@@ -5829,8 +5573,8 @@ Public Class maincollection
                 End If
 
                 If nolinksinxml = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
+                    ''If messageprompts Then Me.Refresh()()
                     dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "When Getting Posters: Blank XML or No XML for: " + impaname
                 End If
             End If
@@ -5840,14 +5584,14 @@ Public Class maincollection
         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "get posters - first check to see if it's enabled"
         If rconf.pcbGetTMDBPosters Then
             dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Getting TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then Me.Refresh()
             getpostersfromtmdb(currentmovie, ais, True) 'move this to the correct location once a gui option is there for it
         End If
 
         'get fanart - first check to see if it's enabled
         If rconf.pcbGetFanart Then
             dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "-- Getting Fanart: " + currentmovie.getmoviename.ToString + "--"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then Me.Refresh()
             getfanart(currentmovie, ais, True)
         End If
 
@@ -5916,8 +5660,8 @@ Public Class maincollection
         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "fanart load completed"
         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "display movie name and information in gui"
         'read up .nfo file from xml
-        If Me.messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
-        If Me.messageprompts Then Me.Refresh()
+        If messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
+        If messageprompts Then Me.Refresh()
         If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") And Not currentmovie.pdatafromnfo Then 'tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo") Then
             Dim timdb As New IMDB
             timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder) 'parses movie from the xml file
@@ -5964,64 +5708,64 @@ Public Class maincollection
             Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
             If rconf.pcbf1s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "0")
             End If
             If rconf.pcbf1s3 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "3")
             End If
             If rconf.pcbf1s9 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "9")
             End If
             If rconf.pcbf2s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "0")
             End If
             If rconf.pcbf2s2 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "2")
             End If
             If rconf.pcbf2s8 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "8")
             End If
             If rconf.pcbf2s10 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "10")
             End If
             If rconf.pcbf3s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "3", "2", "0")
@@ -6039,7 +5783,7 @@ Public Class maincollection
         File.WriteAllText(rconf.basefolder + "debug\" + "moviedebug2" + currentmovie.pmoviename + ".txt", dlgMovieDebug.rtbDebugInfo.Text)
         dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "displaying images for current movie"
         '---Show folderjpg and tbn file
-        lblCurMovieFolder.Text = currentmovie.getmoviepath
+        'lblCurMovieFolder.Text = currentmovie.getmoviepath
         If Not moviemode = "file" Then showfolderjpginmainwindow(currentmovie.getmoviepath, skt)
         showtbninmainwindow(currentmovie.getmoviepath, skt)
         Try
@@ -6048,7 +5792,7 @@ Public Class maincollection
             dlgMovieDebug.rtbDebugInfo.Text += vbNewLine + "DEBUG: " + ex.ToString
         End Try
 
-        If Me.messageprompts Then
+        If messageprompts Then
             Dim newtmdbfanart As Boolean = False
             Dim newtmdbposter As Boolean = False
             Dim newimpposter As Boolean = False
@@ -6072,7 +5816,7 @@ Public Class maincollection
         End If
         'show video file information (video and audio)
         Try
-            If Not currentmovie.fileinfo.version = 1.1 Then
+            If Not currentmovie.fileinfo.version = 1.3 Then
                 getmoviemediainfo_bw()
             Else
                 krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
@@ -6094,14 +5838,14 @@ Public Class maincollection
     Public Sub processdropdownitems()
 
         'reset curtmdbfacount
-        If Me.messageprompts Then curtmdbfacount = 0
-        If Me.messageprompts Then curtmdbpostercounter = 0
-        If Me.messageprompts Then curtimppostercounter = 0
+        If messageprompts Then curtmdbfacount = 0
+        If messageprompts Then curtmdbpostercounter = 0
+        If messageprompts Then curtimppostercounter = 0
         'reset curtmdbpostercount
-        If Me.messageprompts Then fanarttotal = 0
-        If Me.messageprompts Then postertotal = 0
-        If Me.messageprompts Then iconsboxshottotal = 0
-        If Me.messageprompts Then newnicecovercounter = 0
+        If messageprompts Then fanarttotal = 0
+        If messageprompts Then postertotal = 0
+        If messageprompts Then iconsboxshottotal = 0
+        If messageprompts Then newnicecovercounter = 0
         Debug.Print("start: " + TimeString())
         'set locals
         messageprompts = rbem.Checked 'rbem is online mode, if it's not checked, we want to turn off labels
@@ -6150,152 +5894,12 @@ Public Class maincollection
         lblPbar.Visible = True
         lblPbar.BringToFront()
         lblPbar.Text = "-- Working On: " + dname + "--"
-        'If Me.messageprompts then me.refresh()()
-        Debug.Print(".nfo data")
-        ' ---- IMDB AND NFO -----
-        Dim hasnfoalready As Boolean = False
-        Dim haveidonly As Boolean = False
-        'see if movie data was loaded from nfo file during folder scan
-        If Not currentmovie.pdatafromnfo Then
-            Debug.Print("no .nfo for movie found")
 
-            'we don't have data so try to get it
-            'see if nfo file exsists for movie, if it does, read it up to speed it up
-            haveidonly = checkforIMDBIDinnfofile(currentmovie)
-            If Not haveidonly Then
-                Debug.Print("don't have the id yet")
-                'see if there is an nfo file in the folder 
-                'Dim parentfolder As String = getparentdirectory(currentmovie.getmoviepath)
-                Dim curnfoname As String = ""
-                If moviemode = "file" Then
-                    curnfoname = stripstackforfilemode(removeextension(currentmovie.preservedmoviename))
-                Else
-                    curnfoname = currentmovie.pmoviename
-                End If
-                'rev 2401 update, look for movie.nfo but use the name as the more specific option
-                If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, curnfoname + ".nfo")) Then
-                    curnfoname = "movie"
-                End If
-
-                If File.Exists(addfiletofolder(currentmovie.getmoviepath, curnfoname + ".nfo")) Then
-                    'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true and set the id in the movie
-                    Dim strwork As String = File.ReadAllText(addfiletofolder(currentmovie.getmoviepath, curnfoname + ".nfo"))
-                    Try
-                        If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
-                            currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
-                            haveidonly = True
-                        End If
-                    Catch ex As ArgumentException
-                        'Syntax error in the regular expression
-                    End Try
-                    strwork = ""
-                End If
-            End If
-
-            If Not haveidonly And Not moviemode = "file" Then
-                Dim filelist() As String '  As New ArrayList
-                filelist = Directory.GetFiles(currentmovie.getmoviepath)
-                'Dim totfilecount As Integer = filelist.
-                For Each pathedfile As String In filelist
-                    Dim strnfoextonfile As String = ""
-                    strnfoextonfile = Strings.Right(pathedfile, 4)
-                    If strnfoextonfile = ".nfo" Then
-                        'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true set the id in the movie
-                        Dim strwork As String = File.ReadAllText(pathedfile)
-                        Try
-                            If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
-                                currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
-                                File.Move(pathedfile, pathedfile & ".oldversion")
-                                haveidonly = True
-                            End If
-                        Catch ex As ArgumentException
-                            'Syntax error in the regular expression
-                        End Try
-                        strwork = ""
-                    End If
-                    If haveidonly Then
-                        Exit For
-                    End If
-                Next
-            End If
-
-            If Not haveidonly Then
-                'if there is no nfo file, check for a poster file (they have the imdbid in them)
-                'TODO: add rconf option for manual movie pick list
-                'haveidonly = checkforposterfiletogetimdbid(currentmovie)
-            End If
-        Else
-            hasnfoalready = True
-        End If
-        'see if a folder icon exsists 
-        Debug.Print(".nfo data - done")
-        '?        pbCurIconUsed.Enabled = True
-
-        Debug.Print("IMDB Information and .nfo file creation")
-        '-------------------------------- IMDB Information and .nfo file creation 
-        If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-            'If Me.messageprompts Then lblPbar.Text = "-- Getting IMDB for " + tmovie.getmoviename.ToString + "--"
-            'If Me.messageprompts then me.refresh()()
-            If currentmovie.pimdbnumber = "" Then
-                Debug.Print("no id in movie, grabbing imdb info")
-                If Me.messageprompts Then lblPbar.Text = "-- Connecting to IMDB: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
-                Dim tstringofimdbpage As String = getimdbidsearch(dname, False)
-                If Me.messageprompts Then lblPbar.Text = " -- Searching IMDB for: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
-                currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
-            Else
-                'do not grab the data, we know the id already
-                'hasnfoalready = True
-                Debug.Print("we have an id, not parseing imdb again for it")
-            End If
-            'getimdbidsearchwithwget(tmovie)
-
-            If rbem.Checked = True Then 'download mode
-                Debug.Print("checking cache for imdb info")
-                If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-                    'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-                    'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-                    Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-                Else
-                    If Me.messageprompts Then lblPbar.Text = "-- NO XML Cached: Connecting to IMDB: " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
-                    If Not haveidonly Then
-                        'no nfo so get the data
-                        If Me.messageprompts Then lblPbar.Text = "-- Searching IMDB: " + dname + "--"
-                        If Me.messageprompts Then Me.Refresh()
-                        Dim tstringofimdbpage As String = getimdbidsearch(dname, False)
-                        If Me.messageprompts Then lblPbar.Text = "-- Gathering IMDB: " + dname + "--"
-                        If Me.messageprompts Then Me.Refresh()
-                        currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
-                        snagyear(dname, currentmovie, tstringofimdbpage)
-                    End If
-                    ' getimdbdata(tmovie)
-                    Dim imdbinfo As New IMDB
-                    Dim imdbidtemp As String = currentmovie.getimdbid
-                    If imdbidtemp = "" Then
-                        If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                        Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                    Else
-                        If Me.messageprompts Then lblPbar.Text = "-- Parsing IMDB: " + dname + "--"
-                        'If Me.messageprompts Then Me.Refresh()
-                        imdbinfo = imdbparse(imdbidtemp)
-                        'save xml to imdbcache reguardless of gui setting to write nfo
-                        ' tmovie.Actors = imdbinfo.Actors
-                        imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
-                        'If cbSaveNFO.Checked Then
-                        '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-                        '    tmovie.saveimdbinfo(tmovie)
-                        'End If
-                    End If
-                End If
-            End If
-        End If
-
+        'If messageprompts then me.refresh()()
+        checknfodata(currentmovie, dname, rbem.Checked)
         Debug.Print("IMDB Information and .nfo creation - completed")
+
         Dim curposter As New posters
-
-
         Dim selectedNameXMLfile As String
         selectedNameXMLfile = Strings.Replace(dname, " ", ".")
         currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
@@ -6306,8 +5910,8 @@ Public Class maincollection
         If ais Then
             Dim impaname As String = cleanname(dname)
             If rconf.pcbDownloadPoster Then
-                If Me.messageprompts Then lblPbar.Text = "-- Gathering IMP Poster Data: " + dname + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then lblPbar.Text = "-- Gathering IMP Poster Data: " + dname + "--"
+                If messageprompts Then Me.Refresh()
                 Dim nolinksinxml As Boolean = False
                 Dim curposterxmlname As String = ""
                 Dim useimdbid As Boolean = False
@@ -6334,8 +5938,8 @@ Public Class maincollection
                 End If
 
                 If nolinksinxml = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Downloading Poster for " + dname + "--"
+                    ''If messageprompts Then Me.Refresh()()
                     Debug.Print("When Getting Posters: Blank XML or No XML for: " + impaname)
                 End If
             End If
@@ -6344,24 +5948,24 @@ Public Class maincollection
         Debug.Print("end of impawards data")
         'calgorydotnet data
         If rconf.pcbGetcaldnPosters Then
-            If Me.messageprompts Then lblPbar.Text = "-- Getting Posters: " + currentmovie.getmoviename.ToString + "--"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then lblPbar.Text = "-- Getting Posters: " + currentmovie.getmoviename.ToString + "--"
+            If messageprompts Then Me.Refresh()
             If rbem.Checked Then downloadcaldnposters()
             'getpostersfromtmdb(currentmovie, ais, True) 'move this to the correct location once a gui option is there for it
         End If
         Debug.Print("tmdb posters download done")
         'get posters - first check to see if it's enabled
         If rconf.pcbGetTMDBPosters Then
-            If Me.messageprompts Then lblPbar.Text = "-- Getting TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then lblPbar.Text = "-- Getting TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
+            If messageprompts Then Me.Refresh()
             If rbem.Checked Then downloadtmdbposters()
             'getpostersfromtmdb(currentmovie, ais, True) 'move this to the correct location once a gui option is there for it
         End If
         Debug.Print("tmdb posters download done")
         'get fanart - first check to see if it's enabled
         If rconf.pcbGetFanart Then
-            If Me.messageprompts Then lblPbar.Text = "-- Getting Fanart: " + currentmovie.getmoviename.ToString + "--"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then lblPbar.Text = "-- Getting Fanart: " + currentmovie.getmoviename.ToString + "--"
+            If messageprompts Then Me.Refresh()
             If rbem.Checked Then downloadtmdbfanart()
             'getfanart(currentmovie, ais, True)
         End If
@@ -6374,64 +5978,64 @@ Public Class maincollection
             Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
             If rconf.pcbf1s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "0", "", True)
             End If
             If rconf.pcbf1s3 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "3", "", True)
             End If
             If rconf.pcbf1s9 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "9", "", True)
             End If
             If rconf.pcbf2s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "0", "", True)
             End If
             If rconf.pcbf2s2 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "2", "", True)
             End If
             If rconf.pcbf2s8 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "8", "", True)
             End If
             If rconf.pcbf2s10 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "10", "", True)
             End If
             If rconf.pcbf3s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "3", "2", "0", "", True)
@@ -6475,15 +6079,15 @@ Public Class maincollection
                 prepimppostersfordisplay(curposter)
             End If
             If rconf.pcbGetcaldnPosters Then
-                If Me.messageprompts Then lblPbar.Text = "-- Loading TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then lblPbar.Text = "-- Loading TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
+                If messageprompts Then Me.Refresh()
                 'downloadtmdbposters()
                 prepcaldnpostersfordisplay(currentmovie, ais, True, 0, True)
                 'getpostersfromtmdb(currentmovie, ais, True, 0, True) 'move this to the correct location once a gui option is there for it
             End If
             If rconf.pcbGetTMDBPosters Then
-                If Me.messageprompts Then lblPbar.Text = "-- Loading TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then lblPbar.Text = "-- Loading TMDB Posters: " + currentmovie.getmoviename.ToString + "--"
+                If messageprompts Then Me.Refresh()
                 'downloadtmdbposters()
                 preptmdbpostersfordisplay(currentmovie, ais, True, 0, True)
                 'getpostersfromtmdb(currentmovie, ais, True, 0, True) 'move this to the correct location once a gui option is there for it
@@ -6496,8 +6100,8 @@ Public Class maincollection
 
             'get fanart - first check to see if it's enabled
             If rconf.pcbGetFanart Then
-                If Me.messageprompts Then lblPbar.Text = "-- Loading Fanart: " + currentmovie.getmoviename.ToString + "--"
-                If Me.messageprompts Then Me.Refresh()
+                If messageprompts Then lblPbar.Text = "-- Loading Fanart: " + currentmovie.getmoviename.ToString + "--"
+                If messageprompts Then Me.Refresh()
                 'downloadtmdbfanart(currentmovie)
                 getfanart(currentmovie, ais, True, False, True)
             End If
@@ -6557,8 +6161,8 @@ Public Class maincollection
             'tpcm.BackgroundImage = fanartpb1.Image
             fanartpb1.Enabled = True
             Debug.Print("done setup of fanart location, starting load of fanart image")
-            If Me.messageprompts Then lblPbar.Text = "Loading Fanart into gui, if slow, check file size"
-            If Me.messageprompts Then Me.Refresh()
+            If messageprompts Then lblPbar.Text = "Loading Fanart into gui, if slow, check file size"
+            If messageprompts Then Me.Refresh()
             Try
                 fanartpb1.Load()
             Catch ex As Exception
@@ -6576,8 +6180,8 @@ Public Class maincollection
         Debug.Print("fanart is done loading now")
         'display movie name and information in gui
         'read up .nfo file from xml
-        If Me.messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
-        If Me.messageprompts Then Me.Refresh()
+        If messageprompts Then lblPbar.Text = "-- Setting .nfo file for: " + dname + "--"
+        If messageprompts Then Me.Refresh()
         If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") And Not currentmovie.pdatafromnfo Then 'tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo") Then
             Dim timdb As New IMDB
             timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder) 'parses movie from the xml file
@@ -6636,64 +6240,64 @@ Public Class maincollection
             Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
             If rconf.pcbf1s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "0")
             End If
             If rconf.pcbf1s3 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "3")
             End If
             If rconf.pcbf1s9 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "2", "9")
             End If
             If rconf.pcbf2s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "0")
             End If
             If rconf.pcbf2s2 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "2")
             End If
             If rconf.pcbf2s8 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "8")
             End If
             If rconf.pcbf2s10 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "2", "10")
             End If
             If rconf.pcbf3s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                    If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.gbDisplay.Refresh()
                     xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "3", "2", "0")
@@ -6733,7 +6337,7 @@ Public Class maincollection
         End If
 
         '---Show folderjpg and tbn file
-        lblCurMovieFolder.Text = currentmovie.getmoviepath
+        ' lblCurMovieFolder.Text = currentmovie.getmoviepath
         If Not moviemode = "file" Then showfolderjpginmainwindow(currentmovie.getmoviepath, skt)
         showtbninmainwindow(currentmovie.getmoviepath, skt)
 
@@ -6743,10 +6347,10 @@ Public Class maincollection
         Try
             validatefoldercontents()
         Catch ex As Exception
-            If Me.messageprompts Then MsgBox("DEBUG: " + ex.ToString)
+            If messageprompts Then MsgBox("DEBUG: " + ex.ToString)
         End Try
 
-        If Me.messageprompts And Not rconf.pcbnopromptfornewposters Then
+        If messageprompts And Not rconf.pcbnopromptfornewposters Then
             Dim newtmdbfanart As Boolean = False
             Dim newtmdbposter As Boolean = False
             Dim newimpposter As Boolean = False
@@ -6773,7 +6377,7 @@ Public Class maincollection
                 MessageBox.Show(strNewMessage, "New Images are available", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
-        If Me.messageprompts Then
+        If messageprompts Then
             If fanarttotal = 0 Then
                 tpFanart.Text = "Backgounds"
             Else
@@ -6800,7 +6404,7 @@ Public Class maincollection
         'show video file information (video and audio)
         If rconf.pcbscanformoviemediainformation Then
             Try
-                If Not currentmovie.fileinfo.version = 1.2 Or rconf.pcbOverwriteNFO Then
+                If Not currentmovie.fileinfo.version = 1.3 Or rconf.pcbOverwriteNFO Then
                     getmoviemediainfo_bw()
 
                 Else
@@ -6810,7 +6414,7 @@ Public Class maincollection
                     'krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
                 End If
             Catch ex As Exception
-                If Me.messageprompts Then MsgBox("DEBUG: " + ex.ToString)
+                If messageprompts Then MsgBox("DEBUG: " + ex.ToString)
             End Try
         End If
     End Sub
@@ -7199,7 +6803,7 @@ Public Class maincollection
                 dlgDownloadingFile.downloadertxtFileName.Text = url
                 dlgDownloadingFile.whereToSave = rconf.nicecovercachefolder + filename
                 dlgDownloadingFile.ShowDialog()
-                If Me.messageprompts Then newnicecovercounter = 1
+                If messageprompts Then newnicecovercounter = 1
             End If
             'If cbAllowIconSelection.Checked And File.Exists(rconf.nicecovercachefolder + filename) Then
             '    pbNiceCovers1.ImageLocation = rconf.nicecovercachefolder + filename
@@ -7386,8 +6990,8 @@ Public Class maincollection
                             kpMovieData.BringToFront() 'if not full screen, the wide icon wide will overlap the movie data, so put it on top
 
                         Else
-                            If Me.messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
-                            'If Me.messageprompts Then Me.Refresh()()
+                            If messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
+                            'If messageprompts Then Me.Refresh()()
                             Debug.Print("start: " + TimeString())
                             Dim bmp As New Bitmap(curpath + "\folder.jpg")
                             Dim gp As New System.Drawing.Drawing2D.GraphicsPath
@@ -7586,8 +7190,8 @@ Public Class maincollection
                             klblmovietbn.BringToFront()
                             kgCurMovieImagetbn.Visible = False
                         Else
-                            If Me.messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
-                            'If Me.messageprompts Then Me.Refresh()()
+                            If messageprompts Then lblPbar.Text = "---- Processing Transparency ----"
+                            'If messageprompts Then Me.Refresh()()
                             Debug.Print("start: " + TimeString())
                             Dim bmp As New Bitmap(curtbn)
                             Dim gp As New System.Drawing.Drawing2D.GraphicsPath
@@ -7684,7 +7288,7 @@ Public Class maincollection
         Else
             Debug.Print(tbdcount.ToString + ": is the count of backdrops")
         End If
-        If Me.messageprompts Then fanarttotal = tbdcount
+        If messageprompts Then fanarttotal = tbdcount
         If Not tbdcount = 0 Then
             'count is not 0, process items
             Dim tbdcou As Integer = 0
@@ -7720,7 +7324,7 @@ Public Class maincollection
                     If Not File.Exists(rconf.tmdbfanartcachefolder + tmovie.pimdbnumber + "\" + fanartfilesubfoldername + "\" + fanartfilename + ".jpg") Then
                         'download it with wget, must wait for download to finish
                         wgetfanart(fanarturl, rconf.tmdbfanartcachefolder + tmovie.pimdbnumber + "\" + fanartfilesubfoldername + "\", True, fanartfilename + ".jpg")
-                        If Me.messageprompts Then curtmdbfacount += 1
+                        If messageprompts Then curtmdbfacount += 1
                     End If
                     'skip downloading _poster for fanart - for speed
                     'If Not File.Exists(rconf.tmdbfanartcachefolder + tmovie.pimdbnumber + "\" + fanartfilesubfoldername + "\" + fanartfilename + "_poster.jpg") Then
@@ -8285,7 +7889,7 @@ Public Class maincollection
         Else
             Debug.Print(total.ToString + ": is the count of backdrops")
         End If
-        If Me.messageprompts Then fanarttotal = total
+        If messageprompts Then fanarttotal = total
 
         If Not total = 0 Then
             Dim fanartfilename As String
@@ -8965,7 +8569,7 @@ Public Class maincollection
         'set tmdbid
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
-        'If Me.messageprompts Then postertotal += tbdcount
+        'If messageprompts Then postertotal += tbdcount
         If pclogging Then pclog.WriteLine(tbdcount.ToString + ": is the count of Posters from TMDB")
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -9012,7 +8616,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If Me.messageprompts Then curtmdbpostercounter += 1
+                    If messageprompts Then curtmdbpostercounter += 1
                 End If
 
                 'If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + tmovie.pimdbnumber + posterfilename + "_mid.jpg") Then 'normal rez
@@ -9108,7 +8712,7 @@ Public Class maincollection
 
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
-        'If Me.messageprompts Then postertotal += tbdcount
+        'If messageprompts Then postertotal += tbdcount
         If pclogging Then pclog.WriteLine(tbdcount.ToString + ": is the count of Posters from TMDB")
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -9155,7 +8759,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If Me.messageprompts Then curtmdbpostercounter += 1
+                    If messageprompts Then curtmdbpostercounter += 1
                 End If
 
                 If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + tmovie.pimdbnumber + posterfilename + "_mid.jpg") Then 'normal rez
@@ -9682,7 +9286,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If Me.messageprompts Then curtmdbpostercounter += 1
+                    If messageprompts Then curtmdbpostercounter += 1
                 End If
 
                 If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\" + posterfilename + ".jpg") Then 'high rez
@@ -9719,7 +9323,7 @@ Public Class maincollection
     '    'Me.Refresh()
     '    If ais Then resetanddisableimages()
     '    Me.pbar1.Visible = True
-    '    ''If Me.messageprompts Then Me.Refresh()()
+    '    ''If messageprompts Then Me.Refresh()()
     '    'pbTick.Start()
 
     '    pbar1.Value = pbar1.Maximum
@@ -9772,8 +9376,8 @@ Public Class maincollection
     '    '-------------------------------- IMDB Information and .nfo file creation 
     '    Dim hasnfoalready As Boolean = False
     '    If rconf.pcbGetIMDBInfo Then 'get imdb info
-    '        If Me.messageprompts Then lblPbar.Text = " __-- Getting IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-    '        ''If Me.messageprompts Then Me.Refresh()()
+    '        If messageprompts Then lblPbar.Text = " __-- Getting IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
+    '        ''If messageprompts Then Me.Refresh()()
     '        If tmovie.pimdbnumber = "" Then
     '            Debug.Print("no id in movie, grabbing imdb info")
     '            Dim tstringofimdbpage As String = getimdbidsearch(tmovie.getmoviename)
@@ -9802,7 +9406,7 @@ Public Class maincollection
     '                Dim imdbinfo As New IMDB
     '                Dim imdbidtemp As String = tmovie.getimdbid
     '                If imdbidtemp = "" Then
-    '                    If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+    '                    If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
     '                    Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
     '                Else
     '                    imdbinfo = imdbparse(imdbidtemp)
@@ -9891,23 +9495,23 @@ Public Class maincollection
     '    'get fanart
     '    'first check to see if it's enabled
     '    If rconf.pcbGetFanart Then
-    '        If Me.messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
+    '        If messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
     '        Dim haslocalfanart As Boolean = False
     '        If FileExists(lblCurMovieFolder.Text + "\" + tbnewname.Text + "-fanart.jpg") Then
     '            Debug.Print("Fanart file already exists: " + lblCurMovieFolder.Text + "\" + dname + "-fanart.jpg")
     '            haslocalfanart = True
     '        Else
     '            If rconf.pcbGetFanart Then 'get fanart checked
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
     '                If rbem.Checked = True Then 'working online 
     '                    If tmovie.pimdbnumber = "" Then
     '                        Debug.Print("No Imdb id in movie object tmovie, no attempt made to download - Fanart ")
     '                    Else
     '                        Dim fanarturl As String = "http://www.meligrove.com/images/posters/movies/jpg/" + tmovie.pimdbnumber + ".jpg"
-    '                        If Me.messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
-    '                        ''If Me.messageprompts Then Me.Refresh()()
+    '                        If messageprompts Then lblPbar.Text = " __-- Getting Fanart for " + dname + "--__ "
+    '                        ''If messageprompts Then Me.Refresh()()
     '                        Try
-    '                            If Me.messageprompts Then lblPbar.Text = " __-- Downloading Fanart for " + dname + "--__ "
+    '                            If messageprompts Then lblPbar.Text = " __-- Downloading Fanart for " + dname + "--__ "
     '                            SavePhotoFromUrl(lblCurMovieFolder.Text + "\" + tbnewname.Text + "-fanart.jpg", fanarturl)
     '                            haslocalfanart = True
     '                        Catch ex As Exception
@@ -9952,8 +9556,8 @@ Public Class maincollection
     '            End If
 
     '            If nolinksinxml = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Poster for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Poster for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                Debug.Print("When Getting Posters: Blank XML or No XML for: " + impaname)
     '                'no poster xml, revert to older method of finding poster
     '                If rconf.pcbGetIMDBInfo Then
@@ -10014,8 +9618,8 @@ Public Class maincollection
     '    End If
     '    'display movie name and information in gui
     '    'read up .nfo file
-    '    If Me.messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
-    '    ''If Me.messageprompts Then Me.Refresh()()
+    '    If messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
+    '    ''If messageprompts Then Me.Refresh()()
     '    If File.Exists(rconf.imdbcachefolder + tmovie.pimdbnumber + ".xml") Then 'tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo") Then
     '        Dim timdb As New IMDB
     '        timdb.readIMDBXML(tmovie)
@@ -10069,64 +9673,64 @@ Public Class maincollection
     '        Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
     '        If rconf.pcbf1s0 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Square (no style) icon for " + dname + "--__ "
-    '                ' 'If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Square (no style) icon for " + dname + "--__ "
+    '                ' 'If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "1", "2", "0") 'square no style
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "1", "2", "0")
     '        End If
     '        If rconf.pcbf1s3 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Square Box Shot for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Square Box Shot for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "1", "2", "3") 'square box shot
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "1", "2", "3")
     '        End If
     '        If rconf.pcbf1s9 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Round icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Round icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "1", "2", "9")
     '        End If
     '        If rconf.pcbf2s0 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Wide (no style) icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Wide (no style) icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "2", "2", "0") 'wide no style
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "2", "2", "0")
     '        End If
     '        If rconf.pcbf2s2 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "2", "2", "2")
     '        End If
     '        If rconf.pcbf2s8 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Wide (round shadow) icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Wide (round shadow) icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "2", "2", "8")
     '        End If
     '        If rconf.pcbf2s10 Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "2", "2", "10")
     '        End If
     '        If cbf3s0.Checked Then
     '            If rbem.Checked = True Then
-    '                If Me.messageprompts Then lblPbar.Text = " __-- Getting Tall (no style) icon for " + dname + "--__ "
-    '                ''If Me.messageprompts Then Me.Refresh()()
+    '                If messageprompts Then lblPbar.Text = " __-- Getting Tall (no style) icon for " + dname + "--__ "
+    '                ''If messageprompts Then Me.Refresh()()
     '                xmlDownload(tmovie, xmltemppathname, "3", "2", "0") 'tall no style
     '            End If
     '            getdisplayimages(selectedNameXMLfile, "3", "2", "0")
@@ -10216,8 +9820,8 @@ Public Class maincollection
 
     '                        'do not attempt transparency
     '                    Else
-    '                        If Me.messageprompts Then lblPbar.Text = " ____---- Processing Transparency ----____ "
-    '                        If Me.messageprompts Then Me.gbDisplay.Refresh()
+    '                        If messageprompts Then lblPbar.Text = " ____---- Processing Transparency ----____ "
+    '                        If messageprompts Then Me.gbDisplay.Refresh()
     '                        Debug.Print("start: " + TimeString())
     '                        Dim bmp As New Bitmap(Path + "\folder.jpg")
     '                        Dim gp As New System.Drawing.Drawing2D.GraphicsPath
@@ -10320,22 +9924,7 @@ Public Class maincollection
         'read xml and set it back to the movies
 
     End Sub
-    Private Function checkforIMDBIDinnfofile(ByRef tmovie As movie) As Boolean
-        If tmovie.pfilemode Then Return False
-
-        'grabs id from nfo file if it exsists
-        Dim pathtonfo As String = tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo"
-        'Debug.Print(tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo")
-        If File.Exists(pathtonfo) Then
-            tmovie.pimdbnumber = tmovie.readnfofile(pathtonfo)
-            If tmovie.pimdbnumber = "" Then
-                Return False
-            Else
-                Return True
-            End If
-            ' Return True
-        End If
-    End Function
+  
     Private Function checkforposterfiletogetimdbid(ByRef tmovie As movie) As Boolean
         'grabs id from a poster xml file if it exsists
         'since posters are run cleanname on them during creation, we must clean the name to look for it.
@@ -10354,7 +9943,7 @@ Public Class maincollection
         ReadXMLforSelection(rconf.xmlfolder + selectedNameXMLfile + "f" + format + "c" + catagory + "s" + style + ".xml", currenttvshowname)
         'Me.Refresh()
         Dim counter As Integer = 0
-        If Me.messageprompts And Not downloadonly Then
+        If messageprompts And Not downloadonly Then
             If urllist.Count > maxDisplayedIcons Then
                 iconsboxshottotal += maxDisplayedIcons
             Else
@@ -10407,7 +9996,7 @@ Public Class maincollection
                         If counter < maxDisplayedIcons Then
 
                             lblPbar.Text = "Getting MediaIcons " + counter.ToString + " - Format: " + format + " : Style: " + style
-                            'If Me.messageprompts Then Me.gbDisplay.Refresh()
+                            'If messageprompts Then Me.gbDisplay.Refresh()
                             Try
                                 'dlgDownloadingFile.downloadertxtFileName.Text = sname
                                 'dlgDownloadingFile.whereToSave = checklocal
@@ -11837,35 +11426,7 @@ Public Class maincollection
             Debug.Print("Error getting IMDB data for " + tmovie.pmoviename + ".")
         End Try
     End Sub
-    Private Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
-        'http://akas.imdb.com/find?s=all&q=blood+diamond&x=0&y=0
-        Try
 
-
-            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=all&q=" + pmname + "+ &x=0&y=0"
-            'Dim foundimdbid, retid, retyr As String
-            Dim s As String
-            'openpagedata
-            Dim request As HttpWebRequest = CType(WebRequest.Create(baseurlsiid), HttpWebRequest)
-            Dim response As HttpWebResponse = CType(request.GetResponse(), System.Net.HttpWebResponse)
-            Using reader As StreamReader = New StreamReader(response.GetResponseStream())
-                s = reader.ReadToEnd()
-            End Using
-            'Me.tp3rtbimdbdata.Text
-            If Not tolower Then Return s
-            Dim tvarstolower As String = s.ToLower
-            Return tvarstolower
-            'searchit
-            'Dim RegexObj As New Regex("<a href=""/title/(?<greturnedid>tt\d{5,9})/"">Blood Diamond</a>.{1,2}((?<gyear>\d{4}))")
-            'retid = RegexObj.Match(Me.tp3rtbimdbdata.Text).Groups("gfilename").Value
-            'retyr = RegexObj.Match(Me.tp3rtbimdbdata.Text).Groups("gyear").Value
-            'foundimdbid = retyr + retid
-            'Return (foundimdbid)
-        Catch ex As Exception
-            Debug.Print("Error getting IMDB data for " + pmname.ToString + ".")
-            Return "NO DATA"
-        End Try
-    End Function
     Private Sub nonono()
         '<a href=./url.sa=U&start=1&q=http://www.imdb.com/title/tt0000359/&usg=.*?" class=l>(.*?) \(\d{4}\)??</a>
         Dim id As Integer = 81500 'starting number
@@ -12092,91 +11653,7 @@ Public Class maincollection
             End Set
         End Property
     End Class
-    Private Function snagimdbid_dlg(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
-        Dim lookupname As String = pmname '.ToLower
-        lookupname = Strings.Replace(lookupname, "(", "")
-        lookupname = Strings.Replace(lookupname, ")", "")
-        Dim retid As String = ""
-        Try
-            retid = Regex.Match(v1tstringofimdbpage, "/(?<imdbid1>tt\d{5,9})/").Groups(1).Value
-            'If Not retid = "" Then Return retid
-        Catch ex As Exception
-            Debug.Print(ex.ToString)
-        End Try
-        Dim multimode As Boolean = False
-        Dim imdbidlist As New ArrayList
-        Try
-            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\((\d{4})\)")
-            Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
-            While MatchResults.Success
-                multimode = True
-                Dim nid As New imdbsearch
-                nid.id = MatchResults.Groups(1).Value.ToString
-                nid.name = cleanimdbdata(MatchResults.Groups(2).Value.ToString)
-                nid.year = MatchResults.Groups(3).Value.ToString
-                imdbidlist.Add(nid)
-                MatchResults = MatchResults.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-        End Try
 
-        If Not multimode Then Return retid 'return single id if only one was located
-        Dim dtIDA As New DataTable
-        dtIDA.Columns.Add("Path", GetType(System.String))
-        dtIDA.Columns.Add("Name")
-        dtIDA.Columns.Add("Index")
-        'dtIDA.Columns.Add("objShow")
-        Dim thashtable As New Hashtable
-        Dim cutcmIndex As Integer = 0
-        Try 'jivefix 2nd round
-            For Each tcmitem As imdbsearch In imdbidlist 'update path info for real code
-                dtIDA.LoadDataRow(New Object() {tmovie.getmoviepath, "(" & tcmitem.year & ") " & tcmitem.id & ": " & tcmitem.name, tcmitem.id}, True)
-                Try
-                    thashtable.Add(tcmitem.id, tcmitem)
-                Catch ex As Exception
-                    Debug.Print("duplicate: " & tcmitem.id)
-                End Try
-                cutcmIndex += 1
-            Next
-        Catch exTarray As Exception
-            Debug.Print("exTarray failed" + vbNewLine + exTarray.ToString)
-        End Try
-        dialogTvShowSelect.dhashtable = thashtable
-        dtIDA.DefaultView.Sort = "Name"
-        dialogMovieSelect.klbPickTheMovie.DataSource = dtIDA.DefaultView
-        dialogMovieSelect.klbPickTheMovie.ValueMember = "Index"
-        dialogMovieSelect.klbPickTheMovie.DisplayMember = "Name"
-        'dialogMovieSelect.displayshowdata()
-        dialogMovieSelect.klblCurMovie.Text = "Name: " + pmname
-        dialogMovieSelect.klblCurMoviePath.Text = "Location on drive: " + addfiletofolder(tmovie.getmoviepath, tmovie.preservedmoviename)
-        dialogMovieSelect.Refresh()
-        dialogMovieSelect.ShowDialog()
-        If dialogMovieSelect.DialogResult = System.Windows.Forms.DialogResult.Cancel Then
-            'MsgBox("Cancel Selected, the first id (if one was found) will be used.")
-            If Not retid = "" Then Return retid
-        Else
-            retid = CStr(dialogMovieSelect.klbPickTheMovie.SelectedValue)
-            retid = Strings.Trim(retid)
-            Return retid
-        End If
-
-        'Debug.Print(selectedshow)
-        'dialogTvShowSelect.Dispose()
-        'If dbgTVShows Then dlgTVShowCurStatus.Show()
-        '        Else
-        'Dim tvbdseries1 As New thetvdb.TvSeries
-        'tvbdseries1 = CType(tarray.Item(0), TvSeries)
-        'selectedshow = tvbdseries1.seriesid
-        'selectedshow = Strings.Replace(selectedshow, " ", "")
-        '        End If
-        '    End If
-        'now that we have the showid, use the api to get the data
-
-
-        'skipping other 2 methods as this one is more generic, may result in more bogus results
-        Return retid
-    End Function
     Private Function snagimdbid(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
         Dim lookupname As String = pmname.ToLower
         lookupname = Strings.Replace(lookupname, "(", "")
@@ -12231,44 +11708,7 @@ Public Class maincollection
         'End If
 
     End Function
-    Private Function snagyear(ByVal pmname As String, ByRef tmovie As movie, ByRef vtstringofimdbpage As String) As String
-        Dim lookupname As String = pmname.ToLower
-        lookupname = Strings.Replace(lookupname, "(", "")
-        lookupname = Strings.Replace(lookupname, ")", "")
-        Dim RegexObj As New Regex("<a href=""/title/(?<greturnedid>tt\d{5,9})/"">" + lookupname + "</a>.{1,2}((?<gyear>\d{4}))")
-        Dim retyear As String = RegexObj.Match(vtstringofimdbpage).Groups("gyear").Value
-        If retyear = "" Then
-            Dim RegexObj2 As New Regex("<title>" + lookupname + ".{0,2}\((?<groupyear>2008)\)", RegexOptions.IgnoreCase)
-            Dim retyear2 As String = RegexObj2.Match(vtstringofimdbpage).Groups("groupyear").Value
-            If retyear2 = "" Then
-                Dim RegexObj3 As New Regex("\((?<imdbyear>\d{4})\)<br>.{0,6}aka <em>"".{0,4}" + lookupname + ".</em>")
-                Dim retyear3 As String = RegexObj3.Match(vtstringofimdbpage).Groups("imdbyear").Value
-                If retyear3 = "" Then
-                    Dim RegexObj4 As New Regex("<title>.{1,86}\((?<imdbyear4>\d{4})\)</title>")
-                    Dim retyear4 = RegexObj4.Match(vtstringofimdbpage).Groups("imdbyear4").Value
-                    If retyear4 = "" Then
-                        Return "0000"
-                    Else
-                        tmovie.setyear(Convert.ToInt16(retyear4))
-                        ' tbyear.Text = Convert.ToString(tmovie.getyear)
-                        Return retyear4
-                    End If
-                Else
-                    tmovie.setyear(Convert.ToInt16(retyear3))
-                    'tbyear.Text = Convert.ToString(tmovie.getyear)
-                    Return retyear3
-                End If
-            Else
-                tmovie.setyear(Convert.ToInt16(retyear2))
-                'tbyear.Text = Convert.ToString(tmovie.getyear)
-                Return retyear2
-            End If
-        Else
-            tmovie.setyear(Convert.ToInt16(retyear))
-            'tbyear.Text = Convert.ToString(tmovie.getyear)
-            Return retyear
-        End If
-    End Function
+    
     Private Sub overlayfolderjpg(ByVal path As String)
         Try 'fix to check file first and remove try block
             Dim x, y As Integer
@@ -12587,7 +12027,7 @@ Public Class maincollection
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbTick.Tick
         pbar1.Value = pbar1.Maximum
         lblPbar.Text = lblPbar.Text + " ___ "
-        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        'If messageprompts Then Me.gbDisplay.Refresh()
     End Sub
     Private Sub tsbMoviesPrecache_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesPreCache.Click
         'cacheicons()
@@ -12638,7 +12078,7 @@ Public Class maincollection
         lbMyMovies.Enabled = False 'disable manual item selection
         While lbMyMovies.SelectedIndex <= (lbMyMovies.Items.Count - 1)
             Me.pbar1.Visible = True
-            'If Me.messageprompts Then Me.gbDisplay.Refresh()
+            'If messageprompts Then Me.gbDisplay.Refresh()
             'pbTick.Start()
             Dim maxDisplayedIcons As Integer = rconf.pcbMaxIconsToDisplay
             Dim tmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
@@ -12650,7 +12090,7 @@ Public Class maincollection
             pbar1.Value = pbar1.Maximum
             lblPbar.Visible = True
             lblPbar.Text = "WORKING ON: " + selectedName
-            'If Me.messageprompts Then Me.Refresh()()
+            'If messageprompts Then Me.Refresh()()
             lblCurMovieFolder.Text = tmovie.getmoviepath
 
             Dim selectedNameXMLfile As String
@@ -12715,7 +12155,7 @@ Public Class maincollection
 
             If rconf.pcbGetIMDBInfo Then 'get imdb info
                 lblPbar.Text = " __-- Getting IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
-                'If Me.messageprompts Then Me.Refresh()()
+                'If messageprompts Then Me.Refresh()()
                 If rbem.Checked = True Then
                     If File.Exists(rconf.imdbcachefolder + "/" + tmovie.getimdbid + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
                         lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + tmovie.getmoviename.ToString + "--__ "
@@ -12989,17 +12429,17 @@ Public Class maincollection
                 Debug.Print(Date.Now.ToString)
                 If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(360) < Date.Now Then
                     lblPbar.Text = "Checking for new mediaicons"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                     File.SetAttributes(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml", FileAttributes.Normal) 'change attributes
                     File.Delete(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") 'remove it
                     searchForThumbFromUrl(tmovie.getmoviename, format, catagory, style)
                     lblPbar.Text = "Checking complete"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                 End If
                 If pclogging Then pclog.WriteLine("File in cache: " + xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml")
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
             Else
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
                 If pclogging Then pclog.WriteLine("No XML File in cache, will download xml for: " + xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml")
                 searchForThumbFromUrl(tmovie.getmoviename, format, catagory, style)
             End If
@@ -13025,16 +12465,16 @@ Public Class maincollection
             '    Debug.Print(Date.Now.ToString)
             '    If File.GetCreationTime(xmltemppathname + "f" + Format() + "c" + catagory + "s" + style + ".xml").AddDays(60) < Date.Now Then
             '        lblPbar.Text = "Checking for new mediaicons"
-            '        ''If Me.messageprompts Then Me.Refresh()()
+            '        ''If messageprompts Then Me.Refresh()()
             '        File.SetAttributes(xmltemppathname + "f" + Format() + "c" + catagory + "s" + style + ".xml", FileAttributes.Normal) 'change attributes
             '        File.Delete(xmltemppathname + "f" + Format() + "c" + catagory + "s" + style + ".xml") 'remove it
             '        searchForThumbFromUrl(tvshowname, Format, catagory, style)
             '        lblPbar.Text = "Checking complete"
-            '        ''If Me.messageprompts Then Me.Refresh()()
+            '        ''If messageprompts Then Me.Refresh()()
             '    End If
             '    'If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") < Date.Now Then
             'Else
-            '    ''If Me.messageprompts Then Me.Refresh()()
+            '    ''If messageprompts Then Me.Refresh()()
             '    'If pclogging Then pclog.WriteLine("No XML File in cache, will download xml for: " + xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml")
             '    searchForThumbFromUrl(tvshowname, Format, catagory, style)
             'End If
@@ -13053,16 +12493,16 @@ Public Class maincollection
                 Debug.Print(Date.Now.ToString)
                 If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(60) < Date.Now Then
                     lblPbar.Text = "Checking for new mediaicons"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                     File.SetAttributes(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml", FileAttributes.Normal) 'change attributes
                     File.Delete(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") 'remove it
                     searchForThumbFromUrl(tvshowname, format, catagory, style)
                     lblPbar.Text = "Checking complete"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                 End If
                 'If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") < Date.Now Then
             Else
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
                 'If pclogging Then pclog.WriteLine("No XML File in cache, will download xml for: " + xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml")
                 searchForThumbFromUrl(tvshowname, format, catagory, style)
             End If
@@ -13081,16 +12521,16 @@ Public Class maincollection
                 Debug.Print(Date.Now.ToString)
                 If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml").AddDays(60) < Date.Now Then
                     lblPbar.Text = "Checking for new mediaicons"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                     File.SetAttributes(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml", FileAttributes.Normal) 'change attributes
                     File.Delete(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") 'remove it
                     searchForThumbFromUrl(tvshowname, format, catagory, style)
                     lblPbar.Text = "Checking complete"
-                    ''If Me.messageprompts Then Me.Refresh()()
+                    ''If messageprompts Then Me.Refresh()()
                 End If
                 'If File.GetCreationTime(xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml") < Date.Now Then
             Else
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
                 'If pclogging Then pclog.WriteLine("No XML File in cache, will download xml for: " + xmltemppathname + "f" + format + "c" + catagory + "s" + style + ".xml")
                 searchForThumbFromUrl(tvshowname, format, catagory, style)
             End If
@@ -16440,7 +15880,7 @@ Public Class maincollection
         Dim counter As Integer = 0
 
         'clean up invalid posters
-        If Me.messageprompts Then postertotal += passedposter.pposters.Count
+        If messageprompts Then postertotal += passedposter.pposters.Count
         Dim cleanupcount As Integer = 0
         While cleanupcount < passedposter.pposters.Count
             If singleMovieBeingDisplayed Then 'flag when using bw
@@ -16503,7 +15943,7 @@ Public Class maincollection
             If File.Exists(fullpath) Then File.SetAttributes(fullpath, FileAttributes.Normal)
         End If
         If Not File.Exists(addfiletofolder(rconf.calgorydotnetfolder, filename)) Then Exit Sub
-        If Me.messageprompts Then postertotal += 1
+        If messageprompts Then postertotal += 1
 
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -16520,7 +15960,7 @@ Public Class maincollection
         End If
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
-        If Me.messageprompts Then postertotal += tbdcount
+        If messageprompts Then postertotal += tbdcount
         If pclogging Then pclog.WriteLine(tbdcount.ToString + ": is the count of Posters from TMDB")
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -16726,7 +16166,7 @@ Public Class maincollection
         Dim counter As Integer = 0
 
         'clean up invalid posters
-        'If Me.messageprompts Then postertotal += passedposter.pposters.Count
+        'If messageprompts Then postertotal += passedposter.pposters.Count
         Dim cleanupcount As Integer = 0
         While cleanupcount < passedposter.pposters.Count
             If singleMovieBeingDisplayed Then 'flag when using bw
@@ -16926,7 +16366,7 @@ Public Class maincollection
         poster.readxml(poster, rconf.xmlfolderposters)
         'MsgBox(poster.pposters.Count)
         Dim counter As Integer = 0
-        If Me.messageprompts Then postertotal += poster.pposters.Count
+        If messageprompts Then postertotal += poster.pposters.Count
         While counter < poster.pposters.Count
             Debug.Print(poster.pposters(counter).ToString)
             counter = counter + 1
@@ -16965,7 +16405,7 @@ Public Class maincollection
                     End If
                 Else
                     fromcache = False
-                    If Me.messageprompts Then curtimppostercounter += 1
+                    If messageprompts Then curtimppostercounter += 1
                     Debug.Print(" -- NOT Cached: " + curposter.pmoviename.ToString)
                     If singleMovieBeingDisplayed Then 'flag when using bw
                         bwcounter += 1
@@ -17731,7 +17171,7 @@ Public Class maincollection
         Return tStringResult
     End Function
    
-    Shared Function imdbparse(ByRef imdbid As String) As IMDB
+    Public Shared Function imdbparse(ByRef imdbid As String) As IMDB
         'get imdbid data using imdbid
         Dim imdbtxt As String = getimdbbyid(imdbid + "/")
 
@@ -19124,10 +18564,10 @@ Public Class maincollection
         End If
         'mainform.CheckForIllegalCrossThreadCalls = False
         prgThread.Value = 0
-        prgThread.Maximum = lbMyMovies.Items.Count - 1
+        prgThread.Maximum = lbMyMovies.Items.Count
 
         'set totaltoprocess value
-        totaltoprocess = lbMyMovies.Items.Count - 1
+        totaltoprocess = lbMyMovies.Items.Count
         'set max number 
         pcmaxDisplayedIcons = rconf.pcbMaxIconsToDisplay
         pcMaxIconPerStyle = rconf.pcbMaxIconPerStyle
@@ -19191,9 +18631,9 @@ Public Class maincollection
         'Dim pclog As StreamWriter
         pclog = New StreamWriter(logfile, True) 'True for appending
         pclogging = True
-        Me.messageprompts = False
+        messageprompts = False
         Dim currentindex As Integer = 0
-        While currentindex <= totaltoprocess '(cbox1.Items.Count - 1)
+        While currentindex < totaltoprocess '(cbox1.Items.Count - 1)
             If bwPreCache.CancellationPending Then
                 Exit While
             End If
@@ -19267,106 +18707,107 @@ Public Class maincollection
             'see if nfo file exsists for movie, if it does, read it up to speed it up
             'Dim nfoexsists As Boolean = checkforIMDBIDinnfofile(tmovie)
             pclog.WriteLine("Checking NFO for IMDB id")
-            ' ---- IMDB AND NFO -----
-            Dim hasnfoalready As Boolean = False
-            Dim haveidonly As Boolean = False
-            'see if movie data was loaded from nfo file during folder scan
-            If Not currentmovie.pdatafromnfo Then
-                'we don't have data so try to get it
-                'see if nfo file exsists for movie, if it does, read it up to speed it up
-                haveidonly = checkforIMDBIDinnfofile(currentmovie)
-                If Not haveidonly Then
-                    'see if there is an nfo file in the folder 
-                    'Dim parentfolder As String = getparentdirectory(currentmovie.getmoviepath)
-                    Dim curName As String = ""
-                    If currentmovie.pfilemode Then
-                        curName = addfiletofolder(currentmovie.getmoviepath, removeextension(currentmovie.preservedmoviename) & ".nfo")
-                    Else
-                        curName = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".nfo")
-                    End If
-                    If File.Exists(curName) Then
-                        'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true and set the id in the movie
-                        Dim strwork As String = File.ReadAllText(curName)
-                        Try
-                            If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
-                                currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
-                                haveidonly = True
-                            End If
-                        Catch ex As ArgumentException
-                            'Syntax error in the regular expression
-                        End Try
-                        strwork = ""
-                    End If
-                End If
+            checknfodata(currentmovie, currentmovie.pmoviename, True)
+            '' ---- IMDB AND NFO -----
+            'Dim hasnfoalready As Boolean = False
+            'Dim haveidonly As Boolean = False
+            ''see if movie data was loaded from nfo file during folder scan
+            'If Not currentmovie.pdatafromnfo Then
+            '    'we don't have data so try to get it
+            '    'see if nfo file exsists for movie, if it does, read it up to speed it up
+            '    haveidonly = checkforIMDBIDinnfofile(currentmovie)
+            '    If Not haveidonly Then
+            '        'see if there is an nfo file in the folder 
+            '        'Dim parentfolder As String = getparentdirectory(currentmovie.getmoviepath)
+            '        Dim curName As String = ""
+            '        If currentmovie.pfilemode Then
+            '            curName = addfiletofolder(currentmovie.getmoviepath, removeextension(currentmovie.preservedmoviename) & ".nfo")
+            '        Else
+            '            curName = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".nfo")
+            '        End If
+            '        If File.Exists(curName) Then
+            '            'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true and set the id in the movie
+            '            Dim strwork As String = File.ReadAllText(curName)
+            '            Try
+            '                If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
+            '                    currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
+            '                    haveidonly = True
+            '                End If
+            '            Catch ex As ArgumentException
+            '                'Syntax error in the regular expression
+            '            End Try
+            '            strwork = ""
+            '        End If
+            '    End If
 
-                If Not haveidonly Then
-                    Dim filelist() As String '  As New ArrayList
-                    filelist = Directory.GetFiles(currentmovie.getmoviepath)
-                    'Dim totfilecount As Integer = filelist.
-                    For Each pathedfile As String In filelist
-                        Dim strnfoextonfile As String = ""
-                        strnfoextonfile = Strings.Right(pathedfile, 4)
-                        If strnfoextonfile = ".nfo" Then
-                            'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true set the id in the movie
-                            Dim strwork As String = File.ReadAllText(pathedfile)
-                            Try
-                                If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
-                                    currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
-                                    haveidonly = True
-                                End If
-                            Catch ex As ArgumentException
-                                'Syntax error in the regular expression
-                            End Try
-                            strwork = ""
-                        End If
-                        If haveidonly Then
-                            Exit For
-                        End If
-                    Next
-                End If
+            '    If Not haveidonly Then
+            '        Dim filelist() As String '  As New ArrayList
+            '        filelist = Directory.GetFiles(currentmovie.getmoviepath)
+            '        'Dim totfilecount As Integer = filelist.
+            '        For Each pathedfile As String In filelist
+            '            Dim strnfoextonfile As String = ""
+            '            strnfoextonfile = Strings.Right(pathedfile, 4)
+            '            If strnfoextonfile = ".nfo" Then
+            '                'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true set the id in the movie
+            '                Dim strwork As String = File.ReadAllText(pathedfile)
+            '                Try
+            '                    If Regex.IsMatch(strwork, "(tt\d{6,7})") Then
+            '                        currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
+            '                        haveidonly = True
+            '                    End If
+            '                Catch ex As ArgumentException
+            '                    'Syntax error in the regular expression
+            '                End Try
+            '                strwork = ""
+            '            End If
+            '            If haveidonly Then
+            '                Exit For
+            '            End If
+            '        Next
+            '    End If
 
-                If Not haveidonly Then
-                    'if there is no nfo file, check for a poster file (they have the imdbid in them)
-                    haveidonly = checkforposterfiletogetimdbid(currentmovie)
-                End If
-            Else
-                hasnfoalready = True
-            End If
-            'getimdbidsearchwithwget(tmovie)
-            'not getting year for this movie, was used for posters, call for posters if needed
-            ' snagyear(tmovie.getmoviename, tmovie)
-            ' COMMENTED Dim impaname As String = Strings.Replace(tmovie.getmoviename, " ", "_").ToLower
+            '    If Not haveidonly Then
+            '        'if there is no nfo file, check for a poster file (they have the imdbid in them)
+            '        haveidonly = checkforposterfiletogetimdbid(currentmovie)
+            '    End If
+            'Else
+            '    hasnfoalready = True
+            'End If
+            ''getimdbidsearchwithwget(tmovie)
+            ''not getting year for this movie, was used for posters, call for posters if needed
+            '' snagyear(tmovie.getmoviename, tmovie)
+            '' COMMENTED Dim impaname As String = Strings.Replace(tmovie.getmoviename, " ", "_").ToLower
 
-            If rconf.pcbGetIMDBInfo Then 'get imdb info
-                If rbem.Checked = True Then
-                    pclog.WriteLine("Getting IMDB Information")
-                    If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.getimdbid + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-                        pclog.WriteLine("IMDB xml file for movie already exsists, using local file")
-                        'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-                        'Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-                    Else
-                        'getimdbidsearch(tmovie.getmoviename)
-                        'snagimdbid(tmovie.getmoviename, tmovie)
-                        'snagyear(tmovie.getmoviename, tmovie)
-                        ' getimdbdata(tmovie)
-                        Dim imdbinfo As New IMDB
-                        Dim imdbidtemp As String = currentmovie.getimdbid
-                        If imdbidtemp = "" Then
-                            'MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                            pclog.WriteLine("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-                        Else
-                            pclog.WriteLine("Found IMDB ID, staring to parse IMDB information")
-                            imdbinfo = imdbparse(imdbidtemp)
-                            'save xml to imdbcache reguardless of gui setting to write nfo
-                            imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
-                            'If cbSaveNFO.Checked Then
-                            '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-                            '    tmovie.saveimdbinfo(tmovie)
-                            'End If
-                        End If
-                    End If
-                End If
-            End If
+            'If rconf.pcbGetIMDBInfo Then 'get imdb info
+            '    If rbem.Checked = True Then
+            '        pclog.WriteLine("Getting IMDB Information")
+            '        If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.getimdbid + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
+            '            pclog.WriteLine("IMDB xml file for movie already exsists, using local file")
+            '            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
+            '            'Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
+            '        Else
+            '            'getimdbidsearch(tmovie.getmoviename)
+            '            'snagimdbid(tmovie.getmoviename, tmovie)
+            '            'snagyear(tmovie.getmoviename, tmovie)
+            '            ' getimdbdata(tmovie)
+            '            Dim imdbinfo As New IMDB
+            '            Dim imdbidtemp As String = currentmovie.getimdbid
+            '            If imdbidtemp = "" Then
+            '                'MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+            '                pclog.WriteLine("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+            '            Else
+            '                pclog.WriteLine("Found IMDB ID, staring to parse IMDB information")
+            '                imdbinfo = imdbparse(imdbidtemp)
+            '                'save xml to imdbcache reguardless of gui setting to write nfo
+            '                imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
+            '                'If cbSaveNFO.Checked Then
+            '                '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
+            '                '    tmovie.saveimdbinfo(tmovie)
+            '                'End If
+            '            End If
+            '        End If
+            '    End If
+            'End If
 
             'get Movie Poster
             Dim impaname As String = cleanname(currentmovie.getmoviename)
@@ -19436,7 +18877,7 @@ Public Class maincollection
             'get fanart - first check to see if it's enabled
             If rconf.pcbGetTMDBPosters Then
                 pclog.WriteLine("-- Getting TMDB Posters: " + selectedName + "--")
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
                 downloadtmdbposters(0, currentmoviedownloadlist)
                 'precachepostersfromtmdb(tmovie)
             End If
@@ -19444,7 +18885,7 @@ Public Class maincollection
             'get fanart - first check to see if it's enabled
             If rconf.pcbGetFanart Then
                 pclog.WriteLine("-- Getting Fanart: " + selectedName + "--")
-                ''If Me.messageprompts Then Me.Refresh()()
+                ''If messageprompts Then Me.Refresh()()
                 downloadtmdbfanart(0, currentmoviedownloadlist)
             End If
 
@@ -21620,8 +21061,8 @@ Public Class maincollection
         If extension = "png" Then extensionpassed = True
         If Not extensionpassed Then Exit Sub
 
-        If Me.messageprompts Then lblPbar.Text = "Setting Season Poster : " + tbdcou.ToString
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Setting Season Poster : " + tbdcou.ToString
+        'If messageprompts Then Me.Refresh()()
         Select Case tbdcou
             Case 0
                 Try
@@ -22075,8 +21516,8 @@ Public Class maincollection
         End If
         If Not arrayofposters Is Nothing Then temparrayofposters = arrayofposters
         Dim tbdcou As Integer = 0 'tbdcou is the counter for the pictureboxes and is incremented after a sucessfull image load
-        If Me.messageprompts Then lblPbar.Text = "Loading Poster into GUI"
-        If Me.messageprompts Then Me.Refresh()
+        If messageprompts Then lblPbar.Text = "Loading Poster into GUI"
+        If messageprompts Then Me.Refresh()
         For Each curposter As String In temparrayofposters
             Dim posterfilename As String = curposter
             If posterfilename.Length <= 3 Then
@@ -23417,8 +22858,8 @@ Public Class maincollection
         If extension = "png" Then extensionpassed = True
         If Not extensionpassed Then Exit Sub
 
-        If Me.messageprompts Then lblPbar.Text = "Setting TVShow Poster : " + tbdcou.ToString
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Setting TVShow Poster : " + tbdcou.ToString
+        'If messageprompts Then Me.Refresh()()
         Select Case tbdcou
             Case 0
                 Try
@@ -23869,8 +23310,8 @@ Public Class maincollection
         If extension = "png" Then extensionpassed = True
         If Not extensionpassed Then Exit Sub
 
-        If Me.messageprompts Then lblPbar.Text = "Setting Wide Icon: " + tbdcou.ToString
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Setting Wide Icon: " + tbdcou.ToString
+        'If messageprompts Then Me.Refresh()()
         Select Case tbdcou
             Case 0
                 Try
@@ -24665,13 +24106,13 @@ Public Class maincollection
         kgpbSeasonAllposter.Visible = True
         If rbem.Checked Then
             lblPbar.Visible = True
-            Me.messageprompts = True
+            messageprompts = True
         Else
-            Me.messageprompts = False
+            messageprompts = False
         End If
         khgShowsMI.Visible = False
-        If Me.messageprompts Then lblPbar.Text = "Reading TV Show Data"
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Reading TV Show Data"
+        'If messageprompts Then Me.Refresh()()
         If cbAllowIconSelection.Checked Then resetanddisableimages()
         tpmmn.Enabled = False
         tpmipf.Enabled = False
@@ -24691,8 +24132,8 @@ Public Class maincollection
         Dim theid As String = Regex.Match(curtvshowpath, "(:\d*?:)").Groups(1).Value
         curtvshowpath = Strings.Replace(curtvshowpath, theid, "")
 
-        If Me.messageprompts Then lblPbar.Text = "Setting up Icon Selection Data"
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Setting up Icon Selection Data"
+        'If messageprompts Then Me.Refresh()()
 
         'setup for icon selection
 
@@ -24702,8 +24143,8 @@ Public Class maincollection
 
         mycurrentshow.Clear()
 
-        If Me.messageprompts Then lblPbar.Text = "Gathering Season Information"
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Gathering Season Information"
+        'If messageprompts Then Me.Refresh()()
 
         Dim dtcurrentshowseason As New DataTable
         dtcurrentshowseason.Columns.Add("Season Number", GetType(System.String))
@@ -24732,8 +24173,8 @@ Public Class maincollection
         gvcurrenttvshow.Id = Nothing
         gvcurrenttvshow.Id = currentshowid
         curtvshowlocationlbl.Text = curtvshowpath
-        If Me.messageprompts Then lblPbar.Text = "Setting up Season Information"
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Setting up Season Information"
+        'If messageprompts Then Me.Refresh()()
         Dim t_tctvcount As Integer = 0
         For Each t_tctvseason As seasons In mycurrentshow
             Dim key As String = currentshowid & t_tctvseason.seasonnumber & curtvshowpath
@@ -24766,8 +24207,8 @@ Public Class maincollection
         '(lbSeasonPicker.Click())
 
         'display tvshow data in gui boxes
-        If Me.messageprompts Then lblPbar.Text = "Loading .nfo file Information"
-        'If Me.messageprompts Then Me.Refresh()()
+        If messageprompts Then lblPbar.Text = "Loading .nfo file Information"
+        'If messageprompts Then Me.Refresh()()
         'load nfo to temp var
         Dim currentxbmctvshow As New xbmc.xbmcTvshow
         If File.Exists(curtvshowpath + "\tvshow.nfo") Then
@@ -24775,7 +24216,7 @@ Public Class maincollection
 
             currentxbmctvshow.readXML(curtvshowpath + "\tvshow.nfo", currentxbmctvshow)
         End If
-        lblCurMovieFolder.Text = curtvshowpath ' - put path into gui
+        'lblCurMovieFolder.Text = curtvshowpath ' - put path into gui
         klblTvShowName.Text = currentxbmctvshow.Title
         krtbTvShowOverview.Text = currentxbmctvshow.Plot
         klbltvFirstAired.Text = currentxbmctvshow.Premiered
@@ -24899,7 +24340,7 @@ Public Class maincollection
         lblPbar.Visible = False
         If cbAllowIconSelection.Checked Then
             lblPbar.Visible = True
-            Me.messageprompts = True
+            messageprompts = True
             tpPosters.Enabled = True
             tpIMPPosters.Enabled = True
             tpFanart.Enabled = True
@@ -24965,64 +24406,64 @@ Public Class maincollection
             'asdf()
             If rconf.pcbf1s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "0") 'square no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "0", dname, True)
             End If
             If rconf.pcbf1s3 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "3") 'square box shot
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "3", dname, True)
             End If
             If rconf.pcbf1s9 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "9") 'square classification, but it's a round token
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "9", dname, True)
             End If
             If rconf.pcbf2s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "0") 'wide no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "0", dname, True)
             End If
             If rconf.pcbf2s2 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "2") 'wide rounded shadow with scanlines
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "2", dname, True)
             End If
             If rconf.pcbf2s8 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "8") 'wide rounded shadow
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "8", dname, True)
             End If
             If rconf.pcbf2s10 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "10") 'wide rounded shadow with glass overlay
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "10", dname, True)
             End If
             'If cbf3s0.Checked Then
             '    If rbem.Checked = True Then
-            '        If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-            '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+            '        If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+            '        'If messageprompts Then Me.gbDisplay.Refresh()
             '        xmlDownload(currentmovie, xmltemppathname, "3", "4", "0") 'tall no style
             '    End If
             '    getdisplayimages(selectedNameXMLfile, "3", "4", "0")
@@ -25040,56 +24481,56 @@ Public Class maincollection
 
             If rconf.pcbf1s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "0") 'square no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "0", dname)
             End If
             If rconf.pcbf1s3 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "3") 'square box shot
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "3", dname)
             End If
             If rconf.pcbf1s9 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "1", "4", "9") 'square classification, but it's a round token
                 End If
                 getdisplayimages(selectedNameXMLfile, "1", "4", "9", dname)
             End If
             If rconf.pcbf2s0 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "0") 'wide no style
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "0", dname)
             End If
             If rconf.pcbf2s2 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "2") 'wide rounded shadow with scanlines
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "2", dname)
             End If
             If rconf.pcbf2s8 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "8") 'wide rounded shadow
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "8", dname)
             End If
             If rconf.pcbf2s10 Then
                 If rbem.Checked = True Then
-                    If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                    'If Me.messageprompts Then Me.Refresh()()
+                    If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                    'If messageprompts Then Me.Refresh()()
                     xmlDownloadTV(dname, xmltemppathname, "2", "4", "10") 'wide rounded shadow with glass overlay
                 End If
                 getdisplayimages(selectedNameXMLfile, "2", "4", "10", dname)
@@ -25476,7 +24917,7 @@ Public Class maincollection
         Dim curlang As String = rconf.tv_curlang
         If cbAllowIconSelection.Checked Then
             lblPbar.Visible = True
-            Me.messageprompts = True
+            messageprompts = True
             tpTMDBPosters.Enabled = True
             resetmiimages()
             resettmdbposterimages() 'reset just the season images
@@ -25562,7 +25003,7 @@ Public Class maincollection
                     End Select
                 End If
                 lblPbar.Visible = False
-                Me.messageprompts = False
+                messageprompts = False
             Next
 
 
@@ -25620,8 +25061,8 @@ Public Class maincollection
                     'do nothing
                 Else
                 End If
-                If Not xbmccurep.fileinfo.version = 1.2 Then
-                    Me.messageprompts = True
+                If Not xbmccurep.fileinfo.version = 1.3 Then
+                    messageprompts = True
                     gettvepmediainfo_bw()
                     'save nfo ?
 
@@ -25652,8 +25093,8 @@ Public Class maincollection
             krtbep_Overview.Text = gvcurrenttvepisode.Overview
             ktbep_epseason.Text = gvcurrenttvepisode.SeasonNumber
             ktbep_epRating.Text = gvcurrenttvepisode.Rating
-            If Not gvcurrenttvepisode.fileinfo.version = 1.2 Then
-                Me.messageprompts = True
+            If Not gvcurrenttvepisode.fileinfo.version = 1.3 Then
+                messageprompts = True
                 krtbTVShowMediaInfo.Text = "Multi-part episodes can't be re-scanned at this time." & vbNewLine & "If this is not a multipart episode, check the filename for -2 .. or any - and a number, x and a number, or e and a number."
                 'gettvepmediainfo_bw()
                 'save nfo ?
@@ -25704,64 +25145,64 @@ Public Class maincollection
 
         'If rconf.pcbf1s0 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-        '        ''If Me.messageprompts Then Me.Refresh()()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+        '        ''If messageprompts Then Me.Refresh()()
         '        xmlDownloadTV(dname, xmltemppathname, "1", "4", "0") 'square no style
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "1", "4", "0", dname)
         'End If
         'If rconf.pcbf1s3 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-        '        ''If Me.messageprompts Then Me.Refresh()()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+        '        ''If messageprompts Then Me.Refresh()()
         '        xmlDownloadTV(dname, xmltemppathname, "1", "4", "3") 'square box shot
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "1", "4", "3", dname)
         'End If
         'If rconf.pcbf1s9 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownloadTV(dname, xmltemppathname, "1", "4", "9") 'square classification, but it's a round token
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "1", "4", "9", dname)
         'End If
         'If rconf.pcbf2s0 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownloadTV(dname, xmltemppathname, "2", "4", "0") 'wide no style
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "2", "4", "0", dname)
         'End If
         'If rconf.pcbf2s2 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownloadTV(dname, xmltemppathname, "2", "4", "2") 'wide rounded shadow with scanlines
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "2", "4", "2", dname)
         'End If
         'If rconf.pcbf2s8 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownloadTV(dname, xmltemppathname, "2", "4", "8") 'wide rounded shadow
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "2", "4", "8", dname)
         'End If
         'If rconf.pcbf2s10 Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownloadTV(dname, xmltemppathname, "2", "4", "10") 'wide rounded shadow with glass overlay
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "2", "4", "10", dname)
         'End If
         'If cbf3s0.Checked Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownload(currentmovie, xmltemppathname, "3", "4", "0") 'tall no style
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "3", "4", "0")
@@ -28119,20 +27560,7 @@ Public Class maincollection
         'End Try
         Return curstring
     End Function
-    Public Function removeextension(ByRef filename As String) As String
-        Dim retstr As String = "none"
-        If Not filename = Nothing Then
-            If filename.Length > 5 Then
-                If Strings.Left(Strings.Right(filename, 3), 1) = "." Then
-                    retstr = Strings.Left(filename, filename.Length - 3)
-                Else
-                    retstr = Strings.Left(filename, filename.Length - 4)
-                End If
-                'retstr = Strings.Left(filename, filename.Length - 4)
-            End If
-        End If
-        Return retstr
-    End Function
+  
     Private Sub tsbShowsUpdateShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbShowsUpdateShows.Click
         If lbTvShowPicker.Items.Count = 0 Then Exit Sub
 
@@ -28387,7 +27815,7 @@ Public Class maincollection
     End Sub
 
     Private Sub reload_tv_media_information()
-        Me.messageprompts = True
+        messageprompts = True
         gettvepmediainfo_bw()
 
         'Dim curmedinfo As New MediaInfo
@@ -28964,9 +28392,9 @@ Public Class maincollection
     End Sub
 
     Private Sub getmoviemediainfo_bw()
-        If Me.messageprompts Then krtbMovieVideoInfo.Text = "Reading Movie Media Information"
-        If Me.messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = True
-        If Me.messageprompts Then pbarLoadingMovieMediaInfo.Visible = True
+        If messageprompts Then krtbMovieVideoInfo.Text = "Reading Movie Media Information"
+        If messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = True
+        If messageprompts Then pbarLoadingMovieMediaInfo.Visible = True
         Me.Refresh()
         bwGetMovieMediaInfo = New System.ComponentModel.BackgroundWorker
         bwGetMovieMediaInfo.WorkerReportsProgress = True
@@ -28975,9 +28403,9 @@ Public Class maincollection
     End Sub
 
     Private Sub gettvepmediainfo_bw()
-        If Me.messageprompts Then krtbTVShowMediaInfo.Text = "Reading TV Show Media Information"
-        If Me.messageprompts Then lblpbarLoadingTVShowMediaInfo.Visible = True
-        If Me.messageprompts Then pbarLoadingTVShowMediaInfo.Visible = True
+        If messageprompts Then krtbTVShowMediaInfo.Text = "Reading TV Show Media Information"
+        If messageprompts Then lblpbarLoadingTVShowMediaInfo.Visible = True
+        If messageprompts Then pbarLoadingTVShowMediaInfo.Visible = True
         Me.Refresh()
         bwGetTVEPMediaInfo = New System.ComponentModel.BackgroundWorker
         bwGetTVEPMediaInfo.WorkerReportsProgress = True
@@ -28989,18 +28417,18 @@ Public Class maincollection
     End Sub
 
     Private Sub bwGetMovieMediaInfo_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwGetMovieMediaInfo.RunWorkerCompleted
-        If Me.messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = False
-        If Me.messageprompts Then pbarLoadingMovieMediaInfo.Visible = False
-        If Me.messageprompts Then krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
+        If messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = False
+        If messageprompts Then pbarLoadingMovieMediaInfo.Visible = False
+        If messageprompts Then krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
     End Sub
     Private Sub bwGetTVEPMediaInfo_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwGetTVEPMediaInfo.DoWork
         getmediadata(gvcurrenttvepisode, True)
     End Sub
 
     Private Sub bwGetTVEPMediaInfo_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwGetTVEPMediaInfo.RunWorkerCompleted
-        If Me.messageprompts Then lblpbarLoadingTVShowMediaInfo.Visible = False
-        If Me.messageprompts Then pbarLoadingTVShowMediaInfo.Visible = False
-        If Me.messageprompts Then krtbTVShowMediaInfo.Text = gvcurrenttvepisode.fileinfo.objtostring(gvcurrenttvepisode.fileinfo)
+        If messageprompts Then lblpbarLoadingTVShowMediaInfo.Visible = False
+        If messageprompts Then pbarLoadingTVShowMediaInfo.Visible = False
+        If messageprompts Then krtbTVShowMediaInfo.Text = gvcurrenttvepisode.fileinfo.objtostring(gvcurrenttvepisode.fileinfo)
         'save it
         Dim xbmced1 As New xbmc.xbmcEpisodedetails
         gvcurrenttvepisode.tvdblangepisode2xbmcTvepisodeManualFromGUI(gvcurrenttvepisode, xbmced1) ', xbmctvshow1.Actors, curmirror)
@@ -29054,64 +28482,64 @@ Public Class maincollection
         'asdf()
         If rconf.pcbf1s0 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Square (no style) icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "1", "4", "0") 'square no style
             End If
             getdisplayimages(selectedNameXMLfile, "1", "4", "0", dname, True)
         End If
         If rconf.pcbf1s3 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Square Box Shot for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "1", "4", "3") 'square box shot
             End If
             getdisplayimages(selectedNameXMLfile, "1", "4", "3", dname, True)
         End If
         If rconf.pcbf1s9 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Round icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "1", "4", "9") 'square classification, but it's a round token
             End If
             getdisplayimages(selectedNameXMLfile, "1", "4", "9", dname, True)
         End If
         If rconf.pcbf2s0 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Wide (no style) icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "2", "4", "0") 'wide no style
             End If
             getdisplayimages(selectedNameXMLfile, "2", "4", "0", dname, True)
         End If
         If rconf.pcbf2s2 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Wide (rounded shadow scanlines) icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "2", "4", "2") 'wide rounded shadow with scanlines
             End If
             getdisplayimages(selectedNameXMLfile, "2", "4", "2", dname, True)
         End If
         If rconf.pcbf2s8 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow) icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "2", "4", "8") 'wide rounded shadow
             End If
             getdisplayimages(selectedNameXMLfile, "2", "4", "8", dname, True)
         End If
         If rconf.pcbf2s10 Then
             If rbem.Checked = True Then
-                If Me.messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
-                'If Me.messageprompts Then Me.Refresh()()
+                If messageprompts Then lblPbar.Text = "-- Getting Wide (round shadow Glass overlay) icon for " + dname + "--"
+                'If messageprompts Then Me.Refresh()()
                 xmlDownloadTV(dname, xmltemppathname, "2", "4", "10") 'wide rounded shadow with glass overlay
             End If
             getdisplayimages(selectedNameXMLfile, "2", "4", "10", dname, True)
         End If
         'If cbf3s0.Checked Then
         '    If rbem.Checked = True Then
-        '        If Me.messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
-        '        'If Me.messageprompts Then Me.gbDisplay.Refresh()
+        '        If messageprompts Then lblPbar.Text = "-- Getting Tall (no style) icon for " + dname + "--"
+        '        'If messageprompts Then Me.gbDisplay.Refresh()
         '        xmlDownload(currentmovie, xmltemppathname, "3", "4", "0") 'tall no style
         '    End If
         '    getdisplayimages(selectedNameXMLfile, "3", "4", "0")
