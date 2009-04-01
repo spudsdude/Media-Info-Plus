@@ -7,6 +7,12 @@ Module Module1
         Dim curdllist As New ArrayList
         curtv.precacheTVShowsCmdLine(curdllist)
         Console.Out.WriteLine("done curtv.precacheTVShowsCmdLine(curdllist)")
+        Dim currentoverwritesetting As Boolean = False
+
+        If Command.ToString.ToLower = "-nfoupdate" Then
+            currentoverwritesetting = True
+            Console.Out.WriteLine("Overwrite of .nfo files is set .. all information will be refreshed")
+        End If
 
         Dim binfilelocal As String = movieinfoplus.maincollection.rconf.wgetfolder + "wget.exe"
         If Not curdllist.Count = 0 Then
@@ -59,7 +65,7 @@ Module Module1
             End Try
         End If
         Console.Out.WriteLine("Processing of episodes started")
-        curtv.kbLoadTvShowsCmdLine()
+        curtv.kbLoadTvShowsCmdLine(currentoverwritesetting)
 
     End Sub
     Function getFileSizeExact(ByVal vFile As String) As Double

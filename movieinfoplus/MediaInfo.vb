@@ -286,6 +286,12 @@ Public Class MediaInfo
             vidstream.Codecidinfo = MI.Get_(StreamKind.Visual, curVS, "CodecID/Info")
             vidstream.Scantype = MI.Get_(StreamKind.Visual, curVS, "ScanType")
             vidstream.Container = Strings.Right(moviefilename, 4) '"This is the extension of the file"
+            Try
+                If Strings.Right(vidstream.Container, 3) = ".ts" Then vidstream.Container = ".ts"
+            Catch ex As Exception
+                Debug.Print("unable to parse movie extension when looking for .ts")
+            End Try
+
             vidstream.Aspectdisplayratio = MI.Get_(StreamKind.Visual, curVS, "DisplayAspectRatio")
             curVS = False
             With vidstream

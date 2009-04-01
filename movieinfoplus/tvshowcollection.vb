@@ -1207,7 +1207,7 @@ Public Class tvshowcollection
                                                 curmedinfo.getdata(tepisode1, True)
 
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
                                                 xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                             End If
 
@@ -1275,7 +1275,7 @@ Public Class tvshowcollection
                                                 End If
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.fullfilenameandpath = item
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
                                                     maincollection.pbar1.Visible = True
                                                     maincollection.lblPbar.Visible = True
@@ -1434,7 +1434,7 @@ Public Class tvshowcollection
         End If
     End Sub
 
-    Public Sub kbLoadTvShowsCmdLine(Optional ByVal debugon As Boolean = False, Optional ByVal dlo As Boolean = False)
+    Public Sub kbLoadTvShowsCmdLine(Optional ByVal overwritenfo As Boolean = False, Optional ByVal debugon As Boolean = False, Optional ByVal dlo As Boolean = False)
         gvNoShowsList = "" 'clear out the no show data list var
         Console.Out.WriteLine("starting to load the episodes")
         'Dim stpw As New Stopwatch
@@ -2006,18 +2006,20 @@ Public Class tvshowcollection
                                             tepisode1.fullfilenameandpath = item
                                             Dim writnfo As Boolean = False
                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                            If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
+                                            If overwritenfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
+                                            Console.Out.WriteLine("Overwrite: " & writnfo.ToString)
                                             If writnfo Then
                                                 'get media data
                                                 maincollection.pbar1.Visible = True
                                                 maincollection.lblPbar.Visible = True
                                                 maincollection.lblPbar.BringToFront()
                                                 maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                                Console.Out.WriteLine("-- Media Info Update for: " + item + "--")
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1e.Actors, curmirror, xbmctvshow1e.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1e.Actors, curmirror, xbmctvshow1e.Studio, xbmctvshow1e.Mpaa)
                                                 xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                             End If
 
@@ -2079,7 +2081,7 @@ Public Class tvshowcollection
                                                 End If
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.fullfilenameandpath = item
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1e.Actors, curmirror, xbmctvshow1e.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1e.Actors, curmirror, xbmctvshow1e.Studio, xbmctvshow1e.Mpaa)
                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
                                                     'maincollection.pbar1.Visible = True
                                                     'maincollection.lblPbar.Visible = True
@@ -2100,7 +2102,7 @@ Public Class tvshowcollection
                                         'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
                                         Dim writnfo As Boolean = False
                                         If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                        If rconf.tv_episode_overwrite_nfo Then writnfo = True
+                                        If overwritenfo Then writnfo = True
                                         If writnfo Then
                                             curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                         End If
@@ -2359,7 +2361,7 @@ Public Class tvshowcollection
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
                                                 xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                             End If
 
@@ -2421,7 +2423,7 @@ Public Class tvshowcollection
                                                 End If
                                                 Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                                 tepisode1.fullfilenameandpath = item
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio)
+                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
                                                     maincollection.pbar1.Visible = True
                                                     maincollection.lblPbar.Visible = True

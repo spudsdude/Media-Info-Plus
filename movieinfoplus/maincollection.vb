@@ -2143,6 +2143,14 @@ Public Class maincollection
 
 
     End Sub
+
+    Private Sub testofdbsearch()
+        Dim oWeb As New System.Net.WebClient()
+        oWeb.Headers.Add("Content-Type", "application/x-www-form-urlencoded")
+        Dim bytArguments As Byte() = System.Text.Encoding.ASCII.GetBytes("&SText=tt0443649&Kat=IMDb&page=suchergebnis&sourceid=mozilla-search")
+        Dim bytRetData As Byte() = oWeb.UploadData("http://www.ofdb.de/film/view.php?page=suchergebnis", "POST", bytArguments)
+        Debug.Write(System.Text.Encoding.ASCII.GetString(bytRetData))
+    End Sub
     Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean)
         messageprompts = True
         If messageprompts Then resetanddisableimages()
@@ -2185,6 +2193,7 @@ Public Class maincollection
         Dim selectedNameXMLfile As String
         selectedNameXMLfile = Strings.Replace(selectedName, " ", ".")
         currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
+      
 
         checknfodata(currentmovie, dname, rbem.Checked)
 
@@ -2361,11 +2370,44 @@ Public Class maincollection
 
         If mediaonly Then
             Debug.Print(currentmovie.pmoviename)
+            Try
+                Dim curimdb As New IMDB
+                Dim tempmov As New movie
+                tempmov.pimdbnumber = currentmovie.pimdbnumber
+                If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
+                    '' getimdbdata(tmovie)
+                    Dim imdbinfo As New IMDB
+                    Dim imdbidtemp As String = tempmov.getimdbid
+                    If imdbidtemp = "" Then
+                        Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
+                    Else
+                        imdbinfo = maincollection.imdbparse(imdbidtemp)
+                        imdbinfo.writeIMDBXML(imdbinfo, tempmov, maincollection.rconf.imdbcachefolder, True)
+                    End If
+                End If
+                curimdb.readIMDBXML(tempmov, rconf.imdbcachefolder)
+                currentmovie.pstudio = tempmov.pstudio
+                currentmovie.pstudioreal = tempmov.pstudio
+                currentmovie.pcredits = tempmov.pcredits
+            Catch ex As Exception
+                MsgBox("Couldn't readup cache for movie: " & ex.ToString)
+            End Try
+
             Dim MI As New MediaInfo
             MI.getdata(currentmovie, moviemode)
+            currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
             Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
             If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            'If currentmovie.pstudioreal Is Nothing Or currentmovie.pstudioreal Is "" Then
+            '    'see if pstudio has data
+            '    If Not currentmovie.pstudio = "" Then
+            '        If Not currentmovie.pstudio.Contains("/") Then
+            '            currentmovie.pstudioreal = currentmovie.pstudio
+            '            currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+            '        End If
+            '    End If
+            'End If
         End If
         'display imdb info
         gbDisplay.Parent.Text = currentmovie.getmoviename
@@ -5859,8 +5901,10 @@ Public Class maincollection
             currentmovie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
             If currentmovie.pfilemode = True Then
                 moviemode = "file"
+                bshgMovieFiletofolder.Visible = True
             Else
                 moviemode = "folder"
+                bshgMovieFiletofolder.Visible = False
             End If
 
         Catch ex As Exception
@@ -17149,6 +17193,20 @@ Public Class maincollection
         'imdbstring = Convert.ToString(s)
         Return imdbstring
     End Function
+    Shared Function getimdbbyidfullcredits(ByRef imdbid As String) As String
+        Dim imdbstring As String = ""
+        Dim baseurlsiid As String = "http://akas.imdb.com/title/" + imdbid '+ "/"
+        Dim pathtofile As String = rconf.tempfolder + imdbid + "\fullcredits"
+        If Not File.Exists(pathtofile) Then
+            wget(baseurlsiid, rconf.tempfolder, imdbid.ToString, True)
+        End If
+        Try
+            imdbstring = File.ReadAllText(pathtofile)
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+        Return imdbstring
+    End Function
     Shared Function getimdbbyidplot(ByRef imdbid As String) As String
         Dim imdbstring As String = ""
         Dim baseurlsiid As String = "http://akas.imdb.com/title/" + imdbid '+ "/"
@@ -17178,6 +17236,9 @@ Public Class maincollection
 
         'get full plot data useing imdbid
         Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
+
+        'get full credits page data useing imdbid
+        Dim imdbfctxt As String = getimdbbyidfullcredits(imdbid + "/fullcredits")
 
         Dim nimdb As New IMDB
         nimdb.id = imdbid
@@ -17295,7 +17356,52 @@ Public Class maincollection
         nimdb.genre = clb(nimdb.genre)
 
         'credits
-        nimdb.credits = ""
+        Dim writersTxt As String = ""
+        Try
+            Dim robjWriters As New Regex("Full cast and crew for.*<table class=""cast"">", RegexOptions.Singleline)
+            writersTxt = robjWriters.Match(imdbfctxt).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not writersTxt = "" Then
+            Try
+                Dim robjWritersDetails As New Regex("a href=""/name/nm\d{6,8}/"">(.*?)</a>.*?valign=""top"">(.*?)</td>.*?</tr>", RegexOptions.Singleline)
+                Dim MatchResultsName As Match = robjWritersDetails.Match(writersTxt)
+                While MatchResultsName.Success
+                    Dim curwriter As String = ""
+                    curwriter += MatchResultsName.Groups(1).Value.ToString
+                    Dim curwriterDidWhat As String = ""
+                    curwriterDidWhat = MatchResultsName.Groups(2).Value.ToString
+                    curwriterDidWhat = curwriterDidWhat.Replace("&nbsp;", "")
+                    curwriterDidWhat = curwriterDidWhat.Replace("<br>", "")
+                    curwriterDidWhat = curwriterDidWhat.Replace("&amp;", "&")
+                    If Not curwriterDidWhat = "" Then curwriter += " " & curwriterDidWhat
+                    If Not curwriter = "" Then nimdb.credits += (curwriter & " / ")
+                    'Dim i As Integer
+                    'For i = 1 To MatchResultsName.Groups.Count
+                    '    Dim GroupObjName As Group = MatchResultsName.Groups(i)
+                    '    If GroupObjName.Success Then
+
+                    '    End If
+                    'Next
+                    MatchResultsName = MatchResultsName.NextMatch()
+                End While
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+        End If
+        If Not nimdb.credits Is Nothing Then
+            Try
+                If Not nimdb.credits = "" Then
+                    If Strings.Right(nimdb.credits, 3) = " / " Then
+                        nimdb.credits = Strings.Left(nimdb.credits, nimdb.credits.Length - 3)
+                    End If
+                End If
+            Catch ex As Exception
+
+            End Try
+            
+        End If
         'Debug.Print("Credits is: " + nimdb.credits)
 
         'director
@@ -17999,6 +18105,11 @@ Public Class maincollection
     Private Sub bshMovieSaveChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieSaveChanges.Click
         If currentmovie Is Nothing Then Exit Sub
         saveNfoFromGuiText()
+        'cbNoNfoChangePrompt.Checked
+    End Sub
+    Private Sub bshgMovieFiletofolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgMovieFiletofolder.Click
+        If currentmovie Is Nothing Then Exit Sub
+        filetofolder(currentmovie, currentmovie.getmoviepath)
         'cbNoNfoChangePrompt.Checked
     End Sub
     Private Sub saveNfoFromGuiText()
@@ -19012,6 +19123,10 @@ Public Class maincollection
         End If
         If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
             Try
+                '\fullcredits\fullcredits
+                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
                 File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
                 File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
                 Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
@@ -19023,7 +19138,7 @@ Public Class maincollection
             Try
                 Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
             Catch ex As Exception
-                MsgBox(ex.ToString)
+                MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
             End Try
         End If
         currentmovie.pdatafromnfo = False
@@ -27541,11 +27656,7 @@ Public Class maincollection
     '    Dim dllist As ArrayList = newfcdn.downloadimages(currentmovie.pmoviename, 1, 0) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
     '    Return dllist
     'End Function
-    Private Function getfilefrompath(ByVal filenameandpath As String) As String
-        Dim fnPeices1() As String = filenameandpath.ToString.Split(CChar("\"))
-        Dim returnedfilename As String = fnPeices1(fnPeices1.Length - 1)
-        Return returnedfilename
-    End Function
+ 
     Private Function getfilefromurlpath_fcdn(ByVal filenameandpath As String) As String
         'http://www.freecovers.net/preview/0/36eee8941f5151c6e26974f243a0dc1e/big.jpg
         Dim curstring As String = filenameandpath
@@ -28606,6 +28717,9 @@ Public Class maincollection
         End If
         If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
             Try
+                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
                 File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
                 File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
                 Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
@@ -31068,6 +31182,9 @@ Public Class maincollection
     End Sub
 
 
+    Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
+        testofdbsearch()
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -32951,6 +33068,7 @@ Public Property [Actors]() As List(Of Actor)
             nm.Title = tmovie.pmoviename
         End If
         ' nm.Title = tmovie.moviename
+        nm.Title = cleanimdbdata(nm.Title)
         nm.Rating = tmovie.prating
         nm.Year = tmovie.pyear.ToString
         nm.Top250 = tmovie.ptop250
@@ -33013,7 +33131,13 @@ Public Property [Actors]() As List(Of Actor)
             nm.Actors = tmovie.Actors
         End If
         'end actors
-
+        If Not nm.Actors Is Nothing Then
+            For Each curactor In nm.Actors
+                curactor.Name = cleanimdbdata(curactor.Name)
+                curactor.Role = cleanimdbdata(curactor.Role)
+                curactor.Thumb = Strings.Replace(curactor.Thumb, "._SY30_SX23_.jpg", "._SY275_SX400_.jpg")
+            Next
+        End If
         'add fileinfo
         nm.fileinfo = tmovie.fileinfo
         If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
