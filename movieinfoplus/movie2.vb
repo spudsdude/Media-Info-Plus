@@ -33,6 +33,7 @@ Namespace mip.mov
         Private p_element_premiered As System.String
         Private p_element_status As System.String
         Private p_element_studio As System.String
+        Private p_element_studioreal As System.String
         Private p_element_album As System.String
         Private p_element_trailer As System.String
         Private p_element_watched As System.String
@@ -313,7 +314,16 @@ Namespace mip.mov
                 Me.p_element_studio = Value
             End Set
         End Property
-
+        ' String studio element.
+        <XmlElement("studioreal")> _
+        Public Property [Studioreal]() As System.String
+            Get
+                Return Me.p_element_studioreal
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_studioreal = Value
+            End Set
+        End Property
         ' String album element.
         <XmlElement("album")> _
         Public Property [Album]() As System.String

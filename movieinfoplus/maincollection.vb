@@ -2360,6 +2360,7 @@ Public Class maincollection
         End If
 
         If mediaonly Then
+            Debug.Print(currentmovie.pmoviename)
             Dim MI As New MediaInfo
             MI.getdata(currentmovie, moviemode)
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
@@ -31314,7 +31315,7 @@ Public Class IMDB
     'Dim actorsarray As New ArrayList
     Dim vActor As New movieinfoplus.mip.mov.Actor
     Private p_element_actor As New List(Of Actor)
-    Private vstudio, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
+    Private vstudio, vstudioreal, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
 #Region "---- IMDB Class Properties ---"
     Public Property certification() As String
         Get
@@ -31330,6 +31331,14 @@ Public Class IMDB
         End Get
         Set(ByVal value As String)
             vstudio = value
+        End Set
+    End Property
+    Public Property studioreal() As String
+        Get
+            Return vstudioreal
+        End Get
+        Set(ByVal value As String)
+            vstudioreal = value
         End Set
     End Property
     Public Property title() As String
@@ -31645,7 +31654,7 @@ Public Property [Actors]() As List(Of Actor)
             'studio
             nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
             'Debug.Print("Function:imdbparse - Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
-
+            nimdb.studioreal = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
             'title
             nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
             If Strings.Right(nimdb.title, 1) = " " Then
@@ -32213,6 +32222,7 @@ Public Property [Actors]() As List(Of Actor)
         Me.top250 = tmovie2.ptop250 '= "" Else tmovie2.ptop250 = Me.top250
         Me.trailer = tmovie2.ptrailer '= "" Else tmovie2.ptrailer = Me.trailer
         Me.studio = tmovie2.pstudio
+        Me.studioreal = tmovie2.pstudioreal
         Me.Actors = tmovie2.Actors
     End Sub
     Public Function cleanimdbdata(ByVal strData As String) As String
@@ -32283,6 +32293,12 @@ Public Property [Actors]() As List(Of Actor)
         If Me.trailer = Nothing Then tmovie2.ptrailer = "" Else tmovie2.ptrailer = Me.trailer
         'If Me.title = Nothing Then tmovie2.pmoviename = "" Else tmovie2.pmoviename = Me.title
         tmovie2.pstudio = Me.studio
+        If Me.studioreal = "" And Not Me.studio = "" Then
+            tmovie2.pstudioreal = Me.studio
+        Else
+            tmovie2.pstudioreal = Me.studioreal
+        End If
+        'tmovie2.pstudioreal = Me.studioreal
         tmovie2.Actors = Me.Actors
         tmovie2.certification = Me.certification
         ''Unassigned properties
@@ -32381,6 +32397,7 @@ Public Class movie
     Private imdblink As String '(URL)
     Private type As String '(movie or tvshow for layout)
     Private studio As String
+    Private studioreal As String
     Private pcertification As String
     Private p_element_actor As New List(Of Actor)
     Private p_element_backdrops As New tmdbapiv2.Backdrops 'movieinfoplus.mip.themoviedb.backdrop.backdrops
@@ -32539,6 +32556,14 @@ Public Property [Actors]() As List(Of Actor)
         End Get
         Set(ByVal value As String)
             studio = value
+        End Set
+    End Property
+    Public Property pstudioreal() As String
+        Get
+            Return studioreal
+        End Get
+        Set(ByVal value As String)
+            studioreal = value
         End Set
     End Property
     'Public Property pactor() As ArrayList
@@ -32977,6 +33002,8 @@ Public Property [Actors]() As List(Of Actor)
         nm.Premiered = ""
         nm.Status = ""
         nm.Studio = tmovie.pstudio
+        nm.Studioreal = tmovie.pstudioreal
+
         nm.Album = ""
         nm.Trailer = tmovie.ptrailer
         nm.Watched = "no"
@@ -32990,7 +33017,7 @@ Public Property [Actors]() As List(Of Actor)
         'add fileinfo
         nm.fileinfo = tmovie.fileinfo
         If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
-            nm.Credits = Strings.Replace(tmovie.studio, " ", "_") & " - " & tmovie.fileinfo.toTagData(tmovie.fileinfo)
+            nm.Studio = tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
         End If
 
         'rev 2401 generate the nfo files

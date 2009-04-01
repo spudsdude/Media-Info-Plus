@@ -94,34 +94,36 @@ Namespace xbmcMediaInfo
                     retStr += "Audio Stream " + couAS.ToString + vbNewLine
                     retStr += "   Codec: " + curAS.Codec + vbNewLine
                     retStr += "   Channels: " + curAS.Channels + vbNewLine
-                    If CDbl(curAS.Channels) > achanmax Then
-                        accodec = curAS.Codec
-                        achanmax = CDbl(curAS.Channels)
-                        alang = curAS.Language
+                    If Not curAS.Channels = "" Then
+                        If CDbl(curAS.Channels) > achanmax Then
+                            accodec = curAS.Codec
+                            achanmax = CDbl(curAS.Channels)
+                            alang = curAS.Language
+                        End If
                     End If
                     retStr += "   BitRate/String: " + curAS.Bitrate + vbNewLine
                     retStr += "   Language: " + curAS.Language + vbNewLine
 
                 Next
-                For Each curSS As Subtitle In xmifi.streamdetails.Subtitle
-                    couSS += 1
-                    'audio
-                    retStr += "Subtitle " + couSS.ToString + vbNewLine
-                    retStr += "   Language: " + curSS.Language + vbNewLine
-                    subtitleLang += " sub" + curSS.Language
-                Next
-                retStr += vbNewLine
-                retStr += "Last Scanned: " & lastupdate.ToString
-                retStr += vbNewLine
-                retStr += "Scanner Version: " & version.ToString
-                If Not couVS = 0 Then 'no video streams, don't write any tag data
-                    Try
-                        statusStr = getrezfromsize(vwidthmax, vheightmax, vaspectdisplayratio) & scantype & " " & accodec & " " & achanmax & "ch " & alang & subtitleLang
-                    Catch ex As Exception
-                        Debug.Print("Failed to process media information to tag data.")
-                        Return ""
-                    End Try
-                End If
+            For Each curSS As Subtitle In xmifi.streamdetails.Subtitle
+                couSS += 1
+                'audio
+                retStr += "Subtitle " + couSS.ToString + vbNewLine
+                retStr += "   Language: " + curSS.Language + vbNewLine
+                subtitleLang += " / sub" + curSS.Language
+            Next
+            retStr += vbNewLine
+            retStr += "Last Scanned: " & lastupdate.ToString
+            retStr += vbNewLine
+            retStr += "Scanner Version: " & version.ToString
+            If Not couVS = 0 Then 'no video streams, don't write any tag data
+                Try
+                    statusStr = " / " & getrezfromsize(vwidthmax, vheightmax, vaspectdisplayratio) & scantype & " / " & accodec & " / " & achanmax & "ch / " & alang & subtitleLang
+                Catch ex As Exception
+                    Debug.Print("Failed to process media information to tag data.")
+                    Return ""
+                End Try
+            End If
             End If
             Debug.Print(retStr)
             Debug.Print(statusStr)
