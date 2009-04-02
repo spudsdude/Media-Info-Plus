@@ -1335,6 +1335,7 @@ Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.compo
 Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
+Me.btnMovieStudioSelect = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -2385,7 +2386,7 @@ Me.tcPIB.Name = "tcPIB"
 Me.tcPIB.Padding = New System.Drawing.Point(9, 3)
 Me.tcPIB.SelectedIndex = 1
 Me.tcPIB.SelectedTabColor = System.Drawing.Color.DimGray
-Me.tcPIB.Size = New System.Drawing.Size(812, 604)
+Me.tcPIB.Size = New System.Drawing.Size(812, 727)
 Me.tcPIB.TabColor = System.Drawing.Color.Black
 Me.tcPIB.TabIndex = 19
 Me.tcPIB.UseVisualStyles = false
@@ -2400,7 +2401,7 @@ Me.tp1.Controls.Add(Me.lbldebug)
 Me.tp1.Location = New System.Drawing.Point(4, 25)
 Me.tp1.Name = "tp1"
 Me.tp1.Padding = New System.Windows.Forms.Padding(3)
-Me.tp1.Size = New System.Drawing.Size(804, 575)
+Me.tp1.Size = New System.Drawing.Size(804, 698)
 Me.tp1.TabIndex = 0
 Me.tp1.Text = "WideIcons"
 '
@@ -2422,7 +2423,7 @@ Me.tcWide.Name = "tcWide"
 Me.tcWide.SelectedIndex = 0
 Me.tcWide.SelectedTabColor = System.Drawing.Color.DimGray
 Me.tcWide.SelectedTabFontStyle = System.Drawing.FontStyle.Bold
-Me.tcWide.Size = New System.Drawing.Size(794, 565)
+Me.tcWide.Size = New System.Drawing.Size(794, 688)
 Me.tcWide.TabIndex = 70
 Me.tcWide.UseVisualStyles = false
 '
@@ -2469,7 +2470,7 @@ Me.tpWRSG.Controls.Add(Me.pb13)
 Me.tpWRSG.Controls.Add(Me.pb15)
 Me.tpWRSG.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSG.Name = "tpWRSG"
-Me.tpWRSG.Size = New System.Drawing.Size(786, 536)
+Me.tpWRSG.Size = New System.Drawing.Size(786, 659)
 Me.tpWRSG.TabIndex = 3
 Me.tpWRSG.Text = "Rounded Shadow Glass"
 Me.tpWRSG.UseVisualStyleBackColor = true
@@ -4412,7 +4413,7 @@ Me.tp5.Controls.Add(Me.spb1)
 Me.tp5.Location = New System.Drawing.Point(4, 25)
 Me.tp5.Name = "tp5"
 Me.tp5.Padding = New System.Windows.Forms.Padding(3)
-Me.tp5.Size = New System.Drawing.Size(804, 575)
+Me.tp5.Size = New System.Drawing.Size(804, 698)
 Me.tp5.TabIndex = 5
 Me.tp5.Text = "Square Icons"
 Me.tp5.UseVisualStyleBackColor = true
@@ -4618,7 +4619,7 @@ Me.tp6.Controls.Add(Me.kpBoxShots)
 Me.tp6.Location = New System.Drawing.Point(4, 25)
 Me.tp6.Name = "tp6"
 Me.tp6.Padding = New System.Windows.Forms.Padding(3)
-Me.tp6.Size = New System.Drawing.Size(804, 575)
+Me.tp6.Size = New System.Drawing.Size(804, 698)
 Me.tp6.TabIndex = 4
 Me.tp6.Text = "Box Shots"
 Me.tp6.UseVisualStyleBackColor = true
@@ -5487,7 +5488,7 @@ Me.tp4.Controls.Add(Me.tpb1)
 Me.tp4.Location = New System.Drawing.Point(4, 25)
 Me.tp4.Name = "tp4"
 Me.tp4.Padding = New System.Windows.Forms.Padding(3)
-Me.tp4.Size = New System.Drawing.Size(804, 575)
+Me.tp4.Size = New System.Drawing.Size(804, 698)
 Me.tp4.TabIndex = 3
 Me.tp4.Text = "Token Style"
 Me.tp4.UseVisualStyleBackColor = true
@@ -5615,7 +5616,7 @@ Me.tp3.Controls.Add(Me.btnGetXML)
 Me.tp3.Location = New System.Drawing.Point(4, 25)
 Me.tp3.Name = "tp3"
 Me.tp3.Padding = New System.Windows.Forms.Padding(3)
-Me.tp3.Size = New System.Drawing.Size(804, 575)
+Me.tp3.Size = New System.Drawing.Size(804, 698)
 Me.tp3.TabIndex = 2
 Me.tp3.Text = "Debug"
 Me.tp3.UseVisualStyleBackColor = true
@@ -5876,7 +5877,7 @@ Me.kgTVEpisodesGroup.Name = "kgTVEpisodesGroup"
 'kgTVEpisodesGroup.Panel
 '
 Me.kgTVEpisodesGroup.Panel.Controls.Add(Me.lbEpisodes)
-Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 76)
+Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 96)
 Me.kgTVEpisodesGroup.TabIndex = 81
 '
 'lbEpisodes
@@ -5886,7 +5887,7 @@ Me.lbEpisodes.ForeColor = System.Drawing.Color.Green
 Me.lbEpisodes.FormattingEnabled = true
 Me.lbEpisodes.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodes.Name = "lbEpisodes"
-Me.lbEpisodes.Size = New System.Drawing.Size(173, 56)
+Me.lbEpisodes.Size = New System.Drawing.Size(173, 82)
 Me.lbEpisodes.TabIndex = 98
 '
 'kgTVSeasonPickerGroup
@@ -5899,7 +5900,7 @@ Me.kgTVSeasonPickerGroup.Name = "kgTVSeasonPickerGroup"
 'kgTVSeasonPickerGroup.Panel
 '
 Me.kgTVSeasonPickerGroup.Panel.Controls.Add(Me.lbSeasonPicker)
-Me.kgTVSeasonPickerGroup.Size = New System.Drawing.Size(185, 25)
+Me.kgTVSeasonPickerGroup.Size = New System.Drawing.Size(185, 31)
 Me.kgTVSeasonPickerGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -5912,7 +5913,7 @@ Me.lbSeasonPicker.FormattingEnabled = true
 Me.lbSeasonPicker.Location = New System.Drawing.Point(0, 0)
 Me.lbSeasonPicker.Margin = New System.Windows.Forms.Padding(0)
 Me.lbSeasonPicker.Name = "lbSeasonPicker"
-Me.lbSeasonPicker.Size = New System.Drawing.Size(173, 4)
+Me.lbSeasonPicker.Size = New System.Drawing.Size(173, 17)
 Me.lbSeasonPicker.TabIndex = 98
 '
 'tbW2
@@ -5968,7 +5969,7 @@ Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(2, 2)
 Me.tcMain.SelectedIndex = 0
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
-Me.tcMain.Size = New System.Drawing.Size(822, 634)
+Me.tcMain.Size = New System.Drawing.Size(822, 757)
 Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
 Me.tcMain.TabIndex = 49
 Me.tcMain.UseVisualStyles = false
@@ -5999,7 +6000,7 @@ Me.tpcm.ForeColor = System.Drawing.Color.White
 Me.tpcm.Location = New System.Drawing.Point(4, 24)
 Me.tpcm.Margin = New System.Windows.Forms.Padding(0)
 Me.tpcm.Name = "tpcm"
-Me.tpcm.Size = New System.Drawing.Size(814, 606)
+Me.tpcm.Size = New System.Drawing.Size(814, 729)
 Me.tpcm.TabIndex = 2
 Me.tpcm.Text = "   Movie    "
 Me.tpcm.ToolTipText = "Current Selected Movie"
@@ -6015,7 +6016,7 @@ Me.khgMoviesMi.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorder
 Me.khgMoviesMi.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgMoviesMi.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgMoviesMi.HeaderVisibleSecondary = false
-Me.khgMoviesMi.Location = New System.Drawing.Point(0, 577)
+Me.khgMoviesMi.Location = New System.Drawing.Point(0, 700)
 Me.khgMoviesMi.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
 Me.khgMoviesMi.MinimumSize = New System.Drawing.Size(600, 0)
 Me.khgMoviesMi.Name = "khgMoviesMi"
@@ -6070,7 +6071,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(616, 591)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(256, 277)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6104,7 +6105,7 @@ Me.pbCurrentIconUsedNT.Location = New System.Drawing.Point(0, 3)
 Me.pbCurrentIconUsedNT.Margin = New System.Windows.Forms.Padding(2)
 Me.pbCurrentIconUsedNT.MinimumSize = New System.Drawing.Size(82, 82)
 Me.pbCurrentIconUsedNT.Name = "pbCurrentIconUsedNT"
-Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 82)
+Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 103)
 Me.pbCurrentIconUsedNT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
 Me.pbCurrentIconUsedNT.TabIndex = 89
 Me.pbCurrentIconUsedNT.TabStop = false
@@ -6298,6 +6299,7 @@ Me.khgMovieNameGroup.Name = "khgMovieNameGroup"
 '
 'khgMovieNameGroup.Panel
 '
+Me.khgMovieNameGroup.Panel.Controls.Add(Me.btnMovieStudioSelect)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.KryptonButton1)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoMpaa)
 Me.khgMovieNameGroup.Panel.Controls.Add(Me.lblMovieInfoYear)
@@ -6682,9 +6684,9 @@ Me.rtbPlotOutline.Text = ""
 '
 Me.tbStudio.BackColor = System.Drawing.Color.Gainsboro
 Me.tbStudio.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbStudio.Location = New System.Drawing.Point(59, 127)
+Me.tbStudio.Location = New System.Drawing.Point(77, 127)
 Me.tbStudio.Name = "tbStudio"
-Me.tbStudio.Size = New System.Drawing.Size(234, 24)
+Me.tbStudio.Size = New System.Drawing.Size(216, 24)
 Me.tbStudio.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -7613,7 +7615,7 @@ Me.gbThanks.Controls.Add(Me.kllMediaIcons)
 Me.gbThanks.Controls.Add(Me.kllTheTVDB)
 Me.gbThanks.Controls.Add(Me.kllimpawards)
 Me.gbThanks.Controls.Add(Me.kllTheMovieDB)
-Me.gbThanks.Location = New System.Drawing.Point(0, 536)
+Me.gbThanks.Location = New System.Drawing.Point(0, 659)
 Me.gbThanks.Name = "gbThanks"
 Me.gbThanks.Size = New System.Drawing.Size(553, 38)
 Me.gbThanks.TabIndex = 115
@@ -7708,7 +7710,7 @@ Me.fanartpb1.Image = Global.movieinfoplus.My.Resources.Resources.mymovies
 Me.fanartpb1.InitialImage = Nothing
 Me.fanartpb1.Location = New System.Drawing.Point(0, 0)
 Me.fanartpb1.Name = "fanartpb1"
-Me.fanartpb1.Size = New System.Drawing.Size(814, 606)
+Me.fanartpb1.Size = New System.Drawing.Size(814, 729)
 Me.fanartpb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.fanartpb1.TabIndex = 54
 Me.fanartpb1.TabStop = false
@@ -7722,7 +7724,7 @@ Me.tptv.ForeColor = System.Drawing.Color.White
 Me.tptv.Location = New System.Drawing.Point(4, 24)
 Me.tptv.Name = "tptv"
 Me.tptv.Padding = New System.Windows.Forms.Padding(3)
-Me.tptv.Size = New System.Drawing.Size(814, 606)
+Me.tptv.Size = New System.Drawing.Size(814, 729)
 Me.tptv.TabIndex = 0
 Me.tptv.Text = "  Shows    "
 Me.tptv.ToolTipText = "Current Selected TV Show"
@@ -7751,8 +7753,8 @@ Me.TVCurrentTVRightMain.Panel1MinSize = 90
 Me.TVCurrentTVRightMain.Panel2.Controls.Add(Me.kcstvMainRightBottom)
 Me.TVCurrentTVRightMain.Panel2MinSize = 400
 Me.TVCurrentTVRightMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 600)
-Me.TVCurrentTVRightMain.SplitterDistance = 195
+Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 723)
+Me.TVCurrentTVRightMain.SplitterDistance = 482
 Me.TVCurrentTVRightMain.TabIndex = 7
 '
 'ksctvtoolbar
@@ -7807,8 +7809,8 @@ Me.kcstvMainRightBottom.Panel1MinSize = 100
 Me.kcstvMainRightBottom.Panel2.Controls.Add(Me.ksctvMainRightBottomPortion)
 Me.kcstvMainRightBottom.Panel2MinSize = 70
 Me.kcstvMainRightBottom.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 600)
-Me.kcstvMainRightBottom.SplitterDistance = 527
+Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 723)
+Me.kcstvMainRightBottom.SplitterDistance = 650
 Me.kcstvMainRightBottom.SplitterWidth = 3
 Me.kcstvMainRightBottom.TabIndex = 0
 '
@@ -7832,7 +7834,7 @@ Me.tvMainRightMiddle.Panel1.Controls.Add(Me.pbTVFanart)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kgRatingStars)
 Me.tvMainRightMiddle.Panel2Collapsed = true
 Me.tvMainRightMiddle.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 527)
+Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 650)
 Me.tvMainRightMiddle.SplitterDistance = 269
 Me.tvMainRightMiddle.TabIndex = 0
 '
@@ -7858,7 +7860,7 @@ Me.khgShowsMI.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSp
 Me.khgShowsMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.khgShowsMI.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgShowsMI.HeaderVisibleSecondary = false
-Me.khgShowsMI.Location = New System.Drawing.Point(0, 336)
+Me.khgShowsMI.Location = New System.Drawing.Point(0, 459)
 Me.khgShowsMI.Name = "khgShowsMI"
 '
 'khgShowsMI.Panel
@@ -9073,7 +9075,7 @@ Me.pbTVFanart.Image = Global.movieinfoplus.My.Resources.Resources.myshows
 Me.pbTVFanart.InitialImage = Nothing
 Me.pbTVFanart.Location = New System.Drawing.Point(0, 0)
 Me.pbTVFanart.Name = "pbTVFanart"
-Me.pbTVFanart.Size = New System.Drawing.Size(808, 527)
+Me.pbTVFanart.Size = New System.Drawing.Size(808, 650)
 Me.pbTVFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbTVFanart.TabIndex = 1
 Me.pbTVFanart.TabStop = false
@@ -9442,7 +9444,7 @@ Me.tpMusic.Controls.Add(Me.tstripMusicToolbar)
 Me.tpMusic.Controls.Add(Me.pbMusicCurFanart)
 Me.tpMusic.Location = New System.Drawing.Point(4, 24)
 Me.tpMusic.Name = "tpMusic"
-Me.tpMusic.Size = New System.Drawing.Size(814, 606)
+Me.tpMusic.Size = New System.Drawing.Size(814, 729)
 Me.tpMusic.TabIndex = 9
 Me.tpMusic.Text = "Tunes        "
 Me.tpMusic.ToolTipText = "Music Collection"
@@ -9488,7 +9490,7 @@ Me.pbMusic_CurSongImage.TabStop = false
 '
 Me.kgMusicMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.kgMusicMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.TabCustom1
-Me.kgMusicMI.Location = New System.Drawing.Point(0, 444)
+Me.kgMusicMI.Location = New System.Drawing.Point(0, 567)
 Me.kgMusicMI.Name = "kgMusicMI"
 '
 'kgMusicMI.Panel
@@ -9837,7 +9839,7 @@ Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
 Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 0)
 Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
-Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 606)
+Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 729)
 Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbMusicCurFanart.TabIndex = 1
 Me.pbMusicCurFanart.TabStop = false
@@ -9847,7 +9849,7 @@ Me.pbMusicCurFanart.TabStop = false
 Me.tpFCDN.Controls.Add(Me.tcFCDN)
 Me.tpFCDN.Location = New System.Drawing.Point(4, 24)
 Me.tpFCDN.Name = "tpFCDN"
-Me.tpFCDN.Size = New System.Drawing.Size(814, 606)
+Me.tpFCDN.Size = New System.Drawing.Size(814, 729)
 Me.tpFCDN.TabIndex = 11
 Me.tpFCDN.Text = "Media Image"
 '
@@ -9866,7 +9868,7 @@ Me.tcFCDN.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcFCDN.Location = New System.Drawing.Point(0, 0)
 Me.tcFCDN.Name = "tcFCDN"
 Me.tcFCDN.SelectedIndex = 0
-Me.tcFCDN.Size = New System.Drawing.Size(814, 606)
+Me.tcFCDN.Size = New System.Drawing.Size(814, 729)
 Me.tcFCDN.TabIndex = 0
 Me.tcFCDN.UseVisualStyles = false
 '
@@ -9887,7 +9889,7 @@ Me.tpFCDNFront.Controls.Add(Me.kgpbFront1)
 Me.tpFCDNFront.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNFront.Name = "tpFCDNFront"
 Me.tpFCDNFront.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNFront.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNFront.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNFront.TabIndex = 0
 Me.tpFCDNFront.Text = "Front Cover"
 Me.tpFCDNFront.UseVisualStyleBackColor = true
@@ -10129,7 +10131,7 @@ Me.tpFCDNBack.Controls.Add(Me.pbBack1)
 Me.tpFCDNBack.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNBack.Name = "tpFCDNBack"
 Me.tpFCDNBack.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNBack.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNBack.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNBack.TabIndex = 1
 Me.tpFCDNBack.Text = "Back Cover"
 Me.tpFCDNBack.UseVisualStyleBackColor = true
@@ -10245,7 +10247,7 @@ Me.tpFCDNcd1.Controls.Add(Me.pbcdi2)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi1)
 Me.tpFCDNcd1.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd1.Name = "tpFCDNcd1"
-Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNcd1.TabIndex = 2
 Me.tpFCDNcd1.Text = "CD1"
 '
@@ -10360,7 +10362,7 @@ Me.tpFCDNcd2.Controls.Add(Me.pbcd2i2)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i1)
 Me.tpFCDNcd2.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd2.Name = "tpFCDNcd2"
-Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNcd2.TabIndex = 3
 Me.tpFCDNcd2.Text = "CD2"
 '
@@ -10475,7 +10477,7 @@ Me.tpFCDNcd3.Controls.Add(Me.pbcd3i2)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i1)
 Me.tpFCDNcd3.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd3.Name = "tpFCDNcd3"
-Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNcd3.TabIndex = 4
 Me.tpFCDNcd3.Text = "CD3"
 '
@@ -10590,7 +10592,7 @@ Me.tpFCDNcd4.Controls.Add(Me.pbcd4i2)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i1)
 Me.tpFCDNcd4.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd4.Name = "tpFCDNcd4"
-Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNcd4.TabIndex = 5
 Me.tpFCDNcd4.Text = "CD4"
 '
@@ -10705,7 +10707,7 @@ Me.tpFCDNinsert.Controls.Add(Me.pbInsert2)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert1)
 Me.tpFCDNinsert.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinsert.Name = "tpFCDNinsert"
-Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNinsert.TabIndex = 6
 Me.tpFCDNinsert.Text = "Insert"
 '
@@ -10820,7 +10822,7 @@ Me.tpFCDNinlay.Controls.Add(Me.pbInlay2)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay1)
 Me.tpFCDNinlay.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinlay.Name = "tpFCDNinlay"
-Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 577)
+Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 700)
 Me.tpFCDNinlay.TabIndex = 7
 Me.tpFCDNinlay.Text = "Inlay"
 '
@@ -10929,7 +10931,7 @@ Me.tpmipf.ForeColor = System.Drawing.Color.White
 Me.tpmipf.Location = New System.Drawing.Point(4, 24)
 Me.tpmipf.Name = "tpmipf"
 Me.tpmipf.Padding = New System.Windows.Forms.Padding(1)
-Me.tpmipf.Size = New System.Drawing.Size(814, 606)
+Me.tpmipf.Size = New System.Drawing.Size(814, 729)
 Me.tpmipf.TabIndex = 0
 Me.tpmipf.Text = "   Wide Images / 3D Boxes    "
 Me.tpmipf.ToolTipText = "Wide Images and 3D Box Shots"
@@ -10940,7 +10942,7 @@ Me.tpTallImages.AutoScroll = true
 Me.tpTallImages.Controls.Add(Me.KryptonPanel1)
 Me.tpTallImages.Location = New System.Drawing.Point(4, 24)
 Me.tpTallImages.Name = "tpTallImages"
-Me.tpTallImages.Size = New System.Drawing.Size(814, 606)
+Me.tpTallImages.Size = New System.Drawing.Size(814, 729)
 Me.tpTallImages.TabIndex = 10
 Me.tpTallImages.Text = "Posters"
 Me.tpTallImages.ToolTipText = "Tall Images (posters)"
@@ -12692,7 +12694,7 @@ Me.tpFanart.Controls.Add(Me.kpFanartSelection)
 Me.tpFanart.Location = New System.Drawing.Point(4, 24)
 Me.tpFanart.Name = "tpFanart"
 Me.tpFanart.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFanart.Size = New System.Drawing.Size(814, 606)
+Me.tpFanart.Size = New System.Drawing.Size(814, 729)
 Me.tpFanart.TabIndex = 7
 Me.tpFanart.Text = "   Backgrounds      "
 Me.tpFanart.ToolTipText = "Background Images (fanart)"
@@ -13506,7 +13508,7 @@ Me.tpmmn.ForeColor = System.Drawing.Color.White
 Me.tpmmn.Location = New System.Drawing.Point(4, 24)
 Me.tpmmn.Name = "tpmmn"
 Me.tpmmn.Padding = New System.Windows.Forms.Padding(3)
-Me.tpmmn.Size = New System.Drawing.Size(814, 606)
+Me.tpmmn.Size = New System.Drawing.Size(814, 729)
 Me.tpmmn.TabIndex = 1
 Me.tpmmn.Text = " Rename     "
 Me.tpmmn.ToolTipText = "Modify the name of the movie"
@@ -13634,7 +13636,7 @@ Me.tpPosters.AutoScroll = true
 Me.tpPosters.Controls.Add(Me.tcPosters)
 Me.tpPosters.Location = New System.Drawing.Point(4, 24)
 Me.tpPosters.Name = "tpPosters"
-Me.tpPosters.Size = New System.Drawing.Size(814, 606)
+Me.tpPosters.Size = New System.Drawing.Size(814, 729)
 Me.tpPosters.TabIndex = 8
 Me.tpPosters.ToolTipText = "TV Show Posters and Wide Icons"
 '
@@ -13649,7 +13651,7 @@ Me.tcPosters.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcPosters.Location = New System.Drawing.Point(0, 0)
 Me.tcPosters.Name = "tcPosters"
 Me.tcPosters.SelectedIndex = 1
-Me.tcPosters.Size = New System.Drawing.Size(814, 606)
+Me.tcPosters.Size = New System.Drawing.Size(814, 729)
 Me.tcPosters.TabIndex = 0
 Me.tcPosters.UseVisualStyles = false
 '
@@ -13659,7 +13661,7 @@ Me.tpTVWideIcons.AutoScroll = true
 Me.tpTVWideIcons.Controls.Add(Me.kptvwide)
 Me.tpTVWideIcons.Location = New System.Drawing.Point(4, 25)
 Me.tpTVWideIcons.Name = "tpTVWideIcons"
-Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 577)
+Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 700)
 Me.tpTVWideIcons.TabIndex = 2
 Me.tpTVWideIcons.Text = "TV Wide Icons"
 '
@@ -13989,7 +13991,7 @@ Me.tpIMPPosters.Controls.Add(Me.kpIMPPosterSelection)
 Me.tpIMPPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpIMPPosters.Name = "tpIMPPosters"
 Me.tpIMPPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpIMPPosters.Size = New System.Drawing.Size(806, 577)
+Me.tpIMPPosters.Size = New System.Drawing.Size(806, 700)
 Me.tpIMPPosters.TabIndex = 0
 Me.tpIMPPosters.Text = "Posters -IMPawards"
 '
@@ -14583,7 +14585,7 @@ Me.tpTMDBPosters.Controls.Add(Me.kpTMDBPostersSelection)
 Me.tpTMDBPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpTMDBPosters.Name = "tpTMDBPosters"
 Me.tpTMDBPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 577)
+Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 700)
 Me.tpTMDBPosters.TabIndex = 1
 Me.tpTMDBPosters.Text = "HD Posters - from TMDB"
 '
@@ -15175,7 +15177,7 @@ Me.pbposterTMDB24.TabStop = false
 Me.TabPageEX1.Controls.Add(Me.tbnone)
 Me.TabPageEX1.Location = New System.Drawing.Point(4, 25)
 Me.TabPageEX1.Name = "TabPageEX1"
-Me.TabPageEX1.Size = New System.Drawing.Size(806, 577)
+Me.TabPageEX1.Size = New System.Drawing.Size(806, 700)
 Me.TabPageEX1.TabIndex = 3
 Me.TabPageEX1.Text = "For Expansion"
 '
@@ -15209,7 +15211,7 @@ Me.kgMusicLeftNav.Name = "kgMusicLeftNav"
 'kgMusicLeftNav.Panel
 '
 Me.kgMusicLeftNav.Panel.Controls.Add(Me.kscMusicMainSC)
-Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 180)
+Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 221)
 Me.kgMusicLeftNav.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -15233,8 +15235,8 @@ Me.kscMusicMainSC.Panel1.Controls.Add(Me.kscMusicMainTopFilterGroup)
 '
 Me.kscMusicMainSC.Panel2.Controls.Add(Me.kscMusicLeftNavBottomMainSCAlbumSongs)
 Me.kscMusicMainSC.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 178)
-Me.kscMusicMainSC.SplitterDistance = 89
+Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 219)
+Me.kscMusicMainSC.SplitterDistance = 109
 Me.kscMusicMainSC.TabIndex = 0
 '
 'kscMusicMainTopFilterGroup
@@ -15256,7 +15258,7 @@ Me.kscMusicMainTopFilterGroup.Panel1MinSize = 30
 Me.kscMusicMainTopFilterGroup.Panel2.Controls.Add(Me.lbmusicArtist)
 Me.kscMusicMainTopFilterGroup.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicMainTopFilterGroup.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 89)
+Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 109)
 Me.kscMusicMainTopFilterGroup.SplitterDistance = 59
 Me.kscMusicMainTopFilterGroup.SplitterWidth = 0
 Me.kscMusicMainTopFilterGroup.TabIndex = 0
@@ -15324,7 +15326,7 @@ Me.lbmusicArtist.FormattingEnabled = true
 Me.lbmusicArtist.Location = New System.Drawing.Point(3, 3)
 Me.lbmusicArtist.Margin = New System.Windows.Forms.Padding(0)
 Me.lbmusicArtist.Name = "lbmusicArtist"
-Me.lbmusicArtist.Size = New System.Drawing.Size(181, 13)
+Me.lbmusicArtist.Size = New System.Drawing.Size(181, 39)
 Me.lbmusicArtist.TabIndex = 0
 '
 'kscMusicLeftNavBottomMainSCAlbumSongs
@@ -15345,8 +15347,8 @@ Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel1.Padding = New System.Windows.For
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Controls.Add(Me.lbmusicSongs)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 84)
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 53
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 105)
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 66
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.TabIndex = 0
 '
 'lbmusicAlbums
@@ -15357,7 +15359,7 @@ Me.lbmusicAlbums.FormattingEnabled = true
 Me.lbmusicAlbums.Location = New System.Drawing.Point(3, 3)
 Me.lbmusicAlbums.Margin = New System.Windows.Forms.Padding(0)
 Me.lbmusicAlbums.Name = "lbmusicAlbums"
-Me.lbmusicAlbums.Size = New System.Drawing.Size(181, 39)
+Me.lbmusicAlbums.Size = New System.Drawing.Size(181, 52)
 Me.lbmusicAlbums.TabIndex = 0
 '
 'lbmusicSongs
@@ -15368,7 +15370,7 @@ Me.lbmusicSongs.FormattingEnabled = true
 Me.lbmusicSongs.Location = New System.Drawing.Point(3, 3)
 Me.lbmusicSongs.Margin = New System.Windows.Forms.Padding(0)
 Me.lbmusicSongs.Name = "lbmusicSongs"
-Me.lbmusicSongs.Size = New System.Drawing.Size(181, 13)
+Me.lbmusicSongs.Size = New System.Drawing.Size(181, 26)
 Me.lbmusicSongs.TabIndex = 0
 '
 'kpalette
@@ -16182,7 +16184,7 @@ Me.kgMyMovieList.Name = "kgMyMovieList"
 'kgMyMovieList.Panel
 '
 Me.kgMyMovieList.Panel.Controls.Add(Me.lbMyMovies)
-Me.kgMyMovieList.Size = New System.Drawing.Size(187, 44)
+Me.kgMyMovieList.Size = New System.Drawing.Size(187, 83)
 Me.kgMyMovieList.TabIndex = 80
 '
 'lbMyMovies
@@ -16192,7 +16194,7 @@ Me.lbMyMovies.FormattingEnabled = true
 Me.lbMyMovies.Location = New System.Drawing.Point(0, 0)
 Me.lbMyMovies.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.lbMyMovies.Name = "lbMyMovies"
-Me.lbMyMovies.Size = New System.Drawing.Size(175, 30)
+Me.lbMyMovies.Size = New System.Drawing.Size(175, 69)
 Me.lbMyMovies.TabIndex = 98
 '
 'kgMovieOrTVShow
@@ -19148,7 +19150,7 @@ Me.kgMoviesNavLeft.Name = "kgMoviesNavLeft"
 'kgMoviesNavLeft.Panel
 '
 Me.kgMoviesNavLeft.Panel.Controls.Add(Me.kscLeftMovieNavMain)
-Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 175)
+Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 214)
 Me.kgMoviesNavLeft.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -19175,7 +19177,7 @@ Me.kscLeftMovieNavMain.Panel1MinSize = 100
 '
 Me.kscLeftMovieNavMain.Panel2.Controls.Add(Me.kgMyMovieList)
 Me.kscLeftMovieNavMain.Panel2MinSize = 40
-Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 173)
+Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 212)
 Me.kscLeftMovieNavMain.SplitterDistance = 126
 Me.kscLeftMovieNavMain.SplitterWidth = 3
 Me.kscLeftMovieNavMain.TabIndex = 77
@@ -19190,7 +19192,7 @@ Me.kgTVNavLeft.Name = "kgTVNavLeft"
 'kgTVNavLeft.Panel
 '
 Me.kgTVNavLeft.Panel.Controls.Add(Me.kscTVMainNavLeft)
-Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 181)
+Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 224)
 Me.kgTVNavLeft.StateNormal.Border.ColorAngle = 20!
 Me.kgTVNavLeft.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
@@ -19215,8 +19217,8 @@ Me.kscTVMainNavLeft.Panel1.Controls.Add(Me.kgTvShowPickerArea)
 '
 Me.kscTVMainNavLeft.Panel2.Controls.Add(Me.kscTVMainLeftBottomNav)
 Me.kscTVMainNavLeft.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 177)
-Me.kscTVMainNavLeft.SplitterDistance = 25
+Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 220)
+Me.kscTVMainNavLeft.SplitterDistance = 31
 Me.kscTVMainNavLeft.TabIndex = 47
 '
 'kgTvShowPickerArea
@@ -19228,7 +19230,7 @@ Me.kgTvShowPickerArea.Name = "kgTvShowPickerArea"
 'kgTvShowPickerArea.Panel
 '
 Me.kgTvShowPickerArea.Panel.Controls.Add(Me.lbTvShowPicker)
-Me.kgTvShowPickerArea.Size = New System.Drawing.Size(185, 25)
+Me.kgTvShowPickerArea.Size = New System.Drawing.Size(185, 31)
 Me.kgTvShowPickerArea.TabIndex = 2
 '
 'lbTvShowPicker
@@ -19237,7 +19239,7 @@ Me.lbTvShowPicker.Dock = System.Windows.Forms.DockStyle.Fill
 Me.lbTvShowPicker.FormattingEnabled = true
 Me.lbTvShowPicker.Location = New System.Drawing.Point(0, 0)
 Me.lbTvShowPicker.Name = "lbTvShowPicker"
-Me.lbTvShowPicker.Size = New System.Drawing.Size(173, 4)
+Me.lbTvShowPicker.Size = New System.Drawing.Size(173, 17)
 Me.lbTvShowPicker.TabIndex = 0
 '
 'kscTVMainLeftBottomNav
@@ -19256,8 +19258,8 @@ Me.kscTVMainLeftBottomNav.Panel1.Controls.Add(Me.kgTVSeasonPickerGroup)
 '
 Me.kscTVMainLeftBottomNav.Panel2.Controls.Add(Me.kscEpisodesEEM)
 Me.kscTVMainLeftBottomNav.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 147)
-Me.kscTVMainLeftBottomNav.SplitterDistance = 25
+Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 184)
+Me.kscTVMainLeftBottomNav.SplitterDistance = 31
 Me.kscTVMainLeftBottomNav.TabIndex = 0
 '
 'kscEpisodesEEM
@@ -19276,8 +19278,8 @@ Me.kscEpisodesEEM.Panel1.Controls.Add(Me.kgTVEpisodesGroup)
 '
 Me.kscEpisodesEEM.Panel2.Controls.Add(Me.kgMissingEpisodes)
 Me.kscEpisodesEEM.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 117)
-Me.kscEpisodesEEM.SplitterDistance = 76
+Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 148)
+Me.kscEpisodesEEM.SplitterDistance = 96
 Me.kscEpisodesEEM.TabIndex = 113
 '
 'kgMissingEpisodes
@@ -19289,7 +19291,7 @@ Me.kgMissingEpisodes.Name = "kgMissingEpisodes"
 'kgMissingEpisodes.Panel
 '
 Me.kgMissingEpisodes.Panel.Controls.Add(Me.lbEpisodesMissing)
-Me.kgMissingEpisodes.Size = New System.Drawing.Size(185, 36)
+Me.kgMissingEpisodes.Size = New System.Drawing.Size(185, 47)
 Me.kgMissingEpisodes.TabIndex = 112
 '
 'lbEpisodesMissing
@@ -19300,7 +19302,7 @@ Me.lbEpisodesMissing.ForeColor = System.Drawing.Color.Red
 Me.lbEpisodesMissing.FormattingEnabled = true
 Me.lbEpisodesMissing.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodesMissing.Name = "lbEpisodesMissing"
-Me.lbEpisodesMissing.Size = New System.Drawing.Size(173, 17)
+Me.lbEpisodesMissing.Size = New System.Drawing.Size(173, 30)
 Me.lbEpisodesMissing.TabIndex = 98
 '
 'bwFolderDataTDM
@@ -19495,7 +19497,7 @@ Me.kscMain.Panel1MinSize = 174
 Me.kscMain.Panel2.Controls.Add(Me.kscFullRight)
 Me.kscMain.Panel2MinSize = 500
 Me.kscMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMain.Size = New System.Drawing.Size(1016, 678)
+Me.kscMain.Size = New System.Drawing.Size(1016, 801)
 Me.kscMain.SplitterDistance = 189
 Me.kscMain.StateCommon.Separator.Border.Color1 = System.Drawing.Color.Black
 Me.kscMain.StateCommon.Separator.Border.Color2 = System.Drawing.Color.Silver
@@ -19525,7 +19527,7 @@ Me.kscLeftFull.Panel1MinSize = 40
 'kscLeftFull.Panel2
 '
 Me.kscLeftFull.Panel2.Controls.Add(Me.kscLeftBottomPart)
-Me.kscLeftFull.Size = New System.Drawing.Size(189, 678)
+Me.kscLeftFull.Size = New System.Drawing.Size(189, 801)
 Me.kscLeftFull.SplitterDistance = 42
 Me.kscLeftFull.SplitterWidth = 0
 Me.kscLeftFull.TabIndex = 0
@@ -19547,8 +19549,8 @@ Me.kscLeftBottomPart.Panel1.Controls.Add(Me.kscLeftNavMain)
 '
 Me.kscLeftBottomPart.Panel2.Controls.Add(Me.kgQCIcons)
 Me.kscLeftBottomPart.Panel2MinSize = 90
-Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 636)
-Me.kscLeftBottomPart.SplitterDistance = 546
+Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 759)
+Me.kscLeftBottomPart.SplitterDistance = 669
 Me.kscLeftBottomPart.SplitterWidth = 0
 Me.kscLeftBottomPart.TabIndex = 0
 '
@@ -19568,8 +19570,8 @@ Me.kscLeftNavMain.Panel1.Controls.Add(Me.kgMoviesNavLeft)
 '
 Me.kscLeftNavMain.Panel2.Controls.Add(Me.kscLeftNavBarSC2)
 Me.kscLeftNavMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 546)
-Me.kscLeftNavMain.SplitterDistance = 175
+Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 669)
+Me.kscLeftNavMain.SplitterDistance = 214
 Me.kscLeftNavMain.TabIndex = 0
 '
 'kscLeftNavBarSC2
@@ -19588,8 +19590,8 @@ Me.kscLeftNavBarSC2.Panel1.Controls.Add(Me.kgMusicLeftNav)
 '
 Me.kscLeftNavBarSC2.Panel2.Controls.Add(Me.kgTVNavLeft)
 Me.kscLeftNavBarSC2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 366)
-Me.kscLeftNavBarSC2.SplitterDistance = 180
+Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 450)
+Me.kscLeftNavBarSC2.SplitterDistance = 221
 Me.kscLeftNavBarSC2.TabIndex = 0
 '
 'kscFullRight
@@ -19609,7 +19611,7 @@ Me.kscFullRight.Panel1.Controls.Add(Me.kscTopRightNavBarMain)
 'kscFullRight.Panel2
 '
 Me.kscFullRight.Panel2.Controls.Add(Me.kscRightBottomPart)
-Me.kscFullRight.Size = New System.Drawing.Size(822, 678)
+Me.kscFullRight.Size = New System.Drawing.Size(822, 801)
 Me.kscFullRight.SplitterDistance = 43
 Me.kscFullRight.SplitterWidth = 1
 Me.kscFullRight.TabIndex = 0
@@ -19725,8 +19727,8 @@ Me.kscRightBottomPart.Panel2.Controls.Add(Me.kscBottom2PartTVorMovie)
 Me.kscRightBottomPart.Panel2Collapsed = true
 Me.kscRightBottomPart.Panel2MinSize = 80
 Me.kscRightBottomPart.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscRightBottomPart.Size = New System.Drawing.Size(822, 634)
-Me.kscRightBottomPart.SplitterDistance = 190
+Me.kscRightBottomPart.Size = New System.Drawing.Size(822, 757)
+Me.kscRightBottomPart.SplitterDistance = 227
 Me.kscRightBottomPart.SplitterWidth = 0
 Me.kscRightBottomPart.TabIndex = 0
 '
@@ -21527,12 +21529,36 @@ Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.
 Me.bwAutopilot.WorkerReportsProgress = true
 Me.bwAutopilot.WorkerSupportsCancellation = true
 '
+'btnMovieStudioSelect
+'
+Me.btnMovieStudioSelect.Location = New System.Drawing.Point(51, 126)
+Me.btnMovieStudioSelect.Name = "btnMovieStudioSelect"
+Me.btnMovieStudioSelect.Size = New System.Drawing.Size(24, 24)
+Me.btnMovieStudioSelect.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.update_refresh_32x32
+Me.btnMovieStudioSelect.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
+Me.btnMovieStudioSelect.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.btnMovieStudioSelect.StateCommon.Border.Rounding = 25
+Me.btnMovieStudioSelect.StateCommon.Border.Width = 2
+Me.btnMovieStudioSelect.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.btnMovieStudioSelect.StateTracking.Border.Width = 3
+Me.btnMovieStudioSelect.TabIndex = 144
+Me.btnMovieStudioSelect.Values.ExtraText = ""
+Me.btnMovieStudioSelect.Values.Image = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedNormal = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedPressed = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedTracking = Nothing
+Me.btnMovieStudioSelect.Values.Text = ""
+'
 'maincollection
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
 Me.BackColor = System.Drawing.Color.Black
 Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.ClientSize = New System.Drawing.Size(1016, 678)
+Me.ClientSize = New System.Drawing.Size(1016, 801)
 Me.Controls.Add(Me.kscMain)
 Me.Controls.Add(Me.tcRootBackup)
 Me.DoubleBuffered = true
@@ -23881,4 +23907,5 @@ End Sub
     Friend WithEvents tsmishows_fanart_q95 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KryptonButton1 As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents bshgMovieFiletofolder As ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+    Friend WithEvents btnMovieStudioSelect As ComponentFactory.Krypton.Toolkit.KryptonButton
 End Class

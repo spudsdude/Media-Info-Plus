@@ -20,6 +20,23 @@ Module modNfoData
             ' Return True
         End If
     End Function
+    Public Function checkforIMDBIDinnfofileFileLevel(ByRef tmovie As movie) As Boolean
+        If Not tmovie.pfilemode Then Return False
+
+        'grabs id from nfo file if it exsists
+        Dim pathtonfo As String = addfiletofolder(tmovie.getmoviepath, stripstackforfilemode(removeextension(tmovie.preservedmoviename)) + ".nfo")
+        'Debug.Print(tmovie.getmoviepath + "\" + tmovie.getmoviename + ".nfo")
+        If File.Exists(pathtonfo) Then
+            tmovie.pimdbnumber = tmovie.readnfofile(pathtonfo)
+            If tmovie.pimdbnumber = "" Then
+                Return False
+            Else
+                File.Move(pathtonfo, pathtonfo & ".oldversion")
+                Return True
+            End If
+            ' Return True
+        End If
+    End Function
     Public Sub checknfodata(ByRef currentmovie As movie, ByVal dname As String, ByVal workonline As Boolean)
 
         ' ---- IMDB AND NFO -----
@@ -30,8 +47,12 @@ Module modNfoData
         If Not currentmovie.pdatafromnfo Then
             Debug.Print("no .nfo for movie found")
             'we don't have data so try to get it
-            'see if nfo file exsists for movie, if it does, read it up to speed it up
-            haveidonly = checkforIMDBIDinnfofile(currentmovie)
+            If currentmovie.pfilemode Then
+                haveidonly = checkforIMDBIDinnfofileFileLevel(currentmovie)
+            Else
+                haveidonly = checkforIMDBIDinnfofile(currentmovie)
+            End If
+
             If Not haveidonly Then
                 Debug.Print("don't have the id yet")
                 'see if there is an nfo file in the folder 
@@ -161,10 +182,13 @@ Module modNfoData
                     'save xml to imdbcache reguardless of gui setting to write nfo
                     ' tmovie.Actors = imdbinfo.Actors
                     imdbinfo.writeIMDBXML(imdbinfo, currentmovie, maincollection.rconf.imdbcachefolder, True)
+                    'currentmovie.pdatafromnfo = True
                     'If cbSaveNFO.Checked Then
                     '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
                     '    tmovie.saveimdbinfo(tmovie)
                     'End If
+
+
                 End If
             End If
         End If

@@ -37,7 +37,7 @@ Public Class dlgMovieStudioSelect
     Private Sub creatdefaultstudios(ByRef pathtoxml As String)
         Dim cdgmystudios As New mystudios
         Dim objDG As Object()
-        objDG = New Object() {"20th Century Fox", "Universal", "FilmFour", "Disney", "Gaumont", "United Artists", "New Line Cinema", "Dimension", "Touchstone", "Hollywood Pictures", "Carolco", "Revolution", "Lakeshore Entertainment", "Lucasfilm", "Screen Gems", "Warner Bros", "Tristar", "Castle Rock", "Studio Canal", "Canal+", "Paramount Pictures", "DreamWorks", "Columbia Pictures", "MGM (Metro Goldwyn Mayer)", "Sony Pictures", "Artisan", "Lionsgate", "Miramax"}
+        objDG = New Object() {" bluray", " sddvd", "20th Century Fox", "Universal", "FilmFour", "Channel Four", "Disney", "Gaumont", "United Artists", "New Line Cinema", "Dimension", "Touchstone", "Hollywood Pictures", "Carolco", "Revolution", "Lakeshore Entertainment", "Lucasfilm", "Screen Gems", "Warner Bros", "Tristar", "Castle Rock", "Studio Canal", "Screen Gems", "Comedy Central", "Mayer", "Canal+", "Paramount Pictures", "DreamWorks", "Columbia Pictures", "MGM (Metro Goldwyn Mayer)", "Sony Pictures", "Artisan", "Lionsgate", "Miramax"}
         For Each strObj As String In objDG
             cdgmystudios.studios.Add(strObj)
         Next
@@ -46,19 +46,28 @@ Public Class dlgMovieStudioSelect
     Public Sub prepop(ByRef tmovie As movie, ByRef basefolder As String)
         curMovie = tmovie
         loadmystudios(basefolder)
-        If tmovie.pgenre = "" Then Exit Sub
+        '  If tmovie.pstudioreal = "" Then Exit Sub
         'cleanup any old items in lists
         Me.lbAllStudio.Items.Clear()
         Me.lbSelectedStudio.Items.Clear()
         strArrayListUsedstudio.Clear()
+        If tmovie.pstudioreal Is Nothing Then
+            If Not tmovie.pstudio Is Nothing Then
+                tmovie.pstudioreal = tmovie.pstudio
+            Else
+                tmovie.pstudioreal = ""
+            End If
 
-        Dim fnPeices1() As String = tmovie.pstudio.Split(CChar("/"))
+        End If
+        Dim fnPeices1() As String = tmovie.pstudioreal.Split(CChar("/"))
         Dim tstudios As New thestudio.mystudios
         For Each vstudio As String In fnPeices1
             If Not vstudio = "/" Then
-                strArrayListUsedstudio.Add(vstudio)
-                Me.lbSelectedStudio.Items.Add(vstudio)
-                Debug.Print("MovieStudio: " + vstudio)
+                If Not vstudio = " " Then
+                    strArrayListUsedstudio.Add(vstudio)
+                    Me.lbSelectedStudio.Items.Add(vstudio)
+                    Debug.Print("MovieStudio: " + vstudio)
+                End If
             End If
         Next
         'remove it from the gvmystudios list
@@ -87,7 +96,7 @@ Public Class dlgMovieStudioSelect
             newstudio = Strings.Left(newstudio, newstudio.Length - 3)
         End If
         'MsgBox(newgenre)
-        curMovie.pstudio = newstudio
+        curMovie.pstudioreal = newstudio
         Me.Close()
     End Sub
 

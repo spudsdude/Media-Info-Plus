@@ -148,6 +148,7 @@ Property fullfilenameandpath() As String
             xbmctvepisode.Credits = Strings.Replace(tls.Writer, "|", "/")
             xbmctvepisode.Director = tls.Director
             'If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
+            If Not curstudio = "" Then curstudio = "net" & curstudio
             xbmctvepisode.Director = tls.Director & " / " & curstudio & " / " & curmpaa & " / " & tls.fileinfo.toTagData(tls.fileinfo)
             'End If
             xbmctvepisode.Episode = tls.EpisodeNumber

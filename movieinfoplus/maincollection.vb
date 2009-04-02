@@ -1645,7 +1645,7 @@ Public Class maincollection
         Dim thelist As ArrayList
         thelist = dlist
         Dim mname As String ', mfxname As String
-
+        Dim prename As String = ""
         For Each name As String In dlist
             'parse just the movie name
             mname = getmnamebyfoldername(name).ToString
@@ -1664,6 +1664,7 @@ Public Class maincollection
                 'end filter injection
                 newmovie.preservedmoviename = mname
                 newmovie.setmoviepath(name)
+              
                 'read nfo if it's there
                 readnfo(newmovie)
                 newmovie.peditedmoviename = newmovie.pmoviename
@@ -1747,17 +1748,28 @@ Public Class maincollection
     Private Sub readnfo(ByRef tempmovie As movie)
 
         Dim tmpath As String = ""
-        If moviemode = "file" Then
-            tmpath = addfiletofolder(tempmovie.getmoviepath, tempmovie.preservedmoviename + ".nfo") 'in filemode, we need the preserved name
+        If tempmovie.pfilemode Then
+            tmpath = addfiletofolder(tempmovie.getmoviepath, removeextension(tempmovie.preservedmoviename) + ".nfo") 'in filemode, we need the preserved name
+            If File.Exists(tmpath) Then
+                If Not File.Exists(addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename)) + ".nfo")) Then
+                    File.Move(tmpath, addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename)) + ".nfo"))
+                End If
+            End If
         Else
             tmpath = addfiletofolder(tempmovie.getmoviepath, tempmovie.pmoviename + ".nfo") 'folder mode, use the moviename after the filters
         End If
         'build 2401 update - check for movie.nfo, if there use it if there the other file is not there, meaning the more specific name is first, always
         If Not File.Exists(tmpath) Then
-            If File.Exists(addfiletofolder(tempmovie.getmoviepath, "movie.nfo")) And Not moviemode = "file" Then
-                tmpath = addfiletofolder(tempmovie.getmoviepath, "movie.nfo")
+            If tempmovie.pfilemode Then
+                tmpath = addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename)) + ".nfo") 'in filemode, we need the preserved name
+
+            Else
+                If File.Exists(addfiletofolder(tempmovie.getmoviepath, "movie.nfo")) Then
+                    tmpath = addfiletofolder(tempmovie.getmoviepath, "movie.nfo")
+                End If
             End If
         End If
+
         'try to load the .nfo file
         Dim nmov As New movieinfoplus.mip.mov.Mov
         Try
@@ -1767,6 +1779,7 @@ Public Class maincollection
             nmov.movtomovie(nmov, tempmovie)
             'nmov.printToString() 'debug.output
         Catch ex As Exception
+
             'nfo could not be loaded or failed, flag as no data from nfo
             tempmovie.pdatafromnfo = False
             'MsgBox("no nfo found, bypassing movie relink")
@@ -2865,7 +2878,9 @@ Public Class maincollection
         ''reload movie list
         'bwloadfolderdata()
         ''currentmovie = currentmovie
-        validatefoldercontents()
+
+        'removed the check here.
+        'validatefoldercontents()
     End Sub
     Private Sub savecia(ByRef selectedicon As PictureBox)
         If selectedicon.ImageLocation = Nothing Then Exit Sub
@@ -18105,6 +18120,7 @@ Public Class maincollection
     Private Sub bshMovieSaveChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieSaveChanges.Click
         If currentmovie Is Nothing Then Exit Sub
         saveNfoFromGuiText()
+        MsgBox("Changes saved.")
         'cbNoNfoChangePrompt.Checked
     End Sub
     Private Sub bshgMovieFiletofolder_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshgMovieFiletofolder.Click
@@ -18147,7 +18163,7 @@ Public Class maincollection
         currentmovie.pruntime = Me.tbRuntime.Text
         currentmovie.ptagline = Me.rtbTagline.Text
         currentmovie.pvotes = Me.tbVotes.Text
-        currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
+        'currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
         currentmovie.pgenre = Me.tbGenre.Text
         Dim oldvalue As Integer = currentmovie.pyear
         Try
@@ -18178,7 +18194,7 @@ Public Class maincollection
         If rconf.pcbNoNfoChangePrompt Then
             'MessageBox.Show("Movie information updated in .nfo file for the movie.", "Save completed", MessageBoxButtons.OK, MessageBoxIcon.None)
         Else
-            MessageBox.Show("Movie information updated in .nfo file for the movie.", "Save completed", MessageBoxButtons.OK, MessageBoxIcon.None)
+            ' MessageBox.Show("Movie information updated in .nfo file for the movie.", "Save completed", MessageBoxButtons.OK, MessageBoxIcon.None)
         End If
 
     End Sub
@@ -18223,10 +18239,12 @@ Public Class maincollection
         'get all files for all directorys in that path and put into arraylist
         Dim filelisting As New ArrayList
         'Dim currentindex As Integer = 0
+        Dim prename As String = ""
         Dim curcount As Integer = 0
         For Each tdirectory As String In tarray
             Try
                 For Each item In Directory.GetFiles(tdirectory)
+
                     Try
                         Dim fnPeices1() As String = item.ToString.Split(CChar("\"))
                         Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
@@ -18248,6 +18266,7 @@ Public Class maincollection
                                     newmovie.setmoviepath(tdirectory)
                                     newmovie.pfilemode = True
                                     'read nfo if it's there
+                                    'asdf()
                                     readnfo(newmovie) ' does not set the moviename, edited name is only used in the .nfo file
                                     'newmovie.peditedmoviename = newmovie.pmoviename
                                     dtIDA.LoadDataRow(New Object() {newmovie.getmoviepath, cleanname, currentindex}, True)
@@ -18280,6 +18299,12 @@ Public Class maincollection
                                     newmovie.preservedmoviename = mname
                                     newmovie.setmoviepath(tdirectory)
                                     newmovie.pfilemode = True
+                                    Dim curstipedname As String = ""
+                                    curstipedname = stripstackforfilemode(removeextension(mname)).ToLower
+                                    If prename = curstipedname Then
+                                        Continue For 'ingores stacked items by not loading the second part
+                                    End If
+                                    prename = curstipedname
                                     'read nfo if it's there
                                     readnfo(newmovie) ' does not set the moviename, edited name is only used in the .nfo file
                                     'newmovie.peditedmoviename = newmovie.pmoviename
@@ -27912,16 +27937,16 @@ Public Class maincollection
             End If
         End If
     End Sub
-    Private Sub tbStudio_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbStudio.Click
+    Private Sub tbStudio_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMovieStudioSelect.Click
         If Not currentmovie Is Nothing Then
             If Not currentmovie.pmoviename = "" Then
                 dlgMovieStudioSelect.prepop(currentmovie, rconf.basefolder)
                 dlgMovieStudioSelect.ShowDialog()
                 'MsgBox(currentmovie.pgenre)
-                If Not currentmovie.pstudio = tbStudio.Text Then
-                    tbStudio.Text = currentmovie.pstudio
-                    saveNfoFromGuiText()
-                End If
+                'If Not currentmovie.pstudio = tbStudio.Text Then
+                saveNfoFromGuiText()
+                tbStudio.Text = currentmovie.pstudio
+                'End If
             End If
         End If
     End Sub
@@ -28532,6 +28557,7 @@ Public Class maincollection
         If messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = False
         If messageprompts Then pbarLoadingMovieMediaInfo.Visible = False
         If messageprompts Then krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
+        If messageprompts Then Me.tbStudio.Text = currentmovie.pstudio
     End Sub
     Private Sub bwGetTVEPMediaInfo_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwGetTVEPMediaInfo.DoWork
         getmediadata(gvcurrenttvepisode, True)
@@ -31185,6 +31211,11 @@ Public Class maincollection
     Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
         testofdbsearch()
     End Sub
+
+    Private Sub tbStudio_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbStudio.TextChanged
+
+
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -33142,6 +33173,7 @@ Public Property [Actors]() As List(Of Actor)
         nm.fileinfo = tmovie.fileinfo
         If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
             nm.Studio = tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
+            tmovie.studio = nm.Studio 'tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
         End If
 
         'rev 2401 generate the nfo files

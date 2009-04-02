@@ -118,11 +118,11 @@ Module modStringUtils
     End Function
 
     Public Function stripstackforfilemode(ByVal moviename As String) As String
-        Dim filteredname As String = ""
-        If Not maincollection.moviemode = "file" Then
-            Return moviename
-            Exit Function
-        End If
+        'Dim filteredname As String = ""
+        'If Not maincollection.moviemode = "file" Then
+        '    Return moviename
+        '    Exit Function
+        'End If
 
         ''strip out anything in parans
         'Try

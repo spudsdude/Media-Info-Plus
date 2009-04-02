@@ -254,6 +254,10 @@ Public Class MediaInfo
         'Exit Sub
 
         'open the file
+        If Not File.Exists(moviefilename) Then
+            MsgBox("Could not find the media file: " & vbNewLine & moviefilename)
+            Exit Sub
+        End If
         MI.Open(moviefilename)
         currentmovie.fileinfo = New xbmcMediaInfo.Fileinfo
         currentmovie.fileinfo.version = 1.3

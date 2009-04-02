@@ -70,7 +70,7 @@ Partial Class dlgMovieStudioSelect
         'kgAllGenres.Panel
         '
         Me.kgAllGenres.Panel.Controls.Add(Me.lbAllStudio)
-        Me.kgAllGenres.Size = New System.Drawing.Size(133, 414)
+        Me.kgAllGenres.Size = New System.Drawing.Size(230, 417)
         Me.kgAllGenres.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgAllGenres.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgAllGenres.StateCommon.Border.ColorAngle = 60.0!
@@ -89,7 +89,7 @@ Partial Class dlgMovieStudioSelect
         Me.lbAllStudio.Items.AddRange(New Object() {"Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "Game-Show", "History", "Horror", "Music", "Musical", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"})
         Me.lbAllStudio.Location = New System.Drawing.Point(0, 0)
         Me.lbAllStudio.Name = "lbAllStudio"
-        Me.lbAllStudio.Size = New System.Drawing.Size(123, 394)
+        Me.lbAllStudio.Size = New System.Drawing.Size(220, 407)
         Me.lbAllStudio.TabIndex = 0
         '
         'kscMain
@@ -107,8 +107,8 @@ Partial Class dlgMovieStudioSelect
         '
         Me.kscMain.Panel2.Controls.Add(Me.kscRightMain)
         Me.kscMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-        Me.kscMain.Size = New System.Drawing.Size(381, 414)
-        Me.kscMain.SplitterDistance = 133
+        Me.kscMain.Size = New System.Drawing.Size(585, 417)
+        Me.kscMain.SplitterDistance = 230
         Me.kscMain.SplitterWidth = 0
         Me.kscMain.TabIndex = 2
         '
@@ -131,17 +131,17 @@ Partial Class dlgMovieStudioSelect
         '
         Me.kscRightMain.Panel2.Controls.Add(Me.kbMyGenres)
         Me.kscRightMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-        Me.kscRightMain.Size = New System.Drawing.Size(248, 414)
-        Me.kscRightMain.SplitterDistance = 102
+        Me.kscRightMain.Size = New System.Drawing.Size(355, 417)
+        Me.kscRightMain.SplitterDistance = 130
         Me.kscRightMain.SplitterWidth = 0
         Me.kscRightMain.TabIndex = 3
         '
         'klbl4dummies
         '
         Me.klbl4dummies.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klbl4dummies.Location = New System.Drawing.Point(10, 85)
+        Me.klbl4dummies.Location = New System.Drawing.Point(21, 85)
         Me.klbl4dummies.Name = "klbl4dummies"
-        Me.klbl4dummies.Size = New System.Drawing.Size(82, 29)
+        Me.klbl4dummies.Size = New System.Drawing.Size(91, 37)
         Me.klbl4dummies.TabIndex = 1
         Me.klbl4dummies.Text = "     Click To" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Add / Remove"
         Me.klbl4dummies.Values.ExtraText = ""
@@ -151,9 +151,9 @@ Partial Class dlgMovieStudioSelect
         'klblSelected
         '
         Me.klblSelected.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblSelected.Location = New System.Drawing.Point(39, 32)
+        Me.klblSelected.Location = New System.Drawing.Point(50, 32)
         Me.klblSelected.Name = "klblSelected"
-        Me.klblSelected.Size = New System.Drawing.Size(68, 16)
+        Me.klblSelected.Size = New System.Drawing.Size(76, 21)
         Me.klblSelected.TabIndex = 2
         Me.klblSelected.Text = "Selected ->"
         Me.klblSelected.Values.ExtraText = ""
@@ -163,9 +163,9 @@ Partial Class dlgMovieStudioSelect
         'klblAllGenres
         '
         Me.klblAllGenres.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblAllGenres.Location = New System.Drawing.Point(0, 9)
+        Me.klblAllGenres.Location = New System.Drawing.Point(11, 9)
         Me.klblAllGenres.Name = "klblAllGenres"
-        Me.klblAllGenres.Size = New System.Drawing.Size(70, 16)
+        Me.klblAllGenres.Size = New System.Drawing.Size(76, 21)
         Me.klblAllGenres.TabIndex = 1
         Me.klblAllGenres.Text = "<- Available"
         Me.klblAllGenres.Values.ExtraText = ""
@@ -176,7 +176,7 @@ Partial Class dlgMovieStudioSelect
         '
         Me.kgButtons.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ButtonForm
         Me.kgButtons.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ButtonCustom1
-        Me.kgButtons.Location = New System.Drawing.Point(0, 159)
+        Me.kgButtons.Location = New System.Drawing.Point(11, 159)
         Me.kgButtons.Name = "kgButtons"
         '
         'kgButtons.Panel
@@ -184,7 +184,7 @@ Partial Class dlgMovieStudioSelect
         Me.kgButtons.Panel.Controls.Add(Me.kbtnCancel)
         Me.kgButtons.Panel.Controls.Add(Me.kbtnOK)
         Me.kgButtons.Panel.Controls.Add(Me.kbtnRemoveAll)
-        Me.kgButtons.Size = New System.Drawing.Size(100, 103)
+        Me.kgButtons.Size = New System.Drawing.Size(100, 149)
         Me.kgButtons.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kgButtons.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kgButtons.StateCommon.Border.ColorAngle = 60.0!
@@ -199,9 +199,9 @@ Partial Class dlgMovieStudioSelect
         'kbtnCancel
         '
         Me.kbtnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.kbtnCancel.Location = New System.Drawing.Point(1, 65)
+        Me.kbtnCancel.Location = New System.Drawing.Point(1, 95)
         Me.kbtnCancel.Name = "kbtnCancel"
-        Me.kbtnCancel.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnCancel.Size = New System.Drawing.Size(90, 40)
         Me.kbtnCancel.TabIndex = 7
         Me.kbtnCancel.Text = "Cancel"
         Me.kbtnCancel.Values.ExtraText = ""
@@ -213,9 +213,9 @@ Partial Class dlgMovieStudioSelect
         '
         'kbtnOK
         '
-        Me.kbtnOK.Location = New System.Drawing.Point(1, 34)
+        Me.kbtnOK.Location = New System.Drawing.Point(1, 51)
         Me.kbtnOK.Name = "kbtnOK"
-        Me.kbtnOK.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnOK.Size = New System.Drawing.Size(90, 38)
         Me.kbtnOK.TabIndex = 6
         Me.kbtnOK.Text = "OK"
         Me.kbtnOK.Values.ExtraText = ""
@@ -229,7 +229,7 @@ Partial Class dlgMovieStudioSelect
         '
         Me.kbtnRemoveAll.Location = New System.Drawing.Point(1, 3)
         Me.kbtnRemoveAll.Name = "kbtnRemoveAll"
-        Me.kbtnRemoveAll.Size = New System.Drawing.Size(90, 25)
+        Me.kbtnRemoveAll.Size = New System.Drawing.Size(90, 42)
         Me.kbtnRemoveAll.TabIndex = 5
         Me.kbtnRemoveAll.Text = "Remove All"
         Me.kbtnRemoveAll.Values.ExtraText = ""
@@ -248,7 +248,7 @@ Partial Class dlgMovieStudioSelect
         'kbMyGenres.Panel
         '
         Me.kbMyGenres.Panel.Controls.Add(Me.lbSelectedStudio)
-        Me.kbMyGenres.Size = New System.Drawing.Size(146, 414)
+        Me.kbMyGenres.Size = New System.Drawing.Size(225, 417)
         Me.kbMyGenres.StateCommon.Border.Color1 = System.Drawing.Color.Black
         Me.kbMyGenres.StateCommon.Border.Color2 = System.Drawing.Color.Silver
         Me.kbMyGenres.StateCommon.Border.ColorAngle = 60.0!
@@ -266,7 +266,7 @@ Partial Class dlgMovieStudioSelect
         Me.lbSelectedStudio.FormattingEnabled = True
         Me.lbSelectedStudio.Location = New System.Drawing.Point(0, 0)
         Me.lbSelectedStudio.Name = "lbSelectedStudio"
-        Me.lbSelectedStudio.Size = New System.Drawing.Size(136, 394)
+        Me.lbSelectedStudio.Size = New System.Drawing.Size(215, 407)
         Me.lbSelectedStudio.TabIndex = 0
         '
         'dlgMovieStudioSelect
@@ -275,7 +275,7 @@ Partial Class dlgMovieStudioSelect
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.CancelButton = Me.kbtnCancel
-        Me.ClientSize = New System.Drawing.Size(381, 414)
+        Me.ClientSize = New System.Drawing.Size(585, 417)
         Me.Controls.Add(Me.kscMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximizeBox = False
