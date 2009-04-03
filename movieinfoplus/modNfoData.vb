@@ -31,14 +31,14 @@ Module modNfoData
             If tmovie.pimdbnumber = "" Then
                 Return False
             Else
-                File.Move(pathtonfo, pathtonfo & ".oldversion")
+                If Not File.Exists(pathtonfo & ".oldversion") Then File.Move(pathtonfo, pathtonfo & ".oldversion")
                 Return True
             End If
             ' Return True
         End If
     End Function
     Public Sub checknfodata(ByRef currentmovie As movie, ByVal dname As String, ByVal workonline As Boolean)
-
+        If currentmovie.pdatafromnfo Then Exit Sub 'nothing to do if it came from an nfo file
         ' ---- IMDB AND NFO -----
         Dim hasnfoalready As Boolean = False
         Dim haveidonly As Boolean = False

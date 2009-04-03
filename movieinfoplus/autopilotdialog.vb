@@ -14,6 +14,7 @@ Public Class autopilotdialog
     Dim gv_bwap_overwritenfoTru As Boolean
     Dim gv_bwap_overwritefolderjpg As Boolean
     Dim gv_bwap_mediaonly As Boolean
+    Dim gv_bwap_updatestudio As Boolean
 
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
@@ -154,13 +155,14 @@ Public Class autopilotdialog
     'format 070 poster 'posterpb1
     Private Sub startautopilot()
         'autopilot(primary, secondary, posterTru, fanartTru, tbnTru, nfoTru, overwritenfoTru)
-        Dim buseposter, busefanart, bcnfo, bctbn, bonfo, boei As Boolean
+        Dim buseposter, busefanart, bcnfo, bctbn, bonfo, boei, busfimdb As Boolean
         If cbimpaposter.Checked Then buseposter = True
         If cbmeligrovefanart.Checked Then busefanart = True
         If cbcreatenfo.Checked Then bcnfo = True
         If cbcreatetbn.Checked Then bctbn = True
         If cboverwritenfo.Checked Then bonfo = True
         If cboverwriteexistingicons.Checked Then boei = True
+        If cbgv_bwap_updatestudio.Checked Then busfimdb = True
         Debug.Print(maincollection.lbMyMovies.Items.Count.ToString)
         If maincollection.lbMyMovies.Items.Count <= 0 Then
             Debug.Print("no items in drop down, attempting to get some")
@@ -180,7 +182,7 @@ Public Class autopilotdialog
             Debug.Print("Secondary set to: " + secondaryselected)
             Debug.Print("use poster: " + buseposter.ToString + "use fanart: " + busefanart.ToString + "create tbn: " + bctbn.ToString + "create nfo: " + bcnfo.ToString + "overwrite nfo:" + bonfo.ToString)
 
-            maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
+            maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, False, busfimdb)
             'doautopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei)
         End If
 
@@ -350,7 +352,7 @@ Public Class autopilotdialog
         bctbn = False
         bonfo = False
         boei = False
-
+        If cbgv_bwap_updatestudio.Checked Then gv_bwap_updatestudio = True
         If maincollection.lbMyMovies.Items.Count <= 0 Then
             Debug.Print("no items in drop down, attempting to get some")
             maincollection.readfolderdatafordropdown()
@@ -368,7 +370,7 @@ Public Class autopilotdialog
         '    Debug.Print("Primary set to: " + primaryselected)
         '    Debug.Print("Secondary set to: " + secondaryselected)
         '    Debug.Print("use poster: " + buseposter.ToString + "use fanart: " + busefanart.ToString + "create tbn: " + bctbn.ToString + "create nfo: " + bcnfo.ToString + "overwrite nfo:" + bonfo.ToString)
-        maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True)
+        maincollection.autopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True, gv_bwap_updatestudio)
         'doautopilotbw(primaryselected, secondaryselected, buseposter, busefanart, bctbn, bcnfo, bonfo, boei, True)
         'End If
 
@@ -377,6 +379,10 @@ Public Class autopilotdialog
     End Sub
 
     Private Sub bwDoAutoPilot_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwDoAutoPilot.DoWork
-        maincollection.autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly)
+        maincollection.autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly, gv_bwap_updatestudio)
+    End Sub
+
+    Private Sub cbgv_bwap_updatestudio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbgv_bwap_updatestudio.Click
+        gv_bwap_updatestudio = cbgv_bwap_updatestudio.Checked
     End Sub
 End Class

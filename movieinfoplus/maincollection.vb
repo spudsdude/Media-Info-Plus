@@ -118,6 +118,7 @@ Public Class maincollection
     Dim gv_bwap_overwritenfoTru As Boolean
     Dim gv_bwap_overwritefolderjpg As Boolean
     Dim gv_bwap_mediaonly As Boolean
+    Dim gv_bwap_updatestudiofromimdb As Boolean
 
     'myRootTabs' = Nothing
     'bwDisplayMovieData()
@@ -2108,7 +2109,7 @@ Public Class maincollection
         'End While
 
     End Sub
-    Public Sub autopilotbw(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, Optional ByVal mediaonly As Boolean = False)
+    Public Sub autopilotbw(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, ByVal mediaonly As Boolean, ByVal updatestudiofromimdb As Boolean)
         gv_bwap_primary = primary
         gv_bwap_secondary = secondary
         gv_bwap_posterTru = posterTru
@@ -2118,6 +2119,7 @@ Public Class maincollection
         gv_bwap_overwritenfoTru = overwritenfoTru
         gv_bwap_overwritefolderjpg = overwritefolderjpg
         gv_bwap_mediaonly = mediaonly
+        gv_bwap_updatestudiofromimdb = updatestudiofromimdb
         If lbMyMovies.SelectedIndex = -1 Then
             lbMyMovies.SelectedIndex = 0
         End If
@@ -2128,7 +2130,7 @@ Public Class maincollection
         bwAutopilot.WorkerSupportsCancellation = True
         bwAutopilot.RunWorkerAsync()
     End Sub
-    Public Sub autopilotfromform(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, Optional ByVal mediaonly As Boolean = False)
+    Public Sub autopilotfromform(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, ByVal mediaonly As Boolean, ByRef leavestudioalonedude As Boolean)
         'autopilotdialog.Dispose()
         'Me.Show()
         'tcMain.SelectTab(0) ' show current icon page
@@ -2143,7 +2145,7 @@ Public Class maincollection
 
         While cou <= total
             'testing first poster, then boxshot (f1s3) everything on
-            autopilot(primary, secondary, posterTru, fanartTru, tbnTru, nfoTru, overwritenfoTru, overwritefolderjpg, mediaonly)
+            autopilot(primary, secondary, posterTru, fanartTru, tbnTru, nfoTru, overwritenfoTru, overwritefolderjpg, mediaonly, leavestudioalonedude)
             cou += 1
             If Not cou >= total Then
                 lbMyMovies.SelectedIndex = cou
@@ -2164,7 +2166,7 @@ Public Class maincollection
         Dim bytRetData As Byte() = oWeb.UploadData("http://www.ofdb.de/film/view.php?page=suchergebnis", "POST", bytArguments)
         Debug.Write(System.Text.Encoding.ASCII.GetString(bytRetData))
     End Sub
-    Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean)
+    Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean, ByVal updatestudiofromimdb As Boolean)
         messageprompts = True
         If messageprompts Then resetanddisableimages()
         Me.pbar1.Visible = True
@@ -2187,17 +2189,11 @@ Public Class maincollection
         dname = currentmovie.getmoviename
         lblPbar.Text = "WORKING ON: " + dname
         If messageprompts Then Me.Refresh()
-        
+
         pbCurIconUsed.Hide()
         pbCurIconUsed2.Hide()
 
-        ''see if nfo file exsists for movie, first in the folder, then in the poster xmls
-        'Dim hasidonly As Boolean = checkforIMDBIDinnfofile(currentmovie)
-        'If Not hasidonly Then
-        '    'if there is no nfo file, check for a poster file (they have the imdbid in them)
-        '    hasidonly = checkforposterfiletogetimdbid(currentmovie)
-        'End If
-
+      
         Dim selectedName As String = currentmovie.getmoviename
         'tbnewname.Text = selectedName
 
@@ -2206,129 +2202,9 @@ Public Class maincollection
         Dim selectedNameXMLfile As String
         selectedNameXMLfile = Strings.Replace(selectedName, " ", ".")
         currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
-      
+        If Not currentmovie.pdatafromnfo Then checknfodata(currentmovie, dname, rbem.Checked)
 
-        checknfodata(currentmovie, dname, rbem.Checked)
-
-        '' '' ''---
-        '' '' '' ---- IMDB AND NFO -----
-        ' '' ''Dim hasnfoalready As Boolean = False
-        ' '' ''Dim haveidonly As Boolean = False
-        '' '' ''see if movie data was loaded from nfo file during folder scan
-        ' '' ''If Not currentmovie.pdatafromnfo Then
-        ' '' ''    'we don't have data so try to get it
-        ' '' ''    'see if nfo file exsists for movie, if it does, read it up to speed it up
-        ' '' ''    haveidonly = checkforIMDBIDinnfofile(currentmovie)
-        ' '' ''    If Not haveidonly Then
-        ' '' ''        'if there is no nfo file, check for a poster file (they have the imdbid in them)
-        ' '' ''        haveidonly = checkforposterfiletogetimdbid(currentmovie)
-        ' '' ''    End If
-        ' '' ''Else
-        ' '' ''    hasnfoalready = True
-        ' '' ''End If
-        '' '' ''see if a folder icon exsists 
-
-        '' '' ''?        pbCurIconUsed.Enabled = True
-
-
-        '' '' ''-------------------------------- IMDB Information and .nfo file creation 
-        ' '' ''If rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-        ' '' ''    If messageprompts Then lblPbar.Text = "Getting IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
-        ' '' ''    'If messageprompts Then Me.Refresh()()
-        ' '' ''    If currentmovie.pimdbnumber = "" Then
-        ' '' ''        Debug.Print("no id in movie, grabbing imdb info")
-        ' '' ''        If messageprompts Then lblPbar.Text = "Connecting to IMDB for information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
-        ' '' ''        'If messageprompts Then Me.Refresh()()
-        ' '' ''        Dim stringofimdbpage As String = getimdbidsearch(dname)
-        ' '' ''        If messageprompts Then lblPbar.Text = "Searching IMDB for information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
-        ' '' ''        'If messageprompts Then Me.Refresh()()
-        ' '' ''        currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, stringofimdbpage)
-        ' '' ''    Else
-        ' '' ''        'do not grab the data, we know the id already
-        ' '' ''        'hasnfoalready = True
-        ' '' ''        Debug.Print("we have an id, not parseing imdb again for it")
-        ' '' ''    End If
-        ' '' ''    'getimdbidsearchwithwget(currentmovie)
-
-        ' '' ''    If rbem.Checked = True Then 'download mode
-        ' '' ''        If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-        ' '' ''            'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
-        ' '' ''            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-        ' '' ''            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-        ' '' ''        Else
-        ' '' ''            If Not haveidonly Then
-        ' '' ''                'no nfo so get the data
-        ' '' ''                'getimdbidsearch(dname)
-        ' '' ''                Dim tstringofimdbpage As String = getimdbidsearch(dname)
-        ' '' ''                currentmovie.pimdbnumber = snagimdbid_dlg(dname, currentmovie, tstringofimdbpage)
-        ' '' ''                snagyear(dname, currentmovie, tstringofimdbpage)
-        ' '' ''            End If
-        ' '' ''            ' getimdbdata(currentmovie)
-        ' '' ''            Dim imdbinfo As New IMDB
-        ' '' ''            Dim imdbidtemp As String = currentmovie.getimdbid
-        ' '' ''            If imdbidtemp = "" Then
-        ' '' ''                ' If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        ' '' ''                Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        ' '' ''            Else
-        ' '' ''                imdbinfo = imdbparse(imdbidtemp)
-        ' '' ''                'save xml to imdbcache reguardless of gui setting to write nfo
-        ' '' ''                ' currentmovie.Actors = imdbinfo.Actors
-        ' '' ''                imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
-        ' '' ''                'If cbSaveNFO.Checked Then
-        ' '' ''                '    'imdbinfo.writeIMDBXML(imdbinfo, currentmovie)
-        ' '' ''                '    currentmovie.saveimdbinfo(currentmovie)
-        ' '' ''                'End If
-        ' '' ''            End If
-        ' '' ''        End If
-        ' '' ''    End If
-        ' '' ''End If
-        '' '' ''---
-        '' '' ''-----IMDB Information and .nfo file creation 
-        '' '' ''Dim hasnfoalready As Boolean = False
-        '' '' ''If rconf.pcbGetIMDBInfo Then 'get imdb info
-        '' '' ''    lblPbar.Text = " __-- Getting IMDB Information for " + dname + "--__ "
-        '' '' ''    ' Me.Refresh()
-        '' '' ''    If currentmovie.pimdbnumber = "" Then
-        '' '' ''        Debug.Print("no id in movie, grabbing imdb info")
-        '' '' ''        getimdbidsearch(currentmovie.gecurrentmoviename)
-        '' '' ''        snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
-        '' '' ''    Else
-        '' '' ''        'do not grab the data, we know the id already
-        '' '' ''        hasnfoalready = True
-        '' '' ''        Debug.Print("we have an id, not parseing imdb again for it")
-        '' '' ''    End If
-        '' '' ''    'getimdbidsearchwithwget(currentmovie)
-        '' '' ''    If rbem.Checked = True Then
-        '' '' ''        If File.Exists(rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
-        '' '' ''            'lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + currentmovie.gecurrentmoviename.ToString + "--__ "
-        '' '' ''            'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
-        '' '' ''            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
-        '' '' ''        Else
-        '' '' ''            If Not hasnfoalready Then
-        '' '' ''                'no nfo so get the data
-        '' '' ''                getimdbidsearch(currentmovie.gecurrentmoviename)
-        '' '' ''                snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
-        '' '' ''                snagyear(currentmovie.gecurrentmoviename, currentmovie)
-        '' '' ''            End If
-        '' '' ''            ' getimdbdata(currentmovie)
-        '' '' ''            Dim imdbinfo As New IMDB
-        '' '' ''            Dim imdbidtemp As String = currentmovie.getimdbid
-        '' '' ''            If imdbidtemp = "" Then
-        '' '' ''                If messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        '' '' ''                Debug.Print("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
-        '' '' ''            Else
-        '' '' ''                imdbinfo = imdbparse(imdbidtemp)
-        '' '' ''                'save xml to imdbcache reguardless of gui setting to write nfo
-        '' '' ''                imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True)
-        '' '' ''                'If cbSaveNFO.Checked Then
-        '' '' ''                '    'imdbinfo.writeIMDBXML(imdbinfo, currentmovie)
-        '' '' ''                '    currentmovie.saveimdbinfo(currentmovie)
-        '' '' ''                'End If
-        '' '' ''            End If
-        '' '' ''        End If
-        '' '' ''    End If
-        '' '' ''End If
-
+     
         'get fanart
         If fanartTru Then
             If messageprompts Then lblPbar.Text = " -- Fanart -- "
@@ -2361,7 +2237,7 @@ Public Class maincollection
         'read up .nfo file
         If messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
         If messageprompts Then Me.gbDisplay.Refresh()
-        If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then 'currentmovie.gecurrentmoviepath + "\" + currentmovie.gecurrentmoviename + ".nfo") Then
+        If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") And Not currentmovie.pdatafromnfo Then 'currentmovie.gecurrentmoviepath + "\" + currentmovie.gecurrentmoviename + ".nfo") Then
             Dim timdb As New IMDB
             timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder)
         Else
@@ -2383,32 +2259,42 @@ Public Class maincollection
 
         If mediaonly Then
             Debug.Print(currentmovie.pmoviename)
-            Try
-                Dim curimdb As New IMDB
-                Dim tempmov As New movie
-                tempmov.pimdbnumber = currentmovie.pimdbnumber
-                If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
-                    '' getimdbdata(tmovie)
-                    Dim imdbinfo As New IMDB
-                    Dim imdbidtemp As String = tempmov.getimdbid
-                    If imdbidtemp = "" Then
-                        Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
-                    Else
-                        imdbinfo = maincollection.imdbparse(imdbidtemp)
-                        imdbinfo.writeIMDBXML(imdbinfo, tempmov, maincollection.rconf.imdbcachefolder, True)
+            If updatestudiofromimdb Then
+                Try
+                    Dim curimdb As New IMDB
+                    Dim tempmov As New movie
+                    tempmov.pimdbnumber = currentmovie.pimdbnumber
+                    If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
+                        '' getimdbdata(tmovie)
+                        Dim imdbinfo As New IMDB
+                        Dim imdbidtemp As String = tempmov.getimdbid
+                        If imdbidtemp = "" Then
+                            Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
+                        Else
+                            imdbinfo = maincollection.imdbparse(imdbidtemp)
+                            imdbinfo.writeIMDBXML(imdbinfo, tempmov, maincollection.rconf.imdbcachefolder, True)
+                        End If
                     End If
-                End If
-                curimdb.readIMDBXML(tempmov, rconf.imdbcachefolder)
-                currentmovie.pstudio = tempmov.pstudio
-                currentmovie.pstudioreal = tempmov.pstudio
-                currentmovie.pcredits = tempmov.pcredits
-            Catch ex As Exception
-                MsgBox("Couldn't readup cache for movie: " & ex.ToString)
-            End Try
+                    curimdb.readIMDBXML(tempmov, rconf.imdbcachefolder)
+                    currentmovie.pstudio = tempmov.pstudio
+                    currentmovie.pstudioreal = tempmov.pstudio
+                    currentmovie.pcredits = tempmov.pcredits
+                Catch ex As Exception
+                    MsgBox("Couldn't readup cache for movie: " & ex.ToString)
+                End Try
+            End If
+
 
             Dim MI As New MediaInfo
             MI.getdata(currentmovie, moviemode)
-            currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+            If rconf.pcbGeneralSupportSkinBasedFlagging Then
+                If updatestudiofromimdb Then
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                Else
+                    currentmovie.pstudioreal = currentmovie.pstudio
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                End If
+            End If
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
             Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
             If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
@@ -2466,59 +2352,13 @@ Public Class maincollection
                     nolinksinxml = True
                 End If
 
-                'If nolinksinxml = True Then
-                '    lblPbar.Text = " __-- Getting Poster for " + dname + "--__ "
-                '    If messageprompts Then Me.gbDisplay.Refresh()
-                '    Debug.Print("When Getting Posters: Blank XML or No XML for: " + impaname)
-                '    'no poster xml, revert to older method of finding poster
-                '    If rconf.pcbGetIMDBInfo Then
-                '        'do nothing, we already polled that data for the movie
-                '    Else
-                '        'get imdb info since we need the movie year
-                '        If rbem.Checked = True Then
-                '            getimdbidsearch(currentmovie.gecurrentmoviename)
-                '            snagimdbid(currentmovie.gecurrentmoviename, currentmovie)
-                '            snagyear(currentmovie.gecurrentmoviename, currentmovie)
-                '        End If
-                '    End If
-
-                '    'old method of posters, used when no poster xml is found, limited to 2 posters to speed up processing
-                '    If rbem.Checked = True Then
-                '        Dim postericons As New icontoxml
-                '        postericons.seticon1("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + ".jpg")
-                '        postericons.seticon2("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver1.jpg")
-                '        postericons.seticon3("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver2.jpg")
-                '        postericons.seticon4("http://www.impawards.com/" + Convert.ToString(currentmovie.getyear) + "/posters/" + impaname + "_ver3.jpg")
-                '        postericons.savexmliconwriter(postericons, selectedNameXMLfile, "070", "0", "0")
-                '    End If
-
-                '    Try
-                '        If rbem.Checked = True Then
-                '            precacheicons(selectedNameXMLfile, "070", "0", "0")
-                '        End If
-                '        getdisplayimages(selectedNameXMLfile, "070", "0", "0")
-                '    Catch ex As Exception
-                '    End Try
-                'End If
+              
             End If
             '-------------------------------- END POSTER CODE
         End If
 
         Dim hasfolderjpg As Boolean = False
-        'change made in rev 2437
-
-        'If File.Exists(cmpath + "\folder.jpg") And Not moviemode = "file" Then
-        '    'if there's not tbn, create one by making a copy of the folder.jpg if create tbn is checked
-        '    If Not File.Exists(cmpath + "\" + dname + ".tbn") Then
-        '        If tbnTru And rconf.pcbautocreatemovienametbn Then File.Copy(cmpath + "\folder.jpg", cmpath + "\" + dname + ".tbn", True)
-
-        '    End If
-        '    If tbnTru And rconf.pcbautocreatemovietbn Then
-        '        If File.Exists(cmpath + "\movie.tbn") Then File.SetAttributes(cmpath + "\movie.tbn", FileAttributes.Normal)
-        '        File.Copy(cmpath + "\folder.jpg", cmpath + "\movie.tbn", True)
-        '    End If
-        '    hasfolderjpg = True
-        'End If
+    
         'post 2437 change below
         'if there is no folder.jpg, based on configured options, set one (not for filemode)
         If rconf.pcbCreateFolderjpg And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "folder.jpg")) And Not moviemode = "file" Then
@@ -30806,7 +30646,7 @@ Public Class maincollection
     End Sub
     Private Sub bwAutopilot_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwAutopilot.RunWorkerCompleted
         kscMain.Enabled = False
-        autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly)
+        autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly, gv_bwap_updatestudiofromimdb)
         'dlgAutoPilotRunning.Dispose()
         kscMain.Enabled = True
     End Sub

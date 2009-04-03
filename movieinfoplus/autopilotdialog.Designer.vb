@@ -62,6 +62,7 @@ Partial Class autopilotdialog
         Me.pbsecondaryiconsquare = New System.Windows.Forms.PictureBox
         Me.btnMediaDataOnly = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.bwDoAutoPilot = New System.ComponentModel.BackgroundWorker
+        Me.cbgv_bwap_updatestudio = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -434,7 +435,7 @@ Partial Class autopilotdialog
         Me.cbcreatetbn.AutoSize = True
         Me.cbcreatetbn.Checked = True
         Me.cbcreatetbn.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbcreatetbn.Location = New System.Drawing.Point(600, 4)
+        Me.cbcreatetbn.Location = New System.Drawing.Point(594, 458)
         Me.cbcreatetbn.Name = "cbcreatetbn"
         Me.cbcreatetbn.Size = New System.Drawing.Size(94, 17)
         Me.cbcreatetbn.TabIndex = 2
@@ -518,7 +519,7 @@ Partial Class autopilotdialog
         '
         'btnMediaDataOnly
         '
-        Me.btnMediaDataOnly.Location = New System.Drawing.Point(546, 20)
+        Me.btnMediaDataOnly.Location = New System.Drawing.Point(546, 24)
         Me.btnMediaDataOnly.Name = "btnMediaDataOnly"
         Me.btnMediaDataOnly.Size = New System.Drawing.Size(218, 45)
         Me.btnMediaDataOnly.TabIndex = 32
@@ -530,6 +531,21 @@ Partial Class autopilotdialog
         Me.btnMediaDataOnly.Values.ImageStates.ImageCheckedTracking = Nothing
         Me.btnMediaDataOnly.Values.Text = "Update Media Information Only!"
         '
+        'bwDoAutoPilot
+        '
+        '
+        'cbgv_bwap_updatestudio
+        '
+        Me.cbgv_bwap_updatestudio.Location = New System.Drawing.Point(562, 4)
+        Me.cbgv_bwap_updatestudio.Name = "cbgv_bwap_updatestudio"
+        Me.cbgv_bwap_updatestudio.Size = New System.Drawing.Size(177, 16)
+        Me.cbgv_bwap_updatestudio.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
+        Me.cbgv_bwap_updatestudio.TabIndex = 33
+        Me.cbgv_bwap_updatestudio.Text = "Update Studio data from IMDB"
+        Me.cbgv_bwap_updatestudio.Values.ExtraText = ""
+        Me.cbgv_bwap_updatestudio.Values.Image = Nothing
+        Me.cbgv_bwap_updatestudio.Values.Text = "Update Studio data from IMDB"
+        '
         'autopilotdialog
         '
         Me.AcceptButton = Me.btnStartProcessing
@@ -539,6 +555,7 @@ Partial Class autopilotdialog
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(776, 478)
         Me.ControlBox = False
+        Me.Controls.Add(Me.cbgv_bwap_updatestudio)
         Me.Controls.Add(Me.btnMediaDataOnly)
         Me.Controls.Add(Me.pbsecondaryiconwide)
         Me.Controls.Add(Me.Cancel_Button)
@@ -619,5 +636,6 @@ Partial Class autopilotdialog
     Friend WithEvents rbp9 As System.Windows.Forms.RadioButton
     Friend WithEvents btnMediaDataOnly As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents bwDoAutoPilot As System.ComponentModel.BackgroundWorker
+    Friend WithEvents cbgv_bwap_updatestudio As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 
 End Class

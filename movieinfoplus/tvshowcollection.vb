@@ -1868,7 +1868,7 @@ Public Class tvshowcollection
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
-                                    Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
+                                    '  Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
                                     Dim haveseason As Boolean = False
@@ -2007,7 +2007,7 @@ Public Class tvshowcollection
                                             Dim writnfo As Boolean = False
                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
                                             If overwritenfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
-                                            Console.Out.WriteLine("Overwrite: " & writnfo.ToString)
+                                            ' Console.Out.WriteLine("Overwrite: " & writnfo.ToString)
                                             If writnfo Then
                                                 'get media data
                                                 maincollection.pbar1.Visible = True
@@ -2912,13 +2912,15 @@ Public Class tvshowcollection
                     xbmctvshow.Rating = xbmctvshow.Studio
                 End If
                 xbmctvshow.writeXML(showfullpathname) '"c:\")
+                Console.Out.WriteLine("episode level images download setting: " & rconf.tv_episode_download_boolean.ToString)
                 If rconf.tv_episode_download_boolean Then
                     For Each curep As tvdblangEpisode In newtvdbData.Episodes
                         Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
                         Dim parentdir As String = getparentdirectory(rconf.tvdbcachefolder + selectedshow + "\" + switchpath)
                         If Not Directory.Exists(parentdir) Then Directory.CreateDirectory(parentdir)
                         If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then
-                            mgettvepisodeimages(curep, selectedshow, switchpath)
+                            Console.Out.WriteLine("no episode level image found.. download required")
+                            mgettvepisodeimages(curep, selectedshow, switchpath, curarray)
                         End If
                     Next
                 End If
