@@ -372,6 +372,7 @@ Me.bshMovieSaveChanges = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGr
 Me.bshMovieReloadIMDBInformation = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.bshMovieWrongMovie = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.header1ButtonSpec = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
+Me.btnMovieStudioSelect = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.KryptonButton1 = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.lblMovieInfoMpaa = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.lblMovieInfoYear = New ComponentFactory.Krypton.Toolkit.KryptonLabel
@@ -1335,7 +1336,6 @@ Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.compo
 Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
-Me.btnMovieStudioSelect = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -2961,7 +2961,7 @@ Me.tpWNS.Controls.Add(Me.pbwns36)
 Me.tpWNS.Location = New System.Drawing.Point(4, 25)
 Me.tpWNS.Name = "tpWNS"
 Me.tpWNS.Padding = New System.Windows.Forms.Padding(3)
-Me.tpWNS.Size = New System.Drawing.Size(786, 536)
+Me.tpWNS.Size = New System.Drawing.Size(786, 659)
 Me.tpWNS.TabIndex = 1
 Me.tpWNS.Text = "No Style"
 Me.tpWNS.UseVisualStyleBackColor = true
@@ -3448,7 +3448,7 @@ Me.tpWRS.Controls.Add(Me.pbwrs35)
 Me.tpWRS.Controls.Add(Me.pbwrs36)
 Me.tpWRS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRS.Name = "tpWRS"
-Me.tpWRS.Size = New System.Drawing.Size(786, 536)
+Me.tpWRS.Size = New System.Drawing.Size(786, 659)
 Me.tpWRS.TabIndex = 2
 Me.tpWRS.Text = "Rounded Shadow"
 Me.tpWRS.UseVisualStyleBackColor = true
@@ -3930,7 +3930,7 @@ Me.tpWRSS.Controls.Add(Me.pbwrsscan35)
 Me.tpWRSS.Controls.Add(Me.pbwrsscan36)
 Me.tpWRSS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSS.Name = "tpWRSS"
-Me.tpWRSS.Size = New System.Drawing.Size(786, 536)
+Me.tpWRSS.Size = New System.Drawing.Size(786, 659)
 Me.tpWRSS.TabIndex = 4
 Me.tpWRSS.Text = "Rounded Shadow Scanlines"
 '
@@ -5967,7 +5967,7 @@ Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(2, 2)
-Me.tcMain.SelectedIndex = 0
+Me.tcMain.SelectedIndex = 6
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
 Me.tcMain.Size = New System.Drawing.Size(822, 757)
 Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
@@ -6071,7 +6071,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 '
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(256, 277)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(266, 287)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6105,7 +6105,7 @@ Me.pbCurrentIconUsedNT.Location = New System.Drawing.Point(0, 3)
 Me.pbCurrentIconUsedNT.Margin = New System.Windows.Forms.Padding(2)
 Me.pbCurrentIconUsedNT.MinimumSize = New System.Drawing.Size(82, 82)
 Me.pbCurrentIconUsedNT.Name = "pbCurrentIconUsedNT"
-Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 103)
+Me.pbCurrentIconUsedNT.Size = New System.Drawing.Size(82, 82)
 Me.pbCurrentIconUsedNT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
 Me.pbCurrentIconUsedNT.TabIndex = 89
 Me.pbCurrentIconUsedNT.TabStop = false
@@ -6384,6 +6384,30 @@ Me.header1ButtonSpec.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle
 Me.header1ButtonSpec.Text = ""
 Me.header1ButtonSpec.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
 Me.header1ButtonSpec.UniqueName = "3F21FD013FD447823F21FD013FD44782"
+'
+'btnMovieStudioSelect
+'
+Me.btnMovieStudioSelect.Location = New System.Drawing.Point(51, 126)
+Me.btnMovieStudioSelect.Name = "btnMovieStudioSelect"
+Me.btnMovieStudioSelect.Size = New System.Drawing.Size(24, 24)
+Me.btnMovieStudioSelect.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.update_refresh_32x32
+Me.btnMovieStudioSelect.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
+Me.btnMovieStudioSelect.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.btnMovieStudioSelect.StateCommon.Border.Rounding = 25
+Me.btnMovieStudioSelect.StateCommon.Border.Width = 2
+Me.btnMovieStudioSelect.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
+            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
+Me.btnMovieStudioSelect.StateTracking.Border.Width = 3
+Me.btnMovieStudioSelect.TabIndex = 144
+Me.btnMovieStudioSelect.Values.ExtraText = ""
+Me.btnMovieStudioSelect.Values.Image = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedNormal = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedPressed = Nothing
+Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedTracking = Nothing
+Me.btnMovieStudioSelect.Values.Text = ""
 '
 'KryptonButton1
 '
@@ -7754,7 +7778,7 @@ Me.TVCurrentTVRightMain.Panel2.Controls.Add(Me.kcstvMainRightBottom)
 Me.TVCurrentTVRightMain.Panel2MinSize = 400
 Me.TVCurrentTVRightMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
 Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 723)
-Me.TVCurrentTVRightMain.SplitterDistance = 482
+Me.TVCurrentTVRightMain.SplitterDistance = 318
 Me.TVCurrentTVRightMain.TabIndex = 7
 '
 'ksctvtoolbar
@@ -21528,30 +21552,6 @@ Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.
 '
 Me.bwAutopilot.WorkerReportsProgress = true
 Me.bwAutopilot.WorkerSupportsCancellation = true
-'
-'btnMovieStudioSelect
-'
-Me.btnMovieStudioSelect.Location = New System.Drawing.Point(51, 126)
-Me.btnMovieStudioSelect.Name = "btnMovieStudioSelect"
-Me.btnMovieStudioSelect.Size = New System.Drawing.Size(24, 24)
-Me.btnMovieStudioSelect.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.update_refresh_32x32
-Me.btnMovieStudioSelect.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch
-Me.btnMovieStudioSelect.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.btnMovieStudioSelect.StateCommon.Border.Rounding = 25
-Me.btnMovieStudioSelect.StateCommon.Border.Width = 2
-Me.btnMovieStudioSelect.StateTracking.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
-            Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
-Me.btnMovieStudioSelect.StateTracking.Border.Width = 3
-Me.btnMovieStudioSelect.TabIndex = 144
-Me.btnMovieStudioSelect.Values.ExtraText = ""
-Me.btnMovieStudioSelect.Values.Image = Nothing
-Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedNormal = Nothing
-Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedPressed = Nothing
-Me.btnMovieStudioSelect.Values.ImageStates.ImageCheckedTracking = Nothing
-Me.btnMovieStudioSelect.Values.Text = ""
 '
 'maincollection
 '

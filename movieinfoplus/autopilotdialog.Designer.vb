@@ -82,7 +82,7 @@ Partial Class autopilotdialog
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.OK_Button, 0, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(580, 409)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(580, 462)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -104,7 +104,7 @@ Partial Class autopilotdialog
         '
         Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel_Button.Location = New System.Drawing.Point(684, 320)
+        Me.Cancel_Button.Location = New System.Drawing.Point(684, 358)
         Me.Cancel_Button.Name = "Cancel_Button"
         Me.Cancel_Button.Size = New System.Drawing.Size(67, 23)
         Me.Cancel_Button.TabIndex = 1
@@ -123,7 +123,7 @@ Partial Class autopilotdialog
         '
         'btnStartProcessing
         '
-        Me.btnStartProcessing.Location = New System.Drawing.Point(542, 321)
+        Me.btnStartProcessing.Location = New System.Drawing.Point(542, 345)
         Me.btnStartProcessing.Name = "btnStartProcessing"
         Me.btnStartProcessing.Size = New System.Drawing.Size(133, 23)
         Me.btnStartProcessing.TabIndex = 3
@@ -208,7 +208,7 @@ Partial Class autopilotdialog
         Me.GroupBox1.Controls.Add(Me.rbs3)
         Me.GroupBox1.Controls.Add(Me.rbs5)
         Me.GroupBox1.Controls.Add(Me.rbs4)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 241)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 265)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(267, 233)
         Me.GroupBox1.TabIndex = 20
@@ -328,7 +328,7 @@ Partial Class autopilotdialog
         Me.GroupBox2.Controls.Add(Me.rbp3)
         Me.GroupBox2.Controls.Add(Me.rbp5)
         Me.GroupBox2.Controls.Add(Me.rbp4)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 1)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 25)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(267, 241)
         Me.GroupBox2.TabIndex = 21
@@ -367,7 +367,7 @@ Partial Class autopilotdialog
         Me.GroupBox3.Controls.Add(Me.cbcreatenfo)
         Me.GroupBox3.Controls.Add(Me.cbimpaposter)
         Me.GroupBox3.Controls.Add(Me.cbmeligrovefanart)
-        Me.GroupBox3.Location = New System.Drawing.Point(539, 174)
+        Me.GroupBox3.Location = New System.Drawing.Point(539, 198)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(235, 140)
         Me.GroupBox3.TabIndex = 22
@@ -435,7 +435,7 @@ Partial Class autopilotdialog
         Me.cbcreatetbn.AutoSize = True
         Me.cbcreatetbn.Checked = True
         Me.cbcreatetbn.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbcreatetbn.Location = New System.Drawing.Point(594, 458)
+        Me.cbcreatetbn.Location = New System.Drawing.Point(594, 482)
         Me.cbcreatetbn.Name = "cbcreatetbn"
         Me.cbcreatetbn.Size = New System.Drawing.Size(94, 17)
         Me.cbcreatetbn.TabIndex = 2
@@ -447,7 +447,7 @@ Partial Class autopilotdialog
         '
         Me.pbprimaryiconsquare.BackColor = System.Drawing.Color.Transparent
         Me.pbprimaryiconsquare.Image = Global.movieinfoplus.My.Resources.Resources.bspb1
-        Me.pbprimaryiconsquare.Location = New System.Drawing.Point(280, 2)
+        Me.pbprimaryiconsquare.Location = New System.Drawing.Point(280, 26)
         Me.pbprimaryiconsquare.MaximumSize = New System.Drawing.Size(256, 240)
         Me.pbprimaryiconsquare.Name = "pbprimaryiconsquare"
         Me.pbprimaryiconsquare.Size = New System.Drawing.Size(256, 240)
@@ -460,7 +460,7 @@ Partial Class autopilotdialog
         '
         Me.pbprimaryposter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbprimaryposter.Image = Global.movieinfoplus.My.Resources.Resources.poster
-        Me.pbprimaryposter.Location = New System.Drawing.Point(314, 1)
+        Me.pbprimaryposter.Location = New System.Drawing.Point(314, 25)
         Me.pbprimaryposter.Name = "pbprimaryposter"
         Me.pbprimaryposter.Size = New System.Drawing.Size(190, 240)
         Me.pbprimaryposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -473,7 +473,7 @@ Partial Class autopilotdialog
         Me.pbprimaryiconwide.BackColor = System.Drawing.Color.Transparent
         Me.pbprimaryiconwide.Image = Global.movieinfoplus.My.Resources.Resources.f2s0
         Me.pbprimaryiconwide.InitialImage = Nothing
-        Me.pbprimaryiconwide.Location = New System.Drawing.Point(293, 70)
+        Me.pbprimaryiconwide.Location = New System.Drawing.Point(293, 94)
         Me.pbprimaryiconwide.Name = "pbprimaryiconwide"
         Me.pbprimaryiconwide.Size = New System.Drawing.Size(458, 98)
         Me.pbprimaryiconwide.TabIndex = 28
@@ -485,7 +485,7 @@ Partial Class autopilotdialog
         Me.pbsecondaryiconwide.BackColor = System.Drawing.Color.Transparent
         Me.pbsecondaryiconwide.Image = Global.movieinfoplus.My.Resources.Resources.f2s0
         Me.pbsecondaryiconwide.InitialImage = Nothing
-        Me.pbsecondaryiconwide.Location = New System.Drawing.Point(293, 351)
+        Me.pbsecondaryiconwide.Location = New System.Drawing.Point(293, 375)
         Me.pbsecondaryiconwide.Name = "pbsecondaryiconwide"
         Me.pbsecondaryiconwide.Size = New System.Drawing.Size(458, 98)
         Me.pbsecondaryiconwide.TabIndex = 31
@@ -496,7 +496,7 @@ Partial Class autopilotdialog
         '
         Me.pbsecondaryposter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbsecondaryposter.Image = Global.movieinfoplus.My.Resources.Resources.poster
-        Me.pbsecondaryposter.Location = New System.Drawing.Point(314, 244)
+        Me.pbsecondaryposter.Location = New System.Drawing.Point(314, 268)
         Me.pbsecondaryposter.Name = "pbsecondaryposter"
         Me.pbsecondaryposter.Size = New System.Drawing.Size(190, 230)
         Me.pbsecondaryposter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -508,7 +508,7 @@ Partial Class autopilotdialog
         '
         Me.pbsecondaryiconsquare.BackColor = System.Drawing.Color.Transparent
         Me.pbsecondaryiconsquare.Image = Global.movieinfoplus.My.Resources.Resources.bspb1
-        Me.pbsecondaryiconsquare.Location = New System.Drawing.Point(280, 245)
+        Me.pbsecondaryiconsquare.Location = New System.Drawing.Point(280, 269)
         Me.pbsecondaryiconsquare.MaximumSize = New System.Drawing.Size(256, 240)
         Me.pbsecondaryiconsquare.Name = "pbsecondaryiconsquare"
         Me.pbsecondaryiconsquare.Size = New System.Drawing.Size(256, 230)
@@ -519,7 +519,7 @@ Partial Class autopilotdialog
         '
         'btnMediaDataOnly
         '
-        Me.btnMediaDataOnly.Location = New System.Drawing.Point(546, 24)
+        Me.btnMediaDataOnly.Location = New System.Drawing.Point(545, 44)
         Me.btnMediaDataOnly.Name = "btnMediaDataOnly"
         Me.btnMediaDataOnly.Size = New System.Drawing.Size(218, 45)
         Me.btnMediaDataOnly.TabIndex = 32
@@ -536,15 +536,15 @@ Partial Class autopilotdialog
         '
         'cbgv_bwap_updatestudio
         '
-        Me.cbgv_bwap_updatestudio.Location = New System.Drawing.Point(562, 4)
+        Me.cbgv_bwap_updatestudio.Location = New System.Drawing.Point(547, 3)
         Me.cbgv_bwap_updatestudio.Name = "cbgv_bwap_updatestudio"
-        Me.cbgv_bwap_updatestudio.Size = New System.Drawing.Size(177, 16)
+        Me.cbgv_bwap_updatestudio.Size = New System.Drawing.Size(205, 37)
         Me.cbgv_bwap_updatestudio.StateCommon.ShortText.Color1 = System.Drawing.Color.Black
         Me.cbgv_bwap_updatestudio.TabIndex = 33
-        Me.cbgv_bwap_updatestudio.Text = "Update Studio data from IMDB"
+        Me.cbgv_bwap_updatestudio.Text = "    Update data from IMDB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Studio and MPAA/Certification"
         Me.cbgv_bwap_updatestudio.Values.ExtraText = ""
         Me.cbgv_bwap_updatestudio.Values.Image = Nothing
-        Me.cbgv_bwap_updatestudio.Values.Text = "Update Studio data from IMDB"
+        Me.cbgv_bwap_updatestudio.Values.Text = "    Update data from IMDB" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Studio and MPAA/Certification"
         '
         'autopilotdialog
         '
@@ -553,7 +553,7 @@ Partial Class autopilotdialog
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CancelButton = Me.Cancel_Button
-        Me.ClientSize = New System.Drawing.Size(776, 478)
+        Me.ClientSize = New System.Drawing.Size(776, 507)
         Me.ControlBox = False
         Me.Controls.Add(Me.cbgv_bwap_updatestudio)
         Me.Controls.Add(Me.btnMediaDataOnly)

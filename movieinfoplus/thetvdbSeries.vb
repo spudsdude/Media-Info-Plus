@@ -55,9 +55,18 @@ Namespace thetvdb
             Dim xmlfile As String = xmllocationandfilename
             Dim serializer As New XmlSerializer(Me.GetType())
             Dim gROReader As New StreamReader(xmlfile)
-            Dim gRTVSeriesData As TVSeriesData = CType(serializer.Deserialize(gROReader), TVSeriesData)
-            gROReader.Close()
-            vTVSeriesData = gRTVSeriesData
+            Try
+                Dim gRTVSeriesData As TVSeriesData = CType(serializer.Deserialize(gROReader), TVSeriesData)
+                gROReader.Close()
+                vTVSeriesData = gRTVSeriesData
+            Catch ex As Exception
+                gROReader.Close()
+                If File.Exists(xmlfile) Then
+                    System.Threading.Thread.Sleep(500)
+                    File.Delete(xmlfile)
+                End If
+            End Try
+          
         End Sub
     End Class
     Public Class [TvSeries]

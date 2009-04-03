@@ -1223,26 +1223,17 @@ Public Class maincollection
         Next s
         'Return junk
     End Sub
+  
+    
     Private Sub EnumerateDirectory(ByVal RootDirectory As String)
 
-        'For Each s As String In Directory.GetDirectories(RootDirectory)
-        'Debug.WriteLine("File found: " & s)
-        'Next s
         For Each s As String In Directory.GetDirectories(RootDirectory)
-            'Debug.Print(Strings.Right(s, 8))
-
             If Not (File.GetAttributes(s) And FileAttributes.ReparsePoint) = FileAttributes.ReparsePoint Then
-                '    Debug.WriteLine("Sub Enumerate Directory -- Directory found: " & s)
-                'debug counter
                 dlist_count = dlist_count + 1
-                'Debug.Print(dlist_count)
-                'Add all files to the global array
-                If ((Strings.Right(s, 8)).ToLower = "video_ts" Or (Strings.Right(s, 8)).ToLower = "audio_ts" Or (Strings.Right(s, 7)).ToLower = "trailer" Or (Strings.Right(s, 15)).ToLower = "temporary files" Or (Strings.Right(s, 8)).ToLower = "(noscan)" Or (Strings.Right(s, 6)).ToLower = "sample" Or s.ToUpper = "RECYCLER" Or s.ToUpper = "LOST+FOUND" Or s.ToUpper = "System Volume Information".ToUpper) Then
-                    Debug.Print("Sub Enumerate Directory -- found but coded to not add " + Convert.ToString(dlist_count) + " - skipping")
-                Else
+                If validmoviedirc(s) Then
                     dlist.Add(s)
                 End If
-                EnumerateDirectory(s) ' will parse sub dirs
+                EnumerateDirectory(s)
             End If
         Next s
         'Return junk
@@ -2181,10 +2172,15 @@ Public Class maincollection
         Dim currentmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
         If currentmovie.pfilemode = True Then
             moviemode = "file"
+            If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.preservedmoviename)) Then
+                'MsgBox ("File is no longer at this location, please rescan your movies by clicking Load Movies")
+                Exit Sub
+            End If
         Else
             moviemode = "folder"
         End If
         Dim cmpath As String = currentmovie.getmoviepath
+        If Not Directory.Exists(cmpath) Then Exit Sub
         Dim dname As String
         dname = currentmovie.getmoviename
         lblPbar.Text = "WORKING ON: " + dname
@@ -2264,6 +2260,41 @@ Public Class maincollection
                     Dim curimdb As New IMDB
                     Dim tempmov As New movie
                     tempmov.pimdbnumber = currentmovie.pimdbnumber
+                    'clear out the cached data (this will slow things down)
+                    'If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+                    '    Try
+                    '        File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+                    '    Catch ex As Exception
+
+                    '    End Try
+                    '    Try
+                    '        File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+                    '    Catch ex As Exception
+
+                    '    End Try
+                    'End If
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
+                    '    Try
+                    '        '\fullcredits\fullcredits
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                    '    Catch ex As Exception
+                    '        MsgBox(ex.ToString)
+                    '    End Try
+                    '    Try
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
+                    '    Catch ex As Exception
+                    '        'MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
+                    '    End Try
+                    'End If
+
+
                     If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
                         '' getimdbdata(tmovie)
                         Dim imdbinfo As New IMDB
@@ -2279,6 +2310,11 @@ Public Class maincollection
                     currentmovie.pstudio = tempmov.pstudio
                     currentmovie.pstudioreal = tempmov.pstudio
                     currentmovie.pcredits = tempmov.pcredits
+                    If rconf.pcbmovie_use_certification_for_mpaa Then
+                        currentmovie.pmpaa = tempmov.certification
+                    Else
+                        currentmovie.pmpaa = tempmov.pmpaa
+                    End If
                 Catch ex As Exception
                     MsgBox("Couldn't readup cache for movie: " & ex.ToString)
                 End Try
@@ -5756,6 +5792,10 @@ Public Class maincollection
             currentmovie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
             If currentmovie.pfilemode = True Then
                 moviemode = "file"
+                If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.preservedmoviename)) Then
+                    If messageprompts Then MsgBox("File is no longer at this location, please rescan your movies by clicking Load Movies")
+                    Exit Sub
+                End If
                 bshgMovieFiletofolder.Visible = True
             Else
                 moviemode = "folder"
@@ -5772,7 +5812,7 @@ Public Class maincollection
         dname = currentmovie.getmoviename
         tbnewname.Text = dname
         curpath = currentmovie.getmoviepath
-
+        If Not Directory.Exists(curpath) Then Exit Sub
         'cleanup old items
         pbFrame.Hide()
         pbCurIconUsed.Hide()
@@ -14105,6 +14145,7 @@ Public Class maincollection
         fanartpb1.Image = Nothing
         fanartpb1.ImageLocation = Nothing
         GC.Collect()
+        System.Threading.Thread.Sleep(500)
         'MsgBox(currentfanart.ImageLocation)
         Dim curfaused As String = ""
         Dim curloc As String = ""
@@ -28372,7 +28413,8 @@ Public Class maincollection
         If messageprompts Then krtbMovieVideoInfo.Text = "Reading Movie Media Information"
         If messageprompts Then lblpbarLoadingMovieMediaInfo.Visible = True
         If messageprompts Then pbarLoadingMovieMediaInfo.Visible = True
-        Me.Refresh()
+        If messageprompts Then Me.Refresh()
+        If messageprompts Then lbMyMovies.Enabled = False
         bwGetMovieMediaInfo = New System.ComponentModel.BackgroundWorker
         bwGetMovieMediaInfo.WorkerReportsProgress = True
         bwGetMovieMediaInfo.WorkerSupportsCancellation = True
@@ -28398,6 +28440,7 @@ Public Class maincollection
         If messageprompts Then pbarLoadingMovieMediaInfo.Visible = False
         If messageprompts Then krtbMovieVideoInfo.Text = currentmovie.fileinfo.objtostring(currentmovie.fileinfo)
         If messageprompts Then Me.tbStudio.Text = currentmovie.pstudio
+        If messageprompts Then lbMyMovies.Enabled = True
     End Sub
     Private Sub bwGetTVEPMediaInfo_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwGetTVEPMediaInfo.DoWork
         getmediadata(gvcurrenttvepisode, True)
