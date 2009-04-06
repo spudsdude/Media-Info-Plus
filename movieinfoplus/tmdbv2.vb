@@ -14,7 +14,7 @@ Namespace tmdbapiv2
         Private p_element_query As Query
         Private p_element_totalresults As String
         Private p_element_moviematches As Moviematches
-        Public mykey As String = "0f790eb54e7430c118594f1db0071444" 'File.ReadAllText("c:\program files\movieinfoplus\tmdbapiv2key.txt") '"PUT YOUR OWN KEY HERE, in place of the file loader."
+        Public mykey As String = File.ReadAllText("c:\program files\movieinfoplus\tmdbapiv2key.txt") '"PUT YOUR OWN KEY HERE, in place of the file loader."
         'get full movie details by TMDB ID (gets all data about the movie)
         Private Sub getfullmoviedetailsbytmdbid(ByRef ttmdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal wait As Boolean, ByVal usewget As Boolean)
             ' old api call  "http://api.themoviedb.org/backdrop.php?imdb=" + imdbid

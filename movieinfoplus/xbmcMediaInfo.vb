@@ -74,7 +74,7 @@ Namespace xbmcMediaInfo
                         Else
                             scantype = "i"
                         End If
-                        vcodec = curVS.Codec
+                        vcodec = curVS.Codecid
                     End If
                     'To_Display += "   Container: " + "This is the extension of the file" + vbNewLine
 

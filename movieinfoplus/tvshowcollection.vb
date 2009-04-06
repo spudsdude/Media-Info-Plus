@@ -96,7 +96,7 @@ End Class
 Public Class tvshowcollection
     Dim rconf As configuration = maincollection.rconf
     Public Shared curmirror As String = "http://www.thetvdb.com"
-    Public Shared miptvdbkey As String = "E6C963D0E1297AF7" 'File.ReadAllText(maincollection.rconf.basefolder + "tvdbkey.txt") '"PUT YOUR KEY HERE"
+    Public Shared miptvdbkey As String = File.ReadAllText(maincollection.rconf.basefolder + "tvdbkey.txt") '"PUT YOUR KEY HERE"
     Dim curlang As String = rconf.tv_curlang
     Public theshows As New Hashtable
     Public guishows()() As ArrayList

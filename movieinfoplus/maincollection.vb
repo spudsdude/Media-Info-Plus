@@ -2157,8 +2157,130 @@ Public Class maincollection
         Dim bytRetData As Byte() = oWeb.UploadData("http://www.ofdb.de/film/view.php?page=suchergebnis", "POST", bytArguments)
         Debug.Write(System.Text.Encoding.ASCII.GetString(bytRetData))
     End Sub
+    Private Sub autopilotmediaonly(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean, ByVal updatestudiofromimdb As Boolean)
+        messageprompts = True
+        If mediaonly Then messageprompts = False
+        If messageprompts Then resetanddisableimages()
+        Me.pbar1.Visible = True
+        pbar1.Value = pbar1.Maximum
+        lblPbar.Visible = True
+
+        Dim cursettingmaxDisplayedIcons As Integer = rconf.pcbMaxIconsToDisplay
+        rconf.pcbMaxIconsToDisplay = 0 'set it to 1
+        Dim cursettingOverwrite As Boolean = rconf.pcbOverwriteNFO
+        rconf.pcbOverwriteNFO = overwritenfoTru
+
+        Dim currentmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
+        If currentmovie.pfilemode = True Then
+            moviemode = "file"
+            If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.preservedmoviename)) Then
+                'MsgBox ("File is no longer at this location, please rescan your movies by clicking Load Movies")
+                Exit Sub
+            End If
+        Else
+            moviemode = "folder"
+        End If
+        Dim cmpath As String = currentmovie.getmoviepath
+        If Not Directory.Exists(cmpath) Then Exit Sub
+        Dim dname As String
+        dname = currentmovie.getmoviename
+        lblPbar.Text = "WORKING ON: " + dname
+        If messageprompts Then Me.Refresh()
+        If mediaonly Then
+            Debug.Print(currentmovie.pmoviename)
+            If updatestudiofromimdb Then
+                Try
+                    Dim curimdb As New IMDB
+                    Dim tempmov As New movie
+                    tempmov.pimdbnumber = currentmovie.pimdbnumber
+                    'clear out the cached data (this will slow things down)
+                    'If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+                    '    Try
+                    '        File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+                    '    Catch ex As Exception
+
+                    '    End Try
+                    '    Try
+                    '        File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+                    '    Catch ex As Exception
+
+                    '    End Try
+                    'End If
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
+                    '    Try
+                    '        '\fullcredits\fullcredits
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                    '    Catch ex As Exception
+                    '        MsgBox(ex.ToString)
+                    '    End Try
+                    '    Try
+                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
+                    '    Catch ex As Exception
+                    '        'MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
+                    '    End Try
+                    'End If
+
+
+                    If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
+                        '' getimdbdata(tmovie)
+                        Dim imdbinfo As New IMDB
+                        Dim imdbidtemp As String = tempmov.getimdbid
+                        If imdbidtemp = "" Then
+                            Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
+                        Else
+                            imdbinfo = maincollection.imdbparse(imdbidtemp)
+                            imdbinfo.writeIMDBXML(imdbinfo, tempmov, maincollection.rconf.imdbcachefolder, True)
+                        End If
+                    End If
+                    curimdb.readIMDBXML(tempmov, rconf.imdbcachefolder)
+                    currentmovie.pstudio = tempmov.pstudio
+                    currentmovie.pstudioreal = tempmov.pstudio
+                    currentmovie.pcredits = tempmov.pcredits
+                    If rconf.pcbmovie_use_certification_for_mpaa Then
+                        currentmovie.pmpaa = tempmov.certification
+                    Else
+                        currentmovie.pmpaa = tempmov.pmpaa
+                    End If
+                Catch ex As Exception
+                    MsgBox("Couldn't readup cache for movie: " & ex.ToString)
+                End Try
+            End If
+
+
+            Dim MI As New MediaInfo
+            MI.getdata(currentmovie, moviemode)
+            If rconf.pcbGeneralSupportSkinBasedFlagging Then
+                If updatestudiofromimdb Then
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                Else
+                    currentmovie.pstudioreal = currentmovie.pstudio
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                End If
+            End If
+            'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
+            Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
+            'If currentmovie.pstudioreal Is Nothing Or currentmovie.pstudioreal Is "" Then
+            '    'see if pstudio has data
+            '    If Not currentmovie.pstudio = "" Then
+            '        If Not currentmovie.pstudio.Contains("/") Then
+            '            currentmovie.pstudioreal = currentmovie.pstudio
+            '            currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+            '        End If
+            '    End If
+            'End If
+        End If
+    End Sub
     Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean, ByVal updatestudiofromimdb As Boolean)
         messageprompts = True
+        If mediaonly Then messageprompts = False
         If messageprompts Then resetanddisableimages()
         Me.pbar1.Visible = True
         pbar1.Value = pbar1.Maximum
@@ -2189,7 +2311,7 @@ Public Class maincollection
         pbCurIconUsed.Hide()
         pbCurIconUsed2.Hide()
 
-      
+
         Dim selectedName As String = currentmovie.getmoviename
         'tbnewname.Text = selectedName
 
@@ -2200,7 +2322,7 @@ Public Class maincollection
         currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
         If Not currentmovie.pdatafromnfo Then checknfodata(currentmovie, dname, rbem.Checked)
 
-     
+
         'get fanart
         If fanartTru Then
             If messageprompts Then lblPbar.Text = " -- Fanart -- "
@@ -2231,8 +2353,8 @@ Public Class maincollection
 
         'display movie name and information in gui
         'read up .nfo file
-        If messageprompts Then lblPbar.Text = " __-- Setting .nfo file for: " + dname + "--__ "
-        If messageprompts Then Me.gbDisplay.Refresh()
+        If messageprompts Or mediaonly Then lblPbar.Text = " Processing : " + dname
+        If messageprompts Or mediaonly Then Me.Refresh()
         If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") And Not currentmovie.pdatafromnfo Then 'currentmovie.gecurrentmoviepath + "\" + currentmovie.gecurrentmoviename + ".nfo") Then
             Dim timdb As New IMDB
             timdb.readIMDBXML(currentmovie, rconf.imdbcachefolder)
@@ -2345,285 +2467,95 @@ Public Class maincollection
             'End If
         End If
         'display imdb info
-        gbDisplay.Parent.Text = currentmovie.getmoviename
-        Me.tbMovieName.Text = currentmovie.getmoviename
-        Me.tbMovieNameE.Text = currentmovie.getmoviename
-        Me.tbCredits.Text = currentmovie.pcredits
-        Me.tbDirector.Text = currentmovie.pdirector
-        Me.tbGenre.Text = currentmovie.pgenre
-        Me.tbIMDBID.Text = currentmovie.pimdbnumber
-        Me.tbMpaa.Text = currentmovie.pmpaa
-        Me.rtbPlotOutline.Text = currentmovie.pplotoutline
-        Me.rtbPlot.Text = currentmovie.pplot
-        Me.tbRating.Text = currentmovie.prating
-        Me.tbOriginalTitle.Text = currentmovie.poriginaltitle
-        Me.tbRuntime.Text = currentmovie.pruntime
-        Me.rtbTagline.Text = currentmovie.ptagline
-        Me.tbVotes.Text = currentmovie.pvotes
-        Me.tbStudio.Text = currentmovie.pstudio 'currentmovie.ptitle
-        Me.tbyear.Text = currentmovie.pyear.ToString
-        Me.tbTop250.Text = currentmovie.ptop250
-        Me.tbTrailer.Text = currentmovie.ptrailer
-        Me.tcMain.TabPages("tpcm").Refresh()
+        If Not mediaonly Then
+            gbDisplay.Parent.Text = currentmovie.getmoviename
+            Me.tbMovieName.Text = currentmovie.getmoviename
+            Me.tbMovieNameE.Text = currentmovie.getmoviename
+            Me.tbCredits.Text = currentmovie.pcredits
+            Me.tbDirector.Text = currentmovie.pdirector
+            Me.tbGenre.Text = currentmovie.pgenre
+            Me.tbIMDBID.Text = currentmovie.pimdbnumber
+            Me.tbMpaa.Text = currentmovie.pmpaa
+            Me.rtbPlotOutline.Text = currentmovie.pplotoutline
+            Me.rtbPlot.Text = currentmovie.pplot
+            Me.tbRating.Text = currentmovie.prating
+            Me.tbOriginalTitle.Text = currentmovie.poriginaltitle
+            Me.tbRuntime.Text = currentmovie.pruntime
+            Me.rtbTagline.Text = currentmovie.ptagline
+            Me.tbVotes.Text = currentmovie.pvotes
+            Me.tbStudio.Text = currentmovie.pstudio 'currentmovie.ptitle
+            Me.tbyear.Text = currentmovie.pyear.ToString
+            Me.tbTop250.Text = currentmovie.ptop250
+            Me.tbTrailer.Text = currentmovie.ptrailer
+            Me.tcMain.TabPages("tpcm").Refresh()
 
-        'get Movie Poster
-        'check to see if posterTru was set
-        If posterTru Then
-            Dim impaname As String = cleanname(currentmovie.getmoviename)
-            If rconf.pcbDownloadPoster Then
-                Dim nolinksinxml As Boolean = False
-                'see if the posterxml file exsists in the posters folder
-                If File.Exists(rconf.xmlfolderposters + currentmovie.pimdbnumber + ".xml") Then
-                    Dim curposter As New posters
-                    curposter.pmoviename = impaname
-                    curposter.readxml(curposter, rconf.xmlfolderposters, True, currentmovie.pimdbnumber)
-                    'precacheposter(curposter)
-                    If curposter.pposters.Count = 0 Then
-                        nolinksinxml = True
-                        Debug.Print("Found an xml for " + impaname + ". No links where found in that file")
-                    Else
-                        getdisplayposter(curposter)
-                    End If
-                Else
-                    nolinksinxml = True
-                End If
-
-              
-            End If
-            '-------------------------------- END POSTER CODE
-        End If
-
-        Dim hasfolderjpg As Boolean = False
-    
-        'post 2437 change below
-        'if there is no folder.jpg, based on configured options, set one (not for filemode)
-        If rconf.pcbCreateFolderjpg And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "folder.jpg")) And Not moviemode = "file" Then
-            If rconf.pcbautocreatefolderjpg Then getdefaultfolderjpg(currentmovie, True)
-        End If
-
-        'if there is no <moviename>.tbn, based on configured options, set one (ok for both modes)
-        Dim curtbnfile As String = ""
-        If moviemode = "file" Then
-            curtbnfile = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
-        Else
-            curtbnfile = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")
-        End If
-        If rconf.pcbcreatemovienamedottbn And Not File.Exists(curtbnfile) Then
-            If rconf.pcbautocreatemovienametbn Then getdefaultmovienametbn(currentmovie, True)
-        End If
-
-        'if there is no movie.tbn, based on configured options, set one (not for filemode)
-        If rconf.pcbcreatemovietbn And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "movie.tbn")) And Not moviemode = "file" Then
-            If rconf.pcbautocreatemovietbn Then getdefaultmovietbn(currentmovie, True)
-        End If
-
-        If File.Exists(cmpath + "\folder.jpg") And Not moviemode = "file" Then
-            hasfolderjpg = True
-        End If
-        If File.Exists(cmpath + "\movie.tbn") And Not moviemode = "file" Then
-            hasfolderjpg = True
-        End If
-        If File.Exists(cmpath + dname + ".tbn") Then
-            hasfolderjpg = True
-        End If
-
-        If replaceexsistingfolderimage Then hasfolderjpg = False
-
-        If Not hasfolderjpg Then
-            Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
-            'case primary switch
-            Select Case primary
-                Case "f1s0"
-                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
-                    getdisplayimages(selectedNameXMLfile, "1", "2", "0")
-                Case "f1s3"
-                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
-                    getdisplayimages(selectedNameXMLfile, "1", "2", "3")
-                Case "f1s9"
-                    xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
-                    getdisplayimages(selectedNameXMLfile, "1", "2", "9")
-                Case "f2s0"
-                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
-                    getdisplayimages(selectedNameXMLfile, "2", "2", "0")
-                Case "f2s2"
-                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
-                    getdisplayimages(selectedNameXMLfile, "2", "2", "2")
-                Case "f2s8"
-                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
-                    getdisplayimages(selectedNameXMLfile, "2", "2", "8")
-                Case "f2s10"
-                    xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
-                    getdisplayimages(selectedNameXMLfile, "2", "2", "10")
-                Case "f3s0" ' not used yet ' tall icons
-                    'xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
-                    'getdisplayimages(selectedNameXMLfile, "3", "2", "0")
-                Case "poster"
-                    'nothing to download here, it's done already
-                Case "none"
-                    'do nothing here
-                Case Else
-                    'do nothing
-            End Select
-            'case secondary switch boolean
-            Dim usesecondary As Boolean = False
-            'icons parsed out in select statement above time to select and run saveci or savecip
-            Dim curname As String = ""
-            If moviemode = "file" Then
-                curname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
-                Try
-                    If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
-                Catch ex As Exception
-                    Debug.Print(ex.ToString)
-                End Try
-            Else
-                If rconf.pcbcreatemovienamedottbn Then curname = addfiletofolder(cmpath, currentmovie.pmoviename) + ".tbn"
-                Try
-                    If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
-                Catch ex As Exception
-                    Debug.Print(ex.ToString)
-                End Try
-                If rconf.pcbCreateFolderjpg Then curname = addfiletofolder(cmpath, "folder.jpg")
-                Try
-                    If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
-                Catch ex As Exception
-                    Debug.Print(ex.ToString)
-                End Try
-                If rconf.pcbcreatemovietbn Then curname = addfiletofolder(cmpath, "movie.tbn")
-                Try
-                    If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
-                Catch ex As Exception
-                    Debug.Print(ex.ToString)
-                End Try
-            End If
-            Select Case primary
-                Case "f1s0"
-                    savecia(spb1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-
-                Case "f1s3"
-                    savecia(bspb1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f1s9"
-                    savecia(tpb1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f2s0"
-                    savecia(pbwns1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f2s2"
-                    savecia(pbwrsscan1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f2s8"
-                    savecia(pbwrs1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f2s10"
-                    savecia(pb1) 'save it then make sure it works by attempting to load it
-                    Try
-                        Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                        imagecheck.Dispose()
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "f3s0" ' not used yet ' tall icons
-                    'saveci(tallpb1)'save it then make sure it works by attempting to load it
-                    'Try
-                    '    Dim imagecheck As Image = Image.FromFile(lblCurMovieFolder.Text + "\folder.jpg")
-                    'Catch ex As Exception
-                    '    usesecondary = True 'if that fails, remove the files and use secondary icon
-                    'End Try
-                Case "poster"
-                    If posterTru Then savecia(pbti1) 'save it then make sure it works by attempting to load it
-                    Try
-                        If posterTru Then
-                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
-                            imagecheck.Dispose()
+            'get Movie Poster
+            'check to see if posterTru was set
+            If posterTru Then
+                Dim impaname As String = cleanname(currentmovie.getmoviename)
+                If rconf.pcbDownloadPoster Then
+                    Dim nolinksinxml As Boolean = False
+                    'see if the posterxml file exsists in the posters folder
+                    If File.Exists(rconf.xmlfolderposters + currentmovie.pimdbnumber + ".xml") Then
+                        Dim curposter As New posters
+                        curposter.pmoviename = impaname
+                        curposter.readxml(curposter, rconf.xmlfolderposters, True, currentmovie.pimdbnumber)
+                        'precacheposter(curposter)
+                        If curposter.pposters.Count = 0 Then
+                            nolinksinxml = True
+                            Debug.Print("Found an xml for " + impaname + ". No links where found in that file")
+                        Else
+                            getdisplayposter(curposter)
                         End If
-
-                    Catch ex As Exception
-                        usesecondary = True 'if that fails, remove the files and use secondary icon
-                    End Try
-                Case "none"
-                    'do nothing with images
-                    usesecondary = False
-                Case Else
-            End Select
-
-            'case selection secondary load
-            If usesecondary Then
-                'rem old tbn and folder.jpg
-                If moviemode = "file" Then
-                    Dim stackedname As String = ""
-                    stackedname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename))) + ".tbn"
-                    If File.Exists(stackedname) Then
-                        Try
-                            File.SetAttributes(stackedname, FileAttributes.Normal)
-                            File.Delete(stackedname)
-                        Catch ex As Exception
-
-                        End Try
-
+                    Else
+                        nolinksinxml = True
                     End If
-                Else 'folder level - clear out folder.jpg, <moviename>.tbn, movie.tbn
-                    If File.Exists(cmpath + "\folder.jpg") Then
-                        Try
-                            File.SetAttributes(cmpath + "\folder.jpg", FileAttributes.Normal)
-                            File.Delete(cmpath + "\folder.jpg")
-                        Catch ex As Exception
 
-                        End Try
 
-                    End If
-                    If File.Exists(cmpath + "\" + dname + ".tbn") Then
-                        Try
-                            File.SetAttributes(cmpath + "\" + dname + ".tbn", FileAttributes.Normal)
-                            File.Delete(cmpath + "\" + dname + ".tbn")
-                        Catch ex As Exception
-
-                        End Try
-
-                    End If
-                    If File.Exists(cmpath + "\" + "movie.tbn") Then
-                        Try
-                            File.SetAttributes(cmpath + "\" + "movie.tbn", FileAttributes.Normal)
-                            File.Delete(cmpath + "\" + "movie.tbn")
-                        Catch ex As Exception
-
-                        End Try
-
-                    End If
                 End If
-                'MsgBox("using secondary")
-                Debug.Print("-------------------------- SECONDARY ICON USED ---------------------------")
-                Select Case secondary
+                '-------------------------------- END POSTER CODE
+            End If
+
+            Dim hasfolderjpg As Boolean = False
+
+            'post 2437 change below
+            'if there is no folder.jpg, based on configured options, set one (not for filemode)
+            If rconf.pcbCreateFolderjpg And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "folder.jpg")) And Not moviemode = "file" Then
+                If rconf.pcbautocreatefolderjpg Then getdefaultfolderjpg(currentmovie, True)
+            End If
+
+            'if there is no <moviename>.tbn, based on configured options, set one (ok for both modes)
+            Dim curtbnfile As String = ""
+            If moviemode = "file" Then
+                curtbnfile = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
+            Else
+                curtbnfile = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename + ".tbn")
+            End If
+            If rconf.pcbcreatemovienamedottbn And Not File.Exists(curtbnfile) Then
+                If rconf.pcbautocreatemovienametbn Then getdefaultmovienametbn(currentmovie, True)
+            End If
+
+            'if there is no movie.tbn, based on configured options, set one (not for filemode)
+            If rconf.pcbcreatemovietbn And Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "movie.tbn")) And Not moviemode = "file" Then
+                If rconf.pcbautocreatemovietbn Then getdefaultmovietbn(currentmovie, True)
+            End If
+
+            If File.Exists(cmpath + "\folder.jpg") And Not moviemode = "file" Then
+                hasfolderjpg = True
+            End If
+            If File.Exists(cmpath + "\movie.tbn") And Not moviemode = "file" Then
+                hasfolderjpg = True
+            End If
+            If File.Exists(cmpath + dname + ".tbn") Then
+                hasfolderjpg = True
+            End If
+
+            If replaceexsistingfolderimage Then hasfolderjpg = False
+
+            If Not hasfolderjpg Then
+                Dim xmltemppathname As String = rconf.xmlfolder + selectedNameXMLfile
+                'case primary switch
+                Select Case primary
                     Case "f1s0"
                         xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
                         getdisplayimages(selectedNameXMLfile, "1", "2", "0")
@@ -2650,94 +2582,286 @@ Public Class maincollection
                         'getdisplayimages(selectedNameXMLfile, "3", "2", "0")
                     Case "poster"
                         'nothing to download here, it's done already
-
-                    Case Else
-                        'do nothing
-                End Select
-                'case secondary switch
-                Select Case secondary
-                    Case "f1s0"
-                        savecia(spb1)
-                    Case "f1s3"
-                        savecia(bspb1)
-                    Case "f1s9"
-                        savecia(tpb1)
-                    Case "f2s0"
-                        savecia(pbwns1)
-                    Case "f2s2"
-                        savecia(pbwrsscan1)
-                    Case "f2s8"
-                        savecia(pbwrs1)
-                    Case "f2s10"
-                        savecia(pb1)
-                    Case "f3s0" ' not used yet ' tall icons
-                        'saveci(tallpb1)
-                    Case "poster"
-                        If posterTru Then savecia(pbti1)
                     Case "none"
                         'do nothing here
                     Case Else
                         'do nothing
                 End Select
-            End If
-        End If
+                'case secondary switch boolean
+                Dim usesecondary As Boolean = False
+                'icons parsed out in select statement above time to select and run saveci or savecip
+                Dim curname As String = ""
+                If moviemode = "file" Then
+                    curname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn")
+                    Try
+                        If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Else
+                    If rconf.pcbcreatemovienamedottbn Then curname = addfiletofolder(cmpath, currentmovie.pmoviename) + ".tbn"
+                    Try
+                        If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                    If rconf.pcbCreateFolderjpg Then curname = addfiletofolder(cmpath, "folder.jpg")
+                    Try
+                        If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                    If rconf.pcbcreatemovietbn Then curname = addfiletofolder(cmpath, "movie.tbn")
+                    Try
+                        If File.Exists(curname) Then File.SetAttributes(curname, FileAttributes.Normal)
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                End If
+                Select Case primary
+                    Case "f1s0"
+                        savecia(spb1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
 
-        'check for 0k files
-        If moviemode = "file" Then
-            Dim stackedname As String = ""
-            stackedname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename))) + ".tbn"
-            If File.Exists(stackedname) Then
-                Try
-                    Dim vtempstrFilesize As String = getFileSize(stackedname)
-                    If vtempstrFilesize = "0 KB" Then
-                        File.SetAttributes(stackedname, FileAttributes.Normal)
-                        File.Delete(stackedname)
+                    Case "f1s3"
+                        savecia(bspb1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f1s9"
+                        savecia(tpb1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f2s0"
+                        savecia(pbwns1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f2s2"
+                        savecia(pbwrsscan1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f2s8"
+                        savecia(pbwrs1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f2s10"
+                        savecia(pb1) 'save it then make sure it works by attempting to load it
+                        Try
+                            Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                            imagecheck.Dispose()
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "f3s0" ' not used yet ' tall icons
+                        'saveci(tallpb1)'save it then make sure it works by attempting to load it
+                        'Try
+                        '    Dim imagecheck As Image = Image.FromFile(lblCurMovieFolder.Text + "\folder.jpg")
+                        'Catch ex As Exception
+                        '    usesecondary = True 'if that fails, remove the files and use secondary icon
+                        'End Try
+                    Case "poster"
+                        If posterTru Then savecia(pbti1) 'save it then make sure it works by attempting to load it
+                        Try
+                            If posterTru Then
+                                Dim imagecheck As System.Drawing.Image = System.Drawing.Image.FromFile(curname)
+                                imagecheck.Dispose()
+                            End If
+
+                        Catch ex As Exception
+                            usesecondary = True 'if that fails, remove the files and use secondary icon
+                        End Try
+                    Case "none"
+                        'do nothing with images
+                        usesecondary = False
+                    Case Else
+                End Select
+
+                'case selection secondary load
+                If usesecondary Then
+                    'rem old tbn and folder.jpg
+                    If moviemode = "file" Then
+                        Dim stackedname As String = ""
+                        stackedname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename))) + ".tbn"
+                        If File.Exists(stackedname) Then
+                            Try
+                                File.SetAttributes(stackedname, FileAttributes.Normal)
+                                File.Delete(stackedname)
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
+                    Else 'folder level - clear out folder.jpg, <moviename>.tbn, movie.tbn
+                        If File.Exists(cmpath + "\folder.jpg") Then
+                            Try
+                                File.SetAttributes(cmpath + "\folder.jpg", FileAttributes.Normal)
+                                File.Delete(cmpath + "\folder.jpg")
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
+                        If File.Exists(cmpath + "\" + dname + ".tbn") Then
+                            Try
+                                File.SetAttributes(cmpath + "\" + dname + ".tbn", FileAttributes.Normal)
+                                File.Delete(cmpath + "\" + dname + ".tbn")
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
+                        If File.Exists(cmpath + "\" + "movie.tbn") Then
+                            Try
+                                File.SetAttributes(cmpath + "\" + "movie.tbn", FileAttributes.Normal)
+                                File.Delete(cmpath + "\" + "movie.tbn")
+                            Catch ex As Exception
+
+                            End Try
+
+                        End If
                     End If
-                Catch ex As Exception
+                    'MsgBox("using secondary")
+                    Debug.Print("-------------------------- SECONDARY ICON USED ---------------------------")
+                    Select Case secondary
+                        Case "f1s0"
+                            xmlDownload(currentmovie, xmltemppathname, "1", "2", "0") 'square no style
+                            getdisplayimages(selectedNameXMLfile, "1", "2", "0")
+                        Case "f1s3"
+                            xmlDownload(currentmovie, xmltemppathname, "1", "2", "3") 'square box shot
+                            getdisplayimages(selectedNameXMLfile, "1", "2", "3")
+                        Case "f1s9"
+                            xmlDownload(currentmovie, xmltemppathname, "1", "2", "9") 'square classification, but it's a round token
+                            getdisplayimages(selectedNameXMLfile, "1", "2", "9")
+                        Case "f2s0"
+                            xmlDownload(currentmovie, xmltemppathname, "2", "2", "0") 'wide no style
+                            getdisplayimages(selectedNameXMLfile, "2", "2", "0")
+                        Case "f2s2"
+                            xmlDownload(currentmovie, xmltemppathname, "2", "2", "2") 'wide rounded shadow with scanlines
+                            getdisplayimages(selectedNameXMLfile, "2", "2", "2")
+                        Case "f2s8"
+                            xmlDownload(currentmovie, xmltemppathname, "2", "2", "8") 'wide rounded shadow
+                            getdisplayimages(selectedNameXMLfile, "2", "2", "8")
+                        Case "f2s10"
+                            xmlDownload(currentmovie, xmltemppathname, "2", "2", "10") 'wide rounded shadow with glass overlay
+                            getdisplayimages(selectedNameXMLfile, "2", "2", "10")
+                        Case "f3s0" ' not used yet ' tall icons
+                            'xmlDownload(currentmovie, xmltemppathname, "3", "2", "0") 'tall no style
+                            'getdisplayimages(selectedNameXMLfile, "3", "2", "0")
+                        Case "poster"
+                            'nothing to download here, it's done already
 
-                End Try
-
+                        Case Else
+                            'do nothing
+                    End Select
+                    'case secondary switch
+                    Select Case secondary
+                        Case "f1s0"
+                            savecia(spb1)
+                        Case "f1s3"
+                            savecia(bspb1)
+                        Case "f1s9"
+                            savecia(tpb1)
+                        Case "f2s0"
+                            savecia(pbwns1)
+                        Case "f2s2"
+                            savecia(pbwrsscan1)
+                        Case "f2s8"
+                            savecia(pbwrs1)
+                        Case "f2s10"
+                            savecia(pb1)
+                        Case "f3s0" ' not used yet ' tall icons
+                            'saveci(tallpb1)
+                        Case "poster"
+                            If posterTru Then savecia(pbti1)
+                        Case "none"
+                            'do nothing here
+                        Case Else
+                            'do nothing
+                    End Select
+                End If
             End If
 
-        Else 'folder level - clear out folder.jpg, <moviename>.tbn, movie.tbn
-            Dim fjpgname As String = addfiletofolder(cmpath, "folder.jpg")
-            Dim movnamedottbn As String = addfiletofolder(cmpath, dname + ".tbn")
-            Dim mdottbn As String = addfiletofolder(cmpath, "movie.tbn")
-            If File.Exists(fjpgname) Then
-                Try
-                    File.SetAttributes(fjpgname, FileAttributes.Normal)
-                    Dim vtempstrFilesize As String = getFileSize(fjpgname)
-                    If vtempstrFilesize = "0 KB" Then
-                        File.Delete(fjpgname)
-                    End If
-                Catch ex As Exception
+            'check for 0k files
+            If moviemode = "file" Then
+                Dim stackedname As String = ""
+                stackedname = addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename))) + ".tbn"
+                If File.Exists(stackedname) Then
+                    Try
+                        Dim vtempstrFilesize As String = getFileSize(stackedname)
+                        If vtempstrFilesize = "0 KB" Then
+                            File.SetAttributes(stackedname, FileAttributes.Normal)
+                            File.Delete(stackedname)
+                        End If
+                    Catch ex As Exception
 
-                End Try
+                    End Try
 
-            End If
-            If File.Exists(movnamedottbn) Then
-                Try
-                    File.SetAttributes(movnamedottbn, FileAttributes.Normal)
-                    Dim vtempstrFilesize As String = getFileSize(movnamedottbn)
-                    If vtempstrFilesize = "0 KB" Then
-                        File.Delete(movnamedottbn)
-                    End If
-                Catch ex As Exception
+                End If
 
-                End Try
+            Else 'folder level - clear out folder.jpg, <moviename>.tbn, movie.tbn
+                Dim fjpgname As String = addfiletofolder(cmpath, "folder.jpg")
+                Dim movnamedottbn As String = addfiletofolder(cmpath, dname + ".tbn")
+                Dim mdottbn As String = addfiletofolder(cmpath, "movie.tbn")
+                If File.Exists(fjpgname) Then
+                    Try
+                        File.SetAttributes(fjpgname, FileAttributes.Normal)
+                        Dim vtempstrFilesize As String = getFileSize(fjpgname)
+                        If vtempstrFilesize = "0 KB" Then
+                            File.Delete(fjpgname)
+                        End If
+                    Catch ex As Exception
 
-            End If
-            If File.Exists(mdottbn) Then
-                Try
-                    File.SetAttributes(mdottbn, FileAttributes.Normal)
-                    Dim vtempstrFilesize As String = getFileSize(mdottbn)
-                    If vtempstrFilesize = "0 KB" Then
-                        File.Delete(mdottbn)
-                    End If
-                Catch ex As Exception
+                    End Try
 
-                End Try
+                End If
+                If File.Exists(movnamedottbn) Then
+                    Try
+                        File.SetAttributes(movnamedottbn, FileAttributes.Normal)
+                        Dim vtempstrFilesize As String = getFileSize(movnamedottbn)
+                        If vtempstrFilesize = "0 KB" Then
+                            File.Delete(movnamedottbn)
+                        End If
+                    Catch ex As Exception
 
+                    End Try
+
+                End If
+                If File.Exists(mdottbn) Then
+                    Try
+                        File.SetAttributes(mdottbn, FileAttributes.Normal)
+                        Dim vtempstrFilesize As String = getFileSize(mdottbn)
+                        If vtempstrFilesize = "0 KB" Then
+                            File.Delete(mdottbn)
+                        End If
+                    Catch ex As Exception
+
+                    End Try
+
+                End If
             End If
         End If
 
@@ -19103,14 +19227,24 @@ Public Class maincollection
         If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
             Try
                 '\fullcredits\fullcredits
-                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
-                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
-                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
-                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
-                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
-                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
-                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
-                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits") Then
+                    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits") Then
+                        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                    End If
+                    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                End If
+                If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary") Then
+                    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary") Then
+                        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                    End If
+                    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                End If
+                If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html") Then
+                    File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                    File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                End If
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
