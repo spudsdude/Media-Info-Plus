@@ -37,6 +37,7 @@ Namespace xbmcMediaInfo
             End Set
         End Property
         Private Function cleandbl(ByVal curstring As String) As Double
+            If curstring = "" Then Return 0
             Dim workstring As String = ""
             workstring = curstring.Replace(",", ".")
             Return Convert.ToDouble(workstring, New Globalization.CultureInfo("en-US", False))
@@ -54,10 +55,11 @@ Namespace xbmcMediaInfo
                 Dim accodec As String = ""
                 Dim alang As String = ""
                 Dim scantype As String = ""
+                Dim vcodec As String = ""
                 Dim subtitleLang As String = ""
                 For Each curVS As Video In xmifi.streamdetails.Video
                     couVS += 1
-                    If CDbl(curVS.Width) > vwidthmax Then
+                    If cleandbl(curVS.Width) > vwidthmax Then
                         vwidthmax = cleandbl(curVS.Width)
                         vheightmax = cleandbl(curVS.Height)
                         Dim car As Double = 0
@@ -72,6 +74,7 @@ Namespace xbmcMediaInfo
                         Else
                             scantype = "i"
                         End If
+                        vcodec = curVS.Codec
                     End If
                     'To_Display += "   Container: " + "This is the extension of the file" + vbNewLine
 
@@ -95,7 +98,7 @@ Namespace xbmcMediaInfo
                 Next
                 If Not couVS = 0 Then 'no video streams, don't write any tag data
                     Try
-                        statusStr = " / " & getrezfromsize(vwidthmax, vheightmax, vaspectdisplayratio) & scantype & " / " & accodec & " / " & achanmax & "ch / " & alang & subtitleLang
+                        statusStr = " / " & getrezfromsize(vwidthmax, vheightmax, vaspectdisplayratio) & scantype & " / " & vcodec & " / " & accodec & " / " & achanmax & "ch / " & alang & subtitleLang
                     Catch ex As Exception
                         Debug.Print("Failed to process media information to tag data.")
                         Return ""

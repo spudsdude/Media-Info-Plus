@@ -418,7 +418,7 @@ Public Class maincollection
 
         If rconf.pcbSaveNFO And Not currentmovie.pdatafromnfo Then 'don't save it if we loaded it from the nfo
             'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
         End If
 
 
@@ -2250,7 +2250,7 @@ Public Class maincollection
                 'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
                 Debug.Print("UPDATED MEDIA INFO IN .nfo FILE")
             End If
-            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
         End If
 
         If mediaonly Then
@@ -2333,7 +2333,7 @@ Public Class maincollection
             End If
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
             Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
-            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
             'If currentmovie.pstudioreal Is Nothing Or currentmovie.pstudioreal Is "" Then
             '    'see if pstudio has data
             '    If Not currentmovie.pstudio = "" Then
@@ -5262,7 +5262,7 @@ Public Class maincollection
             Debug.Print("Note: Display movie name and info - no xml or data was loaded from nfo file into the program. No concern here.")
         End If
 
-        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
         movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
         'MsgBox(tmovie.getmoviename + " ------- " + tmovie.getthumbxml)
         btnRetryName.Enabled = True
@@ -5605,7 +5605,7 @@ Public Class maincollection
 
         If rconf.pcbSaveNFO And Not currentmovie.pdatafromnfo Then 'don't save it if we loaded it from the nfo
             'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
-            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
         End If
         'display imdb info
         'get moviename from nfo if it exists
@@ -6107,6 +6107,8 @@ Public Class maincollection
                 fanartpb1.Load()
             Catch ex As Exception
                 Debug.Print(ex.ToString)
+                fanartpb1.ImageLocation = Nothing
+                fanartpb1.Image = Nothing
                 Try
                     File.Delete(curfanartnow)
                 Catch ex2 As Exception
@@ -6114,7 +6116,14 @@ Public Class maincollection
                 End Try
 
             End Try
-
+            If Not fanartpb1.ImageLocation Is Nothing Then
+                If messageprompts Then
+                    Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                    CurrentBackgroundSizeToolStripMenuItem.Text = "Current Background Size: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                    tsl_movies_fanartsize.Text = CurrentBackgroundSizeToolStripMenuItem.Text
+                    objImage2.Dispose()
+                End If
+            End If
         End If
         'end of fanart
         Debug.Print("fanart is done loading now")
@@ -6136,7 +6145,7 @@ Public Class maincollection
                     If rconf.pcbcopyplotsummaryifnoplot Then
                         If currentmovie.pplot = "" Then currentmovie.pplot = currentmovie.pplotoutline
                     End If
-                    currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+                    currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
                 End If
             End If
         End If
@@ -6156,12 +6165,14 @@ Public Class maincollection
         Me.tbDirector.Text = currentmovie.pdirector
         Me.tbGenre.Text = currentmovie.pgenre
         Me.tbIMDBID.Text = currentmovie.pimdbnumber
-        If rconf.pcbmovie_use_certification_for_mpaa Then
-            Me.tbMpaa.Text = currentmovie.certification
-        Else
-            Me.tbMpaa.Text = currentmovie.pmpaa
-        End If
-
+        'If rconf.pcbmovie_use_certification_for_mpaa Then
+        '    Me.tbMpaa.Text = currentmovie.certification
+        'Else
+        '    Me.tbMpaa.Text = currentmovie.pmpaa
+        'End If
+        Me.tbMpaa.Text = currentmovie.pmpaa
+        Me.tbcertification.Text = currentmovie.certification
+        Me.tbStudioReal.Text = currentmovie.pstudioreal
         Me.rtbPlotOutline.Text = currentmovie.pplotoutline
         Me.rtbPlot.Text = currentmovie.pplot
         Me.tbRating.Text = currentmovie.prating
@@ -7002,7 +7013,31 @@ Public Class maincollection
         End If
         Debug.Print("done: " + TimeString())
         ' tcMain.SelectTab(0)
-
+        If Not pbCurIconUsed.ImageLocation Is Nothing Then
+            Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(pbCurIconUsed.ImageLocation)
+            klblImageSizeFolderJpg.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(pbCurIconUsed.ImageLocation)
+            objImage.Dispose()
+            klblImageSizeFolderJpg.BringToFront()
+            ''getfanart size and append to text
+            'If Not fanartpb1.ImageLocation Is Nothing Then
+            '    Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+            '    klblImageSizeFolderJpg.Text += " - Fanart: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+            '    objImage2.Dispose()
+            'End If
+        Else
+            If Not pbCurIconUsed2.ImageLocation Is Nothing Then
+                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(pbCurIconUsed2.ImageLocation)
+                klblImageSizeFolderJpg.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(pbCurIconUsed2.ImageLocation)
+                objImage.Dispose()
+                klblImageSizeFolderJpg.BringToFront()
+                'If Not fanartpb1.ImageLocation Is Nothing Then
+                '    Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                '    klblImageSizeFolderJpg.Text += " - Fanart: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                '    objImage2.Dispose()
+                'End If
+            End If
+        End If
+        GC.Collect()
     End Sub
 
     Private Sub showtbninmainwindow(ByVal curpath As String, ByVal skt As Boolean)
@@ -7202,6 +7237,28 @@ Public Class maincollection
 
         End If
         Debug.Print("done: " + TimeString())
+
+        If Not pbCurTBNUsed.ImageLocation Is Nothing Then
+            Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(pbCurTBNUsed.ImageLocation)
+            klblImageSizeMovienameTbn.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(pbCurTBNUsed.ImageLocation)
+            objImage.Dispose()
+            klblImageSizeMovienameTbn.BringToFront()
+            'Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+            'klblImageSizeFolderJpg.Text += " - Fanart: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+            'objImage2.Dispose()
+        Else
+            If Not pbCurTBNUsed2.ImageLocation Is Nothing Then
+                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(pbCurTBNUsed2.ImageLocation)
+                klblImageSizeMovienameTbn.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(pbCurTBNUsed2.ImageLocation)
+                objImage.Dispose()
+                klblImageSizeMovienameTbn.BringToFront()
+                'Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                'klblImageSizeFolderJpg.Text += " - Fanart: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                'objImage2.Dispose()
+            End If
+        End If
+        GC.Collect()
+
         ' tcMain.SelectTab(0)
         validatefoldercontents()
     End Sub
@@ -14167,7 +14224,7 @@ Public Class maincollection
 
         If rconf.pcbcreatemovienamedashfanartjpg And Not moviemode = "file" Then
             File.Copy(curloc, currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg", True)
-            curfaused = currentmovie.getmoviepath + "\" + currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg"
+            curfaused = currentmovie.getmoviepath + "\" + currentmovie.pmoviename + "-fanart.jpg"
         End If
 
         If rconf.pcbcreatefanartjpg And Not moviemode = "file" Then
@@ -14177,9 +14234,14 @@ Public Class maincollection
 
         lblPbar.Visible = True
         lblPbar.Text = Date.Now.ToString + " - Fanart saved --" '+ selectedicon.ImageLocation
-        fanartpb1.Image = currentfanart.Image
+        'fanartpb1.Image = currentfanart.Image
         fanartpb1.ImageLocation = curfaused
-        'fanartpb1.Load()
+        Try
+            fanartpb1.Load()
+        Catch ex As Exception
+
+        End Try
+
         'tcMain.Refresh()
         tcMain.SelectTab(0)
         'check for video_ts, if found, check md5 on images, recopy if needed
@@ -14188,6 +14250,15 @@ Public Class maincollection
         Catch ex As Exception
 
         End Try
+        If Not fanartpb1.ImageLocation Is Nothing Then
+            If Not fanartpb1.ImageLocation = "" Then
+                Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                CurrentBackgroundSizeToolStripMenuItem.Text = "Current Background Size: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                tsl_movies_fanartsize.Text = CurrentBackgroundSizeToolStripMenuItem.Text
+                objImage2.Dispose()
+            End If
+        End If
+
 
         validatefoldercontents()
     End Sub
@@ -17638,7 +17709,7 @@ Public Class maincollection
 
 
         'do the overlay
-        Dim binfilelocal As String = "MagickCMD" 'addfiletofolder(rconf.ImageMagickFolder, "MagickCMD") '"composite.exe") ''rconf.wgetfolder + "wget.exe"
+        Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "composite.exe") 'Dim binfilelocal As String = "MagickCMD" 'addfiletofolder(rconf.ImageMagickFolder, "MagickCMD") '"composite.exe") ''rconf.wgetfolder + "wget.exe"
         Dim curfolderjpg As String = curtvshowiconsetting 'addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
         'move the folder.jpg to a backupfile
         'File.Move(curfolderjpg, curfolderjpg & ".bak")
@@ -17663,7 +17734,7 @@ Public Class maincollection
         Dim geoY As Double = originalImageHeight * constOverlayHeight
         Dim margin As Double = originalImageWidth * constOverlayMargin
         Dim geoX As Double = (originalImageHeight * (1 - constOverlayHeight)) - margin
-        Dim exstring As String = "composite -compose atop -geometry 1000x" & CStr(geoY) & "+" & CStr(margin) & "+" & CStr(geoX) & " " & imgToOverlayLeft & " " & imgToPutItOn & " " & imgNewImageNameLocation
+        Dim exstring As String = " -compose atop -geometry 1000x" & CStr(geoY) & "+" & CStr(margin) & "+" & CStr(geoX) & " " & imgToOverlayLeft & " " & imgToPutItOn & " " & imgNewImageNameLocation
 
         Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
         pro1.StartInfo.FileName = binfilelocal
@@ -17684,7 +17755,7 @@ Public Class maincollection
         'Dim asdf As Double = 
         Dim geoXr As Double = (originalImageHeight * (1 - constOverlayHeight)) - (originalImageWidth * constOverlayMargin)
         '(originalImageHeight * (1 - constOverlayHeight)) - margin
-        Dim exstringr As String = "composite -compose atop -geometry " + "1000" + "x" & CStr(geoYr) & "+" & CStr(marginr) & "+" & CStr(geoXr) & " " & imgToOverlayRight & " " & imgToPutItOn & " " & imgNewImageNameLocation
+        Dim exstringr As String = " -compose atop -geometry " + "1000" + "x" & CStr(geoYr) & "+" & CStr(marginr) & "+" & CStr(geoXr) & " " & imgToOverlayRight & " " & imgToPutItOn & " " & imgNewImageNameLocation
 
         Dim pro1r As System.Diagnostics.Process = New System.Diagnostics.Process()
         pro1r.StartInfo.FileName = binfilelocal
@@ -17897,7 +17968,7 @@ Public Class maincollection
         End If
 
         'do the overlay
-        Dim binfilelocal As String = "MagickCMD" 'addfiletofolder(rconf.ImageMagickFolder, "MagickCMD") '"composite.exe") ''rconf.wgetfolder + "wget.exe"
+        Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "composite.exe") 'Dim binfilelocal As String = "MagickCMD" 'addfiletofolder(rconf.ImageMagickFolder, "MagickCMD") '"composite.exe") ''rconf.wgetfolder + "wget.exe"
         Dim curfolderjpg As String = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
         'move the folder.jpg to a backupfile
         'File.Move(curfolderjpg, curfolderjpg & ".bak")
@@ -17922,7 +17993,7 @@ Public Class maincollection
         Dim geoY As Double = originalImageHeight * constOverlayHeight
         Dim margin As Double = originalImageWidth * constOverlayMargin
         Dim geoX As Double = (originalImageHeight * (1 - constOverlayHeight)) - margin
-        Dim exstring As String = "composite -compose atop -geometry 1000x" & CStr(geoY) & "+" & CStr(margin) & "+" & CStr(geoX) & " " & imgToOverlayLeft & " " & imgToPutItOn & " " & imgNewImageNameLocation
+        Dim exstring As String = " -compose atop -geometry 1000x" & CStr(geoY) & "+" & CStr(margin) & "+" & CStr(geoX) & " " & imgToOverlayLeft & " " & imgToPutItOn & " " & imgNewImageNameLocation
 
         Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
         pro1.StartInfo.FileName = binfilelocal
@@ -17943,7 +18014,7 @@ Public Class maincollection
         'Dim asdf As Double = 
         Dim geoXr As Double = (originalImageHeight * (1 - constOverlayHeight)) - (originalImageWidth * constOverlayMargin)
         '(originalImageHeight * (1 - constOverlayHeight)) - margin
-        Dim exstringr As String = "composite -compose atop -geometry " + "1000" + "x" & CStr(geoYr) & "+" & CStr(marginr) & "+" & CStr(geoXr) & " " & imgToOverlayRight & " " & imgToPutItOn & " " & imgNewImageNameLocation
+        Dim exstringr As String = " -compose atop -geometry " + "1000" + "x" & CStr(geoYr) & "+" & CStr(marginr) & "+" & CStr(geoXr) & " " & imgToOverlayRight & " " & imgToPutItOn & " " & imgNewImageNameLocation
 
         Dim pro1r As System.Diagnostics.Process = New System.Diagnostics.Process()
         pro1r.StartInfo.FileName = binfilelocal
@@ -18044,7 +18115,7 @@ Public Class maincollection
         currentmovie.pruntime = Me.tbRuntime.Text
         currentmovie.ptagline = Me.rtbTagline.Text
         currentmovie.pvotes = Me.tbVotes.Text
-        'currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
+        currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
         currentmovie.pgenre = Me.tbGenre.Text
         Dim oldvalue As Integer = currentmovie.pyear
         Try
@@ -18065,7 +18136,7 @@ Public Class maincollection
         'imdbinfo.movietoimdb(currentmovie)
 
         'movietoimdb
-        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn) 'saves movie to nfo file
+        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo, True) 'saves movie to nfo file
         ' imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True) 'saves data back to xml cache of imdb items
         'imdbinfo = Nothing 'resource cleanup
         'convert to .nfo file and overwrite (reguardless of overwrite setting)
@@ -18172,7 +18243,7 @@ Public Class maincollection
                                 Dim mname As String = tfnameoffile
                                 Dim cleanname As String = namefilterforfilemode(removeextension(mname))
                                 'filter code injection here
-                                If mname.ToLower = "con air" Or cleanname = "" Then
+                                If mname.ToLower = "con air" Or cleanname = "" Or Strings.Right(cleanname, 8).ToLower = "-trailer" Then
                                     'do nada
                                 Else
                                     Dim newmovie As New movie
@@ -19015,6 +19086,8 @@ Public Class maincollection
             'MsgBox("can't save a movie without an imdb id number")
             Exit Sub
         End If
+      
+        'maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml"
         If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
             Try
                 File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
@@ -28286,7 +28359,7 @@ Public Class maincollection
         MI.getdata(currentmovie, moviemode)
         If Not currentmovie.pimdbnumber = Nothing Then
             If rconf.pcbCreateMovieNFO Or rconf.pcbcreatemovienamedotnfo Then
-                currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedottbn)
+                currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
             End If
         End If
         Debug.Print("done")
@@ -30856,6 +30929,225 @@ Public Class maincollection
     Private Sub tsmishows_fanart_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_fanart_q95.Click
         compressfanartimage(pbTVFanart, "95")
     End Sub
+    Private Sub tsmimovie_posters_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_posters_q60.Click
+        compress_movieposter("60")
+    End Sub
+    Private Sub tsmimovie_posters_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_posters_q70.Click
+        compress_movieposter("70")
+    End Sub
+    Private Sub tsmimovie_posters_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_posters_q80.Click
+        compress_movieposter("80")
+    End Sub
+    Private Sub tsmimovie_posters_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_posters_q90.Click
+        compress_movieposter("90")
+    End Sub
+    Private Sub tsmimovie_posters_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_posters_q95.Click
+        compress_movieposter("95")
+    End Sub
+    Private Sub tsmimovie_poster_r320x480_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r320x480.Click
+        resize_movieposter("320x480")
+    End Sub
+    Private Sub tsmimovie_poster_r360x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r360x540.Click
+        resize_movieposter("360x540")
+    End Sub
+    Private Sub tsmimovie_poster_r384x576_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r384x576.Click
+        resize_movieposter("384x576")
+    End Sub
+    Private Sub tsmimovie_poster_r480x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r480x720.Click
+        resize_movieposter("480x720")
+    End Sub
+    Private Sub tsmimovie_poster_r720x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r720x1080.Click
+        resize_movieposter("720x1080")
+    End Sub
+    Private Sub tsmimovie_poster_r800x1200_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r800x1200.Click
+        resize_movieposter("800x1200")
+    End Sub
+    Private Sub tsmimovie_poster_r1000x1500_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r1000x1500.Click
+        resize_movieposter("1000x1500")
+    End Sub
+    Private Sub resize_movieposter(ByVal newsize As String)
+        If messageprompts Then pbCurIconUsed.Image = Nothing
+        If messageprompts Then pbCurIconUsed.ImageLocation = Nothing
+        If messageprompts Then pbCurIconUsed2.Image = Nothing
+        If messageprompts Then pbCurIconUsed2.ImageLocation = Nothing
+        If messageprompts Then pbCurTBNUsed.Image = Nothing
+        If messageprompts Then pbCurTBNUsed.ImageLocation = Nothing
+        If messageprompts Then pbCurTBNUsed2.Image = Nothing
+        If messageprompts Then pbCurTBNUsed2.ImageLocation = Nothing
+        GC.Collect()
+        'figure out what files to mod by looking into the folder for any valid images
+        Dim filetoresize As String = ""
+        If currentmovie.pfilemode Then
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) & ".tbn")
+            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        End If
+
+        If Not currentmovie.pfilemode Then
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
+            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
+            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
+            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        End If
+
+        If messageprompts Then
+            If Not currentmovie.pfilemode Then 'refresh all as start point may have shifted
+                showfolderjpginmainwindow(currentmovie.getmoviepath, False)
+                showtbninmainwindow(currentmovie.getmoviepath, False)
+                tcMain.SelectTab(0)
+                validatefoldercontents()
+                Exit Sub
+            End If
+
+            If currentmovie.pfilemode Then 'just refresh the tbn portion
+                showtbninmainwindow(currentmovie.getmoviepath, False)
+                tcMain.SelectTab(0)
+                validatefoldercontents()
+                Exit Sub
+            End If
+        End If
+
+
+    End Sub
+    Private Sub compress_movieposter(ByVal amount As String)
+        If messageprompts Then pbCurIconUsed.Image = Nothing
+        If messageprompts Then pbCurIconUsed.ImageLocation = Nothing
+        If messageprompts Then pbCurIconUsed2.Image = Nothing
+        If messageprompts Then pbCurIconUsed2.ImageLocation = Nothing
+        If messageprompts Then pbCurTBNUsed.Image = Nothing
+        If messageprompts Then pbCurTBNUsed.ImageLocation = Nothing
+        If messageprompts Then pbCurTBNUsed2.Image = Nothing
+        If messageprompts Then pbCurTBNUsed2.ImageLocation = Nothing
+        GC.Collect()
+        'figure out what files to mod by looking into the folder for any valid images
+        Dim filetocompress As String = ""
+        If currentmovie.pfilemode Then
+            filetocompress = addfiletofolder(currentmovie.getmoviepath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) & ".tbn")
+            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+        End If
+
+        If Not currentmovie.pfilemode Then
+            filetocompress = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
+            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+            filetocompress = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
+            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+            filetocompress = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
+            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+        End If
+
+        If messageprompts Then
+            If Not currentmovie.pfilemode Then 'refresh all as start point may have shifted
+                showfolderjpginmainwindow(currentmovie.getmoviepath, False)
+                showtbninmainwindow(currentmovie.getmoviepath, False)
+                tcMain.SelectTab(0)
+                validatefoldercontents()
+                Exit Sub
+            End If
+
+            If currentmovie.pfilemode Then 'just refresh the tbn portion
+                showtbninmainwindow(currentmovie.getmoviepath, False)
+                tcMain.SelectTab(0)
+                validatefoldercontents()
+                Exit Sub
+            End If
+        End If
+
+
+    End Sub
+    Private Sub compress_tvshowposter(ByRef currentpb As PictureBox, ByVal amount As String, ByVal filetocompress As String)
+
+    End Sub
+    Private Sub resizeimage(ByVal size As String, ByVal filetoresize As String)
+        Dim curloc As String = filetoresize
+        Dim backupfile As String = curloc & ".orig"
+        Dim newfile As String = curloc & ".new.jpg"
+        Dim imagelocationandname As String = filetoresize
+
+        'move the real fanart
+        If File.Exists(backupfile) Then File.Delete(backupfile)
+        File.Move(curloc, backupfile)
+        'saving the new files
+        Try
+
+            Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "convert.exe") 'Dim binfilelocal As String = "MagickCMD"
+            Dim exstring As String = " " & """" & backupfile & """" & " -resize " & size & "^ -gravity center -extent " & size & " " & """" & newfile & """"
+            Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+            pro1.StartInfo.FileName = binfilelocal
+            pro1.StartInfo.Arguments = exstring
+            pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+            pro1.Start()
+            pro1.WaitForExit()
+            File.Move(newfile, curloc)
+
+            'cleanup newfile and backupfile as long as curloc is populated
+            If File.Exists(curloc) Then
+                File.Delete(newfile)
+                File.Delete(backupfile)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("image resize failed, check permissions on the files in the folder", "Resizing image failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'put the backup file back in place
+            If File.Exists(backupfile) Then
+                If Not File.Exists(curloc) Then
+                    File.Move(backupfile, curloc)
+                End If
+            End If
+            Exit Sub
+        End Try
+
+    End Sub
+    Private Sub compressimage(ByVal amount As String, ByVal filetocompress As String) ', ByVal secondaryfile As String, ByVal thirdfile As String)
+        Dim curloc As String = filetocompress
+        Dim backupfile As String = curloc & ".orig"
+        Dim newfile As String = curloc & ".new.jpg"
+        Dim imagelocationandname As String = filetocompress
+
+
+        'move the real image
+        If File.Exists(backupfile) Then File.Delete(backupfile)
+        File.Move(curloc, backupfile)
+        'saving the new files
+        Try
+            If Not curloc = "" Then
+                Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "convert.exe") '"MagickCMD" &
+                Dim exstring As String = " " & """" & backupfile & """" & " -quality " & amount & " " & """" & newfile & """"
+                Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+                pro1.StartInfo.FileName = binfilelocal
+                pro1.StartInfo.Arguments = exstring
+                pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+                pro1.Start()
+                pro1.WaitForExit()
+            Else
+                ' asdf()
+                'If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+                'If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+            End If
+
+
+            File.Move(newfile, curloc)
+            'cleanup newfile and backupfile as long as curloc is populated
+            If File.Exists(curloc) Then
+                Try
+                    File.Delete(newfile)
+                    File.Delete(backupfile)
+                Catch ex As Exception
+
+                End Try
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Image compression failed, check permissions on the files in the folder" & vbNewLine & curloc, "Compressing image failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'put the backup file back in place
+            If File.Exists(backupfile) Then
+                If Not File.Exists(curloc) Then
+                    File.Move(backupfile, curloc)
+                End If
+            End If
+            Exit Sub
+        End Try
+
+    End Sub
     Private Sub compressfanartimage(ByRef currentpb As PictureBox, ByVal amount As String)
         If currentpb.ImageLocation = Nothing Then Exit Sub
         Dim curloc As String = currentpb.ImageLocation
@@ -30871,8 +31163,8 @@ Public Class maincollection
         'saving the new files
         Try
             If Not curloc = "" Then
-                Dim binfilelocal As String = "MagickCMD"
-                Dim exstring As String = "convert " & """" & backupfile & """" & " -quality " & amount & " " & """" & newfile & """"
+                Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "convert.exe") '"MagickCMD" &
+                Dim exstring As String = " " & """" & backupfile & """" & " -quality " & amount & " " & """" & newfile & """" '"convert " & """" & backupfile & """" & " -quality " & amount & " " & """" & newfile & """"
                 Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
                 pro1.StartInfo.FileName = binfilelocal
                 pro1.StartInfo.Arguments = exstring
@@ -30921,6 +31213,17 @@ Public Class maincollection
             Try
                 currentpb.ImageLocation = curloc
                 currentpb.Load()
+                If cmmode = "movie" Then
+                    If Not fanartpb1.ImageLocation Is Nothing Then
+                        If Not fanartpb1.ImageLocation = "" Then
+                            Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                            CurrentBackgroundSizeToolStripMenuItem.Text = "Current Background Size: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                            tsl_movies_fanartsize.Text = CurrentBackgroundSizeToolStripMenuItem.Text
+                            objImage2.Dispose()
+                        End If
+                    End If
+                End If
+
             Catch ex As Exception
 
             End Try
@@ -30941,8 +31244,8 @@ Public Class maincollection
         'saving the new files
         Try
             If Not curloc = "" Then
-                Dim binfilelocal As String = "MagickCMD"
-                Dim exstring As String = "convert " & """" & backupfile & """" & " -resize " & size & "^ -gravity center -extent " & size & " " & """" & newfile & """"
+                Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "convert.exe") 'Dim binfilelocal As String = "MagickCMD"
+                Dim exstring As String = " " & """" & backupfile & """" & " -resize " & size & "^ -gravity center -extent " & size & " " & """" & newfile & """"
                 Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
                 pro1.StartInfo.FileName = binfilelocal
                 pro1.StartInfo.Arguments = exstring
@@ -30991,6 +31294,16 @@ Public Class maincollection
             Try
                 currentpb.ImageLocation = curloc
                 currentpb.Load()
+                If cmmode = "movie" Then
+                    If Not fanartpb1.ImageLocation Is Nothing Then
+                        If Not fanartpb1.ImageLocation = "" Then
+                            Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(fanartpb1.ImageLocation)
+                            CurrentBackgroundSizeToolStripMenuItem.Text = "Current Background Size: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                            tsl_movies_fanartsize.Text = CurrentBackgroundSizeToolStripMenuItem.Text
+                            objImage2.Dispose()
+                        End If
+                    End If
+                End If
             Catch ex As Exception
 
             End Try
@@ -31033,7 +31346,7 @@ Public Class maincollection
 
                 End If
             End If
-            filelevelname = retstr + ".nfo"
+            filelevelname = addfiletofolder(currentmovie.getmoviepath, retstr + ".nfo")
             If File.Exists(filelevelname) Then File.Delete(filelevelname)
         Else
             'both
@@ -31095,10 +31408,8 @@ Public Class maincollection
         testofdbsearch()
     End Sub
 
-    Private Sub tbStudio_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tbStudio.TextChanged
 
 
-    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -31644,7 +31955,8 @@ Public Property [Actors]() As List(Of Actor)
             ' Dim tsfullpath As String
             'tsfullpath = Strings.Left(tname, tname.Length - 7) 'strip off year
             Dim tsimdb As New IMDB 'create temp imdb obj
-            tsimdb = imdbparse(tname, True) 'parse data (Note: there is no plot in the hashed folder data, will need to be populated into objects later and then merged with the hashtable and imdb plot.list file via the parseimdb class)
+            ''''' REMOVED IN 2844 '''''
+            'tsimdb = imdbparse(tname, True) 'parse data (Note: there is no plot in the hashed folder data, will need to be populated into objects later and then merged with the hashtable and imdb plot.list file via the parseimdb class)
             If Not tsimdb.credits = "ERROR" Then tsimdb.writeIMDBXML(overwritexml, "F:\hashedxmls") 'write out the xml to the xml cache folder
             'cleaning up
             tsimdb = Nothing
@@ -31671,387 +31983,387 @@ Public Property [Actors]() As List(Of Actor)
         Next s
         'Return junk
     End Sub
-    Public Function imdbparse(ByRef localpathandname As String, ByVal dev_use_only As Boolean) As IMDB
-        'get imdbid data using imdbid
-        Try
-            Dim imdbtxt As String = File.ReadAllText(localpathandname + "\index.html") 'getimdbbyid(imdbid + "/")
-            'get full plot data useing imdbid
-            'Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
-            'create new IMDB object
-            Dim nimdb As New IMDB
-            nimdb.id = Regex.Match(imdbtxt, "<a href=""/title/(?<greturnedid>tt\d{5,9})/""").Groups(1).Value
-            'Debug.Print("Function:imdbparse - ID is: " + nimdb.id)
+    'Public Function imdbparse(ByRef localpathandname As String, ByVal dev_use_only As Boolean) As IMDB
+    '    'get imdbid data using imdbid
+    '    Try
+    '        Dim imdbtxt As String = File.ReadAllText(localpathandname + "\index.html") 'getimdbbyid(imdbid + "/")
+    '        'get full plot data useing imdbid
+    '        'Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
+    '        'create new IMDB object
+    '        Dim nimdb As New IMDB
+    '        nimdb.id = Regex.Match(imdbtxt, "<a href=""/title/(?<greturnedid>tt\d{5,9})/""").Groups(1).Value
+    '        'Debug.Print("Function:imdbparse - ID is: " + nimdb.id)
 
-            'studio
-            nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
-            nimdb.studioreal = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'title
-            nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            If Strings.Right(nimdb.title, 1) = " " Then
-                nimdb.title = Strings.Left(nimdb.title, nimdb.title.Length - 1)
-            End If
-            If nimdb.title = "" Then
-                Debug.Print("Critical Issue: No title found - " + localpathandname)
-            End If
-            'Debug.Print("Function:imdbparse - Title is: " + nimdb.title)
+    '        'studio
+    '        nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
+    '        nimdb.studioreal = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'title
+    '        nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        If Strings.Right(nimdb.title, 1) = " " Then
+    '            nimdb.title = Strings.Left(nimdb.title, nimdb.title.Length - 1)
+    '        End If
+    '        If nimdb.title = "" Then
+    '            Debug.Print("Critical Issue: No title found - " + localpathandname)
+    '        End If
+    '        'Debug.Print("Function:imdbparse - Title is: " + nimdb.title)
 
-            'original title
-            nimdb.originaltitle = clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Original Title (AKA) is: " + nimdb.originaltitle)
+    '        'original title
+    '        nimdb.originaltitle = clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Original Title (AKA) is: " + nimdb.originaltitle)
 
-            'rating 
-            nimdb.rating = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Rating is: " + nimdb.rating)
+    '        'rating 
+    '        nimdb.rating = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Rating is: " + nimdb.rating)
 
-            'year
-            nimdb.year = clb(Regex.Match(imdbtxt, "<a href=""/Sections/Years/([0-9]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Year is: " + nimdb.year)
-            If nimdb.year.ToString = "" Then
-                Debug.Print("Critical Issue: No Year found - " + localpathandname)
-            End If
-            'top 250
-            nimdb.top250 = clb(Regex.Match(imdbtxt, "Top 250: #([0-9]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Top 250 is: " + nimdb.top250)
+    '        'year
+    '        nimdb.year = clb(Regex.Match(imdbtxt, "<a href=""/Sections/Years/([0-9]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Year is: " + nimdb.year)
+    '        If nimdb.year.ToString = "" Then
+    '            Debug.Print("Critical Issue: No Year found - " + localpathandname)
+    '        End If
+    '        'top 250
+    '        nimdb.top250 = clb(Regex.Match(imdbtxt, "Top 250: #([0-9]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Top 250 is: " + nimdb.top250)
 
-            'votes
-            nimdb.votes = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(2).Value)
-            'Debug.Print("Function:imdbparse - Votes is: " + nimdb.votes)
+    '        'votes
+    '        nimdb.votes = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(2).Value)
+    '        'Debug.Print("Function:imdbparse - Votes is: " + nimdb.votes)
 
-            'outline
-            nimdb.outline = clb(Regex.Match(imdbtxt, "Plot:</h5>(.*?)<a class=""tn15more", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Outline is: " + nimdb.outline)
+    '        'outline
+    '        nimdb.outline = clb(Regex.Match(imdbtxt, "Plot:</h5>(.*?)<a class=""tn15more", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Outline is: " + nimdb.outline)
 
-            'plot 
-            'nimdb.plot = clb(Regex.Match(imdbplottxt, "<p class=.plotpar.>(.*?)<i>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Plot is: " + nimdb.plot)
+    '        'plot 
+    '        'nimdb.plot = clb(Regex.Match(imdbplottxt, "<p class=.plotpar.>(.*?)<i>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Plot is: " + nimdb.plot)
 
-            'tagline
-            nimdb.tagline = clb(Regex.Match(imdbtxt, "<h5>Tagline:</h5>([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Tagline is: " + nimdb.tagline)
+    '        'tagline
+    '        nimdb.tagline = clb(Regex.Match(imdbtxt, "<h5>Tagline:</h5>([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Tagline is: " + nimdb.tagline)
 
-            'runtime
-            nimdb.runtime = clb(Regex.Match(imdbtxt, "<h5>Runtime:</h5>[^0-9]*([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - Runtime is: " + nimdb.runtime)
+    '        'runtime
+    '        nimdb.runtime = clb(Regex.Match(imdbtxt, "<h5>Runtime:</h5>[^0-9]*([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - Runtime is: " + nimdb.runtime)
 
-            'mpaa
-            nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-            'Debug.Print("Function:imdbparse - MPAA is: " + nimdb.mpaa)
+    '        'mpaa
+    '        nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '        'Debug.Print("Function:imdbparse - MPAA is: " + nimdb.mpaa)
 
-            'Certification 
-            Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-            Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
-            While MatchResultsR.Success
-                'US only option, remove if statment to list all
-                If MatchResultsR.Groups(1).Value.Contains("USA") Then
-                    nimdb.certification += MatchResultsR.Groups(1).Value
-                    MatchResultsR = MatchResultsR.NextMatch()
-                Else
-                    MatchResultsR = MatchResultsR.NextMatch()
-                End If
+    '        'Certification 
+    '        Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '        Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
+    '        While MatchResultsR.Success
+    '            'US only option, remove if statment to list all
+    '            If MatchResultsR.Groups(1).Value.Contains("USA") Then
+    '                nimdb.certification += MatchResultsR.Groups(1).Value
+    '                MatchResultsR = MatchResultsR.NextMatch()
+    '            Else
+    '                MatchResultsR = MatchResultsR.NextMatch()
+    '            End If
 
-            End While
-            nimdb.certification = clb(nimdb.certification)
+    '        End While
+    '        nimdb.certification = clb(nimdb.certification)
 
-            'playcount
-            nimdb.playcount = ""
-            'Debug.Print("Function:imdbparse - Playcount is: " + nimdb.playcount)
+    '        'playcount
+    '        nimdb.playcount = ""
+    '        'Debug.Print("Function:imdbparse - Playcount is: " + nimdb.playcount)
 
-            'watched
-            nimdb.watched = ""
-            'Debug.Print("Function:imdbparse - Watched is: " + nimdb.watched)
+    '        'watched
+    '        nimdb.watched = ""
+    '        'Debug.Print("Function:imdbparse - Watched is: " + nimdb.watched)
 
-            'filenameandpath
-            nimdb.filenameandpath = ""
-            'Debug.Print("Function:imdbparse - Filenameandpath is: " + nimdb.filenameandpath)
+    '        'filenameandpath
+    '        nimdb.filenameandpath = ""
+    '        'Debug.Print("Function:imdbparse - Filenameandpath is: " + nimdb.filenameandpath)
 
-            'trailer
-            nimdb.trailer = ""
-            'Debug.Print("Function:imdbparse - Trailer is: " + nimdb.trailer)
+    '        'trailer
+    '        nimdb.trailer = ""
+    '        'Debug.Print("Function:imdbparse - Trailer is: " + nimdb.trailer)
 
-            'genre
-            Try
-                Dim RegexObjG As New Regex("/Sections/Genres/[^/]*/"">([^<]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-                Dim MatchResultsG As Match = RegexObjG.Match(imdbtxt)
-                While MatchResultsG.Success
-                    'Debug.Print("DEBUG: " + MatchResultsG.Groups("gn").Value.ToString)
-                    nimdb.genre += MatchResultsG.Groups(1).Value + " / "
-                    MatchResultsG = MatchResultsG.NextMatch()
-                End While
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If nimdb.genre = Nothing Then
-                nimdb.genre = "None / "
-            End If
-            If nimdb.genre.Length > 4 Then
-                nimdb.genre = Strings.Left(nimdb.genre, nimdb.genre.Length - 3)
-            End If
-            nimdb.genre = nimdb.genre
-            'Debug.Print("Function:imdbparse - Genre is: " + nimdb.genre)
-            nimdb.genre = clb(nimdb.genre)
+    '        'genre
+    '        Try
+    '            Dim RegexObjG As New Regex("/Sections/Genres/[^/]*/"">([^<]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '            Dim MatchResultsG As Match = RegexObjG.Match(imdbtxt)
+    '            While MatchResultsG.Success
+    '                'Debug.Print("DEBUG: " + MatchResultsG.Groups("gn").Value.ToString)
+    '                nimdb.genre += MatchResultsG.Groups(1).Value + " / "
+    '                MatchResultsG = MatchResultsG.NextMatch()
+    '            End While
+    '        Catch ex As ArgumentException
+    '            'Syntax error in the regular expression
+    '        End Try
+    '        If nimdb.genre = Nothing Then
+    '            nimdb.genre = "None / "
+    '        End If
+    '        If nimdb.genre.Length > 4 Then
+    '            nimdb.genre = Strings.Left(nimdb.genre, nimdb.genre.Length - 3)
+    '        End If
+    '        nimdb.genre = nimdb.genre
+    '        'Debug.Print("Function:imdbparse - Genre is: " + nimdb.genre)
+    '        nimdb.genre = clb(nimdb.genre)
 
-            'credits
-            nimdb.credits = ""
-            'Debug.Print("Function:imdbparse - Credits is: " + nimdb.credits)
+    '        'credits
+    '        nimdb.credits = ""
+    '        'Debug.Print("Function:imdbparse - Credits is: " + nimdb.credits)
 
-            'director
-            'get initial text for parse or it will grab other names that are not directors
-            Dim tempdirector As String = Regex.Match(imdbtxt, "<h5>Direct.*?</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
-            Try
-                Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-                Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
-                While MatchResultsD.Success
-                    nimdb.director += MatchResultsD.Groups(1).Value + " / "
-                    MatchResultsD = MatchResultsD.NextMatch()
-                End While
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-            End Try
-            If nimdb.director = Nothing Then
-                nimdb.director = "N/A / "
-            End If
-            If nimdb.director.Length > 4 Then 'Strip out the "space forwardslash space" from the end
-                nimdb.director = Strings.Left(nimdb.director, nimdb.director.Length - 3)
-            End If
-            nimdb.director = clb(nimdb.director)
-            'Debug.Print("Function:imdbparse - Director is: " + nimdb.director)
+    '        'director
+    '        'get initial text for parse or it will grab other names that are not directors
+    '        Dim tempdirector As String = Regex.Match(imdbtxt, "<h5>Direct.*?</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
+    '        Try
+    '            Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '            Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
+    '            While MatchResultsD.Success
+    '                nimdb.director += MatchResultsD.Groups(1).Value + " / "
+    '                MatchResultsD = MatchResultsD.NextMatch()
+    '            End While
+    '        Catch ex As ArgumentException
+    '            'Syntax error in the regular expression
+    '        End Try
+    '        If nimdb.director = Nothing Then
+    '            nimdb.director = "N/A / "
+    '        End If
+    '        If nimdb.director.Length > 4 Then 'Strip out the "space forwardslash space" from the end
+    '            nimdb.director = Strings.Left(nimdb.director, nimdb.director.Length - 3)
+    '        End If
+    '        nimdb.director = clb(nimdb.director)
+    '        'Debug.Print("Function:imdbparse - Director is: " + nimdb.director)
 
-            'actor
-            Dim tempactor As String = Regex.Match(imdbtxt, "<table class=""cast"">(.*?)</table>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
-            'Dim secondsearch As String = "<actor><thumb>\1_SX"
-            Try
-                ' Debug.Print("Function:imdbparse - actor parse starting")
-                Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-                'Dim RegexObjA As New Regex("<img src=""(.*?)"" width.*?<a href=""/name/nm.*?/"">(.*?)</a>.*?<a href=""/character/.*?"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-                'Debug.Print("actor regex object started")
-                Dim MatchResultsA As Match = RegexObjA.Match(tempactor)
-                'Debug.Print("match results defined")
-                While MatchResultsA.Success
-                    'Debug.Print("match results hit for actor, parse to field data")
-                    'For Each dude In tmov.Actors
-                    '    Dim tactor As New Actor
-                    '    tactor.Name = dude.Name
-                    '    tactor.Role = dude.Role
-                    '    tactor.Thumb = dude.Thumb
-                    '    tmovie.pactor.Add(tactor)
-                    'Next
-                    Dim tActor As New movieinfoplus.mip.mov.Actor
-                    tActor.Thumb = MatchResultsA.Groups(1).Value
-                    ' Debug.Print(tActor.Thumb)
-                    tActor.Name = MatchResultsA.Groups(2).Value
-                    'Debug.Print(tActor.Name)
-                    tActor.Role = MatchResultsA.Groups(3).Value
-                    ' Debug.Print(tActor.Role)
-                    'For Each dudet In nimdb.Actors
-                    'Debug.Print(dudet.ToString)
-                    'Next
-                    nimdb.Actors.Add(tActor)
-                    MatchResultsA = MatchResultsA.NextMatch()
-                End While
-                'Debug.Print("Function:imdbparse - actor parse completed sucessfully")
-            Catch ex As ArgumentException
-                'Syntax error in the regular expression
-                Debug.Print("Function:imdbparse - Error in Regex" + ex.ToString)
-            End Try
-            tempactor = ""
-            If nimdb.id = "" Then
-                nimdb.id = Regex.Match(imdbtxt, "/title/(tt\d{6,7})/"">More at IMDb Pro").Groups(1).Value
-                If nimdb.id = "" Then
-                    Debug.Print("--- no id found in: " + localpathandname + " -----")
-                    nimdb.credits = "ERROR"
-                End If
-            End If
+    '        'actor
+    '        Dim tempactor As String = Regex.Match(imdbtxt, "<table class=""cast"">(.*?)</table>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
+    '        'Dim secondsearch As String = "<actor><thumb>\1_SX"
+    '        Try
+    '            ' Debug.Print("Function:imdbparse - actor parse starting")
+    '            Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '            'Dim RegexObjA As New Regex("<img src=""(.*?)"" width.*?<a href=""/name/nm.*?/"">(.*?)</a>.*?<a href=""/character/.*?"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '            'Debug.Print("actor regex object started")
+    '            Dim MatchResultsA As Match = RegexObjA.Match(tempactor)
+    '            'Debug.Print("match results defined")
+    '            While MatchResultsA.Success
+    '                'Debug.Print("match results hit for actor, parse to field data")
+    '                'For Each dude In tmov.Actors
+    '                '    Dim tactor As New Actor
+    '                '    tactor.Name = dude.Name
+    '                '    tactor.Role = dude.Role
+    '                '    tactor.Thumb = dude.Thumb
+    '                '    tmovie.pactor.Add(tactor)
+    '                'Next
+    '                Dim tActor As New movieinfoplus.mip.mov.Actor
+    '                tActor.Thumb = MatchResultsA.Groups(1).Value
+    '                ' Debug.Print(tActor.Thumb)
+    '                tActor.Name = MatchResultsA.Groups(2).Value
+    '                'Debug.Print(tActor.Name)
+    '                tActor.Role = MatchResultsA.Groups(3).Value
+    '                ' Debug.Print(tActor.Role)
+    '                'For Each dudet In nimdb.Actors
+    '                'Debug.Print(dudet.ToString)
+    '                'Next
+    '                nimdb.Actors.Add(tActor)
+    '                MatchResultsA = MatchResultsA.NextMatch()
+    '            End While
+    '            'Debug.Print("Function:imdbparse - actor parse completed sucessfully")
+    '        Catch ex As ArgumentException
+    '            'Syntax error in the regular expression
+    '            Debug.Print("Function:imdbparse - Error in Regex" + ex.ToString)
+    '        End Try
+    '        tempactor = ""
+    '        If nimdb.id = "" Then
+    '            nimdb.id = Regex.Match(imdbtxt, "/title/(tt\d{6,7})/"">More at IMDb Pro").Groups(1).Value
+    '            If nimdb.id = "" Then
+    '                Debug.Print("--- no id found in: " + localpathandname + " -----")
+    '                nimdb.credits = "ERROR"
+    '            End If
+    '        End If
 
-            Return nimdb
-        Catch ex As Exception
-            Debug.Print(vbNewLine)
-            ' Debug.Print("------------------------------------------------------")
-            'Debug.Print(ex.ToString)
-            Debug.Print(vbNewLine + "--------- " + localpathandname + " -----------")
-            'Debug.Print("------------------------------------------------------")
-            Dim nimdb2 As New IMDB
-            nimdb2.credits = "ERROR"
-            Return nimdb2
-        End Try
-    End Function
-    Public Function imdbparse(ByRef imdbid As String) As IMDB
-        'get imdbid data using imdbid
-        Dim imdbtxt As String = getimdbbyid(imdbid + "/")
-        'get full plot data useing imdbid
-        Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
-        'create new IMDB object
-        Dim nimdb As New IMDB
-        nimdb.id = imdbid
-        Debug.Print("Function:imdbparse - ID is: " + nimdb.id)
+    '        Return nimdb
+    '    Catch ex As Exception
+    '        Debug.Print(vbNewLine)
+    '        ' Debug.Print("------------------------------------------------------")
+    '        'Debug.Print(ex.ToString)
+    '        Debug.Print(vbNewLine + "--------- " + localpathandname + " -----------")
+    '        'Debug.Print("------------------------------------------------------")
+    '        Dim nimdb2 As New IMDB
+    '        nimdb2.credits = "ERROR"
+    '        Return nimdb2
+    '    End Try
+    'End Function
+    'Public Function imdbparse(ByRef imdbid As String) As IMDB
+    '    'get imdbid data using imdbid
+    '    Dim imdbtxt As String = getimdbbyid(imdbid + "/")
+    '    'get full plot data useing imdbid
+    '    Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
+    '    'create new IMDB object
+    '    Dim nimdb As New IMDB
+    '    nimdb.id = imdbid
+    '    Debug.Print("Function:imdbparse - ID is: " + nimdb.id)
 
-        'studio
-        nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
+    '    'studio
+    '    nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
 
-        'title
-        nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Title is: " + nimdb.title)
+    '    'title
+    '    nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Title is: " + nimdb.title)
 
-        'original title
-        nimdb.originaltitle = clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Original Title (AKA) is: " + nimdb.originaltitle)
+    '    'original title
+    '    nimdb.originaltitle = clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Original Title (AKA) is: " + nimdb.originaltitle)
 
-        'rating 
-        nimdb.rating = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Rating is: " + nimdb.rating)
+    '    'rating 
+    '    nimdb.rating = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Rating is: " + nimdb.rating)
 
-        'year
-        nimdb.year = clb(Regex.Match(imdbtxt, "<a href=""/Sections/Years/([0-9]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Year is: " + nimdb.year)
+    '    'year
+    '    nimdb.year = clb(Regex.Match(imdbtxt, "<a href=""/Sections/Years/([0-9]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Year is: " + nimdb.year)
 
-        'top 250
-        nimdb.top250 = clb(Regex.Match(imdbtxt, "Top 250: #([0-9]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Top 250 is: " + nimdb.top250)
+    '    'top 250
+    '    nimdb.top250 = clb(Regex.Match(imdbtxt, "Top 250: #([0-9]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Top 250 is: " + nimdb.top250)
 
-        'votes
-        nimdb.votes = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(2).Value)
-        Debug.Print("Function:imdbparse - Votes is: " + nimdb.votes)
+    '    'votes
+    '    nimdb.votes = clb(Regex.Match(imdbtxt, "<b>([0-9.]+)/10</b>[^<]*<a href=""ratings"" class=""tn15more"">([0-9,]+) votes</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(2).Value)
+    '    Debug.Print("Function:imdbparse - Votes is: " + nimdb.votes)
 
-        'outline
-        nimdb.outline = clb(Regex.Match(imdbtxt, "Plot:</h5>(.*?)<a class=""tn15more", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Outline is: " + nimdb.outline)
+    '    'outline
+    '    nimdb.outline = clb(Regex.Match(imdbtxt, "Plot:</h5>(.*?)<a class=""tn15more", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Outline is: " + nimdb.outline)
 
-        'plot 
-        nimdb.plot = clb(Regex.Match(imdbplottxt, "<p class=.plotpar.>(.*?)<i>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Plot is: " + nimdb.plot)
+    '    'plot 
+    '    nimdb.plot = clb(Regex.Match(imdbplottxt, "<p class=.plotpar.>(.*?)<i>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Plot is: " + nimdb.plot)
 
-        'tagline
-        nimdb.tagline = clb(Regex.Match(imdbtxt, "<h5>Tagline:</h5>([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Tagline is: " + nimdb.tagline)
+    '    'tagline
+    '    nimdb.tagline = clb(Regex.Match(imdbtxt, "<h5>Tagline:</h5>([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Tagline is: " + nimdb.tagline)
 
-        'runtime
-        nimdb.runtime = clb(Regex.Match(imdbtxt, "<h5>Runtime:</h5>[^0-9]*([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - Runtime is: " + nimdb.runtime)
+    '    'runtime
+    '    nimdb.runtime = clb(Regex.Match(imdbtxt, "<h5>Runtime:</h5>[^0-9]*([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - Runtime is: " + nimdb.runtime)
 
-        'mpaa
-        nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
-        Debug.Print("Function:imdbparse - MPAA is: " + nimdb.mpaa)
+    '    'mpaa
+    '    nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+    '    Debug.Print("Function:imdbparse - MPAA is: " + nimdb.mpaa)
 
-        'Certification 
-        Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-        Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
-        While MatchResultsR.Success
-            'US only option, remove if statment to list all
-            If MatchResultsR.Groups(1).Value.Contains("USA") Then
-                nimdb.certification += MatchResultsR.Groups(1).Value
-                MatchResultsR = MatchResultsR.NextMatch()
-            Else
-                MatchResultsR = MatchResultsR.NextMatch()
-            End If
+    '    'Certification 
+    '    Dim RegexObjR As New Regex("<a href=""/List\?certificates=[^""]*"">([^<]*)</a>[^<]*(<i>([^<]*)</i>)?", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '    Dim MatchResultsR As Match = RegexObjR.Match(imdbtxt)
+    '    While MatchResultsR.Success
+    '        'US only option, remove if statment to list all
+    '        If MatchResultsR.Groups(1).Value.Contains("USA") Then
+    '            nimdb.certification += MatchResultsR.Groups(1).Value
+    '            MatchResultsR = MatchResultsR.NextMatch()
+    '        Else
+    '            MatchResultsR = MatchResultsR.NextMatch()
+    '        End If
 
-        End While
-        nimdb.certification = clb(nimdb.certification)
+    '    End While
+    '    nimdb.certification = clb(nimdb.certification)
 
-        'playcount
-        nimdb.playcount = ""
-        Debug.Print("Function:imdbparse - Playcount is: " + nimdb.playcount)
+    '    'playcount
+    '    nimdb.playcount = ""
+    '    Debug.Print("Function:imdbparse - Playcount is: " + nimdb.playcount)
 
-        'watched
-        nimdb.watched = ""
-        Debug.Print("Function:imdbparse - Watched is: " + nimdb.watched)
+    '    'watched
+    '    nimdb.watched = ""
+    '    Debug.Print("Function:imdbparse - Watched is: " + nimdb.watched)
 
-        'filenameandpath
-        nimdb.filenameandpath = ""
-        Debug.Print("Function:imdbparse - Filenameandpath is: " + nimdb.filenameandpath)
+    '    'filenameandpath
+    '    nimdb.filenameandpath = ""
+    '    Debug.Print("Function:imdbparse - Filenameandpath is: " + nimdb.filenameandpath)
 
-        'trailer
-        nimdb.trailer = ""
-        Debug.Print("Function:imdbparse - Trailer is: " + nimdb.trailer)
+    '    'trailer
+    '    nimdb.trailer = ""
+    '    Debug.Print("Function:imdbparse - Trailer is: " + nimdb.trailer)
 
-        'genre
-        Try
-            Dim RegexObjG As New Regex("/Sections/Genres/[^/]*/"">([^<]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-            Dim MatchResultsG As Match = RegexObjG.Match(imdbtxt)
-            While MatchResultsG.Success
-                'Debug.Print("DEBUG: " + MatchResultsG.Groups("gn").Value.ToString)
-                nimdb.genre += MatchResultsG.Groups(1).Value + " / "
-                MatchResultsG = MatchResultsG.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-        End Try
-        If nimdb.genre = Nothing Then
-            nimdb.genre = "None / "
-        End If
-        If nimdb.genre.Length > 4 Then
-            nimdb.genre = Strings.Left(nimdb.genre, nimdb.genre.Length - 3)
-        End If
-        nimdb.genre = nimdb.genre
-        Debug.Print("Function:imdbparse - Genre is: " + nimdb.genre)
-        nimdb.genre = clb(nimdb.genre)
+    '    'genre
+    '    Try
+    '        Dim RegexObjG As New Regex("/Sections/Genres/[^/]*/"">([^<]*)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '        Dim MatchResultsG As Match = RegexObjG.Match(imdbtxt)
+    '        While MatchResultsG.Success
+    '            'Debug.Print("DEBUG: " + MatchResultsG.Groups("gn").Value.ToString)
+    '            nimdb.genre += MatchResultsG.Groups(1).Value + " / "
+    '            MatchResultsG = MatchResultsG.NextMatch()
+    '        End While
+    '    Catch ex As ArgumentException
+    '        'Syntax error in the regular expression
+    '    End Try
+    '    If nimdb.genre = Nothing Then
+    '        nimdb.genre = "None / "
+    '    End If
+    '    If nimdb.genre.Length > 4 Then
+    '        nimdb.genre = Strings.Left(nimdb.genre, nimdb.genre.Length - 3)
+    '    End If
+    '    nimdb.genre = nimdb.genre
+    '    Debug.Print("Function:imdbparse - Genre is: " + nimdb.genre)
+    '    nimdb.genre = clb(nimdb.genre)
 
-        'credits
-        nimdb.credits = ""
-        Debug.Print("Function:imdbparse - Credits is: " + nimdb.credits)
+    '    'credits
+    '    nimdb.credits = ""
+    '    Debug.Print("Function:imdbparse - Credits is: " + nimdb.credits)
 
-        'director
-        'get initial text for parse or it will grab other names that are not directors
-        Dim tempdirector As String = Regex.Match(imdbtxt, "<h5>Direct.*?</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
-        Try
-            Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-            Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
-            While MatchResultsD.Success
-                nimdb.director += MatchResultsD.Groups(1).Value + " / "
-                MatchResultsD = MatchResultsD.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-        End Try
-        If nimdb.director = Nothing Then
-            nimdb.director = "N/A / "
-        End If
-        If nimdb.director.Length > 4 Then 'Strip out the "space forwardslash space" from the end
-            nimdb.director = Strings.Left(nimdb.director, nimdb.director.Length - 3)
-        End If
-        nimdb.director = clb(nimdb.director)
-        Debug.Print("Function:imdbparse - Director is: " + nimdb.director)
+    '    'director
+    '    'get initial text for parse or it will grab other names that are not directors
+    '    Dim tempdirector As String = Regex.Match(imdbtxt, "<h5>Direct.*?</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
+    '    Try
+    '        Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '        Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
+    '        While MatchResultsD.Success
+    '            nimdb.director += MatchResultsD.Groups(1).Value + " / "
+    '            MatchResultsD = MatchResultsD.NextMatch()
+    '        End While
+    '    Catch ex As ArgumentException
+    '        'Syntax error in the regular expression
+    '    End Try
+    '    If nimdb.director = Nothing Then
+    '        nimdb.director = "N/A / "
+    '    End If
+    '    If nimdb.director.Length > 4 Then 'Strip out the "space forwardslash space" from the end
+    '        nimdb.director = Strings.Left(nimdb.director, nimdb.director.Length - 3)
+    '    End If
+    '    nimdb.director = clb(nimdb.director)
+    '    Debug.Print("Function:imdbparse - Director is: " + nimdb.director)
 
-        'actor
-        Dim tempactor As String = Regex.Match(imdbtxt, "<table class=""cast"">(.*?)</table>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
-        'Dim secondsearch As String = "<actor><thumb>\1_SX"
-        Try
-            Debug.Print("Function:imdbparse - actor parse starting")
-            Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-            'Dim RegexObjA As New Regex("<img src=""(.*?)"" width.*?<a href=""/name/nm.*?/"">(.*?)</a>.*?<a href=""/character/.*?"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-            Debug.Print("actor regex object started")
-            Dim MatchResultsA As Match = RegexObjA.Match(tempactor)
-            Debug.Print("match results defined")
-            While MatchResultsA.Success
-                Debug.Print("match results hit for actor, parse to field data")
-                'For Each dude In tmov.Actors
-                '    Dim tactor As New Actor
-                '    tactor.Name = dude.Name
-                '    tactor.Role = dude.Role
-                '    tactor.Thumb = dude.Thumb
-                '    tmovie.pactor.Add(tactor)
-                'Next
-                Dim tActor As New movieinfoplus.mip.mov.Actor
-                tActor.Thumb = MatchResultsA.Groups(1).Value
-                Debug.Print(tActor.Thumb)
-                tActor.Name = MatchResultsA.Groups(2).Value
-                Debug.Print(tActor.Name)
-                tActor.Role = MatchResultsA.Groups(3).Value
-                Debug.Print(tActor.Role)
-                For Each dudet In nimdb.Actors
-                    Debug.Print(dudet.ToString)
-                Next
-                nimdb.Actors.Add(tActor)
-                MatchResultsA = MatchResultsA.NextMatch()
-            End While
-            Debug.Print("Function:imdbparse - actor parse completed sucessfully")
-        Catch ex As ArgumentException
-            'Syntax error in the regular expression
-            Debug.Print("Function:imdbparse - Error in Regex" + ex.ToString)
-        End Try
-        tempactor = ""
-        Return nimdb
-    End Function
+    '    'actor
+    '    Dim tempactor As String = Regex.Match(imdbtxt, "<table class=""cast"">(.*?)</table>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
+    '    'Dim secondsearch As String = "<actor><thumb>\1_SX"
+    '    Try
+    '        Debug.Print("Function:imdbparse - actor parse starting")
+    '        Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '        'Dim RegexObjA As New Regex("<img src=""(.*?)"" width.*?<a href=""/name/nm.*?/"">(.*?)</a>.*?<a href=""/character/.*?"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+    '        Debug.Print("actor regex object started")
+    '        Dim MatchResultsA As Match = RegexObjA.Match(tempactor)
+    '        Debug.Print("match results defined")
+    '        While MatchResultsA.Success
+    '            Debug.Print("match results hit for actor, parse to field data")
+    '            'For Each dude In tmov.Actors
+    '            '    Dim tactor As New Actor
+    '            '    tactor.Name = dude.Name
+    '            '    tactor.Role = dude.Role
+    '            '    tactor.Thumb = dude.Thumb
+    '            '    tmovie.pactor.Add(tactor)
+    '            'Next
+    '            Dim tActor As New movieinfoplus.mip.mov.Actor
+    '            tActor.Thumb = MatchResultsA.Groups(1).Value
+    '            Debug.Print(tActor.Thumb)
+    '            tActor.Name = MatchResultsA.Groups(2).Value
+    '            Debug.Print(tActor.Name)
+    '            tActor.Role = MatchResultsA.Groups(3).Value
+    '            Debug.Print(tActor.Role)
+    '            For Each dudet In nimdb.Actors
+    '                Debug.Print(dudet.ToString)
+    '            Next
+    '            nimdb.Actors.Add(tActor)
+    '            MatchResultsA = MatchResultsA.NextMatch()
+    '        End While
+    '        Debug.Print("Function:imdbparse - actor parse completed sucessfully")
+    '    Catch ex As ArgumentException
+    '        'Syntax error in the regular expression
+    '        Debug.Print("Function:imdbparse - Error in Regex" + ex.ToString)
+    '    End Try
+    '    tempactor = ""
+    '    Return nimdb
+    'End Function
     Public Sub writeIMDBXML(ByRef IMDBITEM As IMDB, ByRef tmovie As movie, ByRef vimdbcachefolder As String, ByVal overwrite As Boolean)
         Dim id As String = tmovie.getimdbid
         Dim writefile As Boolean = False
@@ -32241,6 +32553,7 @@ Public Property [Actors]() As List(Of Actor)
         Me.genre = tmovie2.pgenre '= "" Else tmovie2.pgenre = Me.genre
         Me.id = tmovie2.pimdbnumber '= "" Else tmovie2.pimdbnumber = Me.id
         Me.mpaa = tmovie2.pmpaa '= "" Else tmovie2.pmpaa = Me.mpaa
+        Me.certification = tmovie2.certification
         Me.outline = tmovie2.pplotoutline '= "" Else tmovie2.pplotoutline = Me.outline
         Me.plot = tmovie2.pplot '= "" Else tmovie2.pplot = Me.plot
         Me.rating = tmovie2.prating '= "" Else tmovie2.prating = Me.rating
@@ -32324,6 +32637,11 @@ Public Property [Actors]() As List(Of Actor)
         If Me.trailer = Nothing Then tmovie2.ptrailer = "" Else tmovie2.ptrailer = Me.trailer
         'If Me.title = Nothing Then tmovie2.pmoviename = "" Else tmovie2.pmoviename = Me.title
         tmovie2.pstudio = Me.studio
+        If Me.studioreal Is Nothing Then
+            If Not Me.studio = Nothing Then
+                Me.studioreal = Me.studio
+            End If
+        End If
         If Me.studioreal = "" And Not Me.studio = "" Then
             tmovie2.pstudioreal = Me.studio
         Else
@@ -32972,14 +33290,14 @@ Public Property [Actors]() As List(Of Actor)
         '  End Try
         Return sid
     End Function
-    Public Sub saveimdb2(ByRef tmovie As movie, Optional ByVal writemovienfo As Boolean = False, Optional ByVal writemovienamedotnfo As Boolean = False)
+    Public Sub saveimdb2(ByRef tmovie As movie, Optional ByVal writemovienfo As Boolean = False, Optional ByVal writemovienamedotnfo As Boolean = False, Optional ByVal keepthetag As Boolean = False)
 
 
         Dim nm As New Mov 'new movie class for xbmc
         If Not tmovie.peditedmoviename = "" Then
-            nm.Title = tmovie.peditedmoviename
+            nm.Title = cleanimdbdata(tmovie.peditedmoviename)
         Else
-            nm.Title = tmovie.pmoviename
+            nm.Title = cleanimdbdata(tmovie.pmoviename)
         End If
         ' nm.Title = tmovie.moviename
         nm.Title = cleanimdbdata(nm.Title)
@@ -32992,7 +33310,7 @@ Public Property [Actors]() As List(Of Actor)
         nm.Tagline = tmovie.ptagline
         nm.Runtime = tmovie.pruntime
         nm.Thumb = ""
-
+        nm.Certification = tmovie.pcertification
 
         'TMDB Fanart update - beta 2
         nm.Fanart.Url = "http://www.themoviedb.org/"
@@ -33019,10 +33337,10 @@ Public Property [Actors]() As List(Of Actor)
         End While
 
         nm.Mpaa = tmovie.pmpaa
-        If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
-            nm.Mpaa = tmovie.certification
-        End If
-
+        'If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
+        '    nm.Mpaa = tmovie.certification
+        'End If
+        nm.Certification = tmovie.pcertification
         nm.Playcount = ""
         nm.File = ""
         nm.Path = ""
@@ -33054,17 +33372,19 @@ Public Property [Actors]() As List(Of Actor)
         End If
         'add fileinfo
         nm.fileinfo = tmovie.fileinfo
-        If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
+        If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging And Not keepthetag Then
             nm.Studio = tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
             tmovie.studio = nm.Studio 'tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
         End If
-
+        If keepthetag Then
+            nm.Studio = tmovie.studio
+            nm.Studioreal = tmovie.studioreal
+        End If
         'rev 2401 generate the nfo files
         Dim nfonamepath As String = tmovie.getmoviepath + "\"
         Dim filename As String = ""
 
         If writemovienamedotnfo And Not tmovie.pfilemode Then 'maincollection.moviemode = "file" Then
-
             filename = tmovie.pmoviename + ".nfo"
             nm.writeMovXML(nfonamepath, filename)
         End If
@@ -33106,7 +33426,7 @@ Public Property [Actors]() As List(Of Actor)
             'filename = maincollection.stripstackforfilemode(maincollection.removeextension(tmovie.preservedmoviename)) + ".nfo"
         End If
         'filename = maincollection.stripstackforfilemode(maincollection.removeextension(tmovie.preservedmoviename)) + ".nfo"
-        nm.writeMovXML(nfonamepath, filename)
+        'nm.writeMovXML(nfonamepath, filename)
         If filename = "" Then Exit Sub 'no name found when parsing filename, so we exit
 
         nm.writeMovXML(nfonamepath, filename)
@@ -33130,8 +33450,8 @@ Public Property [Actors]() As List(Of Actor)
         nm = Nothing
 
     End Sub
-    Public Sub saveimdbinfomanual(ByRef tmovie As movie, ByVal vwritemovienfo As Boolean, ByVal vwritemovienamedotnfo As Boolean)
-        saveimdb2(tmovie, vwritemovienfo, vwritemovienamedotnfo)
+    Public Sub saveimdbinfomanual(ByRef tmovie As movie, ByVal vwritemovienfo As Boolean, ByVal vwritemovienamedotnfo As Boolean, Optional ByVal keeptag As Boolean = False)
+        saveimdb2(tmovie, vwritemovienfo, vwritemovienamedotnfo, keeptag)
         Exit Sub
 
         Dim nfonamepath As String = tmovie.getmoviepath + "\" + tmovie.pmoviename + ".nfo"
@@ -33547,12 +33867,19 @@ Public Class configuration
     Private cbFilterNameFileModeEverythingBefore1080i As Boolean
     Private cbFilterNameFileModeEverythingBefore1080p As Boolean
     Private cbFilterNameFileModeEverythingBeforeDash As Boolean
-
+    Private cbfilternameFileModeFilterUnderscoreDot As Boolean = True
     'movie - folder level filters
     Private cbGetTMDBPosters, cbFilter1080i, cbFilterYears, cbFilter1080p, cbFilter720p, cbFilterAvi, cbFilterBluRay, cbFilterDivx, cbFilterDVD, cbFilterH264, cbFilterHidef, cbFilterLq, cbFilterXvid As Boolean
     Private cbFilterCustom1_enabled, cbFilterCustom2_enabled, cbFilterCustom3_enabled, cbFilterCustom4_enabled, cbFilterCustom5_enabled As Boolean
     Private cbFilterCustom1, cbFilterCustom2, cbFilterCustom3, cbFilterCustom4, cbFilterCustom5 As String
-
+    Property pcbfilternameFileModeFilterUnderscoreDot() As Boolean
+        Get
+            Return cbfilternameFileModeFilterUnderscoreDot
+        End Get
+        Set(ByVal value As Boolean)
+            cbfilternameFileModeFilterUnderscoreDot = value
+        End Set
+    End Property
 
     Private cbMaxIconPerStyle, cbMaxIconsToDisplay As Integer 'int 0-23
     Private cbdlformat As Integer '0 (med), 1 (large), 2 (download)
@@ -34330,6 +34657,7 @@ Public Class configuration
     Private tv_zprivatevalue_season_posters_download_boolean As Boolean
     Private tv_zprivatevalue_season_posters_download_maxnumber_integer As Integer
     Private tv_zprivatevalue_season_usewhich_banner_poster_string As String
+    Private tv_zprivatevalue_show_usewide_false4poster As Boolean = True
 
     Private tv_zprivatevalue_episode_overwrite_tbn As Boolean '= False
     Private tv_zprivatevalue_episode_overwrite_nfo As Boolean '= False
@@ -34339,6 +34667,14 @@ Public Class configuration
     Private tv_zprivatevalue_usewgetforimages As Boolean '= True
     Private tv_zprivatevalue_wgetsleepinmilliseconds As Integer '= 100
     Private tv_pcbshows_UseStudioasRating As Boolean
+    Property prbshows_show_usewide_false4poster() As Boolean
+        Get
+            Return tv_zprivatevalue_show_usewide_false4poster
+        End Get
+        Set(ByVal value As Boolean)
+            tv_zprivatevalue_show_usewide_false4poster = value
+        End Set
+    End Property
     Property pcbshows_UseStudioasRating() As Boolean
         Get
             Return tv_pcbshows_UseStudioasRating

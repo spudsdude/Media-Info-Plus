@@ -499,11 +499,12 @@ Public Class tvshowcollection
             curdircontents = Directory.GetDirectories(item.ToString)
             For Each currentdir As String In curdircontents
                 Try
-                    If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
+                    If Not validshowdirc(currentdir) Then 'Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or Strings.Right(currentdir.ToUpper, 10) = "LOST+FOUND" Or currentdir.ToUpper.Contains("System Volume Information".ToUpper) Then
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
                     End If
+
                 Catch ex As Exception
                     Debug.Print(ex.ToString)
                 End Try
@@ -688,6 +689,11 @@ Public Class tvshowcollection
                                     If Not File.Exists(showfullpathname + "\season-all.tbn") Then
                                         File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
                                     End If
+                                    If Not File.Exists(showfullpathname + "\folder.jpg") Then
+                                        If rconf.prbshows_show_usewide_false4poster = False Then
+                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                        End If
+                                    End If
                                 End If
                             End If
                             postercounter += 1
@@ -775,7 +781,9 @@ Public Class tvshowcollection
                                 If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
                                     If seriescounter = 1 Then
                                         If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                            If rconf.prbshows_show_usewide_false4poster = True Then
+                                                File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                            End If
                                         End If
                                     End If
                                 End If
@@ -1468,7 +1476,7 @@ Public Class tvshowcollection
             curdircontents = Directory.GetDirectories(item.ToString)
             For Each currentdir As String In curdircontents
                 Try
-                    If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
+                    If Not validshowdirc(currentdir) Then 'Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
@@ -1654,6 +1662,11 @@ Public Class tvshowcollection
                                     If Not File.Exists(showfullpathname + "\season-all.tbn") Then
                                         File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
                                     End If
+                                    If Not File.Exists(showfullpathname + "\folder.jpg") Then
+                                        If rconf.prbshows_show_usewide_false4poster = False Then
+                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                        End If
+                                    End If
                                 End If
                             End If
                             postercounter += 1
@@ -1738,7 +1751,9 @@ Public Class tvshowcollection
                                 If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
                                     If seriescounter = 1 Then
                                         If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                            If rconf.prbshows_show_usewide_false4poster = True Then
+                                                File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                            End If
                                         End If
                                     End If
                                 End If
@@ -2585,7 +2600,7 @@ Public Class tvshowcollection
             curdircontents = Directory.GetDirectories(item.ToString)
             For Each currentdir As String In curdircontents
                 Try
-                    If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
+                    If Not validshowdirc(currentdir) Then 'If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
@@ -2965,7 +2980,7 @@ Public Class tvshowcollection
             curdircontents = Directory.GetDirectories(item.ToString)
             For Each currentdir As String In curdircontents
                 Try
-                    If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
+                    If Not validshowdirc(currentdir) Then 'If Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)

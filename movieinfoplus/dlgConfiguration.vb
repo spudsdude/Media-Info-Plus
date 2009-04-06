@@ -700,7 +700,7 @@ Public Class dlgConfiguration
                 End If
             Next
 
-
+            cbFileLevelFilterUnderscoreDot.Checked = trconf.pcbfilternameFileModeFilterUnderscoreDot
             '## Download Settigns
             cbMaxIconsToDisplay.SelectedIndex = trconf.pcbMaxIconsToDisplay
             cbMaxIconPerStyle.SelectedIndex = trconf.pcbMaxIconPerStyle
@@ -828,6 +828,12 @@ Public Class dlgConfiguration
             cbtv_lang.SelectedValue = trconf.tv_curlang
             cbMoviesCertificationLang.SelectedValue = trconf.pcbMoviesCertificationLang
             cbmovie_use_certification_for_mpaa.Checked = trconf.pcbmovie_use_certification_for_mpaa
+            If trconf.prbshows_show_usewide_false4poster = True Then
+                rbtvshow_show_useWideImageForShow.Checked = True
+            Else
+                rbtvshow_show_usePosterImageForShow.Checked = True
+            End If
+            
 
             'tvgs_combobox_season_banners_download_type.SelectedValue = trconf.tv_season_banners_download_type_string' = "season"
             tvgs_cb_season_posters_download.Checked = trconf.tv_season_posters_download_boolean
@@ -1094,6 +1100,11 @@ Public Class dlgConfiguration
             Next
         End If
 
+        If rbtvshow_show_useWideImageForShow.Checked Then
+            curConfig.prbshows_show_usewide_false4poster = True
+        Else
+            curConfig.prbshows_show_usewide_false4poster = False
+        End If
 
         If cbFilterCustom1.Checked Then curConfig.pcbFilterCustom1_enabled = True ' = tbCustomFilter1.Text
         If cbFilterCustom2.Checked Then curConfig.pcbFilterCustom2_enabled = True ' = tbCustomFilter2.Text
@@ -1582,5 +1593,10 @@ Public Class dlgConfiguration
     End Sub
     Private Sub cbMoviesCertificationLang_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbMoviesCertificationLang.SelectedIndexChanged
         rconf.pcbMoviesCertificationLang = cbMoviesCertificationLang.SelectedItem.ToString
+    End Sub
+
+
+    Private Sub cbFileLevelFilterUnderscoreDot_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFileLevelFilterUnderscoreDot.Click
+        rconf.pcbfilternameFileModeFilterUnderscoreDot = cbFileLevelFilterUnderscoreDot.Checked
     End Sub
 End Class

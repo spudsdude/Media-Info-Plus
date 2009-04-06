@@ -419,11 +419,22 @@ Namespace mip.mov
             'tmovie.pre = tmov.Premiered
             'tmovie.ps = tmov.Status
             tmovie.pstudio = tmov.Studio
+            If tmov.Studioreal Is Nothing Then
+                tmovie.pstudioreal = tmov.Studio
+            End If
+            If tmov.Studioreal = "" Then
+                If Not tmov.Studio Is Nothing Then
+                    If Not tmov.Studio = "" Then
+                        tmovie.pstudioreal = tmov.Studio
+                    End If
+                End If
+            End If
+            tmovie.pstudioreal = tmov.Studioreal
             'tmovie.pgenre = tmov.Album
             tmovie.ptrailer = tmov.Trailer
             'tmovie.pwre = tmov.Watched
             ' tmovie.actor = New Actors
-
+            tmovie.certification = tmov.Certification
             tmovie.fileinfo = tmov.fileinfo
 
             For Each dude In tmov.Actors

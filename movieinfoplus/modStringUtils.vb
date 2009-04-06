@@ -38,6 +38,7 @@ Module modStringUtils
         If strData Is Nothing Then Return ""
         If strData = "" Then Return ""
         strClean = Strings.Replace(strData, "&#183;", "-")
+        strClean = Strings.Replace(strClean, "&#xC6;", "Æ")
         strClean = Strings.Replace(strClean, "&#x22;", """")
         strClean = Strings.Replace(strClean, "&#x26;", "&")
         strClean = Strings.Replace(strClean, "&#x27;", "'")
@@ -269,11 +270,175 @@ Module modStringUtils
                 moviename = ResultString
             End If
         End If
+
+        Dim ResultString2 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)bluray", RegexOptions.IgnoreCase)
+            ResultString2 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString2) Then
+            moviename = ResultString2
+        End If
+
+        Dim ResultString3 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)hddvd", RegexOptions.IgnoreCase)
+            ResultString3 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString3) Then
+            moviename = ResultString3
+        End If
+
+        Dim ResultString4 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)dvd", RegexOptions.IgnoreCase)
+            ResultString4 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString4) Then
+            moviename = ResultString4
+        End If
+
         'change periods to spaces
         moviename = Strings.Replace(moviename, ".", " ")
         'change underscores to spaces
         moviename = Strings.Replace(moviename, "_", " ")
 
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeh264 Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)h264", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforex264 Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)x264", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBefore720p Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)720p", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBefore1080i Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)1080i", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBefore1080p Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)1080p", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeYear Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)[\\([]{0,1}\d{4}", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeDash Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex("(.*)-", RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
+        Dim ResultString5 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)bluray", RegexOptions.IgnoreCase)
+            ResultString5 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString5) Then
+            moviename = ResultString5
+        End If
+
+        Dim ResultString6 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)hddvd", RegexOptions.IgnoreCase)
+            ResultString6 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString6) Then
+            moviename = ResultString6
+        End If
+
+        Dim ResultString7 As String = ""
+        Try
+            Dim RegexObjDate As New Regex("(.*)dvd", RegexOptions.IgnoreCase)
+            ResultString7 = RegexObjDate.Match(moviename).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Not String.IsNullOrEmpty(ResultString7) Then
+            moviename = ResultString7
+        End If
+
+        If maincollection.rconf.pcbfilternameFileModeFilterUnderscoreDot Then
+            'change periods to spaces
+            moviename = Strings.Replace(moviename, ".", " ")
+            'change underscores to spaces
+            moviename = Strings.Replace(moviename, "_", " ")
+        End If
         'make sure there's not a space at the end of the name, check 3 times
         moviename = Strings.Trim(moviename)
 

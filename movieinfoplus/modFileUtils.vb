@@ -27,6 +27,8 @@ Module modFileUtils
                 Return False
             Case Strings.Right(s, 8).ToUpper = "RECYCLER"
                 Return False
+            Case Strings.Right(s, 12).ToUpper = "$RECYCLE.BIN"
+                Return False
             Case Strings.Right(s, 10).ToUpper = "LOST+FOUND"
                 Return False
             Case s.ToLower.Contains("system volume information")
@@ -35,7 +37,42 @@ Module modFileUtils
                 Return True
         End Select
     End Function
-
+    Public Function validshowdirc(ByVal s As String) As Boolean
+        Select Case True
+            Case Strings.Right(s, 3).ToLower = "cd1"
+                Return False
+            Case Strings.Right(s, 3).ToLower = "cd2"
+                Return False
+            Case Strings.Right(s, 3).ToLower = "cd3"
+                Return False
+            Case Strings.Right(s, 4).ToLower = "subs"
+                Return False
+            Case Strings.Right(s, 9).ToLower = "subtitles"
+                Return False
+            Case Strings.Right(s, 8).ToLower = "video_ts"
+                Return False
+            Case Strings.Right(s, 8).ToLower = "audio_ts"
+                Return False
+            Case Strings.Right(s, 7).ToLower = "trailer"
+                Return False
+            Case Strings.Right(s, 15).ToLower = "temporary files"
+                Return False
+            Case Strings.Right(s, 8).ToLower = "(noscan)"
+                Return False
+            Case Strings.Right(s, 6).ToLower = "sample"
+                Return False
+            Case Strings.Right(s, 8).ToUpper = "RECYCLER"
+                Return False
+            Case Strings.Right(s, 12).ToUpper = "$RECYCLE.BIN"
+                Return False
+            Case Strings.Right(s, 10).ToUpper = "LOST+FOUND"
+                Return False
+            Case s.ToLower.Contains("system volume information")
+                Return False
+            Case Else
+                Return True
+        End Select
+    End Function
     Private Function getFileSizeExact(ByVal vFile As String) As Double
         'Dim curFile As FileInfo
         Dim curfile As FileInfo = My.Computer.FileSystem.GetFileInfo(vFile)

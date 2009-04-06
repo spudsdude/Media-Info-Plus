@@ -150,7 +150,7 @@ Module modNfoData
 
             If workonline = True Then 'download mode
                 Debug.Print("checking cache for imdb info")
-                If File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
+                If File.Exists(maincollection.rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
                     'maincollection.lblPbar.Text = " __-- XML already in Cache: IMDB Information for " + tmovie.getmovienamaincollection.ToString + "--__ "
                     'do nothing yet, nfo exsists -- add load nfo code here as well as the option to overwrite nfos in gui
                     Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
@@ -197,6 +197,7 @@ Module modNfoData
 
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
+            pmname = Strings.Replace(pmname, "&", "&amp;")
             Dim baseurlsiid As String = "http://akas.imdb.com/find?s=all&q=" + pmname + "+ &x=0&y=0"
             'Dim foundimdbid, retid, retyr As String
             Dim s As String

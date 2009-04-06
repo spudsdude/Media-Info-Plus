@@ -174,24 +174,27 @@ Partial Class dlgConfiguration
         Me.klblTVBannersSection = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tvgs_cb_season_banners_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.kgSettingsTvShow = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.kgTvShowsShowWidePoster = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.klblTVPostersSection = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.rbtvshow_show_usePosterImageForShow = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+        Me.klbltvMaxNumberOfPostersToDownload = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.rbtvshow_show_useWideImageForShow = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+        Me.tvgs_cb_tvshow_posters_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.tvgs_cb_tvshow_wideicon_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+        Me.tvgs_knud_tvshow_posters_download_maxnumber = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
+        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
         Me.tvgs_cb_tvshow_nfo_overwrite = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.tvgs_cb_tvshow_fanart_display = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.KryptonLabel4 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.klblFanartToApplylbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.klblTvShowSettingsLbl = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
         Me.klblTVFanartSection = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-        Me.KryptonLabel2 = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tvgs_combobox_tvshow_fanart_download_size = New ComponentFactory.Krypton.Toolkit.KryptonComboBox
-        Me.tvgs_knud_tvshow_posters_download_maxnumber = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
-        Me.tvgs_cb_tvshow_wideicon_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
-        Me.klblTVPostersSection = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.tvgs_cb_tvshow_fanart_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.tvgs_combobox_tvshow_fanart_toapply_whatsize = New ComponentFactory.Krypton.Toolkit.KryptonComboBox
         Me.klbltvmaxtvfanarttodownload = New ComponentFactory.Krypton.Toolkit.KryptonLabel
-        Me.tvgs_cb_tvshow_posters_download = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.tvgs_knud_tvshow_fanart_download_maxnumber = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
-        Me.klbltvMaxNumberOfPostersToDownload = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.kgShowsMI = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.getMediaImagesShowsInsert = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.getMediaImagesShowsInlay = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -359,6 +362,10 @@ Partial Class dlgConfiguration
         CType(Me.kgSettingsTvShow.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgSettingsTvShow.Panel.SuspendLayout()
         Me.kgSettingsTvShow.SuspendLayout()
+        CType(Me.kgTvShowsShowWidePoster, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kgTvShowsShowWidePoster.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kgTvShowsShowWidePoster.Panel.SuspendLayout()
+        Me.kgTvShowsShowWidePoster.SuspendLayout()
         CType(Me.kgShowsMI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgShowsMI.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgShowsMI.Panel.SuspendLayout()
@@ -626,12 +633,12 @@ Partial Class dlgConfiguration
         Me.cbShowFanart.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.cbShowFanart.Location = New System.Drawing.Point(360, 33)
         Me.cbShowFanart.Name = "cbShowFanart"
-        Me.cbShowFanart.Size = New System.Drawing.Size(262, 21)
+        Me.cbShowFanart.Size = New System.Drawing.Size(269, 21)
         Me.cbShowFanart.TabIndex = 76
-        Me.cbShowFanart.Text = "Use <MovieName>-Fanart For Background"
+        Me.cbShowFanart.Text = "Use Movie's Fanart For Background Image"
         Me.cbShowFanart.Values.ExtraText = ""
         Me.cbShowFanart.Values.Image = Nothing
-        Me.cbShowFanart.Values.Text = "Use <MovieName>-Fanart For Background"
+        Me.cbShowFanart.Values.Text = "Use Movie's Fanart For Background Image"
         '
         'klblPosterSizefolderjpg
         '
@@ -2495,24 +2502,18 @@ Partial Class dlgConfiguration
         '
         'kgSettingsTvShow.Panel
         '
+        Me.kgSettingsTvShow.Panel.Controls.Add(Me.kgTvShowsShowWidePoster)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_cb_tvshow_nfo_overwrite)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_cb_tvshow_fanart_display)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.KryptonLabel4)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.klblFanartToApplylbl)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.klblTvShowSettingsLbl)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_knud_tvshow_wideicon_download_maxnumber)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.klblTVFanartSection)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.KryptonLabel2)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_combobox_tvshow_fanart_download_size)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_knud_tvshow_posters_download_maxnumber)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_cb_tvshow_wideicon_download)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.klblTVPostersSection)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_cb_tvshow_fanart_download)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_combobox_tvshow_fanart_toapply_whatsize)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.klbltvmaxtvfanarttodownload)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_cb_tvshow_posters_download)
         Me.kgSettingsTvShow.Panel.Controls.Add(Me.tvgs_knud_tvshow_fanart_download_maxnumber)
-        Me.kgSettingsTvShow.Panel.Controls.Add(Me.klbltvMaxNumberOfPostersToDownload)
         Me.kgSettingsTvShow.Size = New System.Drawing.Size(783, 299)
         Me.kgSettingsTvShow.StateCommon.Border.Color1 = System.Drawing.Color.Silver
         Me.kgSettingsTvShow.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -2525,10 +2526,138 @@ Partial Class dlgConfiguration
         Me.kgSettingsTvShow.StateCommon.Border.Width = 2
         Me.kgSettingsTvShow.TabIndex = 10
         '
+        'kgTvShowsShowWidePoster
+        '
+        Me.kgTvShowsShowWidePoster.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
+        Me.kgTvShowsShowWidePoster.Location = New System.Drawing.Point(408, 44)
+        Me.kgTvShowsShowWidePoster.Name = "kgTvShowsShowWidePoster"
+        '
+        'kgTvShowsShowWidePoster.Panel
+        '
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.klblTVPostersSection)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.rbtvshow_show_usePosterImageForShow)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.klbltvMaxNumberOfPostersToDownload)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.rbtvshow_show_useWideImageForShow)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.tvgs_cb_tvshow_posters_download)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.tvgs_cb_tvshow_wideicon_download)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.tvgs_knud_tvshow_posters_download_maxnumber)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.KryptonLabel2)
+        Me.kgTvShowsShowWidePoster.Panel.Controls.Add(Me.tvgs_knud_tvshow_wideicon_download_maxnumber)
+        Me.kgTvShowsShowWidePoster.Size = New System.Drawing.Size(299, 228)
+        Me.kgTvShowsShowWidePoster.TabIndex = 24
+        '
+        'klblTVPostersSection
+        '
+        Me.klblTVPostersSection.Dock = System.Windows.Forms.DockStyle.Top
+        Me.klblTVPostersSection.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
+        Me.klblTVPostersSection.Location = New System.Drawing.Point(0, 0)
+        Me.klblTVPostersSection.Name = "klblTVPostersSection"
+        Me.klblTVPostersSection.Size = New System.Drawing.Size(287, 21)
+        Me.klblTVPostersSection.TabIndex = 13
+        Me.klblTVPostersSection.Text = "Wide Images and Posters"
+        Me.klblTVPostersSection.Values.ExtraText = ""
+        Me.klblTVPostersSection.Values.Image = Nothing
+        Me.klblTVPostersSection.Values.Text = "Wide Images and Posters"
+        '
+        'rbtvshow_show_usePosterImageForShow
+        '
+        Me.rbtvshow_show_usePosterImageForShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.rbtvshow_show_usePosterImageForShow.Location = New System.Drawing.Point(26, 194)
+        Me.rbtvshow_show_usePosterImageForShow.Name = "rbtvshow_show_usePosterImageForShow"
+        Me.rbtvshow_show_usePosterImageForShow.Size = New System.Drawing.Size(205, 21)
+        Me.rbtvshow_show_usePosterImageForShow.TabIndex = 23
+        Me.rbtvshow_show_usePosterImageForShow.Text = "Use Poster Image for the Show"
+        Me.rbtvshow_show_usePosterImageForShow.Values.ExtraText = ""
+        Me.rbtvshow_show_usePosterImageForShow.Values.Image = Nothing
+        Me.rbtvshow_show_usePosterImageForShow.Values.Text = "Use Poster Image for the Show"
+        '
+        'klbltvMaxNumberOfPostersToDownload
+        '
+        Me.klbltvMaxNumberOfPostersToDownload.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.klbltvMaxNumberOfPostersToDownload.Location = New System.Drawing.Point(64, 74)
+        Me.klbltvMaxNumberOfPostersToDownload.Name = "klbltvMaxNumberOfPostersToDownload"
+        Me.klbltvMaxNumberOfPostersToDownload.Size = New System.Drawing.Size(228, 21)
+        Me.klbltvMaxNumberOfPostersToDownload.TabIndex = 7
+        Me.klbltvMaxNumberOfPostersToDownload.Text = "How many posters should I download?"
+        Me.klbltvMaxNumberOfPostersToDownload.Values.ExtraText = ""
+        Me.klbltvMaxNumberOfPostersToDownload.Values.Image = Nothing
+        Me.klbltvMaxNumberOfPostersToDownload.Values.Text = "How many posters should I download?"
+        '
+        'rbtvshow_show_useWideImageForShow
+        '
+        Me.rbtvshow_show_useWideImageForShow.Checked = True
+        Me.rbtvshow_show_useWideImageForShow.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.rbtvshow_show_useWideImageForShow.Location = New System.Drawing.Point(26, 167)
+        Me.rbtvshow_show_useWideImageForShow.Name = "rbtvshow_show_useWideImageForShow"
+        Me.rbtvshow_show_useWideImageForShow.Size = New System.Drawing.Size(198, 21)
+        Me.rbtvshow_show_useWideImageForShow.TabIndex = 22
+        Me.rbtvshow_show_useWideImageForShow.Text = "Use Wide Image for the Show"
+        Me.rbtvshow_show_useWideImageForShow.Values.ExtraText = ""
+        Me.rbtvshow_show_useWideImageForShow.Values.Image = Nothing
+        Me.rbtvshow_show_useWideImageForShow.Values.Text = "Use Wide Image for the Show"
+        '
+        'tvgs_cb_tvshow_posters_download
+        '
+        Me.tvgs_cb_tvshow_posters_download.Checked = True
+        Me.tvgs_cb_tvshow_posters_download.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.tvgs_cb_tvshow_posters_download.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.tvgs_cb_tvshow_posters_download.Location = New System.Drawing.Point(19, 42)
+        Me.tvgs_cb_tvshow_posters_download.Name = "tvgs_cb_tvshow_posters_download"
+        Me.tvgs_cb_tvshow_posters_download.Size = New System.Drawing.Size(179, 21)
+        Me.tvgs_cb_tvshow_posters_download.TabIndex = 4
+        Me.tvgs_cb_tvshow_posters_download.Text = "Download TV Show Posters"
+        Me.tvgs_cb_tvshow_posters_download.Values.ExtraText = ""
+        Me.tvgs_cb_tvshow_posters_download.Values.Image = Nothing
+        Me.tvgs_cb_tvshow_posters_download.Values.Text = "Download TV Show Posters"
+        '
+        'tvgs_cb_tvshow_wideicon_download
+        '
+        Me.tvgs_cb_tvshow_wideicon_download.Checked = True
+        Me.tvgs_cb_tvshow_wideicon_download.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.tvgs_cb_tvshow_wideicon_download.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.tvgs_cb_tvshow_wideicon_download.Location = New System.Drawing.Point(24, 104)
+        Me.tvgs_cb_tvshow_wideicon_download.Name = "tvgs_cb_tvshow_wideicon_download"
+        Me.tvgs_cb_tvshow_wideicon_download.Size = New System.Drawing.Size(202, 21)
+        Me.tvgs_cb_tvshow_wideicon_download.TabIndex = 14
+        Me.tvgs_cb_tvshow_wideicon_download.Text = "Download TV Show Wide Icons"
+        Me.tvgs_cb_tvshow_wideicon_download.Values.ExtraText = ""
+        Me.tvgs_cb_tvshow_wideicon_download.Values.Image = Nothing
+        Me.tvgs_cb_tvshow_wideicon_download.Values.Text = "Download TV Show Wide Icons"
+        '
+        'tvgs_knud_tvshow_posters_download_maxnumber
+        '
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.Location = New System.Drawing.Point(17, 71)
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.Name = "tvgs_knud_tvshow_posters_download_maxnumber"
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.Size = New System.Drawing.Size(43, 33)
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.TabIndex = 11
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.UseMnemonic = False
+        Me.tvgs_knud_tvshow_posters_download_maxnumber.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        '
+        'KryptonLabel2
+        '
+        Me.KryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.KryptonLabel2.Location = New System.Drawing.Point(64, 134)
+        Me.KryptonLabel2.Name = "KryptonLabel2"
+        Me.KryptonLabel2.Size = New System.Drawing.Size(243, 21)
+        Me.KryptonLabel2.TabIndex = 15
+        Me.KryptonLabel2.Text = "How many wide icons should I download?"
+        Me.KryptonLabel2.Values.ExtraText = ""
+        Me.KryptonLabel2.Values.Image = Nothing
+        Me.KryptonLabel2.Values.Text = "How many wide icons should I download?"
+        '
+        'tvgs_knud_tvshow_wideicon_download_maxnumber
+        '
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Location = New System.Drawing.Point(19, 131)
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Name = "tvgs_knud_tvshow_wideicon_download_maxnumber"
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Size = New System.Drawing.Size(43, 33)
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.TabIndex = 16
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.UseMnemonic = False
+        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Value = New Decimal(New Integer() {8, 0, 0, 0})
+        '
         'tvgs_cb_tvshow_nfo_overwrite
         '
         Me.tvgs_cb_tvshow_nfo_overwrite.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.tvgs_cb_tvshow_nfo_overwrite.Location = New System.Drawing.Point(270, 248)
+        Me.tvgs_cb_tvshow_nfo_overwrite.Location = New System.Drawing.Point(208, 248)
         Me.tvgs_cb_tvshow_nfo_overwrite.Name = "tvgs_cb_tvshow_nfo_overwrite"
         Me.tvgs_cb_tvshow_nfo_overwrite.Size = New System.Drawing.Size(198, 21)
         Me.tvgs_cb_tvshow_nfo_overwrite.TabIndex = 21
@@ -2554,7 +2683,7 @@ Partial Class dlgConfiguration
         'KryptonLabel4
         '
         Me.KryptonLabel4.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel4.Location = New System.Drawing.Point(68, 167)
+        Me.KryptonLabel4.Location = New System.Drawing.Point(68, 157)
         Me.KryptonLabel4.Name = "KryptonLabel4"
         Me.KryptonLabel4.Size = New System.Drawing.Size(223, 21)
         Me.KryptonLabel4.TabIndex = 19
@@ -2567,7 +2696,7 @@ Partial Class dlgConfiguration
         '
         Me.klblFanartToApplylbl.Enabled = False
         Me.klblFanartToApplylbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblFanartToApplylbl.Location = New System.Drawing.Point(68, 213)
+        Me.klblFanartToApplylbl.Location = New System.Drawing.Point(68, 201)
         Me.klblFanartToApplylbl.Name = "klblFanartToApplylbl"
         Me.klblFanartToApplylbl.Size = New System.Drawing.Size(319, 21)
         Me.klblFanartToApplylbl.TabIndex = 18
@@ -2589,15 +2718,6 @@ Partial Class dlgConfiguration
         Me.klblTvShowSettingsLbl.Values.Image = Nothing
         Me.klblTvShowSettingsLbl.Values.Text = "TV Show Settings (Per Show)"
         '
-        'tvgs_knud_tvshow_wideicon_download_maxnumber
-        '
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Location = New System.Drawing.Point(464, 194)
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Name = "tvgs_knud_tvshow_wideicon_download_maxnumber"
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Size = New System.Drawing.Size(43, 33)
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.TabIndex = 16
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.UseMnemonic = False
-        Me.tvgs_knud_tvshow_wideicon_download_maxnumber.Value = New Decimal(New Integer() {8, 0, 0, 0})
-        '
         'klblTVFanartSection
         '
         Me.klblTVFanartSection.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
@@ -2610,18 +2730,6 @@ Partial Class dlgConfiguration
         Me.klblTVFanartSection.Values.Image = Nothing
         Me.klblTVFanartSection.Values.Text = "Fanart / Background Image"
         '
-        'KryptonLabel2
-        '
-        Me.KryptonLabel2.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.KryptonLabel2.Location = New System.Drawing.Point(509, 205)
-        Me.KryptonLabel2.Name = "KryptonLabel2"
-        Me.KryptonLabel2.Size = New System.Drawing.Size(243, 21)
-        Me.KryptonLabel2.TabIndex = 15
-        Me.KryptonLabel2.Text = "How many wide icons should I download?"
-        Me.KryptonLabel2.Values.ExtraText = ""
-        Me.KryptonLabel2.Values.Image = Nothing
-        Me.KryptonLabel2.Values.Text = "How many wide icons should I download?"
-        '
         'tvgs_combobox_tvshow_fanart_download_size
         '
         Me.tvgs_combobox_tvshow_fanart_download_size.DropDownWidth = 108
@@ -2632,41 +2740,6 @@ Partial Class dlgConfiguration
         Me.tvgs_combobox_tvshow_fanart_download_size.Size = New System.Drawing.Size(62, 34)
         Me.tvgs_combobox_tvshow_fanart_download_size.TabIndex = 7
         Me.tvgs_combobox_tvshow_fanart_download_size.Text = "All"
-        '
-        'tvgs_knud_tvshow_posters_download_maxnumber
-        '
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.Location = New System.Drawing.Point(464, 121)
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.Name = "tvgs_knud_tvshow_posters_download_maxnumber"
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.Size = New System.Drawing.Size(43, 33)
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.TabIndex = 11
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.UseMnemonic = False
-        Me.tvgs_knud_tvshow_posters_download_maxnumber.Value = New Decimal(New Integer() {8, 0, 0, 0})
-        '
-        'tvgs_cb_tvshow_wideicon_download
-        '
-        Me.tvgs_cb_tvshow_wideicon_download.Checked = True
-        Me.tvgs_cb_tvshow_wideicon_download.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.tvgs_cb_tvshow_wideicon_download.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.tvgs_cb_tvshow_wideicon_download.Location = New System.Drawing.Point(469, 167)
-        Me.tvgs_cb_tvshow_wideicon_download.Name = "tvgs_cb_tvshow_wideicon_download"
-        Me.tvgs_cb_tvshow_wideicon_download.Size = New System.Drawing.Size(202, 21)
-        Me.tvgs_cb_tvshow_wideicon_download.TabIndex = 14
-        Me.tvgs_cb_tvshow_wideicon_download.Text = "Download TV Show Wide Icons"
-        Me.tvgs_cb_tvshow_wideicon_download.Values.ExtraText = ""
-        Me.tvgs_cb_tvshow_wideicon_download.Values.Image = Nothing
-        Me.tvgs_cb_tvshow_wideicon_download.Values.Text = "Download TV Show Wide Icons"
-        '
-        'klblTVPostersSection
-        '
-        Me.klblTVPostersSection.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klblTVPostersSection.Location = New System.Drawing.Point(464, 44)
-        Me.klblTVPostersSection.Name = "klblTVPostersSection"
-        Me.klblTVPostersSection.Size = New System.Drawing.Size(114, 21)
-        Me.klblTVPostersSection.TabIndex = 13
-        Me.klblTVPostersSection.Text = "Icons and Posters"
-        Me.klblTVPostersSection.Values.ExtraText = ""
-        Me.klblTVPostersSection.Values.Image = Nothing
-        Me.klblTVPostersSection.Values.Text = "Icons and Posters"
         '
         'tvgs_cb_tvshow_fanart_download
         '
@@ -2696,7 +2769,7 @@ Partial Class dlgConfiguration
         'klbltvmaxtvfanarttodownload
         '
         Me.klbltvmaxtvfanarttodownload.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klbltvmaxtvfanarttodownload.Location = New System.Drawing.Point(49, 122)
+        Me.klbltvmaxtvfanarttodownload.Location = New System.Drawing.Point(49, 114)
         Me.klbltvmaxtvfanarttodownload.Name = "klbltvmaxtvfanarttodownload"
         Me.klbltvmaxtvfanarttodownload.Size = New System.Drawing.Size(266, 21)
         Me.klbltvmaxtvfanarttodownload.TabIndex = 6
@@ -2704,20 +2777,6 @@ Partial Class dlgConfiguration
         Me.klbltvmaxtvfanarttodownload.Values.ExtraText = ""
         Me.klbltvmaxtvfanarttodownload.Values.Image = Nothing
         Me.klbltvmaxtvfanarttodownload.Values.Text = "How many fanart images Should I download?"
-        '
-        'tvgs_cb_tvshow_posters_download
-        '
-        Me.tvgs_cb_tvshow_posters_download.Checked = True
-        Me.tvgs_cb_tvshow_posters_download.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.tvgs_cb_tvshow_posters_download.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.tvgs_cb_tvshow_posters_download.Location = New System.Drawing.Point(470, 89)
-        Me.tvgs_cb_tvshow_posters_download.Name = "tvgs_cb_tvshow_posters_download"
-        Me.tvgs_cb_tvshow_posters_download.Size = New System.Drawing.Size(179, 21)
-        Me.tvgs_cb_tvshow_posters_download.TabIndex = 4
-        Me.tvgs_cb_tvshow_posters_download.Text = "Download TV Show Posters"
-        Me.tvgs_cb_tvshow_posters_download.Values.ExtraText = ""
-        Me.tvgs_cb_tvshow_posters_download.Values.Image = Nothing
-        Me.tvgs_cb_tvshow_posters_download.Values.Text = "Download TV Show Posters"
         '
         'tvgs_knud_tvshow_fanart_download_maxnumber
         '
@@ -2727,18 +2786,6 @@ Partial Class dlgConfiguration
         Me.tvgs_knud_tvshow_fanart_download_maxnumber.TabIndex = 0
         Me.tvgs_knud_tvshow_fanart_download_maxnumber.UseMnemonic = False
         Me.tvgs_knud_tvshow_fanart_download_maxnumber.Value = New Decimal(New Integer() {8, 0, 0, 0})
-        '
-        'klbltvMaxNumberOfPostersToDownload
-        '
-        Me.klbltvMaxNumberOfPostersToDownload.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-        Me.klbltvMaxNumberOfPostersToDownload.Location = New System.Drawing.Point(511, 132)
-        Me.klbltvMaxNumberOfPostersToDownload.Name = "klbltvMaxNumberOfPostersToDownload"
-        Me.klbltvMaxNumberOfPostersToDownload.Size = New System.Drawing.Size(228, 21)
-        Me.klbltvMaxNumberOfPostersToDownload.TabIndex = 7
-        Me.klbltvMaxNumberOfPostersToDownload.Text = "How many posters should I download?"
-        Me.klbltvMaxNumberOfPostersToDownload.Values.ExtraText = ""
-        Me.klbltvMaxNumberOfPostersToDownload.Values.Image = Nothing
-        Me.klbltvMaxNumberOfPostersToDownload.Values.Text = "How many posters should I download?"
         '
         'kgShowsMI
         '
@@ -2882,7 +2929,7 @@ Partial Class dlgConfiguration
         Me.tcSettings.ForeColor = System.Drawing.Color.White
         Me.tcSettings.Location = New System.Drawing.Point(0, 0)
         Me.tcSettings.Name = "tcSettings"
-        Me.tcSettings.SelectedIndex = 1
+        Me.tcSettings.SelectedIndex = 2
         Me.tcSettings.Size = New System.Drawing.Size(821, 618)
         Me.tcSettings.TabIndex = 88
         Me.tcSettings.UseVisualStyles = False
@@ -3265,7 +3312,6 @@ Partial Class dlgConfiguration
         '
         Me.cbFileLevelFilterUnderscoreDot.Checked = True
         Me.cbFileLevelFilterUnderscoreDot.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbFileLevelFilterUnderscoreDot.Enabled = False
         Me.cbFileLevelFilterUnderscoreDot.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.cbFileLevelFilterUnderscoreDot.Location = New System.Drawing.Point(5, 327)
         Me.cbFileLevelFilterUnderscoreDot.Name = "cbFileLevelFilterUnderscoreDot"
@@ -4220,6 +4266,11 @@ Partial Class dlgConfiguration
         Me.kgSettingsTvShow.Panel.PerformLayout()
         CType(Me.kgSettingsTvShow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgSettingsTvShow.ResumeLayout(False)
+        CType(Me.kgTvShowsShowWidePoster.Panel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgTvShowsShowWidePoster.Panel.ResumeLayout(False)
+        Me.kgTvShowsShowWidePoster.Panel.PerformLayout()
+        CType(Me.kgTvShowsShowWidePoster, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgTvShowsShowWidePoster.ResumeLayout(False)
         CType(Me.kgShowsMI.Panel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgShowsMI.Panel.ResumeLayout(False)
         Me.kgShowsMI.Panel.PerformLayout()
@@ -4566,5 +4617,8 @@ Partial Class dlgConfiguration
     Friend WithEvents cbGeneralSupportSkinBasedFlagging As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
     Friend WithEvents cbmovie_use_certification_for_mpaa As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
     Friend WithEvents cbMoviesCertificationLang As ComponentFactory.Krypton.Toolkit.KryptonComboBox
+    Friend WithEvents rbtvshow_show_usePosterImageForShow As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+    Friend WithEvents rbtvshow_show_useWideImageForShow As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+    Friend WithEvents kgTvShowsShowWidePoster As ComponentFactory.Krypton.Toolkit.KryptonGroup
 
 End Class
