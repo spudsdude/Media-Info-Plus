@@ -2194,38 +2194,38 @@ Public Class maincollection
                     Dim tempmov As New movie
                     tempmov.pimdbnumber = currentmovie.pimdbnumber
                     'clear out the cached data (this will slow things down)
-                    'If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
-                    '    Try
-                    '        File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
-                    '    Catch ex As Exception
+                    If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+                        Try
+                            File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+                        Catch ex As Exception
 
-                    '    End Try
-                    '    Try
-                    '        File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
-                    '    Catch ex As Exception
+                        End Try
+                        Try
+                            File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+                        Catch ex As Exception
 
-                    '    End Try
-                    'End If
-                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
-                    '    Try
-                    '        '\fullcredits\fullcredits
-                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
-                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
-                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
-                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
-                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
-                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
-                    '    Catch ex As Exception
-                    '        MsgBox(ex.ToString)
-                    '    End Try
-                    '    Try
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
-                    '    Catch ex As Exception
-                    '        'MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
-                    '    End Try
-                    'End If
+                        End Try
+                    End If
+                    If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
+                        Try
+                            '\fullcredits\fullcredits
+                            File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                            File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                            Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                            File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                            File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                            Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                            File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                            File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                        Catch ex As Exception
+                            MsgBox(ex.ToString)
+                        End Try
+                        Try
+                            Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
+                        Catch ex As Exception
+                            'MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
+                        End Try
+                    End If
 
 
                     If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
@@ -2291,7 +2291,7 @@ Public Class maincollection
         Dim cursettingOverwrite As Boolean = rconf.pcbOverwriteNFO
         rconf.pcbOverwriteNFO = overwritenfoTru
 
-        Dim currentmovie As movie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
+        currentmovie = CType(movies(CInt(lbMyMovies.SelectedValue)), movie)
         If currentmovie.pfilemode = True Then
             moviemode = "file"
             If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.preservedmoviename)) Then
@@ -2383,37 +2383,36 @@ Public Class maincollection
                     Dim tempmov As New movie
                     tempmov.pimdbnumber = currentmovie.pimdbnumber
                     'clear out the cached data (this will slow things down)
-                    'If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
-                    '    Try
-                    '        File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
-                    '    Catch ex As Exception
+                    If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+                        Try
+                            File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+                        Catch ex As Exception
 
-                    '    End Try
-                    '    Try
-                    '        File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
-                    '    Catch ex As Exception
+                        End Try
+                        Try
+                            File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+                        Catch ex As Exception
 
-                    '    End Try
-                    'End If
-                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
-                    '    Try
-                    '        '\fullcredits\fullcredits
+                        End Try
+                    End If
+                    ''\fullcredits\fullcredits
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits") Then
+                    '    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits") Then
                     '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
                     '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                    '    End If
+                    '    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                    'End If
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary") Then
+                    '    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary") Then
                     '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
                     '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
-                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
-                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
-                    '    Catch ex As Exception
-                    '        MsgBox(ex.ToString)
-                    '    End Try
-                    '    Try
-                    '        Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
-                    '    Catch ex As Exception
-                    '        'MsgBox("Unable to remove imdb temporary data at: " & rconf.tempfolder & currentmovie.pimdbnumber & vbNewLine & vbNewLine & ex.ToString)
-                    '    End Try
+                    '    End If
+                    '    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                    'End If
+                    'If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html") Then
+                    '    File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                    '    File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
                     'End If
 
 
@@ -17328,23 +17327,27 @@ Public Class maincollection
         'get full plot data useing imdbid
         Dim imdbplottxt As String = getimdbbyidplot(imdbid + "/plotsummary")
 
-        'get full credits page data useing imdbid
-        Dim imdbfctxt As String = getimdbbyidfullcredits(imdbid + "/fullcredits")
+        Dim fullcredits As Boolean = False
+        Dim imdbfctxt As String = ""
+        If fullcredits Then
+            'get full credits page data useing imdbid
+            imdbfctxt = getimdbbyidfullcredits(imdbid + "/fullcredits")
+        End If
 
         Dim nimdb As New IMDB
         nimdb.id = imdbid
         'Debug.Print("ID is: " + nimdb.id)
 
         'studio
-        nimdb.studio = clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+        nimdb.studio = cleanimdbdata(clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
 
         'title
-        nimdb.title = clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+        nimdb.title = cleanimdbdata(clb(Regex.Match(imdbtxt, "<title>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("Title is: " + nimdb.title)
 
         'original title
-        nimdb.originaltitle = clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+        nimdb.originaltitle = cleanimdbdata(clb(Regex.Match(imdbtxt, "<h5>Also Known As:</h5>([^<|^(]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("Original Title (AKA) is: " + nimdb.originaltitle)
 
         'rating 
@@ -17385,7 +17388,7 @@ Public Class maincollection
         'Debug.Print("Thumb is: " + nimdb.thumb)
 
         'mpaa
-        nimdb.mpaa = clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value)
+        nimdb.mpaa = cleanimdbdata(clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("MPAA is: " + nimdb.mpaa)
 
         'Certification()
@@ -17394,7 +17397,7 @@ Public Class maincollection
         While MatchResultsR.Success
             'US only option, remove if statment to list all
             If MatchResultsR.Groups(1).Value.ToLower.Contains(rconf.pcbMoviesCertificationLang.ToLower) Then
-                nimdb.certification += MatchResultsR.Groups(2).Value
+                nimdb.certification += MatchResultsR.Groups(1).Value & ":" & MatchResultsR.Groups(2).Value & " / "
                 MatchResultsR = MatchResultsR.NextMatch()
             Else
                 MatchResultsR = MatchResultsR.NextMatch()
@@ -17402,7 +17405,10 @@ Public Class maincollection
 
         End While
         If Not nimdb.certification Is Nothing Then
-            nimdb.certification = clb(nimdb.certification)
+            If Strings.Right(nimdb.certification, 3) = " / " Then
+                nimdb.certification = Strings.Left(nimdb.certification, nimdb.certification.Length - 3)
+            End If
+            nimdb.certification = cleanimdbdata(clb(nimdb.certification))
         Else
             nimdb.certification = ""
         End If
@@ -17446,35 +17452,22 @@ Public Class maincollection
         ' Debug.Print("Genre is: " + nimdb.genre)
         nimdb.genre = clb(nimdb.genre)
 
-        'credits
         Dim writersTxt As String = ""
+        'short credits
         Try
-            Dim robjWriters As New Regex("Full cast and crew for.*<table class=""cast"">", RegexOptions.Singleline)
-            writersTxt = robjWriters.Match(imdbfctxt).Value
+            Dim robjWriters As New Regex("Writer.*?:</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            writersTxt = robjWriters.Match(imdbtxt).Value
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
         If Not writersTxt = "" Then
             Try
-                Dim robjWritersDetails As New Regex("a href=""/name/nm\d{6,8}/"">(.*?)</a>.*?valign=""top"">(.*?)</td>.*?</tr>", RegexOptions.Singleline)
+                Dim robjWritersDetails As New Regex("<a href=""/name/[^>]*>([^<]*)<")
                 Dim MatchResultsName As Match = robjWritersDetails.Match(writersTxt)
                 While MatchResultsName.Success
                     Dim curwriter As String = ""
-                    curwriter += MatchResultsName.Groups(1).Value.ToString
-                    Dim curwriterDidWhat As String = ""
-                    curwriterDidWhat = MatchResultsName.Groups(2).Value.ToString
-                    curwriterDidWhat = curwriterDidWhat.Replace("&nbsp;", "")
-                    curwriterDidWhat = curwriterDidWhat.Replace("<br>", "")
-                    curwriterDidWhat = curwriterDidWhat.Replace("&amp;", "&")
-                    If Not curwriterDidWhat = "" Then curwriter += " " & curwriterDidWhat
+                    curwriter += cleanimdbdata(MatchResultsName.Groups(1).Value.ToString)
                     If Not curwriter = "" Then nimdb.credits += (curwriter & " / ")
-                    'Dim i As Integer
-                    'For i = 1 To MatchResultsName.Groups.Count
-                    '    Dim GroupObjName As Group = MatchResultsName.Groups(i)
-                    '    If GroupObjName.Success Then
-
-                    '    End If
-                    'Next
                     MatchResultsName = MatchResultsName.NextMatch()
                 End While
             Catch ex As ArgumentException
@@ -17491,7 +17484,57 @@ Public Class maincollection
             Catch ex As Exception
 
             End Try
-            
+
+        End If
+        'full credits
+
+        If fullcredits Then
+            writersTxt = ""
+            Try
+                Dim robjWriters As New Regex("Full cast and crew for.*<table class=""cast"">", RegexOptions.Singleline)
+                writersTxt = robjWriters.Match(imdbfctxt).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not writersTxt = "" Then
+                Try
+                    Dim robjWritersDetails As New Regex("a href=""/name/nm\d{6,8}/"">(.*?)</a>.*?valign=""top"">(.*?)</td>.*?</tr>", RegexOptions.Singleline)
+                    Dim MatchResultsName As Match = robjWritersDetails.Match(writersTxt)
+                    While MatchResultsName.Success
+                        Dim curwriter As String = ""
+                        curwriter += cleanimdbdata(MatchResultsName.Groups(1).Value.ToString)
+                        Dim curwriterDidWhat As String = ""
+                        curwriterDidWhat = cleanimdbdata(MatchResultsName.Groups(2).Value.ToString)
+                        curwriterDidWhat = curwriterDidWhat.Replace("&nbsp;", "")
+                        curwriterDidWhat = curwriterDidWhat.Replace("<br>", "")
+                        curwriterDidWhat = curwriterDidWhat.Replace("&amp;", "&")
+                        If Not curwriterDidWhat = "" Then curwriter += " " & curwriterDidWhat
+                        If Not curwriter = "" Then nimdb.credits += (curwriter & " / ")
+                        'Dim i As Integer
+                        'For i = 1 To MatchResultsName.Groups.Count
+                        '    Dim GroupObjName As Group = MatchResultsName.Groups(i)
+                        '    If GroupObjName.Success Then
+
+                        '    End If
+                        'Next
+                        MatchResultsName = MatchResultsName.NextMatch()
+                    End While
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+            End If
+            If Not nimdb.credits Is Nothing Then
+                Try
+                    If Not nimdb.credits = "" Then
+                        If Strings.Right(nimdb.credits, 3) = " / " Then
+                            nimdb.credits = Strings.Left(nimdb.credits, nimdb.credits.Length - 3)
+                        End If
+                    End If
+                Catch ex As Exception
+
+                End Try
+
+            End If
         End If
         'Debug.Print("Credits is: " + nimdb.credits)
 
@@ -18195,7 +18238,7 @@ Public Class maincollection
     End Sub
     Private Sub bshMovieSaveChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles bshMovieSaveChanges.Click
         If currentmovie Is Nothing Then Exit Sub
-        saveNfoFromGuiText()
+        saveNfoFromGuiText(True)
         MsgBox("Changes saved.")
         'cbNoNfoChangePrompt.Checked
     End Sub
@@ -18204,7 +18247,7 @@ Public Class maincollection
         filetofolder(currentmovie, currentmovie.getmoviepath)
         'cbNoNfoChangePrompt.Checked
     End Sub
-    Private Sub saveNfoFromGuiText()
+    Private Sub saveNfoFromGuiText(ByVal asdisplayed As Boolean)
         'checkid function no longer needed as we don't write back to the imdb information
         'Dim checkid As String = Me.tbIMDBID.Text
         'If checkid = Nothing Then
@@ -18260,7 +18303,7 @@ Public Class maincollection
         'imdbinfo.movietoimdb(currentmovie)
 
         'movietoimdb
-        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo, True) 'saves movie to nfo file
+        currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo, asdisplayed) 'saves movie to nfo file
         ' imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True) 'saves data back to xml cache of imdb items
         'imdbinfo = Nothing 'resource cleanup
         'convert to .nfo file and overwrite (reguardless of overwrite setting)
@@ -28020,7 +28063,7 @@ Public Class maincollection
                 'MsgBox(currentmovie.pgenre)
                 If Not currentmovie.pgenre = tbGenre.Text Then
                     tbGenre.Text = currentmovie.pgenre
-                    saveNfoFromGuiText()
+                    saveNfoFromGuiText(False)
                 End If
             End If
         End If
@@ -28030,9 +28073,11 @@ Public Class maincollection
             If Not currentmovie.pmoviename = "" Then
                 dlgMovieStudioSelect.prepop(currentmovie, rconf.basefolder)
                 dlgMovieStudioSelect.ShowDialog()
+                'tbStudio.Text = currentmovie.pstudio
+                tbStudioReal.Text = currentmovie.pstudioreal
                 'MsgBox(currentmovie.pgenre)
                 'If Not currentmovie.pstudio = tbStudio.Text Then
-                saveNfoFromGuiText()
+                saveNfoFromGuiText(False)
                 tbStudio.Text = currentmovie.pstudio
                 'End If
             End If
@@ -28812,7 +28857,7 @@ Public Class maincollection
 
         Dim curnonfochangprompt As Boolean = rconf.pcbNoNfoChangePrompt
         rconf.pcbNoNfoChangePrompt = True
-        saveNfoFromGuiText()
+        saveNfoFromGuiText(False)
         rconf.pcbNoNfoChangePrompt = curnonfochangprompt
         Dim checkid As String = Me.tbIMDBID.Text
         If checkid = Nothing Then
@@ -30883,7 +30928,7 @@ Public Class maincollection
                 'MsgBox(currentmovie.pgenre)
                 If Not currentmovie.pgenre = tbGenre.Text Then
                     tbGenre.Text = currentmovie.pgenre
-                    saveNfoFromGuiText()
+                    saveNfoFromGuiText(False)
                 End If
             End If
         End If
@@ -31449,7 +31494,7 @@ Public Class maincollection
         If currentmovie Is Nothing Then Exit Sub
         Dim curnonfochangprompt As Boolean = rconf.pcbNoNfoChangePrompt
         rconf.pcbNoNfoChangePrompt = True
-        saveNfoFromGuiText()
+        saveNfoFromGuiText(False)
         rconf.pcbNoNfoChangePrompt = curnonfochangprompt
         Me.tbIMDBID.Text = ""
         currentmovie.pdatafromnfo = False

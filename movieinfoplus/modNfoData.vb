@@ -194,11 +194,11 @@ Module modNfoData
         End If
 
     End Sub
-
+   
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
             pmname = Strings.Replace(pmname, "&", "&amp;")
-            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=all&q=" + pmname + "+ &x=0&y=0"
+            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=all&q=" + searchencode(pmname) + "&x=0&y=0"
             'Dim foundimdbid, retid, retyr As String
             Dim s As String
             'openpagedata

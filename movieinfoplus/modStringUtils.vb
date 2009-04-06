@@ -30,42 +30,56 @@ Module modStringUtils
         cleanedname = Strings.Replace(cleanedname, """", "")
         Return cleanedname
     End Function
+    Public Function urlencode(ByVal curstring As String) As String
+        Dim retstr As String = ""
+        retstr = System.Web.HttpUtility.HtmlEncode(curstring)
+        Return retstr
+    End Function
+    Public Function searchencode(ByVal curstring As String) As String
+        Return curstring
+        'unicode(curstring, 'iso-8859-1')
 
+        '        Dim retstr As String = ""
+        '        retstr = System.Web.HttpUtility.HtmlEncode(curstring)
+        '        Return retstr
+    End Function
     Public Function cleanimdbdata(ByVal strData As String) As String
         ' Debug.Print(strData)
-
         Dim strClean As String = ""
         If strData Is Nothing Then Return ""
         If strData = "" Then Return ""
-        strClean = Strings.Replace(strData, "&#183;", "-")
-        strClean = Strings.Replace(strClean, "&#xC6;", "Æ")
-        strClean = Strings.Replace(strClean, "&#x22;", """")
-        strClean = Strings.Replace(strClean, "&#x26;", "&")
-        strClean = Strings.Replace(strClean, "&#x27;", "'")
+        'Dim s As String
+        'Dim returnValue As String
+        strClean = System.Web.HttpUtility.HtmlDecode(strData)
+        'strClean = Strings.Replace(strClean, "&#183;", "-")
+        'strClean = Strings.Replace(strClean, "&#xC6;", "Æ")
+        'strClean = Strings.Replace(strClean, "&#x22;", """")
+        'strClean = Strings.Replace(strClean, "&#x26;", "&")
+        'strClean = Strings.Replace(strClean, "&#x27;", "'")
 
         'remove char codes
-        Try
-            Dim rObj1 As New Regex("(&#\d{1,3};)")
-            Dim mObj1 As Match = rObj1.Match(strClean)
-            While mObj1.Success
-                strClean = Strings.Replace(strClean, mObj1.Value, "")
-                mObj1 = mObj1.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            Debug.Print(ex.ToString)
-            'Syntax error in the regular expression
-        End Try
-        Try
-            Dim rObj1 As New Regex("(&#x\d{1,2};)")
-            Dim mObj1 As Match = rObj1.Match(strClean)
-            While mObj1.Success
-                strClean = Strings.Replace(strClean, mObj1.Value, "")
-                mObj1 = mObj1.NextMatch()
-            End While
-        Catch ex As ArgumentException
-            Debug.Print(ex.ToString)
-            'Syntax error in the regular expression
-        End Try
+        'Try
+        '    Dim rObj1 As New Regex("(&#\d{1,3};)")
+        '    Dim mObj1 As Match = rObj1.Match(strClean)
+        '    While mObj1.Success
+        '        strClean = Strings.Replace(strClean, mObj1.Value, "")
+        '        mObj1 = mObj1.NextMatch()
+        '    End While
+        'Catch ex As ArgumentException
+        '    Debug.Print(ex.ToString)
+        '    'Syntax error in the regular expression
+        'End Try
+        'Try
+        '    Dim rObj1 As New Regex("(&#x\d{1,2};)")
+        '    Dim mObj1 As Match = rObj1.Match(strClean)
+        '    While mObj1.Success
+        '        strClean = Strings.Replace(strClean, mObj1.Value, "")
+        '        mObj1 = mObj1.NextMatch()
+        '    End While
+        'Catch ex As ArgumentException
+        '    Debug.Print(ex.ToString)
+        '    'Syntax error in the regular expression
+        'End Try
         Try
             Dim rObj2 As New Regex("</?a.*?>")
             Dim mObj2 As Match = rObj2.Match(strClean)
