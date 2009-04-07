@@ -1359,6 +1359,7 @@ Me.kPaletteSystem = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.compo
 Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
+Me.bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -2409,7 +2410,7 @@ Me.tcPIB.Name = "tcPIB"
 Me.tcPIB.Padding = New System.Drawing.Point(9, 3)
 Me.tcPIB.SelectedIndex = 1
 Me.tcPIB.SelectedTabColor = System.Drawing.Color.DimGray
-Me.tcPIB.Size = New System.Drawing.Size(812, 727)
+Me.tcPIB.Size = New System.Drawing.Size(812, 700)
 Me.tcPIB.TabColor = System.Drawing.Color.Black
 Me.tcPIB.TabIndex = 19
 Me.tcPIB.UseVisualStyles = false
@@ -2424,7 +2425,7 @@ Me.tp1.Controls.Add(Me.lbldebug)
 Me.tp1.Location = New System.Drawing.Point(4, 25)
 Me.tp1.Name = "tp1"
 Me.tp1.Padding = New System.Windows.Forms.Padding(3)
-Me.tp1.Size = New System.Drawing.Size(804, 698)
+Me.tp1.Size = New System.Drawing.Size(804, 671)
 Me.tp1.TabIndex = 0
 Me.tp1.Text = "WideIcons"
 '
@@ -2446,7 +2447,7 @@ Me.tcWide.Name = "tcWide"
 Me.tcWide.SelectedIndex = 0
 Me.tcWide.SelectedTabColor = System.Drawing.Color.DimGray
 Me.tcWide.SelectedTabFontStyle = System.Drawing.FontStyle.Bold
-Me.tcWide.Size = New System.Drawing.Size(794, 688)
+Me.tcWide.Size = New System.Drawing.Size(794, 661)
 Me.tcWide.TabIndex = 70
 Me.tcWide.UseVisualStyles = false
 '
@@ -2493,7 +2494,7 @@ Me.tpWRSG.Controls.Add(Me.pb13)
 Me.tpWRSG.Controls.Add(Me.pb15)
 Me.tpWRSG.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSG.Name = "tpWRSG"
-Me.tpWRSG.Size = New System.Drawing.Size(786, 659)
+Me.tpWRSG.Size = New System.Drawing.Size(786, 632)
 Me.tpWRSG.TabIndex = 3
 Me.tpWRSG.Text = "Rounded Shadow Glass"
 Me.tpWRSG.UseVisualStyleBackColor = true
@@ -2984,7 +2985,7 @@ Me.tpWNS.Controls.Add(Me.pbwns36)
 Me.tpWNS.Location = New System.Drawing.Point(4, 25)
 Me.tpWNS.Name = "tpWNS"
 Me.tpWNS.Padding = New System.Windows.Forms.Padding(3)
-Me.tpWNS.Size = New System.Drawing.Size(786, 659)
+Me.tpWNS.Size = New System.Drawing.Size(786, 632)
 Me.tpWNS.TabIndex = 1
 Me.tpWNS.Text = "No Style"
 Me.tpWNS.UseVisualStyleBackColor = true
@@ -3471,7 +3472,7 @@ Me.tpWRS.Controls.Add(Me.pbwrs35)
 Me.tpWRS.Controls.Add(Me.pbwrs36)
 Me.tpWRS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRS.Name = "tpWRS"
-Me.tpWRS.Size = New System.Drawing.Size(786, 659)
+Me.tpWRS.Size = New System.Drawing.Size(786, 632)
 Me.tpWRS.TabIndex = 2
 Me.tpWRS.Text = "Rounded Shadow"
 Me.tpWRS.UseVisualStyleBackColor = true
@@ -3953,7 +3954,7 @@ Me.tpWRSS.Controls.Add(Me.pbwrsscan35)
 Me.tpWRSS.Controls.Add(Me.pbwrsscan36)
 Me.tpWRSS.Location = New System.Drawing.Point(4, 25)
 Me.tpWRSS.Name = "tpWRSS"
-Me.tpWRSS.Size = New System.Drawing.Size(786, 659)
+Me.tpWRSS.Size = New System.Drawing.Size(786, 632)
 Me.tpWRSS.TabIndex = 4
 Me.tpWRSS.Text = "Rounded Shadow Scanlines"
 '
@@ -4397,7 +4398,7 @@ Me.pbwrsscan36.TabStop = false
 Me.lbldebug.Location = New System.Drawing.Point(32, 705)
 Me.lbldebug.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
 Me.lbldebug.Name = "lbldebug"
-Me.lbldebug.Size = New System.Drawing.Size(59, 16)
+Me.lbldebug.Size = New System.Drawing.Size(64, 21)
 Me.lbldebug.TabIndex = 23
 Me.lbldebug.Text = "DebugLbl"
 Me.lbldebug.Values.ExtraText = ""
@@ -4436,7 +4437,7 @@ Me.tp5.Controls.Add(Me.spb1)
 Me.tp5.Location = New System.Drawing.Point(4, 25)
 Me.tp5.Name = "tp5"
 Me.tp5.Padding = New System.Windows.Forms.Padding(3)
-Me.tp5.Size = New System.Drawing.Size(804, 698)
+Me.tp5.Size = New System.Drawing.Size(804, 671)
 Me.tp5.TabIndex = 5
 Me.tp5.Text = "Square Icons"
 Me.tp5.UseVisualStyleBackColor = true
@@ -4642,7 +4643,7 @@ Me.tp6.Controls.Add(Me.kpBoxShots)
 Me.tp6.Location = New System.Drawing.Point(4, 25)
 Me.tp6.Name = "tp6"
 Me.tp6.Padding = New System.Windows.Forms.Padding(3)
-Me.tp6.Size = New System.Drawing.Size(804, 698)
+Me.tp6.Size = New System.Drawing.Size(804, 671)
 Me.tp6.TabIndex = 4
 Me.tp6.Text = "Box Shots"
 Me.tp6.UseVisualStyleBackColor = true
@@ -5511,7 +5512,7 @@ Me.tp4.Controls.Add(Me.tpb1)
 Me.tp4.Location = New System.Drawing.Point(4, 25)
 Me.tp4.Name = "tp4"
 Me.tp4.Padding = New System.Windows.Forms.Padding(3)
-Me.tp4.Size = New System.Drawing.Size(804, 698)
+Me.tp4.Size = New System.Drawing.Size(804, 671)
 Me.tp4.TabIndex = 3
 Me.tp4.Text = "Token Style"
 Me.tp4.UseVisualStyleBackColor = true
@@ -5639,7 +5640,7 @@ Me.tp3.Controls.Add(Me.btnGetXML)
 Me.tp3.Location = New System.Drawing.Point(4, 25)
 Me.tp3.Name = "tp3"
 Me.tp3.Padding = New System.Windows.Forms.Padding(3)
-Me.tp3.Size = New System.Drawing.Size(804, 698)
+Me.tp3.Size = New System.Drawing.Size(804, 671)
 Me.tp3.TabIndex = 2
 Me.tp3.Text = "Debug"
 Me.tp3.UseVisualStyleBackColor = true
@@ -5900,7 +5901,7 @@ Me.kgTVEpisodesGroup.Name = "kgTVEpisodesGroup"
 'kgTVEpisodesGroup.Panel
 '
 Me.kgTVEpisodesGroup.Panel.Controls.Add(Me.lbEpisodes)
-Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 96)
+Me.kgTVEpisodesGroup.Size = New System.Drawing.Size(185, 92)
 Me.kgTVEpisodesGroup.TabIndex = 81
 '
 'lbEpisodes
@@ -5910,7 +5911,7 @@ Me.lbEpisodes.ForeColor = System.Drawing.Color.Green
 Me.lbEpisodes.FormattingEnabled = true
 Me.lbEpisodes.Location = New System.Drawing.Point(0, 0)
 Me.lbEpisodes.Name = "lbEpisodes"
-Me.lbEpisodes.Size = New System.Drawing.Size(173, 82)
+Me.lbEpisodes.Size = New System.Drawing.Size(173, 69)
 Me.lbEpisodes.TabIndex = 98
 '
 'kgTVSeasonPickerGroup
@@ -5923,7 +5924,7 @@ Me.kgTVSeasonPickerGroup.Name = "kgTVSeasonPickerGroup"
 'kgTVSeasonPickerGroup.Panel
 '
 Me.kgTVSeasonPickerGroup.Panel.Controls.Add(Me.lbSeasonPicker)
-Me.kgTVSeasonPickerGroup.Size = New System.Drawing.Size(185, 31)
+Me.kgTVSeasonPickerGroup.Size = New System.Drawing.Size(185, 29)
 Me.kgTVSeasonPickerGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -5990,9 +5991,9 @@ Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(2, 2)
-Me.tcMain.SelectedIndex = 0
+Me.tcMain.SelectedIndex = 6
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
-Me.tcMain.Size = New System.Drawing.Size(822, 757)
+Me.tcMain.Size = New System.Drawing.Size(822, 730)
 Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
 Me.tcMain.TabIndex = 49
 Me.tcMain.UseVisualStyles = false
@@ -6023,7 +6024,7 @@ Me.tpcm.ForeColor = System.Drawing.Color.White
 Me.tpcm.Location = New System.Drawing.Point(4, 24)
 Me.tpcm.Margin = New System.Windows.Forms.Padding(0)
 Me.tpcm.Name = "tpcm"
-Me.tpcm.Size = New System.Drawing.Size(814, 729)
+Me.tpcm.Size = New System.Drawing.Size(814, 702)
 Me.tpcm.TabIndex = 2
 Me.tpcm.Text = "   Movie    "
 Me.tpcm.ToolTipText = "Current Selected Movie"
@@ -6039,7 +6040,7 @@ Me.khgMoviesMi.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorder
 Me.khgMoviesMi.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgMoviesMi.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgMoviesMi.HeaderVisibleSecondary = false
-Me.khgMoviesMi.Location = New System.Drawing.Point(0, 700)
+Me.khgMoviesMi.Location = New System.Drawing.Point(0, 673)
 Me.khgMoviesMi.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
 Me.khgMoviesMi.MinimumSize = New System.Drawing.Size(600, 0)
 Me.khgMoviesMi.Name = "khgMoviesMi"
@@ -6095,7 +6096,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(377, 338)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(387, 348)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6103,9 +6104,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 305)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 315)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(365, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(375, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -6669,7 +6670,7 @@ Me.lblMovieInfoEditableTitle.Values.Text = "Editable Title:"
 '
 'kbtnMoviesChangeIMDBid
 '
-Me.kbtnMoviesChangeIMDBid.Location = New System.Drawing.Point(129, 50)
+Me.kbtnMoviesChangeIMDBid.Location = New System.Drawing.Point(133, 50)
 Me.kbtnMoviesChangeIMDBid.Name = "kbtnMoviesChangeIMDBid"
 Me.kbtnMoviesChangeIMDBid.Size = New System.Drawing.Size(24, 24)
 Me.kbtnMoviesChangeIMDBid.StateCommon.Back.Image = Global.movieinfoplus.My.Resources.Resources.refresh
@@ -6777,7 +6778,7 @@ Me.lblPlotOutline.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.Norma
 Me.lblPlotOutline.Location = New System.Drawing.Point(3, 59)
 Me.lblPlotOutline.Name = "lblPlotOutline"
 Me.lblPlotOutline.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
-Me.lblPlotOutline.Size = New System.Drawing.Size(16, 72)
+Me.lblPlotOutline.Size = New System.Drawing.Size(21, 82)
 Me.lblPlotOutline.TabIndex = 75
 Me.lblPlotOutline.Text = "Plot Outline:"
 Me.lblPlotOutline.Values.ExtraText = ""
@@ -6828,7 +6829,7 @@ Me.Label18.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.Label18.Location = New System.Drawing.Point(2, 2)
 Me.Label18.Name = "Label18"
 Me.Label18.Orientation = ComponentFactory.Krypton.Toolkit.VisualOrientation.Left
-Me.Label18.Size = New System.Drawing.Size(16, 51)
+Me.Label18.Size = New System.Drawing.Size(21, 56)
 Me.Label18.TabIndex = 78
 Me.Label18.Text = "Tagline:"
 Me.Label18.Values.ExtraText = ""
@@ -6878,9 +6879,9 @@ Me.tbVotes.TabIndex = 23
 '
 Me.tbTop250.BackColor = System.Drawing.Color.Gainsboro
 Me.tbTop250.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbTop250.Location = New System.Drawing.Point(69, 76)
+Me.tbTop250.Location = New System.Drawing.Point(63, 76)
 Me.tbTop250.Name = "tbTop250"
-Me.tbTop250.Size = New System.Drawing.Size(29, 24)
+Me.tbTop250.Size = New System.Drawing.Size(35, 24)
 Me.tbTop250.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -6917,9 +6918,9 @@ Me.tbyear.TabIndex = 25
 '
 Me.tbIMDBID.BackColor = System.Drawing.Color.Gainsboro
 Me.tbIMDBID.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.tbIMDBID.Location = New System.Drawing.Point(69, 50)
+Me.tbIMDBID.Location = New System.Drawing.Point(62, 50)
 Me.tbIMDBID.Name = "tbIMDBID"
-Me.tbIMDBID.Size = New System.Drawing.Size(60, 24)
+Me.tbIMDBID.Size = New System.Drawing.Size(69, 24)
 Me.tbIMDBID.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -7848,7 +7849,7 @@ Me.gbThanks.Controls.Add(Me.kllMediaIcons)
 Me.gbThanks.Controls.Add(Me.kllTheTVDB)
 Me.gbThanks.Controls.Add(Me.kllimpawards)
 Me.gbThanks.Controls.Add(Me.kllTheMovieDB)
-Me.gbThanks.Location = New System.Drawing.Point(0, 659)
+Me.gbThanks.Location = New System.Drawing.Point(0, 632)
 Me.gbThanks.Name = "gbThanks"
 Me.gbThanks.Size = New System.Drawing.Size(553, 38)
 Me.gbThanks.TabIndex = 115
@@ -7859,9 +7860,9 @@ Me.gbThanks.Text = "Thanks to:"
 '
 Me.kllFreecovers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllFreecovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllFreecovers.Location = New System.Drawing.Point(447, 19)
+Me.kllFreecovers.Location = New System.Drawing.Point(447, 14)
 Me.kllFreecovers.Name = "kllFreecovers"
-Me.kllFreecovers.Size = New System.Drawing.Size(67, 16)
+Me.kllFreecovers.Size = New System.Drawing.Size(75, 21)
 Me.kllFreecovers.TabIndex = 105
 Me.kllFreecovers.Text = "Freecovers"
 Me.kllFreecovers.Values.ExtraText = ""
@@ -7872,9 +7873,9 @@ Me.kllFreecovers.Values.Text = "Freecovers"
 '
 Me.kllxbmc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllxbmc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllxbmc.Location = New System.Drawing.Point(6, 19)
+Me.kllxbmc.Location = New System.Drawing.Point(6, 14)
 Me.kllxbmc.Name = "kllxbmc"
-Me.kllxbmc.Size = New System.Drawing.Size(43, 16)
+Me.kllxbmc.Size = New System.Drawing.Size(46, 21)
 Me.kllxbmc.TabIndex = 100
 Me.kllxbmc.Text = "XBMC"
 Me.kllxbmc.Values.ExtraText = ""
@@ -7885,9 +7886,9 @@ Me.kllxbmc.Values.Text = "XBMC"
 '
 Me.kllMediaIcons.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllMediaIcons.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllMediaIcons.Location = New System.Drawing.Point(71, 19)
+Me.kllMediaIcons.Location = New System.Drawing.Point(71, 14)
 Me.kllMediaIcons.Name = "kllMediaIcons"
-Me.kllMediaIcons.Size = New System.Drawing.Size(71, 16)
+Me.kllMediaIcons.Size = New System.Drawing.Size(81, 21)
 Me.kllMediaIcons.TabIndex = 101
 Me.kllMediaIcons.Text = "Media Icons"
 Me.kllMediaIcons.Values.ExtraText = ""
@@ -7898,9 +7899,9 @@ Me.kllMediaIcons.Values.Text = "Media Icons"
 '
 Me.kllTheTVDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheTVDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheTVDB.Location = New System.Drawing.Point(169, 19)
+Me.kllTheTVDB.Location = New System.Drawing.Point(169, 14)
 Me.kllTheTVDB.Name = "kllTheTVDB"
-Me.kllTheTVDB.Size = New System.Drawing.Size(60, 16)
+Me.kllTheTVDB.Size = New System.Drawing.Size(66, 21)
 Me.kllTheTVDB.TabIndex = 103
 Me.kllTheTVDB.Text = "TheTVDB"
 Me.kllTheTVDB.Values.ExtraText = ""
@@ -7911,9 +7912,9 @@ Me.kllTheTVDB.Values.Text = "TheTVDB"
 '
 Me.kllimpawards.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllimpawards.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllimpawards.Location = New System.Drawing.Point(249, 19)
+Me.kllimpawards.Location = New System.Drawing.Point(249, 14)
 Me.kllimpawards.Name = "kllimpawards"
-Me.kllimpawards.Size = New System.Drawing.Size(66, 16)
+Me.kllimpawards.Size = New System.Drawing.Size(74, 21)
 Me.kllimpawards.TabIndex = 104
 Me.kllimpawards.Text = "Impawards"
 Me.kllimpawards.Values.ExtraText = ""
@@ -7924,9 +7925,9 @@ Me.kllimpawards.Values.Text = "Impawards"
 '
 Me.kllTheMovieDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheMovieDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 19)
+Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 14)
 Me.kllTheMovieDB.Name = "kllTheMovieDB"
-Me.kllTheMovieDB.Size = New System.Drawing.Size(79, 16)
+Me.kllTheMovieDB.Size = New System.Drawing.Size(87, 21)
 Me.kllTheMovieDB.TabIndex = 102
 Me.kllTheMovieDB.Text = "The MovieDB"
 Me.kllTheMovieDB.Values.ExtraText = ""
@@ -7943,7 +7944,7 @@ Me.fanartpb1.Image = Global.movieinfoplus.My.Resources.Resources.mymovies
 Me.fanartpb1.InitialImage = Nothing
 Me.fanartpb1.Location = New System.Drawing.Point(0, 0)
 Me.fanartpb1.Name = "fanartpb1"
-Me.fanartpb1.Size = New System.Drawing.Size(814, 729)
+Me.fanartpb1.Size = New System.Drawing.Size(814, 702)
 Me.fanartpb1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.fanartpb1.TabIndex = 54
 Me.fanartpb1.TabStop = false
@@ -7957,7 +7958,7 @@ Me.tptv.ForeColor = System.Drawing.Color.White
 Me.tptv.Location = New System.Drawing.Point(4, 24)
 Me.tptv.Name = "tptv"
 Me.tptv.Padding = New System.Windows.Forms.Padding(3)
-Me.tptv.Size = New System.Drawing.Size(814, 729)
+Me.tptv.Size = New System.Drawing.Size(814, 702)
 Me.tptv.TabIndex = 0
 Me.tptv.Text = "  Shows    "
 Me.tptv.ToolTipText = "Current Selected TV Show"
@@ -7986,8 +7987,8 @@ Me.TVCurrentTVRightMain.Panel1MinSize = 90
 Me.TVCurrentTVRightMain.Panel2.Controls.Add(Me.kcstvMainRightBottom)
 Me.TVCurrentTVRightMain.Panel2MinSize = 400
 Me.TVCurrentTVRightMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 723)
-Me.TVCurrentTVRightMain.SplitterDistance = 318
+Me.TVCurrentTVRightMain.Size = New System.Drawing.Size(808, 696)
+Me.TVCurrentTVRightMain.SplitterDistance = 291
 Me.TVCurrentTVRightMain.TabIndex = 7
 '
 'ksctvtoolbar
@@ -8012,7 +8013,7 @@ Me.klblTvShowName.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblTvShowName.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitlePanel
 Me.klblTvShowName.Location = New System.Drawing.Point(0, 0)
 Me.klblTvShowName.Name = "klblTvShowName"
-Me.klblTvShowName.Size = New System.Drawing.Size(150, 43)
+Me.klblTvShowName.Size = New System.Drawing.Size(150, 37)
 Me.klblTvShowName.TabIndex = 16
 Me.klblTvShowName.Text = "Click on ' Load TV Shows ' to start. Initially this may take a long time to downl"& _ 
     "oad everything."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"If more then 1 match is found, you will be prompted to select t"& _ 
@@ -8042,8 +8043,8 @@ Me.kcstvMainRightBottom.Panel1MinSize = 100
 Me.kcstvMainRightBottom.Panel2.Controls.Add(Me.ksctvMainRightBottomPortion)
 Me.kcstvMainRightBottom.Panel2MinSize = 70
 Me.kcstvMainRightBottom.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 723)
-Me.kcstvMainRightBottom.SplitterDistance = 650
+Me.kcstvMainRightBottom.Size = New System.Drawing.Size(808, 696)
+Me.kcstvMainRightBottom.SplitterDistance = 623
 Me.kcstvMainRightBottom.SplitterWidth = 3
 Me.kcstvMainRightBottom.TabIndex = 0
 '
@@ -8067,7 +8068,7 @@ Me.tvMainRightMiddle.Panel1.Controls.Add(Me.pbTVFanart)
 Me.tvMainRightMiddle.Panel1.Controls.Add(Me.kgRatingStars)
 Me.tvMainRightMiddle.Panel2Collapsed = true
 Me.tvMainRightMiddle.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 650)
+Me.tvMainRightMiddle.Size = New System.Drawing.Size(808, 623)
 Me.tvMainRightMiddle.SplitterDistance = 269
 Me.tvMainRightMiddle.TabIndex = 0
 '
@@ -8093,7 +8094,7 @@ Me.khgShowsMI.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSp
 Me.khgShowsMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.khgShowsMI.HeaderPositionPrimary = ComponentFactory.Krypton.Toolkit.VisualOrientation.Bottom
 Me.khgShowsMI.HeaderVisibleSecondary = false
-Me.khgShowsMI.Location = New System.Drawing.Point(0, 459)
+Me.khgShowsMI.Location = New System.Drawing.Point(0, 432)
 Me.khgShowsMI.Name = "khgShowsMI"
 '
 'khgShowsMI.Panel
@@ -9094,7 +9095,7 @@ Me.pbarLoadingTVShowMediaInfo.Visible = false
 '
 Me.lblpbarLoadingTVShowMediaInfo.Location = New System.Drawing.Point(88, 93)
 Me.lblpbarLoadingTVShowMediaInfo.Name = "lblpbarLoadingTVShowMediaInfo"
-Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(160, 16)
+Me.lblpbarLoadingTVShowMediaInfo.Size = New System.Drawing.Size(182, 21)
 Me.lblpbarLoadingTVShowMediaInfo.TabIndex = 2
 Me.lblpbarLoadingTVShowMediaInfo.Text = "Loading Media Information .... "
 Me.lblpbarLoadingTVShowMediaInfo.Values.ExtraText = ""
@@ -9308,7 +9309,7 @@ Me.pbTVFanart.Image = Global.movieinfoplus.My.Resources.Resources.myshows
 Me.pbTVFanart.InitialImage = Nothing
 Me.pbTVFanart.Location = New System.Drawing.Point(0, 0)
 Me.pbTVFanart.Name = "pbTVFanart"
-Me.pbTVFanart.Size = New System.Drawing.Size(808, 650)
+Me.pbTVFanart.Size = New System.Drawing.Size(808, 623)
 Me.pbTVFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbTVFanart.TabIndex = 1
 Me.pbTVFanart.TabStop = false
@@ -9532,7 +9533,7 @@ Me.kpTVShowInfo.TabIndex = 6
 Me.klblInformationlbl.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl
 Me.klblInformationlbl.Location = New System.Drawing.Point(64, 72)
 Me.klblInformationlbl.Name = "klblInformationlbl"
-Me.klblInformationlbl.Size = New System.Drawing.Size(104, 24)
+Me.klblInformationlbl.Size = New System.Drawing.Size(81, 21)
 Me.klblInformationlbl.TabIndex = 13
 Me.klblInformationlbl.Text = "Information"
 Me.klblInformationlbl.Values.ExtraText = ""
@@ -9543,7 +9544,7 @@ Me.klblInformationlbl.Values.Text = "Information"
 '
 Me.klFirstAiredlbl.Location = New System.Drawing.Point(13, 4)
 Me.klFirstAiredlbl.Name = "klFirstAiredlbl"
-Me.klFirstAiredlbl.Size = New System.Drawing.Size(65, 16)
+Me.klFirstAiredlbl.Size = New System.Drawing.Size(79, 21)
 Me.klFirstAiredlbl.TabIndex = 14
 Me.klFirstAiredlbl.Text = "First Aired:"
 Me.klFirstAiredlbl.Values.ExtraText = ""
@@ -9564,7 +9565,7 @@ Me.klbltvGenre.Values.Text = ""
 '
 Me.klblAirDaylbl.Location = New System.Drawing.Point(13, 142)
 Me.klblAirDaylbl.Name = "klblAirDaylbl"
-Me.klblAirDaylbl.Size = New System.Drawing.Size(50, 16)
+Me.klblAirDaylbl.Size = New System.Drawing.Size(58, 21)
 Me.klblAirDaylbl.TabIndex = 15
 Me.klblAirDaylbl.Text = "Air Day:"
 Me.klblAirDaylbl.Values.ExtraText = ""
@@ -9585,7 +9586,7 @@ Me.klbltvNetwork.Values.Text = ""
 '
 Me.klblAirTimelbl.Location = New System.Drawing.Point(13, 158)
 Me.klblAirTimelbl.Name = "klblAirTimelbl"
-Me.klblAirTimelbl.Size = New System.Drawing.Size(55, 16)
+Me.klblAirTimelbl.Size = New System.Drawing.Size(65, 21)
 Me.klblAirTimelbl.TabIndex = 16
 Me.klblAirTimelbl.Text = "Air Time:"
 Me.klblAirTimelbl.Values.ExtraText = ""
@@ -9606,7 +9607,7 @@ Me.klbltvRunTime.Values.Text = ""
 '
 Me.klblRunTimelbl.Location = New System.Drawing.Point(13, 20)
 Me.klblRunTimelbl.Name = "klblRunTimelbl"
-Me.klblRunTimelbl.Size = New System.Drawing.Size(56, 16)
+Me.klblRunTimelbl.Size = New System.Drawing.Size(61, 21)
 Me.klblRunTimelbl.TabIndex = 17
 Me.klblRunTimelbl.Text = "Runtime:"
 Me.klblRunTimelbl.Values.ExtraText = ""
@@ -9617,7 +9618,7 @@ Me.klblRunTimelbl.Values.Text = "Runtime:"
 '
 Me.klbltvAirTime.Location = New System.Drawing.Point(124, 158)
 Me.klbltvAirTime.Name = "klbltvAirTime"
-Me.klbltvAirTime.Size = New System.Drawing.Size(52, 16)
+Me.klbltvAirTime.Size = New System.Drawing.Size(58, 21)
 Me.klbltvAirTime.TabIndex = 22
 Me.klbltvAirTime.Text = "9:00 PM"
 Me.klbltvAirTime.Values.ExtraText = ""
@@ -9628,7 +9629,7 @@ Me.klbltvAirTime.Values.Text = "9:00 PM"
 '
 Me.klblNetworklbl.Location = New System.Drawing.Point(13, 35)
 Me.klblNetworklbl.Name = "klblNetworklbl"
-Me.klblNetworklbl.Size = New System.Drawing.Size(55, 16)
+Me.klblNetworklbl.Size = New System.Drawing.Size(64, 21)
 Me.klblNetworklbl.TabIndex = 18
 Me.klblNetworklbl.Text = "Network:"
 Me.klblNetworklbl.Values.ExtraText = ""
@@ -9639,7 +9640,7 @@ Me.klblNetworklbl.Values.Text = "Network:"
 '
 Me.klbltvAirDay.Location = New System.Drawing.Point(124, 142)
 Me.klbltvAirDay.Name = "klbltvAirDay"
-Me.klbltvAirDay.Size = New System.Drawing.Size(70, 16)
+Me.klbltvAirDay.Size = New System.Drawing.Size(77, 21)
 Me.klbltvAirDay.TabIndex = 21
 Me.klbltvAirDay.Text = "Wednesday"
 Me.klbltvAirDay.Values.ExtraText = ""
@@ -9650,7 +9651,7 @@ Me.klbltvAirDay.Values.Text = "Wednesday"
 '
 Me.klblGenrelbl.Location = New System.Drawing.Point(13, 51)
 Me.klblGenrelbl.Name = "klblGenrelbl"
-Me.klblGenrelbl.Size = New System.Drawing.Size(45, 16)
+Me.klblGenrelbl.Size = New System.Drawing.Size(49, 21)
 Me.klblGenrelbl.TabIndex = 19
 Me.klblGenrelbl.Text = "Genre:"
 Me.klblGenrelbl.Values.ExtraText = ""
@@ -9677,7 +9678,7 @@ Me.tpMusic.Controls.Add(Me.tstripMusicToolbar)
 Me.tpMusic.Controls.Add(Me.pbMusicCurFanart)
 Me.tpMusic.Location = New System.Drawing.Point(4, 24)
 Me.tpMusic.Name = "tpMusic"
-Me.tpMusic.Size = New System.Drawing.Size(814, 729)
+Me.tpMusic.Size = New System.Drawing.Size(814, 702)
 Me.tpMusic.TabIndex = 9
 Me.tpMusic.Text = "Tunes        "
 Me.tpMusic.ToolTipText = "Music Collection"
@@ -9723,7 +9724,7 @@ Me.pbMusic_CurSongImage.TabStop = false
 '
 Me.kgMusicMI.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.kgMusicMI.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.TabCustom1
-Me.kgMusicMI.Location = New System.Drawing.Point(0, 567)
+Me.kgMusicMI.Location = New System.Drawing.Point(0, 540)
 Me.kgMusicMI.Name = "kgMusicMI"
 '
 'kgMusicMI.Panel
@@ -10072,7 +10073,7 @@ Me.pbMusicCurFanart.Dock = System.Windows.Forms.DockStyle.Fill
 Me.pbMusicCurFanart.Image = Global.movieinfoplus.My.Resources.Resources.mytunes
 Me.pbMusicCurFanart.Location = New System.Drawing.Point(0, 0)
 Me.pbMusicCurFanart.Name = "pbMusicCurFanart"
-Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 729)
+Me.pbMusicCurFanart.Size = New System.Drawing.Size(814, 702)
 Me.pbMusicCurFanart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbMusicCurFanart.TabIndex = 1
 Me.pbMusicCurFanart.TabStop = false
@@ -10082,7 +10083,7 @@ Me.pbMusicCurFanart.TabStop = false
 Me.tpFCDN.Controls.Add(Me.tcFCDN)
 Me.tpFCDN.Location = New System.Drawing.Point(4, 24)
 Me.tpFCDN.Name = "tpFCDN"
-Me.tpFCDN.Size = New System.Drawing.Size(814, 729)
+Me.tpFCDN.Size = New System.Drawing.Size(814, 702)
 Me.tpFCDN.TabIndex = 11
 Me.tpFCDN.Text = "Media Image"
 '
@@ -10101,7 +10102,7 @@ Me.tcFCDN.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcFCDN.Location = New System.Drawing.Point(0, 0)
 Me.tcFCDN.Name = "tcFCDN"
 Me.tcFCDN.SelectedIndex = 0
-Me.tcFCDN.Size = New System.Drawing.Size(814, 729)
+Me.tcFCDN.Size = New System.Drawing.Size(814, 702)
 Me.tcFCDN.TabIndex = 0
 Me.tcFCDN.UseVisualStyles = false
 '
@@ -10122,7 +10123,7 @@ Me.tpFCDNFront.Controls.Add(Me.kgpbFront1)
 Me.tpFCDNFront.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNFront.Name = "tpFCDNFront"
 Me.tpFCDNFront.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNFront.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNFront.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNFront.TabIndex = 0
 Me.tpFCDNFront.Text = "Front Cover"
 Me.tpFCDNFront.UseVisualStyleBackColor = true
@@ -10364,7 +10365,7 @@ Me.tpFCDNBack.Controls.Add(Me.pbBack1)
 Me.tpFCDNBack.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNBack.Name = "tpFCDNBack"
 Me.tpFCDNBack.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFCDNBack.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNBack.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNBack.TabIndex = 1
 Me.tpFCDNBack.Text = "Back Cover"
 Me.tpFCDNBack.UseVisualStyleBackColor = true
@@ -10480,7 +10481,7 @@ Me.tpFCDNcd1.Controls.Add(Me.pbcdi2)
 Me.tpFCDNcd1.Controls.Add(Me.pbcdi1)
 Me.tpFCDNcd1.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd1.Name = "tpFCDNcd1"
-Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNcd1.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNcd1.TabIndex = 2
 Me.tpFCDNcd1.Text = "CD1"
 '
@@ -10595,7 +10596,7 @@ Me.tpFCDNcd2.Controls.Add(Me.pbcd2i2)
 Me.tpFCDNcd2.Controls.Add(Me.pbcd2i1)
 Me.tpFCDNcd2.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd2.Name = "tpFCDNcd2"
-Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNcd2.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNcd2.TabIndex = 3
 Me.tpFCDNcd2.Text = "CD2"
 '
@@ -10710,7 +10711,7 @@ Me.tpFCDNcd3.Controls.Add(Me.pbcd3i2)
 Me.tpFCDNcd3.Controls.Add(Me.pbcd3i1)
 Me.tpFCDNcd3.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd3.Name = "tpFCDNcd3"
-Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNcd3.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNcd3.TabIndex = 4
 Me.tpFCDNcd3.Text = "CD3"
 '
@@ -10825,7 +10826,7 @@ Me.tpFCDNcd4.Controls.Add(Me.pbcd4i2)
 Me.tpFCDNcd4.Controls.Add(Me.pbcd4i1)
 Me.tpFCDNcd4.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNcd4.Name = "tpFCDNcd4"
-Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNcd4.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNcd4.TabIndex = 5
 Me.tpFCDNcd4.Text = "CD4"
 '
@@ -10940,7 +10941,7 @@ Me.tpFCDNinsert.Controls.Add(Me.pbInsert2)
 Me.tpFCDNinsert.Controls.Add(Me.pbInsert1)
 Me.tpFCDNinsert.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinsert.Name = "tpFCDNinsert"
-Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNinsert.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNinsert.TabIndex = 6
 Me.tpFCDNinsert.Text = "Insert"
 '
@@ -11055,7 +11056,7 @@ Me.tpFCDNinlay.Controls.Add(Me.pbInlay2)
 Me.tpFCDNinlay.Controls.Add(Me.pbInlay1)
 Me.tpFCDNinlay.Location = New System.Drawing.Point(4, 25)
 Me.tpFCDNinlay.Name = "tpFCDNinlay"
-Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 700)
+Me.tpFCDNinlay.Size = New System.Drawing.Size(806, 673)
 Me.tpFCDNinlay.TabIndex = 7
 Me.tpFCDNinlay.Text = "Inlay"
 '
@@ -11164,7 +11165,7 @@ Me.tpmipf.ForeColor = System.Drawing.Color.White
 Me.tpmipf.Location = New System.Drawing.Point(4, 24)
 Me.tpmipf.Name = "tpmipf"
 Me.tpmipf.Padding = New System.Windows.Forms.Padding(1)
-Me.tpmipf.Size = New System.Drawing.Size(814, 729)
+Me.tpmipf.Size = New System.Drawing.Size(814, 702)
 Me.tpmipf.TabIndex = 0
 Me.tpmipf.Text = "   Wide Images / 3D Boxes    "
 Me.tpmipf.ToolTipText = "Wide Images and 3D Box Shots"
@@ -11175,7 +11176,7 @@ Me.tpTallImages.AutoScroll = true
 Me.tpTallImages.Controls.Add(Me.KryptonPanel1)
 Me.tpTallImages.Location = New System.Drawing.Point(4, 24)
 Me.tpTallImages.Name = "tpTallImages"
-Me.tpTallImages.Size = New System.Drawing.Size(814, 729)
+Me.tpTallImages.Size = New System.Drawing.Size(814, 702)
 Me.tpTallImages.TabIndex = 10
 Me.tpTallImages.Text = "Posters"
 Me.tpTallImages.ToolTipText = "Tall Images (posters)"
@@ -11338,7 +11339,7 @@ Me.KryptonPanel1.TabIndex = 1
 '
 Me.lpbti72.Location = New System.Drawing.Point(855, 7266)
 Me.lpbti72.Name = "lpbti72"
-Me.lpbti72.Size = New System.Drawing.Size(23, 16)
+Me.lpbti72.Size = New System.Drawing.Size(26, 21)
 Me.lpbti72.TabIndex = 158
 Me.lpbti72.Text = "72"
 Me.lpbti72.Values.ExtraText = ""
@@ -11349,7 +11350,7 @@ Me.lpbti72.Values.Text = "72"
 '
 Me.lpbti71.Location = New System.Drawing.Point(586, 7266)
 Me.lpbti71.Name = "lpbti71"
-Me.lpbti71.Size = New System.Drawing.Size(23, 16)
+Me.lpbti71.Size = New System.Drawing.Size(24, 21)
 Me.lpbti71.TabIndex = 157
 Me.lpbti71.Text = "71"
 Me.lpbti71.Values.ExtraText = ""
@@ -11360,7 +11361,7 @@ Me.lpbti71.Values.Text = "71"
 '
 Me.lpbti70.Location = New System.Drawing.Point(329, 7266)
 Me.lpbti70.Name = "lpbti70"
-Me.lpbti70.Size = New System.Drawing.Size(23, 16)
+Me.lpbti70.Size = New System.Drawing.Size(26, 21)
 Me.lpbti70.TabIndex = 156
 Me.lpbti70.Text = "70"
 Me.lpbti70.Values.ExtraText = ""
@@ -11371,7 +11372,7 @@ Me.lpbti70.Values.Text = "70"
 '
 Me.lpbti69.Location = New System.Drawing.Point(85, 7266)
 Me.lpbti69.Name = "lpbti69"
-Me.lpbti69.Size = New System.Drawing.Size(23, 16)
+Me.lpbti69.Size = New System.Drawing.Size(26, 21)
 Me.lpbti69.TabIndex = 155
 Me.lpbti69.Text = "69"
 Me.lpbti69.Values.ExtraText = ""
@@ -11426,7 +11427,7 @@ Me.pbti69.TabStop = false
 '
 Me.lpbti68.Location = New System.Drawing.Point(855, 6862)
 Me.lpbti68.Name = "lpbti68"
-Me.lpbti68.Size = New System.Drawing.Size(23, 16)
+Me.lpbti68.Size = New System.Drawing.Size(26, 21)
 Me.lpbti68.TabIndex = 150
 Me.lpbti68.Text = "68"
 Me.lpbti68.Values.ExtraText = ""
@@ -11437,7 +11438,7 @@ Me.lpbti68.Values.Text = "68"
 '
 Me.lpbti67.Location = New System.Drawing.Point(586, 6862)
 Me.lpbti67.Name = "lpbti67"
-Me.lpbti67.Size = New System.Drawing.Size(23, 16)
+Me.lpbti67.Size = New System.Drawing.Size(26, 21)
 Me.lpbti67.TabIndex = 149
 Me.lpbti67.Text = "67"
 Me.lpbti67.Values.ExtraText = ""
@@ -11448,7 +11449,7 @@ Me.lpbti67.Values.Text = "67"
 '
 Me.lpbti66.Location = New System.Drawing.Point(329, 6862)
 Me.lpbti66.Name = "lpbti66"
-Me.lpbti66.Size = New System.Drawing.Size(23, 16)
+Me.lpbti66.Size = New System.Drawing.Size(26, 21)
 Me.lpbti66.TabIndex = 148
 Me.lpbti66.Text = "66"
 Me.lpbti66.Values.ExtraText = ""
@@ -11459,7 +11460,7 @@ Me.lpbti66.Values.Text = "66"
 '
 Me.lpbti65.Location = New System.Drawing.Point(85, 6862)
 Me.lpbti65.Name = "lpbti65"
-Me.lpbti65.Size = New System.Drawing.Size(23, 16)
+Me.lpbti65.Size = New System.Drawing.Size(26, 21)
 Me.lpbti65.TabIndex = 147
 Me.lpbti65.Text = "65"
 Me.lpbti65.Values.ExtraText = ""
@@ -11514,7 +11515,7 @@ Me.pbti65.TabStop = false
 '
 Me.lpbti64.Location = New System.Drawing.Point(855, 6457)
 Me.lpbti64.Name = "lpbti64"
-Me.lpbti64.Size = New System.Drawing.Size(23, 16)
+Me.lpbti64.Size = New System.Drawing.Size(26, 21)
 Me.lpbti64.TabIndex = 142
 Me.lpbti64.Text = "64"
 Me.lpbti64.Values.ExtraText = ""
@@ -11525,7 +11526,7 @@ Me.lpbti64.Values.Text = "64"
 '
 Me.lpbti63.Location = New System.Drawing.Point(586, 6457)
 Me.lpbti63.Name = "lpbti63"
-Me.lpbti63.Size = New System.Drawing.Size(23, 16)
+Me.lpbti63.Size = New System.Drawing.Size(26, 21)
 Me.lpbti63.TabIndex = 141
 Me.lpbti63.Text = "63"
 Me.lpbti63.Values.ExtraText = ""
@@ -11536,7 +11537,7 @@ Me.lpbti63.Values.Text = "63"
 '
 Me.lpbti62.Location = New System.Drawing.Point(329, 6457)
 Me.lpbti62.Name = "lpbti62"
-Me.lpbti62.Size = New System.Drawing.Size(23, 16)
+Me.lpbti62.Size = New System.Drawing.Size(26, 21)
 Me.lpbti62.TabIndex = 140
 Me.lpbti62.Text = "62"
 Me.lpbti62.Values.ExtraText = ""
@@ -11547,7 +11548,7 @@ Me.lpbti62.Values.Text = "62"
 '
 Me.lpbti61.Location = New System.Drawing.Point(85, 6457)
 Me.lpbti61.Name = "lpbti61"
-Me.lpbti61.Size = New System.Drawing.Size(23, 16)
+Me.lpbti61.Size = New System.Drawing.Size(24, 21)
 Me.lpbti61.TabIndex = 139
 Me.lpbti61.Text = "61"
 Me.lpbti61.Values.ExtraText = ""
@@ -11602,7 +11603,7 @@ Me.pbti61.TabStop = false
 '
 Me.lpbti60.Location = New System.Drawing.Point(855, 6053)
 Me.lpbti60.Name = "lpbti60"
-Me.lpbti60.Size = New System.Drawing.Size(23, 16)
+Me.lpbti60.Size = New System.Drawing.Size(26, 21)
 Me.lpbti60.TabIndex = 134
 Me.lpbti60.Text = "60"
 Me.lpbti60.Values.ExtraText = ""
@@ -11613,7 +11614,7 @@ Me.lpbti60.Values.Text = "60"
 '
 Me.lpbti59.Location = New System.Drawing.Point(586, 6053)
 Me.lpbti59.Name = "lpbti59"
-Me.lpbti59.Size = New System.Drawing.Size(23, 16)
+Me.lpbti59.Size = New System.Drawing.Size(26, 21)
 Me.lpbti59.TabIndex = 133
 Me.lpbti59.Text = "59"
 Me.lpbti59.Values.ExtraText = ""
@@ -11624,7 +11625,7 @@ Me.lpbti59.Values.Text = "59"
 '
 Me.lpbti58.Location = New System.Drawing.Point(329, 6053)
 Me.lpbti58.Name = "lpbti58"
-Me.lpbti58.Size = New System.Drawing.Size(23, 16)
+Me.lpbti58.Size = New System.Drawing.Size(26, 21)
 Me.lpbti58.TabIndex = 132
 Me.lpbti58.Text = "58"
 Me.lpbti58.Values.ExtraText = ""
@@ -11635,7 +11636,7 @@ Me.lpbti58.Values.Text = "58"
 '
 Me.lpbti57.Location = New System.Drawing.Point(85, 6053)
 Me.lpbti57.Name = "lpbti57"
-Me.lpbti57.Size = New System.Drawing.Size(23, 16)
+Me.lpbti57.Size = New System.Drawing.Size(26, 21)
 Me.lpbti57.TabIndex = 131
 Me.lpbti57.Text = "57"
 Me.lpbti57.Values.ExtraText = ""
@@ -11690,7 +11691,7 @@ Me.pbti57.TabStop = false
 '
 Me.lpbti56.Location = New System.Drawing.Point(855, 5647)
 Me.lpbti56.Name = "lpbti56"
-Me.lpbti56.Size = New System.Drawing.Size(23, 16)
+Me.lpbti56.Size = New System.Drawing.Size(26, 21)
 Me.lpbti56.TabIndex = 126
 Me.lpbti56.Text = "56"
 Me.lpbti56.Values.ExtraText = ""
@@ -11701,7 +11702,7 @@ Me.lpbti56.Values.Text = "56"
 '
 Me.lpbti55.Location = New System.Drawing.Point(586, 5647)
 Me.lpbti55.Name = "lpbti55"
-Me.lpbti55.Size = New System.Drawing.Size(23, 16)
+Me.lpbti55.Size = New System.Drawing.Size(26, 21)
 Me.lpbti55.TabIndex = 125
 Me.lpbti55.Text = "55"
 Me.lpbti55.Values.ExtraText = ""
@@ -11712,7 +11713,7 @@ Me.lpbti55.Values.Text = "55"
 '
 Me.lpbti54.Location = New System.Drawing.Point(329, 5647)
 Me.lpbti54.Name = "lpbti54"
-Me.lpbti54.Size = New System.Drawing.Size(23, 16)
+Me.lpbti54.Size = New System.Drawing.Size(26, 21)
 Me.lpbti54.TabIndex = 124
 Me.lpbti54.Text = "54"
 Me.lpbti54.Values.ExtraText = ""
@@ -11723,7 +11724,7 @@ Me.lpbti54.Values.Text = "54"
 '
 Me.lpbti53.Location = New System.Drawing.Point(85, 5647)
 Me.lpbti53.Name = "lpbti53"
-Me.lpbti53.Size = New System.Drawing.Size(23, 16)
+Me.lpbti53.Size = New System.Drawing.Size(26, 21)
 Me.lpbti53.TabIndex = 123
 Me.lpbti53.Text = "53"
 Me.lpbti53.Values.ExtraText = ""
@@ -11778,7 +11779,7 @@ Me.pbti53.TabStop = false
 '
 Me.lpbti52.Location = New System.Drawing.Point(855, 5243)
 Me.lpbti52.Name = "lpbti52"
-Me.lpbti52.Size = New System.Drawing.Size(23, 16)
+Me.lpbti52.Size = New System.Drawing.Size(26, 21)
 Me.lpbti52.TabIndex = 118
 Me.lpbti52.Text = "52"
 Me.lpbti52.Values.ExtraText = ""
@@ -11789,7 +11790,7 @@ Me.lpbti52.Values.Text = "52"
 '
 Me.lpbti51.Location = New System.Drawing.Point(586, 5243)
 Me.lpbti51.Name = "lpbti51"
-Me.lpbti51.Size = New System.Drawing.Size(23, 16)
+Me.lpbti51.Size = New System.Drawing.Size(24, 21)
 Me.lpbti51.TabIndex = 117
 Me.lpbti51.Text = "51"
 Me.lpbti51.Values.ExtraText = ""
@@ -11800,7 +11801,7 @@ Me.lpbti51.Values.Text = "51"
 '
 Me.lpbti50.Location = New System.Drawing.Point(329, 5243)
 Me.lpbti50.Name = "lpbti50"
-Me.lpbti50.Size = New System.Drawing.Size(23, 16)
+Me.lpbti50.Size = New System.Drawing.Size(26, 21)
 Me.lpbti50.TabIndex = 116
 Me.lpbti50.Text = "50"
 Me.lpbti50.Values.ExtraText = ""
@@ -11811,7 +11812,7 @@ Me.lpbti50.Values.Text = "50"
 '
 Me.lpbti49.Location = New System.Drawing.Point(85, 5243)
 Me.lpbti49.Name = "lpbti49"
-Me.lpbti49.Size = New System.Drawing.Size(23, 16)
+Me.lpbti49.Size = New System.Drawing.Size(26, 21)
 Me.lpbti49.TabIndex = 115
 Me.lpbti49.Text = "49"
 Me.lpbti49.Values.ExtraText = ""
@@ -11866,7 +11867,7 @@ Me.pbti49.TabStop = false
 '
 Me.lpbti48.Location = New System.Drawing.Point(855, 4837)
 Me.lpbti48.Name = "lpbti48"
-Me.lpbti48.Size = New System.Drawing.Size(23, 16)
+Me.lpbti48.Size = New System.Drawing.Size(26, 21)
 Me.lpbti48.TabIndex = 110
 Me.lpbti48.Text = "48"
 Me.lpbti48.Values.ExtraText = ""
@@ -11877,7 +11878,7 @@ Me.lpbti48.Values.Text = "48"
 '
 Me.lpbti47.Location = New System.Drawing.Point(586, 4837)
 Me.lpbti47.Name = "lpbti47"
-Me.lpbti47.Size = New System.Drawing.Size(23, 16)
+Me.lpbti47.Size = New System.Drawing.Size(26, 21)
 Me.lpbti47.TabIndex = 109
 Me.lpbti47.Text = "47"
 Me.lpbti47.Values.ExtraText = ""
@@ -11888,7 +11889,7 @@ Me.lpbti47.Values.Text = "47"
 '
 Me.lpbti46.Location = New System.Drawing.Point(329, 4837)
 Me.lpbti46.Name = "lpbti46"
-Me.lpbti46.Size = New System.Drawing.Size(23, 16)
+Me.lpbti46.Size = New System.Drawing.Size(26, 21)
 Me.lpbti46.TabIndex = 108
 Me.lpbti46.Text = "46"
 Me.lpbti46.Values.ExtraText = ""
@@ -11899,7 +11900,7 @@ Me.lpbti46.Values.Text = "46"
 '
 Me.lpbti45.Location = New System.Drawing.Point(85, 4837)
 Me.lpbti45.Name = "lpbti45"
-Me.lpbti45.Size = New System.Drawing.Size(23, 16)
+Me.lpbti45.Size = New System.Drawing.Size(26, 21)
 Me.lpbti45.TabIndex = 107
 Me.lpbti45.Text = "45"
 Me.lpbti45.Values.ExtraText = ""
@@ -11954,7 +11955,7 @@ Me.pbti45.TabStop = false
 '
 Me.lpbti44.Location = New System.Drawing.Point(855, 4433)
 Me.lpbti44.Name = "lpbti44"
-Me.lpbti44.Size = New System.Drawing.Size(23, 16)
+Me.lpbti44.Size = New System.Drawing.Size(26, 21)
 Me.lpbti44.TabIndex = 102
 Me.lpbti44.Text = "44"
 Me.lpbti44.Values.ExtraText = ""
@@ -11965,7 +11966,7 @@ Me.lpbti44.Values.Text = "44"
 '
 Me.lpbti43.Location = New System.Drawing.Point(586, 4433)
 Me.lpbti43.Name = "lpbti43"
-Me.lpbti43.Size = New System.Drawing.Size(23, 16)
+Me.lpbti43.Size = New System.Drawing.Size(26, 21)
 Me.lpbti43.TabIndex = 101
 Me.lpbti43.Text = "43"
 Me.lpbti43.Values.ExtraText = ""
@@ -11976,7 +11977,7 @@ Me.lpbti43.Values.Text = "43"
 '
 Me.lpbti42.Location = New System.Drawing.Point(329, 4433)
 Me.lpbti42.Name = "lpbti42"
-Me.lpbti42.Size = New System.Drawing.Size(23, 16)
+Me.lpbti42.Size = New System.Drawing.Size(26, 21)
 Me.lpbti42.TabIndex = 100
 Me.lpbti42.Text = "42"
 Me.lpbti42.Values.ExtraText = ""
@@ -11987,7 +11988,7 @@ Me.lpbti42.Values.Text = "42"
 '
 Me.lpbti41.Location = New System.Drawing.Point(85, 4433)
 Me.lpbti41.Name = "lpbti41"
-Me.lpbti41.Size = New System.Drawing.Size(23, 16)
+Me.lpbti41.Size = New System.Drawing.Size(24, 21)
 Me.lpbti41.TabIndex = 99
 Me.lpbti41.Text = "41"
 Me.lpbti41.Values.ExtraText = ""
@@ -12042,7 +12043,7 @@ Me.pbti41.TabStop = false
 '
 Me.lpbti40.Location = New System.Drawing.Point(855, 4029)
 Me.lpbti40.Name = "lpbti40"
-Me.lpbti40.Size = New System.Drawing.Size(23, 16)
+Me.lpbti40.Size = New System.Drawing.Size(26, 21)
 Me.lpbti40.TabIndex = 94
 Me.lpbti40.Text = "40"
 Me.lpbti40.Values.ExtraText = ""
@@ -12053,7 +12054,7 @@ Me.lpbti40.Values.Text = "40"
 '
 Me.lpbti39.Location = New System.Drawing.Point(586, 4029)
 Me.lpbti39.Name = "lpbti39"
-Me.lpbti39.Size = New System.Drawing.Size(23, 16)
+Me.lpbti39.Size = New System.Drawing.Size(26, 21)
 Me.lpbti39.TabIndex = 93
 Me.lpbti39.Text = "39"
 Me.lpbti39.Values.ExtraText = ""
@@ -12064,7 +12065,7 @@ Me.lpbti39.Values.Text = "39"
 '
 Me.lpbti38.Location = New System.Drawing.Point(329, 4029)
 Me.lpbti38.Name = "lpbti38"
-Me.lpbti38.Size = New System.Drawing.Size(23, 16)
+Me.lpbti38.Size = New System.Drawing.Size(26, 21)
 Me.lpbti38.TabIndex = 92
 Me.lpbti38.Text = "38"
 Me.lpbti38.Values.ExtraText = ""
@@ -12075,7 +12076,7 @@ Me.lpbti38.Values.Text = "38"
 '
 Me.lpbti37.Location = New System.Drawing.Point(85, 4029)
 Me.lpbti37.Name = "lpbti37"
-Me.lpbti37.Size = New System.Drawing.Size(23, 16)
+Me.lpbti37.Size = New System.Drawing.Size(26, 21)
 Me.lpbti37.TabIndex = 91
 Me.lpbti37.Text = "37"
 Me.lpbti37.Values.ExtraText = ""
@@ -12130,7 +12131,7 @@ Me.pbti37.TabStop = false
 '
 Me.lpbti36.Location = New System.Drawing.Point(855, 3625)
 Me.lpbti36.Name = "lpbti36"
-Me.lpbti36.Size = New System.Drawing.Size(23, 16)
+Me.lpbti36.Size = New System.Drawing.Size(26, 21)
 Me.lpbti36.TabIndex = 86
 Me.lpbti36.Text = "36"
 Me.lpbti36.Values.ExtraText = ""
@@ -12141,7 +12142,7 @@ Me.lpbti36.Values.Text = "36"
 '
 Me.lpbti35.Location = New System.Drawing.Point(586, 3625)
 Me.lpbti35.Name = "lpbti35"
-Me.lpbti35.Size = New System.Drawing.Size(23, 16)
+Me.lpbti35.Size = New System.Drawing.Size(26, 21)
 Me.lpbti35.TabIndex = 85
 Me.lpbti35.Text = "35"
 Me.lpbti35.Values.ExtraText = ""
@@ -12152,7 +12153,7 @@ Me.lpbti35.Values.Text = "35"
 '
 Me.lpbti34.Location = New System.Drawing.Point(329, 3625)
 Me.lpbti34.Name = "lpbti34"
-Me.lpbti34.Size = New System.Drawing.Size(23, 16)
+Me.lpbti34.Size = New System.Drawing.Size(26, 21)
 Me.lpbti34.TabIndex = 84
 Me.lpbti34.Text = "34"
 Me.lpbti34.Values.ExtraText = ""
@@ -12163,7 +12164,7 @@ Me.lpbti34.Values.Text = "34"
 '
 Me.lpbti33.Location = New System.Drawing.Point(85, 3625)
 Me.lpbti33.Name = "lpbti33"
-Me.lpbti33.Size = New System.Drawing.Size(23, 16)
+Me.lpbti33.Size = New System.Drawing.Size(26, 21)
 Me.lpbti33.TabIndex = 83
 Me.lpbti33.Text = "33"
 Me.lpbti33.Values.ExtraText = ""
@@ -12218,7 +12219,7 @@ Me.pbti33.TabStop = false
 '
 Me.lpbti32.Location = New System.Drawing.Point(855, 3221)
 Me.lpbti32.Name = "lpbti32"
-Me.lpbti32.Size = New System.Drawing.Size(90, 16)
+Me.lpbti32.Size = New System.Drawing.Size(102, 21)
 Me.lpbti32.TabIndex = 78
 Me.lpbti32.Text = "KryptonLabel24"
 Me.lpbti32.Values.ExtraText = ""
@@ -12229,7 +12230,7 @@ Me.lpbti32.Values.Text = "KryptonLabel24"
 '
 Me.lpbti31.Location = New System.Drawing.Point(586, 3221)
 Me.lpbti31.Name = "lpbti31"
-Me.lpbti31.Size = New System.Drawing.Size(90, 16)
+Me.lpbti31.Size = New System.Drawing.Size(102, 21)
 Me.lpbti31.TabIndex = 77
 Me.lpbti31.Text = "KryptonLabel23"
 Me.lpbti31.Values.ExtraText = ""
@@ -12240,7 +12241,7 @@ Me.lpbti31.Values.Text = "KryptonLabel23"
 '
 Me.lpbti30.Location = New System.Drawing.Point(329, 3221)
 Me.lpbti30.Name = "lpbti30"
-Me.lpbti30.Size = New System.Drawing.Size(90, 16)
+Me.lpbti30.Size = New System.Drawing.Size(102, 21)
 Me.lpbti30.TabIndex = 76
 Me.lpbti30.Text = "KryptonLabel22"
 Me.lpbti30.Values.ExtraText = ""
@@ -12251,7 +12252,7 @@ Me.lpbti30.Values.Text = "KryptonLabel22"
 '
 Me.lpbti29.Location = New System.Drawing.Point(85, 3221)
 Me.lpbti29.Name = "lpbti29"
-Me.lpbti29.Size = New System.Drawing.Size(90, 16)
+Me.lpbti29.Size = New System.Drawing.Size(100, 21)
 Me.lpbti29.TabIndex = 75
 Me.lpbti29.Text = "KryptonLabel21"
 Me.lpbti29.Values.ExtraText = ""
@@ -12306,7 +12307,7 @@ Me.pbti29.TabStop = false
 '
 Me.lpbti28.Location = New System.Drawing.Point(855, 2817)
 Me.lpbti28.Name = "lpbti28"
-Me.lpbti28.Size = New System.Drawing.Size(90, 16)
+Me.lpbti28.Size = New System.Drawing.Size(102, 21)
 Me.lpbti28.TabIndex = 70
 Me.lpbti28.Text = "KryptonLabel24"
 Me.lpbti28.Values.ExtraText = ""
@@ -12317,7 +12318,7 @@ Me.lpbti28.Values.Text = "KryptonLabel24"
 '
 Me.lpbti27.Location = New System.Drawing.Point(586, 2817)
 Me.lpbti27.Name = "lpbti27"
-Me.lpbti27.Size = New System.Drawing.Size(90, 16)
+Me.lpbti27.Size = New System.Drawing.Size(102, 21)
 Me.lpbti27.TabIndex = 69
 Me.lpbti27.Text = "KryptonLabel23"
 Me.lpbti27.Values.ExtraText = ""
@@ -12328,7 +12329,7 @@ Me.lpbti27.Values.Text = "KryptonLabel23"
 '
 Me.lpbti26.Location = New System.Drawing.Point(329, 2817)
 Me.lpbti26.Name = "lpbti26"
-Me.lpbti26.Size = New System.Drawing.Size(90, 16)
+Me.lpbti26.Size = New System.Drawing.Size(102, 21)
 Me.lpbti26.TabIndex = 68
 Me.lpbti26.Text = "KryptonLabel22"
 Me.lpbti26.Values.ExtraText = ""
@@ -12339,7 +12340,7 @@ Me.lpbti26.Values.Text = "KryptonLabel22"
 '
 Me.lpbti25.Location = New System.Drawing.Point(85, 2817)
 Me.lpbti25.Name = "lpbti25"
-Me.lpbti25.Size = New System.Drawing.Size(90, 16)
+Me.lpbti25.Size = New System.Drawing.Size(100, 21)
 Me.lpbti25.TabIndex = 67
 Me.lpbti25.Text = "KryptonLabel21"
 Me.lpbti25.Values.ExtraText = ""
@@ -12394,7 +12395,7 @@ Me.pbti25.TabStop = false
 '
 Me.KryptonLabel5.Location = New System.Drawing.Point(180, 1)
 Me.KryptonLabel5.Name = "KryptonLabel5"
-Me.KryptonLabel5.Size = New System.Drawing.Size(492, 16)
+Me.KryptonLabel5.Size = New System.Drawing.Size(556, 21)
 Me.KryptonLabel5.TabIndex = 62
 Me.KryptonLabel5.Text = "Images provided by Impawards.com, themoviedb.com, calagregory.net and other onlin"& _ 
     "e sources"
@@ -12407,7 +12408,7 @@ Me.KryptonLabel5.Values.Text = "Images provided by Impawards.com, themoviedb.com
 '
 Me.lpbti24.Location = New System.Drawing.Point(855, 2412)
 Me.lpbti24.Name = "lpbti24"
-Me.lpbti24.Size = New System.Drawing.Size(90, 16)
+Me.lpbti24.Size = New System.Drawing.Size(102, 21)
 Me.lpbti24.TabIndex = 61
 Me.lpbti24.Text = "KryptonLabel24"
 Me.lpbti24.Values.ExtraText = ""
@@ -12418,7 +12419,7 @@ Me.lpbti24.Values.Text = "KryptonLabel24"
 '
 Me.lpbti23.Location = New System.Drawing.Point(586, 2412)
 Me.lpbti23.Name = "lpbti23"
-Me.lpbti23.Size = New System.Drawing.Size(90, 16)
+Me.lpbti23.Size = New System.Drawing.Size(102, 21)
 Me.lpbti23.TabIndex = 60
 Me.lpbti23.Text = "KryptonLabel23"
 Me.lpbti23.Values.ExtraText = ""
@@ -12429,7 +12430,7 @@ Me.lpbti23.Values.Text = "KryptonLabel23"
 '
 Me.lpbti22.Location = New System.Drawing.Point(329, 2412)
 Me.lpbti22.Name = "lpbti22"
-Me.lpbti22.Size = New System.Drawing.Size(90, 16)
+Me.lpbti22.Size = New System.Drawing.Size(102, 21)
 Me.lpbti22.TabIndex = 59
 Me.lpbti22.Text = "KryptonLabel22"
 Me.lpbti22.Values.ExtraText = ""
@@ -12440,7 +12441,7 @@ Me.lpbti22.Values.Text = "KryptonLabel22"
 '
 Me.lpbti21.Location = New System.Drawing.Point(85, 2412)
 Me.lpbti21.Name = "lpbti21"
-Me.lpbti21.Size = New System.Drawing.Size(90, 16)
+Me.lpbti21.Size = New System.Drawing.Size(100, 21)
 Me.lpbti21.TabIndex = 58
 Me.lpbti21.Text = "KryptonLabel21"
 Me.lpbti21.Values.ExtraText = ""
@@ -12451,7 +12452,7 @@ Me.lpbti21.Values.Text = "KryptonLabel21"
 '
 Me.lpbti20.Location = New System.Drawing.Point(843, 2008)
 Me.lpbti20.Name = "lpbti20"
-Me.lpbti20.Size = New System.Drawing.Size(90, 16)
+Me.lpbti20.Size = New System.Drawing.Size(102, 21)
 Me.lpbti20.TabIndex = 57
 Me.lpbti20.Text = "KryptonLabel20"
 Me.lpbti20.Values.ExtraText = ""
@@ -12462,7 +12463,7 @@ Me.lpbti20.Values.Text = "KryptonLabel20"
 '
 Me.lpbti19.Location = New System.Drawing.Point(586, 2008)
 Me.lpbti19.Name = "lpbti19"
-Me.lpbti19.Size = New System.Drawing.Size(90, 16)
+Me.lpbti19.Size = New System.Drawing.Size(100, 21)
 Me.lpbti19.TabIndex = 56
 Me.lpbti19.Text = "KryptonLabel19"
 Me.lpbti19.Values.ExtraText = ""
@@ -12473,7 +12474,7 @@ Me.lpbti19.Values.Text = "KryptonLabel19"
 '
 Me.lpbti18.Location = New System.Drawing.Point(341, 2007)
 Me.lpbti18.Name = "lpbti18"
-Me.lpbti18.Size = New System.Drawing.Size(90, 16)
+Me.lpbti18.Size = New System.Drawing.Size(100, 21)
 Me.lpbti18.TabIndex = 55
 Me.lpbti18.Text = "KryptonLabel18"
 Me.lpbti18.Values.ExtraText = ""
@@ -12484,7 +12485,7 @@ Me.lpbti18.Values.Text = "KryptonLabel18"
 '
 Me.lpbti17.Location = New System.Drawing.Point(72, 2007)
 Me.lpbti17.Name = "lpbti17"
-Me.lpbti17.Size = New System.Drawing.Size(90, 16)
+Me.lpbti17.Size = New System.Drawing.Size(100, 21)
 Me.lpbti17.TabIndex = 54
 Me.lpbti17.Text = "KryptonLabel17"
 Me.lpbti17.Values.ExtraText = ""
@@ -12495,7 +12496,7 @@ Me.lpbti17.Values.Text = "KryptonLabel17"
 '
 Me.lpbti16.Location = New System.Drawing.Point(843, 1601)
 Me.lpbti16.Name = "lpbti16"
-Me.lpbti16.Size = New System.Drawing.Size(90, 16)
+Me.lpbti16.Size = New System.Drawing.Size(100, 21)
 Me.lpbti16.TabIndex = 53
 Me.lpbti16.Text = "KryptonLabel16"
 Me.lpbti16.Values.ExtraText = ""
@@ -12506,7 +12507,7 @@ Me.lpbti16.Values.Text = "KryptonLabel16"
 '
 Me.lpbti15.Location = New System.Drawing.Point(598, 1601)
 Me.lpbti15.Name = "lpbti15"
-Me.lpbti15.Size = New System.Drawing.Size(90, 16)
+Me.lpbti15.Size = New System.Drawing.Size(100, 21)
 Me.lpbti15.TabIndex = 52
 Me.lpbti15.Text = "KryptonLabel15"
 Me.lpbti15.Values.ExtraText = ""
@@ -12517,7 +12518,7 @@ Me.lpbti15.Values.Text = "KryptonLabel15"
 '
 Me.lpbti14.Location = New System.Drawing.Point(329, 1601)
 Me.lpbti14.Name = "lpbti14"
-Me.lpbti14.Size = New System.Drawing.Size(90, 16)
+Me.lpbti14.Size = New System.Drawing.Size(100, 21)
 Me.lpbti14.TabIndex = 51
 Me.lpbti14.Text = "KryptonLabel14"
 Me.lpbti14.Values.ExtraText = ""
@@ -12528,7 +12529,7 @@ Me.lpbti14.Values.Text = "KryptonLabel14"
 '
 Me.lpbti13.Location = New System.Drawing.Point(72, 1601)
 Me.lpbti13.Name = "lpbti13"
-Me.lpbti13.Size = New System.Drawing.Size(90, 16)
+Me.lpbti13.Size = New System.Drawing.Size(100, 21)
 Me.lpbti13.TabIndex = 50
 Me.lpbti13.Text = "KryptonLabel13"
 Me.lpbti13.Values.ExtraText = ""
@@ -12539,7 +12540,7 @@ Me.lpbti13.Values.Text = "KryptonLabel13"
 '
 Me.lpbti12.Location = New System.Drawing.Point(855, 1197)
 Me.lpbti12.Name = "lpbti12"
-Me.lpbti12.Size = New System.Drawing.Size(90, 16)
+Me.lpbti12.Size = New System.Drawing.Size(100, 21)
 Me.lpbti12.TabIndex = 49
 Me.lpbti12.Text = "KryptonLabel12"
 Me.lpbti12.Values.ExtraText = ""
@@ -12550,7 +12551,7 @@ Me.lpbti12.Values.Text = "KryptonLabel12"
 '
 Me.lpbti11.Location = New System.Drawing.Point(586, 1197)
 Me.lpbti11.Name = "lpbti11"
-Me.lpbti11.Size = New System.Drawing.Size(90, 16)
+Me.lpbti11.Size = New System.Drawing.Size(98, 21)
 Me.lpbti11.TabIndex = 48
 Me.lpbti11.Text = "KryptonLabel11"
 Me.lpbti11.Values.ExtraText = ""
@@ -12561,7 +12562,7 @@ Me.lpbti11.Values.Text = "KryptonLabel11"
 '
 Me.lpbti10.Location = New System.Drawing.Point(329, 1197)
 Me.lpbti10.Name = "lpbti10"
-Me.lpbti10.Size = New System.Drawing.Size(90, 16)
+Me.lpbti10.Size = New System.Drawing.Size(100, 21)
 Me.lpbti10.TabIndex = 47
 Me.lpbti10.Text = "KryptonLabel10"
 Me.lpbti10.Values.ExtraText = ""
@@ -12572,7 +12573,7 @@ Me.lpbti10.Values.Text = "KryptonLabel10"
 '
 Me.lpbti9.Location = New System.Drawing.Point(84, 1198)
 Me.lpbti9.Name = "lpbti9"
-Me.lpbti9.Size = New System.Drawing.Size(83, 16)
+Me.lpbti9.Size = New System.Drawing.Size(94, 21)
 Me.lpbti9.TabIndex = 46
 Me.lpbti9.Text = "KryptonLabel9"
 Me.lpbti9.Values.ExtraText = ""
@@ -12583,7 +12584,7 @@ Me.lpbti9.Values.Text = "KryptonLabel9"
 '
 Me.lpbti8.Location = New System.Drawing.Point(843, 794)
 Me.lpbti8.Name = "lpbti8"
-Me.lpbti8.Size = New System.Drawing.Size(83, 16)
+Me.lpbti8.Size = New System.Drawing.Size(94, 21)
 Me.lpbti8.TabIndex = 45
 Me.lpbti8.Text = "KryptonLabel8"
 Me.lpbti8.Values.ExtraText = ""
@@ -12594,7 +12595,7 @@ Me.lpbti8.Values.Text = "KryptonLabel8"
 '
 Me.lpbti7.Location = New System.Drawing.Point(586, 794)
 Me.lpbti7.Name = "lpbti7"
-Me.lpbti7.Size = New System.Drawing.Size(83, 16)
+Me.lpbti7.Size = New System.Drawing.Size(94, 21)
 Me.lpbti7.TabIndex = 44
 Me.lpbti7.Text = "KryptonLabel7"
 Me.lpbti7.Values.ExtraText = ""
@@ -12605,7 +12606,7 @@ Me.lpbti7.Values.Text = "KryptonLabel7"
 '
 Me.lpbti6.Location = New System.Drawing.Point(341, 794)
 Me.lpbti6.Name = "lpbti6"
-Me.lpbti6.Size = New System.Drawing.Size(83, 16)
+Me.lpbti6.Size = New System.Drawing.Size(94, 21)
 Me.lpbti6.TabIndex = 43
 Me.lpbti6.Text = "KryptonLabel6"
 Me.lpbti6.Values.ExtraText = ""
@@ -12616,7 +12617,7 @@ Me.lpbti6.Values.Text = "KryptonLabel6"
 '
 Me.lpbti5.Location = New System.Drawing.Point(72, 794)
 Me.lpbti5.Name = "lpbti5"
-Me.lpbti5.Size = New System.Drawing.Size(83, 16)
+Me.lpbti5.Size = New System.Drawing.Size(94, 21)
 Me.lpbti5.TabIndex = 42
 Me.lpbti5.Text = "KryptonLabel5"
 Me.lpbti5.Values.ExtraText = ""
@@ -12627,7 +12628,7 @@ Me.lpbti5.Values.Text = "KryptonLabel5"
 '
 Me.lpbti4.Location = New System.Drawing.Point(867, 386)
 Me.lpbti4.Name = "lpbti4"
-Me.lpbti4.Size = New System.Drawing.Size(83, 16)
+Me.lpbti4.Size = New System.Drawing.Size(94, 21)
 Me.lpbti4.TabIndex = 41
 Me.lpbti4.Text = "KryptonLabel4"
 Me.lpbti4.Values.ExtraText = ""
@@ -12638,7 +12639,7 @@ Me.lpbti4.Values.Text = "KryptonLabel4"
 '
 Me.lpbti3.Location = New System.Drawing.Point(598, 386)
 Me.lpbti3.Name = "lpbti3"
-Me.lpbti3.Size = New System.Drawing.Size(83, 16)
+Me.lpbti3.Size = New System.Drawing.Size(94, 21)
 Me.lpbti3.TabIndex = 40
 Me.lpbti3.Text = "KryptonLabel3"
 Me.lpbti3.Values.ExtraText = ""
@@ -12649,7 +12650,7 @@ Me.lpbti3.Values.Text = "KryptonLabel3"
 '
 Me.lpbti2.Location = New System.Drawing.Point(329, 386)
 Me.lpbti2.Name = "lpbti2"
-Me.lpbti2.Size = New System.Drawing.Size(83, 16)
+Me.lpbti2.Size = New System.Drawing.Size(94, 21)
 Me.lpbti2.TabIndex = 39
 Me.lpbti2.Text = "KryptonLabel2"
 Me.lpbti2.Values.ExtraText = ""
@@ -12660,7 +12661,7 @@ Me.lpbti2.Values.Text = "KryptonLabel2"
 '
 Me.lpbti1.Location = New System.Drawing.Point(72, 386)
 Me.lpbti1.Name = "lpbti1"
-Me.lpbti1.Size = New System.Drawing.Size(83, 16)
+Me.lpbti1.Size = New System.Drawing.Size(94, 21)
 Me.lpbti1.TabIndex = 38
 Me.lpbti1.Text = "KryptonLabel2"
 Me.lpbti1.Values.ExtraText = ""
@@ -12927,7 +12928,7 @@ Me.tpFanart.Controls.Add(Me.kpFanartSelection)
 Me.tpFanart.Location = New System.Drawing.Point(4, 24)
 Me.tpFanart.Name = "tpFanart"
 Me.tpFanart.Padding = New System.Windows.Forms.Padding(3)
-Me.tpFanart.Size = New System.Drawing.Size(814, 729)
+Me.tpFanart.Size = New System.Drawing.Size(814, 702)
 Me.tpFanart.TabIndex = 7
 Me.tpFanart.Text = "   Backgrounds      "
 Me.tpFanart.ToolTipText = "Background Images (fanart)"
@@ -13498,7 +13499,7 @@ Me.klblfatmdb1.Values.Text = ""
 '
 Me.klblFanartProvider.Location = New System.Drawing.Point(110, 4)
 Me.klblFanartProvider.Name = "klblFanartProvider"
-Me.klblFanartProvider.Size = New System.Drawing.Size(520, 16)
+Me.klblFanartProvider.Size = New System.Drawing.Size(584, 21)
 Me.klblFanartProvider.TabIndex = 29
 Me.klblFanartProvider.Text = "Movie Fanart Provided by: The Movie DB  www.Themoviedb.com - Music Fanart by HtBa"& _ 
     "ckdrops.com"
@@ -13741,7 +13742,7 @@ Me.tpmmn.ForeColor = System.Drawing.Color.White
 Me.tpmmn.Location = New System.Drawing.Point(4, 24)
 Me.tpmmn.Name = "tpmmn"
 Me.tpmmn.Padding = New System.Windows.Forms.Padding(3)
-Me.tpmmn.Size = New System.Drawing.Size(814, 729)
+Me.tpmmn.Size = New System.Drawing.Size(814, 702)
 Me.tpmmn.TabIndex = 1
 Me.tpmmn.Text = " Rename     "
 Me.tpmmn.ToolTipText = "Modify the name of the movie"
@@ -13869,7 +13870,7 @@ Me.tpPosters.AutoScroll = true
 Me.tpPosters.Controls.Add(Me.tcPosters)
 Me.tpPosters.Location = New System.Drawing.Point(4, 24)
 Me.tpPosters.Name = "tpPosters"
-Me.tpPosters.Size = New System.Drawing.Size(814, 729)
+Me.tpPosters.Size = New System.Drawing.Size(814, 702)
 Me.tpPosters.TabIndex = 8
 Me.tpPosters.ToolTipText = "TV Show Posters and Wide Icons"
 '
@@ -13884,7 +13885,7 @@ Me.tcPosters.Dock = System.Windows.Forms.DockStyle.Fill
 Me.tcPosters.Location = New System.Drawing.Point(0, 0)
 Me.tcPosters.Name = "tcPosters"
 Me.tcPosters.SelectedIndex = 1
-Me.tcPosters.Size = New System.Drawing.Size(814, 729)
+Me.tcPosters.Size = New System.Drawing.Size(814, 702)
 Me.tcPosters.TabIndex = 0
 Me.tcPosters.UseVisualStyles = false
 '
@@ -13894,7 +13895,7 @@ Me.tpTVWideIcons.AutoScroll = true
 Me.tpTVWideIcons.Controls.Add(Me.kptvwide)
 Me.tpTVWideIcons.Location = New System.Drawing.Point(4, 25)
 Me.tpTVWideIcons.Name = "tpTVWideIcons"
-Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 700)
+Me.tpTVWideIcons.Size = New System.Drawing.Size(806, 673)
 Me.tpTVWideIcons.TabIndex = 2
 Me.tpTVWideIcons.Text = "TV Wide Icons"
 '
@@ -14224,7 +14225,7 @@ Me.tpIMPPosters.Controls.Add(Me.kpIMPPosterSelection)
 Me.tpIMPPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpIMPPosters.Name = "tpIMPPosters"
 Me.tpIMPPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpIMPPosters.Size = New System.Drawing.Size(806, 700)
+Me.tpIMPPosters.Size = New System.Drawing.Size(806, 673)
 Me.tpIMPPosters.TabIndex = 0
 Me.tpIMPPosters.Text = "Posters -IMPawards"
 '
@@ -14288,7 +14289,7 @@ Me.kpIMPPosterSelection.TabIndex = 0
 '
 Me.lblImpaposters.Location = New System.Drawing.Point(313, 1)
 Me.lblImpaposters.Name = "lblImpaposters"
-Me.lblImpaposters.Size = New System.Drawing.Size(157, 16)
+Me.lblImpaposters.Size = New System.Drawing.Size(179, 21)
 Me.lblImpaposters.TabIndex = 62
 Me.lblImpaposters.Text = "Posters from Impawards.com"
 Me.lblImpaposters.Values.ExtraText = ""
@@ -14299,7 +14300,7 @@ Me.lblImpaposters.Values.Text = "Posters from Impawards.com"
 '
 Me.klblposterIMP24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterIMP24.Name = "klblposterIMP24"
-Me.klblposterIMP24.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP24.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP24.TabIndex = 61
 Me.klblposterIMP24.Text = "KryptonLabel24"
 Me.klblposterIMP24.Values.ExtraText = ""
@@ -14310,7 +14311,7 @@ Me.klblposterIMP24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterIMP23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterIMP23.Name = "klblposterIMP23"
-Me.klblposterIMP23.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP23.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP23.TabIndex = 60
 Me.klblposterIMP23.Text = "KryptonLabel23"
 Me.klblposterIMP23.Values.ExtraText = ""
@@ -14321,7 +14322,7 @@ Me.klblposterIMP23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterIMP22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterIMP22.Name = "klblposterIMP22"
-Me.klblposterIMP22.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP22.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP22.TabIndex = 59
 Me.klblposterIMP22.Text = "KryptonLabel22"
 Me.klblposterIMP22.Values.ExtraText = ""
@@ -14332,7 +14333,7 @@ Me.klblposterIMP22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterIMP21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterIMP21.Name = "klblposterIMP21"
-Me.klblposterIMP21.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP21.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP21.TabIndex = 58
 Me.klblposterIMP21.Text = "KryptonLabel21"
 Me.klblposterIMP21.Values.ExtraText = ""
@@ -14343,7 +14344,7 @@ Me.klblposterIMP21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterIMP20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterIMP20.Name = "klblposterIMP20"
-Me.klblposterIMP20.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP20.Size = New System.Drawing.Size(102, 21)
 Me.klblposterIMP20.TabIndex = 57
 Me.klblposterIMP20.Text = "KryptonLabel20"
 Me.klblposterIMP20.Values.ExtraText = ""
@@ -14354,7 +14355,7 @@ Me.klblposterIMP20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterIMP19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterIMP19.Name = "klblposterIMP19"
-Me.klblposterIMP19.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP19.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP19.TabIndex = 56
 Me.klblposterIMP19.Text = "KryptonLabel19"
 Me.klblposterIMP19.Values.ExtraText = ""
@@ -14365,7 +14366,7 @@ Me.klblposterIMP19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterIMP18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterIMP18.Name = "klblposterIMP18"
-Me.klblposterIMP18.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP18.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP18.TabIndex = 55
 Me.klblposterIMP18.Text = "KryptonLabel18"
 Me.klblposterIMP18.Values.ExtraText = ""
@@ -14376,7 +14377,7 @@ Me.klblposterIMP18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterIMP17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterIMP17.Name = "klblposterIMP17"
-Me.klblposterIMP17.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP17.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP17.TabIndex = 54
 Me.klblposterIMP17.Text = "KryptonLabel17"
 Me.klblposterIMP17.Values.ExtraText = ""
@@ -14387,7 +14388,7 @@ Me.klblposterIMP17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterIMP16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterIMP16.Name = "klblposterIMP16"
-Me.klblposterIMP16.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP16.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP16.TabIndex = 53
 Me.klblposterIMP16.Text = "KryptonLabel16"
 Me.klblposterIMP16.Values.ExtraText = ""
@@ -14398,7 +14399,7 @@ Me.klblposterIMP16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterIMP15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterIMP15.Name = "klblposterIMP15"
-Me.klblposterIMP15.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP15.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP15.TabIndex = 52
 Me.klblposterIMP15.Text = "KryptonLabel15"
 Me.klblposterIMP15.Values.ExtraText = ""
@@ -14409,7 +14410,7 @@ Me.klblposterIMP15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterIMP14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterIMP14.Name = "klblposterIMP14"
-Me.klblposterIMP14.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP14.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP14.TabIndex = 51
 Me.klblposterIMP14.Text = "KryptonLabel14"
 Me.klblposterIMP14.Values.ExtraText = ""
@@ -14420,7 +14421,7 @@ Me.klblposterIMP14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterIMP13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterIMP13.Name = "klblposterIMP13"
-Me.klblposterIMP13.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP13.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP13.TabIndex = 50
 Me.klblposterIMP13.Text = "KryptonLabel13"
 Me.klblposterIMP13.Values.ExtraText = ""
@@ -14431,7 +14432,7 @@ Me.klblposterIMP13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterIMP12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterIMP12.Name = "klblposterIMP12"
-Me.klblposterIMP12.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP12.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP12.TabIndex = 49
 Me.klblposterIMP12.Text = "KryptonLabel12"
 Me.klblposterIMP12.Values.ExtraText = ""
@@ -14442,7 +14443,7 @@ Me.klblposterIMP12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterIMP11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterIMP11.Name = "klblposterIMP11"
-Me.klblposterIMP11.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP11.Size = New System.Drawing.Size(98, 21)
 Me.klblposterIMP11.TabIndex = 48
 Me.klblposterIMP11.Text = "KryptonLabel11"
 Me.klblposterIMP11.Values.ExtraText = ""
@@ -14453,7 +14454,7 @@ Me.klblposterIMP11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterIMP10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterIMP10.Name = "klblposterIMP10"
-Me.klblposterIMP10.Size = New System.Drawing.Size(90, 16)
+Me.klblposterIMP10.Size = New System.Drawing.Size(100, 21)
 Me.klblposterIMP10.TabIndex = 47
 Me.klblposterIMP10.Text = "KryptonLabel10"
 Me.klblposterIMP10.Values.ExtraText = ""
@@ -14464,7 +14465,7 @@ Me.klblposterIMP10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterIMP9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterIMP9.Name = "klblposterIMP9"
-Me.klblposterIMP9.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP9.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP9.TabIndex = 46
 Me.klblposterIMP9.Text = "KryptonLabel9"
 Me.klblposterIMP9.Values.ExtraText = ""
@@ -14475,7 +14476,7 @@ Me.klblposterIMP9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterIMP8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterIMP8.Name = "klblposterIMP8"
-Me.klblposterIMP8.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP8.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP8.TabIndex = 45
 Me.klblposterIMP8.Text = "KryptonLabel8"
 Me.klblposterIMP8.Values.ExtraText = ""
@@ -14486,7 +14487,7 @@ Me.klblposterIMP8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterIMP7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterIMP7.Name = "klblposterIMP7"
-Me.klblposterIMP7.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP7.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP7.TabIndex = 44
 Me.klblposterIMP7.Text = "KryptonLabel7"
 Me.klblposterIMP7.Values.ExtraText = ""
@@ -14497,7 +14498,7 @@ Me.klblposterIMP7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterIMP6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterIMP6.Name = "klblposterIMP6"
-Me.klblposterIMP6.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP6.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP6.TabIndex = 43
 Me.klblposterIMP6.Text = "KryptonLabel6"
 Me.klblposterIMP6.Values.ExtraText = ""
@@ -14508,7 +14509,7 @@ Me.klblposterIMP6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterIMP5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterIMP5.Name = "klblposterIMP5"
-Me.klblposterIMP5.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP5.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP5.TabIndex = 42
 Me.klblposterIMP5.Text = "KryptonLabel5"
 Me.klblposterIMP5.Values.ExtraText = ""
@@ -14519,7 +14520,7 @@ Me.klblposterIMP5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterIMP4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterIMP4.Name = "klblposterIMP4"
-Me.klblposterIMP4.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP4.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP4.TabIndex = 41
 Me.klblposterIMP4.Text = "KryptonLabel4"
 Me.klblposterIMP4.Values.ExtraText = ""
@@ -14530,7 +14531,7 @@ Me.klblposterIMP4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterIMP3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterIMP3.Name = "klblposterIMP3"
-Me.klblposterIMP3.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP3.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP3.TabIndex = 40
 Me.klblposterIMP3.Text = "KryptonLabel3"
 Me.klblposterIMP3.Values.ExtraText = ""
@@ -14541,7 +14542,7 @@ Me.klblposterIMP3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterIMP2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterIMP2.Name = "klblposterIMP2"
-Me.klblposterIMP2.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP2.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP2.TabIndex = 39
 Me.klblposterIMP2.Text = "KryptonLabel2"
 Me.klblposterIMP2.Values.ExtraText = ""
@@ -14552,7 +14553,7 @@ Me.klblposterIMP2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterIMP1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterIMP1.Name = "klblposterIMP1"
-Me.klblposterIMP1.Size = New System.Drawing.Size(83, 16)
+Me.klblposterIMP1.Size = New System.Drawing.Size(94, 21)
 Me.klblposterIMP1.TabIndex = 38
 Me.klblposterIMP1.Text = "KryptonLabel2"
 Me.klblposterIMP1.Values.ExtraText = ""
@@ -14818,7 +14819,7 @@ Me.tpTMDBPosters.Controls.Add(Me.kpTMDBPostersSelection)
 Me.tpTMDBPosters.Location = New System.Drawing.Point(4, 25)
 Me.tpTMDBPosters.Name = "tpTMDBPosters"
 Me.tpTMDBPosters.Padding = New System.Windows.Forms.Padding(3)
-Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 700)
+Me.tpTMDBPosters.Size = New System.Drawing.Size(806, 673)
 Me.tpTMDBPosters.TabIndex = 1
 Me.tpTMDBPosters.Text = "HD Posters - from TMDB"
 '
@@ -14882,7 +14883,7 @@ Me.kpTMDBPostersSelection.TabIndex = 0
 '
 Me.klblPostersByTMDB.Location = New System.Drawing.Point(329, 0)
 Me.klblPostersByTMDB.Name = "klblPostersByTMDB"
-Me.klblPostersByTMDB.Size = New System.Drawing.Size(109, 16)
+Me.klblPostersByTMDB.Size = New System.Drawing.Size(126, 21)
 Me.klblPostersByTMDB.TabIndex = 0
 Me.klblPostersByTMDB.Text = "Posters from TMDB"
 Me.klblPostersByTMDB.Values.ExtraText = ""
@@ -14893,7 +14894,7 @@ Me.klblPostersByTMDB.Values.Text = "Posters from TMDB"
 '
 Me.klblposterTMDB24.Location = New System.Drawing.Point(598, 3226)
 Me.klblposterTMDB24.Name = "klblposterTMDB24"
-Me.klblposterTMDB24.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB24.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB24.TabIndex = 61
 Me.klblposterTMDB24.Text = "KryptonLabel24"
 Me.klblposterTMDB24.Values.ExtraText = ""
@@ -14904,7 +14905,7 @@ Me.klblposterTMDB24.Values.Text = "KryptonLabel24"
 '
 Me.klblposterTMDB23.Location = New System.Drawing.Point(329, 3226)
 Me.klblposterTMDB23.Name = "klblposterTMDB23"
-Me.klblposterTMDB23.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB23.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB23.TabIndex = 60
 Me.klblposterTMDB23.Text = "KryptonLabel23"
 Me.klblposterTMDB23.Values.ExtraText = ""
@@ -14915,7 +14916,7 @@ Me.klblposterTMDB23.Values.Text = "KryptonLabel23"
 '
 Me.klblposterTMDB22.Location = New System.Drawing.Point(72, 3226)
 Me.klblposterTMDB22.Name = "klblposterTMDB22"
-Me.klblposterTMDB22.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB22.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB22.TabIndex = 59
 Me.klblposterTMDB22.Text = "KryptonLabel22"
 Me.klblposterTMDB22.Values.ExtraText = ""
@@ -14926,7 +14927,7 @@ Me.klblposterTMDB22.Values.Text = "KryptonLabel22"
 '
 Me.klblposterTMDB21.Location = New System.Drawing.Point(598, 2822)
 Me.klblposterTMDB21.Name = "klblposterTMDB21"
-Me.klblposterTMDB21.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB21.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB21.TabIndex = 58
 Me.klblposterTMDB21.Text = "KryptonLabel21"
 Me.klblposterTMDB21.Values.ExtraText = ""
@@ -14937,7 +14938,7 @@ Me.klblposterTMDB21.Values.Text = "KryptonLabel21"
 '
 Me.klblposterTMDB20.Location = New System.Drawing.Point(329, 2822)
 Me.klblposterTMDB20.Name = "klblposterTMDB20"
-Me.klblposterTMDB20.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB20.Size = New System.Drawing.Size(102, 21)
 Me.klblposterTMDB20.TabIndex = 57
 Me.klblposterTMDB20.Text = "KryptonLabel20"
 Me.klblposterTMDB20.Values.ExtraText = ""
@@ -14948,7 +14949,7 @@ Me.klblposterTMDB20.Values.Text = "KryptonLabel20"
 '
 Me.klblposterTMDB19.Location = New System.Drawing.Point(72, 2822)
 Me.klblposterTMDB19.Name = "klblposterTMDB19"
-Me.klblposterTMDB19.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB19.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB19.TabIndex = 56
 Me.klblposterTMDB19.Text = "KryptonLabel19"
 Me.klblposterTMDB19.Values.ExtraText = ""
@@ -14959,7 +14960,7 @@ Me.klblposterTMDB19.Values.Text = "KryptonLabel19"
 '
 Me.klblposterTMDB18.Location = New System.Drawing.Point(598, 2416)
 Me.klblposterTMDB18.Name = "klblposterTMDB18"
-Me.klblposterTMDB18.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB18.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB18.TabIndex = 55
 Me.klblposterTMDB18.Text = "KryptonLabel18"
 Me.klblposterTMDB18.Values.ExtraText = ""
@@ -14970,7 +14971,7 @@ Me.klblposterTMDB18.Values.Text = "KryptonLabel18"
 '
 Me.klblposterTMDB17.Location = New System.Drawing.Point(329, 2416)
 Me.klblposterTMDB17.Name = "klblposterTMDB17"
-Me.klblposterTMDB17.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB17.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB17.TabIndex = 54
 Me.klblposterTMDB17.Text = "KryptonLabel17"
 Me.klblposterTMDB17.Values.ExtraText = ""
@@ -14981,7 +14982,7 @@ Me.klblposterTMDB17.Values.Text = "KryptonLabel17"
 '
 Me.klblposterTMDB16.Location = New System.Drawing.Point(72, 2416)
 Me.klblposterTMDB16.Name = "klblposterTMDB16"
-Me.klblposterTMDB16.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB16.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB16.TabIndex = 53
 Me.klblposterTMDB16.Text = "KryptonLabel16"
 Me.klblposterTMDB16.Values.ExtraText = ""
@@ -14992,7 +14993,7 @@ Me.klblposterTMDB16.Values.Text = "KryptonLabel16"
 '
 Me.klblposterTMDB15.Location = New System.Drawing.Point(598, 2011)
 Me.klblposterTMDB15.Name = "klblposterTMDB15"
-Me.klblposterTMDB15.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB15.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB15.TabIndex = 52
 Me.klblposterTMDB15.Text = "KryptonLabel15"
 Me.klblposterTMDB15.Values.ExtraText = ""
@@ -15003,7 +15004,7 @@ Me.klblposterTMDB15.Values.Text = "KryptonLabel15"
 '
 Me.klblposterTMDB14.Location = New System.Drawing.Point(329, 2011)
 Me.klblposterTMDB14.Name = "klblposterTMDB14"
-Me.klblposterTMDB14.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB14.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB14.TabIndex = 51
 Me.klblposterTMDB14.Text = "KryptonLabel14"
 Me.klblposterTMDB14.Values.ExtraText = ""
@@ -15014,7 +15015,7 @@ Me.klblposterTMDB14.Values.Text = "KryptonLabel14"
 '
 Me.klblposterTMDB13.Location = New System.Drawing.Point(72, 2011)
 Me.klblposterTMDB13.Name = "klblposterTMDB13"
-Me.klblposterTMDB13.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB13.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB13.TabIndex = 50
 Me.klblposterTMDB13.Text = "KryptonLabel13"
 Me.klblposterTMDB13.Values.ExtraText = ""
@@ -15025,7 +15026,7 @@ Me.klblposterTMDB13.Values.Text = "KryptonLabel13"
 '
 Me.klblposterTMDB12.Location = New System.Drawing.Point(598, 1604)
 Me.klblposterTMDB12.Name = "klblposterTMDB12"
-Me.klblposterTMDB12.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB12.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB12.TabIndex = 49
 Me.klblposterTMDB12.Text = "KryptonLabel12"
 Me.klblposterTMDB12.Values.ExtraText = ""
@@ -15036,7 +15037,7 @@ Me.klblposterTMDB12.Values.Text = "KryptonLabel12"
 '
 Me.klblposterTMDB11.Location = New System.Drawing.Point(329, 1604)
 Me.klblposterTMDB11.Name = "klblposterTMDB11"
-Me.klblposterTMDB11.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB11.Size = New System.Drawing.Size(98, 21)
 Me.klblposterTMDB11.TabIndex = 48
 Me.klblposterTMDB11.Text = "KryptonLabel11"
 Me.klblposterTMDB11.Values.ExtraText = ""
@@ -15047,7 +15048,7 @@ Me.klblposterTMDB11.Values.Text = "KryptonLabel11"
 '
 Me.klblposterTMDB10.Location = New System.Drawing.Point(72, 1604)
 Me.klblposterTMDB10.Name = "klblposterTMDB10"
-Me.klblposterTMDB10.Size = New System.Drawing.Size(90, 16)
+Me.klblposterTMDB10.Size = New System.Drawing.Size(100, 21)
 Me.klblposterTMDB10.TabIndex = 47
 Me.klblposterTMDB10.Text = "KryptonLabel10"
 Me.klblposterTMDB10.Values.ExtraText = ""
@@ -15058,7 +15059,7 @@ Me.klblposterTMDB10.Values.Text = "KryptonLabel10"
 '
 Me.klblposterTMDB9.Location = New System.Drawing.Point(598, 1198)
 Me.klblposterTMDB9.Name = "klblposterTMDB9"
-Me.klblposterTMDB9.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB9.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB9.TabIndex = 46
 Me.klblposterTMDB9.Text = "KryptonLabel9"
 Me.klblposterTMDB9.Values.ExtraText = ""
@@ -15069,7 +15070,7 @@ Me.klblposterTMDB9.Values.Text = "KryptonLabel9"
 '
 Me.klblposterTMDB8.Location = New System.Drawing.Point(329, 1198)
 Me.klblposterTMDB8.Name = "klblposterTMDB8"
-Me.klblposterTMDB8.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB8.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB8.TabIndex = 45
 Me.klblposterTMDB8.Text = "KryptonLabel8"
 Me.klblposterTMDB8.Values.ExtraText = ""
@@ -15080,7 +15081,7 @@ Me.klblposterTMDB8.Values.Text = "KryptonLabel8"
 '
 Me.klblposterTMDB7.Location = New System.Drawing.Point(72, 1198)
 Me.klblposterTMDB7.Name = "klblposterTMDB7"
-Me.klblposterTMDB7.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB7.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB7.TabIndex = 44
 Me.klblposterTMDB7.Text = "KryptonLabel7"
 Me.klblposterTMDB7.Values.ExtraText = ""
@@ -15091,7 +15092,7 @@ Me.klblposterTMDB7.Values.Text = "KryptonLabel7"
 '
 Me.klblposterTMDB6.Location = New System.Drawing.Point(598, 794)
 Me.klblposterTMDB6.Name = "klblposterTMDB6"
-Me.klblposterTMDB6.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB6.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB6.TabIndex = 43
 Me.klblposterTMDB6.Text = "KryptonLabel6"
 Me.klblposterTMDB6.Values.ExtraText = ""
@@ -15102,7 +15103,7 @@ Me.klblposterTMDB6.Values.Text = "KryptonLabel6"
 '
 Me.klblposterTMDB5.Location = New System.Drawing.Point(329, 794)
 Me.klblposterTMDB5.Name = "klblposterTMDB5"
-Me.klblposterTMDB5.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB5.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB5.TabIndex = 42
 Me.klblposterTMDB5.Text = "KryptonLabel5"
 Me.klblposterTMDB5.Values.ExtraText = ""
@@ -15113,7 +15114,7 @@ Me.klblposterTMDB5.Values.Text = "KryptonLabel5"
 '
 Me.klblposterTMDB4.Location = New System.Drawing.Point(72, 794)
 Me.klblposterTMDB4.Name = "klblposterTMDB4"
-Me.klblposterTMDB4.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB4.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB4.TabIndex = 41
 Me.klblposterTMDB4.Text = "KryptonLabel4"
 Me.klblposterTMDB4.Values.ExtraText = ""
@@ -15124,7 +15125,7 @@ Me.klblposterTMDB4.Values.Text = "KryptonLabel4"
 '
 Me.klblposterTMDB3.Location = New System.Drawing.Point(598, 386)
 Me.klblposterTMDB3.Name = "klblposterTMDB3"
-Me.klblposterTMDB3.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB3.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB3.TabIndex = 40
 Me.klblposterTMDB3.Text = "KryptonLabel3"
 Me.klblposterTMDB3.Values.ExtraText = ""
@@ -15135,7 +15136,7 @@ Me.klblposterTMDB3.Values.Text = "KryptonLabel3"
 '
 Me.klblposterTMDB2.Location = New System.Drawing.Point(329, 386)
 Me.klblposterTMDB2.Name = "klblposterTMDB2"
-Me.klblposterTMDB2.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB2.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB2.TabIndex = 39
 Me.klblposterTMDB2.Text = "KryptonLabel2"
 Me.klblposterTMDB2.Values.ExtraText = ""
@@ -15146,7 +15147,7 @@ Me.klblposterTMDB2.Values.Text = "KryptonLabel2"
 '
 Me.klblposterTMDB1.Location = New System.Drawing.Point(72, 386)
 Me.klblposterTMDB1.Name = "klblposterTMDB1"
-Me.klblposterTMDB1.Size = New System.Drawing.Size(83, 16)
+Me.klblposterTMDB1.Size = New System.Drawing.Size(94, 21)
 Me.klblposterTMDB1.TabIndex = 38
 Me.klblposterTMDB1.Text = "KryptonLabel2"
 Me.klblposterTMDB1.Values.ExtraText = ""
@@ -15410,7 +15411,7 @@ Me.pbposterTMDB24.TabStop = false
 Me.TabPageEX1.Controls.Add(Me.tbnone)
 Me.TabPageEX1.Location = New System.Drawing.Point(4, 25)
 Me.TabPageEX1.Name = "TabPageEX1"
-Me.TabPageEX1.Size = New System.Drawing.Size(806, 700)
+Me.TabPageEX1.Size = New System.Drawing.Size(806, 673)
 Me.TabPageEX1.TabIndex = 3
 Me.TabPageEX1.Text = "For Expansion"
 '
@@ -15444,7 +15445,7 @@ Me.kgMusicLeftNav.Name = "kgMusicLeftNav"
 'kgMusicLeftNav.Panel
 '
 Me.kgMusicLeftNav.Panel.Controls.Add(Me.kscMusicMainSC)
-Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 221)
+Me.kgMusicLeftNav.Size = New System.Drawing.Size(189, 212)
 Me.kgMusicLeftNav.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -15468,8 +15469,8 @@ Me.kscMusicMainSC.Panel1.Controls.Add(Me.kscMusicMainTopFilterGroup)
 '
 Me.kscMusicMainSC.Panel2.Controls.Add(Me.kscMusicLeftNavBottomMainSCAlbumSongs)
 Me.kscMusicMainSC.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 219)
-Me.kscMusicMainSC.SplitterDistance = 109
+Me.kscMusicMainSC.Size = New System.Drawing.Size(187, 210)
+Me.kscMusicMainSC.SplitterDistance = 104
 Me.kscMusicMainSC.TabIndex = 0
 '
 'kscMusicMainTopFilterGroup
@@ -15491,7 +15492,7 @@ Me.kscMusicMainTopFilterGroup.Panel1MinSize = 30
 Me.kscMusicMainTopFilterGroup.Panel2.Controls.Add(Me.lbmusicArtist)
 Me.kscMusicMainTopFilterGroup.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicMainTopFilterGroup.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 109)
+Me.kscMusicMainTopFilterGroup.Size = New System.Drawing.Size(187, 104)
 Me.kscMusicMainTopFilterGroup.SplitterDistance = 59
 Me.kscMusicMainTopFilterGroup.SplitterWidth = 0
 Me.kscMusicMainTopFilterGroup.TabIndex = 0
@@ -15580,8 +15581,8 @@ Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel1.Padding = New System.Windows.For
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Controls.Add(Me.lbmusicSongs)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.Panel2.Padding = New System.Windows.Forms.Padding(3)
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 105)
-Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 66
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.Size = New System.Drawing.Size(187, 101)
+Me.kscMusicLeftNavBottomMainSCAlbumSongs.SplitterDistance = 63
 Me.kscMusicLeftNavBottomMainSCAlbumSongs.TabIndex = 0
 '
 'lbmusicAlbums
@@ -16417,7 +16418,7 @@ Me.kgMyMovieList.Name = "kgMyMovieList"
 'kgMyMovieList.Panel
 '
 Me.kgMyMovieList.Panel.Controls.Add(Me.lbMyMovies)
-Me.kgMyMovieList.Size = New System.Drawing.Size(187, 83)
+Me.kgMyMovieList.Size = New System.Drawing.Size(187, 74)
 Me.kgMyMovieList.TabIndex = 80
 '
 'lbMyMovies
@@ -16427,7 +16428,7 @@ Me.lbMyMovies.FormattingEnabled = true
 Me.lbMyMovies.Location = New System.Drawing.Point(0, 0)
 Me.lbMyMovies.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.lbMyMovies.Name = "lbMyMovies"
-Me.lbMyMovies.Size = New System.Drawing.Size(175, 69)
+Me.lbMyMovies.Size = New System.Drawing.Size(175, 56)
 Me.lbMyMovies.TabIndex = 98
 '
 'kgMovieOrTVShow
@@ -19383,7 +19384,7 @@ Me.kgMoviesNavLeft.Name = "kgMoviesNavLeft"
 'kgMoviesNavLeft.Panel
 '
 Me.kgMoviesNavLeft.Panel.Controls.Add(Me.kscLeftMovieNavMain)
-Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 214)
+Me.kgMoviesNavLeft.Size = New System.Drawing.Size(189, 205)
 Me.kgMoviesNavLeft.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -19410,7 +19411,7 @@ Me.kscLeftMovieNavMain.Panel1MinSize = 100
 '
 Me.kscLeftMovieNavMain.Panel2.Controls.Add(Me.kgMyMovieList)
 Me.kscLeftMovieNavMain.Panel2MinSize = 40
-Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 212)
+Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 203)
 Me.kscLeftMovieNavMain.SplitterDistance = 126
 Me.kscLeftMovieNavMain.SplitterWidth = 3
 Me.kscLeftMovieNavMain.TabIndex = 77
@@ -19425,7 +19426,7 @@ Me.kgTVNavLeft.Name = "kgTVNavLeft"
 'kgTVNavLeft.Panel
 '
 Me.kgTVNavLeft.Panel.Controls.Add(Me.kscTVMainNavLeft)
-Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 224)
+Me.kgTVNavLeft.Size = New System.Drawing.Size(189, 215)
 Me.kgTVNavLeft.StateNormal.Border.ColorAngle = 20!
 Me.kgTVNavLeft.StateNormal.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
@@ -19450,8 +19451,8 @@ Me.kscTVMainNavLeft.Panel1.Controls.Add(Me.kgTvShowPickerArea)
 '
 Me.kscTVMainNavLeft.Panel2.Controls.Add(Me.kscTVMainLeftBottomNav)
 Me.kscTVMainNavLeft.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 220)
-Me.kscTVMainNavLeft.SplitterDistance = 31
+Me.kscTVMainNavLeft.Size = New System.Drawing.Size(185, 211)
+Me.kscTVMainNavLeft.SplitterDistance = 29
 Me.kscTVMainNavLeft.TabIndex = 47
 '
 'kgTvShowPickerArea
@@ -19463,7 +19464,7 @@ Me.kgTvShowPickerArea.Name = "kgTvShowPickerArea"
 'kgTvShowPickerArea.Panel
 '
 Me.kgTvShowPickerArea.Panel.Controls.Add(Me.lbTvShowPicker)
-Me.kgTvShowPickerArea.Size = New System.Drawing.Size(185, 31)
+Me.kgTvShowPickerArea.Size = New System.Drawing.Size(185, 29)
 Me.kgTvShowPickerArea.TabIndex = 2
 '
 'lbTvShowPicker
@@ -19491,8 +19492,8 @@ Me.kscTVMainLeftBottomNav.Panel1.Controls.Add(Me.kgTVSeasonPickerGroup)
 '
 Me.kscTVMainLeftBottomNav.Panel2.Controls.Add(Me.kscEpisodesEEM)
 Me.kscTVMainLeftBottomNav.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 184)
-Me.kscTVMainLeftBottomNav.SplitterDistance = 31
+Me.kscTVMainLeftBottomNav.Size = New System.Drawing.Size(185, 177)
+Me.kscTVMainLeftBottomNav.SplitterDistance = 29
 Me.kscTVMainLeftBottomNav.TabIndex = 0
 '
 'kscEpisodesEEM
@@ -19511,8 +19512,8 @@ Me.kscEpisodesEEM.Panel1.Controls.Add(Me.kgTVEpisodesGroup)
 '
 Me.kscEpisodesEEM.Panel2.Controls.Add(Me.kgMissingEpisodes)
 Me.kscEpisodesEEM.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 148)
-Me.kscEpisodesEEM.SplitterDistance = 96
+Me.kscEpisodesEEM.Size = New System.Drawing.Size(185, 143)
+Me.kscEpisodesEEM.SplitterDistance = 92
 Me.kscEpisodesEEM.TabIndex = 113
 '
 'kgMissingEpisodes
@@ -19524,7 +19525,7 @@ Me.kgMissingEpisodes.Name = "kgMissingEpisodes"
 'kgMissingEpisodes.Panel
 '
 Me.kgMissingEpisodes.Panel.Controls.Add(Me.lbEpisodesMissing)
-Me.kgMissingEpisodes.Size = New System.Drawing.Size(185, 47)
+Me.kgMissingEpisodes.Size = New System.Drawing.Size(185, 46)
 Me.kgMissingEpisodes.TabIndex = 112
 '
 'lbEpisodesMissing
@@ -19730,7 +19731,7 @@ Me.kscMain.Panel1MinSize = 174
 Me.kscMain.Panel2.Controls.Add(Me.kscFullRight)
 Me.kscMain.Panel2MinSize = 500
 Me.kscMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscMain.Size = New System.Drawing.Size(1016, 801)
+Me.kscMain.Size = New System.Drawing.Size(1016, 774)
 Me.kscMain.SplitterDistance = 189
 Me.kscMain.StateCommon.Separator.Border.Color1 = System.Drawing.Color.Black
 Me.kscMain.StateCommon.Separator.Border.Color2 = System.Drawing.Color.Silver
@@ -19760,7 +19761,7 @@ Me.kscLeftFull.Panel1MinSize = 40
 'kscLeftFull.Panel2
 '
 Me.kscLeftFull.Panel2.Controls.Add(Me.kscLeftBottomPart)
-Me.kscLeftFull.Size = New System.Drawing.Size(189, 801)
+Me.kscLeftFull.Size = New System.Drawing.Size(189, 774)
 Me.kscLeftFull.SplitterDistance = 42
 Me.kscLeftFull.SplitterWidth = 0
 Me.kscLeftFull.TabIndex = 0
@@ -19782,8 +19783,8 @@ Me.kscLeftBottomPart.Panel1.Controls.Add(Me.kscLeftNavMain)
 '
 Me.kscLeftBottomPart.Panel2.Controls.Add(Me.kgQCIcons)
 Me.kscLeftBottomPart.Panel2MinSize = 90
-Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 759)
-Me.kscLeftBottomPart.SplitterDistance = 669
+Me.kscLeftBottomPart.Size = New System.Drawing.Size(189, 732)
+Me.kscLeftBottomPart.SplitterDistance = 642
 Me.kscLeftBottomPart.SplitterWidth = 0
 Me.kscLeftBottomPart.TabIndex = 0
 '
@@ -19803,8 +19804,8 @@ Me.kscLeftNavMain.Panel1.Controls.Add(Me.kgMoviesNavLeft)
 '
 Me.kscLeftNavMain.Panel2.Controls.Add(Me.kscLeftNavBarSC2)
 Me.kscLeftNavMain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 669)
-Me.kscLeftNavMain.SplitterDistance = 214
+Me.kscLeftNavMain.Size = New System.Drawing.Size(189, 642)
+Me.kscLeftNavMain.SplitterDistance = 205
 Me.kscLeftNavMain.TabIndex = 0
 '
 'kscLeftNavBarSC2
@@ -19823,8 +19824,8 @@ Me.kscLeftNavBarSC2.Panel1.Controls.Add(Me.kgMusicLeftNav)
 '
 Me.kscLeftNavBarSC2.Panel2.Controls.Add(Me.kgTVNavLeft)
 Me.kscLeftNavBarSC2.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 450)
-Me.kscLeftNavBarSC2.SplitterDistance = 221
+Me.kscLeftNavBarSC2.Size = New System.Drawing.Size(189, 432)
+Me.kscLeftNavBarSC2.SplitterDistance = 212
 Me.kscLeftNavBarSC2.TabIndex = 0
 '
 'kscFullRight
@@ -19844,7 +19845,7 @@ Me.kscFullRight.Panel1.Controls.Add(Me.kscTopRightNavBarMain)
 'kscFullRight.Panel2
 '
 Me.kscFullRight.Panel2.Controls.Add(Me.kscRightBottomPart)
-Me.kscFullRight.Size = New System.Drawing.Size(822, 801)
+Me.kscFullRight.Size = New System.Drawing.Size(822, 774)
 Me.kscFullRight.SplitterDistance = 43
 Me.kscFullRight.SplitterWidth = 1
 Me.kscFullRight.TabIndex = 0
@@ -19960,8 +19961,8 @@ Me.kscRightBottomPart.Panel2.Controls.Add(Me.kscBottom2PartTVorMovie)
 Me.kscRightBottomPart.Panel2Collapsed = true
 Me.kscRightBottomPart.Panel2MinSize = 80
 Me.kscRightBottomPart.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
-Me.kscRightBottomPart.Size = New System.Drawing.Size(822, 757)
-Me.kscRightBottomPart.SplitterDistance = 227
+Me.kscRightBottomPart.Size = New System.Drawing.Size(822, 730)
+Me.kscRightBottomPart.SplitterDistance = 219
 Me.kscRightBottomPart.SplitterWidth = 0
 Me.kscRightBottomPart.TabIndex = 0
 '
@@ -21762,12 +21763,17 @@ Me.kPaletteBlingLarge.Ribbon.RibbonTab.StateTracking.TextColor = System.Drawing.
 Me.bwAutopilot.WorkerReportsProgress = true
 Me.bwAutopilot.WorkerSupportsCancellation = true
 '
+'bwAutoPilotMediaUpdate
+'
+Me.bwAutoPilotMediaUpdate.WorkerReportsProgress = true
+Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
+'
 'maincollection
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
 Me.BackColor = System.Drawing.Color.Black
 Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-Me.ClientSize = New System.Drawing.Size(1016, 801)
+Me.ClientSize = New System.Drawing.Size(1016, 774)
 Me.Controls.Add(Me.kscMain)
 Me.Controls.Add(Me.tcRootBackup)
 Me.DoubleBuffered = true
@@ -24141,4 +24147,5 @@ End Sub
     Friend WithEvents tsmimovie_poster_r720x1080 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmimovie_poster_r800x1200 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmimovie_poster_r1000x1500 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents bwAutoPilotMediaUpdate As System.ComponentModel.BackgroundWorker
 End Class

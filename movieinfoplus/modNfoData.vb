@@ -237,7 +237,7 @@ Module modNfoData
         Dim multimode As Boolean = False
         Dim imdbidlist As New ArrayList
         Try
-            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\((\d{4})\)")
+            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\((\d{4})")
             Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
             While MatchResults.Success
                 multimode = True

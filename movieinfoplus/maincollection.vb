@@ -2243,11 +2243,11 @@ Public Class maincollection
                     currentmovie.pstudio = tempmov.pstudio
                     currentmovie.pstudioreal = tempmov.pstudio
                     currentmovie.pcredits = tempmov.pcredits
-                    If rconf.pcbmovie_use_certification_for_mpaa Then
-                        currentmovie.pmpaa = tempmov.certification
-                    Else
-                        currentmovie.pmpaa = tempmov.pmpaa
-                    End If
+                    'If rconf.pcbmovie_use_certification_for_mpaa Then
+                    '    currentmovie.pmpaa = tempmov.certification
+                    'Else
+                    '    currentmovie.pmpaa = tempmov.pmpaa
+                    'End If
                 Catch ex As Exception
                     MsgBox("Couldn't readup cache for movie: " & ex.ToString)
                 End Try
@@ -2431,11 +2431,11 @@ Public Class maincollection
                     currentmovie.pstudio = tempmov.pstudio
                     currentmovie.pstudioreal = tempmov.pstudio
                     currentmovie.pcredits = tempmov.pcredits
-                    If rconf.pcbmovie_use_certification_for_mpaa Then
-                        currentmovie.pmpaa = tempmov.certification
-                    Else
-                        currentmovie.pmpaa = tempmov.pmpaa
-                    End If
+                    'If rconf.pcbmovie_use_certification_for_mpaa Then
+                    '    currentmovie.pmpaa = tempmov.certification
+                    'Else
+                    '    currentmovie.pmpaa = tempmov.pmpaa
+                    'End If
                 Catch ex As Exception
                     MsgBox("Couldn't readup cache for movie: " & ex.ToString)
                 End Try
@@ -17436,7 +17436,7 @@ Public Class maincollection
             Dim MatchResultsG As Match = RegexObjG.Match(imdbtxt)
             While MatchResultsG.Success
                 'Debug.Print("DEBUG: " + MatchResultsG.Groups("gn").Value.ToString)
-                nimdb.genre += MatchResultsG.Groups(1).Value + " / "
+                nimdb.genre += cleanimdbdata(MatchResultsG.Groups(1).Value) + " / "
                 MatchResultsG = MatchResultsG.NextMatch()
             End While
         Catch ex As ArgumentException
@@ -17545,7 +17545,7 @@ Public Class maincollection
             Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
             Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
             While MatchResultsD.Success
-                nimdb.director += MatchResultsD.Groups(1).Value + " / "
+                nimdb.director += cleanimdbdata(MatchResultsD.Groups(1).Value) + " / "
                 MatchResultsD = MatchResultsD.NextMatch()
             End While
         Catch ex As ArgumentException
@@ -17574,11 +17574,11 @@ Public Class maincollection
             While MatchResultsA.Success
                 ' Debug.Print("match results hit for actor, parse to field data")
                 Dim tActor As New movieinfoplus.mip.mov.Actor
-                tActor.Thumb = MatchResultsA.Groups(1).Value
+                tActor.Thumb = cleanimdbdata(MatchResultsA.Groups(1).Value)
                 ' Debug.Print(tActor.thumb)
-                tActor.Name = MatchResultsA.Groups(2).Value
+                tActor.Name = cleanimdbdata(MatchResultsA.Groups(2).Value)
                 ' Debug.Print(tActor.name)
-                tActor.Role = MatchResultsA.Groups(3).Value
+                tActor.Role = cleanimdbdata(MatchResultsA.Groups(3).Value)
                 ' Debug.Print(tActor.role)
                 For Each dudet In nimdb.Actors
                     ' Debug.Print(dudet.ToString)
@@ -30941,6 +30941,13 @@ Public Class maincollection
     End Sub
     Private Sub bwAutopilot_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwAutopilot.RunWorkerCompleted
         kscMain.Enabled = False
+        If gv_bwap_mediaonly Then
+            bwautopliotmediaupdateonly_start(gv_bwap_updatestudiofromimdb)
+
+            Exit Sub
+        End If
+
+
         autopilotfromform(gv_bwap_primary, gv_bwap_secondary, gv_bwap_posterTru, gv_bwap_fanartTru, gv_bwap_tbnTru, gv_bwap_nfoTru, gv_bwap_overwritenfoTru, gv_bwap_overwritefolderjpg, gv_bwap_mediaonly, gv_bwap_updatestudiofromimdb)
         'dlgAutoPilotRunning.Dispose()
         kscMain.Enabled = True
@@ -31161,15 +31168,52 @@ Public Class maincollection
             If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
         End If
 
+        'If Not currentmovie.pfilemode Then
+        '    filetoresize = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
+        '    If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        '    filetoresize = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
+        '    If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        '    filetoresize = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
+        '    If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        'End If
         If Not currentmovie.pfilemode Then
-            filetoresize = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
-            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
-            filetoresize = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
-            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
-            filetoresize = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
-            If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
-        End If
+            Dim curtext = saveaswhaticontype.Text
+            saveaswhaticontype.Text = "Resize which items?"
+            saveaswhaticontype.ShowDialog()
+            Dim savefolderjpg As Boolean = False
+            Dim savemovienametbn As Boolean = False
+            Dim savemovietbn As Boolean = False
 
+            If saveaswhaticontype.rbsaveasboth.Checked Then
+                Debug.Print("both")
+                savefolderjpg = True 'rconf.pcbCreateFolderjpg
+                savemovienametbn = True 'rconf.pcbcreatemovienamedottbn
+                savemovietbn = True 'rconf.pcbcreatemovietbn
+            ElseIf saveaswhaticontype.rbsaveasfolderjpg.Checked Then
+                Debug.Print("folder.jpg")
+                savefolderjpg = True
+                savemovienametbn = False
+                savemovietbn = False
+            ElseIf saveaswhaticontype.rbsaveastbn.Checked Then
+                Debug.Print("tbn")
+                savefolderjpg = False
+                savemovienametbn = True 'rconf.pcbcreatemovienamedottbn
+                savemovietbn = True 'rconf.pcbcreatemovietbn
+            Else
+                MsgBox("No type was selected, I can't save without knowing what type")
+                Exit Sub
+            End If
+            saveaswhaticontype.Text = curtext
+            saveaswhaticontype.Dispose()
+
+
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
+            If File.Exists(filetoresize) And savemovienametbn Then resizeimage(newsize, filetoresize)
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
+            If File.Exists(filetoresize) And savemovietbn Then resizeimage(newsize, filetoresize)
+            filetoresize = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
+            If File.Exists(filetoresize) And savefolderjpg Then resizeimage(newsize, filetoresize)
+        End If
         If messageprompts Then
             If Not currentmovie.pfilemode Then 'refresh all as start point may have shifted
                 showfolderjpginmainwindow(currentmovie.getmoviepath, False)
@@ -31186,7 +31230,7 @@ Public Class maincollection
                 Exit Sub
             End If
         End If
-
+        Me.Refresh()
 
     End Sub
     Private Sub compress_movieposter(ByVal amount As String)
@@ -31207,12 +31251,40 @@ Public Class maincollection
         End If
 
         If Not currentmovie.pfilemode Then
+            Dim curtext = saveaswhaticontype.Text
+            saveaswhaticontype.Text = "Compress which items?"
+            saveaswhaticontype.ShowDialog()
+            Dim savefolderjpg As Boolean = False
+            Dim savemovienametbn As Boolean = False
+            Dim savemovietbn As Boolean = False
+
+            If saveaswhaticontype.rbsaveasboth.Checked Then
+                Debug.Print("both")
+                savefolderjpg = True 'rconf.pcbCreateFolderjpg
+                savemovienametbn = True 'rconf.pcbcreatemovienamedottbn
+                savemovietbn = True 'rconf.pcbcreatemovietbn
+            ElseIf saveaswhaticontype.rbsaveasfolderjpg.Checked Then
+                Debug.Print("folder.jpg")
+                savefolderjpg = True
+                savemovienametbn = False
+                savemovietbn = False
+            ElseIf saveaswhaticontype.rbsaveastbn.Checked Then
+                Debug.Print("tbn")
+                savefolderjpg = False
+                savemovienametbn = True 'rconf.pcbcreatemovienamedottbn
+                savemovietbn = True 'rconf.pcbcreatemovietbn
+            Else
+                MsgBox("No type was selected, I can't save without knowing what type")
+                Exit Sub
+            End If
+            saveaswhaticontype.Text = curtext
+            saveaswhaticontype.Dispose()
             filetocompress = addfiletofolder(currentmovie.getmoviepath, currentmovie.pmoviename & ".tbn")
-            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+            If File.Exists(filetocompress) And savemovienametbn Then compressimage(amount, filetocompress)
             filetocompress = addfiletofolder(currentmovie.getmoviepath, "movie.tbn")
-            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+            If File.Exists(filetocompress) And savemovietbn Then compressimage(amount, filetocompress)
             filetocompress = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
-            If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+            If File.Exists(filetocompress) And savefolderjpg Then compressimage(amount, filetocompress)
         End If
 
         If messageprompts Then
@@ -31232,7 +31304,7 @@ Public Class maincollection
             End If
         End If
 
-
+        Me.Refresh()
     End Sub
     Private Sub compress_tvshowposter(ByRef currentpb As PictureBox, ByVal amount As String, ByVal filetocompress As String)
 
@@ -31257,8 +31329,9 @@ Public Class maincollection
             pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
             pro1.Start()
             pro1.WaitForExit()
+            System.Threading.Thread.Sleep(200)
             File.Move(newfile, curloc)
-
+            System.Threading.Thread.Sleep(200)
             'cleanup newfile and backupfile as long as curloc is populated
             If File.Exists(curloc) Then
                 File.Delete(newfile)
@@ -31303,8 +31376,9 @@ Public Class maincollection
                 'If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
             End If
 
-
+            System.Threading.Thread.Sleep(200)
             File.Move(newfile, curloc)
+            System.Threading.Thread.Sleep(200)
             'cleanup newfile and backupfile as long as curloc is populated
             If File.Exists(curloc) Then
                 Try
@@ -31586,9 +31660,174 @@ Public Class maincollection
     Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
         testofdbsearch()
     End Sub
+    Public gvupdatestudiofromimdb As Boolean = False
+    Public Sub bwautopliotmediaupdateonly_start(ByVal updatestudioinfo As Boolean)
+        prgThread.Value = 0
+        Try
+            prgThread.Maximum = (movies.Count + 1) '* 2
+        Catch ex As Exception
+            prgThread.Maximum = 500
+        End Try
+        'prgThread.Maximum = (dlist.Count - 1) '* 2
+
+        'set totaltoprocess value
+        'totaltoprocess = lbMyMovies.Items.Count - 1
+        'set max number 
+        prgThread.Visible = True
+        tsbMoviesPreCache.Enabled = False
+        lblPCWorking.Visible = True
+        lblPCWorking.Text = ""
+        gvupdatestudiofromimdb = updatestudioinfo
+        bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
+        bwAutoPilotMediaUpdate.WorkerReportsProgress = True
+        bwAutoPilotMediaUpdate.WorkerSupportsCancellation = True
+        bwAutoPilotMediaUpdate.RunWorkerAsync()
+    End Sub
+
+    Private Sub bwAutoPilotMediaUpdate_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwAutoPilotMediaUpdate.DoWork
+        Dim currentindex As Integer = 0
+        For Each curmovie As movie In movies
+            curmovie = CType(movies(CInt(currentindex)), movie)
+            currentmovie = curmovie
+            bwAutoPilotMediaUpdate.ReportProgress(currentindex, currentindex.ToString & " of " & movies.Count.ToString & " : " & curmovie.pmoviename)
+            If currentmovie.pfilemode = True Then
+                moviemode = "file"
+                If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, currentmovie.preservedmoviename)) Then
+                    'MsgBox ("File is no longer at this location, please rescan your movies by clicking Load Movies")
+                    Exit Sub
+                End If
+            Else
+                moviemode = "folder"
+            End If
+            Dim cmpath As String = currentmovie.getmoviepath
+            If Not Directory.Exists(cmpath) Then Exit Sub
+            Dim dname As String
+            dname = currentmovie.getmoviename
+        
+
+            Dim selectedName As String = currentmovie.getmoviename
+            Dim selectedNameXMLfile As String
+            selectedNameXMLfile = Strings.Replace(selectedName, " ", ".")
+            currentmovie.setthumbxml(rconf.xmlfolder + selectedNameXMLfile + ".xml")
+            If Not currentmovie.pdatafromnfo Then checknfodata(currentmovie, dname, rbem.Checked)
 
 
+            Debug.Print(currentmovie.pmoviename)
+            If gvupdatestudiofromimdb Then
 
+                Try
+                    Dim curimdb As New IMDB
+                    Dim tempmov As New movie
+                    tempmov.pimdbnumber = currentmovie.pimdbnumber
+                    'clear out the cached data (this will slow things down)
+                    If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+                        Try
+                            File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+                        Catch ex As Exception
+
+                        End Try
+                        Try
+                            File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+                        Catch ex As Exception
+
+                        End Try
+                    End If
+                    ''\fullcredits\fullcredits
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits") Then
+                    '    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits") Then
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                    '    End If
+                    '    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                    'End If
+                    'If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary") Then
+                    '    If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary") Then
+                    '        File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                    '        File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                    '    End If
+                    '    Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                    'End If
+                    'If File.Exists(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html") Then
+                    '    File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                    '    File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+                    'End If
+
+
+                    If Not File.Exists(maincollection.rconf.imdbcachefolder + "/" + currentmovie.pimdbnumber + ".xml") Then
+                        '' getimdbdata(tmovie)
+                        Dim imdbinfo As New IMDB
+                        Dim imdbidtemp As String = tempmov.getimdbid
+                        If imdbidtemp = "" Then
+                            Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
+                        Else
+                            imdbinfo = maincollection.imdbparse(imdbidtemp)
+                            imdbinfo.writeIMDBXML(imdbinfo, tempmov, maincollection.rconf.imdbcachefolder, True)
+                        End If
+                    End If
+                    curimdb.readIMDBXML(tempmov, rconf.imdbcachefolder)
+                    currentmovie.pstudio = tempmov.pstudio
+                    currentmovie.pstudioreal = tempmov.pstudio
+                    currentmovie.pcredits = tempmov.pcredits
+                    currentmovie.pmpaa = tempmov.pmpaa
+                    currentmovie.certification = tempmov.certification
+                    'If rconf.pcbmovie_use_certification_for_mpaa Then
+                    '    currentmovie.pmpaa = tempmov.certification
+                    'Else
+                    '    currentmovie.pmpaa = tempmov.pmpaa
+                    'End If
+                Catch ex As Exception
+                    MsgBox("Couldn't readup cache for movie: " & ex.ToString)
+                End Try
+            End If
+
+
+            Dim MI As New MediaInfo
+            MI.getdata(currentmovie, moviemode)
+            If rconf.pcbGeneralSupportSkinBasedFlagging Then
+                If gvupdatestudiofromimdb Then
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                Else
+                    currentmovie.pstudioreal = currentmovie.pstudio
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                End If
+            End If
+            'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
+            Debug.Print("Update ran for media information, doesn't mean it found something, just means that it ran. ") 'DATED MEDIA INFO IN .nfo FILE")
+            If Not currentmovie.pimdbnumber = Nothing Then currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo)
+            'increment counter
+            currentindex += 1
+        Next
+    End Sub
+
+    Private Sub bwAutoPilotMediaUpdate_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwAutoPilotMediaUpdate.ProgressChanged
+        prgThread.Value = e.ProgressPercentage
+        lblPCWorking.Text = e.UserState.ToString
+    End Sub
+
+    Private Sub bwAutoPilotMediaUpdate_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwAutoPilotMediaUpdate.RunWorkerCompleted
+        tsbMoviesPreCache.Enabled = True
+        'btnPrecache.Visible = True
+        btnCancelPC.Enabled = False
+        btnCancelPC.Visible = False
+        prgThread.Visible = False
+        tcMain.Enabled = True
+        gbAppMode.Enabled = True
+        gbDisplay.Enabled = True
+        tsbMoviesLoadMovies.Enabled = True
+        tsbMoviesAutoPilot.Enabled = True
+        'btnAutoPilot.Visible = True
+        lblPCWorking.Visible = False
+        lbMyMovies.Enabled = True
+        kgMovieOrTVShow.Enabled = True
+        kgMyMovieInfoPicker.Enabled = True
+        btnShowMovieInfo.Enabled = True
+        fwdbackbuttons()
+        klNumMovies.Text = movies.Count.ToString
+        prgThread.Visible = False
+        pbar1.Visible = False
+        kscMain.Enabled = True
+        MsgBox("Media update completed!")
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"

@@ -297,6 +297,7 @@ Partial Class dlgConfiguration
         Me.kbtnRemoveAllCachedMovieData = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.kscMainSettings = New ComponentFactory.Krypton.Toolkit.KryptonSplitContainer
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog
+        Me.klblCertLang = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.kgMovieSettings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kgMovieSettings.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -470,8 +471,9 @@ Partial Class dlgConfiguration
         '
         'kgMovieSettings.Panel
         '
-        Me.kgMovieSettings.Panel.Controls.Add(Me.cbmovie_use_certification_for_mpaa)
         Me.kgMovieSettings.Panel.Controls.Add(Me.cbMoviesCertificationLang)
+        Me.kgMovieSettings.Panel.Controls.Add(Me.klblCertLang)
+        Me.kgMovieSettings.Panel.Controls.Add(Me.cbmovie_use_certification_for_mpaa)
         Me.kgMovieSettings.Panel.Controls.Add(Me.btnProcessAll)
         Me.kgMovieSettings.Panel.Controls.Add(Me.lblMoviesMisc)
         Me.kgMovieSettings.Panel.Controls.Add(Me.cbAllowAutoMovienameRename)
@@ -500,6 +502,7 @@ Partial Class dlgConfiguration
         '
         Me.cbmovie_use_certification_for_mpaa.Checked = True
         Me.cbmovie_use_certification_for_mpaa.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbmovie_use_certification_for_mpaa.Enabled = False
         Me.cbmovie_use_certification_for_mpaa.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.cbmovie_use_certification_for_mpaa.Location = New System.Drawing.Point(8, 185)
         Me.cbmovie_use_certification_for_mpaa.Name = "cbmovie_use_certification_for_mpaa"
@@ -509,6 +512,7 @@ Partial Class dlgConfiguration
         Me.cbmovie_use_certification_for_mpaa.Values.ExtraText = ""
         Me.cbmovie_use_certification_for_mpaa.Values.Image = Nothing
         Me.cbmovie_use_certification_for_mpaa.Values.Text = "Use Certification data for MPAA"
+        Me.cbmovie_use_certification_for_mpaa.Visible = False
         '
         'cbMoviesCertificationLang
         '
@@ -517,7 +521,7 @@ Partial Class dlgConfiguration
         Me.cbMoviesCertificationLang.FormattingEnabled = False
         Me.cbMoviesCertificationLang.Items.AddRange(New Object() {"Iceland", "Brazil", "Portugal", "Argentina", "Australia", "Belgium", "Canada", "Finland", "France", "Germany", "Hong Kong", "Ireland", "Netherlands", "New Zealand", "Peru", "Singapore", "South Korea", "Spain", "Sweden", "Switzerland", "UK", "USA"})
         Me.cbMoviesCertificationLang.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
-        Me.cbMoviesCertificationLang.Location = New System.Drawing.Point(222, 177)
+        Me.cbMoviesCertificationLang.Location = New System.Drawing.Point(210, 185)
         Me.cbMoviesCertificationLang.Name = "cbMoviesCertificationLang"
         Me.cbMoviesCertificationLang.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.cbMoviesCertificationLang.Size = New System.Drawing.Size(135, 20)
@@ -2921,8 +2925,8 @@ Partial Class dlgConfiguration
         Me.tcSettings.Appearance = Dotnetrix.Controls.TabAppearanceEX.Bevel
         Me.tcSettings.BackColor = System.Drawing.Color.Black
         Me.tcSettings.Controls.Add(Me.tpSettingsGeneral)
-        Me.tcSettings.Controls.Add(Me.tpSettingsTvShows)
         Me.tcSettings.Controls.Add(Me.tpSettingsMovies)
+        Me.tcSettings.Controls.Add(Me.tpSettingsTvShows)
         Me.tcSettings.Controls.Add(Me.tpSettingsMusic)
         Me.tcSettings.Controls.Add(Me.tpSettingsHV)
         Me.tcSettings.Dock = System.Windows.Forms.DockStyle.Fill
@@ -4169,6 +4173,18 @@ Partial Class dlgConfiguration
         Me.kscMainSettings.SplitterDistance = 618
         Me.kscMainSettings.TabIndex = 89
         '
+        'klblCertLang
+        '
+        Me.klblCertLang.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.klblCertLang.Location = New System.Drawing.Point(21, 183)
+        Me.klblCertLang.Name = "klblCertLang"
+        Me.klblCertLang.Size = New System.Drawing.Size(179, 21)
+        Me.klblCertLang.TabIndex = 91
+        Me.klblCertLang.Text = "Certification Language to use"
+        Me.klblCertLang.Values.ExtraText = ""
+        Me.klblCertLang.Values.Image = Nothing
+        Me.klblCertLang.Values.Text = "Certification Language to use"
+        '
         'dlgConfiguration
         '
         Me.AcceptButton = Me.OK_Button
@@ -4620,5 +4636,6 @@ Partial Class dlgConfiguration
     Friend WithEvents rbtvshow_show_usePosterImageForShow As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents rbtvshow_show_useWideImageForShow As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents kgTvShowsShowWidePoster As ComponentFactory.Krypton.Toolkit.KryptonGroup
+    Friend WithEvents klblCertLang As ComponentFactory.Krypton.Toolkit.KryptonLabel
 
 End Class
