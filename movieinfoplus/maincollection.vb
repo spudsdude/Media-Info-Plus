@@ -18247,7 +18247,7 @@ Public Class maincollection
         filetofolder(currentmovie, currentmovie.getmoviepath)
         'cbNoNfoChangePrompt.Checked
     End Sub
-    Private Sub saveNfoFromGuiText(ByVal asdisplayed As Boolean)
+    Private Sub saveNfoFromGuiText(ByVal asdisplayed As Boolean, Optional ByVal lang_change As Boolean = False)
         'checkid function no longer needed as we don't write back to the imdb information
         'Dim checkid As String = Me.tbIMDBID.Text
         'If checkid = Nothing Then
@@ -18267,33 +18267,34 @@ Public Class maincollection
 
 
         'End If
-        'set tmovie information to data in gui
-        currentmovie.peditedmoviename = Me.tbEditableTitle.Text 'Me.tbMovieName.Text
-        'currentmovie.getmoviename = Me.tbMovieNameE.Text
-        currentmovie.pcredits = Me.tbCredits.Text
-        currentmovie.pdirector = Me.tbDirector.Text
-        currentmovie.pgenre = Me.tbGenre.Text
-        currentmovie.pimdbnumber = Me.tbIMDBID.Text
-        currentmovie.pmpaa = Me.tbMpaa.Text
-        currentmovie.pplotoutline = Me.rtbPlotOutline.Text
-        currentmovie.pplot = Me.rtbPlot.Text
-        currentmovie.prating = Me.tbRating.Text
-        currentmovie.poriginaltitle = Me.tbOriginalTitle.Text
-        currentmovie.pruntime = Me.tbRuntime.Text
-        currentmovie.ptagline = Me.rtbTagline.Text
-        currentmovie.pvotes = Me.tbVotes.Text
-        currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
-        currentmovie.pgenre = Me.tbGenre.Text
-        Dim oldvalue As Integer = currentmovie.pyear
-        Try
-            currentmovie.pyear = CInt(Me.tbyear.Text) 'this will need to be blocked for integers only in gui
-        Catch ex As Exception
-            currentmovie.pyear = oldvalue
-        End Try
+        If Not lang_change Then
+            'set tmovie information to data in gui
+            currentmovie.peditedmoviename = Me.tbEditableTitle.Text 'Me.tbMovieName.Text
+            'currentmovie.getmoviename = Me.tbMovieNameE.Text
+            currentmovie.pcredits = Me.tbCredits.Text
+            currentmovie.pdirector = Me.tbDirector.Text
+            currentmovie.pgenre = Me.tbGenre.Text
+            currentmovie.pimdbnumber = Me.tbIMDBID.Text
+            currentmovie.pmpaa = Me.tbMpaa.Text
+            currentmovie.pplotoutline = Me.rtbPlotOutline.Text
+            currentmovie.pplot = Me.rtbPlot.Text
+            currentmovie.prating = Me.tbRating.Text
+            currentmovie.poriginaltitle = Me.tbOriginalTitle.Text
+            currentmovie.pruntime = Me.tbRuntime.Text
+            currentmovie.ptagline = Me.rtbTagline.Text
+            currentmovie.pvotes = Me.tbVotes.Text
+            currentmovie.pstudio = Me.tbStudio.Text  'tmovie.ptitle
+            currentmovie.pgenre = Me.tbGenre.Text
+            Dim oldvalue As Integer = currentmovie.pyear
+            Try
+                currentmovie.pyear = CInt(Me.tbyear.Text) 'this will need to be blocked for integers only in gui
+            Catch ex As Exception
+                currentmovie.pyear = oldvalue
+            End Try
 
-        currentmovie.ptop250 = Me.tbTop250.Text
-        currentmovie.ptrailer = Me.tbTrailer.Text
-
+            currentmovie.ptop250 = Me.tbTop250.Text
+            currentmovie.ptrailer = Me.tbTrailer.Text
+        End If
         'mark it as if we loaded the data from the .nfo file or it will repull that data unless the movie is re-loaded into the app
         currentmovie.pdatafromnfo = True
 
@@ -31184,15 +31185,15 @@ Public Class maincollection
     Private Sub tsmimovie_poster_r1000x1500_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r1000x1500.Click
         resize_movieposter("1000x1500")
     End Sub
-    Private Sub resize_movieposter(ByVal newsize As String)
-        If messageprompts Then pbCurIconUsed.Image = Nothing
-        If messageprompts Then pbCurIconUsed.ImageLocation = Nothing
-        If messageprompts Then pbCurIconUsed2.Image = Nothing
-        If messageprompts Then pbCurIconUsed2.ImageLocation = Nothing
-        If messageprompts Then pbCurTBNUsed.Image = Nothing
-        If messageprompts Then pbCurTBNUsed.ImageLocation = Nothing
-        If messageprompts Then pbCurTBNUsed2.Image = Nothing
-        If messageprompts Then pbCurTBNUsed2.ImageLocation = Nothing
+    Private Sub resize_movieposter(ByVal newsize As String, Optional ByVal autopilot As Boolean = False)
+        If Not autopilot Then pbCurIconUsed.Image = Nothing
+        If Not autopilot Then pbCurIconUsed.ImageLocation = Nothing
+        If Not autopilot Then pbCurIconUsed2.Image = Nothing
+        If Not autopilot Then pbCurIconUsed2.ImageLocation = Nothing
+        If Not autopilot Then pbCurTBNUsed.Image = Nothing
+        If Not autopilot Then pbCurTBNUsed.ImageLocation = Nothing
+        If Not autopilot Then pbCurTBNUsed2.Image = Nothing
+        If Not autopilot Then pbCurTBNUsed2.ImageLocation = Nothing
         GC.Collect()
         'figure out what files to mod by looking into the folder for any valid images
         Dim filetoresize As String = ""
@@ -31266,15 +31267,15 @@ Public Class maincollection
         Me.Refresh()
 
     End Sub
-    Private Sub compress_movieposter(ByVal amount As String)
-        If messageprompts Then pbCurIconUsed.Image = Nothing
-        If messageprompts Then pbCurIconUsed.ImageLocation = Nothing
-        If messageprompts Then pbCurIconUsed2.Image = Nothing
-        If messageprompts Then pbCurIconUsed2.ImageLocation = Nothing
-        If messageprompts Then pbCurTBNUsed.Image = Nothing
-        If messageprompts Then pbCurTBNUsed.ImageLocation = Nothing
-        If messageprompts Then pbCurTBNUsed2.Image = Nothing
-        If messageprompts Then pbCurTBNUsed2.ImageLocation = Nothing
+    Private Sub compress_movieposter(ByVal amount As String, Optional ByVal autopilot As Boolean = False)
+        If Not autopilot Then pbCurIconUsed.Image = Nothing
+        If Not autopilot Then pbCurIconUsed.ImageLocation = Nothing
+        If Not autopilot Then pbCurIconUsed2.Image = Nothing
+        If Not autopilot Then pbCurIconUsed2.ImageLocation = Nothing
+        If Not autopilot Then pbCurTBNUsed.Image = Nothing
+        If Not autopilot Then pbCurTBNUsed.ImageLocation = Nothing
+        If Not autopilot Then pbCurTBNUsed2.Image = Nothing
+        If Not autopilot Then pbCurTBNUsed2.ImageLocation = Nothing
         GC.Collect()
         'figure out what files to mod by looking into the folder for any valid images
         Dim filetocompress As String = ""
@@ -31860,6 +31861,22 @@ Public Class maincollection
         pbar1.Visible = False
         kscMain.Enabled = True
         MsgBox("Media update completed!")
+    End Sub
+
+    Private Sub tsmimovie_GetOFDBMovieDetailsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_GetOFDBMovieDetailsToolStripMenuItem.Click
+        If Not currentmovie Is Nothing Then
+            set_movie_details_from_ofdb(currentmovie)
+            saveNfoFromGuiText(False, True)
+            Dim curmode As Boolean = rbem.Checked
+            Dim curais As Boolean = cbAllowIconSelection.Checked
+            rbem.Checked = False
+            cbAllowIconSelection.Checked = False
+            processdropdownitems()
+            rbem.Checked = curmode
+            cbAllowIconSelection.Checked = curais
+        End If
+
+
     End Sub
 End Class
 <Serializable()> Public Class posters

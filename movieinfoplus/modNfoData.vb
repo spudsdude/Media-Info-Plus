@@ -201,7 +201,167 @@ Module modNfoData
         End If
 
     End Sub
-   
+
+    Public Sub set_movie_details_from_ofdb(ByRef tmovie As movie)
+        Dim s As String = ""
+        s = downloadofdb_main_details(get_ofdbidlink(tmovie.pimdbnumber))
+
+        Dim ofdb_title As String = ""
+        Try
+            Dim robjOfdbTitle As New Regex("<td width=""99.""><h2><font face=""Arial,Helvetica,sans-serif"" size=""3""><b>([^<]+)</b></font></h2></td>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_title = robjOfdbTitle.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        tmovie.peditedmoviename = cleanimdbdata(ofdb_title)
+
+        Dim ofdb_outline As String = ""
+        Try
+            Dim robjOfdbOutline As New Regex("<b>Inhalt:</b>([^<]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_outline = robjOfdbOutline.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        tmovie.pplotoutline = cleanimdbdata(ofdb_outline)
+
+        Dim ofdb_genre As String = ""
+        Try
+            Dim robjOfdbGenres As New Regex("view.php\?page=genre&Genre=[^""]+"">([^<]*)<", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            Dim ofdbGenres As Match = robjOfdbGenres.Match(s)
+            While ofdbGenres.Success
+                ofdb_genre += ofdbGenres.Groups(1).Value.ToString + " / "
+                ofdbGenres = ofdbGenres.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        If Strings.Right(ofdb_genre, 3) = " / " Then
+            ofdb_genre = Strings.Left(ofdb_genre, ofdb_genre.Length - 3)
+        End If
+        tmovie.pgenre = cleanimdbdata(ofdb_genre)
+
+        Dim ofdb_rating As String = ""
+        Try
+            Dim robjOfdbRating As New Regex("Note: ([0-9\.]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_rating = robjOfdbRating.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        tmovie.prating = cleanimdbdata(ofdb_rating)
+
+        Dim ofdb_votes As String = ""
+        Try
+            Dim robjOfdbVotes As New Regex("Stimmen: ([0-9]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_votes = robjOfdbVotes.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        tmovie.pvotes = cleanimdbdata(ofdb_votes)
+
+        Dim ofdb_ploturl As String = ""
+        Try
+            Dim robjOfdbPlotUrl As New Regex("Inhalt:</b>[^<]*<a href=""plot/([0-9]+,[0-9]+,.*?)"">", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_ploturl = robjOfdbPlotUrl.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        Dim s1 As String
+        If Not ofdb_ploturl = "" Then
+            s1 = get_ofdb_plot("http://www.ofdb.de/plot/" & ofdb_ploturl)
+        End If
+        Dim ofdb_plotgroup As String = ""
+        Try
+            Dim robjOfdbPlotGroup As New Regex("Eine Inhaltsangabe von(.*)<option value=""All"">", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_plotgroup = robjOfdbPlotGroup.Match(s1).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+        Dim ofdb_plotMain As String = ""
+        Try
+            Dim robjOfdbPlotMain As New Regex("<br><br>([^<]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdb_plotMain = robjOfdbPlotMain.Match(ofdb_plotgroup).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+        tmovie.ptagline = cleanimdbdata(ofdb_plotMain)
+        tmovie.pplot = cleanimdbdata(ofdb_plotMain)
+
+        Try
+            Dim robjOfdbPlotMainAdd As New Regex("<br />([^<]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            Dim ofdbplotadd As Match = robjOfdbPlotMainAdd.Match(ofdb_plotgroup)
+            While ofdbplotadd.Success
+                tmovie.pplot += cleanimdbdata(ofdbplotadd.Groups(1).Value.ToString)
+                
+                ofdbplotadd = ofdbplotadd.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+
+
+    End Sub
+    Private Function get_ofdb_plot(ByVal url As String) As String
+        Dim baseurlsiid As String = ""
+        baseurlsiid = url
+        Dim s As String
+        'openpagedata
+        Dim request As HttpWebRequest = CType(WebRequest.Create(baseurlsiid), HttpWebRequest)
+        Dim response As HttpWebResponse = CType(request.GetResponse(), System.Net.HttpWebResponse)
+        Using reader As StreamReader = New StreamReader(response.GetResponseStream())
+            s = reader.ReadToEnd()
+        End Using
+        Return s
+    End Function
+    Private Function get_ofdbidlink(ByVal imdbid As String) As String
+        Dim s As String = get_ofdbid_from_imdbid_websearch(imdbid)
+        Dim ofdburl As String = ""
+        Try
+            Dim robjOfdbID As New Regex("film/([0-9]*,.*?)\""", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            ofdburl = robjOfdbID.Match(s).Groups(1).Value
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        Return "http://www.ofdb.de/film/" & ofdburl
+    End Function
+
+    Private Function downloadofdb_main_details(ByVal url As String, Optional ByVal tolower As Boolean = False) As String
+        Dim baseurlsiid As String = ""
+        baseurlsiid = url
+        Dim s As String
+
+        'openpagedata
+        Dim request As HttpWebRequest = CType(WebRequest.Create(baseurlsiid), HttpWebRequest)
+        Dim response As HttpWebResponse = CType(request.GetResponse(), System.Net.HttpWebResponse)
+        Using reader As StreamReader = New StreamReader(response.GetResponseStream())
+            s = reader.ReadToEnd()
+        End Using
+        If Not tolower Then Return s
+        Dim tvarstolower As String = s.ToLower
+        Return tvarstolower
+    End Function
+
+    Private Function get_ofdbid_from_imdbid_websearch(ByVal imdbid As String, Optional ByVal tolower As Boolean = True) As String
+        If imdbid Is Nothing Then Return ""
+        If imdbid Is "" Then Return ""
+        Dim baseurlsiid As String = ""
+        baseurlsiid = "http://www.ofdb.de/view.php?SText=" & imdbid & "&Kat=IMDb&page=suchergebnis&sourceid=mozilla-search"
+
+        Dim s As String
+
+        'openpagedata
+        Dim request As HttpWebRequest = CType(WebRequest.Create(baseurlsiid), HttpWebRequest)
+        Dim response As HttpWebResponse = CType(request.GetResponse(), System.Net.HttpWebResponse)
+        Using reader As StreamReader = New StreamReader(response.GetResponseStream())
+            s = reader.ReadToEnd()
+        End Using
+
+        If Not tolower Then Return s
+        Dim tvarstolower As String = s.ToLower
+        Return tvarstolower
+    End Function
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
             pmname = Strings.Replace(pmname, "&", "&amp;")

@@ -1360,6 +1360,7 @@ Me.kPaletteSkyBlueLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me
 Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.components)
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
 Me.bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
+Me.tsmimovie_GetOFDBMovieDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -5991,7 +5992,7 @@ Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(2, 2)
-Me.tcMain.SelectedIndex = 7
+Me.tcMain.SelectedIndex = 0
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
 Me.tcMain.Size = New System.Drawing.Size(822, 730)
 Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
@@ -6096,7 +6097,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(417, 378)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(427, 388)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6104,9 +6105,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 350)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 355)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(405, 16)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(415, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -6169,9 +6170,9 @@ Me.kgCurMovieImagetbn.Visible = false
 'klblImageSizeMovienameTbn
 '
 Me.klblImageSizeMovienameTbn.Dock = System.Windows.Forms.DockStyle.Bottom
-Me.klblImageSizeMovienameTbn.Location = New System.Drawing.Point(0, 115)
+Me.klblImageSizeMovienameTbn.Location = New System.Drawing.Point(0, 110)
 Me.klblImageSizeMovienameTbn.Name = "klblImageSizeMovienameTbn"
-Me.klblImageSizeMovienameTbn.Size = New System.Drawing.Size(131, 16)
+Me.klblImageSizeMovienameTbn.Size = New System.Drawing.Size(131, 21)
 Me.klblImageSizeMovienameTbn.TabIndex = 107
 Me.klblImageSizeMovienameTbn.Text = "Image Size: "
 Me.klblImageSizeMovienameTbn.Values.ExtraText = ""
@@ -6314,7 +6315,7 @@ Me.pbarLoadingMovieMediaInfo.Visible = false
 '
 Me.lblpbarLoadingMovieMediaInfo.Location = New System.Drawing.Point(57, 91)
 Me.lblpbarLoadingMovieMediaInfo.Name = "lblpbarLoadingMovieMediaInfo"
-Me.lblpbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(160, 16)
+Me.lblpbarLoadingMovieMediaInfo.Size = New System.Drawing.Size(182, 21)
 Me.lblpbarLoadingMovieMediaInfo.TabIndex = 2
 Me.lblpbarLoadingMovieMediaInfo.Text = "Loading Media Information .... "
 Me.lblpbarLoadingMovieMediaInfo.Values.ExtraText = ""
@@ -7668,7 +7669,7 @@ Me.tsmimovieDontSwitchTabsAfterSelectingMediaImagesToolStripMenuItem.Text = "Don
 '
 Me.ToolStripDropDownButton2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
 Me.ToolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_ResizeFanartImage, Me.tsmimovie_CompressFanartImage, Me.CurrentBackgroundSizeToolStripMenuItem, Me.tsmimovie_posters_compress, Me.ResizeMovieImagesToolStripMenuItem})
+Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmimovie_ResizeFanartImage, Me.tsmimovie_CompressFanartImage, Me.CurrentBackgroundSizeToolStripMenuItem, Me.tsmimovie_posters_compress, Me.ResizeMovieImagesToolStripMenuItem, Me.tsmimovie_GetOFDBMovieDetailsToolStripMenuItem})
 Me.ToolStripDropDownButton2.Image = CType(resources.GetObject("ToolStripDropDownButton2.Image"),System.Drawing.Image)
 Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
@@ -7685,19 +7686,19 @@ Me.tsmimovie_ResizeFanartImage.Text = "Resize Background Image"
 'tsmimovie_fanart_r960x540
 '
 Me.tsmimovie_fanart_r960x540.Name = "tsmimovie_fanart_r960x540"
-Me.tsmimovie_fanart_r960x540.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r960x540.Size = New System.Drawing.Size(152, 22)
 Me.tsmimovie_fanart_r960x540.Text = "960 x 540"
 '
 'tsmimovie_fanart_r1280x720
 '
 Me.tsmimovie_fanart_r1280x720.Name = "tsmimovie_fanart_r1280x720"
-Me.tsmimovie_fanart_r1280x720.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r1280x720.Size = New System.Drawing.Size(152, 22)
 Me.tsmimovie_fanart_r1280x720.Text = "1280 x 720"
 '
 'tsmimovie_fanart_r1920x1080
 '
 Me.tsmimovie_fanart_r1920x1080.Name = "tsmimovie_fanart_r1920x1080"
-Me.tsmimovie_fanart_r1920x1080.Size = New System.Drawing.Size(136, 22)
+Me.tsmimovie_fanart_r1920x1080.Size = New System.Drawing.Size(152, 22)
 Me.tsmimovie_fanart_r1920x1080.Text = "1920 x 1080"
 '
 'tsmimovie_CompressFanartImage
@@ -13813,7 +13814,7 @@ Me.Button4.Values.Text = "Find Similar Movies"
 'cbChangeFolderName
 '
 Me.cbChangeFolderName.AutoCheck = false
-Me.cbChangeFolderName.Location = New System.Drawing.Point(333, 62)
+Me.cbChangeFolderName.Location = New System.Drawing.Point(333, 71)
 Me.cbChangeFolderName.Name = "cbChangeFolderName"
 Me.cbChangeFolderName.Size = New System.Drawing.Size(303, 21)
 Me.cbChangeFolderName.TabIndex = 30
@@ -21768,6 +21769,12 @@ Me.bwAutopilot.WorkerSupportsCancellation = true
 Me.bwAutoPilotMediaUpdate.WorkerReportsProgress = true
 Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
 '
+'tsmimovie_GetOFDBMovieDetailsToolStripMenuItem
+'
+Me.tsmimovie_GetOFDBMovieDetailsToolStripMenuItem.Name = "tsmimovie_GetOFDBMovieDetailsToolStripMenuItem"
+Me.tsmimovie_GetOFDBMovieDetailsToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+Me.tsmimovie_GetOFDBMovieDetailsToolStripMenuItem.Text = "Get OFDB movie details"
+'
 'maincollection
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -24148,4 +24155,5 @@ End Sub
     Friend WithEvents tsmimovie_poster_r800x1200 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmimovie_poster_r1000x1500 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents bwAutoPilotMediaUpdate As System.ComponentModel.BackgroundWorker
+    Friend WithEvents tsmimovie_GetOFDBMovieDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
