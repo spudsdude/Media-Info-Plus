@@ -18304,6 +18304,24 @@ Public Class maincollection
 
         'movietoimdb
         currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo, asdisplayed) 'saves movie to nfo file
+
+        If rconf.pcbcreateImdbIDtxt And Not currentmovie.pfilemode Then
+            If File.Exists(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt")) Then
+                Try
+                    Dim curidinfile As String = ""
+                    curidinfile = File.ReadAllText(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+                    If Not curidinfile = currentmovie.pimdbnumber Then
+                        File.Delete(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+                    End If
+                Catch ex As Exception
+
+                End Try
+            End If
+            If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt")) Then
+                writeStringToFile(currentmovie.pimdbnumber, addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+            End If
+        End If
+
         ' imdbinfo.writeIMDBXML(imdbinfo, currentmovie, rconf.imdbcachefolder, True) 'saves data back to xml cache of imdb items
         'imdbinfo = Nothing 'resource cleanup
         'convert to .nfo file and overwrite (reguardless of overwrite setting)
@@ -19299,6 +19317,19 @@ Public Class maincollection
         End If
         currentmovie.pdatafromnfo = False
         movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
+
+        If rconf.pcbcreateImdbIDtxt And Not currentmovie.pfilemode Then
+            If File.Exists(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt")) Then
+                Dim curidinfile As String = ""
+                curidinfile = File.ReadAllText(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+                If Not curidinfile = currentmovie.pimdbnumber Then
+                    File.Delete(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+                End If
+            End If
+            'If Not File.Exists(addfiletofolder(currentmovie.getmoviepath, "imdbid.txt")) Then
+            '    writeStringToFile(currentmovie.pimdbnumber, addfiletofolder(currentmovie.getmoviepath, "imdbid.txt"))
+            'End If
+        End If
         processdropdownitems()
     End Sub
     Private Sub btnaddyourownfanart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnaddyourownfanart.Click
@@ -28185,17 +28216,17 @@ Public Class maincollection
 
     Private Sub bwUpdatePosters_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwUpdatePosters.DoWork
         'asdf()
-        Dim cou As Integer = 1918
+        Dim cou As Integer = 2007
         While cou < 2020
             'wget base + cou + .html
             Dim prefix, post As String
             prefix = " http://www.impawards.com/"
-            post = "/standard.html"
+            post = "/std.html"
             Dim url As String = prefix + cou.ToString + post
             wget(url, rconf.tempfolder, cou)
 
             'Debug.Print("parse starting")
-            Dim filename As String = rconf.tempfolder + Convert.ToString(cou) + "\" + "standard.html"
+            Dim filename As String = rconf.tempfolder + Convert.ToString(cou) + "\" + "std.html"
             If Not File.Exists(filename) Then
                 'MsgBox("No file available for " + cou.ToString + ".")
                 Exit Sub
@@ -28215,7 +28246,9 @@ Public Class maincollection
             'create a new poster object
             Try
                 Dim counter As Integer = 0
-                Dim RegexObj3 As New Regex("<tr width = 200 bgcolor = #\d{6}>.{0,5}<td><font size=\+1>(?<fullname>.{2,86})</font></td>.{0,7}<td width = 600>(?:(?:<a href = ""(?<lastnameinlink>.{2,86}).html"">)??<img src = ""thumbs/.{2,86}.jpg"" border = \d{1}>(?:</a>)??){1,35}?</td>.{0,2}</tr>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                'old format Dim RegexObj3 As New Regex("<tr width = 200 bgcolor = #\d{6}>.{0,5}<td><font size=\+1>(?<fullname>.{2,86})</font></td>.{0,7}<td width = 600>(?:(?:<a href = ""(?<lastnameinlink>.{2,86}).html"">)??<img src = ""thumbs/.{2,86}.jpg"" border = \d{1}>(?:</a>)??){1,35}?</td>.{0,2}</tr>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                'new format <tr width = 200 bgcolor = #\d{6}>.{0,5}<td><font size=\+1>(?<fullname>.{2,86})</font></td>.{0,7}<td width = 600>(?:(?:<a href=(?<lastnameinlink>.{2,86}).html>)??<img src=thumbs/.{2,86}.jpg border = \d{1}>(?:</a>)??){1,35}?</td>.{0,2}</tr>
+                Dim RegexObj3 As New Regex("<tr width = 200 bgcolor = #\d{6}>.{0,5}<td><font size=\+1>(?<fullname>.{2,86})</font></td>.{0,7}<td width = 600>(?:(?:<a href=(?<lastnameinlink>.{2,86}).html>)??<img src=thumbs/.{2,86}.jpg border = \d{1}>(?:</a>)??){1,35}?</td>.{0,2}</tr>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
                 Dim MatchResults As Match = RegexObj3.Match(data0)
                 While MatchResults.Success
                     Dim poster As New posters
@@ -28226,7 +28259,7 @@ Public Class maincollection
                     Dim curMatch As String = MatchResults.ToString
                     Dim linknames As String = ""
                     Try
-                        Dim RegexObj As New Regex("<a href = ""(?<nameinlink>.{2,72}).html"">", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                        Dim RegexObj As New Regex("<a href=(?<nameinlink>.{2,72}).html>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
                         Dim CurMatchResults As Match = RegexObj.Match(MatchResults.ToString)
                         Dim curcounter As Integer = 0
                         While CurMatchResults.Success
@@ -28252,7 +28285,7 @@ Public Class maincollection
                         'set posters from the array and write the poster xml file
                         poster.pposters = aposters
                         bwUpdatePosters.ReportProgress(counter, "Updating " + cou.ToString + ": " + poster.pmoviename)
-                        poster.writeXML(poster, rconf.xmlfolderposters)
+                        'poster.writeXML(poster, rconf.xmlfolderposters)
                         poster.writeXML(poster, rconf.xmlfolderposters, True)
                         counter += 1
                     Catch ex As ArgumentException
@@ -33867,6 +33900,24 @@ Public Property [Actors]() As List(Of Actor)
         'get rid of temp movie
         nm = Nothing
 
+        If maincollection.rconf.pcbcreateImdbIDtxt And Not tmovie.pfilemode Then
+            If File.Exists(addfiletofolder(tmovie.getmoviepath, "imdbid.txt")) Then
+                Try
+                    Dim curidinfile As String = ""
+                    curidinfile = File.ReadAllText(addfiletofolder(tmovie.getmoviepath, "imdbid.txt"))
+                    If Not curidinfile = tmovie.pimdbnumber Then
+                        File.Delete(addfiletofolder(tmovie.getmoviepath, "imdbid.txt"))
+                    End If
+                Catch ex As Exception
+
+                End Try
+
+            End If
+            If Not File.Exists(addfiletofolder(tmovie.getmoviepath, "imdbid.txt")) Then
+                writeStringToFile(tmovie.pimdbnumber, addfiletofolder(tmovie.getmoviepath, "imdbid.txt"))
+            End If
+        End If
+
     End Sub
     Public Sub saveimdbinfomanual(ByRef tmovie As movie, ByVal vwritemovienfo As Boolean, ByVal vwritemovienamedotnfo As Boolean, Optional ByVal keeptag As Boolean = False)
         saveimdb2(tmovie, vwritemovienfo, vwritemovienamedotnfo, keeptag)
@@ -34317,7 +34368,7 @@ Public Class configuration
 
     Private cbCreateMovieNFO As Boolean
     Private cbcreatemovienamedotnfo As Boolean
-
+    Private cbcreateImdbIDtxt As Boolean
     Private cbcreatefanartjpg As Boolean
     Private cbcreatemovienamedashfanartjpg As Boolean
 
@@ -34829,6 +34880,14 @@ Public Class configuration
         End Get
         Set(ByVal value As Boolean)
             cbCreateFolderjpg = value
+        End Set
+    End Property
+    Property pcbcreateImdbIDtxt() As Boolean
+        Get
+            Return cbcreateImdbIDtxt
+        End Get
+        Set(ByVal value As Boolean)
+            cbcreateImdbIDtxt = value
         End Set
     End Property
     Property pcbcreatemovienamedottbn() As Boolean

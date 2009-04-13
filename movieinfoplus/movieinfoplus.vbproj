@@ -72,7 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.10.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL" />
-    <Reference Include="miplibfc, Version=1.0.1.2800, Culture=neutral, PublicKeyToken=8be0b0a92da598ee, processorArchitecture=MSIL">
+    <Reference Include="miplibfc, Version=2.0.1.2862, Culture=neutral, PublicKeyToken=8be0b0a92da598ee, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\miplibfc.dll</HintPath>
     </Reference>
@@ -526,8 +526,6 @@
     <EmbeddedResource Include="Resources\halfstar.png" />
     <EmbeddedResource Include="Resources\arrow_small.png" />
     <None Include="Resources\impawards.JPG" />
-    <EmbeddedResource Include="Resources\7za.exe" />
-    <EmbeddedResource Include="Resources\7zip_license.txt" />
     <None Include="Resources\imp.jpg" />
     <None Include="Resources\front.jpg" />
     <None Include="Resources\folder_32x32.png" />
@@ -568,11 +566,6 @@
       <DependentUpon>autorundialog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\UnRAR.exe" />
-    <EmbeddedResource Include="Resources\wget.exe" />
-    <EmbeddedResource Include="Resources\posterxmls.rar">
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\imdbcache.rar" />
     <None Include="Resources\wget.bmp" />
     <None Include="My Project\app.manifest" />
     <EmbeddedResource Include="InitialConfig.resx">

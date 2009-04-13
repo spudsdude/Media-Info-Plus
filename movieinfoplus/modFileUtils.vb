@@ -1,6 +1,16 @@
 ﻿Imports System.IO
 
 Module modFileUtils
+    Public Sub writeStringToFile(ByVal strData As String, ByVal FullPath As String)
+        Dim objReader As StreamWriter
+        Try
+            objReader = New StreamWriter(FullPath)
+            objReader.Write(strData)
+            objReader.Close()
+        Catch Ex As Exception
+            Debug.Print(Ex.ToString)
+        End Try
+    End Sub
     Public Function validmoviedirc(ByVal s As String) As Boolean
         Select Case True
             Case Strings.Right(s, 3).ToLower = "cd1"
@@ -12,6 +22,8 @@ Module modFileUtils
             Case Strings.Right(s, 4).ToLower = "subs"
                 Return False
             Case Strings.Right(s, 9).ToLower = "subtitles"
+                Return False
+            Case Strings.Right(s, 6).ToLower = "extras"
                 Return False
             Case Strings.Right(s, 8).ToLower = "video_ts"
                 Return False
@@ -73,7 +85,7 @@ Module modFileUtils
                 Return True
         End Select
     End Function
-    Private Function getFileSizeExact(ByVal vFile As String) As Double
+    Public Function getFileSizeExact(ByVal vFile As String) As Double
         'Dim curFile As FileInfo
         Dim curfile As FileInfo = My.Computer.FileSystem.GetFileInfo(vFile)
         Dim fileSize As Double = curfile.Length

@@ -634,6 +634,8 @@ Public Class tvshowcollection
             Try
                 tbanners.readBannerXML(rconf.tvdbcachefolder + selectedshow + "\banners.xml", tbanners)
             Catch ex As Exception
+                'asdf()
+                decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
                 MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 Debug.Print("unable to load xml file from cache folder")
@@ -1449,9 +1451,9 @@ Public Class tvshowcollection
         'stpw.Start()
         rconf = rconf.getconfig("config", True)
 
-        If rconf.debugtvshows Or debugon Then
-            dbgTVShows = True
-        End If
+        'If rconf.debugtvshows Or debugon Then
+        '    dbgTVShows = True
+        'End If
         Dim boguscounter As Integer = 0
         'get updates file from server
 
@@ -1883,7 +1885,7 @@ Public Class tvshowcollection
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
-                                    '  Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
+                                    If debugon Then Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
                                     Dim haveseason As Boolean = False
@@ -1980,6 +1982,7 @@ Public Class tvshowcollection
                                     End If
                                     If (haveepisode And haveseason) And Not multiepisode Then
                                         If ctv_episode = "0" Then ctv_episode = "00"
+                                        If debugon Then Console.Out.WriteLine("Found Single Episode: Season " & ctv_season & " - Epsiode" & ctv_episode)
                                         'numtvshowstotal += 1 'numofepisodes
                                         Dim tepisode1 As New tvdblangEpisode
                                         tepisode1.miptvdbkey = miptvdbkey
@@ -2049,7 +2052,9 @@ Public Class tvshowcollection
                                         Dim epcoutot As Integer = epPeices.Length
                                         Dim curepcou As Integer = 0
                                         While curepcou < epcoutot
+
                                             Dim ctv_episodepiece As String = epPeices(curepcou)
+
                                             'get 2 digit version of episode data
                                             If Strings.Left(ctv_episodepiece, 1) = "0" And ctv_episodepiece.Length >= 1 Then
                                                 ctv_episodepiece = Strings.Right(ctv_episodepiece, ctv_episodepiece.Length - 1)
@@ -2058,6 +2063,7 @@ Public Class tvshowcollection
                                             Dim tepisode1 As New tvdblangEpisode
 
                                             If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
+                                            If debugon Then Console.Out.WriteLine("Found Multipart Episode: Season " & ctv_season & " - Epsiode" & ctv_episodepiece)
                                             Try
                                                 tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
                                                 tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
@@ -2744,6 +2750,14 @@ Public Class tvshowcollection
             Dim numtoaddfromconf As Integer = 5
             numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
             Console.Out.WriteLine(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
+
+            'check file size, remove 0k zip files
+            If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then
+                If getFileSizeExact(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") < 1 Then
+                    File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
+                End If
+            End If
+
             ''old method, checks date on zip file, it's done again later, might as well do it now before the precache starts for new items
             If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then
                 If File.GetLastWriteTime(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip").AddDays(numtoaddfromconf) < Date.Now Then
@@ -3103,6 +3117,13 @@ Public Class tvshowcollection
 
             Dim numtoaddfromconf As Integer = 5
             numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
+            'check file size, remove 0k zip files
+            If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then
+                If getFileSizeExact(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") < 1 Then
+                    File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
+                End If
+            End If
+
             ''old method, checks date on zip file, it's done again later, might as well do it now before the precache starts for new items
             If File.GetLastWriteTime(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip").AddDays(numtoaddfromconf) < Date.Now Then
                 If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
@@ -3782,7 +3803,7 @@ Public Class tvshowcollection
         Dim locmirror As String = "http://images.thetvdb.com.nyud.net:8080"
         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmepisode.Filename
         Dim dlobj As New miplibfc.mip.dlobject
-        dlobj.URL = locmirror + "/banners/" + tmepisode.Filename
+        dlobj.URL = curmirror + "/banners/" + tmepisode.Filename
         dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
 
         If Not specificarraylist Is Nothing Then

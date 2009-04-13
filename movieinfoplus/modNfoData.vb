@@ -90,7 +90,14 @@ Module modNfoData
                 For Each pathedfile As String In filelist
                     Dim strnfoextonfile As String = ""
                     strnfoextonfile = Strings.Right(pathedfile, 4)
-                    If strnfoextonfile = ".nfo" Then
+                    Dim imdbidtxt As String = ""
+                    Try
+                        imdbidtxt = Strings.Right(pathedfile, 10)
+                    Catch ex As Exception
+                        Debug.Print("too short to parse imdbid.txt from current listed item")
+                    End Try
+
+                    If strnfoextonfile = ".nfo" Or imdbidtxt = "imdbid.txt" Then
                         'read it up to see if we have a tt/d{6,7} in it if we do set haveidonly to true set the id in the movie
                         Dim strwork As String = File.ReadAllText(pathedfile)
                         Try
@@ -105,7 +112,7 @@ Module modNfoData
                         Try
                             Dim curdate As Date = Now()
                             Dim addtext As String = "." & curdate.Day.ToString & "-" & curdate.Month.ToString & "-" & curdate.Year.ToString & "." & curdate.TimeOfDay.ToString
-                            File.Move(pathedfile, pathedfile & cleanname(addtext) & ".oldversion")
+                            If Not imdbidtxt = "imdbid.txt" Then File.Move(pathedfile, pathedfile & cleanname(addtext) & ".oldversion")
                         Catch ex As Exception
                         End Try
                         strwork = ""
@@ -198,7 +205,8 @@ Module modNfoData
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
             pmname = Strings.Replace(pmname, "&", "&amp;")
-            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=all&q=" + searchencode(pmname) + "&x=0&y=0"
+            'http://akas.imdb.com/find?s=tt&q=300&x=5&y=2
+            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=tt&q=" + searchencode(pmname) + "&x=0&y=0"
             'Dim foundimdbid, retid, retyr As String
             Dim s As String
             'openpagedata

@@ -9,8 +9,8 @@ Module Module1
     Dim showdebug As Boolean = False
 
     Sub Main()
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2865")
         If Command.ToString.ToLower.Contains("help") Then
-            Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2838")
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")
             Console.Out.WriteLine("-check30   'checks for new items every 30 minutes")
@@ -136,7 +136,7 @@ Module Module1
                     End If
                     If multimageonly Then Exit Sub
                     If showdebug Then Console.Out.WriteLine("Processing of episodes started")
-                    curtv.kbLoadTvShowsCmdLine(currentoverwritesetting)
+                    curtv.kbLoadTvShowsCmdLine(currentoverwritesetting, showdebug)
                 End If
                 If singlerun Then Exit Sub
                 If Not waitforit Then

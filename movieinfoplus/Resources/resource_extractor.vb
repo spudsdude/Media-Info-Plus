@@ -36,6 +36,12 @@ Public Class resource_extractor
         If Not Directory.Exists(iconf.ImageMagickFolder) Then Directory.CreateDirectory(iconf.ImageMagickFolder)
 
     End Sub
+    'binfilelocal, " e " + """" + fileToUncompress + """" -o" + """" + folderToSaveExtractedContentsTo + """"
+    Private Sub decompress7zip(ByRef fileToUncompress As String, ByRef folderToSaveExtractedContentsTo As String)
+        Dim binfilelocal As String = """" + iconf.sevenzipfolder + "7za.exe" + """"
+        System.Diagnostics.Process.Start(binfilelocal, " e " + """" + fileToUncompress + """" + " -o" + """" + folderToSaveExtractedContentsTo + """")
+
+    End Sub
 
     Private Sub decompress(ByRef fileToUncompress As String, ByRef folderToSaveExtractedContentsTo As String)
         Dim binfilelocal As String = """" + iconf.dirUnRAR + "UnRAR.exe" + """"
@@ -627,12 +633,13 @@ Public Class resource_extractor
         'writeresWget()
         writeresimdbnfoupdate()
         'writeres_pngs()
-        If extractimdbposterxmls Then decompress(iconf.tempfolder + "posterxmls.rar", iconf.xmlfolderposters)
-        If extractimdbposterxmls Then decompress(iconf.tempfolder + "imdbcache.rar", iconf.imdbcachefolder)
+        If extractimdbposterxmls Then decompress7zip(iconf.tempfolder + "posterxmls.7z", iconf.xmlfolderposters)
+        ' If extractimdbposterxmls Then decompress(iconf.tempfolder + "imdbcache.rar", iconf.imdbcachefolder)
+        If extractimdbposterxmls Then decompress7zip(iconf.tempfolder + "ImageMagickMip32.7z", iconf.ImageMagickFolder)
         'decompress(iconf.tempfolder + "ImageMagick.rar", iconf.ImageMagickFolder)
     End Sub
 
     Private Sub btnGo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGo.Click
-        createresources()
+        createresources(True)
     End Sub
 End Class

@@ -717,6 +717,7 @@ Public Class dlgConfiguration
             cbGetcaldnPosters.Checked = trconf.pcbGetcaldnPosters
             cbGetTMDBPosters.Checked = trconf.pcbGetTMDBPosters
             cbGetIMDBInfo.Checked = trconf.pcbGetIMDBInfo
+            cbcreateImdbIDtxt.Checked = trconf.pcbcreateImdbIDtxt
             cbGetFanart.Checked = trconf.pcbGetFanart
             cbIgnoreparans.Checked = trconf.pcbIgnoreparans
             cbFilterUnderscoreDot.Checked = trconf.pcbFilterUnderscoreDot
@@ -1598,5 +1599,9 @@ Public Class dlgConfiguration
 
     Private Sub cbFileLevelFilterUnderscoreDot_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFileLevelFilterUnderscoreDot.Click
         rconf.pcbfilternameFileModeFilterUnderscoreDot = cbFileLevelFilterUnderscoreDot.Checked
+    End Sub
+
+    Private Sub cbcreateImdbIDtxt_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbcreateImdbIDtxt.Click
+        rconf.pcbcreateImdbIDtxt = cbcreateImdbIDtxt.Checked
     End Sub
 End Class
