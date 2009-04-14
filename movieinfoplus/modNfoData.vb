@@ -202,6 +202,7 @@ Module modNfoData
 
     End Sub
 
+#Region "ofdb"
     Public Sub set_movie_details_from_ofdb(ByRef tmovie As movie)
         Dim s As String = ""
         s = downloadofdb_main_details(get_ofdbidlink(tmovie.pimdbnumber))
@@ -331,7 +332,6 @@ Module modNfoData
         End Try
         Return "http://www.ofdb.de/film/" & ofdburl
     End Function
-
     Private Function downloadofdb_main_details(ByVal url As String, Optional ByVal tolower As Boolean = False) As String
         Dim baseurlsiid As String = ""
         baseurlsiid = url
@@ -347,7 +347,6 @@ Module modNfoData
         Dim tvarstolower As String = s.ToLower
         Return tvarstolower
     End Function
-
     Private Function get_ofdbid_from_imdbid_websearch(ByVal imdbid As String, Optional ByVal tolower As Boolean = True) As String
         If imdbid Is Nothing Then Return ""
         If imdbid Is "" Then Return ""
@@ -367,6 +366,174 @@ Module modNfoData
         Dim tvarstolower As String = s.ToLower
         Return tvarstolower
     End Function
+#End Region
+
+#Region "tmdb"
+    Private Function get_tmdb_byname_websearch(ByVal moviename As String, Optional ByVal tolower As Boolean = True) As String
+        If moviename Is Nothing Then Return ""
+        If moviename Is "" Then Return ""
+        Dim baseurlsiid As String = ""
+        '"http://api.themoviedb.org/2.0/Movie.search?title=" & imdbid & "&api_key=0f790eb54e7430c118594f1db0071444"
+        baseurlsiid = "http://api.themoviedb.org/2.0/Movie.search?title=" & moviename & "&api_key=0f790eb54e7430c118594f1db0071444"
+
+        Dim s As String
+
+        'openpagedata
+        Dim request As HttpWebRequest = CType(WebRequest.Create(baseurlsiid), HttpWebRequest)
+        Dim response As HttpWebResponse = CType(request.GetResponse(), System.Net.HttpWebResponse)
+        Using reader As StreamReader = New StreamReader(response.GetResponseStream())
+            s = reader.ReadToEnd()
+        End Using
+
+        If Not tolower Then Return s
+        Dim tvarstolower As String = s.ToLower
+        Return tvarstolower
+    End Function
+    Private Function parsetmdbresult(ByVal s As String) As List(Of movie)
+        Dim thelist As New List(Of movie)
+        Try
+            Dim robjTmdbSearch As New Regex("<movie>(.*?)</movie>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            Dim tmdbSearchMatches As Match = robjTmdbSearch.Match(s)
+            While tmdbSearchMatches.Success
+                Dim s2 As String = tmdbSearchMatches.Groups(1).Value.ToString
+                Dim nmovie As New movie
+                'parse out movie info
+                Dim tmdb_score As String = ""
+                Try
+                    Dim robjTmdbScore As New Regex("<score>(.*?)</score>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_score = robjTmdbScore.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.prating = Trim(tmdb_score)
+
+                Dim tmdb_popularity As String = ""
+                Try
+                    Dim robjTmdbpopularity As New Regex("<popularity>(.*?)</popularity>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_popularity = robjTmdbpopularity.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                ''unused at this time
+
+                Dim tmdb_title As String = ""
+                Try
+                    Dim robjTmdbtitle As New Regex("<title>(.*?)</title>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_title = robjTmdbtitle.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.pmoviename = Trim(tmdb_title)
+
+                Dim tmdb_alternative_title As String = ""
+                Try
+                    Dim robjTmdbalternative_title As New Regex("<alternative_title>(.*?)</alternative_title>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_alternative_title = robjTmdbalternative_title.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.poriginaltitle = Trim(tmdb_alternative_title)
+
+                Dim tmdb_type As String = ""
+                Try
+                    Dim robjTmdb_type As New Regex("<type>(.*?)</type>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_type = robjTmdb_type.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                ''unused at this time
+
+                Dim tmdb_id As String = ""
+                Try
+                    Dim robjTmdb_id As New Regex("<id>(.*?)</id>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_id = robjTmdb_id.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.ptmdbid = Trim(tmdb_id)
+
+                Dim tmdb_imdb As String = ""
+                Try
+                    Dim robjTmdb_imdb As New Regex("<imdb>(.*?)</imdb>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_imdb = robjTmdb_imdb.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.pimdbnumber = Trim(tmdb_imdb)
+
+                Dim tmdb_url As String = ""
+                Try
+                    Dim robjTmdb_url As New Regex("<url>(.*?)</url>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_url = robjTmdb_url.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                '' unused at this time
+
+                Dim tmdb_short_overview As String = ""
+                Try
+                    Dim robjTmdb_short_overview As New Regex("<short_overview>(.*?)</short_overview>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_short_overview = robjTmdb_short_overview.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.pplotoutline = Trim(tmdb_short_overview)
+
+                Dim tmdb_release As String = ""
+                Try
+                    Dim robjTmdb_release As New Regex("<release>(.*?)</release>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_release = robjTmdb_release.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                '' unused at this time
+
+                Dim tmdb_poster_original As String = ""
+                Try
+                    Dim robjTmdb_poster_original As New Regex("<poster size=""original"">(.*?)</poster>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_poster_original = robjTmdb_poster_original.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.ptmdbposter = Trim(tmdb_poster_original)
+
+                Dim tmdb_poster_cover As String = ""
+                Try
+                    Dim robjTmdb_poster_cover As New Regex("<poster size=""cover"">(.*?)</poster>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_poster_cover = robjTmdb_poster_cover.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.ptmdbposter_thumb = Trim(tmdb_poster_cover)
+
+                Dim tmdb_backdrop_original As String = ""
+                Try
+                    Dim robjTmdb_backdrop_original As New Regex("<backdrop size=""original"">(.*?)</backdrop>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_backdrop_original = robjTmdb_backdrop_original.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.ptmdbbackground = Trim(tmdb_backdrop_original)
+
+                Dim tmdb_backdrop_mid As String = ""
+                Try
+                    Dim robjTmdb_backdrop_mid As New Regex("<backdrop size=""mid"">(.*?)</backdrop>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+                    tmdb_backdrop_mid = robjTmdb_backdrop_mid.Match(s2).Groups(1).Value
+                Catch ex As ArgumentException
+                    'Syntax error in the regular expression
+                End Try
+                nmovie.ptmdbbackground_thumb = Trim(tmdb_backdrop_mid)
+                thelist.Add(nmovie)
+                '----------------
+                tmdbSearchMatches = tmdbSearchMatches.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+        Return thelist
+    End Function
+#End Region
+
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
             pmname = Strings.Replace(pmname, "&", "&amp;")

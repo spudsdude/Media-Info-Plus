@@ -8685,7 +8685,7 @@ Public Class maincollection
             tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, False, True)
         End If
         'we should now have the id from getting the posters
-        If tmovie.tmdbid Is Nothing Or tmovie.tmdbid = "" Then tmovie.tmdbid = cposters.tmdbid
+        If tmovie.ptmdbid Is Nothing Or tmovie.ptmdbid = "" Then tmovie.ptmdbid = cposters.tmdbid
         'set tmdbid
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
@@ -30943,9 +30943,9 @@ Public Class maincollection
     End Sub
 
     Private Sub tsbMoviesOpenTMDBLink_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbMoviesOpenTMDBLink.Click
-        If currentmovie.tmdbid Is Nothing Then Exit Sub
-        If currentmovie.tmdbid = "" Then Exit Sub
-        System.Diagnostics.Process.Start("http://www.themoviedb.org/movie/" & currentmovie.tmdbid)
+        If currentmovie.ptmdbid Is Nothing Then Exit Sub
+        If currentmovie.ptmdbid = "" Then Exit Sub
+        System.Diagnostics.Process.Start("http://www.themoviedb.org/movie/" & currentmovie.ptmdbid)
     End Sub
 
 
@@ -33262,7 +33262,44 @@ Public Class movie
     Private p_element_tmdbposters As New ArrayList
     Private p_element_nicecoversposters As New ArrayList
     Private p_element_tmdbid As String
-    Property tmdbid() As String
+    Private p_element_tmdbposter As String
+    Private p_element_tmdbposter_thumb As String
+    Private p_element_tmdbbackground As String
+    Private p_element_tmdbbackground_thumb As String
+    Property ptmdbposter() As String
+        Get
+            Return p_element_tmdbposter
+        End Get
+        Set(ByVal value As String)
+            p_element_tmdbposter = value
+        End Set
+    End Property
+    Property ptmdbposter_thumb() As String
+        Get
+            Return p_element_tmdbposter_thumb
+        End Get
+        Set(ByVal value As String)
+            p_element_tmdbposter_thumb = value
+        End Set
+    End Property
+    Property ptmdbbackground() As String
+        Get
+            Return p_element_tmdbbackground
+        End Get
+        Set(ByVal value As String)
+            p_element_tmdbbackground = value
+        End Set
+    End Property
+    Property ptmdbbackground_thumb() As String
+        Get
+            Return p_element_tmdbbackground_thumb
+        End Get
+        Set(ByVal value As String)
+            p_element_tmdbbackground_thumb = value
+        End Set
+    End Property
+
+    Property ptmdbid() As String
         Get
             Return p_element_tmdbid
         End Get

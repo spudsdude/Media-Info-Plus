@@ -6098,7 +6098,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(437, 398)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(447, 408)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6106,9 +6106,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 365)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 375)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(425, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(435, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -21775,6 +21775,9 @@ Me.bwAutopilot.WorkerSupportsCancellation = true
 '
 Me.bwAutoPilotMediaUpdate.WorkerReportsProgress = true
 Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
+'
+'bwOfdbUpdate
+'
 '
 'maincollection
 '

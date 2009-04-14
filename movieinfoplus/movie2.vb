@@ -27,6 +27,7 @@ Namespace mip.mov
         Private p_element_path As System.String
         Private p_element_filenameandpath As System.String
         Private p_element_id As System.String
+        Private p_element_tmdbid As System.String
         Private p_element_genre As System.String
         Private p_element_credits As System.String
         Private p_element_director As System.String
@@ -248,7 +249,16 @@ Namespace mip.mov
                 Me.p_element_id = Value
             End Set
         End Property
-
+        ' String id element.
+        <XmlElement("tmdbid")> _
+        Public Property [tmdbId]() As System.String
+            Get
+                Return Me.p_element_tmdbid
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_tmdbid = Value
+            End Set
+        End Property
         ' String genre element.
         <XmlElement("genre")> _
         Public Property [Genre]() As System.String
