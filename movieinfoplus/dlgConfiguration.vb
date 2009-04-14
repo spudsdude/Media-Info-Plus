@@ -732,7 +732,8 @@ Public Class dlgConfiguration
             cbGetMusicFanartFromHTBackdrops.Checked = trconf.pcbGetMusicFanartFromHTBackdrops
             cbtv_lang.SelectedText = trconf.tv_curlang ' = cbtv_lang.SelectedItem.ToString
             cbMoviesCertificationLang.SelectedText = trconf.pcbMoviesCertificationLang
-            cbGeneralSupportSkinBasedFlagging.Checked = rconf.pcbGeneralSupportSkinBasedFlagging
+            cbGeneralSupportSkinBasedFlagging.Checked = trconf.pcbGeneralSupportSkinBasedFlagging
+            cbFilterFolderFileLevel.Checked = trconf.pcbFilterFolderFileLevel
             'set download type, this is used when pulling icons from mediaicons site
             If trconf.pcbDlFormat = 0 Then
                 maincollection.dltype = "med"
@@ -746,6 +747,35 @@ Public Class dlgConfiguration
                 maincollection.dltype = "download"
             End If
 
+            '## ofdb settings
+            cbofdb_UpdateTitle.Checked = trconf.pcbofdb_UpdateTitle
+            cbofdb_UpdateGenre.Checked = trconf.pcbofdb_UpdateGenre
+            cbofdb_UpdatePlot.Checked = trconf.pcbofdb_UpdatePlot
+            cbofdb_UpdateRating.Checked = trconf.pcbofdb_UpdateRating
+            cbofdb_UpdateOutline.Checked = trconf.pcbofdb_UpdateOutline
+            cbofdb_UpdateVotes.Checked = trconf.pcbofdb_UpdateVotes
+
+            'If trconf.pcbofdb_tagline = Nothing Then
+            '    trconf.pcbofdb_tagline = 1
+            'End If
+            
+            Select Case trconf.pcbofdb_tagline
+                Case 0
+                    rbofdb_englishtagline.Checked = False
+                    rbofdb_usePlotOutline.Checked = False
+                    rbofdb_BlankTagline.Checked = True
+                Case 1
+                    rbofdb_usePlotOutline.Checked = False
+                    rbofdb_BlankTagline.Checked = False
+                    rbofdb_englishtagline.Checked = True
+                Case 2
+                    rbofdb_BlankTagline.Checked = False
+                    rbofdb_englishtagline.Checked = False
+                    rbofdb_usePlotOutline.Checked = True
+                Case Else
+                    ' MsgBox("Failed to load setting for ofdb tagline from config, setting to default")
+                    rbofdb_englishtagline.Checked = True
+            End Select
 
             '## Filters 
             If rconf.pcbFilterCustom1 = "" Then
@@ -1603,5 +1633,53 @@ Public Class dlgConfiguration
 
     Private Sub cbcreateImdbIDtxt_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbcreateImdbIDtxt.Click
         rconf.pcbcreateImdbIDtxt = cbcreateImdbIDtxt.Checked
+    End Sub
+
+    Private Sub cbFilterFolderFileLevel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbFilterFolderFileLevel.Click
+        rconf.pcbFilterFolderFileLevel = cbFilterFolderFileLevel.Checked
+    End Sub
+
+    Private Sub cbofdb_UpdateTitle_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbofdb_UpdateTitle.Click
+        rconf.pcbofdb_UpdateTitle = cbofdb_UpdateTitle.Checked
+    End Sub
+
+    Private Sub cbofdb_UpdateGenre_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbofdb_UpdateGenre.Click
+        rconf.pcbofdb_UpdateGenre = cbofdb_UpdateGenre.Checked
+    End Sub
+
+    Private Sub cbofdb_UpdateOutline_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbofdb_UpdateOutline.Click
+        rconf.pcbofdb_UpdateOutline = cbofdb_UpdateOutline.Checked
+    End Sub
+
+    Private Sub cbofdb_UpdatePlot_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbofdb_UpdatePlot.Click
+        rconf.pcbofdb_UpdatePlot = cbofdb_UpdatePlot.Checked
+    End Sub
+
+    Private Sub cbofdb_UpdateVotes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbofdb_UpdateVotes.Click
+        rconf.pcbofdb_UpdateVotes = cbofdb_UpdateVotes.Checked
+    End Sub
+
+    Private Sub rbofdb_BlankTagline_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbofdb_BlankTagline.Click
+        setofdbtagline(0)
+    End Sub
+
+    Private Sub rbofdb_englishtagline_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbofdb_englishtagline.Click
+        setofdbtagline(1)
+    End Sub
+
+    Private Sub rbofdb_usePlotOutline_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles rbofdb_usePlotOutline.Click
+        setofdbtagline(2)
+    End Sub
+    Private Sub setofdbtagline(ByVal cursetting As Integer)
+        Select Case cursetting
+            Case 0
+                rconf.pcbofdb_tagline = 0
+            Case 1
+                rconf.pcbofdb_tagline = 1
+            Case 2
+                rconf.pcbofdb_tagline = 2
+            Case Else
+                rconf.pcbofdb_tagline = 0
+        End Select
     End Sub
 End Class

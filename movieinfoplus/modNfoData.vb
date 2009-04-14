@@ -213,7 +213,7 @@ Module modNfoData
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
-        tmovie.peditedmoviename = cleanimdbdata(ofdb_title)
+        If maincollection.rconf.pcbofdb_UpdateTitle Then tmovie.peditedmoviename = cleanimdbdata(ofdb_title)
 
         Dim ofdb_outline As String = ""
         Try
@@ -222,7 +222,7 @@ Module modNfoData
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
-        tmovie.pplotoutline = cleanimdbdata(ofdb_outline)
+        If maincollection.rconf.pcbofdb_UpdateOutline Then tmovie.pplotoutline = cleanimdbdata(ofdb_outline)
 
         Dim ofdb_genre As String = ""
         Try
@@ -238,7 +238,7 @@ Module modNfoData
         If Strings.Right(ofdb_genre, 3) = " / " Then
             ofdb_genre = Strings.Left(ofdb_genre, ofdb_genre.Length - 3)
         End If
-        tmovie.pgenre = cleanimdbdata(ofdb_genre)
+        If maincollection.rconf.pcbofdb_UpdateGenre Then tmovie.pgenre = cleanimdbdata(ofdb_genre)
 
         Dim ofdb_rating As String = ""
         Try
@@ -247,7 +247,7 @@ Module modNfoData
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
-        tmovie.prating = cleanimdbdata(ofdb_rating)
+        If maincollection.rconf.pcbofdb_UpdateRating Then tmovie.prating = cleanimdbdata(ofdb_rating)
 
         Dim ofdb_votes As String = ""
         Try
@@ -256,7 +256,7 @@ Module modNfoData
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
-        tmovie.pvotes = cleanimdbdata(ofdb_votes)
+        If maincollection.rconf.pcbofdb_UpdateVotes Then tmovie.pvotes = cleanimdbdata(ofdb_votes)
 
         Dim ofdb_ploturl As String = ""
         Try
@@ -284,23 +284,28 @@ Module modNfoData
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
+        If maincollection.rconf.pcbofdb_tagline = 0 Then
+            tmovie.ptagline = "" ' cleanimdbdata(ofdb_plotMain)
+        End If
+        If maincollection.rconf.pcbofdb_tagline = 1 Then
+            'do nothing ''tmovie.ptagline = cleanimdbdata(ofdb_plotMain)
+        End If
+        If maincollection.rconf.pcbofdb_tagline = 2 Then
+            tmovie.ptagline = cleanimdbdata(ofdb_plotMain)
+        End If
 
-        tmovie.ptagline = cleanimdbdata(ofdb_plotMain)
-        tmovie.pplot = cleanimdbdata(ofdb_plotMain)
+        If maincollection.rconf.pcbofdb_UpdatePlot Then tmovie.pplot = cleanimdbdata(ofdb_plotMain)
 
         Try
             Dim robjOfdbPlotMainAdd As New Regex("<br />([^<]+)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
             Dim ofdbplotadd As Match = robjOfdbPlotMainAdd.Match(ofdb_plotgroup)
             While ofdbplotadd.Success
-                tmovie.pplot += cleanimdbdata(ofdbplotadd.Groups(1).Value.ToString)
-                
+                If maincollection.rconf.pcbofdb_UpdatePlot Then tmovie.pplot += cleanimdbdata(ofdbplotadd.Groups(1).Value.ToString)
                 ofdbplotadd = ofdbplotadd.NextMatch()
             End While
         Catch ex As ArgumentException
             'Syntax error in the regular expression
         End Try
-
-
 
     End Sub
     Private Function get_ofdb_plot(ByVal url As String) As String

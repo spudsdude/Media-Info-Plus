@@ -549,6 +549,9 @@ Module modStringUtils
         'moviename = Strings.Replace(moviename, "(", "")
         'moviename = Strings.Replace(moviename, ")", "")
         filteredname = moviename
+        If maincollection.rconf.pcbFilterFolderFileLevel Then
+            filteredname = namefilterforfilemode(filteredname)
+        End If
         Return filteredname
 
     End Function

@@ -31862,21 +31862,55 @@ Public Class maincollection
         kscMain.Enabled = True
         MsgBox("Media update completed!")
     End Sub
-
+    Private Sub updateofdbbw()
+        prgThread.Visible = True
+        prgThread.Style = ProgressBarStyle.Marquee
+        lblPCWorking.Visible = True
+        lblPCWorking.Text = "Gathering information from ofdb"
+        bwOfdbUpdate = New System.ComponentModel.BackgroundWorker
+        bwOfdbUpdate.WorkerReportsProgress = True
+        bwOfdbUpdate.WorkerSupportsCancellation = True
+        bwOfdbUpdate.RunWorkerAsync()
+        tcMain.Enabled = False
+        'If Not currentmovie Is Nothing Then
+        '    set_movie_details_from_ofdb(currentmovie)
+        '    saveNfoFromGuiText(False, True)
+        '    Dim curmode As Boolean = rbem.Checked
+        '    Dim curais As Boolean = cbAllowIconSelection.Checked
+        '    rbem.Checked = False
+        '    cbAllowIconSelection.Checked = False
+        '    processdropdownitems()
+        '    rbem.Checked = curmode
+        '    cbAllowIconSelection.Checked = curais
+        'End If
+        'bwOfdbUpdate
+    End Sub
     Private Sub tsmimovie_GetOFDBMovieDetailsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_GetOFDBMovieDetailsToolStripMenuItem.Click
-        If Not currentmovie Is Nothing Then
-            set_movie_details_from_ofdb(currentmovie)
-            saveNfoFromGuiText(False, True)
-            Dim curmode As Boolean = rbem.Checked
-            Dim curais As Boolean = cbAllowIconSelection.Checked
-            rbem.Checked = False
-            cbAllowIconSelection.Checked = False
-            processdropdownitems()
-            rbem.Checked = curmode
-            cbAllowIconSelection.Checked = curais
-        End If
+        updateofdbbw()
+    End Sub
 
+    Private Sub bwOfdbUpdate_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwOfdbUpdate.DoWork
+        set_movie_details_from_ofdb(currentmovie)
+    End Sub
 
+    Private Sub bwOfdbUpdate_ProgressChanged(ByVal sender As Object, ByVal e As System.ComponentModel.ProgressChangedEventArgs) Handles bwOfdbUpdate.ProgressChanged
+
+    End Sub
+
+    Private Sub bwOfdbUpdate_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwOfdbUpdate.RunWorkerCompleted
+        saveNfoFromGuiText(False, True)
+        Dim curmode As Boolean = rbem.Checked
+        Dim curais As Boolean = cbAllowIconSelection.Checked
+        rbem.Checked = False
+        cbAllowIconSelection.Checked = False
+        processdropdownitems()
+        rbem.Checked = curmode
+        cbAllowIconSelection.Checked = curais
+        tcMain.Enabled = True
+        lblPCWorking.Text = ""
+        prgThread.Visible = False
+        lblPCWorking.Visible = False
+        prgThread.Style = ProgressBarStyle.Blocks
     End Sub
 End Class
 <Serializable()> Public Class posters
@@ -34345,6 +34379,71 @@ Public Class configuration
     'movie - cache settings
     Private cbIgnoreparans, cbf1s0, cbf1s3, cbf1s9, cbf2s0, cbf2s2, cbf2s8, cbf2s10, cbf3s0, cbGetFanart, cbSaveNFO, cbOverwriteNFO, cbGenTBN As Boolean 'true or false for each type
 
+
+    'movie ofdb settings
+    Private cbofdb_UpdateTitle As Boolean
+    Private cbofdb_UpdatePlot As Boolean
+    Private cbofdb_UpdateOutline As Boolean
+    Private cbofdb_UpdateGenre As Boolean
+    Private cbofdb_UpdateRating As Boolean
+    Private cbofdb_UpdateVotes As Boolean
+    Private cbofdb_tagline As Integer
+    Property pcbofdb_UpdateTitle() As Boolean
+        Get
+            Return cbofdb_UpdateTitle
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdateTitle = value
+        End Set
+    End Property
+    Property pcbofdb_UpdatePlot() As Boolean
+        Get
+            Return cbofdb_UpdatePlot
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdatePlot = value
+        End Set
+    End Property
+    Property pcbofdb_UpdateOutline() As Boolean
+        Get
+            Return cbofdb_UpdateOutline
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdateOutline = value
+        End Set
+    End Property
+    Property pcbofdb_UpdateGenre() As Boolean
+        Get
+            Return cbofdb_UpdateGenre
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdateGenre = value
+        End Set
+    End Property
+    Property pcbofdb_UpdateRating() As Boolean
+        Get
+            Return cbofdb_UpdateRating
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdateRating = value
+        End Set
+    End Property
+    Property pcbofdb_UpdateVotes() As Boolean
+        Get
+            Return cbofdb_UpdateVotes
+        End Get
+        Set(ByVal value As Boolean)
+            cbofdb_UpdateVotes = value
+        End Set
+    End Property
+    Property pcbofdb_tagline() As Integer
+        Get
+            Return cbofdb_tagline
+        End Get
+        Set(ByVal value As Integer)
+            cbofdb_tagline = value
+        End Set
+    End Property
     'movie - file level filters
     Private cbFilterNameFileModeEverythingBeforeYear As Boolean
     Private cbFilterNameFileModeEverythingBeforeh264 As Boolean
@@ -34354,6 +34453,16 @@ Public Class configuration
     Private cbFilterNameFileModeEverythingBefore1080p As Boolean
     Private cbFilterNameFileModeEverythingBeforeDash As Boolean
     Private cbfilternameFileModeFilterUnderscoreDot As Boolean = True
+    Private cbFilterFolderFileLevel As Boolean = False
+    Property pcbFilterFolderFileLevel() As Boolean
+        Get
+            Return cbFilterFolderFileLevel
+        End Get
+        Set(ByVal value As Boolean)
+            cbFilterFolderFileLevel = value
+        End Set
+    End Property
+
     'movie - folder level filters
     Private cbGetTMDBPosters, cbFilter1080i, cbFilterYears, cbFilter1080p, cbFilter720p, cbFilterAvi, cbFilterBluRay, cbFilterDivx, cbFilterDVD, cbFilterH264, cbFilterHidef, cbFilterLq, cbFilterXvid As Boolean
     Private cbFilterCustom1_enabled, cbFilterCustom2_enabled, cbFilterCustom3_enabled, cbFilterCustom4_enabled, cbFilterCustom5_enabled As Boolean
