@@ -729,6 +729,10 @@ Public Class dlgConfiguration
             cbFilterNameFileModeEverythingBefore1080i.Checked = trconf.pcbFilterNameFileModeEverythingBefore1080i
             cbFilterNameFileModeEverythingBefore1080p.Checked = trconf.pcbFilterNameFileModeEverythingBefore1080p
             cbFilterNameFileModeEverythingBeforeDash.Checked = trconf.pcbFilterNameFileModeEverythingBeforeDash
+
+            cbFilterNameFileModeEverythingBeforeUserDefined1.Checked = trconf.pcbFilterNameFileModeEverythingBeforeUserDefined1
+            tbFilterNameFileModeEverythingBeforeUserDefined1.Text = trconf.ptbFilterNameFileModeEverythingBeforeUserDefined1
+            cbmoviesnonforename.Checked = trconf.pcbmoviesnonforename
             cbGetMusicFanartFromHTBackdrops.Checked = trconf.pcbGetMusicFanartFromHTBackdrops
             cbtv_lang.SelectedText = trconf.tv_curlang ' = cbtv_lang.SelectedItem.ToString
             cbMoviesCertificationLang.SelectedText = trconf.pcbMoviesCertificationLang
@@ -1681,5 +1685,24 @@ Public Class dlgConfiguration
             Case Else
                 rconf.pcbofdb_tagline = 0
         End Select
+    End Sub
+
+
+
+    Private Sub cbFilterNameFileModeEverythingBeforeUserDefined1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbFilterNameFileModeEverythingBeforeUserDefined1.Click
+        rconf.pcbFilterNameFileModeEverythingBeforeUserDefined1 = cbFilterNameFileModeEverythingBeforeUserDefined1.Checked
+        rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1 = tbFilterNameFileModeEverythingBeforeUserDefined1.Text
+    End Sub
+
+    Private Sub tbFilterNameFileModeEverythingBeforeUserDefined1_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles tbFilterNameFileModeEverythingBeforeUserDefined1.Leave
+        rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1 = tbFilterNameFileModeEverythingBeforeUserDefined1.Text
+    End Sub
+
+    Private Sub cbmoviesnonforename_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbmoviesnonforename.CheckedChanged
+
+    End Sub
+
+    Private Sub cbmoviesnonforename_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbmoviesnonforename.Click
+        rconf.pcbmoviesnonforename = cbmoviesnonforename.Checked
     End Sub
 End Class

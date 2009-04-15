@@ -31,7 +31,11 @@ Module modNfoData
             If tmovie.pimdbnumber = "" Then
                 Return False
             Else
-                If Not File.Exists(pathtonfo & ".oldversion") Then File.Move(pathtonfo, pathtonfo & ".oldversion")
+                If Not File.Exists(pathtonfo & ".oldversion") Then
+                    If Not maincollection.rconf.pcbmoviesnonforename Then
+                        File.Move(pathtonfo, pathtonfo & ".oldversion")
+                    End If
+                End If
                 Return True
             End If
             ' Return True
@@ -112,7 +116,12 @@ Module modNfoData
                         Try
                             Dim curdate As Date = Now()
                             Dim addtext As String = "." & curdate.Day.ToString & "-" & curdate.Month.ToString & "-" & curdate.Year.ToString & "." & curdate.TimeOfDay.ToString
-                            If Not imdbidtxt = "imdbid.txt" Then File.Move(pathedfile, pathedfile & cleanname(addtext) & ".oldversion")
+                            If Not imdbidtxt = "imdbid.txt" Then
+                                If Not maincollection.rconf.pcbmoviesnonforename Then
+                                    File.Move(pathedfile, pathedfile & cleanname(addtext) & ".oldversion")
+                                End If
+                            End If
+
                         Catch ex As Exception
                         End Try
                         strwork = ""

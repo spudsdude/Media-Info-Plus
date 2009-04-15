@@ -35200,6 +35200,33 @@ Public Class configuration
             cbFilterNameFileModeEverythingBefore720p = value
         End Set
     End Property
+    Private p_element_pcbmoviesnonforename As Boolean
+    Property pcbmoviesnonforename() As Boolean
+        Get
+            Return p_element_pcbmoviesnonforename
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbmoviesnonforename = value
+        End Set
+    End Property
+    Private p_element_ptbFilterNameFileModeEverythingBeforeUserDefined1 As String
+    Private p_element_pcbFilterNameFileModeEverythingBeforeUserDefined1 As Boolean
+    Property pcbFilterNameFileModeEverythingBeforeUserDefined1() As Boolean
+        Get
+            Return p_element_pcbFilterNameFileModeEverythingBeforeUserDefined1
+        End Get
+        Set(ByVal value As Boolean)
+            p_element_pcbFilterNameFileModeEverythingBeforeUserDefined1 = value
+        End Set
+    End Property
+    Property ptbFilterNameFileModeEverythingBeforeUserDefined1() As String
+        Get
+            Return p_element_ptbFilterNameFileModeEverythingBeforeUserDefined1
+        End Get
+        Set(ByVal value As String)
+            p_element_ptbFilterNameFileModeEverythingBeforeUserDefined1 = value
+        End Set
+    End Property
 
     Property pcbFilterNameFileModeEverythingBefore1080i() As Boolean
         Get

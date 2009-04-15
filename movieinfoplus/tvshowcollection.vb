@@ -509,6 +509,7 @@ Public Class tvshowcollection
                     Debug.Print(ex.ToString)
                 End Try
             Next
+            'If Not File.Exists(item.ToString & "\noscan") Then tvshowarray.Add(item.ToString)
         Next
 
         While showcount < tvshowarray.Count
@@ -1029,6 +1030,7 @@ Public Class tvshowcollection
             Dim tarray As New ArrayList
             Dim tdtvlist_count As Integer = 0
             EnumTVDirectory(curtvshowpath, tarray, tdtvlist_count)
+            tarray.Add(curtvshowpath)
             'get all files for all directorys in that path and put into arraylist
             Dim filelisting As New ArrayList
             For Each tdirectory As String In tarray
@@ -1476,6 +1478,7 @@ Public Class tvshowcollection
             'ennum sub dir x levels deep
             Dim curdircontents() As String
             curdircontents = Directory.GetDirectories(item.ToString)
+            'If Not File.Exists(item.ToString & "\noscan") Then tvshowarray.Add(item.ToString)
             For Each currentdir As String In curdircontents
                 Try
                     If Not validshowdirc(currentdir) Then 'Strings.Right(currentdir.ToUpper, 8) = "RECYCLER" Or Strings.Right(currentdir.ToLower, 8) = "(noscan)" Or currentdir.ToUpper = "LOST+FOUND" Or currentdir.ToUpper = "System Volume Information".ToUpper Then
@@ -1865,6 +1868,7 @@ Public Class tvshowcollection
             Dim tarray2 As New ArrayList
             Dim tdtvlist_count As Integer = 0
             EnumTVDirectory(curtvshowpath, tarray2, tdtvlist_count)
+            tarray2.Add(curtvshowpath)
             'get all files for all directorys in that path and put into arraylist
             Dim filelisting As New ArrayList
             For Each tdirectory As String In tarray2
@@ -2217,6 +2221,7 @@ Public Class tvshowcollection
             Dim tarray As New ArrayList
             Dim tdtvlist_count As Integer = 0
             EnumTVDirectory(curtvshowpath, tarray, tdtvlist_count)
+            tarray.Add(curtvshowpath)
             'get all files for all directorys in that path and put into arraylist
             Dim filelisting As New ArrayList
             For Each tdirectory As String In tarray

@@ -43,6 +43,7 @@ Partial Class dlgConfiguration
         Me.knudPosterHeightfolderjpg = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
         Me.knudPosterHeightTBN = New ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown
         Me.kgAutomaticGenerationSettings = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.cbmoviesnonforename = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.lblMovieScanningOptions = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.cbscanformoviemediainformation = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbautocreatemovienametbn = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -245,6 +246,8 @@ Partial Class dlgConfiguration
         Me.cbofdb_UpdateTitle = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.kgMoviesNameFilters = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.kgFileLevelFilterOptions = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1 = New System.Windows.Forms.TextBox
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1 = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbShowsStripEverythinginParan = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbFilterNameFileModeEverythingBeforeDash = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
         Me.cbFileLevelFilterUnderscoreDot = New ComponentFactory.Krypton.Toolkit.KryptonCheckBox
@@ -522,7 +525,7 @@ Partial Class dlgConfiguration
         Me.cbMoviesCertificationLang.FormattingEnabled = False
         Me.cbMoviesCertificationLang.Items.AddRange(New Object() {"Iceland", "Brazil", "Portugal", "Argentina", "Australia", "Belgium", "Canada", "Finland", "France", "Germany", "Hong Kong", "Ireland", "Netherlands", "New Zealand", "Peru", "Singapore", "South Korea", "Spain", "Sweden", "Switzerland", "UK", "USA"})
         Me.cbMoviesCertificationLang.ItemStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Form
-        Me.cbMoviesCertificationLang.Location = New System.Drawing.Point(210, 185)
+        Me.cbMoviesCertificationLang.Location = New System.Drawing.Point(211, 182)
         Me.cbMoviesCertificationLang.Name = "cbMoviesCertificationLang"
         Me.cbMoviesCertificationLang.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
         Me.cbMoviesCertificationLang.Size = New System.Drawing.Size(135, 20)
@@ -560,9 +563,9 @@ Partial Class dlgConfiguration
         '
         Me.btnProcessAll.Enabled = False
         Me.btnProcessAll.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProcessAll.Location = New System.Drawing.Point(549, 183)
+        Me.btnProcessAll.Location = New System.Drawing.Point(549, 161)
         Me.btnProcessAll.Name = "btnProcessAll"
-        Me.btnProcessAll.Size = New System.Drawing.Size(190, 28)
+        Me.btnProcessAll.Size = New System.Drawing.Size(190, 50)
         Me.btnProcessAll.TabIndex = 50
         Me.btnProcessAll.Text = "Process All Movies" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and recreate nfo files"
         Me.btnProcessAll.Values.ExtraText = ""
@@ -711,6 +714,7 @@ Partial Class dlgConfiguration
         '
         'kgAutomaticGenerationSettings.Panel
         '
+        Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbmoviesnonforename)
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.lblMovieScanningOptions)
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbscanformoviemediainformation)
         Me.kgAutomaticGenerationSettings.Panel.Controls.Add(Me.cbautocreatemovienametbn)
@@ -727,6 +731,18 @@ Partial Class dlgConfiguration
         Me.kgAutomaticGenerationSettings.StateCommon.Border.Rounding = 7
         Me.kgAutomaticGenerationSettings.StateCommon.Border.Width = 2
         Me.kgAutomaticGenerationSettings.TabIndex = 85
+        '
+        'cbmoviesnonforename
+        '
+        Me.cbmoviesnonforename.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbmoviesnonforename.Location = New System.Drawing.Point(3, 145)
+        Me.cbmoviesnonforename.Name = "cbmoviesnonforename"
+        Me.cbmoviesnonforename.Size = New System.Drawing.Size(222, 16)
+        Me.cbmoviesnonforename.TabIndex = 7
+        Me.cbmoviesnonforename.Text = "Do not move or rename invalid .nfo files"
+        Me.cbmoviesnonforename.Values.ExtraText = ""
+        Me.cbmoviesnonforename.Values.Image = Nothing
+        Me.cbmoviesnonforename.Values.Text = "Do not move or rename invalid .nfo files"
         '
         'lblMovieScanningOptions
         '
@@ -3470,6 +3486,8 @@ Partial Class dlgConfiguration
         '
         'kgFileLevelFilterOptions.Panel
         '
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.tbFilterNameFileModeEverythingBeforeUserDefined1)
+        Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforeUserDefined1)
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbShowsStripEverythinginParan)
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFilterNameFileModeEverythingBeforeDash)
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.cbFileLevelFilterUnderscoreDot)
@@ -3483,6 +3501,29 @@ Partial Class dlgConfiguration
         Me.kgFileLevelFilterOptions.Panel.Controls.Add(Me.lblMoviesFileLevelFilterOptions)
         Me.kgFileLevelFilterOptions.Size = New System.Drawing.Size(772, 363)
         Me.kgFileLevelFilterOptions.TabIndex = 1
+        '
+        'tbFilterNameFileModeEverythingBeforeUserDefined1
+        '
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1.Location = New System.Drawing.Point(499, 63)
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1.Name = "tbFilterNameFileModeEverythingBeforeUserDefined1"
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1.Size = New System.Drawing.Size(142, 19)
+        Me.tbFilterNameFileModeEverythingBeforeUserDefined1.TabIndex = 77
+        '
+        'cbFilterNameFileModeEverythingBeforeUserDefined1
+        '
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Location = New System.Drawing.Point(357, 67)
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Name = "cbFilterNameFileModeEverythingBeforeUserDefined1"
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Size = New System.Drawing.Size(403, 18)
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.StateCommon.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.StateDisabled.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.StateNormal.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.TabIndex = 76
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Text = "Use everything before _____________________  as the Movie Name"
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Values.ExtraText = ""
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Values.Image = Nothing
+        Me.cbFilterNameFileModeEverythingBeforeUserDefined1.Values.Text = "Use everything before _____________________  as the Movie Name"
         '
         'cbShowsStripEverythinginParan
         '
@@ -4842,5 +4883,8 @@ Partial Class dlgConfiguration
     Friend WithEvents rbofdb_englishtagline As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents rbofdb_BlankTagline As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
     Friend WithEvents rbofdb_usePlotOutline As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+    Friend WithEvents tbFilterNameFileModeEverythingBeforeUserDefined1 As System.Windows.Forms.TextBox
+    Friend WithEvents cbFilterNameFileModeEverythingBeforeUserDefined1 As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
+    Friend WithEvents cbmoviesnonforename As ComponentFactory.Krypton.Toolkit.KryptonCheckBox
 
 End Class

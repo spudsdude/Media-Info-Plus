@@ -194,6 +194,21 @@ Module modStringUtils
         '    'Syntax error in the regular expression
         'End Try
 
+
+        'rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1 
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeUserDefined1 Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex(Trim(maincollection.rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1), RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
         If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeh264 Then
             Dim ResultString As String = ""
             Try
@@ -447,6 +462,19 @@ Module modStringUtils
             moviename = ResultString7
         End If
 
+        If maincollection.rconf.pcbFilterNameFileModeEverythingBeforeUserDefined1 Then
+            Dim ResultString As String = ""
+            Try
+                Dim RegexObjDate As New Regex(Trim(maincollection.rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1), RegexOptions.IgnoreCase)
+                ResultString = RegexObjDate.Match(moviename).Groups(1).Value
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not String.IsNullOrEmpty(ResultString) Then
+                moviename = ResultString
+            End If
+        End If
+
         If maincollection.rconf.pcbfilternameFileModeFilterUnderscoreDot Then
             'change periods to spaces
             moviename = Strings.Replace(moviename, ".", " ")
@@ -460,7 +488,7 @@ Module modStringUtils
         'End If
 
         filteredname = moviename
-        Return filteredname
+        Return Trim(filteredname)
     End Function
 
     Public Function namefilter(ByVal moviename As String) As String
@@ -552,7 +580,7 @@ Module modStringUtils
         If maincollection.rconf.pcbFilterFolderFileLevel Then
             filteredname = namefilterforfilemode(filteredname)
         End If
-        Return filteredname
+        Return Trim(filteredname)
 
     End Function
 End Module
