@@ -6905,6 +6905,8 @@ Public Class maincollection
         Return lvStr_curfanart
     End Function
     Private Sub showfolderjpginmainwindow(ByVal curpath As String, ByVal skt As Boolean)
+        kgCurMovieImagetbn.Visible = False
+        pbCurrentIconUsedNT.Visible = False
         kgCurMovieImageFolderjpg.Visible = False
         '---Show folderjpg and tbn file
         If skt Then
@@ -7170,11 +7172,11 @@ Public Class maincollection
             Dim curboxstartpoint As Double
 
             If pbCurIconUsed.Enabled = True Then
-                curboxstartpoint = pbCurIconUsed.Location.Y + pbCurIconUsed.Height + 30
+                curboxstartpoint = pbCurIconUsed.Location.Y + pbCurIconUsed.Height + 20
             End If
 
             If pbCurIconUsed2.Enabled = True Then
-                curboxstartpoint = pbCurIconUsed2.Location.Y + pbCurIconUsed2.Height + 30
+                curboxstartpoint = pbCurIconUsed2.Location.Y + pbCurIconUsed2.Height + 20
             End If
 
             If pbCurIconUsed.Enabled And pbCurIconUsed2.Enabled Then
@@ -7264,7 +7266,7 @@ Public Class maincollection
                             'pbFrameTBN.Location = New System.Drawing.Point(pbCurTBNUsed.Location.X, CInt(curboxstartpoint))
                             'pbCurIconUsed.Image = bmpImage
                             ' pbFrameTBN.Show()
-                            kgCurMovieImagetbn.Location = New System.Drawing.Point(pbCurTBNUsed2.Location.X, CInt(curboxstartpoint + 18))
+                            kgCurMovieImagetbn.Location = New System.Drawing.Point(pbCurTBNUsed2.Location.X, CInt(curboxstartpoint + 28))
                             'pbCurTBNUsed2.Load()
                             pbCurTBNUsed2.Show()
                             pbCurTBNUsed2.Width = Convert.ToInt32(newWidth)

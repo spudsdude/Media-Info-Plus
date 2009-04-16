@@ -1044,133 +1044,230 @@ Public Class tvshowcollection
 
                             Dim fnPeices1() As String = item.ToString.Split(CChar("\"))
                             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+                            Dim validfile As Boolean = False
                             Select Case Strings.Right(tfname, 4).ToLower
                                 Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
-                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "parser for : " + item.ToString + " : Result was : " + tfname.ToString
-                                    'have a movie file, parse it for season and episode
-                                    Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1).ToLower
-                                    tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
-                                    tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
-                                    Debug.Print(tfnameoffile)
-                                    'run regex on file name (without extension)
-                                    Dim haveseason As Boolean = False
-                                    Dim haveepisode As Boolean = False
-                                    Dim ctv_season As String = ""
-                                    Dim ctv_episode As String = ""
-                                    Dim multiepisode As Boolean = False
-                                    Dim numofepisodes As Integer = 0
+                                    validfile = True
+                                Case Else
+                                    validfile = False
+                            End Select
+                            Select Case Strings.Right(tfname, 3).ToLower
+                                Case ".ts"
+                                    validfile = True
+                                Case Else
+                                    'do nothing
+                            End Select
+
+                            If validfile Then
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "parser for : " + item.ToString + " : Result was : " + tfname.ToString
+                                'have a movie file, parse it for season and episode
+                                Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1).ToLower
+                                tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
+                                Debug.Print(tfnameoffile)
+                                'run regex on file name (without extension)
+                                Dim haveseason As Boolean = False
+                                Dim haveepisode As Boolean = False
+                                Dim ctv_season As String = ""
+                                Dim ctv_episode As String = ""
+                                Dim multiepisode As Boolean = False
+                                Dim numofepisodes As Integer = 0
+                                Try
+                                    ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
+                                    If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex1 season resulted in :" + ctv_season
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "check to see if it's a multipart episode"
+
                                     Try
-                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
-                                        If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
-                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex1 season resulted in :" + ctv_season
-                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "check to see if it's a multipart episode"
-
-                                        Try
-                                            Dim RegexObject1 As New Regex("[-EeXx]([0-9]+)")
-                                            Dim MObj As Match = RegexObject1.Match(tfnameoffile)
-                                            While MObj.Success
-                                                Dim GObj As Group = MObj.Groups(1)
-                                                If GObj.Success Then
-                                                    numofepisodes += 1
-                                                    If numofepisodes > 1 Then
-                                                        ctv_episode += ":" + MObj.Groups(1).Value
-                                                    Else
-                                                        ctv_episode = MObj.Groups(1).Value 'Regex.Match(tfnameoffile, "[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("episode").Value
-                                                    End If
+                                        Dim RegexObject1 As New Regex("[-EeXx]([0-9]+)")
+                                        Dim MObj As Match = RegexObject1.Match(tfnameoffile)
+                                        While MObj.Success
+                                            Dim GObj As Group = MObj.Groups(1)
+                                            If GObj.Success Then
+                                                numofepisodes += 1
+                                                If numofepisodes > 1 Then
+                                                    ctv_episode += ":" + MObj.Groups(1).Value
+                                                Else
+                                                    ctv_episode = MObj.Groups(1).Value 'Regex.Match(tfnameoffile, "[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("episode").Value
                                                 End If
-                                                MObj = MObj.NextMatch()
-                                            End While
-                                        Catch ex As ArgumentException
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString ' Syntax error in the regular expression
-                                        End Try
-                                        If numofepisodes > 1 Then
-                                            multiepisode = True
-                                            'MsgBox(numofepisodes.ToString + " " + ctv_episode)
-                                        Else
-                                            multiepisode = False
-                                        End If
+                                            End If
+                                            MObj = MObj.NextMatch()
+                                        End While
+                                    Catch ex As ArgumentException
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString ' Syntax error in the regular expression
+                                    End Try
+                                    If numofepisodes > 1 Then
+                                        multiepisode = True
+                                        'MsgBox(numofepisodes.ToString + " " + ctv_episode)
+                                    Else
+                                        multiepisode = False
+                                    End If
 
-                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
-                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex1 episode resulted in :" + ctv_episode
+                                    If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex1 episode resulted in :" + ctv_episode
+                                    If Not ctv_season = "" Then haveseason = True
+                                    If Not ctv_episode = "" Then haveepisode = True
+                                    If Not (haveepisode And haveseason) Then
+                                        haveepisode = False
+                                        haveseason = False
+                                    End If
+                                Catch ex As ArgumentException
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString 'Syntax error in the regular expression
+                                End Try
+                                'if it has season and episode, then write nfo and tbn for it
+
+                                If Not (haveseason And haveepisode) Then
+                                    Try
+                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("season").Value
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex2 season resulted in :" + ctv_season
+                                        ctv_episode = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("episode").Value
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex2 episode resulted in :" + ctv_episode
                                         If Not ctv_season = "" Then haveseason = True
                                         If Not ctv_episode = "" Then haveepisode = True
+                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
                                         If Not (haveepisode And haveseason) Then
                                             haveepisode = False
                                             haveseason = False
                                         End If
+                                        multiepisode = False
                                     Catch ex As ArgumentException
                                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString 'Syntax error in the regular expression
                                     End Try
                                     'if it has season and episode, then write nfo and tbn for it
 
-                                    If Not (haveseason And haveepisode) Then
-                                        Try
-                                            ctv_season = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("season").Value
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex2 season resulted in :" + ctv_season
-                                            ctv_episode = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("episode").Value
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex2 episode resulted in :" + ctv_episode
-                                            If Not ctv_season = "" Then haveseason = True
-                                            If Not ctv_episode = "" Then haveepisode = True
-                                            If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
-                                            If Not (haveepisode And haveseason) Then
-                                                haveepisode = False
-                                                haveseason = False
+                                End If
+                                If Not (haveseason And haveepisode) And Not rconf.ptvregx1 = "" Then
+                                    Try
+                                        ctv_season = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(1).Value
+                                        If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Custom Regex season resulted in :" + ctv_season
+                                        Debug.Print("Regex3 season resulted in :" + ctv_season)
+                                        ctv_episode = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(2).Value
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Custom Regex episode resulted in :" + ctv_episode
+                                        Debug.Print("Regex3 episode resulted in :" + ctv_episode)
+                                        If Not ctv_season = "" Then haveseason = True
+                                        If Not ctv_episode = "" Then haveepisode = True
+                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
+                                        If Not (haveepisode And haveseason) Then
+                                            haveepisode = False
+                                            haveseason = False
+                                        End If
+                                    Catch ex As ArgumentException
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString
+                                    End Try
+                                End If
+
+                                ''if it has season and episode, then write nfo and tbn for it
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Regex Completed --------------"
+                                If Not (haveepisode And haveepisode) Then
+                                    Dim newfailedshow As New showfileobj
+                                    newfailedshow.filename = tfnameoffile
+                                    newfailedshow.path = getparentdirectory(item)
+                                    newfailedshow.showid = ""
+                                    newfailedshow.showrootfolder = curtvshowpath
+                                    newfailedshow.showname = xbmctvshow1.Title
+                                    newfailedshow.showid = xbmctvshow1.Tvdbid
+                                    newfailedshow.writecommit = False
+                                    gvFailedEPList.Add(newfailedshow) ' += vbNewLine + tfnameoffile
+                                End If
+                                If (haveepisode And haveseason) And Not multiepisode Then
+                                    If ctv_episode = "0" Then ctv_episode = "00"
+                                    numtvshowstotal += 1 'numofepisodes
+                                    Dim tepisode1 As New tvdblangEpisode
+                                    tepisode1.miptvdbkey = miptvdbkey
+                                    tepisode1.mutlipart = False
+                                    'get espisode data
+                                    Try
+                                        tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
+                                        tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                    Catch ex As Exception
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
+                                        'curepcou += 1
+                                        Continue For 'next for'Continue While 'break out of loop
+                                    End Try
+
+                                    If Not tepisode1 Is Nothing Then
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
+                                        curseason.episodes.Add(tepisode1)
+                                        If rconf.tv_episode_download_boolean Then
+                                            If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
+                                                'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
+                                                If Not tepisode1.Filename = "" Then
+                                                    wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                                End If
                                             End If
-                                            multiepisode = False
-                                        Catch ex As ArgumentException
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString 'Syntax error in the regular expression
-                                        End Try
-                                        'if it has season and episode, then write nfo and tbn for it
+                                            If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
+                                                'we should now have it in cache
+
+                                                'make sure it's not a 0k file
+                                                checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                'check episode thumb overwrite option in conf
+                                                If rconf.tv_episode_overwrite_tbn Then
+                                                    File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
+                                                Else
+                                                    Try
+                                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                        'make sure it's not a 0k file
+                                                        checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                    Catch ex As Exception
+                                                        'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
+                                                        Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                    End Try
+
+                                                End If
+                                            End If
+                                        End If
+                                        tepisode1.fullfilenameandpath = item
+                                        Dim writnfo As Boolean = False
+                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
+                                        If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
+                                        If writnfo Then
+                                            'get media data
+                                            maincollection.pbar1.Visible = True
+                                            maincollection.lblPbar.Visible = True
+                                            maincollection.lblPbar.BringToFront()
+                                            maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                            maincollection.Refresh()
+                                            Dim curmedinfo As New MediaInfo
+                                            curmedinfo.getdata(tepisode1, True)
+
+                                            Dim xbmced1 As New xbmc.xbmcEpisodedetails
+                                            tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
+                                            xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
+                                        End If
 
                                     End If
-                                    If Not (haveseason And haveepisode) And Not rconf.ptvregx1 = "" Then
-                                        Try
-                                            ctv_season = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(1).Value
-                                            If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Custom Regex season resulted in :" + ctv_season
-                                            Debug.Print("Regex3 season resulted in :" + ctv_season)
-                                            ctv_episode = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(2).Value
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Custom Regex episode resulted in :" + ctv_episode
-                                            Debug.Print("Regex3 episode resulted in :" + ctv_episode)
-                                            If Not ctv_season = "" Then haveseason = True
-                                            If Not ctv_episode = "" Then haveepisode = True
-                                            If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
-                                            If Not (haveepisode And haveseason) Then
-                                                haveepisode = False
-                                                haveseason = False
-                                            End If
-                                        Catch ex As ArgumentException
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString
-                                        End Try
-                                    End If
+                                ElseIf (haveepisode And haveseason) And multiepisode Then 'multiepisode
+                                    'create mutliepisode obj
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Multipart Episode Found"
+                                    Dim curxbmcmultiepisode As New xbmc.xbmcmultiepisode
 
-                                    ''if it has season and episode, then write nfo and tbn for it
-                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Regex Completed --------------"
-                                    If Not (haveepisode And haveepisode) Then
-                                        Dim newfailedshow As New showfileobj
-                                        newfailedshow.filename = tfnameoffile
-                                        newfailedshow.path = getparentdirectory(item)
-                                        newfailedshow.showid = ""
-                                        newfailedshow.showrootfolder = curtvshowpath
-                                        newfailedshow.showname = xbmctvshow1.Title
-                                        newfailedshow.showid = xbmctvshow1.Tvdbid
-                                        newfailedshow.writecommit = False
-                                        gvFailedEPList.Add(newfailedshow) ' += vbNewLine + tfnameoffile
-                                    End If
-                                    If (haveepisode And haveseason) And Not multiepisode Then
-                                        If ctv_episode = "0" Then ctv_episode = "00"
-                                        numtvshowstotal += 1 'numofepisodes
+                                    numtvshowstotal += numofepisodes
+                                    'split episodes at the : 
+                                    Dim epPeices() As String = ctv_episode.Split(CChar(":"))
+                                    Dim epcoutot As Integer = epPeices.Length
+                                    Dim curepcou As Integer = 0
+                                    While curepcou < epcoutot
+                                        Dim ctv_episodepiece As String = epPeices(curepcou)
+                                        'get 2 digit version of episode data
+                                        If Strings.Left(ctv_episodepiece, 1) = "0" And ctv_episodepiece.Length >= 1 Then
+                                            ctv_episodepiece = Strings.Right(ctv_episodepiece, ctv_episodepiece.Length - 1)
+                                        End If
+
                                         Dim tepisode1 As New tvdblangEpisode
-                                        tepisode1.miptvdbkey = miptvdbkey
-                                        tepisode1.mutlipart = False
-                                        'get espisode data
+
+                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "get espisode data"
+                                        If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
                                         Try
-                                            tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
+                                            tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
                                             tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                            tepisode1.miptvdbkey = miptvdbkey
+                                            tepisode1.mutlipart = True
                                         Catch ex As Exception
                                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
-                                            'curepcou += 1
-                                            Continue For 'next for'Continue While 'break out of loop
+                                            curepcou += 1
+                                            Continue While
+                                            'Continue While 'break out of loop
                                         End Try
 
                                         If Not tepisode1 Is Nothing Then
@@ -1185,8 +1282,6 @@ Public Class tvshowcollection
                                                 End If
                                                 If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
                                                     'we should now have it in cache
-
-                                                    'make sure it's not a 0k file
                                                     checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                     'check episode thumb overwrite option in conf
                                                     If rconf.tv_episode_overwrite_tbn Then
@@ -1194,133 +1289,49 @@ Public Class tvshowcollection
                                                     Else
                                                         Try
                                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
-                                                            'make sure it's not a 0k file
-                                                             checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                            checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         Catch ex As Exception
                                                             'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                             Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         End Try
-
                                                     End If
                                                 End If
+                                                'asdf()
                                             End If
+                                            Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                             tepisode1.fullfilenameandpath = item
-                                            Dim writnfo As Boolean = False
-                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                            If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
-                                            If writnfo Then
-                                                'get media data
+                                            tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
+                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
                                                 maincollection.pbar1.Visible = True
                                                 maincollection.lblPbar.Visible = True
                                                 maincollection.lblPbar.BringToFront()
-                                                maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                                maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
-
-                                                Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
-                                                xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                             End If
+                                            curxbmcmultiepisode.episodes.Add(xbmced1)
+                                            curepcou += 1
+                                            'xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
 
                                         End If
-                                    ElseIf (haveepisode And haveseason) And multiepisode Then 'multiepisode
-                                        'create mutliepisode obj
-                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Multipart Episode Found"
-                                        Dim curxbmcmultiepisode As New xbmc.xbmcmultiepisode
 
-                                        numtvshowstotal += numofepisodes
-                                        'split episodes at the : 
-                                        Dim epPeices() As String = ctv_episode.Split(CChar(":"))
-                                        Dim epcoutot As Integer = epPeices.Length
-                                        Dim curepcou As Integer = 0
-                                        While curepcou < epcoutot
-                                            Dim ctv_episodepiece As String = epPeices(curepcou)
-                                            'get 2 digit version of episode data
-                                            If Strings.Left(ctv_episodepiece, 1) = "0" And ctv_episodepiece.Length >= 1 Then
-                                                ctv_episodepiece = Strings.Right(ctv_episodepiece, ctv_episodepiece.Length - 1)
-                                            End If
-
-                                            Dim tepisode1 As New tvdblangEpisode
-
-                                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "get espisode data"
-                                            If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
-                                            Try
-                                                tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
-                                                tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
-                                                tepisode1.miptvdbkey = miptvdbkey
-                                                tepisode1.mutlipart = True
-                                            Catch ex As Exception
-                                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
-                                                curepcou += 1
-                                                Continue While
-                                                'Continue While 'break out of loop
-                                            End Try
-
-                                            If Not tepisode1 Is Nothing Then
-                                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
-                                                curseason.episodes.Add(tepisode1)
-                                                If rconf.tv_episode_download_boolean Then
-                                                    If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
-                                                        'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
-                                                        If Not tepisode1.Filename = "" Then
-                                                            wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
-                                                        End If
-                                                    End If
-                                                    If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
-                                                        'we should now have it in cache
-                                                        checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                        'check episode thumb overwrite option in conf
-                                                        If rconf.tv_episode_overwrite_tbn Then
-                                                            File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
-                                                        Else
-                                                            Try
-                                                                If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
-                                                                checkzerofilesize(Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                            Catch ex As Exception
-                                                                'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
-                                                                Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                            End Try
-                                                        End If
-                                                    End If
-                                                    'asdf()
-                                                End If
-                                                Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.fullfilenameandpath = item
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
-                                                If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
-                                                    maincollection.pbar1.Visible = True
-                                                    maincollection.lblPbar.Visible = True
-                                                    maincollection.lblPbar.BringToFront()
-                                                    maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
-                                                    maincollection.Refresh()
-                                                    Dim curmedinfo As New MediaInfo
-                                                    curmedinfo.getdata(tepisode1, True)
-                                                End If
-                                                curxbmcmultiepisode.episodes.Add(xbmced1)
-                                                curepcou += 1
-                                                'xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
-
-                                            End If
-
-                                        End While
-                                        If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Writing .nfo file: " + Strings.Left(item.ToString, item.Length - 4) + ".nfo"
-                                        'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
-                                        Dim writnfo As Boolean = False
-                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                        If rconf.tv_episode_overwrite_nfo Then writnfo = True
-                                        If writnfo Then
-                                            curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
-                                        End If
-                                        'Dim epname As String = epPeices(epPeices.Length - 1)
-
-
+                                    End While
+                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Writing .nfo file: " + Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                    'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
+                                    Dim writnfo As Boolean = False
+                                    If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
+                                    If rconf.tv_episode_overwrite_nfo Then writnfo = True
+                                    If writnfo Then
+                                        curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                     End If
-                                    'End If
-                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Done episode processing of single item, movie to next or end --------------"
-                                Case Else
-                                    If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Non Movie File: " + item.ToString + " : " + tfname.ToString
-                            End Select
+                                    'Dim epname As String = epPeices(epPeices.Length - 1)
+                                End If
+                                'End If
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Done episode processing of single item, movie to next or end --------------"
+                            Else
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Non Movie File: " + item.ToString + " : " + tfname.ToString
+                            End If
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + ex.ToString
@@ -2235,117 +2246,203 @@ Public Class tvshowcollection
 
                             Dim fnPeices1() As String = item.ToString.Split(CChar("\"))
                             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+                            Dim validfile As Boolean = False
                             Select Case Strings.Right(tfname, 4).ToLower
                                 Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
-                                    'have a movie file, parse it for season and episode
-                                    Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
-                                    Debug.Print(tfnameoffile)
-                                    'run regex on file name (without extension)
-                                    Dim haveseason As Boolean = False
-                                    Dim haveepisode As Boolean = False
-                                    Dim ctv_season As String = ""
-                                    Dim ctv_episode As String = ""
-                                    Dim multiepisode As Boolean = False
-                                    Dim numofepisodes As Integer = 0
+                                    validfile = True
+                                Case Else
+                                    validfile = False
+                            End Select
+                            Select Case Strings.Right(tfname, 3).ToLower
+                                Case ".ts"
+                                    validfile = True
+                                Case Else
+                                    'do nothing
+                            End Select
+
+                            If validfile Then    'have a movie file, parse it for season and episode
+                                Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
+                                Debug.Print(tfnameoffile)
+                                'run regex on file name (without extension)
+                                Dim haveseason As Boolean = False
+                                Dim haveepisode As Boolean = False
+                                Dim ctv_season As String = ""
+                                Dim ctv_episode As String = ""
+                                Dim multiepisode As Boolean = False
+                                Dim numofepisodes As Integer = 0
+                                Try
+                                    ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
+                                    If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
+
                                     Try
-                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
-                                        If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
-
-                                        Try
-                                            Dim RegexObject1 As New Regex("[-EeXx]([0-9]+)")
-                                            Dim MObj As Match = RegexObject1.Match(tfnameoffile)
-                                            While MObj.Success
-                                                Dim GObj As Group = MObj.Groups(1)
-                                                If GObj.Success Then
-                                                    numofepisodes += 1
-                                                    If numofepisodes > 1 Then
-                                                        ctv_episode += ":" + MObj.Groups(1).Value
-                                                    Else
-                                                        ctv_episode = MObj.Groups(1).Value 'Regex.Match(tfnameoffile, "[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("episode").Value
-                                                    End If
+                                        Dim RegexObject1 As New Regex("[-EeXx]([0-9]+)")
+                                        Dim MObj As Match = RegexObject1.Match(tfnameoffile)
+                                        While MObj.Success
+                                            Dim GObj As Group = MObj.Groups(1)
+                                            If GObj.Success Then
+                                                numofepisodes += 1
+                                                If numofepisodes > 1 Then
+                                                    ctv_episode += ":" + MObj.Groups(1).Value
+                                                Else
+                                                    ctv_episode = MObj.Groups(1).Value 'Regex.Match(tfnameoffile, "[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("episode").Value
                                                 End If
-                                                MObj = MObj.NextMatch()
-                                            End While
-                                        Catch ex As ArgumentException
-                                        End Try
-                                        If numofepisodes > 1 Then
-                                            multiepisode = True
-                                            'MsgBox(numofepisodes.ToString + " " + ctv_episode)
-                                        Else
-                                            multiepisode = False
-                                        End If
+                                            End If
+                                            MObj = MObj.NextMatch()
+                                        End While
+                                    Catch ex As ArgumentException
+                                    End Try
+                                    If numofepisodes > 1 Then
+                                        multiepisode = True
+                                        'MsgBox(numofepisodes.ToString + " " + ctv_episode)
+                                    Else
+                                        multiepisode = False
+                                    End If
 
-                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
+                                    If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
+                                    If Not ctv_season = "" Then haveseason = True
+                                    If Not ctv_episode = "" Then haveepisode = True
+                                    If Not (haveepisode And haveseason) Then
+                                        haveepisode = False
+                                        haveseason = False
+                                    End If
+                                Catch ex As ArgumentException
+                                End Try
+                                'if it has season and episode, then write nfo and tbn for it
+
+                                If Not (haveseason And haveepisode) Then
+                                    Try
+                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("season").Value
+                                        ctv_episode = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("episode").Value
                                         If Not ctv_season = "" Then haveseason = True
                                         If Not ctv_episode = "" Then haveepisode = True
+                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
+                                        If Not (haveepisode And haveseason) Then
+                                            haveepisode = False
+                                            haveseason = False
+                                        End If
+                                        multiepisode = False
+                                    Catch ex As ArgumentException
+                                    End Try
+                                    'if it has season and episode, then write nfo and tbn for it
+
+                                End If
+                                If Not (haveseason And haveepisode) And Not rconf.ptvregx1 = "" Then
+                                    Try
+                                        ctv_season = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(1).Value
+                                        If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
+                                        Debug.Print("Regex3 season resulted in :" + ctv_season)
+                                        ctv_episode = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(2).Value
+                                        Debug.Print("Regex3 episode resulted in :" + ctv_episode)
+                                        If Not ctv_season = "" Then haveseason = True
+                                        If Not ctv_episode = "" Then haveepisode = True
+                                        If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
                                         If Not (haveepisode And haveseason) Then
                                             haveepisode = False
                                             haveseason = False
                                         End If
                                     Catch ex As ArgumentException
                                     End Try
-                                    'if it has season and episode, then write nfo and tbn for it
+                                End If
 
-                                    If Not (haveseason And haveepisode) Then
-                                        Try
-                                            ctv_season = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("season").Value
-                                            ctv_episode = Regex.Match(tfnameoffile, "(?<season>[0-9]+)(?<episode>[0-9][0-9])[^\\/]*", RegexOptions.IgnoreCase).Groups("episode").Value
-                                            If Not ctv_season = "" Then haveseason = True
-                                            If Not ctv_episode = "" Then haveepisode = True
-                                            If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
-                                            If Not (haveepisode And haveseason) Then
-                                                haveepisode = False
-                                                haveseason = False
+                                ''if it has season and episode, then write nfo and tbn for it
+                                If Not (haveepisode And haveepisode) Then
+                                    Dim newfailedshow As New showfileobj
+                                    newfailedshow.filename = tfnameoffile
+                                    newfailedshow.path = getparentdirectory(item)
+                                    newfailedshow.showid = ""
+                                    newfailedshow.showrootfolder = curtvshowpath
+                                    newfailedshow.showname = xbmctvshow1.Title
+                                    newfailedshow.showid = xbmctvshow1.Tvdbid
+                                    newfailedshow.writecommit = False
+                                    gvFailedEPList.Add(newfailedshow) ' += vbNewLine + tfnameoffile
+                                End If
+                                If (haveepisode And haveseason) And Not multiepisode Then
+                                    If ctv_episode = "0" Then ctv_episode = "00"
+                                    numtvshowstotal += 1 'numofepisodes
+                                    Dim tepisode1 As New tvdblangEpisode
+                                    tepisode1.miptvdbkey = miptvdbkey
+                                    tepisode1.mutlipart = False
+                                    'get espisode data
+                                    Try
+                                        tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
+                                        tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                    Catch ex As Exception
+                                        'curepcou += 1
+                                        Continue For 'next for'Continue While 'break out of loop
+                                    End Try
+
+                                    If Not tepisode1 Is Nothing Then
+                                        curseason.episodes.Add(tepisode1)
+                                        If rconf.tv_episode_download_boolean Then
+                                            If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
+                                                'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
+                                                If Not tepisode1.Filename = "" Then
+                                                    wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
+                                                End If
                                             End If
-                                            multiepisode = False
-                                        Catch ex As ArgumentException
-                                        End Try
-                                        'if it has season and episode, then write nfo and tbn for it
+                                            If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
+                                                'we should now have it in cache
+                                                'check episode thumb overwrite option in conf
+                                                If rconf.tv_episode_overwrite_tbn Then
+                                                    File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
+                                                Else
+                                                    Try
+                                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
+                                                    Catch ex As Exception
+                                                        'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
+                                                        Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                    End Try
 
-                                    End If
-                                    If Not (haveseason And haveepisode) And Not rconf.ptvregx1 = "" Then
-                                        Try
-                                            ctv_season = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(1).Value
-                                            If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
-                                            Debug.Print("Regex3 season resulted in :" + ctv_season)
-                                            ctv_episode = Regex.Match(tfnameoffile, rconf.ptvregx1, RegexOptions.IgnoreCase).Groups(2).Value
-                                            Debug.Print("Regex3 episode resulted in :" + ctv_episode)
-                                            If Not ctv_season = "" Then haveseason = True
-                                            If Not ctv_episode = "" Then haveepisode = True
-                                            If Strings.Left(ctv_episode, 1) = "0" And ctv_episode.Length >= 1 Then ctv_episode = Strings.Right(ctv_episode, ctv_episode.Length - 1)
-                                            If Not (haveepisode And haveseason) Then
-                                                haveepisode = False
-                                                haveseason = False
+                                                End If
                                             End If
-                                        Catch ex As ArgumentException
-                                        End Try
-                                    End If
+                                        End If
+                                        tepisode1.fullfilenameandpath = item
+                                        Dim writnfo As Boolean = False
+                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
+                                        If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
+                                        If writnfo Then
+                                            'get media data
+                                            maincollection.pbar1.Visible = True
+                                            maincollection.lblPbar.Visible = True
+                                            maincollection.lblPbar.BringToFront()
+                                            maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                            maincollection.Refresh()
+                                            Dim curmedinfo As New MediaInfo
+                                            curmedinfo.getdata(tepisode1, True)
+                                            Dim xbmced1 As New xbmc.xbmcEpisodedetails
+                                            tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
+                                            xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
+                                        End If
 
-                                    ''if it has season and episode, then write nfo and tbn for it
-                                    If Not (haveepisode And haveepisode) Then
-                                        Dim newfailedshow As New showfileobj
-                                        newfailedshow.filename = tfnameoffile
-                                        newfailedshow.path = getparentdirectory(item)
-                                        newfailedshow.showid = ""
-                                        newfailedshow.showrootfolder = curtvshowpath
-                                        newfailedshow.showname = xbmctvshow1.Title
-                                        newfailedshow.showid = xbmctvshow1.Tvdbid
-                                        newfailedshow.writecommit = False
-                                        gvFailedEPList.Add(newfailedshow) ' += vbNewLine + tfnameoffile
                                     End If
-                                    If (haveepisode And haveseason) And Not multiepisode Then
-                                        If ctv_episode = "0" Then ctv_episode = "00"
-                                        numtvshowstotal += 1 'numofepisodes
+                                ElseIf (haveepisode And haveseason) And multiepisode Then 'multiepisode
+                                    'create mutliepisode obj
+                                    Dim curxbmcmultiepisode As New xbmc.xbmcmultiepisode
+
+                                    numtvshowstotal += numofepisodes
+                                    'split episodes at the : 
+                                    Dim epPeices() As String = ctv_episode.Split(CChar(":"))
+                                    Dim epcoutot As Integer = epPeices.Length
+                                    Dim curepcou As Integer = 0
+                                    While curepcou < epcoutot
+                                        Dim ctv_episodepiece As String = epPeices(curepcou)
+                                        'get 2 digit version of episode data
+                                        If Strings.Left(ctv_episodepiece, 1) = "0" And ctv_episodepiece.Length >= 1 Then
+                                            ctv_episodepiece = Strings.Right(ctv_episodepiece, ctv_episodepiece.Length - 1)
+                                        End If
+
                                         Dim tepisode1 As New tvdblangEpisode
-                                        tepisode1.miptvdbkey = miptvdbkey
-                                        tepisode1.mutlipart = False
-                                        'get espisode data
+
+                                        If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
                                         Try
-                                            tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
+                                            tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
                                             tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                            tepisode1.miptvdbkey = miptvdbkey
+                                            tepisode1.mutlipart = True
                                         Catch ex As Exception
-                                            'curepcou += 1
-                                            Continue For 'next for'Continue While 'break out of loop
+                                            curepcou += 1
+                                            Continue While
+                                            'Continue While 'break out of loop
                                         End Try
 
                                         If Not tepisode1 Is Nothing Then
@@ -2369,117 +2466,43 @@ Public Class tvshowcollection
                                                             'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                             Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         End Try
-
                                                     End If
                                                 End If
+                                                'asdf()
                                             End If
+                                            Dim xbmced1 As New xbmc.xbmcEpisodedetails
                                             tepisode1.fullfilenameandpath = item
-                                            Dim writnfo As Boolean = False
-                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                            If rconf.tv_episode_overwrite_nfo Then writnfo = True 'tv_tvshow_nfo_overwrite_boolean
-                                            If writnfo Then
-                                                'get media data
+                                            tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
+                                            If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
                                                 maincollection.pbar1.Visible = True
                                                 maincollection.lblPbar.Visible = True
                                                 maincollection.lblPbar.BringToFront()
-                                                maincollection.lblPbar.Text = "-- Working On: " + item + "--"
+                                                maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
                                                 curmedinfo.getdata(tepisode1, True)
-                                                Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
-                                                xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                             End If
+                                            curxbmcmultiepisode.episodes.Add(xbmced1)
+                                            curepcou += 1
+                                            'xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
 
                                         End If
-                                    ElseIf (haveepisode And haveseason) And multiepisode Then 'multiepisode
-                                        'create mutliepisode obj
-                                        Dim curxbmcmultiepisode As New xbmc.xbmcmultiepisode
 
-                                        numtvshowstotal += numofepisodes
-                                        'split episodes at the : 
-                                        Dim epPeices() As String = ctv_episode.Split(CChar(":"))
-                                        Dim epcoutot As Integer = epPeices.Length
-                                        Dim curepcou As Integer = 0
-                                        While curepcou < epcoutot
-                                            Dim ctv_episodepiece As String = epPeices(curepcou)
-                                            'get 2 digit version of episode data
-                                            If Strings.Left(ctv_episodepiece, 1) = "0" And ctv_episodepiece.Length >= 1 Then
-                                                ctv_episodepiece = Strings.Right(ctv_episodepiece, ctv_episodepiece.Length - 1)
-                                            End If
-
-                                            Dim tepisode1 As New tvdblangEpisode
-
-                                            If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
-                                            Try
-                                                tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
-                                                tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
-                                                tepisode1.miptvdbkey = miptvdbkey
-                                                tepisode1.mutlipart = True
-                                            Catch ex As Exception
-                                                curepcou += 1
-                                                Continue While
-                                                'Continue While 'break out of loop
-                                            End Try
-
-                                            If Not tepisode1 Is Nothing Then
-                                                curseason.episodes.Add(tepisode1)
-                                                If rconf.tv_episode_download_boolean Then
-                                                    If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
-                                                        'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
-                                                        If Not tepisode1.Filename = "" Then
-                                                            wgetTVEpisodeImage(curmirror + "/banners/" + tepisode1.Filename, rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), True)
-                                                        End If
-                                                    End If
-                                                    If File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) Then
-                                                        'we should now have it in cache
-                                                        'check episode thumb overwrite option in conf
-                                                        If rconf.tv_episode_overwrite_tbn Then
-                                                            File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", True)
-                                                        Else
-                                                            Try
-                                                                If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
-                                                            Catch ex As Exception
-                                                                'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
-                                                                Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
-                                                            End Try
-                                                        End If
-                                                    End If
-                                                    'asdf()
-                                                End If
-                                                Dim xbmced1 As New xbmc.xbmcEpisodedetails
-                                                tepisode1.fullfilenameandpath = item
-                                                tepisode1.tvdblangepisode2xbmcTvepisode(tepisode1, xbmced1, xbmctvshow1.Actors, curmirror, xbmctvshow1.Studio, xbmctvshow1.Mpaa)
-                                                If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then
-                                                    maincollection.pbar1.Visible = True
-                                                    maincollection.lblPbar.Visible = True
-                                                    maincollection.lblPbar.BringToFront()
-                                                    maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
-                                                    maincollection.Refresh()
-                                                    Dim curmedinfo As New MediaInfo
-                                                    curmedinfo.getdata(tepisode1, True)
-                                                End If
-                                                curxbmcmultiepisode.episodes.Add(xbmced1)
-                                                curepcou += 1
-                                                'xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
-
-                                            End If
-
-                                        End While
-                                        'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
-                                        Dim writnfo As Boolean = False
-                                        If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
-                                        If rconf.tv_episode_overwrite_nfo Then writnfo = True
-                                        If writnfo Then
-                                            curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
-                                        End If
-                                        'Dim epname As String = epPeices(epPeices.Length - 1)
-
-
+                                    End While
+                                    'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
+                                    Dim writnfo As Boolean = False
+                                    If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".nfo") Then writnfo = True
+                                    If rconf.tv_episode_overwrite_nfo Then writnfo = True
+                                    If writnfo Then
+                                        curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                     End If
-                                    'End If
-                                Case Else
-                            End Select
+                                    'Dim epname As String = epPeices(epPeices.Length - 1)
+
+
+                                End If
+                                'End If
+                                ' Case Else
+                            End If 'Select
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
                         End Try
