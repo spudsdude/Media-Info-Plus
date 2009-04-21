@@ -2465,6 +2465,11 @@ Public Class maincollection
             '    End If
             'End If
         End If
+
+        'check tmdbid number
+        'check tmdbid
+        checktmdbid(currentmovie)
+
         'display imdb info
         If Not mediaonly Then
             gbDisplay.Parent.Text = currentmovie.getmoviename
@@ -5962,6 +5967,9 @@ Public Class maincollection
         checknfodata(currentmovie, dname, rbem.Checked)
         Debug.Print("IMDB Information and .nfo creation - completed")
 
+        'check tmdbid
+        checktmdbid(currentmovie)
+
         Dim curposter As New posters
         Dim selectedNameXMLfile As String
         selectedNameXMLfile = Strings.Replace(dname, " ", ".")
@@ -7394,9 +7402,9 @@ Public Class maincollection
         'get fanart
         Dim cbackdrops As New tmdbapiv2.Backdrops 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked And Not nonewdatacheck Then 'working online, get latest info
-            tmdbapiv2.Results.getbackdrops(cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singlefiledownload, True, True, False)
+            tmdbapiv2.Results.getbackdrops(tmovie, cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singlefiledownload, True, True, False)
         Else 'not working online, do not overwrite, will not attempt to download
-            tmdbapiv2.Results.getbackdrops(cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singlefiledownload, False, True, True)
+            tmdbapiv2.Results.getbackdrops(tmovie, cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singlefiledownload, False, True, True)
         End If
 
         tmovie.pbackdrops = cbackdrops
@@ -8554,9 +8562,9 @@ Public Class maincollection
         'get fanart
         Dim cbackdrops As New tmdbapiv2.Backdrops 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked Then 'working online, get latest info
-            tmdbapiv2.Results.getbackdrops(cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, False, True, True, False)
+            tmdbapiv2.Results.getbackdrops(tmovie, cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, False, True, True, False)
         Else 'not working online, do not overwrite, will not attempt to download
-            tmdbapiv2.Results.getbackdrops(cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, False, False, True, True)
+            tmdbapiv2.Results.getbackdrops(tmovie, cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, False, False, True, True)
         End If
 
         tmovie.pbackdrops = cbackdrops
@@ -8682,9 +8690,9 @@ Public Class maincollection
 
         Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked And Not nonewdatacheck Then 'working online, get latest info
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, True, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, True, True)
         Else 'not working online, do not overwrite, will still attempt to download if missing
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, False, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, False, True)
         End If
         'we should now have the id from getting the posters
         If tmovie.ptmdbid Is Nothing Or tmovie.ptmdbid = "" Then tmovie.ptmdbid = cposters.tmdbid
@@ -8820,9 +8828,9 @@ Public Class maincollection
 
         Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked And Not nonewdatacheck Then 'working online, get latest info
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, True, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, True, True)
         Else 'not working online, do not overwrite, will still attempt to download if missing
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, False, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, singledownload, False, True)
         End If
 
         'tmovie.posters = cbackdrops
@@ -9364,9 +9372,9 @@ Public Class maincollection
         'get posters
         Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked Then 'working online, get latest info
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
         Else 'not working online, do not overwrite, will still attempt to download if missing
-            tmdbapiv2.Results.getposters(cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True)
+            tmdbapiv2.Results.getposters(tmovie, cposters, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True)
         End If
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
@@ -12448,7 +12456,7 @@ Public Class maincollection
                 Debug.Print("No id: No Fanart: NO IMDB DATA FOUND, UNABLE TO PROCESS FANART")
             Else
                 Dim cbackdrops As New tmdbapiv2.Backdrops 'mip.themoviedb.backdrop.backdrops
-                tmdbapiv2.Results.getbackdrops(cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbbackdrops, True, True, False, False)
+                tmdbapiv2.Results.getbackdrops(tmovie, cbackdrops, tmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbbackdrops, True, True, False, False)
                 tmovie.pbackdrops = cbackdrops
                 If tmovie.pbackdrops.backdrops.Count = 0 Then
                     Debug.Print("no items in the pbackdrop")
@@ -16091,9 +16099,9 @@ Public Class maincollection
         'Dim tmovie As movie = c
         Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
         If rbem.Checked Then 'working online, get latest info
-            tmdbapiv2.Results.getposters(cposters, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
+            tmdbapiv2.Results.getposters(currentmovie, cposters, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
         Else 'not working online, do not overwrite, will still attempt to download if missing
-            tmdbapiv2.Results.getposters(cposters, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True)
+            tmdbapiv2.Results.getposters(currentmovie, cposters, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True)
         End If
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
@@ -16161,7 +16169,7 @@ Public Class maincollection
         'Dim tmovie As movie = c
         Dim cposters As New tmdbapiv2.Posters 'mip.themoviedb.backdrop.backdrops
         'working online, get latest info
-        tmdbapiv2.Results.getposters(cposters, whatmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
+        tmdbapiv2.Results.getposters(whatmovie, cposters, whatmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True)
        
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
        
@@ -16212,13 +16220,13 @@ Public Class maincollection
         If currentmovie.pbackdrops Is Nothing Then
             'mip.themoviedb.backdrop.backdrops
             If rbem.Checked Then 'working online, get latest info
-                tmdbapiv2.Results.getbackdrops(cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True, False)
+                tmdbapiv2.Results.getbackdrops(currentmovie, cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, True, True, False)
             Else 'not working online, do not overwrite, will not attempt to download
-                tmdbapiv2.Results.getbackdrops(cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True, True)
+                tmdbapiv2.Results.getbackdrops(currentmovie, cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True, True)
             End If
             currentmovie.pbackdrops = cbackdrops
         Else
-            tmdbapiv2.Results.getbackdrops(cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True, True)
+            tmdbapiv2.Results.getbackdrops(currentmovie, cbackdrops, currentmovie.pimdbnumber, rconf.wgetfolder, rconf.xmlfoldertmdbv2, True, False, True, True)
             currentmovie.pbackdrops = cbackdrops
         End If
 
@@ -18304,6 +18312,9 @@ Public Class maincollection
         'save xml to imdbcache reguardless of gui setting to write nfo
         'Dim imdbinfo As New IMDB '//removed after 2231, not writing back to xml anymore, so this is not necessary, keeping for future options 
         'imdbinfo.movietoimdb(currentmovie)
+
+        'check tmdbid
+        checktmdbid(currentmovie)
 
         'movietoimdb
         currentmovie.saveimdbinfomanual(currentmovie, rconf.pcbCreateMovieNFO, rconf.pcbcreatemovienamedotnfo, asdisplayed) 'saves movie to nfo file
@@ -24357,6 +24368,10 @@ Public Class maincollection
         'End While
     End Sub
     Private Sub tvratingtostars(ByVal rating As String)
+        'no longer visable
+        Exit Sub
+
+
         Debug.Print(rating)
         If rating = "" Then rating = "0.0"
         Dim fullstars As Integer
@@ -24444,7 +24459,7 @@ Public Class maincollection
         'setup for icon selection
 
         curtvshowiconsetting = addfiletofolder(curtvshowpath, "folder.jpg")
-        curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: TV Show Wide or Poster Icon (folder.jpg)"
+        curtvshowiconsettinglbl.Text = "Selected Image to save or modify: TV Show Wide or Poster Icon (folder.jpg)"
         curtvshowpicturboxtoupdate = pbTVWide
 
         mycurrentshow.Clear()
@@ -25084,7 +25099,7 @@ Public Class maincollection
         'setup for icon selection
         curtvshowiconsetting = addfiletofolder(curtvshowpath, "season" + curseasonas2digitid + ".tbn")
         curtvshowpicturboxtoupdate = pbTVSeasonPoster
-        curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: Season " + curtvseason.seasonnumber + " Image (season" + curseasonas2digitid + ".tbn)"
+        curtvshowiconsettinglbl.Text = "Selected Image to save or modify: Season " + curtvseason.seasonnumber + " Image (season" + curseasonas2digitid + ".tbn)"
 
         tpTMDBPosters.Text = "Season Specific Posters: Season " + curseasonas2digitid
         'hide tvshow poster and wide icon during season display
@@ -29975,6 +29990,142 @@ Public Class maincollection
 
     Private Sub tsbAddTVFanart_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbAddTVFanart.Click
         'asdf()
+        'If currentmovie.pimdbnumber = "" Then
+        '    MsgBox("You must pick a movie first")
+        '    Exit Sub
+        'End If
+        Dim curtvshowpath As String = lbTvShowPicker.SelectedValue.ToString
+        'strip out the id from the path'
+        Dim theid As String = Regex.Match(curtvshowpath, "(:\d*?:)").Groups(1).Value
+        Dim thename As String = ""
+
+        'curtvshowiconsetting
+        curtvshowpath = Strings.Replace(curtvshowpath, theid, "")
+        thename = cleanshownameforsearch(getfilefrompath(curtvshowpath))
+
+        'if popup is set in rconf, then search for it on google
+        If rconf.popgoogleimagesearch Then System.Diagnostics.Process.Start("http://images.google.com/images?&q=" + thename + "+""tv+show""")
+
+        Dim currentshowid As String = Strings.Replace(theid, ":", "")
+        Dim cmpath As String = "" 'intentionally not single line entry
+        cmpath = curtvshowpath
+        Dim imagelocationandname As String = ""
+        imagelocationandname = addfiletofolder(cmpath, "fanart.jpg")
+        Dim savefanartjpg As Boolean = True
+
+        With opfd2
+            .InitialDirectory = rconf.customimagesfanart
+            '...
+            If .ShowDialog = Windows.Forms.DialogResult.Cancel Then
+                'MessageBox.Show("Canceling")
+            Else
+                Dim fileselectedforposter As String
+                fileselectedforposter = opfd2.FileName
+                If opfd2.FileName = "" Or opfd2.FileName = "Select your custom image or enter URL" Then Exit Sub
+                If Not File.Exists(opfd2.FileName) Then Exit Sub
+
+                'release all current image picture boxes and hide them all
+                pbTVFanart.ImageLocation = Nothing
+                pbTVFanart.Image = Nothing
+
+                'copy the files to the custom images folder and the movie folder
+                'if the custom image is coming from the custom images folder, do not try to copy it there
+                'if the custom image already exsists in that folder, delete it first
+                Try
+                    If Not opfd2.FileName.ToLower = (rconf.customimagesfanart + currentshowid + "-fanart.jpg").ToLower Then
+                        If File.Exists(rconf.customimagesfanart + currentshowid + "-fanart.jpg") Then
+                            Try
+                                File.SetAttributes(rconf.customimagesfanart + currentshowid + "-fanart.jpg", FileAttributes.Normal)
+                            Catch exa As Exception
+                                Debug.Print("unable to remove old attribute")
+                            End Try
+                            File.Delete(rconf.customimagesfanart + currentshowid + "-fanart.jpg")
+                        End If
+                        File.Copy(opfd2.FileName, rconf.customimagesfanart + currentshowid + "-fanart.jpg", overwrite:=True)
+                        File.SetAttributes(rconf.customimagesfanart + currentshowid + "-fanart.jpg", FileAttributes.Normal)
+                    End If
+                Catch ex As Exception
+                    MsgBox("Unable to copy the file from the custom folder, is it already open in another application or READ ONLY?" + vbNewLine + rconf.customimagesicons + currentmovie.pmoviename + "-fanart.jpg" + vbNewLine + vbNewLine + ex.ToString)
+                    Exit Sub
+                End Try
+
+                Dim newfile As String = opfd2.FileName
+                Dim curfile As String = imagelocationandname
+               
+                File.Copy(newfile, imagelocationandname, True)
+                File.SetAttributes(imagelocationandname, FileAttributes.Normal)
+            
+                pbTVFanart.ImageLocation = curfile
+                Try
+                    pbTVFanart.Load()
+                Catch ex As Exception
+
+                End Try
+
+
+            End If
+        End With
+
+        '
+
+        
+
+
+        ''old file attribute checks and file removal
+        'If savefanartjpg Then
+        '    If File.Exists(imagelocationandname) Then
+        '        Try
+        '            File.SetAttributes(imagelocationandname, FileAttributes.Normal)
+        '        Catch exsa As Exception
+        '            Debug.Print("unable to set attribute - fanart.jpg" + exsa.ToString)
+        '        End Try
+        '        Try
+        '            File.Delete(imagelocationandname)
+        '        Catch exfd As Exception
+
+        '        End Try
+        '    End If
+        'End If
+
+
+        ''saving the new files
+        'Try
+        '    Dim curloc As String = ""
+        '    curloc = selectedicon.ImageLocation
+        '    If curloc = "" Then
+        '        curloc = selectedicon.AccessibleName
+        '    End If
+        '    If Not curloc = "" Then
+        '        If savefanartjpg Then File.Copy(curloc, imagelocationandname, True)
+        '        If savefanartjpg Then Debug.Print("saved: " + imagelocationandname)
+        '    End If
+        'Catch ex As Exception
+        '    MessageBox.Show("Unable to save the tv show fanart, check permissions on the files in the tv show folder", "Saving fanart for tvshow failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    Exit Sub
+        'End Try
+
+        ''Dim fabackground As System.Drawing.Image
+        ''fabackground = System.Drawing.Image.FromFile(curtvshowpath + "\fanart.jpg")
+        ''tvMainRightMiddle.Panel1.StateCommon.Image = fabackground
+        ''tvMainRightMiddle.Panel1.StateCommon.ImageStyle = CType(5, PaletteImageStyle)
+        ''If savefanartjpg Then 'refresh all as start point may have shifted
+        'pbTVFanart.ImageLocation = imagelocationandname
+        'pbTVFanart.Visible = True
+        'Try
+        '    pbTVFanart.Load()
+        'Catch ex As Exception
+
+        'End Try
+
+
+        '    'showfolderjpginmainwindow(cmpath, False)
+        '    'showtbninmainwindow(cmpath, False)
+        ''tcMain.SelectTab(1)
+        '    'validatefoldercontents()
+        '    Exit Sub
+        'End If
+
+
     End Sub
     Private Sub ScanImages(ByVal folderPath As String)
         'Scan images
@@ -31698,6 +31849,7 @@ Public Class maincollection
     End Sub
     Public gvupdatestudiofromimdb As Boolean = False
     Public Sub bwautopliotmediaupdateonly_start(ByVal updatestudioinfo As Boolean)
+        maincollection.messageprompts = False
         prgThread.Value = 0
         Try
             prgThread.Maximum = (movies.Count + 1) '* 2
@@ -31721,10 +31873,15 @@ Public Class maincollection
     End Sub
 
     Private Sub bwAutoPilotMediaUpdate_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwAutoPilotMediaUpdate.DoWork
+
         Dim currentindex As Integer = 0
         For Each curmovie As movie In movies
             curmovie = CType(movies(CInt(currentindex)), movie)
             currentmovie = curmovie
+
+            'check tmdbid
+            checktmdbid(currentmovie)
+
             bwAutoPilotMediaUpdate.ReportProgress(currentindex, currentindex.ToString & " of " & movies.Count.ToString & " : " & curmovie.pmoviename)
             If currentmovie.pfilemode = True Then
                 moviemode = "file"
@@ -31739,7 +31896,7 @@ Public Class maincollection
             If Not Directory.Exists(cmpath) Then Exit Sub
             Dim dname As String
             dname = currentmovie.getmoviename
-        
+
 
             Dim selectedName As String = currentmovie.getmoviename
             Dim selectedNameXMLfile As String
@@ -31913,6 +32070,122 @@ Public Class maincollection
         prgThread.Visible = False
         lblPCWorking.Visible = False
         prgThread.Style = ProgressBarStyle.Blocks
+    End Sub
+
+    Private Sub tsbtvAddImage_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbtvAddImage.Click
+        'curtvshowiconsetting
+        Dim curtvshowpath As String = lbTvShowPicker.SelectedValue.ToString
+        'strip out the id from the path'
+        Dim theid As String = Regex.Match(curtvshowpath, "(:\d*?:)").Groups(1).Value
+        Dim thename As String = ""
+
+        'curtvshowiconsetting
+        curtvshowpath = Strings.Replace(curtvshowpath, theid, "")
+        thename = cleanshownameforsearch(getfilefrompath(curtvshowpath))
+
+        'if popup is set in rconf, then search for it on google
+        If rconf.popgoogleimagesearch Then System.Diagnostics.Process.Start("http://images.google.com/images?&q=" + thename + "+""tv+show""")
+
+        With opfd2
+            .InitialDirectory = rconf.customimagesfanart
+            '...
+            If .ShowDialog = Windows.Forms.DialogResult.Cancel Then
+                'MessageBox.Show("Canceling")
+            Else
+                Dim fileselectedforposter As String
+                fileselectedforposter = opfd2.FileName
+                If opfd2.FileName = "" Or opfd2.FileName = "Select your custom image or enter URL" Then Exit Sub
+                If Not File.Exists(opfd2.FileName) Then Exit Sub
+
+                Dim savefolderjpg As Boolean = True
+                Dim savemovienametbn As Boolean = False
+                Dim savemovietbn As Boolean = False
+
+                'old file attribute checks and file removal
+                If savefolderjpg Then
+                    If File.Exists(curtvshowiconsetting) Then
+                        Try
+                            File.SetAttributes(curtvshowiconsetting, FileAttributes.Normal)
+                        Catch ex As Exception
+                            Debug.Print("unable to set attribute - " + curtvshowiconsetting + ex.ToString)
+                        End Try
+                        File.Delete(curtvshowiconsetting)
+                    End If
+                End If
+
+                'saving the new files
+                Try
+                    If savefolderjpg Then File.Copy(fileselectedforposter, curtvshowiconsetting, True)
+                    If savefolderjpg Then Debug.Print("saved: " + curtvshowiconsetting)
+
+                Catch ex As Exception
+                    MessageBox.Show(curtvshowiconsetting + "Unable to save the icons, check permissions on the files in the movie folder", "Saving poster icons failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End Try
+
+                'reload curtvshowpicturboxtoupdate, a reference to the picture box to update
+                If savefolderjpg Then 'refresh all as start point may have shifted
+                    Dim bmpImage As System.Drawing.Image
+                    bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+                    'aspect ratio items
+                    Dim imagetype As String
+                    Dim taspect As Double = aspectratio(bmpImage)
+                    If taspect < 0.25 Then
+                        'wide(Icon)
+                        If bmpImage.Width >= 500 Then
+                            imagetype = "widenoformat"
+                        Else
+                            imagetype = "wideicon"
+                        End If
+                    ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                        imagetype = "square"
+                    ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                        'boxed icon or maybe squared poster
+                        imagetype = "boxed"
+                    Else
+                        imagetype = "poster" 'consider it a poster
+                    End If
+                    bmpImage.Dispose()
+
+                    If imagetype = "wideicon" Or imagetype = "widenoformat" Then
+                        Try
+                            pbTVPoster.Image = Nothing
+                            pbTVPoster.ImageLocation = Nothing
+                            pbTVPoster.Visible = False
+                            pbTVWide.Image = Nothing
+                            pbTVWide.ImageLocation = Nothing
+                            pbTVWide.ImageLocation = curtvshowiconsetting
+                            pbTVWide.Load()
+                            pbTVWide.Visible = True
+                            Me.Refresh()
+                        Catch ex As Exception
+                            Debug.Print(ex.ToString)
+                        End Try
+                    Else
+                        Try
+                            pbTVWide.Image = Nothing
+                            pbTVWide.ImageLocation = Nothing
+                            pbTVWide.Visible = False
+                            pbTVPoster.Image = Nothing
+                            pbTVPoster.ImageLocation = Nothing
+                            pbTVPoster.ImageLocation = curtvshowiconsetting
+                            pbTVPoster.Load()
+                            pbTVPoster.Visible = True
+                            Me.Refresh()
+                        Catch ex As Exception
+                            Debug.Print(ex.ToString)
+                        End Try
+
+                    End If
+                    'showfolderjpginmainwindow(cmpath, False)
+                    'showtbninmainwindow(cmpath, False)
+                    tcMain.SelectTab(1)
+                    Me.Refresh()
+                    'validatefoldercontents()
+                    Exit Sub
+                End If
+            End If
+        End With
     End Sub
 End Class
 <Serializable()> Public Class posters
@@ -32161,8 +32434,16 @@ Public Class IMDB
     'Dim actorsarray As New ArrayList
     Dim vActor As New movieinfoplus.mip.mov.Actor
     Private p_element_actor As New List(Of Actor)
-    Private vstudio, vstudioreal, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
+    Private vtmdbid, vstudio, vstudioreal, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
 #Region "---- IMDB Class Properties ---"
+    Public Property tmdbid() As String
+        Get
+            Return vtmdbid
+        End Get
+        Set(ByVal value As String)
+            vtmdbid = value
+        End Set
+    End Property
     Public Property certification() As String
         Get
             Return vcertification
@@ -33051,6 +33332,7 @@ Public Property [Actors]() As List(Of Actor)
         'converts movie back to imdb 
         'tmovie2.pactor = Me.actor
         'Debug.Print(timdb.Actors())
+        Me.tmdbid = tmovie2.ptmdbid
         Me.credits = tmovie2.pcredits '= "" Else tmovie2.pcredits = Me.credits
         Me.director = tmovie2.pdirector '= "" Else tmovie2.pdirector = Me.director
         'tmovie2.filenameandpath = Me.filenameandpath
@@ -33154,6 +33436,7 @@ Public Property [Actors]() As List(Of Actor)
         'tmovie2.pstudioreal = Me.studioreal
         tmovie2.Actors = Me.Actors
         tmovie2.certification = Me.certification
+        tmovie2.ptmdbid = Me.tmdbid
         ''Unassigned properties
         'Debug.Print(Me.watched)
         'Debug.Print(Me.playcount)
@@ -33832,7 +34115,8 @@ Public Property [Actors]() As List(Of Actor)
         Return sid
     End Function
     Public Sub saveimdb2(ByRef tmovie As movie, Optional ByVal writemovienfo As Boolean = False, Optional ByVal writemovienamedotnfo As Boolean = False, Optional ByVal keepthetag As Boolean = False)
-
+        'check tmdbid
+        checktmdbid(tmovie)
 
         Dim nm As New Mov 'new movie class for xbmc
         If Not tmovie.peditedmoviename = "" Then
@@ -33841,6 +34125,7 @@ Public Property [Actors]() As List(Of Actor)
             nm.Title = cleanimdbdata(tmovie.pmoviename)
         End If
         ' nm.Title = tmovie.moviename
+        nm.tmdbId = tmovie.ptmdbid
         nm.Title = cleanimdbdata(nm.Title)
         nm.Rating = tmovie.prating
         nm.Year = tmovie.pyear.ToString

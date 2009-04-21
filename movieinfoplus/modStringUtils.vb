@@ -102,7 +102,26 @@ Module modStringUtils
         End If
         Return strClean
     End Function
-
+    Public Function cleanshownameforsearch(ByVal texttoclean As String) As String
+        Dim restr As String = texttoclean
+        restr = Strings.Replace(restr, "'", "")
+        restr = Strings.Replace(restr, "&", "")
+        restr = Strings.Replace(restr, "@", "")
+        restr = Strings.Replace(restr, """", "")
+        restr = Strings.Replace(restr, ";", "")
+        restr = Strings.Replace(restr, "~", "")
+        restr = Strings.Replace(restr, ">", "")
+        restr = Strings.Replace(restr, "<", "")
+        restr = Strings.Replace(restr, "?", "")
+        restr = Strings.Replace(restr, "�", "")
+        restr = Strings.Replace(restr, ":", "")
+        restr = Strings.Replace(restr, "\", "")
+        restr = Strings.Replace(restr, "/", "")
+        restr = Strings.Replace(restr, "?", "")
+        restr = Strings.Replace(restr, "|", "")
+        restr = Strings.Replace(restr, "*", "")
+        Return restr
+    End Function
     Public Function cleanmusicnameforsearch(ByVal texttoclean As String) As String
         Dim restr As String = texttoclean
         restr = Strings.Replace(restr, "'", "")

@@ -68,7 +68,33 @@ Namespace tmdbapiv2
 
         End Sub
 
-        'get partial details by IMDBID (allows us to get the TMDB ID)
+        Public Function gettmdbidbyimdbid(ByVal imdbid As String, Optional ByVal overwritethexmlfile As Boolean = False) As String
+            'check if the file is already there or overwrite is on
+            Dim tmdb_xml_fromimdbid As String = maincollection.rconf.xmlfoldertmdbv2 + imdbid + ".xml"
+            Try
+                If Not File.Exists(tmdb_xml_fromimdbid) Or overwritethexmlfile Then
+                    getTMDBDataByIMDBID(imdbid, maincollection.rconf.wgetfolder, maincollection.rconf.xmlfoldertmdbv2, True, True)
+                End If
+            Catch po As Exception
+                Debug.Print(po.ToString)
+            End Try
+
+            'read the file and get the id from it
+            Dim vresultsfromtmdb_fromimdbid As New Results
+            'set object
+            vresultsfromtmdb_fromimdbid = vresultsfromtmdb_fromimdbid.getresultsfromxml(tmdb_xml_fromimdbid)
+            Dim tmdbidfromimdbid As String = ""
+            Try
+                tmdbidfromimdbid = vresultsfromtmdb_fromimdbid.Moviematches.Movie.Item(0).Id
+            Catch ex As Exception
+                Return ""
+            End Try
+
+            Return tmdbidfromimdbid
+
+        End Function
+
+        'get partial details by IMDBID (also allows us to get the TMDB ID)
         Private Sub getTMDBDataByIMDBID(ByRef timdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal wait As Boolean, ByVal usewget As Boolean)
             ' old api call  "http://api.themoviedb.org/backdrop.php?imdb=" + imdbid
             ' new api call for imdbid http://api.themoviedb.org/2.0/Movie.imdbLookup?imdb_id= + imdbid + &api_key=+ mykey
@@ -122,7 +148,7 @@ Namespace tmdbapiv2
         End Sub
 
         'Public function to get the posters
-        Public Shared Sub getposters(ByRef theposterobject As tmdbapiv2.Posters, ByVal timdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal twait As Boolean, ByVal overwritethexmlfile As Boolean, ByVal usewget As Boolean) 'As mip.themoviedb.backdrop.backdrops
+        Public Shared Sub getposters(ByRef tmovie As movie, ByRef theposterobject As tmdbapiv2.Posters, ByVal timdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal twait As Boolean, ByVal overwritethexmlfile As Boolean, ByVal usewget As Boolean) 'As mip.themoviedb.backdrop.backdrops
             Dim vresultsfromtmdb_fromimdbid As New Results
             Dim vresultsfromtmdb_fromtmdbid As New Results
 
@@ -163,8 +189,14 @@ Namespace tmdbapiv2
                         MsgBox("Error trying to remove a temp file " + tmdb_xml_fromimdbid + " : Please restart after deleting that file")
                     End If
 
-                    'download the file
-                    vresultsfromtmdb_fromimdbid.getTMDBDataByIMDBID(timdbid, wgetfolder, wheretoputxml, twait, usewget)
+                    'if we don't have an tmdb id then download the file to get it
+                    Dim gettmdbid As Boolean = False
+                    If tmovie.ptmdbid Is Nothing Then gettmdbid = True
+                    If tmovie.ptmdbid = "" Then gettmdbid = True
+                    If gettmdbid Or Not File.Exists(tmdb_xml_fromimdbid) Then
+                        vresultsfromtmdb_fromimdbid.getTMDBDataByIMDBID(timdbid, wgetfolder, wheretoputxml, twait, usewget)
+                    End If
+
                 End If
                 'set object
                 vresultsfromtmdb_fromimdbid = vresultsfromtmdb_fromimdbid.getresultsfromxml(tmdb_xml_fromimdbid)
@@ -186,7 +218,7 @@ Namespace tmdbapiv2
         End Sub
 
         'Public function to get the backdrops
-        Public Shared Sub getbackdrops(ByRef thebackdropobject As tmdbapiv2.Backdrops, ByVal timdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal twait As Boolean, ByVal overwritethexmlfile As Boolean, ByVal usewget As Boolean, ByVal displayonly As Boolean) 'As mip.themoviedb.backdrop.backdrops
+        Public Shared Sub getbackdrops(ByRef tmovie As movie, ByRef thebackdropobject As tmdbapiv2.Backdrops, ByVal timdbid As String, ByRef wgetfolder As String, ByRef wheretoputxml As String, ByVal twait As Boolean, ByVal overwritethexmlfile As Boolean, ByVal usewget As Boolean, ByVal displayonly As Boolean) 'As mip.themoviedb.backdrop.backdrops
             Dim vresultsfromtmdb_fromimdbid As New Results
             Dim vresultsfromtmdb_fromtmdbid As New Results
 
@@ -198,7 +230,13 @@ Namespace tmdbapiv2
                 If (Not File.Exists(tmdb_xml_fromimdbid) Or overwritethexmlfile) And Not displayonly Then
                     'file either doesn't exsist or overwritethexmlfile is true
                     'download the file
-                    vresultsfromtmdb_fromimdbid.getTMDBDataByIMDBID(timdbid, wgetfolder, wheretoputxml, twait, usewget)
+                    Dim gettmdbid As Boolean = False
+                    If tmovie.ptmdbid Is Nothing Then gettmdbid = True
+                    If tmovie.ptmdbid = "" Then gettmdbid = True
+                    If gettmdbid Or Not File.Exists(tmdb_xml_fromimdbid) Then
+                        vresultsfromtmdb_fromimdbid.getTMDBDataByIMDBID(timdbid, wgetfolder, wheretoputxml, twait, usewget)
+                    End If
+
                 End If
                 'set object
                 vresultsfromtmdb_fromimdbid = vresultsfromtmdb_fromimdbid.getresultsfromxml(tmdb_xml_fromimdbid)

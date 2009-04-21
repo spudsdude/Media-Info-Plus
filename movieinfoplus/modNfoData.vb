@@ -41,6 +41,19 @@ Module modNfoData
             ' Return True
         End If
     End Function
+    Public Sub checktmdbid(ByRef currentmovie As movie)
+        Debug.Print(vbNewLine + "------------------------ tmdbid check running -------------------")
+        Dim noid As Boolean = False
+        If currentmovie.ptmdbid Is Nothing Then noid = True
+        If currentmovie.ptmdbid = "" Then noid = True
+        Debug.Print("Missing tmdid in current movie: " & noid.ToString & vbNewLine)
+        If noid Then
+            'get tmdbid by searching for the imdbid 
+            Dim tempresults As New tmdbapiv2.Results
+            currentmovie.ptmdbid = tempresults.gettmdbidbyimdbid(currentmovie.pimdbnumber)
+            Debug.Print("Setting tmdid for movie to:" & currentmovie.ptmdbid & vbNewLine)
+        End If
+    End Sub
     Public Sub checknfodata(ByRef currentmovie As movie, ByVal dname As String, ByVal workonline As Boolean)
         If currentmovie.pdatafromnfo Then Exit Sub 'nothing to do if it came from an nfo file
         ' ---- IMDB AND NFO -----
@@ -147,7 +160,7 @@ Module modNfoData
         Debug.Print("IMDB Information and .nfo file creation")
         '-------------------------------- IMDB Information and .nfo file creation 
         If maincollection.rconf.pcbGetIMDBInfo And Not hasnfoalready Then 'get imdb info
-             If currentmovie.pimdbnumber = "" Then
+            If currentmovie.pimdbnumber = "" Then
                 Debug.Print("no id in movie, grabbing imdb info")
                 If maincollection.messageprompts Then maincollection.lblPbar.Text = "-- Connecting to IMDB: " + dname + "--"
                 If maincollection.messageprompts Then maincollection.Refresh()
