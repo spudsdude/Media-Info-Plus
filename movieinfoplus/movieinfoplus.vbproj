@@ -323,6 +323,12 @@
     <Compile Include="saveaswhaticontype.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="savetvfanartaswhat.Designer.vb">
+      <DependentUpon>savetvfanartaswhat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="savetvfanartaswhat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="selectMovie.Designer.vb">
       <DependentUpon>selectMovie.vb</DependentUpon>
     </Compile>
@@ -586,6 +592,9 @@
     <EmbeddedResource Include="saveaswhaticontype.resx">
       <DependentUpon>saveaswhaticontype.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="savetvfanartaswhat.resx">
+      <DependentUpon>savetvfanartaswhat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="selectMovie.resx">
       <DependentUpon>selectMovie.vb</DependentUpon>

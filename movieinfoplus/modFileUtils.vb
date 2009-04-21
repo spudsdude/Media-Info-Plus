@@ -11,6 +11,148 @@ Module modFileUtils
             Debug.Print(Ex.ToString)
         End Try
     End Sub
+    Private Function return_media_images_for_tag(ByVal curfile As String) As String
+        Select Case curfile.ToLower
+            Case "front.jpg"
+                Return "mifc1"
+            Case "front2.jpg"
+                Return "mifc2"
+            Case "front3.jpg"
+                Return "mifc3"
+            Case "front4.jpg"
+                Return "mifc4"
+            Case "front5.jpg"
+                Return "mifc5"
+            Case "front6.jpg"
+                Return "mifc6"
+            Case "front7.jpg"
+                Return "mifc7"
+            Case "front8.jpg"
+                Return "mifc8"
+            Case "front9.jpg"
+                Return "mifc9"
+            Case "front10.jpg"
+                Return "mifc10"
+            Case "back.jpg"
+                Return "mibc1"
+            Case "back2.jpg"
+                Return "mibc2"
+            Case "back3.jpg"
+                Return "mibc3"
+            Case "back4.jpg"
+                Return "mibc4"
+            Case "back5.jpg"
+                Return "mibc5"
+            Case "back6.jpg"
+                Return "mibc6"
+            Case "back7.jpg"
+                Return "mibc7"
+            Case "back8.jpg"
+                Return "mibc8"
+            Case "back9.jpg"
+                Return "mibc9"
+            Case "back10.jpg"
+                Return "mibc10"
+
+            Case "cd.jpg"
+                Return "micd1"
+            Case "cd2.jpg"
+                Return "micd2"
+            Case "cd3.jpg"
+                Return "micd3"
+            Case "cd4.jpg"
+                Return "micd4"
+            Case "cd5.jpg"
+                Return "micd5"
+            Case "cd6.jpg"
+                Return "micd6"
+            Case "cd7.jpg"
+                Return "micd7"
+            Case "cd8.jpg"
+                Return "micd8"
+            Case "cd9.jpg"
+                Return "micd9"
+            Case "cd10.jpg"
+                Return "micd10"
+            Case "cd11.jpg"
+                Return "micd12"
+            Case "cd12.jpg"
+                Return "micd12"
+            Case "cd13.jpg"
+                Return "micd13"
+            Case "cd14.jpg"
+                Return "micd14"
+            Case "cd15.jpg"
+                Return "micd15"
+
+            Case "inside.jpg"
+                Return "miins1"
+            Case "inside2.jpg"
+                Return "miins2"
+            Case "inside3.jpg"
+                Return "miins3"
+            Case "inside4.jpg"
+                Return "miins4"
+            Case "inside5.jpg"
+                Return "miins5"
+            Case "inside6.jpg"
+                Return "miins6"
+            Case "inside7.jpg"
+                Return "miins7"
+            Case "inside8.jpg"
+                Return "miins8"
+            Case "inside9.jpg"
+                Return "miins9"
+            Case "inside10.jpg"
+                Return "miins10"
+
+            Case "inlay.jpg"
+                Return "miinl1"
+            Case "inlay2.jpg"
+                Return "miinl2"
+            Case "inlay3.jpg"
+                Return "miinl3"
+            Case "inlay4.jpg"
+                Return "miinl4"
+            Case "inlay5.jpg"
+                Return "miinl5"
+            Case "inlay6.jpg"
+                Return "miinl6"
+            Case "inlay7.jpg"
+                Return "miinl7"
+            Case "inlay8.jpg"
+                Return "miinl8"
+            Case "inlay9.jpg"
+                Return "miinl9"
+            Case "inlay10.jpg"
+                Return "miinl10"
+
+            Case Else
+                Return ""
+
+        End Select
+    End Function
+
+    Public Function check_movie_has_extra_images(ByVal tmovie As movie) As String
+        If tmovie.pfilemode Then Return ""
+        If Not Directory.Exists(addfiletofolder(tmovie.getmoviepath, "extras")) Then Return ""
+        Dim filelist() As String = Directory.GetFiles(addfiletofolder(tmovie.getmoviepath, "extras"))
+        Dim hasFile As Boolean = False
+        Dim results As String = ""
+        For Each curfile As String In filelist
+            If curfile.Contains(".jpg") Then
+                Dim curres As String = ""
+                curres = return_media_images_for_tag(getfilefrompath(curfile))
+                If Not curres = "" Then
+                    results += " / " & curres 'return_media_images_for_tag(getfilefrompath(curfile))
+                    hasFile = True
+                End If
+
+            End If
+        Next
+        If hasFile Then Return results
+        Return ""
+    End Function
     Public Function validmoviedirc(ByVal s As String) As Boolean
         Select Case True
             Case Strings.Right(s, 3).ToLower = "cd1"

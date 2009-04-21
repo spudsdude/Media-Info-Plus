@@ -1362,6 +1362,7 @@ Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.c
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
 Me.bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
 Me.bwOfdbUpdate = New System.ComponentModel.BackgroundWorker
+Me.rbMDNoMediaImages = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -6098,7 +6099,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(457, 418)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(467, 428)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6106,9 +6107,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 385)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 395)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(445, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(455, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -16403,13 +16404,14 @@ Me.kgMyMovieInfoPicker.Name = "kgMyMovieInfoPicker"
 '
 'kgMyMovieInfoPicker.Panel
 '
+Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDNoMediaImages)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDAll)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDNFOProblems)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDNoIcon)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDNoTBN)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDNoFanart)
 Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDwithIssues)
-Me.kgMyMovieInfoPicker.Size = New System.Drawing.Size(187, 126)
+Me.kgMyMovieInfoPicker.Size = New System.Drawing.Size(187, 148)
 Me.kgMyMovieInfoPicker.TabIndex = 79
 '
 'kgMyMovieList
@@ -16423,7 +16425,7 @@ Me.kgMyMovieList.Name = "kgMyMovieList"
 'kgMyMovieList.Panel
 '
 Me.kgMyMovieList.Panel.Controls.Add(Me.lbMyMovies)
-Me.kgMyMovieList.Size = New System.Drawing.Size(187, 74)
+Me.kgMyMovieList.Size = New System.Drawing.Size(187, 52)
 Me.kgMyMovieList.TabIndex = 80
 '
 'lbMyMovies
@@ -16433,7 +16435,7 @@ Me.lbMyMovies.FormattingEnabled = true
 Me.lbMyMovies.Location = New System.Drawing.Point(0, 0)
 Me.lbMyMovies.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
 Me.lbMyMovies.Name = "lbMyMovies"
-Me.lbMyMovies.Size = New System.Drawing.Size(175, 56)
+Me.lbMyMovies.Size = New System.Drawing.Size(175, 30)
 Me.lbMyMovies.TabIndex = 98
 '
 'kgMovieOrTVShow
@@ -19417,7 +19419,7 @@ Me.kscLeftMovieNavMain.Panel1MinSize = 100
 Me.kscLeftMovieNavMain.Panel2.Controls.Add(Me.kgMyMovieList)
 Me.kscLeftMovieNavMain.Panel2MinSize = 40
 Me.kscLeftMovieNavMain.Size = New System.Drawing.Size(187, 203)
-Me.kscLeftMovieNavMain.SplitterDistance = 126
+Me.kscLeftMovieNavMain.SplitterDistance = 148
 Me.kscLeftMovieNavMain.SplitterWidth = 3
 Me.kscLeftMovieNavMain.TabIndex = 77
 '
@@ -21775,6 +21777,18 @@ Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
 '
 'bwOfdbUpdate
 '
+'
+'rbMDNoMediaImages
+'
+Me.rbMDNoMediaImages.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.rbMDNoMediaImages.Location = New System.Drawing.Point(-1, 118)
+Me.rbMDNoMediaImages.Name = "rbMDNoMediaImages"
+Me.rbMDNoMediaImages.Size = New System.Drawing.Size(150, 21)
+Me.rbMDNoMediaImages.TabIndex = 6
+Me.rbMDNoMediaImages.Text = "Missing Media Images"
+Me.rbMDNoMediaImages.Values.ExtraText = ""
+Me.rbMDNoMediaImages.Values.Image = Nothing
+Me.rbMDNoMediaImages.Values.Text = "Missing Media Images"
 '
 'maincollection
 '
@@ -24158,4 +24172,5 @@ End Sub
     Friend WithEvents bwAutoPilotMediaUpdate As System.ComponentModel.BackgroundWorker
     Friend WithEvents tsmimovie_GetOFDBMovieDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents bwOfdbUpdate As System.ComponentModel.BackgroundWorker
+    Friend WithEvents rbMDNoMediaImages As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 End Class

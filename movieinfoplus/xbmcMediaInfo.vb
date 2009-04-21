@@ -42,7 +42,7 @@ Namespace xbmcMediaInfo
             workstring = curstring.Replace(",", ".")
             Return Convert.ToDouble(workstring, New Globalization.CultureInfo("en-US", False))
         End Function
-        Public Function toTagData(ByRef xmifi As xbmcMediaInfo.Fileinfo) As String
+        Public Function toTagData(ByRef xmifi As xbmcMediaInfo.Fileinfo, Optional ByVal themovie As movie = Nothing) As String
             Dim statusStr As String = ""
             If Not xmifi.streamdetails Is Nothing Then
                 Dim couVS As Integer = 0
@@ -89,7 +89,7 @@ Namespace xbmcMediaInfo
                             alang = curAS.Language
                         End If
                     End If
-            
+
                 Next
                 For Each curSS As Subtitle In xmifi.streamdetails.Subtitle
                     couSS += 1
@@ -106,6 +106,13 @@ Namespace xbmcMediaInfo
                 End If
             End If
             Debug.Print(statusStr)
+            If themovie Is Nothing Then Return statusStr
+            Dim resultofcheck As String = ""
+            resultofcheck = check_movie_has_extra_images(themovie)
+            If Not resultofcheck = "" Then
+                statusStr = statusStr + resultofcheck
+            End If
+
             Return statusStr
         End Function
         Private Function getrezfromsize(ByVal curwidth As Double, ByVal curheight As Double, ByVal curar As Double) As String

@@ -2258,10 +2258,10 @@ Public Class maincollection
             MI.getdata(currentmovie, moviemode)
             If rconf.pcbGeneralSupportSkinBasedFlagging Then
                 If updatestudiofromimdb Then
-                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 Else
                     currentmovie.pstudioreal = currentmovie.pstudio
-                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 End If
             End If
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
@@ -2278,6 +2278,144 @@ Public Class maincollection
             'End If
         End If
     End Sub
+    Private Sub autoassignmediaimages(ByRef tmovie As movie)
+        If tmovie.pfilemode Then Exit Sub
+        tmovie.pdownloadlist = New ArrayList
+        If rbem.Checked Then
+            getSinglefcdn_movie_front()
+            getSinglefcdn_movie_back()
+            getSinglefcdn_movie_cd1()
+            getSinglefcdn_movie_cd2()
+            getSinglefcdn_movie_cd3()
+            getSinglefcdn_movie_cd4()
+            getSinglefcdn_movie_inlay()
+            getSinglefcdn_movie_insert()
+        End If
+        'download images (new)
+        If Not tmovie.pdownloadlist.Count = 0 Then
+            'dlgDownloadingFile.downloadertxtFileName.Text = url
+            'dlgDownloadingFile.whereToSave = folder + tfanartfilename
+            dlgDownloadingFile.downloadingmutliimages = True
+            dlgDownloadingFile.downloadlist = tmovie.pdownloadlist
+            dlgDownloadingFile.ShowDialog()
+        End If
+
+        Dim curfile As String = ""
+        Dim newmediafile As String = ""
+        Dim extrasdir As String = addfiletofolder(tmovie.getmoviepath, "extras")
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\front.jpg")
+        newmediafile = return_fcdn_movie_front()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\back.jpg")
+        newmediafile = return_fcdn_movie_Back()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\cd1.jpg")
+        newmediafile = return_fcdn_movie_cd1()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\cd2.jpg")
+        newmediafile = return_fcdn_movie_cd2()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\cd3.jpg")
+        newmediafile = return_fcdn_movie_cd3()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\cd4.jpg")
+        newmediafile = return_fcdn_movie_cd4()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\inside.jpg")
+        newmediafile = return_fcdn_movie_inlay()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+        curfile = addfiletofolder(tmovie.getmoviepath, "extras\inlay.jpg")
+        newmediafile = return_fcdn_movie_insert()
+        If Not File.Exists(curfile) Then
+            If Not newmediafile = "" Then
+                If File.Exists(newmediafile) Then
+                    If Not Directory.Exists(extrasdir) Then Directory.CreateDirectory(extrasdir)
+                    File.Copy(newmediafile, curfile)
+                    File.SetAttributes(curfile, FileAttributes.Normal)
+                    createthumbnailimage(curfile)
+                End If
+            End If
+        End If
+
+
+    End Sub
+
     Private Sub autopilot(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal replaceexsistingfolderimage As Boolean, ByVal mediaonly As Boolean, ByVal updatestudiofromimdb As Boolean)
         messageprompts = True
         If mediaonly Then messageprompts = False
@@ -2348,6 +2486,9 @@ Public Class maincollection
                 End If
             End If
         End If
+
+        'if not media only, get the media images and set them
+        autoassignmediaimages(currentmovie)
 
 
 
@@ -2446,10 +2587,10 @@ Public Class maincollection
             MI.getdata(currentmovie, moviemode)
             If rconf.pcbGeneralSupportSkinBasedFlagging Then
                 If updatestudiofromimdb Then
-                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 Else
                     currentmovie.pstudioreal = currentmovie.pstudio
-                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 End If
             End If
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
@@ -6113,7 +6254,7 @@ Public Class maincollection
             End If
         End If
 
-        If rbem.Checked Then
+        If rbem.Checked And Not currentmovie.pfilemode Then
             getfcdn_movie_front()
             getfcdn_movie_back()
             getfcdn_movie_cd1()
@@ -6131,7 +6272,7 @@ Public Class maincollection
             dlgDownloadingFile.downloadlist = currentmovie.pdownloadlist
             dlgDownloadingFile.ShowDialog()
         End If
-        If ais Then
+        If ais And Not currentmovie.pfilemode Then
             showfcdn_movie_front()
             showfcdn_movie_Back()
             showfcdn_movie_cd1()
@@ -12668,7 +12809,6 @@ Public Class maincollection
             Debug.Print(ex.ToString)
 
         End Try
-
     End Sub
     Private Sub precacheicons(ByVal selectedNameXMLfile As String, ByVal format As String, ByVal catagory As String, ByVal style As String)
         'take name, read xml (which resets urllists), generate cache
@@ -14406,6 +14546,36 @@ Public Class maincollection
         Dim imagelocationandname As String = ""
         imagelocationandname = addfiletofolder(cmpath, "fanart.jpg")
         Dim savefanartjpg As Boolean = True
+
+        'display dialog to choose which item we are saving, tbn or folder.jpg
+        savetvfanartaswhat.ShowDialog()
+        If savetvfanartaswhat.rbSeason1.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 1-fanart.jpg")
+        If savetvfanartaswhat.rbSeason2.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 2-fanart.jpg")
+        If savetvfanartaswhat.rbSeason3.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 3-fanart.jpg")
+        If savetvfanartaswhat.rbSeason4.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 4-fanart.jpg")
+        If savetvfanartaswhat.rbSeason5.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 5-fanart.jpg")
+        If savetvfanartaswhat.rbSeason6.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 6-fanart.jpg")
+        If savetvfanartaswhat.rbSeason7.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 7-fanart.jpg")
+        If savetvfanartaswhat.rbSeason8.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 8-fanart.jpg")
+        If savetvfanartaswhat.rbSeason9.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 9-fanart.jpg")
+        If savetvfanartaswhat.rbSeason10.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 10-fanart.jpg")
+        If savetvfanartaswhat.rbSeason11.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 11-fanart.jpg")
+        If savetvfanartaswhat.rbSeason12.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 12-fanart.jpg")
+        If savetvfanartaswhat.rbSeason13.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 13-fanart.jpg")
+        If savetvfanartaswhat.rbSeason14.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 14-fanart.jpg")
+        If savetvfanartaswhat.rbSeason15.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 15-fanart.jpg")
+        If savetvfanartaswhat.rbSeason16.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 16-fanart.jpg")
+        If savetvfanartaswhat.rbSeason17.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 17-fanart.jpg")
+        If savetvfanartaswhat.rbSeason18.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 18-fanart.jpg")
+        If savetvfanartaswhat.rbSeason19.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 19-fanart.jpg")
+        If savetvfanartaswhat.rbSeason20.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 20-fanart.jpg")
+        If savetvfanartaswhat.rbSeason21.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 21-fanart.jpg")
+        If savetvfanartaswhat.rbSeason22.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 22-fanart.jpg")
+        If savetvfanartaswhat.rbSeason23.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 23-fanart.jpg")
+        If savetvfanartaswhat.rbSeason24.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 24-fanart.jpg")
+        
+        saveaswhaticontype.Dispose()
+
 
         Try
             'release the tv show fanart
@@ -19368,10 +19538,13 @@ Public Class maincollection
     '    End If
     'End Sub
     Private Sub lblFDTrailer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lblFDTrailer.Click
+        If currentmovie Is Nothing Then Exit Sub
         System.Diagnostics.Process.Start("http://searchcgi.apple.com/cgi-bin/sp/nph-searchpre11.pl?q=" + currentmovie.pmoviename + "&output=xml_no_dtd&client=default_frontend&site=us_trailers_only&lr=lang_en&sort=&start=&access=p&&oe=utf-8")
         '"http://www.google.com/search?q=apple+movie+trailer+download+" + currentmovie.pmoviename)
     End Sub
     Private Sub rbMDwithIssues_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMDwithIssues.Click
+        'determine mode
+        
         If tblofmovies.Rows.Count = 0 Then
             'get folder data
             Exit Sub
@@ -19398,6 +19571,7 @@ Public Class maincollection
             lbMyMovies.SelectedIndex = coulistedmovies
             tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
             Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            If tempmovie.pfilemode Then tmpath = addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename))) + ".nfo"
             Dim nmov As New movieinfoplus.mip.mov.Mov
             Try
                 nmov = nmov.getmov(tmpath)
@@ -19413,14 +19587,18 @@ Public Class maincollection
                 'nfo could not be loaded or failed, mark movie as movhasissues
 
             End Try
-            If Not File.Exists(tempmovie.getmoviepath + "\folder.jpg") Then
-                If Not tempmovie.pfilemode Then movhasissues = True
-                If Not tempmovie.pfilemode Then whatissue += "[IMAGE]"
+            If Not tempmovie.pfilemode Then
+                If Not File.Exists(tempmovie.getmoviepath + "\folder.jpg") Then
+                    If Not tempmovie.pfilemode Then movhasissues = True
+                    If Not tempmovie.pfilemode Then whatissue += "[IMAGE]"
+                End If
             End If
             If Not File.Exists(tempmovie.getmoviepath + "\" + tempmovie.pmoviename + "-fanart.jpg") Then
                 If tempmovie.pfilemode Then
-                    movhasissues = True
-                    whatissue += "[Fanart]"
+                    If Not File.Exists(tempmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(tempmovie.preservedmoviename)) + "-fanart.jpg") Then
+                        movhasissues = True
+                        whatissue += "[Fanart]"
+                    End If
                 Else
                     If Not File.Exists(addfiletofolder(tempmovie.getmoviepath, "fanart.jpg")) Then
                         If Not File.Exists(addfiletofolder(tempmovie.getmoviepath, "fanart.png")) Then
@@ -19434,8 +19612,10 @@ Public Class maincollection
             End If
             If Not File.Exists(tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".tbn") Then
                 If tempmovie.pfilemode Then
-                    movhasissues = True
-                    whatissue += "[TBN]"
+                    If Not File.Exists(tempmovie.getmoviepath + "\" + stripstackforfilemode(removeextension(tempmovie.preservedmoviename)) + ".tbn") Then
+                        movhasissues = True
+                        whatissue += "[TBN]"
+                    End If
                 Else
                     If Not File.Exists(addfiletofolder(tempmovie.getmoviepath, "movie.tbn")) Then
                         movhasissues = True
@@ -19511,8 +19691,8 @@ Public Class maincollection
             Dim tempmovie As New movie
             lbMyMovies.SelectedIndex = coulistedmovies
             tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
-            Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
-            Dim nmov As New movieinfoplus.mip.mov.Mov
+            'Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            'Dim nmov As New movieinfoplus.mip.mov.Mov
             'Try
             '    nmov = nmov.getmov(tmpath)
             '    'nmov.printToString() 'debug.output
@@ -19575,11 +19755,20 @@ Public Class maincollection
             Dim tempmovie As New movie
             lbMyMovies.SelectedIndex = coulistedmovies
             tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
-            Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
-            Dim nmov As New movieinfoplus.mip.mov.Mov
+            'Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            'Dim nmov As New movieinfoplus.mip.mov.Mov
 
             If Not File.Exists(tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".tbn") Then
-                movhasissues = True
+                If tempmovie.pfilemode Then
+                    Dim tmpath As String = ""
+                    tmpath = addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename))) + ".tbn"
+                    If Not File.Exists(tmpath) Then
+                        movhasissues = True
+                    End If
+                Else
+                    'folder level
+                    movhasissues = True
+                End If
                 'whatissue += "No TBN-"
             End If
             If movhasissues Then
@@ -19619,10 +19808,14 @@ Public Class maincollection
             Dim tempmovie As New movie
             lbMyMovies.SelectedIndex = coulistedmovies
             tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
-            Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            'Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
             If Not File.Exists(tempmovie.getmoviepath + "\" + tempmovie.pmoviename + "-fanart.jpg") Then
                 If tempmovie.pfilemode Then
-                    movhasissues = True
+                    Dim tmpath2 As String = ""
+                    tmpath2 = addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename))) + "-fanart.jpg"
+                    If Not File.Exists(tmpath2) Then
+                        movhasissues = True
+                    End If
                 Else
                     'check for fanart.jpg
                     If Not File.Exists(addfiletofolder(tempmovie.getmoviepath, "fanart.jpg")) Then
@@ -19675,6 +19868,7 @@ Public Class maincollection
             lbMyMovies.SelectedIndex = coulistedmovies
             tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
             Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            If tempmovie.pfilemode Then tmpath = addfiletofolder(tempmovie.getmoviepath, stripstackforfilemode(removeextension(tempmovie.preservedmoviename))) + ".nfo"
             Dim nmov As New movieinfoplus.mip.mov.Mov
             Try
                 nmov = nmov.getmov(tmpath)
@@ -19705,6 +19899,66 @@ Public Class maincollection
         autopilotrunning = False
 
     End Sub
+   
+    Public Function check_movie_missingmediaimages(ByVal tmovie As movie) As Boolean
+        If tmovie.pfilemode Then Return False
+        If Not Directory.Exists(addfiletofolder(tmovie.getmoviepath, "extras")) Then Return True
+        Dim filelist() As String = Directory.GetFiles(addfiletofolder(tmovie.getmoviepath, "extras"))
+        Dim hasFile As Boolean = False
+        For Each curfile As String In filelist
+            If curfile.Contains("_thumb") Then
+                hasFile = True
+            End If
+        Next
+        If hasFile Then Return False
+        Return True
+
+    End Function
+    Private Sub rbMDNoMediaImages_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMDNoMediaImages.Click
+        If tblofmovies.Rows.Count = 0 Then
+            'get folder data
+            Exit Sub
+            'readfolderdatafordropdown()
+        End If
+        autopilotrunning = True
+        lbMyMovies.Visible = False
+        lbMyMovies.Enabled = False
+        lbMyMovies.DataSource = Nothing
+        lbMyMovies.DataSource = tblofmovies.DefaultView
+        lbMyMovies.ValueMember = "Index"
+        lbMyMovies.DisplayMember = "Name"
+        Dim dtIDA As New DataTable
+        dtIDA.Columns.Add("Path", GetType(System.String))
+        dtIDA.Columns.Add("Name")
+        dtIDA.Columns.Add("Index")
+        Dim coulistedmovies As Integer = 0
+        While coulistedmovies < lbMyMovies.Items.Count
+            Dim movhasissues As Boolean = False
+            Dim whatissue As String = ""
+            Dim tempmovie As New movie
+            lbMyMovies.SelectedIndex = coulistedmovies
+            tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
+            'Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            If Not tempmovie.pfilemode Then
+                movhasissues = check_movie_missingmediaimages(tempmovie)
+            Else
+                movhasissues = False
+            End If
+          
+            If movhasissues Then
+                dtIDA.LoadDataRow(New Object() {tempmovie.getmoviepath, tempmovie.pmoviename, lbMyMovies.SelectedValue}, True)
+            End If
+            coulistedmovies += 1
+        End While
+        dtIDA.DefaultView.Sort = "Name"
+        lbMyMovies.DataSource = dtIDA.DefaultView
+        lbMyMovies.DisplayMember = "Name"
+        lbMyMovies.ValueMember = "Index"
+        lbMyMovies.Visible = True
+        lbMyMovies.Enabled = True
+        autopilotrunning = False
+    End Sub
+
     Private Sub lbMyMovies_MouseClicked(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbMyMovies.MouseClick 'or lbmyMovies.MouseClick
         Debug.Print("lbMyMovies mouse clicked")
         processdropdownitems()
@@ -25034,22 +25288,27 @@ Public Class maincollection
         tpIMPPosters.Enabled = False
         tpTVWideIcons.Text = ""
         tpTVWideIcons.Enabled = False
-        tpFanart.Enabled = False
-        tpTVWideIcons.Enabled = True
-        pbSeasonAllposter.Visible = False
-        Dim curtvshowpath As String = lbTvShowPicker.SelectedValue.ToString
-        'strip out the id from the path'
-        Dim theid As String = Regex.Match(curtvshowpath, "(:\d*?:)").Groups(1).Value
-        curtvshowpath = Strings.Replace(curtvshowpath, theid, "")
-        Dim currentshowid As String = Strings.Replace(theid, ":", "")
+        tpFanart.Enabled = True
+        pbTVFanart.Image = Nothing
+        pbTVFanart.ImageLocation = Nothing
 
-        Debug.Print("seasonpicker clicked")
-        If lbSeasonPicker.SelectedIndex = -1 Then Exit Sub
-        'Debug.Print(lbSeasonPicker.SelectedValue.ToString)
-        kpEpisodeData.Visible = False
-        Dim curtvseason As movieinfoplus.seasons = CType(seasonshashtable.Item(lbSeasonPicker.SelectedValue), seasons)
-        Debug.Print(curtvseason.episodes.Count.ToString)
+            tpTVWideIcons.Enabled = True
+            pbSeasonAllposter.Visible = False
+            Dim curtvshowpath As String = lbTvShowPicker.SelectedValue.ToString
+            'strip out the id from the path'
+            Dim theid As String = Regex.Match(curtvshowpath, "(:\d*?:)").Groups(1).Value
+            curtvshowpath = Strings.Replace(curtvshowpath, theid, "")
+            Dim currentshowid As String = Strings.Replace(theid, ":", "")
+
+            Debug.Print("seasonpicker clicked")
+            If lbSeasonPicker.SelectedIndex = -1 Then Exit Sub
+            'Debug.Print(lbSeasonPicker.SelectedValue.ToString)
+            kpEpisodeData.Visible = False
+            Dim curtvseason As movieinfoplus.seasons = CType(seasonshashtable.Item(lbSeasonPicker.SelectedValue), seasons)
+            Debug.Print(curtvseason.episodes.Count.ToString)
         gvcurtvseason = curtvseason
+
+
         'bring splitter back up at 569
         'tvMainRightMiddle.SplitterWidth = 5
         'tvMainRightMiddle.Panel2MinSize = 100
@@ -25083,6 +25342,18 @@ Public Class maincollection
         getfcdn_tvshow_cd4(lbTvShowPicker.Text, False, , "Season " + curseasonas1or2digitid)
         getfcdn_tvshow_insert(lbTvShowPicker.Text, False, , "Season " + curseasonas1or2digitid)
         getfcdn_tvshow_inlay(lbTvShowPicker.Text, False, , "Season " + curseasonas1or2digitid)
+
+        'display season fanart
+        Dim curfanart As String = ""
+        curfanart = addfiletofolder(curtvshowpath, "Season " + curtvseason.seasonnumber + "-fanart.jpg")
+        If File.Exists(curfanart) Then
+            pbTVFanart.ImageLocation = curfanart
+            Try
+                pbTVFanart.Load()
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+        End If
         'download items
         If Not gvcurtvseason.pdownloadlist.Count = Nothing And Not gvcurtvseason.pdownloadlist.Count = 0 Then
 
@@ -25616,6 +25887,98 @@ Public Class maincollection
         ktbep_epseason.Text = gvcurrenttvepisode.SeasonNumber
 
     End Sub
+
+    Private Sub getSinglefcdn_movie_front(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviesFront Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "front", 1, 0) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_back(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviesback Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "back", 1, 1) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_cd1(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviescd1 Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd", 1, 2) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_cd2(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviescd2 Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd2", 1, 3) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_cd3(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviescd3 Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd3", 1, 4) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_cd4(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviescd4 Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd4", 1, 5) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_inlay(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviesinlay Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inlay", 1, 7) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+    Private Sub getSinglefcdn_movie_insert(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
+        If Not rconf.pgetMediaImagesMoviesinsert Then Exit Sub
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inside", 1, 6) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            If Not precache Then currentmovie.pdownloadlist.Add(curdlobj)
+            If precache And Not downloadlist Is Nothing Then downloadlist.Add(curdlobj)
+            Exit For
+        Next
+    End Sub
+
+
+
     Private Sub getfcdn_movie_front(Optional ByVal precache As Boolean = False, Optional ByRef downloadlist As ArrayList = Nothing)
         If Not rconf.pgetMediaImagesMoviesFront Then Exit Sub
         Dim newfcdn As New freecoversdotnet.Rsp
@@ -25698,7 +26061,152 @@ Public Class maincollection
 
 
     End Sub
+    Private Function return_fcdn_movie_front() As String
+        If Not rconf.pgetMediaImagesMoviesFront Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "front", 1, 0, True) '0,1,2 blue,dvd,hddvd .. section 0 is front cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                    pbFront1.AccessibleName = curdlobj.misc
 
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+
+    '0,%,"back",1,1
+    Private Function return_fcdn_movie_Back() As String
+        If Not rconf.pgetMediaImagesMoviesback Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "back", 1, 1, True) '0,1,2 blue,dvd,hddvd .. section 0 is Back cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"cd",1,2
+    Private Function return_fcdn_movie_cd1() As String
+        If Not rconf.pgetMediaImagesMoviescd1 Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd", 1, 2, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"cd2",1,3
+    Private Function return_fcdn_movie_cd2() As String
+        If Not rconf.pgetMediaImagesMoviescd2 Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd2", 1, 3, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"cd3",1,4
+    Private Function return_fcdn_movie_cd3() As String
+        If Not rconf.pgetMediaImagesMoviescd3 Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd3", 1, 4, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"cd4",1,5
+    Private Function return_fcdn_movie_cd4() As String
+        If Not rconf.pgetMediaImagesMoviescd4 Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "cd4", 1, 5, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"inside",1,6
+    Private Function return_fcdn_movie_insert() As String
+        If Not rconf.pgetMediaImagesMoviesinsert Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inside", 1, 6, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
+    '0,%,"inlay",1,7
+    Private Function return_fcdn_movie_inlay() As String
+        If Not rconf.pgetMediaImagesMoviesinlay Then Exit Function
+        Dim newfcdn As New freecoversdotnet.Rsp
+        newfcdn.parentdirname = rconf.basefolder
+        Dim dllist As ArrayList = newfcdn.downloadimages(0, currentmovie.pmoviename, "inlay", 1, 7, True) '0,1,2 blue,dvd,hddvd .. section 0 is cd cover
+        Dim curcount As Integer = 0
+        For Each curdlobj As miplibfc.mip.dlobject In dllist
+            'currentmovie.pdownloadlist.Add(curdlobj)
+            Select Case curcount
+                Case 0
+                    Return (curdlobj.Destination)
+                Case Else
+                    Return ""
+            End Select
+            curcount += 1
+        Next
+    End Function
     Private Sub showfcdn_movie_front()
         If Not rconf.pgetMediaImagesMoviesFront Then Exit Sub
         Dim newfcdn As New freecoversdotnet.Rsp
@@ -30166,6 +30674,39 @@ Public Class maincollection
         flpMoviesMI.BackColor = Color.Transparent
         Me.flpMoviesMI.ResumeLayout()
     End Sub
+    Private Sub createthumbnailimage(ByVal curfile As String)
+        Dim thumbfile As String = Strings.Left(curfile, curfile.Length - 4) & "_thumb.jpg"
+        If File.Exists(thumbfile) Then
+            If getFileSizeExact(thumbfile) < 1 Then
+                Try
+                    File.Delete(thumbfile)
+                Catch exthumb As Exception
+                    Debug.Print(exthumb.ToString)
+                End Try
+            End If
+        End If
+        Dim frontimg As System.Drawing.Image
+        If Not File.Exists(thumbfile) Then
+            Try
+                frontimg = System.Drawing.Image.FromFile(curfile) 'addfiletofolder(currfolder, "front.jpg"))
+                Dim curh, curw As Integer
+                curh = frontimg.Height
+                curw = frontimg.Width
+                Dim ar As Double = CDbl(curw / curh)
+                frontimg = frontimg.GetThumbnailImage(CInt(150 * ar), 150, Nothing, IntPtr.Zero)
+                frontimg.Save(thumbfile)
+                frontimg.Dispose()
+            Catch ex As Exception
+                'MsgBox("Error during thumbnail generation for Media Image." + ex.ToString)
+                Try
+                    If File.Exists(thumbfile) Then File.Delete(thumbfile)
+                Catch exFD As Exception
+
+                End Try
+
+            End Try
+        End If
+    End Sub
     Private Sub displayAndLoadMIThumbs(ByVal folderPath As String, ByRef whichflp As FlowLayoutPanel)
         'Scan images
         If Not Directory.Exists(folderPath) Then
@@ -31401,6 +31942,7 @@ Public Class maincollection
             filetoresize = addfiletofolder(currentmovie.getmoviepath, "folder.jpg")
             If File.Exists(filetoresize) And savefolderjpg Then resizeimage(newsize, filetoresize)
         End If
+        System.Threading.Thread.Sleep(500)
         If messageprompts Then
             If Not currentmovie.pfilemode Then 'refresh all as start point may have shifted
                 showfolderjpginmainwindow(currentmovie.getmoviepath, False)
@@ -31978,10 +32520,10 @@ Public Class maincollection
             MI.getdata(currentmovie, moviemode)
             If rconf.pcbGeneralSupportSkinBasedFlagging Then
                 If gvupdatestudiofromimdb Then
-                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudioreal & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 Else
                     currentmovie.pstudioreal = currentmovie.pstudio
-                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo)
+                    currentmovie.pstudio = currentmovie.pstudio & currentmovie.fileinfo.toTagData(currentmovie.fileinfo, currentmovie)
                 End If
             End If
             'Debug.Print(currentmovie.fileinfo.Video.Height.ToString)
@@ -32187,6 +32729,8 @@ Public Class maincollection
             End If
         End With
     End Sub
+
+  
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -34199,7 +34743,7 @@ Public Property [Actors]() As List(Of Actor)
         'add fileinfo
         nm.fileinfo = tmovie.fileinfo
         If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging And Not keepthetag Then
-            nm.Studio = tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
+            nm.Studio = tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo, tmovie)
             tmovie.studio = nm.Studio 'tmovie.studioreal & tmovie.fileinfo.toTagData(tmovie.fileinfo)
         End If
         If keepthetag Then
