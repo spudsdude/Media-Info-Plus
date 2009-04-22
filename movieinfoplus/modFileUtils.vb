@@ -54,7 +54,7 @@ Module modFileUtils
             Case "back10.jpg"
                 Return "mibc10"
 
-            Case "cd.jpg"
+            Case "cd1.jpg"
                 Return "micd1"
             Case "cd2.jpg"
                 Return "micd2"

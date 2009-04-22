@@ -22,6 +22,7 @@ Public Class dlgPreCacheStarting
         'load the tvshows into the dialog
         'Dim tshows As New tvshowcollection
         'Dim tshows As New tvshowcollection
+
         tshows.kbLoadTvShows()
         tshows.updatetvshows()
 

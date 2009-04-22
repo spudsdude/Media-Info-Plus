@@ -595,6 +595,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="savetvfanartaswhat.resx">
       <DependentUpon>savetvfanartaswhat.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="selectMovie.resx">
       <DependentUpon>selectMovie.vb</DependentUpon>

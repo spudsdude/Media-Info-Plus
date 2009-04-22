@@ -3188,7 +3188,7 @@ Public Class maincollection
                     End If
                     '--
                     'Case ".iso", ".wmv", ".avi", ".mpg", ".mpeg", ".img", ".mp4", ".mkv", ".mov"
-                Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4"
+                Case "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4"
                     If tfname.ToLower.Contains("-trailer") Then
                         tbFDTrailer.Text += tfname + " "
                     Else
@@ -3197,6 +3197,14 @@ Public Class maincollection
                     End If
 
                 Case Else
+                    If Strings.Right(tfname.ToLower, 3) = ".ts" Then
+                        If tfname.ToLower.Contains("-trailer") Then
+                            tbFDTrailer.Text += tfname + " "
+                        Else
+                            tbFDMovieFile1.Text += tfname + " "
+                            moviefilenames.Add(tfname)
+                        End If
+                    End If
                     tbFDMovieFile2.Text += tfname + " "
             End Select
         Next
@@ -14980,6 +14988,13 @@ Public Class maincollection
             Else
                 imagetype = "poster" 'consider it a poster
             End If
+            Dim dimension As String = ""
+            Dim filename As String = ""
+            filename = getfilefrompath(curtvshowiconsetting)
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+            bmpImage.Dispose()
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename
             bmpImage.Dispose()
 
             If imagetype = "wideicon" Or imagetype = "widenoformat" Then
@@ -18604,7 +18619,7 @@ Public Class maincollection
                         End Select
 
                         Select Case Strings.Right(tfname, 4).ToLower
-                            Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                            Case "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                 Debug.Print("parser for : " + item.ToString + " : Result was : " + tfname.ToString)
                                 'have a movie file, parse it for season and episode
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
@@ -21538,9 +21553,72 @@ Public Class maincollection
     'Private Sub tp7_Enter(ByVal sender As Object, ByVal e As System.EventArgs)
     '    Me.tpFanart.Refresh()
     'End Sub
+    Private Sub updateshowscmdline_fromgui()
+        Dim showdebug As Boolean = False
+        Dim curtv As New movieinfoplus.tvshowcollection
+        Dim curdllist As New ArrayList
+        curtv.precacheTVShowsCmdLine(curdllist)
+        If showdebug Then Console.Out.WriteLine("done curtv.precacheTVShowsCmdLine(curdllist)")
 
+        Dim binfilelocal As String = movieinfoplus.maincollection.rconf.wgetfolder + "wget.exe"
+        If Not curdllist.Count = 0 Then
+            If showdebug Then Console.Out.WriteLine("Number of items to download: " & curdllist.Count.ToString)
+            Dim counter As Integer = 0
+            counter = curdllist.Count
+            Dim curitemcounter As Integer = 1
+            Try
+                For Each item As miplibfc.mip.dlobject In curdllist
+                    Console.Out.WriteLine("Processing Image " & curitemcounter.ToString & "/" & counter.ToString)
+                    curitemcounter += 1
+                    If Not File.Exists(item.Destination) Then
+                        If showdebug Then Console.Out.WriteLine("Downloading Image to: " & item.Destination)
+                        Dim filenameuri As String = item.URL
+                        Dim pro1 As Process = New Process()
+                        pro1.StartInfo.FileName = binfilelocal
+                        pro1.StartInfo.Arguments = filenameuri + " -t 3 -T 60 -O " + """" + item.Destination + """"
+                        'pro1.StartInfo.RedirectStandardError = True
+                        'pro1.StartInfo.UseShellExecute = False
+                        'pro1.StartInfo.CreateNoWindow = True
+                        pro1.Start()
+                        pro1.WaitForExit()
+                        System.Threading.Thread.Sleep(300)
+                        If showdebug Then Console.Out.WriteLine(item.URL.ToString)
+                    End If
+                    If File.Exists(item.Destination) Then
+                        'check it's size, 0k files need to be removed
+                        Try
+                            File.SetAttributes(item.Destination, FileAttributes.Normal)
+                        Catch ex As Exception
+                            If showdebug Then Console.Out.WriteLine(ex.ToString)
+                        End Try
+
+                        Try
+                            If getFileSizeExact(item.Destination) < 1 Then
+                                If showdebug Then Console.Out.WriteLine("Image invalid - Deleteing " & item.Destination)
+                                File.Delete(item.Destination)
+                            End If
+
+                        Catch ex As Exception
+                            If showdebug Then Console.Out.WriteLine(ex.ToString)
+                        End Try
+
+                    End If
+
+                Next
+                Dim itemF As New miplibfc.mip.dlobject
+                itemF.URL = "COMPLETED"
+                itemF.Destination = "COMPLETED"
+                System.Threading.Thread.Sleep(50)
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+        End If
+
+        'curtv.kbLoadTvShowsCmdLine(False, False)
+
+    End Sub
     Private Sub tsbShowsLoadShows_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsbShowsLoadShows.Click
-        'dlgPreCacheStarting.ShowDialog()
+        'updateshowscmdline_fromgui()
         'Exit Sub
 
         currenttvshowdownloadlist.Clear()
@@ -24836,8 +24914,15 @@ Public Class maincollection
             Else
                 imagetype = "poster" 'consider it a poster
             End If
+            Dim dimension As String = ""
+            Dim filename As String = ""
+            filename = getfilefrompath(curtvshowiconsetting)
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
             bmpImage.Dispose()
-
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename
+            bmpImage.Dispose()
+            klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
             If imagetype = "wideicon" Or imagetype = "widenoformat" Then
                 Try
                     pbTVPoster.Image = Nothing
@@ -25598,7 +25683,16 @@ Public Class maincollection
                 messageprompts = False
             Next
 
-
+            Dim dimension As String = ""
+            Dim filename As String = ""
+            Dim bmpImage As System.Drawing.Image
+            bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+            filename = getfilefrompath(curtvshowiconsetting)
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+            bmpImage.Dispose()
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename
+            klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
         End If
     End Sub
     Private Sub lbEpsidoes_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbEpisodes.Click
@@ -25697,6 +25791,18 @@ Public Class maincollection
             End If
             'krtbTVShowMediaInfo.Text = xbmccurep.fileinfo.objtostring(xbmccurep.fileinfo)
         End If
+
+        Dim dimension As String = ""
+        Dim filename As String = ""
+        Dim bmpImage As System.Drawing.Image
+        bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+        filename = getfilefrompath(curtvshowiconsetting)
+        dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+        bmpImage.Dispose()
+        tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+        tsmishows_currentImageToModify.Text = filename '& " : " & getFileSize(curtvshowiconsetting)
+        'khbEpisodeThumbGroup.'klblImageshow_currentimage.Text = filename & "  " & dimension  & " : " & getFileSize(curtvshowiconsetting)
+        'fixme here 
 
         ''see it it's a mutlipart ep
         'If gvcurrenttvepisode.mutlipart Then
@@ -31879,6 +31985,43 @@ Public Class maincollection
     Private Sub tsmimovie_poster_r1000x1500_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmimovie_poster_r1000x1500.Click
         resize_movieposter("1000x1500")
     End Sub
+
+    Private Sub tsmishows_posters_q60_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_posters_q60.Click
+        compress_showposter("60")
+    End Sub
+    Private Sub tsmishows_posters_q70_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_posters_q70.Click
+        compress_showposter("70")
+    End Sub
+    Private Sub tsmishows_posters_q80_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_posters_q80.Click
+        compress_showposter("80")
+    End Sub
+    Private Sub tsmishows_posters_q90_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_posters_q90.Click
+        compress_showposter("90")
+    End Sub
+    Private Sub tsmishows_posters_q95_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_posters_q95.Click
+        compress_showposter("95")
+    End Sub
+    Private Sub tsmishows_poster_r320x480_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r320x480.Click
+        resize_showposter("320x480")
+    End Sub
+    Private Sub tsmishows_poster_r360x540_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r360x540.Click
+        resize_showposter("360x540")
+    End Sub
+    Private Sub tsmishows_poster_r384x576_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r384x576.Click
+        resize_showposter("384x576")
+    End Sub
+    Private Sub tsmishows_poster_r480x720_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r480x720.Click
+        resize_showposter("480x720")
+    End Sub
+    Private Sub tsmishows_poster_r720x1080_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r720x1080.Click
+        resize_showposter("720x1080")
+    End Sub
+    Private Sub tsmishows_poster_r800x1200_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r800x1200.Click
+        resize_showposter("800x1200")
+    End Sub
+    Private Sub tsmishows_poster_r1000x1500_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_poster_r1000x1500.Click
+        resize_showposter("1000x1500")
+    End Sub
     Private Sub resize_movieposter(ByVal newsize As String, Optional ByVal autopilot As Boolean = False)
         If Not autopilot Then pbCurIconUsed.Image = Nothing
         If Not autopilot Then pbCurIconUsed.ImageLocation = Nothing
@@ -32035,7 +32178,166 @@ Public Class maincollection
 
         Me.Refresh()
     End Sub
-    Private Sub compress_tvshowposter(ByRef currentpb As PictureBox, ByVal amount As String, ByVal filetocompress As String)
+    Private Sub resize_showposter(ByVal newsize As String, Optional ByVal autopilot As Boolean = False)
+        If Not autopilot Then pbTVWide.Image = Nothing
+        If Not autopilot Then pbTVWide.ImageLocation = Nothing
+        If Not autopilot Then pbTVPoster.Image = Nothing
+        If Not autopilot Then pbTVPoster.ImageLocation = Nothing
+      
+        GC.Collect()
+
+
+        Dim filetoresize As String = ""
+     
+        filetoresize = curtvshowiconsetting
+        If File.Exists(filetoresize) Then resizeimage(newsize, filetoresize)
+        Dim refreshimage As Boolean = True
+        If autopilot Then refreshimage = False
+        Dim dimension As String = ""
+        Dim filename As String = ""
+        filename = getfilefrompath(curtvshowiconsetting)
+        'dimension += filename & " "
+        If refreshimage Then 'refresh all as start point may have shifted
+            Dim bmpImage As System.Drawing.Image
+            bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+            'aspect ratio items
+            Dim imagetype As String
+            Dim taspect As Double = aspectratio(bmpImage)
+            If taspect < 0.25 Then
+                'wide(Icon)
+                If bmpImage.Width >= 500 Then
+                    imagetype = "widenoformat"
+                Else
+                    imagetype = "wideicon"
+                End If
+            ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                imagetype = "square"
+            ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                'boxed icon or maybe squared poster
+                imagetype = "boxed"
+            Else
+                imagetype = "poster" 'consider it a poster
+            End If
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+            bmpImage.Dispose()
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename
+            klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
+            If imagetype = "wideicon" Or imagetype = "widenoformat" Then
+                Try
+                    pbTVPoster.Image = Nothing
+                    pbTVPoster.ImageLocation = Nothing
+                    pbTVPoster.Visible = False
+                    pbTVWide.Image = Nothing
+                    pbTVWide.ImageLocation = Nothing
+                    pbTVWide.ImageLocation = curtvshowiconsetting
+                    pbTVWide.Load()
+                    pbTVWide.Visible = True
+                    Me.Refresh()
+                Catch ex As Exception
+                    Debug.Print(ex.ToString)
+                End Try
+            Else
+                Try
+                    pbTVWide.Image = Nothing
+                    pbTVWide.ImageLocation = Nothing
+                    pbTVWide.Visible = False
+                    pbTVPoster.Image = Nothing
+                    pbTVPoster.ImageLocation = Nothing
+                    pbTVPoster.ImageLocation = curtvshowiconsetting
+                    pbTVPoster.Load()
+                    pbTVPoster.Visible = True
+                    Me.Refresh()
+                Catch ex As Exception
+                    Debug.Print(ex.ToString)
+                End Try
+
+            End If
+            tcMain.SelectTab(1)
+            Me.Refresh()
+            Exit Sub
+        End If
+
+    End Sub
+    Private Sub compress_showposter(ByVal amount As String, Optional ByVal autopilot As Boolean = False)
+        If Not autopilot Then pbTVWide.Image = Nothing
+        If Not autopilot Then pbTVWide.ImageLocation = Nothing
+        If Not autopilot Then pbTVPoster.Image = Nothing
+        If Not autopilot Then pbTVPoster.ImageLocation = Nothing
+
+        GC.Collect()
+
+
+        Dim filetocompress As String = ""
+
+        filetocompress = curtvshowiconsetting
+        If File.Exists(filetocompress) Then compressimage(amount, filetocompress)
+        Dim refreshimage As Boolean = True
+        If autopilot Then refreshimage = False
+        Dim dimension As String = ""
+        Dim filename As String = ""
+        filename = getfilefrompath(curtvshowiconsetting)
+        'dimension += filename & " "
+        If refreshimage Then 'refresh all as start point may have shifted
+            Dim bmpImage As System.Drawing.Image
+            bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+            'aspect ratio items
+            Dim imagetype As String
+            Dim taspect As Double = aspectratio(bmpImage)
+            If taspect < 0.25 Then
+                'wide(Icon)
+                If bmpImage.Width >= 500 Then
+                    imagetype = "widenoformat"
+                Else
+                    imagetype = "wideicon"
+                End If
+            ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                imagetype = "square"
+            ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                'boxed icon or maybe squared poster
+                imagetype = "boxed"
+            Else
+                imagetype = "poster" 'consider it a poster
+            End If
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+            bmpImage.Dispose()
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename
+            klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
+            If imagetype = "wideicon" Or imagetype = "widenoformat" Then
+                Try
+                    pbTVPoster.Image = Nothing
+                    pbTVPoster.ImageLocation = Nothing
+                    pbTVPoster.Visible = False
+                    pbTVWide.Image = Nothing
+                    pbTVWide.ImageLocation = Nothing
+                    pbTVWide.ImageLocation = curtvshowiconsetting
+                    pbTVWide.Load()
+                    pbTVWide.Visible = True
+                    Me.Refresh()
+                Catch ex As Exception
+                    Debug.Print(ex.ToString)
+                End Try
+            Else
+                Try
+                    pbTVWide.Image = Nothing
+                    pbTVWide.ImageLocation = Nothing
+                    pbTVWide.Visible = False
+                    pbTVPoster.Image = Nothing
+                    pbTVPoster.ImageLocation = Nothing
+                    pbTVPoster.ImageLocation = curtvshowiconsetting
+                    pbTVPoster.Load()
+                    pbTVPoster.Visible = True
+                    Me.Refresh()
+                Catch ex As Exception
+                    Debug.Print(ex.ToString)
+                End Try
+
+            End If
+            tcMain.SelectTab(1)
+            Me.Refresh()
+            Exit Sub
+        End If
 
     End Sub
     Private Sub resizeimage(ByVal size As String, ByVal filetoresize As String)

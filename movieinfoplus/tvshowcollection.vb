@@ -455,7 +455,7 @@ Public Class tvshowcollection
 
         Dim tdate As String = ""
         ' getdatesfromtvdb(tdate)
-        Debug.Print("getdatefromtvdb done")
+        'debug.Print("getdatefromtvdb done")
 
         'http://www.thetvdb.com/api/<apikey>/updates/
 
@@ -464,7 +464,7 @@ Public Class tvshowcollection
         'thetvdbdata.readMirrorsXML("c:\program files\movieinfoplus\themoviedbdates.xml", thetvdbdata)
 
 
-        'Debug.Print("load themoviedbdates done" + System.DateTime.Now.ToString)
+        ''debug.Print("load themoviedbdates done" + System.DateTime.Now.ToString)
         'get all data
         '<mirrorpath_zip>/api/<apikey>/all/<language>.zip
         'wgetTVDB(curmirror + "/api/" + miptvdbkey + "/all/" + curlang + ".zip", "everything", True)
@@ -506,7 +506,7 @@ Public Class tvshowcollection
                     End If
 
                 Catch ex As Exception
-                    Debug.Print(ex.ToString)
+                    'debug.Print(ex.ToString)
                 End Try
             Next
             'If Not File.Exists(item.ToString & "\noscan") Then tvshowarray.Add(item.ToString)
@@ -551,7 +551,7 @@ Public Class tvshowcollection
             If selectedshow = "" Then
                 getTVSeriesList(tfname)
                 'Dim tstring As String = httpget(curmirror + "/api/GetSeries.php?seriesname=" + kcbShowPicker.Items(showcount).ToString)
-                'Debug.Print(tstring)
+                ''debug.Print(tstring)
                 Dim temptvshowdata As New TVSeriesData
                 temptvshowdata.readTVSeriesXML(rconf.basefolder + "temp\tvdb\" + tfname + ".xml", temptvshowdata)
                 Dim tarray As New ArrayList
@@ -584,7 +584,7 @@ Public Class tvshowcollection
                             cutcmIndex += 1
                         Next
                     Catch exTarray As Exception
-                        Debug.Print("exTarray failed" + vbNewLine + exTarray.ToString)
+                        'debug.Print("exTarray failed" + vbNewLine + exTarray.ToString)
                     End Try
                     dialogTvShowSelect.dhashtable = thashtable
                     dtIDA.DefaultView.Sort = "Name"
@@ -606,7 +606,7 @@ Public Class tvshowcollection
                         selectedshow = Strings.Replace(selectedshow, " ", "")
                     End If
 
-                    Debug.Print(selectedshow)
+                    'debug.Print(selectedshow)
                     dialogTvShowSelect.Dispose()
                     If dbgTVShows Then dlgTVShowCurStatus.Show()
                 Else
@@ -638,8 +638,8 @@ Public Class tvshowcollection
                 'asdf()
                 decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
                 MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
-                Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
-                Debug.Print("unable to load xml file from cache folder")
+                'debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+                'debug.Print("unable to load xml file from cache folder")
                 showcount += 1
                 Continue While 'break out of while loop, no data in banners 
             End Try
@@ -669,7 +669,7 @@ Public Class tvshowcollection
                     'See If the file already exsists
 
                     Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
-                    Debug.Print(switchpath)
+                    'debug.Print(switchpath)
 
                     Select Case tmbanner.BannerType.ToLower
                         Case "fanart"
@@ -723,7 +723,7 @@ Public Class tvshowcollection
                                 If boolGetSeason = False And boolGetSeasonwide = False Then boolGetSeason = True
                             Catch ex As Exception
                                 boolGetSeason = True
-                                Debug.Print(ex.ToString)
+                                'debug.Print(ex.ToString)
                                 MsgBox("Configuration setting is missing for season selection, please report this bug and include a copy of your config.xml file")
                             End Try
 
@@ -809,7 +809,7 @@ Public Class tvshowcollection
             Dim xbmctvshow As New xbmc.xbmcTvshow
             Try
                 newtvdbData.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbData)
-                Debug.Print("read completed")
+                'debug.Print("read completed")
                 newtvdbData.Series.tvdblangseries2xbmcTvshow(newtvdbData.Series, xbmctvshow, newactors)
                 xbmctvshow.Genre = Strings.Replace(xbmctvshow.Genre, "|", "/")
                 Try
@@ -820,7 +820,7 @@ Public Class tvshowcollection
                         xbmctvshow.Genre = Strings.Left(xbmctvshow.Genre, xbmctvshow.Genre.Length - 1)
                     End If
                 Catch ex As Exception
-                    Debug.Print(ex.ToString)
+                    'debug.Print(ex.ToString)
                 End Try
                 xbmctvshow.Episodeguideurl = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
 
@@ -833,7 +833,7 @@ Public Class tvshowcollection
                 'add show to datatable
                 maindttv.LoadDataRow(New Object() {showfullpathname + ":" + xbmctvshow.Tvdbid + ":", xbmctvshow.Title, xbmctvshow.Tvdbid, showcount}, True)
             Catch ex As Exception
-                Debug.Print(ex.ToString)
+                'debug.Print(ex.ToString)
             End Try
 
 
@@ -867,12 +867,12 @@ Public Class tvshowcollection
         '        System.Threading.Thread.Sleep(10000)
         '        wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + tseriesname.Id + "/all/" + curlang + ".zip", "everything", True)
         '    Else
-        '        Debug.Print("Already have: " + tseriesname.Id)
+        '        'debug.Print("Already have: " + tseriesname.Id)
         '    End If
 
-        'Debug.Print(tseriesname.Id)
+        ''debug.Print(tseriesname.Id)
         'Dim tstring As String = httpget(curmirror + "/api/GetSeries.php?seriesname=" + tseriesname.Id)
-        'Debug.Print(tstring)
+        ''debug.Print(tstring)
         'Next
         'stpw.Start()
         updatetvshows()
@@ -1046,7 +1046,7 @@ Public Class tvshowcollection
                             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
                             Dim validfile As Boolean = False
                             Select Case Strings.Right(tfname, 4).ToLower
-                                Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                                Case "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                     validfile = True
                                 Case Else
                                     validfile = False
@@ -1189,7 +1189,9 @@ Public Class tvshowcollection
                                     If Not tepisode1 Is Nothing Then
                                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
                                         curseason.episodes.Add(tepisode1)
-                                        If rconf.tv_episode_download_boolean Then
+                                        Dim bypassepisodeimages As Boolean = False 'debug setting, episode images are slowing the app way down when it can't grab them
+                                        'If tepisode1.Seriesid = "80610" Then bypassepisodeimages = True
+                                        If rconf.tv_episode_download_boolean And Not bypassepisodeimages Then
                                             If Not File.Exists(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\")) And rconf.tv_episode_download_boolean Then
                                                 'wgetTVimages(curmirror + + "/banners/" + tepisode1.Filename
                                                 If Not tepisode1.Filename = "" Then
@@ -3338,6 +3340,7 @@ Public Class tvshowcollection
                     Debug.Print(ex.ToString)
                 End Try
                 xbmctvshow.Episodeguideurl = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
+                xbmctvshow.Episodeguide = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
                 If rconf.pcbshows_UseStudioasRating Then
                     xbmctvshow.Rating = xbmctvshow.Studio
                 End If
@@ -3828,10 +3831,11 @@ Public Class tvshowcollection
     End Sub
     'mgettvepisodeimages
     Private Sub mgettvepisodeimages(ByRef tmepisode As tvdblangEpisode, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
-        Dim locmirror As String = "http://images.thetvdb.com.nyud.net:8080"
+        If selectedshow = "80610" Then Exit Sub
+        Dim locmirror As String = "http://images.thetvdb.com" '"http://images.thetvdb.com.nyud.net:8080"
         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmepisode.Filename
         Dim dlobj As New miplibfc.mip.dlobject
-        dlobj.URL = curmirror + "/banners/" + tmepisode.Filename
+        dlobj.URL = locmirror + "/banners/" + tmepisode.Filename
         dlobj.Destination = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
 
         If Not specificarraylist Is Nothing Then

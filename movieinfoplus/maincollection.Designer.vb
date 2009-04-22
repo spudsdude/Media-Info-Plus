@@ -557,6 +557,7 @@ Me.khgShowsMI = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
 Me.ButtonSpecHeaderGroup7 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
 Me.flpTVShowMI = New System.Windows.Forms.FlowLayoutPanel
 Me.kgTvShowsCurImage = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.klblImageshow_currentimage = New ComponentFactory.Krypton.Toolkit.KryptonLabel
 Me.pbTVSeasonPoster = New System.Windows.Forms.PictureBox
 Me.pbTVPoster = New System.Windows.Forms.PictureBox
 Me.pbTVWide = New System.Windows.Forms.PictureBox
@@ -645,6 +646,9 @@ Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem = New System.Wind
 Me.tsbShowsOpenTVDBPage = New System.Windows.Forms.ToolStripButton
 Me.tsbShowsOpenFolder = New System.Windows.Forms.ToolStripButton
 Me.tsddshows_tools = New System.Windows.Forms.ToolStripDropDownButton
+Me.ToolStripSeparator21 = New System.Windows.Forms.ToolStripSeparator
+Me.tsmishows_currentBackgroundToModify = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_currentBackgroundToModifyFileSize = New System.Windows.Forms.ToolStripMenuItem
 Me.ResizeBackgroundImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_fanart_r960x540 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_fanart_r1280x720 = New System.Windows.Forms.ToolStripMenuItem
@@ -655,6 +659,25 @@ Me.tsmishows_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_fanart_q900 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator20 = New System.Windows.Forms.ToolStripSeparator
+Me.tsmishows_currentImageToModify = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_currentImageToModifyFileSize = New System.Windows.Forms.ToolStripMenuItem
+Me.ResizeShowImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r320x480 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r360x540 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r384x576 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r480x720 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r720x1080 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r800x1200 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_poster_r1000x1500 = New System.Windows.Forms.ToolStripMenuItem
+Me.CompressShowImageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_posters_q60 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_posters_q70 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_posters_q80 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_posters_q90 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_posters_q95 = New System.Windows.Forms.ToolStripMenuItem
+Me.ToolStripSeparator22 = New System.Windows.Forms.ToolStripSeparator
+Me.tsl_shows_fanartsize = New System.Windows.Forms.ToolStripLabel
 Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
 Me.ButtonSpecHeaderGroup2 = New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup
@@ -1284,6 +1307,7 @@ Me.rbMDNoIcon = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.rbMDwithIssues = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.rbMDAll = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.kgMyMovieInfoPicker = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+Me.rbMDNoMediaImages = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.kgMyMovieList = New ComponentFactory.Krypton.Toolkit.KryptonGroup
 Me.lbMyMovies = New System.Windows.Forms.ListBox
 Me.kgMovieOrTVShow = New ComponentFactory.Krypton.Toolkit.KryptonGroup
@@ -1362,7 +1386,6 @@ Me.kPaletteBlingLarge = New ComponentFactory.Krypton.Toolkit.KryptonPalette(Me.c
 Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
 Me.bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
 Me.bwOfdbUpdate = New System.ComponentModel.BackgroundWorker
-Me.rbMDNoMediaImages = New ComponentFactory.Krypton.Toolkit.KryptonRadioButton
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -6099,7 +6122,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(467, 428)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(477, 438)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6107,9 +6130,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 395)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 405)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(455, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(465, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -8150,11 +8173,25 @@ Me.kgTvShowsCurImage.Name = "kgTvShowsCurImage"
 '
 'kgTvShowsCurImage.Panel
 '
+Me.kgTvShowsCurImage.Panel.Controls.Add(Me.klblImageshow_currentimage)
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVSeasonPoster)
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVPoster)
 Me.kgTvShowsCurImage.Panel.Controls.Add(Me.pbTVWide)
 Me.kgTvShowsCurImage.Size = New System.Drawing.Size(446, 459)
 Me.kgTvShowsCurImage.TabIndex = 115
+'
+'klblImageshow_currentimage
+'
+Me.klblImageshow_currentimage.Dock = System.Windows.Forms.DockStyle.Bottom
+Me.klblImageshow_currentimage.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.klblImageshow_currentimage.Location = New System.Drawing.Point(0, 426)
+Me.klblImageshow_currentimage.Name = "klblImageshow_currentimage"
+Me.klblImageshow_currentimage.Size = New System.Drawing.Size(434, 21)
+Me.klblImageshow_currentimage.TabIndex = 4
+Me.klblImageshow_currentimage.Text = "CurrentImage and Size"
+Me.klblImageshow_currentimage.Values.ExtraText = ""
+Me.klblImageshow_currentimage.Values.Image = Nothing
+Me.klblImageshow_currentimage.Values.Text = "CurrentImage and Size"
 '
 'pbTVSeasonPoster
 '
@@ -8193,7 +8230,7 @@ Me.pbTVWide.Visible = false
 '
 Me.tsCurrentTVShowTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
 Me.tsCurrentTVShowTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-Me.tsCurrentTVShowTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbShowsLoadShows, Me.ToolStripSeparator3, Me.tsbShowsUpdateShows, Me.ToolStripSeparator5, Me.tsbtvPreCache, Me.ToolStripSeparator6, Me.tsbAddTVFanart, Me.ToolStripSeparator7, Me.tsbtvAddImage, Me.ToolStripSeparator8, Me.tsddbtvshowstag, Me.tsddTVShows_OptionsAndSettings, Me.tsbShowsOpenTVDBPage, Me.tsbShowsOpenFolder, Me.tsddshows_tools})
+Me.tsCurrentTVShowTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbShowsLoadShows, Me.ToolStripSeparator3, Me.tsbShowsUpdateShows, Me.ToolStripSeparator5, Me.tsbtvPreCache, Me.ToolStripSeparator6, Me.tsbAddTVFanart, Me.ToolStripSeparator7, Me.tsbtvAddImage, Me.ToolStripSeparator8, Me.tsddbtvshowstag, Me.tsddTVShows_OptionsAndSettings, Me.tsbShowsOpenTVDBPage, Me.tsbShowsOpenFolder, Me.tsddshows_tools, Me.tsl_shows_fanartsize})
 Me.tsCurrentTVShowTools.Location = New System.Drawing.Point(0, 0)
 Me.tsCurrentTVShowTools.Name = "tsCurrentTVShowTools"
 Me.tsCurrentTVShowTools.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
@@ -8734,13 +8771,28 @@ Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
 '
 Me.tsddshows_tools.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
 Me.tsddshows_tools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsddshows_tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResizeBackgroundImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem1})
+Me.tsddshows_tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator21, Me.tsmishows_currentBackgroundToModify, Me.tsmishows_currentBackgroundToModifyFileSize, Me.ResizeBackgroundImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem1, Me.ToolStripSeparator20, Me.tsmishows_currentImageToModify, Me.tsmishows_currentImageToModifyFileSize, Me.ResizeShowImageToolStripMenuItem, Me.CompressShowImageToolStripMenuItem, Me.ToolStripSeparator22})
 Me.tsddshows_tools.Image = CType(resources.GetObject("tsddshows_tools.Image"),System.Drawing.Image)
 Me.tsddshows_tools.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddshows_tools.Name = "tsddshows_tools"
 Me.tsddshows_tools.Size = New System.Drawing.Size(46, 29)
 Me.tsddshows_tools.Text = "Tools"
 Me.tsddshows_tools.ToolTipText = "Resize or Compress Background"
+'
+'ToolStripSeparator21
+'
+Me.ToolStripSeparator21.Name = "ToolStripSeparator21"
+Me.ToolStripSeparator21.Size = New System.Drawing.Size(213, 6)
+'
+'tsmishows_currentBackgroundToModify
+'
+Me.tsmishows_currentBackgroundToModify.Name = "tsmishows_currentBackgroundToModify"
+Me.tsmishows_currentBackgroundToModify.Size = New System.Drawing.Size(216, 22)
+'
+'tsmishows_currentBackgroundToModifyFileSize
+'
+Me.tsmishows_currentBackgroundToModifyFileSize.Name = "tsmishows_currentBackgroundToModifyFileSize"
+Me.tsmishows_currentBackgroundToModifyFileSize.Size = New System.Drawing.Size(216, 22)
 '
 'ResizeBackgroundImageToolStripMenuItem
 '
@@ -8804,6 +8856,119 @@ Me.tsmishows_fanart_q95.Name = "tsmishows_fanart_q95"
 Me.tsmishows_fanart_q95.Size = New System.Drawing.Size(97, 22)
 Me.tsmishows_fanart_q95.Text = "95%"
 '
+'ToolStripSeparator20
+'
+Me.ToolStripSeparator20.Name = "ToolStripSeparator20"
+Me.ToolStripSeparator20.Size = New System.Drawing.Size(213, 6)
+'
+'tsmishows_currentImageToModify
+'
+Me.tsmishows_currentImageToModify.Name = "tsmishows_currentImageToModify"
+Me.tsmishows_currentImageToModify.Size = New System.Drawing.Size(216, 22)
+Me.tsmishows_currentImageToModify.Text = "Current image to modify"
+'
+'tsmishows_currentImageToModifyFileSize
+'
+Me.tsmishows_currentImageToModifyFileSize.Name = "tsmishows_currentImageToModifyFileSize"
+Me.tsmishows_currentImageToModifyFileSize.Size = New System.Drawing.Size(216, 22)
+Me.tsmishows_currentImageToModifyFileSize.Text = "Current image size (h x w)"
+'
+'ResizeShowImageToolStripMenuItem
+'
+Me.ResizeShowImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_poster_r320x480, Me.tsmishows_poster_r360x540, Me.tsmishows_poster_r384x576, Me.tsmishows_poster_r480x720, Me.tsmishows_poster_r720x1080, Me.tsmishows_poster_r800x1200, Me.tsmishows_poster_r1000x1500})
+Me.ResizeShowImageToolStripMenuItem.Name = "ResizeShowImageToolStripMenuItem"
+Me.ResizeShowImageToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+Me.ResizeShowImageToolStripMenuItem.Text = "Resize Show Image"
+'
+'tsmishows_poster_r320x480
+'
+Me.tsmishows_poster_r320x480.Name = "tsmishows_poster_r320x480"
+Me.tsmishows_poster_r320x480.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r320x480.Text = "320x480"
+'
+'tsmishows_poster_r360x540
+'
+Me.tsmishows_poster_r360x540.Name = "tsmishows_poster_r360x540"
+Me.tsmishows_poster_r360x540.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r360x540.Text = "360x540"
+'
+'tsmishows_poster_r384x576
+'
+Me.tsmishows_poster_r384x576.Name = "tsmishows_poster_r384x576"
+Me.tsmishows_poster_r384x576.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r384x576.Text = "384x576"
+'
+'tsmishows_poster_r480x720
+'
+Me.tsmishows_poster_r480x720.Name = "tsmishows_poster_r480x720"
+Me.tsmishows_poster_r480x720.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r480x720.Text = "480x720"
+'
+'tsmishows_poster_r720x1080
+'
+Me.tsmishows_poster_r720x1080.Name = "tsmishows_poster_r720x1080"
+Me.tsmishows_poster_r720x1080.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r720x1080.Text = "720x1080"
+'
+'tsmishows_poster_r800x1200
+'
+Me.tsmishows_poster_r800x1200.Name = "tsmishows_poster_r800x1200"
+Me.tsmishows_poster_r800x1200.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r800x1200.Text = "800x1200"
+'
+'tsmishows_poster_r1000x1500
+'
+Me.tsmishows_poster_r1000x1500.Name = "tsmishows_poster_r1000x1500"
+Me.tsmishows_poster_r1000x1500.Size = New System.Drawing.Size(130, 22)
+Me.tsmishows_poster_r1000x1500.Text = "1000x1500"
+'
+'CompressShowImageToolStripMenuItem
+'
+Me.CompressShowImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_posters_q60, Me.tsmishows_posters_q70, Me.tsmishows_posters_q80, Me.tsmishows_posters_q90, Me.tsmishows_posters_q95})
+Me.CompressShowImageToolStripMenuItem.Name = "CompressShowImageToolStripMenuItem"
+Me.CompressShowImageToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+Me.CompressShowImageToolStripMenuItem.Text = "Compress Show Image"
+'
+'tsmishows_posters_q60
+'
+Me.tsmishows_posters_q60.Name = "tsmishows_posters_q60"
+Me.tsmishows_posters_q60.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_posters_q60.Text = "60% Quality"
+'
+'tsmishows_posters_q70
+'
+Me.tsmishows_posters_q70.Name = "tsmishows_posters_q70"
+Me.tsmishows_posters_q70.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_posters_q70.Text = "70% Quality"
+'
+'tsmishows_posters_q80
+'
+Me.tsmishows_posters_q80.Name = "tsmishows_posters_q80"
+Me.tsmishows_posters_q80.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_posters_q80.Text = "80% Quality"
+'
+'tsmishows_posters_q90
+'
+Me.tsmishows_posters_q90.Name = "tsmishows_posters_q90"
+Me.tsmishows_posters_q90.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_posters_q90.Text = "90% Quality"
+'
+'tsmishows_posters_q95
+'
+Me.tsmishows_posters_q95.Name = "tsmishows_posters_q95"
+Me.tsmishows_posters_q95.Size = New System.Drawing.Size(132, 22)
+Me.tsmishows_posters_q95.Text = "95% Quality"
+'
+'ToolStripSeparator22
+'
+Me.ToolStripSeparator22.Name = "ToolStripSeparator22"
+Me.ToolStripSeparator22.Size = New System.Drawing.Size(213, 6)
+'
+'tsl_shows_fanartsize
+'
+Me.tsl_shows_fanartsize.Name = "tsl_shows_fanartsize"
+Me.tsl_shows_fanartsize.Size = New System.Drawing.Size(0, 29)
+'
 'kpEpisodeData
 '
 Me.kpEpisodeData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
@@ -8816,7 +8981,7 @@ Me.kpEpisodeData.Margin = New System.Windows.Forms.Padding(0)
 Me.kpEpisodeData.MinimumSize = New System.Drawing.Size(350, 40)
 Me.kpEpisodeData.Name = "kpEpisodeData"
 Me.kpEpisodeData.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient
-Me.kpEpisodeData.Size = New System.Drawing.Size(350, 659)
+Me.kpEpisodeData.Size = New System.Drawing.Size(350, 688)
 Me.kpEpisodeData.TabIndex = 111
 Me.kpEpisodeData.Visible = false
 '
@@ -8829,14 +8994,14 @@ Me.khbEpisodeThumbGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palett
 Me.khbEpisodeThumbGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khbEpisodeThumbGroup.HeaderVisibleSecondary = false
-Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 412)
+Me.khbEpisodeThumbGroup.Location = New System.Drawing.Point(0, 253)
 Me.khbEpisodeThumbGroup.Name = "khbEpisodeThumbGroup"
 '
 'khbEpisodeThumbGroup.Panel
 '
 Me.khbEpisodeThumbGroup.Panel.Controls.Add(Me.pbep_episodeimage)
 Me.khbEpisodeThumbGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 247)
+Me.khbEpisodeThumbGroup.Size = New System.Drawing.Size(350, 435)
 Me.khbEpisodeThumbGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8864,10 +9029,10 @@ Me.ButtonSpecHeaderGroup2.UniqueName = "4A14906157B94C7D4A14906157B94C7D"
 Me.pbep_episodeimage.BackColor = System.Drawing.Color.Transparent
 Me.pbep_episodeimage.Location = New System.Drawing.Point(0, 2)
 Me.pbep_episodeimage.Margin = New System.Windows.Forms.Padding(0)
-Me.pbep_episodeimage.MaximumSize = New System.Drawing.Size(512, 0)
+Me.pbep_episodeimage.MaximumSize = New System.Drawing.Size(512, 512)
 Me.pbep_episodeimage.MinimumSize = New System.Drawing.Size(256, 212)
 Me.pbep_episodeimage.Name = "pbep_episodeimage"
-Me.pbep_episodeimage.Size = New System.Drawing.Size(348, 212)
+Me.pbep_episodeimage.Size = New System.Drawing.Size(348, 400)
 Me.pbep_episodeimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
 Me.pbep_episodeimage.TabIndex = 0
 Me.pbep_episodeimage.TabStop = false
@@ -8903,7 +9068,7 @@ Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_creditslbl)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.ktbep_director)
 Me.khgEpisodeNameGroup.Panel.Controls.Add(Me.klblep_directorlbl)
 Me.khgEpisodeNameGroup.Panel.Padding = New System.Windows.Forms.Padding(5, 5, 5, 0)
-Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 412)
+Me.khgEpisodeNameGroup.Size = New System.Drawing.Size(350, 253)
 Me.khgEpisodeNameGroup.StateCommon.Border.DrawBorders = CType((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left)  _
             Or ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right),ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)
@@ -8941,7 +9106,7 @@ Me.ButtonSpecHeaderGroup3.ExtraText = ""
 Me.ButtonSpecHeaderGroup3.Image = Nothing
 Me.ButtonSpecHeaderGroup3.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Cluster
 Me.ButtonSpecHeaderGroup3.Text = ""
-Me.ButtonSpecHeaderGroup3.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowUp
+Me.ButtonSpecHeaderGroup3.Type = ComponentFactory.Krypton.Toolkit.PaletteButtonSpecStyle.ArrowDown
 Me.ButtonSpecHeaderGroup3.UniqueName = "3F21FD013FD447823F21FD013FD44782"
 '
 'lblktbep_epRating
@@ -8978,7 +9143,7 @@ Me.zpanel1.Location = New System.Drawing.Point(2, 136)
 Me.zpanel1.MinimumSize = New System.Drawing.Size(344, 60)
 Me.zpanel1.Name = "zpanel1"
 Me.zpanel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
-Me.zpanel1.Size = New System.Drawing.Size(344, 234)
+Me.zpanel1.Size = New System.Drawing.Size(344, 75)
 Me.zpanel1.TabIndex = 116
 '
 'khgEpisodePlotDetails
@@ -8991,7 +9156,7 @@ Me.khgEpisodePlotDetails.GroupBackStyle = ComponentFactory.Krypton.Toolkit.Palet
 Me.khgEpisodePlotDetails.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderStyleSecondary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
 Me.khgEpisodePlotDetails.HeaderVisibleSecondary = false
-Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 203)
+Me.khgEpisodePlotDetails.Location = New System.Drawing.Point(0, 44)
 Me.khgEpisodePlotDetails.Margin = New System.Windows.Forms.Padding(0)
 Me.khgEpisodePlotDetails.MinimumSize = New System.Drawing.Size(274, 0)
 Me.khgEpisodePlotDetails.Name = "khgEpisodePlotDetails"
@@ -9035,6 +9200,7 @@ Me.krtbep_Overview.TabIndex = 5
 '
 Me.khbTVShowEPMediaGroup.AutoSize = true
 Me.khbTVShowEPMediaGroup.ButtonSpecs.AddRange(New ComponentFactory.Krypton.Toolkit.ButtonSpecHeaderGroup() {Me.bshgShowsEpisodeMediaRefresh, Me.buttonSpecHeaderGroupTVShow})
+Me.khbTVShowEPMediaGroup.Collapsed = true
 Me.khbTVShowEPMediaGroup.Dock = System.Windows.Forms.DockStyle.Top
 Me.khbTVShowEPMediaGroup.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
 Me.khbTVShowEPMediaGroup.HeaderStylePrimary = ComponentFactory.Krypton.Toolkit.HeaderStyle.Custom1
@@ -9048,7 +9214,7 @@ Me.khbTVShowEPMediaGroup.Name = "khbTVShowEPMediaGroup"
 '
 Me.khbTVShowEPMediaGroup.Panel.Controls.Add(Me.kpTvEpMediaInfo)
 Me.khbTVShowEPMediaGroup.Panel.Padding = New System.Windows.Forms.Padding(2)
-Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(344, 203)
+Me.khbTVShowEPMediaGroup.Size = New System.Drawing.Size(344, 44)
 Me.khbTVShowEPMediaGroup.TabIndex = 114
 Me.khbTVShowEPMediaGroup.Text = "Episode Media Information"
 Me.khbTVShowEPMediaGroup.ValuesPrimary.Description = ""
@@ -16414,6 +16580,18 @@ Me.kgMyMovieInfoPicker.Panel.Controls.Add(Me.rbMDwithIssues)
 Me.kgMyMovieInfoPicker.Size = New System.Drawing.Size(187, 148)
 Me.kgMyMovieInfoPicker.TabIndex = 79
 '
+'rbMDNoMediaImages
+'
+Me.rbMDNoMediaImages.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
+Me.rbMDNoMediaImages.Location = New System.Drawing.Point(-1, 118)
+Me.rbMDNoMediaImages.Name = "rbMDNoMediaImages"
+Me.rbMDNoMediaImages.Size = New System.Drawing.Size(150, 21)
+Me.rbMDNoMediaImages.TabIndex = 6
+Me.rbMDNoMediaImages.Text = "Missing Media Images"
+Me.rbMDNoMediaImages.Values.ExtraText = ""
+Me.rbMDNoMediaImages.Values.Image = Nothing
+Me.rbMDNoMediaImages.Values.Text = "Missing Media Images"
+'
 'kgMyMovieList
 '
 Me.kgMyMovieList.Dock = System.Windows.Forms.DockStyle.Fill
@@ -21778,18 +21956,6 @@ Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
 'bwOfdbUpdate
 '
 '
-'rbMDNoMediaImages
-'
-Me.rbMDNoMediaImages.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.rbMDNoMediaImages.Location = New System.Drawing.Point(-1, 118)
-Me.rbMDNoMediaImages.Name = "rbMDNoMediaImages"
-Me.rbMDNoMediaImages.Size = New System.Drawing.Size(150, 21)
-Me.rbMDNoMediaImages.TabIndex = 6
-Me.rbMDNoMediaImages.Text = "Missing Media Images"
-Me.rbMDNoMediaImages.Values.ExtraText = ""
-Me.rbMDNoMediaImages.Values.Image = Nothing
-Me.rbMDNoMediaImages.Values.Text = "Missing Media Images"
-'
 'maincollection
 '
 Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -22188,6 +22354,7 @@ CType(Me.khgShowsMI,System.ComponentModel.ISupportInitialize).EndInit
 Me.khgShowsMI.ResumeLayout(false)
 CType(Me.kgTvShowsCurImage.Panel,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgTvShowsCurImage.Panel.ResumeLayout(false)
+Me.kgTvShowsCurImage.Panel.PerformLayout
 CType(Me.kgTvShowsCurImage,System.ComponentModel.ISupportInitialize).EndInit
 Me.kgTvShowsCurImage.ResumeLayout(false)
 CType(Me.pbTVSeasonPoster,System.ComponentModel.ISupportInitialize).EndInit
@@ -24173,4 +24340,27 @@ End Sub
     Friend WithEvents tsmimovie_GetOFDBMovieDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents bwOfdbUpdate As System.ComponentModel.BackgroundWorker
     Friend WithEvents rbMDNoMediaImages As ComponentFactory.Krypton.Toolkit.KryptonRadioButton
+    Friend WithEvents ResizeShowImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r320x480 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r360x540 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r384x576 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r480x720 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r720x1080 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r800x1200 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_poster_r1000x1500 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CompressShowImageToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator21 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents ToolStripSeparator20 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsmishows_currentImageToModify As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_posters_q60 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_posters_q70 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_posters_q80 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_posters_q90 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_posters_q95 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator22 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsmishows_currentImageToModifyFileSize As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_currentBackgroundToModify As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_currentBackgroundToModifyFileSize As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents klblImageshow_currentimage As ComponentFactory.Krypton.Toolkit.KryptonLabel
+    Friend WithEvents tsl_shows_fanartsize As System.Windows.Forms.ToolStripLabel
 End Class
