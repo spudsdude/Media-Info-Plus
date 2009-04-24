@@ -2244,11 +2244,11 @@ Public Class maincollection
                     currentmovie.pstudio = tempmov.pstudio
                     currentmovie.pstudioreal = tempmov.pstudio
                     currentmovie.pcredits = tempmov.pcredits
-                    'If rconf.pcbmovie_use_certification_for_mpaa Then
-                    '    currentmovie.pmpaa = tempmov.certification
-                    'Else
-                    '    currentmovie.pmpaa = tempmov.pmpaa
-                    'End If
+                    If rconf.pcbmovie_use_certification_for_mpaa Then
+                        currentmovie.pmpaa = tempmov.certification
+                    Else
+                        currentmovie.pmpaa = tempmov.pmpaareal
+                    End If
                 Catch ex As Exception
                     MsgBox("Couldn't readup cache for movie: " & ex.ToString)
                 End Try
@@ -25737,20 +25737,20 @@ Public Class maincollection
             'krtbTVShowMediaInfo.Text = xbmccurep.fileinfo.objtostring(xbmccurep.fileinfo)
         End If
 
-        Dim dimension As String = ""
-        Dim filename As String = ""
-        Dim bmpImage As System.Drawing.Image
-        bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
-        filename = getfilefrompath(curtvshowiconsetting)
-        dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
-        bmpImage.Dispose()
-        tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
-        tsmishows_currentImageToModify.Text = filename '& " : " & getFileSize(curtvshowiconsetting)
-        'khbEpisodeThumbGroup.'klblImageshow_currentimage.Text = filename & "  " & dimension  & " : " & getFileSize(curtvshowiconsetting)
-        lbl_ep_thumbnail_info.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
-
-        'fixme here 
-
+        If File.Exists(curtvshowiconsetting) Then
+            Dim dimension As String = ""
+            Dim filename As String = ""
+            Dim bmpImage As System.Drawing.Image
+            bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+            filename = getfilefrompath(curtvshowiconsetting)
+            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+            bmpImage.Dispose()
+            tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+            tsmishows_currentImageToModify.Text = filename '& " : " & getFileSize(curtvshowiconsetting)
+            'khbEpisodeThumbGroup.'klblImageshow_currentimage.Text = filename & "  " & dimension  & " : " & getFileSize(curtvshowiconsetting)
+            lbl_ep_thumbnail_info.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+        End If
+        
         ''see it it's a mutlipart ep
         'If gvcurrenttvepisode.mutlipart Then
         '    ktbep_aired.Text = gvcurrenttvepisode.FirstAired
@@ -32873,6 +32873,7 @@ Public Class maincollection
                     currentmovie.pstudioreal = tempmov.pstudio
                     currentmovie.pcredits = tempmov.pcredits
                     currentmovie.pmpaa = tempmov.pmpaa
+                    currentmovie.pmpaareal = tempmov.pmpaareal
                     currentmovie.certification = tempmov.certification
                     'If rconf.pcbmovie_use_certification_for_mpaa Then
                     '    currentmovie.pmpaa = tempmov.certification
@@ -33172,6 +33173,19 @@ Public Class maincollection
         End With
     End Sub
 
+    Private Sub lblMovieInfoMpaa_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblMovieInfoMpaa.Click
+        If Not currentmovie Is Nothing Then
+            Dim strDetail As String = ""
+            strDetail += vbNewLine
+            strDetail += "MPAA: " & currentmovie.pmpaa
+            strDetail += vbNewLine
+            strDetail += "MPAAREAL: " & currentmovie.pmpaareal
+            strDetail += vbNewLine
+            strDetail += "Certification: " & currentmovie.certification
+            MsgBox(strDetail)
+        End If
+    End Sub
+
   
 End Class
 <Serializable()> Public Class posters
@@ -33420,7 +33434,7 @@ Public Class IMDB
     'Dim actorsarray As New ArrayList
     Dim vActor As New movieinfoplus.mip.mov.Actor
     Private p_element_actor As New List(Of Actor)
-    Private vtmdbid, vstudio, vstudioreal, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
+    Private vtmdbid, vstudio, vstudioreal, vtitle, voriginaltitle, vrating, vyear, vtop250, vvotes, voutline, vplot, vtagline, vruntime, vthumb, vmpaa, vmpaareal, vplaycount, vwatched, vid, vfilenameandpath, vtrailer, vgenre, vcredits, vdirector, vcertification As String
 #Region "---- IMDB Class Properties ---"
     Public Property tmdbid() As String
         Get
@@ -33548,6 +33562,14 @@ Public Class IMDB
         End Get
         Set(ByVal value As String)
             vmpaa = value
+        End Set
+    End Property
+    Public Property mpaareal() As String
+        Get
+            Return vmpaareal
+        End Get
+        Set(ByVal value As String)
+            vmpaareal = value
         End Set
     End Property
     Public Property playcount() As String
@@ -34325,6 +34347,7 @@ Public Property [Actors]() As List(Of Actor)
         Me.genre = tmovie2.pgenre '= "" Else tmovie2.pgenre = Me.genre
         Me.id = tmovie2.pimdbnumber '= "" Else tmovie2.pimdbnumber = Me.id
         Me.mpaa = tmovie2.pmpaa '= "" Else tmovie2.pmpaa = Me.mpaa
+        Me.mpaareal = tmovie2.pmpaareal
         Me.certification = tmovie2.certification
         Me.outline = tmovie2.pplotoutline '= "" Else tmovie2.pplotoutline = Me.outline
         Me.plot = tmovie2.pplot '= "" Else tmovie2.pplot = Me.plot
@@ -34388,7 +34411,7 @@ Public Property [Actors]() As List(Of Actor)
         'tmovie2.filenameandpath = Me.filenameandpath
         If Me.genre = Nothing Then tmovie2.pgenre = "" Else tmovie2.pgenre = Me.genre
         If Me.id = Nothing Then tmovie2.pimdbnumber = "" Else tmovie2.pimdbnumber = Me.id
-        If Me.mpaa = Nothing Then tmovie2.pmpaa = "" Else tmovie2.pmpaa = Me.mpaa
+        'If Me.mpaa = Nothing Then tmovie2.pmpaa = "" Else tmovie2.pmpaa = Me.mpaa
         If Me.outline = Nothing Then tmovie2.pplotoutline = "" Else tmovie2.pplotoutline = cleanimdbdata(Me.outline)
         If Me.plot = Nothing Then tmovie2.pplot = "" Else tmovie2.pplot = cleanimdbdata(Me.plot)
         If Me.rating = Nothing Then tmovie2.prating = "" Else tmovie2.prating = Me.rating
@@ -34408,6 +34431,18 @@ Public Property [Actors]() As List(Of Actor)
         If Me.top250 = Nothing Then tmovie2.ptop250 = "" Else tmovie2.ptop250 = Me.top250
         If Me.trailer = Nothing Then tmovie2.ptrailer = "" Else tmovie2.ptrailer = Me.trailer
         'If Me.title = Nothing Then tmovie2.pmoviename = "" Else tmovie2.pmoviename = Me.title
+        tmovie2.pmpaa = Me.mpaa
+        If Me.mpaareal Is Nothing Then
+            If Not Me.mpaa = Nothing Then
+                Me.mpaareal = Me.mpaa
+            End If
+        End If
+        If Me.mpaareal = "" And Not Me.mpaa = "" Then
+            tmovie2.pmpaareal = Me.mpaa
+        Else
+            tmovie2.pmpaareal = Me.mpaareal
+        End If
+
         tmovie2.pstudio = Me.studio
         If Me.studioreal Is Nothing Then
             If Not Me.studio = Nothing Then
@@ -34503,6 +34538,7 @@ Public Class movie
     Private runtime As String
     Private thumb As String
     Private mpaa As String
+    Private mpaareal As String
     Private watched As String
     Private imdbnumber As String
     Private filenameandpath As String
@@ -34856,6 +34892,14 @@ Public Property [Actors]() As List(Of Actor)
             mpaa = value
         End Set
     End Property
+    Public Property pmpaareal() As String
+        Get
+            Return mpaareal
+        End Get
+        Set(ByVal value As String)
+            mpaareal = value
+        End Set
+    End Property
     Property preservedmoviename() As String
         Get
             Return Me.reservedmoviename
@@ -35149,6 +35193,7 @@ Public Property [Actors]() As List(Of Actor)
         End While
 
         nm.Mpaa = tmovie.pmpaa
+        nm.Mpaareal = tmovie.pmpaareal
         'If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
         '    nm.Mpaa = tmovie.certification
         'End If

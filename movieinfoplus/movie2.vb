@@ -22,6 +22,7 @@ Namespace mip.mov
         Private p_element_thumb As System.String
         Private p_element_fanart As New Fanart
         Private p_element_mpaa As System.String
+        Private p_element_mpaareal As System.String
         Private p_element_playcount As System.String
         Private p_element_file As System.String
         Private p_element_path As System.String
@@ -184,6 +185,16 @@ Namespace mip.mov
             End Set
         End Property
 
+        ' String mpaa element.
+        <XmlElement("mpaareal")> _
+        Public Property [Mpaareal]() As System.String
+            Get
+                Return Me.p_element_mpaareal
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_mpaareal = Value
+            End Set
+        End Property
         ' String mpaa element.
         <XmlElement("certification")> _
         Public Property [Certification]() As System.String

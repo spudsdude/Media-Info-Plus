@@ -63,7 +63,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\..\..\..\..\..\Program Files\movieinfoplus\</OutputPath>
+    <OutputPath>C:\Program Files\movieinfoplus\</OutputPath>
     <DocumentationFile>mediainfoplus.xml</DocumentationFile>
     <NoWarn>
     </NoWarn>
@@ -71,7 +71,10 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.10.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL" />
+    <Reference Include="ComponentFactory.Krypton.Toolkit, Version=3.0.10.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\movieinfoplus\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="miplibfc, Version=2.0.1.2862, Culture=neutral, PublicKeyToken=8be0b0a92da598ee, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\miplibfc.dll</HintPath>
