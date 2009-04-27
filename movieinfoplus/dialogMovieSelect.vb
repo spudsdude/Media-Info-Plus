@@ -84,10 +84,14 @@ Public Class dialogMovieSelect
             If bwloadimage.CancellationPending Then Exit Sub
             pbPreviewImage.ImageLocation = curdlobj.URL
             If bwloadimage.CancellationPending Then Exit Sub
-            pbPreviewImage.Load()
+            Try
+                pbPreviewImage.Load()
+            Catch ex As Exception
+                pbPreviewImage.ImageLocation = Nothing
+                pbPreviewImage.Image = Nothing
+            End Try
         Else
-            pbPreviewImage.ImageLocation = Nothing
-            pbPreviewImage.Image = Nothing
+            'fixme: fix dloobj incorrect parse, example short circuit 1986
         End If
     End Sub
     Public Sub displayshowdata(ByVal tid As String)
@@ -186,4 +190,6 @@ Public Class dialogMovieSelect
         pbPreviewImage.Image = Nothing
         pbPreviewImage.ImageLocation = Nothing
     End Sub
+
+    
 End Class

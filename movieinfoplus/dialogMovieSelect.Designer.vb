@@ -62,7 +62,7 @@ Partial Class dialogMovieSelect
         Me.lblpbarLoadingInfo = New ComponentFactory.Krypton.Toolkit.KryptonLabel
         Me.pbPreviewImage = New System.Windows.Forms.PictureBox
         Me.pbarLoadingInfo = New System.Windows.Forms.ProgressBar
-        Me.KryptonGroup4 = New ComponentFactory.Krypton.Toolkit.KryptonGroup
+        Me.kgMainMovieCorrection = New ComponentFactory.Krypton.Toolkit.KryptonGroup
         Me.btnCancelLoad = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.btnCancel = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.btnOK = New ComponentFactory.Krypton.Toolkit.KryptonButton
@@ -84,10 +84,10 @@ Partial Class dialogMovieSelect
         Me.kgImage.Panel.SuspendLayout()
         Me.kgImage.SuspendLayout()
         CType(Me.pbPreviewImage, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KryptonGroup4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.KryptonGroup4.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.KryptonGroup4.Panel.SuspendLayout()
-        Me.KryptonGroup4.SuspendLayout()
+        CType(Me.kgMainMovieCorrection, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kgMainMovieCorrection.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.kgMainMovieCorrection.Panel.SuspendLayout()
+        Me.kgMainMovieCorrection.SuspendLayout()
         Me.SuspendLayout()
         '
         'kgPickCorrectShow
@@ -626,25 +626,25 @@ Partial Class dialogMovieSelect
         Me.pbarLoadingInfo.TabIndex = 1
         Me.pbarLoadingInfo.Visible = False
         '
-        'KryptonGroup4
+        'kgMainMovieCorrection
         '
-        Me.KryptonGroup4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.KryptonGroup4.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
-        Me.KryptonGroup4.Location = New System.Drawing.Point(0, 0)
-        Me.KryptonGroup4.Name = "KryptonGroup4"
+        Me.kgMainMovieCorrection.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.kgMainMovieCorrection.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
+        Me.kgMainMovieCorrection.Location = New System.Drawing.Point(0, 0)
+        Me.kgMainMovieCorrection.Name = "kgMainMovieCorrection"
         '
-        'KryptonGroup4.Panel
+        'kgMainMovieCorrection.Panel
         '
-        Me.KryptonGroup4.Panel.Controls.Add(Me.btnCancelLoad)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.pbarLoadingInfo)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.btnCancel)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.btnOK)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.kgImage)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.kgMovieInfo)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.kgPickCorrectShow)
-        Me.KryptonGroup4.Panel.Controls.Add(Me.KryptonGroup2)
-        Me.KryptonGroup4.Size = New System.Drawing.Size(914, 551)
-        Me.KryptonGroup4.TabIndex = 38
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.btnCancelLoad)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.pbarLoadingInfo)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.btnCancel)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.btnOK)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.kgImage)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.kgMovieInfo)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.kgPickCorrectShow)
+        Me.kgMainMovieCorrection.Panel.Controls.Add(Me.KryptonGroup2)
+        Me.kgMainMovieCorrection.Size = New System.Drawing.Size(914, 551)
+        Me.kgMainMovieCorrection.TabIndex = 38
         '
         'btnCancelLoad
         '
@@ -698,7 +698,7 @@ Partial Class dialogMovieSelect
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(914, 551)
-        Me.Controls.Add(Me.KryptonGroup4)
+        Me.Controls.Add(Me.kgMainMovieCorrection)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -728,10 +728,10 @@ Partial Class dialogMovieSelect
         CType(Me.kgImage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgImage.ResumeLayout(False)
         CType(Me.pbPreviewImage, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.KryptonGroup4.Panel, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.KryptonGroup4.Panel.ResumeLayout(False)
-        CType(Me.KryptonGroup4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.KryptonGroup4.ResumeLayout(False)
+        CType(Me.kgMainMovieCorrection.Panel, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgMainMovieCorrection.Panel.ResumeLayout(False)
+        CType(Me.kgMainMovieCorrection, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.kgMainMovieCorrection.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -772,7 +772,7 @@ Partial Class dialogMovieSelect
     Friend WithEvents Label18 As ComponentFactory.Krypton.Toolkit.KryptonLabel
     Friend WithEvents kgImage As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents rtbplot As ComponentFactory.Krypton.Toolkit.KryptonRichTextBox
-    Friend WithEvents KryptonGroup4 As ComponentFactory.Krypton.Toolkit.KryptonGroup
+    Friend WithEvents kgMainMovieCorrection As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents btnCancel As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents btnOK As ComponentFactory.Krypton.Toolkit.KryptonButton
     Friend WithEvents pbPreviewImage As System.Windows.Forms.PictureBox

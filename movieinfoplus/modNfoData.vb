@@ -558,9 +558,20 @@ Module modNfoData
 
     Public Function getimdbidsearch(ByVal pmname As String, Optional ByVal tolower As Boolean = True) As String
         Try
+            Dim strResult As String = ""
+            Try
+                Dim robjYearStrip As New Regex(" (\d{4})")
+                strResult = robjYearStrip.Replace(pmname, "")
+            Catch ex As ArgumentException
+                'Syntax error in the regular expression
+            End Try
+            If Not strResult = "" Then
+                pmname = strResult
+            End If
+
             pmname = Strings.Replace(pmname, "&", "&amp;")
             'http://akas.imdb.com/find?s=tt&q=300&x=5&y=2
-            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=tt&q=" + searchencode(pmname) + "&x=0&y=0"
+            Dim baseurlsiid As String = "http://akas.imdb.com/find?s=tt&q=" + urlencode(pmname) + "&x=0&y=0"
             'Dim foundimdbid, retid, retyr As String
             Dim s As String
             'openpagedata
@@ -584,11 +595,142 @@ Module modNfoData
             Return "NO DATA"
         End Try
     End Function
+    Public Sub findsimilarbynameonimdb(ByVal searchname As String, ByRef curlistbox As ListBox)
+        Dim v1tstringofimdbpage As String = ""
+        v1tstringofimdbpage = getimdbidsearch(searchname, False)
+        Dim lookupname As String = searchname '.ToLower
+        lookupname = Strings.Replace(lookupname, "(", "")
+        lookupname = Strings.Replace(lookupname, ")", "")
+        'Dim strResult As String = ""
+        'Try
+        '    Dim robjYearStrip As New Regex(" (\d{4})")
+        '    strResult = robjYearStrip.Replace(lookupname, "")
+        'Catch ex As ArgumentException
+        '    'Syntax error in the regular expression
+        'End Try
+        'If Not strResult = "" Then
+        '    lookupname = strResult
+        'End If
 
+        Dim retid As String = ""
+        Try
+            retid = Regex.Match(v1tstringofimdbpage, "/(?<imdbid1>tt\d{5,9})/").Groups(1).Value
+            'If Not retid = "" Then Return retid
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+        Dim multimode As Boolean = False
+        Dim imdbidlist As New ArrayList
+        Try
+            Dim RegexObj As New Regex("(tt\d{6,7})(?:/';"">){1}(.{1,255})</a>.\((\d{4})")
+            Dim MatchResults As Match = RegexObj.Match(v1tstringofimdbpage)
+            While MatchResults.Success
+                multimode = True
+                Dim nid As New maincollection.imdbsearch
+                nid.id = MatchResults.Groups(1).Value.ToString
+                nid.name = cleanimdbdata(MatchResults.Groups(2).Value.ToString)
+                nid.year = MatchResults.Groups(3).Value.ToString
+                imdbidlist.Add(nid)
+                MatchResults = MatchResults.NextMatch()
+            End While
+        Catch ex As ArgumentException
+            'Syntax error in the regular expression
+        End Try
+
+        'If Not multimode Then Return retid 'return single id if only one was located
+        Dim dtIDA As New DataTable
+        dtIDA.Columns.Add("Path", GetType(System.String))
+        dtIDA.Columns.Add("Name")
+        dtIDA.Columns.Add("Index")
+        'dtIDA.Columns.Add("objShow")
+        Dim thashtable As New Hashtable
+        Dim cutcmIndex As Integer = 0
+        Try 'jivefix 2nd round
+            For Each tcmitem As maincollection.imdbsearch In imdbidlist 'update path info for real code
+                Try
+                    thashtable.Add(tcmitem.id, tcmitem)
+                    dtIDA.LoadDataRow(New Object() {"", tcmitem.name & " (" & tcmitem.year & ")", tcmitem.id}, True)
+                Catch ex As Exception
+                    Debug.Print("duplicate: " & tcmitem.id)
+                End Try
+                cutcmIndex += 1
+            Next
+        Catch exTarray As Exception
+            Debug.Print("exTarray failed" + vbNewLine + exTarray.ToString)
+        End Try
+        dialogTvShowSelect.dhashtable = thashtable
+        dtIDA.DefaultView.Sort = "Name"
+        curlistbox.DataSource = dtIDA.DefaultView
+        curlistbox.ValueMember = "Index"
+        curlistbox.DisplayMember = "Name"
+        'dialogMovieSelect.displayshowdata()
+        'dialogMovieSelect.klblCurMovie.Text = "Name: " + pmname
+        'dialogMovieSelect.klblCurMoviePath.Text = "Location on drive: " + addfiletofolder(tmovie.getmoviepath, tmovie.preservedmoviename)
+        'dialogMovieSelect.Refresh()
+        'dialogMovieSelect.ShowDialog()
+        'If dialogMovieSelect.DialogResult = System.Windows.Forms.DialogResult.Cancel Then
+        'MsgBox("Cancel Selected, the first id (if one was found) will be used.")
+        ' If Not retid = "" Then Return retid
+        'Else
+        'retid = CStr(dialogMovieSelect.klbPickTheMovie.SelectedValue)
+        'retid = Strings.Trim(retid)
+        'Return retid
+        'End If
+
+        'Debug.Print(selectedshow)
+        'dialogTvShowSelect.Dispose()
+        'If dbgTVShows Then dlgTVShowCurStatus.Show()
+        '        Else
+        'Dim tvbdseries1 As New thetvdb.TvSeries
+        'tvbdseries1 = CType(tarray.Item(0), TvSeries)
+        'selectedshow = tvbdseries1.seriesid
+        'selectedshow = Strings.Replace(selectedshow, " ", "")
+        '        End If
+        '    End If
+        'now that we have the showid, use the api to get the data
+
+
+        'skipping other 2 methods as this one is more generic, may result in more bogus results
+        'Return retid
+    End Sub
+    Public Sub ofdbtoallinlist()
+        'Dim total As Integer = maincollection.lbMyMovies.Items.Count
+        'Dim cou As Integer = 0
+        ''If lbMyMovies.SelectedIndex = -1 Then
+        ''    lbMyMovies.SelectedIndex = 0
+        ''End If
+        'maincollection.autopilotrunning = True
+        'maincollection.kscMain.Enabled = False
+        'maincollection.lbMyMovies.SelectedIndex = 0
+        'While cou <= total
+        '    If Not cou >= total Then
+        '        maincollection.lbMyMovies.SelectedIndex = cou
+        '        set_movie_details_from_ofdb(maincollection.currentmovie)
+        '        maincollection.saveNfoFromGuiText(False, True)
+        '        'maincollection.kscMain.Enabled = False
+        '    End If
+        '    cou += 1
+        'End While
+        'maincollection.autopilotrunning = False
+        'maincollection.kscMain.Enabled = True
+        ''reload all movie data
+        '' maincollection.bwloadfolderdata_TDM()
+    End Sub
     Public Function snagimdbid_dlg(ByVal pmname As String, ByRef tmovie As movie, ByRef v1tstringofimdbpage As String) As String
         Dim lookupname As String = pmname '.ToLower
         lookupname = Strings.Replace(lookupname, "(", "")
         lookupname = Strings.Replace(lookupname, ")", "")
+        'Dim strResult As String = ""
+        'Try
+        '    Dim robjYearStrip As New Regex(" (\d{4})")
+        '    strResult = robjYearStrip.Replace(lookupname, "")
+        'Catch ex As ArgumentException
+        '    'Syntax error in the regular expression
+        'End Try
+        'If Not strResult = "" Then
+        '    lookupname = strResult
+        'End If
+
         Dim retid As String = ""
         Try
             retid = Regex.Match(v1tstringofimdbpage, "/(?<imdbid1>tt\d{5,9})/").Groups(1).Value

@@ -719,6 +719,8 @@ Public Class maincollection
     End Sub
 
     Public Sub findsimilar()
+        lbsimnames.DataSource = Nothing
+
         Dim cleanercount As Integer = lbsimnames.Items.Count
         Dim counter As Integer = 0
         While counter < cleanercount And Not cleanercount = 0
@@ -736,49 +738,57 @@ Public Class maincollection
         Dim Path As String = tmovie.getmoviepath
         'pbCurIconUsed.ImageLocation = Path + "\folder.jpg"
         Dim selectedName As String = tmovie.getmoviename
-        curname = selectedName
+
+        curname = tbnewname.Text 'selectedName
         searchname = cleanname(curname).ToLower
         searchname = Strings.Replace(searchname, ",", "")
         searchname = Strings.Replace(searchname, ".", "")
         searchname = Strings.Replace(searchname, "!", "")
         searchname = Strings.Replace(searchname, "and", "")
         searchname = Strings.Replace(searchname, "the", "")
-        searchname = Strings.Replace(searchname, "-", "")
-        searchname = Strings.Left(searchname, 5)
-        Dim pathlength As Integer = rconf.xmlfolderposters.Length '(fixme) this might break the check
-        Dim mainarray As ArrayList = getFiles(rconf.xmlfolderposters)
-        ' Dim arrayfound As New ArrayList
-        'Dim arrayshortnamefound As New ArrayList
+        'searchname = Strings.Replace(searchname, "-", "")
+        searchname = Strings.Left(searchname, 15)
 
-        For Each maitems In mainarray
-            Try
-                Dim RegexObj3 As New Regex("(?<searchedname>" + searchname + ")", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
-                Dim MatchResults As Match = RegexObj3.Match(maitems.ToString)
-                While MatchResults.Success
-                    Dim i As Integer
-                    For i = 1 To MatchResults.Groups.Count
-                        Dim GroupObj As Group = MatchResults.Groups(i)
-                        If GroupObj.Success Then
-                            'MsgBox(GroupObj.ToString)
-                            'MsgBox(items.ToString)
-                            Dim tempstr As String = maitems.ToString
-                            'arrayfound.Add(tempstr)
-                            Dim tempstrlength As Integer = tempstr.Length
-                            Dim difflength As Integer = tempstrlength - pathlength
-                            tempstr = Strings.Left(maitems.ToString, tempstrlength - 4)
-                            tempstr = Strings.Right(tempstr, difflength - 4)
-                            'arrayshortnamefound.Add(tempstr)
-                            lbsimnames.Items.Add(tempstr)
-                        End If
-                    Next
-                    MatchResults = MatchResults.NextMatch()
-                End While
-            Catch ex As Exception
 
-            End Try
-        Next
+        'now search imdb for that and return the list 
+        findsimilarbynameonimdb(searchname, lbsimnames2)
 
-        lblPbar.Visible = False
+
+
+        'Dim pathlength As Integer = rconf.xmlfolderposters.Length '(fixme) this might break the check
+        'Dim mainarray As ArrayList = getFiles(rconf.xmlfolderposters)
+        '' Dim arrayfound As New ArrayList
+        ''Dim arrayshortnamefound As New ArrayList
+
+        'For Each maitems In mainarray
+        '    Try
+        '        Dim RegexObj3 As New Regex("(?<searchedname>" + searchname + ")", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+        '        Dim MatchResults As Match = RegexObj3.Match(maitems.ToString)
+        '        While MatchResults.Success
+        '            Dim i As Integer
+        '            For i = 1 To MatchResults.Groups.Count
+        '                Dim GroupObj As Group = MatchResults.Groups(i)
+        '                If GroupObj.Success Then
+        '                    'MsgBox(GroupObj.ToString)
+        '                    'MsgBox(items.ToString)
+        '                    Dim tempstr As String = maitems.ToString
+        '                    'arrayfound.Add(tempstr)
+        '                    Dim tempstrlength As Integer = tempstr.Length
+        '                    Dim difflength As Integer = tempstrlength - pathlength
+        '                    tempstr = Strings.Left(maitems.ToString, tempstrlength - 4)
+        '                    tempstr = Strings.Right(tempstr, difflength - 4)
+        '                    'arrayshortnamefound.Add(tempstr)
+        '                    lbsimnames.Items.Add(tempstr)
+        '                End If
+        '            Next
+        '            MatchResults = MatchResults.NextMatch()
+        '        End While
+        '    Catch ex As Exception
+
+        '    End Try
+        'Next
+
+        'lblPbar.Visible = False
 
 
 
@@ -2122,6 +2132,7 @@ Public Class maincollection
         bwAutopilot.WorkerSupportsCancellation = True
         bwAutopilot.RunWorkerAsync()
     End Sub
+
     Public Sub autopilotfromform(ByVal primary As String, ByVal secondary As String, ByVal posterTru As Boolean, ByVal fanartTru As Boolean, ByVal tbnTru As Boolean, ByVal nfoTru As Boolean, ByVal overwritenfoTru As Boolean, ByVal overwritefolderjpg As Boolean, ByVal mediaonly As Boolean, ByRef leavestudioalonedude As Boolean)
         'autopilotdialog.Dispose()
         'Me.Show()
@@ -14558,31 +14569,32 @@ Public Class maincollection
 
         'display dialog to choose which item we are saving, tbn or folder.jpg
         savetvfanartaswhat.ShowDialog()
-        If savetvfanartaswhat.rbSeason1.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 1-fanart.jpg")
-        If savetvfanartaswhat.rbSeason2.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 2-fanart.jpg")
-        If savetvfanartaswhat.rbSeason3.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 3-fanart.jpg")
-        If savetvfanartaswhat.rbSeason4.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 4-fanart.jpg")
-        If savetvfanartaswhat.rbSeason5.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 5-fanart.jpg")
-        If savetvfanartaswhat.rbSeason6.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 6-fanart.jpg")
-        If savetvfanartaswhat.rbSeason7.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 7-fanart.jpg")
-        If savetvfanartaswhat.rbSeason8.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 8-fanart.jpg")
-        If savetvfanartaswhat.rbSeason9.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 9-fanart.jpg")
-        If savetvfanartaswhat.rbSeason10.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 10-fanart.jpg")
-        If savetvfanartaswhat.rbSeason11.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 11-fanart.jpg")
-        If savetvfanartaswhat.rbSeason12.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 12-fanart.jpg")
-        If savetvfanartaswhat.rbSeason13.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 13-fanart.jpg")
-        If savetvfanartaswhat.rbSeason14.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 14-fanart.jpg")
-        If savetvfanartaswhat.rbSeason15.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 15-fanart.jpg")
-        If savetvfanartaswhat.rbSeason16.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 16-fanart.jpg")
-        If savetvfanartaswhat.rbSeason17.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 17-fanart.jpg")
-        If savetvfanartaswhat.rbSeason18.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 18-fanart.jpg")
-        If savetvfanartaswhat.rbSeason19.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 19-fanart.jpg")
-        If savetvfanartaswhat.rbSeason20.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 20-fanart.jpg")
-        If savetvfanartaswhat.rbSeason21.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 21-fanart.jpg")
-        If savetvfanartaswhat.rbSeason22.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 22-fanart.jpg")
-        If savetvfanartaswhat.rbSeason23.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 23-fanart.jpg")
-        If savetvfanartaswhat.rbSeason24.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 24-fanart.jpg")
-        
+        If savetvfanartaswhat.rbSeason1.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 1\fanart.jpg")
+        If savetvfanartaswhat.rbSeason2.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 2\fanart.jpg")
+        If savetvfanartaswhat.rbSeason3.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 3\fanart.jpg")
+        If savetvfanartaswhat.rbSeason4.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 4\fanart.jpg")
+        If savetvfanartaswhat.rbSeason5.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 5\fanart.jpg")
+        If savetvfanartaswhat.rbSeason6.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 6\fanart.jpg")
+        If savetvfanartaswhat.rbSeason7.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 7\fanart.jpg")
+        If savetvfanartaswhat.rbSeason8.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 8\fanart.jpg")
+        If savetvfanartaswhat.rbSeason9.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 9\fanart.jpg")
+        If savetvfanartaswhat.rbSeason10.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 10\fanart.jpg")
+        If savetvfanartaswhat.rbSeason11.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 11\fanart.jpg")
+        If savetvfanartaswhat.rbSeason12.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 12\fanart.jpg")
+        If savetvfanartaswhat.rbSeason13.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 13\fanart.jpg")
+        If savetvfanartaswhat.rbSeason14.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 14\fanart.jpg")
+        If savetvfanartaswhat.rbSeason15.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 15\fanart.jpg")
+        If savetvfanartaswhat.rbSeason16.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 16\fanart.jpg")
+        If savetvfanartaswhat.rbSeason17.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 17\fanart.jpg")
+        If savetvfanartaswhat.rbSeason18.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 18\fanart.jpg")
+        If savetvfanartaswhat.rbSeason19.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 19\fanart.jpg")
+        If savetvfanartaswhat.rbSeason20.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 20\fanart.jpg")
+        If savetvfanartaswhat.rbSeason21.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 21\fanart.jpg")
+        If savetvfanartaswhat.rbSeason22.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 22\fanart.jpg")
+        If savetvfanartaswhat.rbSeason23.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 23\fanart.jpg")
+        If savetvfanartaswhat.rbSeason24.Checked Then imagelocationandname = addfiletofolder(cmpath, "Season 24\fanart.jpg")
+        If Not Directory.Exists(getparentdirectory(imagelocationandname)) Then Directory.CreateDirectory(getparentdirectory(imagelocationandname))
+
         saveaswhaticontype.Dispose()
 
 
@@ -17339,7 +17351,7 @@ Public Class maincollection
         findsimilar()
     End Sub
     Private Sub lbsimnames_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lbsimnames.MouseDoubleClick
-        tbnewname.Text = lbsimnames.SelectedItem.ToString
+        tbnewname.Text = lbsimnames.SelectedValue.ToString
     End Sub
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
@@ -18439,7 +18451,7 @@ Public Class maincollection
         'save xml to imdbcache reguardless of gui setting to write nfo
         'Dim imdbinfo As New IMDB '//removed after 2231, not writing back to xml anymore, so this is not necessary, keeping for future options 
         'imdbinfo.movietoimdb(currentmovie)
-
+      
         'check tmdbid
         checktmdbid(currentmovie)
 
@@ -25373,7 +25385,7 @@ Public Class maincollection
 
         'display season fanart
         Dim curfanart As String = ""
-        curfanart = addfiletofolder(curtvshowpath, "Season " + curtvseason.seasonnumber + "-fanart.jpg")
+        curfanart = addfiletofolder(curtvshowpath, "Season " + curtvseason.seasonnumber + "\fanart.jpg")
         If File.Exists(curfanart) Then
             pbTVFanart.ImageLocation = curfanart
             Try
@@ -29500,16 +29512,17 @@ Public Class maincollection
                 File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
                 File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
             Catch ex As Exception
-                MsgBox(ex.ToString)
+                ' MsgBox(ex.ToString)
             End Try
             Try
                 Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
             Catch ex As Exception
-                MsgBox(ex.ToString)
+                'MsgBox(ex.ToString)
             End Try
         End If
         currentmovie.pdatafromnfo = False
         movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
+        currentmovie.ptmdbid = ""
         processdropdownitems()
     End Sub
 
@@ -32933,7 +32946,13 @@ Public Class maincollection
         kscMain.Enabled = True
         MsgBox("Media update completed!")
     End Sub
-    Private Sub updateofdbbw()
+    Public gvautoall As Boolean = False
+    Public Sub updateofdbbw(Optional ByVal autoall As Boolean = False)
+        If autoall Then
+            gvautoall = True
+        Else
+            gvautoall = False
+        End If
         prgThread.Visible = True
         prgThread.Style = ProgressBarStyle.Marquee
         lblPCWorking.Visible = True
@@ -33187,6 +33206,213 @@ Public Class maincollection
     End Sub
 
   
+    Private Sub tsmi_movies_GetOFDBForAllMoviesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ofdbtoallinlist()
+    End Sub
+
+    Private Sub lbsimnames2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles lbsimnames2.Click
+        Dim tid As String = CStr(lbsimnames2.SelectedValue)
+        prev_g_tid = tid
+        prev_getmovieinfo_bw()
+    End Sub
+    Public prev_dhashtable As New Hashtable
+    Private prev_g_tid As String
+    Private prev_g_curdispmovie As New movie
+    Private Sub prev_getmovieinfo_bw()
+        'If Me.messageprompts Then krtbTVShowMediaInfo.Text = "Reading TV Show Media Information"
+        pbarLoadingInfo.Visible = True
+        lblpbarLoadingInfo.Visible = True
+        btnCancelLoad.Enabled = True
+        btnCancelLoad.Visible = True
+        kgPickCorrectShow.Enabled = False
+        kgMovieInfo.Enabled = False
+        kgImage.Enabled = False
+        'btnCancel.Visible = False
+        btn_prev_selectnewmovieid_OK.Visible = False
+        Me.Refresh()
+        bw_loadmoviemediapreview = New System.ComponentModel.BackgroundWorker
+        bw_loadmoviemediapreview.WorkerReportsProgress = True
+        bw_loadmoviemediapreview.WorkerSupportsCancellation = True
+        bw_loadmoviemediapreview.RunWorkerAsync()
+    End Sub
+    Private Sub bwloadimage_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bw_loadmoviemediapreview.DoWork
+        displayshowdata(prev_g_tid)
+
+    End Sub
+    Private Sub bw_loadmoviemediapreview_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bw_loadmoviemediapreview.RunWorkerCompleted
+        pbarLoadingInfo.Visible = False
+        lblpbarLoadingInfo.Visible = False
+        btnCancelLoad.Enabled = False
+        btnCancelLoad.Visible = False
+        prev_klboverview.Text = prev_g_curdispmovie.pplotoutline
+        kgPickCorrectShow.Enabled = True
+        kgMovieInfo.Enabled = True
+        kgImage.Enabled = True
+        ' btnCancel.Visible = True
+        btn_prev_selectnewmovieid_OK.Visible = True
+        'If Not curdispmovie.pimdbnumber Is Nothing Then klblImdbid.Text = curdispmovie.pimdbnumber
+        'Me.tbEditableTitle.Text = currentmovie.peditedmoviename
+        'Me.tbMovieName.Text = curdispmovie.getmoviename
+        'khgMovieNameGroup.ValuesPrimary.Heading = curdispmovie.getmoviename 'moviename to group box label area
+        'Me.tbMovieNameE.Text = curdispmovie.getmoviename
+        'Me.tbCredits.Text = curdispmovie.pcredits
+        Me.prev_tbDirector.Text = prev_g_curdispmovie.pdirector
+        Me.prev_tbGenre.Text = prev_g_curdispmovie.pgenre
+        Me.prev_tbIMDBID.Text = prev_g_curdispmovie.pimdbnumber
+        Me.prev_tbMpaa.Text = prev_g_curdispmovie.pmpaa
+        'Me.rtbPlotOutline.Text = curdispmovie.pplotoutline
+        Me.prev_rtbplot.Text = prev_g_curdispmovie.pplot
+        Me.prev_tbRating.Text = prev_g_curdispmovie.prating
+        Me.prev_tbOriginalTitle.Text = prev_g_curdispmovie.poriginaltitle
+        Me.prev_tbRuntime.Text = prev_g_curdispmovie.pruntime
+        Me.prev_rtbTagline.Text = prev_g_curdispmovie.ptagline
+        Me.prev_tbVotes.Text = prev_g_curdispmovie.pvotes
+        Me.prev_tbStudio.Text = prev_g_curdispmovie.pstudio 'tmovie.ptitle
+        Me.prev_tbyear.Text = prev_g_curdispmovie.pyear.ToString
+        Me.prev_tbTop250.Text = prev_g_curdispmovie.ptop250
+
+    End Sub
+    Private Sub loadpreview(ByRef whatmovie As movie)
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        If Not whatmovie.pdownloadlist.Count = 0 Then
+            If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+            Dim curdlobj As New miplibfc.mip.dlobject
+            If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+            curdlobj = CType(whatmovie.pdownloadlist.Item(0), miplibfc.mip.dlobject)
+            If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+            prev_pbPreviewImage.ImageLocation = curdlobj.URL
+            If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+            Try
+                prev_pbPreviewImage.Load()
+            Catch ex As Exception
+                prev_pbPreviewImage.ImageLocation = Nothing
+                prev_pbPreviewImage.Image = Nothing
+            End Try
+        Else
+            prev_pbPreviewImage.ImageLocation = Nothing
+            prev_pbPreviewImage.Image = Nothing
+        End If
+    End Sub
+    Public Sub displayshowdata(ByVal tid As String)
+        'Dim thetvtvseries As thetvdb.TvSeries = CType(dhashtable(CStr(klbPickTheMovie.SelectedValue)), thetvdb.TvSeries)
+
+        'get the data about that movie
+        Dim curdispmovie As New movie
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        curdispmovie = getmovieinfo(tid)
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        curdispmovie.pdownloadlist = New ArrayList
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        maincollection.downloadtmdbposter_single(curdispmovie, , , True, True)
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        loadpreview(curdispmovie)
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        prev_g_curdispmovie = curdispmovie
+        If bw_loadmoviemediapreview.CancellationPending Then Exit Sub
+        'klblAirDay.Text = thetvtvseries.FirstAired
+        'klblRunTime.Text = thetvtvseries.Time
+        'klbllang.Text = thetvtvseries.language
+
+        'pbBanner.ImageLocation = "http://www.thetvdb.com/banners/" + thetvtvseries.banner
+    End Sub
+
+    Private Function getmovieinfo(ByVal curid As String) As movie
+        Dim tempmovie As New movie
+        tempmovie.pimdbnumber = curid
+        Debug.Print("checking cache for imdb info")
+        If File.Exists(maincollection.rconf.imdbcachefolder + "/" + curid + ".xml") Then 'And Not cbOverwriteNFO.Checked Then
+            Debug.Print(".xml already exsists") ' + cbOverwriteNFO.Checked.ToString)
+        Else
+
+            '' getimdbdata(tmovie)
+            Dim imdbinfo As New IMDB
+            Dim imdbidtemp As String = tempmovie.getimdbid
+            If imdbidtemp = "" Then
+                'If Me.messageprompts Then MsgBox("NO IMDB DATA FOUND, UNABLE TO SAVE NFO FILE")
+                Debug.Print("NO IMDBID, UNABLE TO SAVE NFO FILE")
+            Else
+                'If Me.messageprompts Then lblPbar.Text = "-- Parsing IMDB: " + dname + "--"
+                'If Me.messageprompts Then Me.Refresh()
+                imdbinfo = maincollection.imdbparse(imdbidtemp)
+                'save xml to imdbcache reguardless of gui setting to write nfo
+                ' tmovie.Actors = imdbinfo.Actors
+                imdbinfo.writeIMDBXML(imdbinfo, tempmovie, maincollection.rconf.imdbcachefolder, True)
+                'If cbSaveNFO.Checked Then
+                '    'imdbinfo.writeIMDBXML(imdbinfo, tmovie)
+                '    tmovie.saveimdbinfo(tmovie)
+                'End If
+            End If
+        End If
+        'get the imdbdata and set the movie object
+        If File.Exists(maincollection.rconf.imdbcachefolder + tempmovie.pimdbnumber + ".xml") Then
+            Dim timdb As New IMDB
+            timdb.readIMDBXML(tempmovie, maincollection.rconf.imdbcachefolder) 'parses movie from the xml file
+        Else
+            Debug.Print("display movie name and info - no movie nfo file found")
+        End If
+        Return tempmovie
+    End Function
+
+
+
+
+    Private Sub btnCancelLoad_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelLoad.Click
+        bw_loadmoviemediapreview.CancelAsync()
+    End Sub
+
+
+    Private Sub btn_prev_selectnewmovieid_OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prev_selectnewmovieid_OK.Click
+        
+        If currentmovie Is Nothing Then Exit Sub
+        currentmovie.pimdbnumber = Trim(prev_tbIMDBID.Text)
+        Me.tbIMDBID.Text = currentmovie.pimdbnumber
+        currentmovie.ptmdbid = ""
+        Dim curnonfochangprompt As Boolean = rconf.pcbNoNfoChangePrompt
+        rconf.pcbNoNfoChangePrompt = True
+        saveNfoFromGuiText(False)
+        rconf.pcbNoNfoChangePrompt = curnonfochangprompt
+        Dim checkid As String = Me.tbIMDBID.Text
+        If checkid = Nothing Then
+            'MsgBox("can't save a movie without an imdb id number")
+            Exit Sub
+        End If
+        If File.Exists(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml") Then
+            Try
+                File.SetAttributes(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml", FileAttributes.Normal)
+            Catch ex As Exception
+
+            End Try
+            Try
+                File.Delete(rconf.imdbcachefolder + currentmovie.pimdbnumber + ".xml")
+            Catch ex As Exception
+
+            End Try
+        End If
+        If Directory.Exists(rconf.tempfolder + currentmovie.pimdbnumber) Then
+            Try
+                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits", FileAttributes.Normal)
+                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits\fullcredits")
+                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\fullcredits")
+                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary", FileAttributes.Normal)
+                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary\plotsummary")
+                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\plotsummary")
+                File.SetAttributes(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html", FileAttributes.Normal)
+                File.Delete(rconf.tempfolder + currentmovie.pimdbnumber + "\index.html")
+            Catch ex As Exception
+                'MsgBox(ex.ToString)
+            End Try
+            Try
+                Directory.Delete(rconf.tempfolder + currentmovie.pimdbnumber)
+            Catch ex As Exception
+                ' MsgBox(ex.ToString)
+            End Try
+        End If
+        currentmovie.pdatafromnfo = False
+        movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
+        processdropdownitems()
+        tcMain.SelectTab(0)
+
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
@@ -35194,9 +35420,12 @@ Public Property [Actors]() As List(Of Actor)
 
         nm.Mpaa = tmovie.pmpaa
         nm.Mpaareal = tmovie.pmpaareal
-        'If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
-        '    nm.Mpaa = tmovie.certification
-        'End If
+        If maincollection.rconf.pcbmovie_use_certification_for_mpaa Then
+            nm.Mpaa = tmovie.certification
+        Else
+            nm.Mpaa = tmovie.pmpaareal
+        End If
+      
         nm.Certification = tmovie.pcertification
         nm.Playcount = ""
         nm.File = ""
