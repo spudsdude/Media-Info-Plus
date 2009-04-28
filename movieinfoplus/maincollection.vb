@@ -25659,6 +25659,7 @@ Public Class maincollection
             klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
         End If
     End Sub
+    Public curtvshowiconsetting_episodeAspectRatio As String = ""
     Private Sub lbEpsidoes_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbEpisodes.Click
         If lbEpisodes.SelectedIndex = -1 Then Exit Sub
         Debug.Print("lbEpisodes clicked")
@@ -25682,6 +25683,7 @@ Public Class maincollection
         curtvshowiconsetting = removeextension(gvcurrenttvepisode.episodefilepath) + ".tbn"
         curtvshowiconsettingStingType = "episodeimage"
         curtvshowiconsetting_episode = addfiletofolder(getparentdirectory(curtvshowiconsetting), "s" & gvcurrenttvepisode.SeasonNumber & "e" & gvcurrenttvepisode.EpisodeNumber & ".jpg")
+
         curtvshowpicturboxtoupdate = pbep_episodeimage
         curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: Season: " + gvcurrenttvepisode.SeasonNumber + " Episode: " + gvcurrenttvepisode.EpisodeNumber + " Image File (" + removeextension(getfilefrompath(gvcurrenttvepisode.episodefilepath)) + ".tbn)"
         'determine .nfo file name
@@ -25722,6 +25724,11 @@ Public Class maincollection
                     'display the data
                     krtbTVShowMediaInfo.Text = xbmccurep.fileinfo.objtostring(xbmccurep.fileinfo)
                 End If
+                Try
+                    curtvshowiconsetting_episodeAspectRatio = xbmccurep.fileinfo.streamdetails.Video.Item(0).Aspectdisplayratio
+                Catch ex As Exception
+                    curtvshowiconsetting_episodeAspectRatio = "2.35" 'xbmccurep.fileinfo.streamdetails.Video.Item(0).Aspectdisplayratio
+                End Try
 
             Catch ex As Exception
                 MsgBox("Failed to read the .nfo file for this episode.")
@@ -32319,7 +32326,7 @@ Public Class maincollection
 
 
         GC.Collect()
-
+        'MsgBox("this takes a few minutes, it will create and then resize images from the video file")
 
         Dim filetocreate As String = ""
         filetocreate = curtvshowiconsetting_episode
@@ -32332,11 +32339,107 @@ Public Class maincollection
                 Exit Sub
             End Try
         End If
-        If File.Exists(gvcurrenttvepisode.fullfilenameandpath) Then
-            CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", curtvshowiconsetting_episode, "30")
-            CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", curtvshowiconsetting, "35")
-        End If
+        'creation of thumbs
+        Dim thumbwhere As String = addfiletofolder(rconf.tempfolder, "thumbs\")
+        If Not Directory.Exists(thumbwhere) Then Directory.CreateDirectory(thumbwhere)
+        Dim thumb1 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-01.jpg")
+        Dim thumb2 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-03.jpg")
+        Dim thumb3 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-05.jpg")
+        Dim thumb4 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-07.jpg")
+        Dim thumb5 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-09.jpg")
+        Dim thumb1f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-02.jpg")
+        Dim thumb2f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-04.jpg")
+        Dim thumb3f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-06.jpg")
+        Dim thumb4f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-08.jpg")
+        Dim thumb5f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-10.jpg")
+        'Dim thumb1 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-01.jpg")
+        'Dim thumb2 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-02.jpg")
+        'Dim thumb3 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-03.jpg")
+        'Dim thumb4 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-04.jpg")
+        'Dim thumb5 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-05.jpg")
+        'Dim thumb1f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-06.jpg")
+        'Dim thumb2f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-07.jpg")
+        'Dim thumb3f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-08.jpg")
+        'Dim thumb4f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-09.jpg")
+        'cleanup
 
+        deletefile(thumb1)
+        deletefile(thumb2)
+        deletefile(thumb3)
+        deletefile(thumb4)
+        deletefile(thumb5)
+        deletefile(thumb1f)
+        deletefile(thumb2f)
+        deletefile(thumb3f)
+        deletefile(thumb4f)
+        deletefile(thumb5f)
+
+        Dim filetocopyEPThumb As String = ""
+        Dim filetocopyEPFA As String = ""
+
+        deletefile(curtvshowiconsetting_episode)
+        deletefile(curtvshowiconsetting)
+        Dim aspectnow As String = ""
+        aspectnow = CStr(curtvshowiconsetting_episodeAspectRatio)
+        If aspectnow = "" Then
+            MsgBox("guessing aspect ratio")
+            aspectnow = "2.35"
+        End If
+        If File.Exists(gvcurrenttvepisode.fullfilenameandpath) Then
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", curtvshowiconsetting_episode, "30")
+            CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", thumbwhere, "00:00:04", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", thumb2f, "00:00:08", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", thumb3f, "00:00:16", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", thumb4f, "00:00:32", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", thumb5f, "00:00:48", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb1, "00:00:06", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb2, "00:00:10", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb3, "00:00:18", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb4, "00:00:36", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb5, "00:00:52", aspectnow)
+            'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", curtvshowiconsetting, "35")
+        End If
+        resizeimage("720x480", thumb1)
+        resizeimage("720x480", thumb2)
+        resizeimage("720x480", thumb3)
+        resizeimage("720x480", thumb4)
+        resizeimage("720x480", thumb5)
+
+        resizeimage("1280x720", thumb1f)
+        resizeimage("1280x720", thumb2f)
+        resizeimage("1280x720", thumb3f)
+        resizeimage("1280x720", thumb4f)
+        resizeimage("1280x720", thumb5f)
+
+
+        With dlgPickThumbs
+            .pbThumb1.ImageLocation = thumb1
+            .pbThumb2.ImageLocation = thumb2
+            .pbThumb3.ImageLocation = thumb3
+            .pbThumb4.ImageLocation = thumb4
+            .pbThumb5.ImageLocation = thumb5
+
+            .pbThumb1f.ImageLocation = thumb1f
+            .pbThumb2f.ImageLocation = thumb2f
+            .pbThumb3f.ImageLocation = thumb3f
+            .pbThumb4f.ImageLocation = thumb4f
+            .pbThumb5f.ImageLocation = thumb5f
+            .ShowDialog()
+            If .pbThumbSelected.ImageLocation = "" Then
+                filetocopyEPThumb = thumb1
+            Else
+                filetocopyEPThumb = .pbThumbSelected.ImageLocation
+            End If
+            If .pbThumbSelected.ImageLocation = "" Then
+                filetocopyEPFA = thumb1f
+            Else
+                filetocopyEPFA = .pbThumbSelectedFanart.ImageLocation
+            End If
+            .Dispose()
+        End With
+
+        File.Copy(filetocopyEPThumb, curtvshowiconsetting)
+        File.Copy(filetocopyEPFA, curtvshowiconsetting_episode)
 
         Dim refreshimage As Boolean = True
         If autopilot Then refreshimage = False
@@ -32447,22 +32550,26 @@ Public Class maincollection
         End If
 
     End Sub
-    Public Sub CreateThumbFileFFMPEG(ByVal what As String, ByVal size As String, ByVal destinationfile As String, ByVal offset As String)
+    Public Sub CreateThumbFileFFMPEG(ByVal what As String, ByVal size As String, ByVal destinationfile As String, ByVal offset As String, ByVal aspect As String)
         Debug.Print("running create thumb for: " & what & " .. saving as: " & destinationfile)
-        If File.Exists(destinationfile) Then
-            Try
-                File.Delete(destinationfile)
-            Catch ex As Exception
-                MsgBox("unable to remove old file when running create thumb file")
-                Exit Sub
-            End Try
-        End If
-        Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "ffmpeg.exe") 'Dim binfilelocal As String = "MagickCMD"
-        Dim exstring As String = " " & "-i " & """" & what & """" & " -vcodec mjpeg -ss " & offset & " -vframes 1 -an -f rawvideo -s " & size & " " & """" & destinationfile & """"
+        'If File.Exists(destinationfile) Then
+        '    Try
+        '        File.Delete(destinationfile)
+        '    Catch ex As Exception
+        '        MsgBox("unable to remove old file when running create thumb file")
+        '        Exit Sub
+        '    End Try
+        'End If
+        Dim binfilelocal As String = addfiletofolder(rconf.basefolder, "ffmpeg.exe") 'Dim binfilelocal As String = "MagickCMD"
+        'Dim exstring As String = " " & "-i " & """" & what & """" & " -r 1 -an -aspect " & aspect & " -vcodec mjpeg -ss " & offset & " -vframes 20 -f rawvideo" & " " & """" & "foo-%03d.jpeg" & """" 'destinationfile & """"
+        'ffmpeg -i foo.avi -r 1 -s WxH -f image2 foo-%03d.jpeg
+        Dim exstring As String = " " & "-i " & """" & what & """" & " -r .25 " & """" & addfiletofolder(destinationfile, "thumb-%02d.jpg") & """" & " -an -t 60 -ss 10 -vframes 10 -f image2 -aspect " & aspect  ' & "thumb-%03d.jpeg"
+        'MsgBox(exstring)
+        'Dim exstring As String = " " & "-i " & """" & what & """" & " -vcodec mjpeg -ss " & offset & " -vframes 1 -an -f rawvideo" & " " & """" & destinationfile & """"
         Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
         pro1.StartInfo.FileName = binfilelocal
         pro1.StartInfo.Arguments = exstring
-        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
         pro1.Start()
         pro1.WaitForExit()
         System.Threading.Thread.Sleep(200)

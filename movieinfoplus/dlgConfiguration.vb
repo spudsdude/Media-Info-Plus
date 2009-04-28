@@ -852,6 +852,7 @@ Public Class dlgConfiguration
             cbNoNfoChangePrompt.Checked = trconf.pcbNoNfoChangePrompt
 
             '## TV Show Settings
+            tvgs_knud_tvshow_posters_download_maxnumber.Value = trconf.tv_tvshow_posters_download_maxnumber_integer
             tvgs_cb_tvshow_posters_download.Checked = trconf.tv_tvshow_posters_download_boolean
             tvgs_cb_tvshow_fanart_download.Checked = trconf.tv_episode_create_fanart
             tvgs_cb_episode_download.Checked = trconf.tv_episode_download_boolean
@@ -908,7 +909,7 @@ Public Class dlgConfiguration
             knudPosterHeightTBN.Value = trconf.pknudPosterHeightTBN
             If knudPosterHeightTBN.Value = 0 Then knudPosterHeightTBN.Value = 300
 
-            cbtv_showwgetwindows.checked = rconf.tv_showwgetwindows
+            cbtv_showwgetwindows.Checked = trconf.tv_showwgetwindows
 
 
 

@@ -132,7 +132,24 @@ Module modFileUtils
 
         End Select
     End Function
+    Public Sub deletefile(ByVal filetodelete As String)
+        Try
+            If File.Exists(filetodelete) Then File.SetAttributes(filetodelete, FileAttributes.Normal)
+        Catch ex As Exception
 
+        End Try
+        Try
+            If File.Exists(filetodelete) Then File.Delete(filetodelete)
+        Catch ex As Exception
+            System.Threading.Thread.Sleep(500)
+            Try
+                If File.Exists(filetodelete) Then File.Delete(filetodelete)
+            Catch ex2 As Exception
+
+            End Try
+        End Try
+
+    End Sub
     Public Function check_movie_has_extra_images(ByVal tmovie As movie) As String
         If tmovie.pfilemode Then Return ""
         If Not Directory.Exists(addfiletofolder(tmovie.getmoviepath, "extras")) Then Return ""
