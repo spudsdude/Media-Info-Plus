@@ -8805,6 +8805,7 @@ Public Class maincollection
     End Function
     Protected Function getFileSize(ByVal vFile As String) As String
         'Dim curFile As FileInfo
+        If Not File.Exists(vFile) Then Return "0"
         Dim curfile As FileInfo = My.Computer.FileSystem.GetFileInfo(vFile)
         Dim fileSize As Double = curfile.Length
         If fileSize < 1024 Then
@@ -24711,6 +24712,7 @@ Public Class maincollection
         currenttvshowdownloadlist.Clear()
         klblAllSeasonPosterStatic.Visible = True
         kgpbSeasonAllposter.Visible = True
+        curtvshowiconsetting_episode = ""
         If rbem.Checked Then
             lblPbar.Visible = True
             messageprompts = True
@@ -25319,6 +25321,7 @@ Public Class maincollection
     End Sub
 
     Private Sub lbseasonPicker_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbSeasonPicker.Click
+        curtvshowiconsetting_episode = ""
         If lbSeasonPicker.SelectedValue Is Nothing Then Exit Sub
         If lbSeasonPicker.SelectedValue Is "" Then Exit Sub
         klblAllSeasonPosterStatic.Visible = False
@@ -25642,10 +25645,15 @@ Public Class maincollection
             Dim dimension As String = ""
             Dim filename As String = ""
             Dim bmpImage As System.Drawing.Image
-            bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
-            filename = getfilefrompath(curtvshowiconsetting)
-            dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
-            bmpImage.Dispose()
+            Try
+                bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+                filename = getfilefrompath(curtvshowiconsetting)
+                dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+                bmpImage.Dispose()
+            Catch ex As Exception
+
+            End Try
+
             tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
             tsmishows_currentImageToModify.Text = filename
             klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
@@ -25673,6 +25681,7 @@ Public Class maincollection
         'setup for icon selection
         curtvshowiconsetting = removeextension(gvcurrenttvepisode.episodefilepath) + ".tbn"
         curtvshowiconsettingStingType = "episodeimage"
+        curtvshowiconsetting_episode = addfiletofolder(getparentdirectory(curtvshowiconsetting), "s" & gvcurrenttvepisode.SeasonNumber & "e" & gvcurrenttvepisode.EpisodeNumber & ".jpg")
         curtvshowpicturboxtoupdate = pbep_episodeimage
         curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: Season: " + gvcurrenttvepisode.SeasonNumber + " Episode: " + gvcurrenttvepisode.EpisodeNumber + " Image File (" + removeextension(getfilefrompath(gvcurrenttvepisode.episodefilepath)) + ".tbn)"
         'determine .nfo file name
@@ -32279,6 +32288,185 @@ Public Class maincollection
         End If
 
     End Sub
+    Public curtvshowiconsetting_episode As String = ""
+    Private Sub createepisodethumbnail(Optional ByVal autopilot As Boolean = False)
+        If Not curtvshowiconsettingStingType = "episodeimage" Then Exit Sub
+
+        If Not autopilot Then
+            If curtvshowiconsettingStingType = "showimage" Then
+                'pbTVWide.Image = Nothing
+                'pbTVWide.ImageLocation = Nothing
+                'pbTVPoster.Image = Nothing
+                'pbTVPoster.ImageLocation = Nothing
+            ElseIf curtvshowiconsettingStingType = "seasonimage" Then
+                'pbTVWide.Image = Nothing
+                'pbTVWide.ImageLocation = Nothing
+                'pbTVPoster.Image = Nothing
+                'pbTVPoster.ImageLocation = Nothing
+            ElseIf curtvshowiconsettingStingType = "episodeimage" Then
+                pbep_episodeimage.Image = Nothing
+                pbep_episodeimage.ImageLocation = Nothing
+            Else
+                'release them all
+                pbTVWide.Image = Nothing
+                pbTVWide.ImageLocation = Nothing
+                pbTVPoster.Image = Nothing
+                pbTVPoster.ImageLocation = Nothing
+                pbep_episodeimage.Image = Nothing
+                pbep_episodeimage.ImageLocation = Nothing
+            End If
+        End If
+
+
+        GC.Collect()
+
+
+        Dim filetocreate As String = ""
+        filetocreate = curtvshowiconsetting_episode
+
+        If File.Exists(curtvshowiconsetting_episode) Then 'compressimage(amount, filetocompress)
+            Try
+                File.Delete(curtvshowiconsetting_episode)
+            Catch ex As Exception
+                MsgBox("Episode file already exists and I could not remove it.")
+                Exit Sub
+            End Try
+        End If
+        If File.Exists(gvcurrenttvepisode.fullfilenameandpath) Then
+            CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "1280x720", curtvshowiconsetting_episode, "30")
+            CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", curtvshowiconsetting, "35")
+        End If
+
+
+        Dim refreshimage As Boolean = True
+        If autopilot Then refreshimage = False
+        Dim dimension As String = ""
+        Dim filename As String = ""
+        filename = getfilefrompath(curtvshowiconsetting)
+        'dimension += filename & " "
+        If refreshimage Then 'refresh all as start point may have shifted
+            If Not curtvshowiconsettingStingType = "episodeimage" Then
+                If Not File.Exists(curtvshowiconsetting) Then Exit Sub
+                Dim bmpImage As System.Drawing.Image
+                bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+                'aspect ratio items
+                Dim imagetype As String
+                Dim taspect As Double = aspectratio(bmpImage)
+                If taspect < 0.25 Then
+                    'wide(Icon)
+                    If bmpImage.Width >= 500 Then
+                        imagetype = "widenoformat"
+                    Else
+                        imagetype = "wideicon"
+                    End If
+                ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                    imagetype = "square"
+                ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                    'boxed icon or maybe squared poster
+                    imagetype = "boxed"
+                Else
+                    imagetype = "poster" 'consider it a poster
+                End If
+                dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+                bmpImage.Dispose()
+                tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+                tsmishows_currentImageToModify.Text = filename
+                klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
+                If imagetype = "wideicon" Or imagetype = "widenoformat" Then
+                    Try
+                        pbTVPoster.Image = Nothing
+                        pbTVPoster.ImageLocation = Nothing
+                        pbTVPoster.Visible = False
+                        pbTVWide.Image = Nothing
+                        pbTVWide.ImageLocation = Nothing
+                        pbTVWide.ImageLocation = curtvshowiconsetting
+                        pbTVSeasonPoster.Hide()
+                        pbTVWide.Load()
+                        pbTVWide.Visible = True
+                        Me.Refresh()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Else
+                    Try
+                        pbTVWide.Image = Nothing
+                        pbTVWide.ImageLocation = Nothing
+                        pbTVWide.Visible = False
+                        pbTVPoster.Image = Nothing
+                        pbTVPoster.ImageLocation = Nothing
+                        pbTVPoster.ImageLocation = curtvshowiconsetting
+                        pbTVSeasonPoster.Hide()
+                        pbTVPoster.Load()
+                        pbTVPoster.Visible = True
+                        Me.Refresh()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+
+                End If
+                tcMain.SelectTab(1)
+                Me.Refresh()
+                Exit Sub
+            Else
+                'episode image
+                If Not File.Exists(curtvshowiconsetting) Then Exit Sub
+                Dim bmpImage As System.Drawing.Image
+                bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+                'aspect ratio items
+                Dim imagetype As String
+                Dim taspect As Double = aspectratio(bmpImage)
+                If taspect < 0.25 Then
+                    'wide(Icon)
+                    If bmpImage.Width >= 500 Then
+                        imagetype = "widenoformat"
+                    Else
+                        imagetype = "wideicon"
+                    End If
+                ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                    imagetype = "square"
+                ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                    'boxed icon or maybe squared poster
+                    imagetype = "boxed"
+                Else
+                    imagetype = "poster" 'consider it a poster
+                End If
+                dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+                bmpImage.Dispose()
+                tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+                tsmishows_currentImageToModify.Text = filename
+                lbl_ep_thumbnail_info.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+                pbep_episodeimage.ImageLocation = curtvshowiconsetting
+                Try
+                    pbep_episodeimage.Load()
+                Catch ex As Exception
+
+                End Try
+                tcMain.SelectTab(1)
+                Me.Refresh()
+            End If
+        End If
+
+    End Sub
+    Public Sub CreateThumbFileFFMPEG(ByVal what As String, ByVal size As String, ByVal destinationfile As String, ByVal offset As String)
+        Debug.Print("running create thumb for: " & what & " .. saving as: " & destinationfile)
+        If File.Exists(destinationfile) Then
+            Try
+                File.Delete(destinationfile)
+            Catch ex As Exception
+                MsgBox("unable to remove old file when running create thumb file")
+                Exit Sub
+            End Try
+        End If
+        Dim binfilelocal As String = addfiletofolder(rconf.ImageMagickFolder, "ffmpeg.exe") 'Dim binfilelocal As String = "MagickCMD"
+        Dim exstring As String = " " & "-i " & """" & what & """" & " -vcodec mjpeg -ss " & offset & " -vframes 1 -an -f rawvideo -s " & size & " " & """" & destinationfile & """"
+        Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
+        pro1.StartInfo.FileName = binfilelocal
+        pro1.StartInfo.Arguments = exstring
+        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+        pro1.Start()
+        pro1.WaitForExit()
+        System.Threading.Thread.Sleep(200)
+    End Sub
     Private Sub compress_showposter(ByVal amount As String, Optional ByVal autopilot As Boolean = False)
         If Not autopilot Then
             If curtvshowiconsettingStingType = "showimage" Then
@@ -33411,6 +33599,11 @@ Public Class maincollection
         movies.Item(CInt(lbMyMovies.SelectedValue)) = currentmovie
         processdropdownitems()
         tcMain.SelectTab(0)
+
+    End Sub
+
+    Private Sub CreateThumbnailForEpisodeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateThumbnailForEpisodeToolStripMenuItem.Click
+        createepisodethumbnail()
 
     End Sub
 End Class

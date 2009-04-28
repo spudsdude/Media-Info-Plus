@@ -1189,6 +1189,7 @@ Public Class tvshowcollection
                                     If Not tepisode1 Is Nothing Then
                                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Getting episode image --------------"
                                         curseason.episodes.Add(tepisode1)
+                                        
                                         Dim bypassepisodeimages As Boolean = False 'debug setting, episode images are slowing the app way down when it can't grab them
                                         'If tepisode1.Seriesid = "80610" Then bypassepisodeimages = True
                                         If rconf.tv_episode_download_boolean And Not bypassepisodeimages Then
@@ -1317,7 +1318,18 @@ Public Class tvshowcollection
                                             'xbmced1.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
 
                                         End If
-
+                                        'If Not rconf.tv_episode_download_boolean Then
+                                        '    If File.Exists(tepisode1.fullfilenameandpath) Then
+                                        '        Dim fanartep As String = ""
+                                        '        'Dim 2digitep as String = ""
+                                        '        MsgBox("creating item")
+                                        '        fanartep = addfiletofolder(getparentdirectory(tepisode1.fullfilenameandpath), "s" & ctv_season & "e" & ctv_episode & ".jpg")
+                                        '        Dim epthumb As String = ""
+                                        '        epthumb = Strings.Left(item.ToString, item.Length - 4) + ".tbn"
+                                        '        If Not File.Exists(fanartep) Then maincollection.CreateThumbFileFFMPEG(tepisode1.fullfilenameandpath, "1280x720", fanartep, "30")
+                                        '        If Not File.Exists(epthumb) Then maincollection.CreateThumbFileFFMPEG(tepisode1.fullfilenameandpath, "720x480", epthumb, "35")
+                                        '    End If
+                                        'End If
                                     End While
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Writing .nfo file: " + Strings.Left(item.ToString, item.Length - 4) + ".nfo"
                                     'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
@@ -1328,6 +1340,7 @@ Public Class tvshowcollection
                                         curxbmcmultiepisode.writeNfo(Strings.Left(item.ToString, item.Length - 4) + ".nfo")
                                     End If
                                     'Dim epname As String = epPeices(epPeices.Length - 1)
+                                   
                                 End If
                                 'End If
                                 If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- Done episode processing of single item, movie to next or end --------------"
