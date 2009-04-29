@@ -485,6 +485,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dlgPickThumbs.resx">
       <DependentUpon>dlgPickThumbs.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="dlgPreCacheStarting.resx">
       <DependentUpon>dlgPreCacheStarting.vb</DependentUpon>

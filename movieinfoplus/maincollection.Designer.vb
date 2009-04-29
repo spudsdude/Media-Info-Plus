@@ -677,6 +677,7 @@ Me.tsmishows_posters_q80 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_posters_q90 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_posters_q95 = New System.Windows.Forms.ToolStripMenuItem
 Me.ToolStripSeparator22 = New System.Windows.Forms.ToolStripSeparator
+Me.CreateThumbnailForEpisodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tsl_shows_fanartsize = New System.Windows.Forms.ToolStripLabel
 Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
@@ -1424,7 +1425,6 @@ Me.bwAutopilot = New System.ComponentModel.BackgroundWorker
 Me.bwAutoPilotMediaUpdate = New System.ComponentModel.BackgroundWorker
 Me.bwOfdbUpdate = New System.ComponentModel.BackgroundWorker
 Me.bw_loadmoviemediapreview = New System.ComponentModel.BackgroundWorker
-Me.CreateThumbnailForEpisodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tcPIB.SuspendLayout
 Me.tp1.SuspendLayout
 Me.tcWide.SuspendLayout
@@ -6178,7 +6178,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(527, 488)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(537, 498)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6186,9 +6186,9 @@ Me.kgCurMovieImageFolderjpg.Visible = false
 '
 Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Bottom
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
-Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 460)
+Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 470)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(515, 16)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(525, 16)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -9020,6 +9020,12 @@ Me.tsmishows_posters_q95.Text = "95% Quality"
 '
 Me.ToolStripSeparator22.Name = "ToolStripSeparator22"
 Me.ToolStripSeparator22.Size = New System.Drawing.Size(213, 6)
+'
+'CreateThumbnailForEpisodeToolStripMenuItem
+'
+Me.CreateThumbnailForEpisodeToolStripMenuItem.Name = "CreateThumbnailForEpisodeToolStripMenuItem"
+Me.CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+Me.CreateThumbnailForEpisodeToolStripMenuItem.Text = "Create Thumbnail for Episode"
 '
 'tsl_shows_fanartsize
 '
@@ -22514,12 +22520,6 @@ Me.bwAutoPilotMediaUpdate.WorkerSupportsCancellation = true
 '
 'bw_loadmoviemediapreview
 '
-'
-'CreateThumbnailForEpisodeToolStripMenuItem
-'
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Name = "CreateThumbnailForEpisodeToolStripMenuItem"
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Text = "Create Thumbnail for Episode"
 '
 'maincollection
 '

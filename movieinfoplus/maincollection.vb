@@ -25683,7 +25683,17 @@ Public Class maincollection
         curtvshowiconsetting = removeextension(gvcurrenttvepisode.episodefilepath) + ".tbn"
         curtvshowiconsettingStingType = "episodeimage"
         curtvshowiconsetting_episode = addfiletofolder(getparentdirectory(curtvshowiconsetting), "s" & gvcurrenttvepisode.SeasonNumber & "e" & gvcurrenttvepisode.EpisodeNumber & ".jpg")
+        If File.Exists(curtvshowiconsetting_episode) Then
+            pbTVFanart.ImageLocation = curtvshowiconsetting_episode
+            Try
+                pbTVFanart.Load()
+            Catch ex As Exception
 
+            End Try
+        Else
+            pbTVFanart.ImageLocation = Nothing
+            pbTVFanart.Image = Nothing
+        End If
         curtvshowpicturboxtoupdate = pbep_episodeimage
         curtvshowiconsettinglbl.Text = "Icons and Box Shots will be saved as the: Season: " + gvcurrenttvepisode.SeasonNumber + " Episode: " + gvcurrenttvepisode.EpisodeNumber + " Image File (" + removeextension(getfilefrompath(gvcurrenttvepisode.episodefilepath)) + ".tbn)"
         'determine .nfo file name
@@ -32313,6 +32323,8 @@ Public Class maincollection
             ElseIf curtvshowiconsettingStingType = "episodeimage" Then
                 pbep_episodeimage.Image = Nothing
                 pbep_episodeimage.ImageLocation = Nothing
+                pbTVFanart.Image = Nothing
+                pbTVFanart.ImageLocation = Nothing
             Else
                 'release them all
                 pbTVWide.Image = Nothing
@@ -32327,10 +32339,14 @@ Public Class maincollection
 
         GC.Collect()
         'MsgBox("this takes a few minutes, it will create and then resize images from the video file")
+        Dim thumbOrig As String = addfiletofolder(rconf.tempfolder, "thumbs\thumbOrig.jpg")
+        deletefile(thumbOrig)
 
         Dim filetocreate As String = ""
         filetocreate = curtvshowiconsetting_episode
-
+        If File.Exists(curtvshowiconsetting) Then
+            File.Move(curtvshowiconsetting, addfiletofolder(rconf.tempfolder, "thumbs\thumbOrig.jpg"))
+        End If
         If File.Exists(curtvshowiconsetting_episode) Then 'compressimage(amount, filetocompress)
             Try
                 File.Delete(curtvshowiconsetting_episode)
@@ -32342,16 +32358,33 @@ Public Class maincollection
         'creation of thumbs
         Dim thumbwhere As String = addfiletofolder(rconf.tempfolder, "thumbs\")
         If Not Directory.Exists(thumbwhere) Then Directory.CreateDirectory(thumbwhere)
+
         Dim thumb1 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-01.jpg")
         Dim thumb2 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-03.jpg")
         Dim thumb3 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-05.jpg")
         Dim thumb4 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-07.jpg")
         Dim thumb5 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-09.jpg")
+        Dim thumb6 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-11.jpg")
+        Dim thumb7 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-13.jpg")
+        Dim thumb8 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-15.jpg")
+        Dim thumb9 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-17.jpg")
+        Dim thumb10 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-19.jpg")
+        Dim thumb11 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-21.jpg")
+        Dim thumb12 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-23.jpg")
+
         Dim thumb1f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-02.jpg")
         Dim thumb2f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-04.jpg")
         Dim thumb3f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-06.jpg")
         Dim thumb4f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-08.jpg")
         Dim thumb5f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-10.jpg")
+        Dim thumb6f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-12.jpg")
+        Dim thumb7f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-14.jpg")
+        Dim thumb8f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-16.jpg")
+        Dim thumb9f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-18.jpg")
+        Dim thumb10f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-20.jpg")
+        Dim thumb11f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-22.jpg")
+        Dim thumb12f As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-24.jpg")
+
         'Dim thumb1 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-01.jpg")
         'Dim thumb2 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-02.jpg")
         'Dim thumb3 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-03.jpg")
@@ -32368,11 +32401,26 @@ Public Class maincollection
         deletefile(thumb3)
         deletefile(thumb4)
         deletefile(thumb5)
+        deletefile(thumb6)
+        deletefile(thumb7)
+        deletefile(thumb8)
+        deletefile(thumb9)
+        deletefile(thumb10)
+        deletefile(thumb11)
+        deletefile(thumb12)
+
         deletefile(thumb1f)
         deletefile(thumb2f)
         deletefile(thumb3f)
         deletefile(thumb4f)
         deletefile(thumb5f)
+        deletefile(thumb6f)
+        deletefile(thumb7f)
+        deletefile(thumb8f)
+        deletefile(thumb9f)
+        deletefile(thumb10f)
+        deletefile(thumb11f)
+        deletefile(thumb12f)
 
         Dim filetocopyEPThumb As String = ""
         Dim filetocopyEPFA As String = ""
@@ -32399,17 +32447,32 @@ Public Class maincollection
             'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", thumb5, "00:00:52", aspectnow)
             'CreateThumbFileFFMPEG(gvcurrenttvepisode.fullfilenameandpath, "720x480", curtvshowiconsetting, "35")
         End If
-        resizeimage("720x480", thumb1)
-        resizeimage("720x480", thumb2)
-        resizeimage("720x480", thumb3)
-        resizeimage("720x480", thumb4)
-        resizeimage("720x480", thumb5)
+        If File.Exists(thumb1) Then resizeimage("720x480", thumb1)
+        If File.Exists(thumb2) Then resizeimage("720x480", thumb2)
+        If File.Exists(thumb3) Then resizeimage("720x480", thumb3)
+        If File.Exists(thumb4) Then resizeimage("720x480", thumb4)
+        If File.Exists(thumb5) Then resizeimage("720x480", thumb5)
+        If File.Exists(thumb6) Then resizeimage("720x480", thumb6)
+        If File.Exists(thumb7) Then resizeimage("720x480", thumb7)
+        If File.Exists(thumb8) Then resizeimage("720x480", thumb8)
+        If File.Exists(thumb9) Then resizeimage("720x480", thumb9)
+        If File.Exists(thumb10) Then resizeimage("720x480", thumb10)
+        If File.Exists(thumb11) Then resizeimage("720x480", thumb11)
+        If File.Exists(thumb12) Then resizeimage("720x480", thumb12)
+        'resizeimage("720x480", thumbOrig)
 
-        resizeimage("1280x720", thumb1f)
-        resizeimage("1280x720", thumb2f)
-        resizeimage("1280x720", thumb3f)
-        resizeimage("1280x720", thumb4f)
-        resizeimage("1280x720", thumb5f)
+        If File.Exists(thumb1f) Then resizeimage("1280x720", thumb1f)
+        If File.Exists(thumb2f) Then resizeimage("1280x720", thumb2f)
+        If File.Exists(thumb3f) Then resizeimage("1280x720", thumb3f)
+        If File.Exists(thumb4f) Then resizeimage("1280x720", thumb4f)
+        If File.Exists(thumb5f) Then resizeimage("1280x720", thumb5f)
+        If File.Exists(thumb6f) Then resizeimage("1280x720", thumb6f)
+        If File.Exists(thumb7f) Then resizeimage("1280x720", thumb7f)
+        If File.Exists(thumb8f) Then resizeimage("1280x720", thumb8f)
+        If File.Exists(thumb9f) Then resizeimage("720x480", thumb9f)
+        If File.Exists(thumb10f) Then resizeimage("720x480", thumb10f)
+        If File.Exists(thumb11f) Then resizeimage("720x480", thumb11f)
+        If File.Exists(thumb12f) Then resizeimage("720x480", thumb12f)
 
 
         With dlgPickThumbs
@@ -32418,12 +32481,28 @@ Public Class maincollection
             .pbThumb3.ImageLocation = thumb3
             .pbThumb4.ImageLocation = thumb4
             .pbThumb5.ImageLocation = thumb5
+            .pbThumb6.ImageLocation = thumb6
+            .pbThumb7.ImageLocation = thumb7
+            .pbThumb8.ImageLocation = thumb8
+            .pbThumb9.ImageLocation = thumb9
+            .pbThumb10.ImageLocation = thumb10
+            .pbThumb11.ImageLocation = thumb11
+            .pbThumb12.ImageLocation = thumb12
+            .pbThumbOrig.ImageLocation = thumbOrig
 
             .pbThumb1f.ImageLocation = thumb1f
             .pbThumb2f.ImageLocation = thumb2f
             .pbThumb3f.ImageLocation = thumb3f
             .pbThumb4f.ImageLocation = thumb4f
             .pbThumb5f.ImageLocation = thumb5f
+            .pbThumb6f.ImageLocation = thumb6f
+            .pbThumb7f.ImageLocation = thumb7f
+            .pbThumb8f.ImageLocation = thumb8f
+            .pbThumb9f.ImageLocation = thumb9f
+            .pbThumb10f.ImageLocation = thumb10f
+            .pbThumb11f.ImageLocation = thumb11f
+            .pbThumb12f.ImageLocation = thumb12f
+
             .ShowDialog()
             If .pbThumbSelected.ImageLocation = "" Then
                 filetocopyEPThumb = thumb1
@@ -32449,68 +32528,77 @@ Public Class maincollection
         'dimension += filename & " "
         If refreshimage Then 'refresh all as start point may have shifted
             If Not curtvshowiconsettingStingType = "episodeimage" Then
-                If Not File.Exists(curtvshowiconsetting) Then Exit Sub
-                Dim bmpImage As System.Drawing.Image
-                bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
-                'aspect ratio items
-                Dim imagetype As String
-                Dim taspect As Double = aspectratio(bmpImage)
-                If taspect < 0.25 Then
-                    'wide(Icon)
-                    If bmpImage.Width >= 500 Then
-                        imagetype = "widenoformat"
-                    Else
-                        imagetype = "wideicon"
-                    End If
-                ElseIf taspect >= 0.98 And taspect <= 1.02 Then
-                    imagetype = "square"
-                ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
-                    'boxed icon or maybe squared poster
-                    imagetype = "boxed"
-                Else
-                    imagetype = "poster" 'consider it a poster
-                End If
-                dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
-                bmpImage.Dispose()
-                tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
-                tsmishows_currentImageToModify.Text = filename
-                klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
-                If imagetype = "wideicon" Or imagetype = "widenoformat" Then
-                    Try
-                        pbTVPoster.Image = Nothing
-                        pbTVPoster.ImageLocation = Nothing
-                        pbTVPoster.Visible = False
-                        pbTVWide.Image = Nothing
-                        pbTVWide.ImageLocation = Nothing
-                        pbTVWide.ImageLocation = curtvshowiconsetting
-                        pbTVSeasonPoster.Hide()
-                        pbTVWide.Load()
-                        pbTVWide.Visible = True
-                        Me.Refresh()
-                    Catch ex As Exception
-                        Debug.Print(ex.ToString)
-                    End Try
-                Else
-                    Try
-                        pbTVWide.Image = Nothing
-                        pbTVWide.ImageLocation = Nothing
-                        pbTVWide.Visible = False
-                        pbTVPoster.Image = Nothing
-                        pbTVPoster.ImageLocation = Nothing
-                        pbTVPoster.ImageLocation = curtvshowiconsetting
-                        pbTVSeasonPoster.Hide()
-                        pbTVPoster.Load()
-                        pbTVPoster.Visible = True
-                        Me.Refresh()
-                    Catch ex As Exception
-                        Debug.Print(ex.ToString)
-                    End Try
+                'If Not File.Exists(curtvshowiconsetting) Then Exit Sub
+                'Dim bmpImage As System.Drawing.Image
+                'bmpImage = System.Drawing.Image.FromFile(curtvshowiconsetting)
+                ''aspect ratio items
+                'Dim imagetype As String
+                'Dim taspect As Double = aspectratio(bmpImage)
+                'If taspect < 0.25 Then
+                '    'wide(Icon)
+                '    If bmpImage.Width >= 500 Then
+                '        imagetype = "widenoformat"
+                '    Else
+                '        imagetype = "wideicon"
+                '    End If
+                'ElseIf taspect >= 0.98 And taspect <= 1.02 Then
+                '    imagetype = "square"
+                'ElseIf (taspect > 0.8 Or taspect < 0.95) And bmpImage.Height < 500 And bmpImage.Width < 450 Then
+                '    'boxed icon or maybe squared poster
+                '    imagetype = "boxed"
+                'Else
+                '    imagetype = "poster" 'consider it a poster
+                'End If
+                'dimension += bmpImage.Width.ToString & " x " & bmpImage.Height.ToString
+                'bmpImage.Dispose()
+                'tsmishows_currentImageToModifyFileSize.Text = dimension & " : " & getFileSize(curtvshowiconsetting)
+                'tsmishows_currentImageToModify.Text = filename
+                'klblImageshow_currentimage.Text = filename & "  " & dimension & " : " & getFileSize(curtvshowiconsetting)
+                'If imagetype = "wideicon" Or imagetype = "widenoformat" Then
+                '    Try
+                '        pbTVPoster.Image = Nothing
+                '        pbTVPoster.ImageLocation = Nothing
+                '        pbTVPoster.Visible = False
+                '        pbTVWide.Image = Nothing
+                '        pbTVWide.ImageLocation = Nothing
+                '        pbTVWide.ImageLocation = curtvshowiconsetting
+                '        pbTVSeasonPoster.Hide()
+                '        pbTVWide.Load()
+                '        pbTVWide.Visible = True
+                '        Me.Refresh()
+                '    Catch ex As Exception
+                '        Debug.Print(ex.ToString)
+                '    End Try
+                'Else
+                '    Try
+                '        pbTVWide.Image = Nothing
+                '        pbTVWide.ImageLocation = Nothing
+                '        pbTVWide.Visible = False
+                '        pbTVPoster.Image = Nothing
+                '        pbTVPoster.ImageLocation = Nothing
+                '        pbTVPoster.ImageLocation = curtvshowiconsetting
+                '        pbTVSeasonPoster.Hide()
+                '        pbTVPoster.Load()
+                '        pbTVPoster.Visible = True
+                '        Me.Refresh()
+                '    Catch ex As Exception
+                '        Debug.Print(ex.ToString)
+                '    End Try
 
-                End If
-                tcMain.SelectTab(1)
-                Me.Refresh()
-                Exit Sub
+                'End If
+                'tcMain.SelectTab(1)
+                'Me.Refresh()
+                'Exit Sub
             Else
+                'episode fanart image
+                If File.Exists(curtvshowiconsetting_episode) Then
+                    pbTVFanart.ImageLocation = curtvshowiconsetting_episode
+                    Try
+                        pbTVFanart.Load()
+                    Catch ex As Exception
+
+                    End Try
+                End If
                 'episode image
                 If Not File.Exists(curtvshowiconsetting) Then Exit Sub
                 Dim bmpImage As System.Drawing.Image
@@ -32563,7 +32651,7 @@ Public Class maincollection
         Dim binfilelocal As String = addfiletofolder(rconf.basefolder, "ffmpeg.exe") 'Dim binfilelocal As String = "MagickCMD"
         'Dim exstring As String = " " & "-i " & """" & what & """" & " -r 1 -an -aspect " & aspect & " -vcodec mjpeg -ss " & offset & " -vframes 20 -f rawvideo" & " " & """" & "foo-%03d.jpeg" & """" 'destinationfile & """"
         'ffmpeg -i foo.avi -r 1 -s WxH -f image2 foo-%03d.jpeg
-        Dim exstring As String = " " & "-i " & """" & what & """" & " -r .25 " & """" & addfiletofolder(destinationfile, "thumb-%02d.jpg") & """" & " -an -t 60 -ss 10 -vframes 10 -f image2 -aspect " & aspect  ' & "thumb-%03d.jpeg"
+        Dim exstring As String = " " & "-i " & """" & what & """" & " -r .2 " & """" & addfiletofolder(destinationfile, "thumb-%02d.jpg") & """" & " -an -t 150 -ss 5 -vframes 24 -f image2 -aspect " & aspect  ' & "thumb-%03d.jpeg"
         'MsgBox(exstring)
         'Dim exstring As String = " " & "-i " & """" & what & """" & " -vcodec mjpeg -ss " & offset & " -vframes 1 -an -f rawvideo" & " " & """" & destinationfile & """"
         Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
