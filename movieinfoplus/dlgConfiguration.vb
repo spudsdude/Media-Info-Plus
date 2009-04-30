@@ -730,6 +730,8 @@ Public Class dlgConfiguration
             cbFilterNameFileModeEverythingBefore1080p.Checked = trconf.pcbFilterNameFileModeEverythingBefore1080p
             cbFilterNameFileModeEverythingBeforeDash.Checked = trconf.pcbFilterNameFileModeEverythingBeforeDash
 
+            cbscanforepisodemediainformation.Checked = trconf.pcbscanforepisodemediainformation
+
             cbFilterNameFileModeEverythingBeforeUserDefined1.Checked = trconf.pcbFilterNameFileModeEverythingBeforeUserDefined1
             tbFilterNameFileModeEverythingBeforeUserDefined1.Text = trconf.ptbFilterNameFileModeEverythingBeforeUserDefined1
             cbmoviesnonforename.Checked = trconf.pcbmoviesnonforename
@@ -1699,11 +1701,11 @@ Public Class dlgConfiguration
         rconf.ptbFilterNameFileModeEverythingBeforeUserDefined1 = tbFilterNameFileModeEverythingBeforeUserDefined1.Text
     End Sub
 
-    Private Sub cbmoviesnonforename_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbmoviesnonforename.CheckedChanged
-
-    End Sub
-
     Private Sub cbmoviesnonforename_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbmoviesnonforename.Click
         rconf.pcbmoviesnonforename = cbmoviesnonforename.Checked
+    End Sub
+
+    Private Sub cbscanforepisodemediainformation_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbscanforepisodemediainformation.Click
+        rconf.pcbscanforepisodemediainformation = cbscanforepisodemediainformation.Checked
     End Sub
 End Class

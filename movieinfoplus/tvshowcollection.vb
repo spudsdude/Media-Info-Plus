@@ -637,7 +637,7 @@ Public Class tvshowcollection
             Catch ex As Exception
                 'asdf()
                 decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
-                MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+                MsgBox("Error during decompression for banner xml: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 'debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 'debug.Print("unable to load xml file from cache folder")
                 showcount += 1
@@ -1311,7 +1311,7 @@ Public Class tvshowcollection
                                                 maincollection.lblPbar.Text = "Scanning: " + getfilefrompath(item) '+ "--"
                                                 maincollection.Refresh()
                                                 Dim curmedinfo As New MediaInfo
-                                                curmedinfo.getdata(tepisode1, True)
+                                                If rconf.pcbscanforepisodemediainformation Then curmedinfo.getdata(tepisode1, True)
                                             End If
                                             curxbmcmultiepisode.episodes.Add(xbmced1)
                                             curepcou += 1
@@ -3223,6 +3223,16 @@ Public Class tvshowcollection
                     End Try
                     'decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
                 End If
+            Else
+                Try
+                    If Not File.Exists(addfiletofolder(rconf.tvdbcachefolder + selectedshow, "banners.xml")) Then
+                        decompresszip(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip", rconf.tvdbcachefolder + selectedshow, True)
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+
             End If
             '--------------------------------------Section Start----------------------------------------
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------

@@ -56,6 +56,7 @@ Public Class maincollection
     Public Shared rconf As New configuration
     Public movies As New ArrayList
     Public sinmiString As String = ""
+    Public gvMystudios As New thestudio.mystudios
 
     Dim dlist, urllist, urllists, dtvlist, musiclist As New ArrayList
     Dim dlist_count As Integer = 0
@@ -1853,6 +1854,32 @@ Public Class maincollection
     '        MsgBox("Success.")
     '    End If
     'End Sub
+    Private Sub loadmystudios(ByVal basefolder As String)
+        'If there is no mystudios.xml, create the base version
+        Dim mystudiosxml As String = basefolder + "mystudios2.xml"
+        If Not File.Exists(mystudiosxml) Then Exit Sub
+        'creatdefaultstudios(mystudiosxml)
+        'End If
+        Try
+            gvMystudios = gvMystudios.getmystudio(mystudiosxml) 'loads the xml
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+        If gvMystudios Is Nothing Or Not gvMystudios.version = 1.02 Then Exit Sub
+        ''something must be wrong in the xml or it's an old version, back it up and generate a new one
+        'Try 'try to move it to the bakupfile
+        '    Dim t As TimeSpan = (DateTime.UtcNow - New DateTime(1970, 1, 1))
+        '    Dim timestamp As Double = t.TotalSeconds
+        '    Dim srcFile As String = mystudiosxml
+        '    Dim dstFile As String = basefolder + "mystudios." + timestamp.ToString + ".bakup.xml"
+        '    File.Move(srcFile, dstFile)
+        'Catch ex As Exception
+        '    Debug.Print(ex.ToString)
+        'End Try
+        'creatdefaultstudios(mystudiosxml)
+        'gvMystudios = gvMystudios.getmystudio(mystudiosxml) 'loads the xml
+        'End If
+    End Sub
     Private Sub mainform_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Text = "Media Info Plus " + My.Application.Info.Version.Major.ToString + "." + My.Application.Info.Version.Minor.ToString + "." + My.Application.Info.Version.Build.ToString + "." + My.Application.Info.Version.Revision.ToString
         'Dim pro1 As System.Diagnostics.Process = New System.Diagnostics.Process()
@@ -1873,6 +1900,9 @@ Public Class maincollection
         rconf = rconf.getconfig()
         tso_auto_addtoablumonnewart.Checked = rconf.ptso_auto_addtoablumonnewart
         setlookandfeel()
+
+        'load studio information
+        loadmystudios(rconf.basefolder)
         'Try
         '    Debug.Print("getting all movie data")
         '    parseimdb.sqlGetAllMovies(allmovieslist)
@@ -6058,6 +6088,37 @@ Public Class maincollection
         dlgMovieDebug.Dispose()
         dlgMovieDebug.Close()
     End Sub
+    Private Sub displaystudio(ByVal curstudio As String)
+        Dim studioimage As String = ""
+        Dim studioimagelocation As String = ""
+
+        Dim inuse As Boolean = False
+        For Each stockstudio As thestudio.mystudio In gvMystudios.studios
+            If curstudio.ToLower.Contains(stockstudio.Studioname.ToLower) Then
+                If Not stockstudio.Displayonly Then
+                    studioimage = stockstudio.Texture
+                    inuse = True
+                    Exit For
+                End If
+            End If
+        Next
+        If inuse Then
+            studioimagelocation = addfiletofolder(rconf.customimagesfolder, "media\" & Strings.Replace(studioimage, "/", "\"))
+
+            If File.Exists(studioimagelocation) Then
+                pbMovieStudio.ImageLocation = studioimagelocation
+                Try
+                    pbMovieStudio.Load()
+                    pbMovieStudio.Visible = True
+                Catch ex As Exception
+                End Try
+            Else
+                pbMovieStudio.ImageLocation = Nothing
+                pbMovieStudio.Image = Nothing
+                pbMovieStudio.Visible = False
+            End If
+        End If
+    End Sub
     Public Sub processdropdownitems()
 
         'reset curtmdbfacount
@@ -6327,7 +6388,9 @@ Public Class maincollection
 
             'do the display of the posters
             displaymovieposters()
-
+            If rconf.pcbGeneralSupportSkinBasedFlagging Then
+                dumpposterstofolder()
+            End If
             Debug.Print("tmdb posters download done")
 
             'get fanart - first check to see if it's enabled
@@ -6336,6 +6399,10 @@ Public Class maincollection
                 If messageprompts Then Me.Refresh()
                 'downloadtmdbfanart(currentmovie)
                 getfanart(currentmovie, ais, True, False, True)
+                If rconf.pcbGeneralSupportSkinBasedFlagging Then
+                    dumpfanarttofolder()
+                End If
+
             End If
         End If
 
@@ -6476,6 +6543,11 @@ Public Class maincollection
         Me.tbyear.Text = currentmovie.pyear.ToString
         Me.tbTop250.Text = currentmovie.ptop250
         Me.tbTrailer.Text = currentmovie.ptrailer
+
+        'display studio image
+        'gvMystudios
+        displaystudio(tbStudio.Text)
+
 
         '---------------------------- Mediaicons Section ---------------------------
         If ais Then 'allow thumbnail selection
@@ -22108,6 +22180,45 @@ Public Class maincollection
                 Debug.Print("Fanart image that was set for display greater then the 24 allowed in the GUI, I have nowhere to put the darn thing so I'll act like it was never there!")
         End Select
     End Sub
+    Private Sub dumpfanarttofolder()
+
+    End Sub
+    Private Sub dumpposterstofolder(Optional ByVal arrayofposters As ArrayList = Nothing)
+        Dim temparrayofposters As New ArrayList
+        If arrayofposters Is Nothing Then
+            For Each impposter In currentmovie.pimpawardsposters
+                temparrayofposters.Add(impposter)
+            Next
+            For Each tmdbposter In currentmovie.ptmdbposters
+                temparrayofposters.Add(tmdbposter)
+            Next
+        End If
+        If Not arrayofposters Is Nothing Then temparrayofposters = arrayofposters
+        Dim tbdcou As Integer = 0 'tbdcou is the counter for the pictureboxes and is incremented after a sucessfull image load
+        If messageprompts Then lblPbar.Text = "Loading Poster into GUI"
+        If messageprompts Then Me.Refresh()
+
+        Dim oktocopy As Boolean = False
+        Dim extrasfolder As String = addfiletofolder(currentmovie.getmoviepath, "extrathumbs")
+        If Not currentmovie.pfilemode Then
+            If Not Directory.Exists(extrasfolder) Then
+                'it's new ok to copy files, create folder and copy them
+                Directory.CreateDirectory(extrasfolder)
+                'oktocopy = True todo: needs some more thought and naming convtions first
+            End If
+        End If
+
+        For Each curposter As String In temparrayofposters
+            Dim posterfilename As String = curposter
+            If posterfilename.Length <= 3 Then
+                Continue For
+            End If
+            If oktocopy Then File.Copy(curposter, addfiletofolder(extrasfolder, "thumb" & tbdcou.ToString & ".jpg"), True)
+            'counter is tbdcou
+            tbdcou += 1
+        Next
+
+    End Sub
     Private Sub displaymovieposters(Optional ByVal arrayofposters As ArrayList = Nothing)
         Dim temparrayofposters As New ArrayList
         If arrayofposters Is Nothing Then
@@ -36492,6 +36603,7 @@ Public Class configuration
     Private cbautocreatemovienametbn As Boolean
     Private cbnopromptfornewposters As Boolean
     Private cbscanformoviemediainformation As Boolean
+    Private cbscanforepisodemediainformation As Boolean = True
     Private cbcopyplotsummaryifnoplot As Boolean
     Private cbFilterUnderscoreDot As Boolean
     Private ptype As String = ".jpg"
@@ -36948,6 +37060,16 @@ Public Class configuration
             cbnopromptfornewposters = value
         End Set
     End Property
+    Property pcbscanforepisodemediainformation() As Boolean
+        Get
+            Return cbscanforepisodemediainformation
+        End Get
+        Set(ByVal value As Boolean)
+            cbscanforepisodemediainformation = value
+        End Set
+
+    End Property
+
     Property pcbscanformoviemediainformation() As Boolean
         Get
             Return cbscanformoviemediainformation

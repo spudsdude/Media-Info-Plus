@@ -11,26 +11,59 @@ Namespace thestudio
                 Throw New Exception("Object is not MyObject")
             End If
             Dim Compare As mystudio = CType(obj, mystudio)
-            Dim result As Integer = Me.studio.CompareTo(Compare.studio)
+            Dim result As Integer = Me.Studioname.CompareTo(Compare.Studioname)
 
             If result = 0 Then
-                result = Me.studio.CompareTo(Compare.studio)
+                result = Me.Studioname.CompareTo(Compare.Studioname)
             End If
             Return result
         End Function
-        Private p_element_studio As String
-        Property studio() As String
+        'Private p_element_studio As String
+        'Property studio() As String
+        '    Get
+        '        Return p_element_studio
+        '    End Get
+        '    Set(ByVal value As String)
+        '        p_element_studio = value
+        '    End Set
+        'End Property
+        Private p_element_texture As System.String
+        Private p_element_studioname As System.String
+        Private p_element_displayonly As Boolean
+        ' <summary>String texture element.</summary>
+        <XmlElement("displayonly")> _
+       Public Property [Displayonly]() As Boolean
             Get
-                Return p_element_studio
+                Return Me.p_element_displayonly
             End Get
-            Set(ByVal value As String)
-                p_element_studio = value
+            Set(ByVal Value As Boolean)
+                Me.p_element_displayonly = Value
+            End Set
+        End Property
+        ' <summary>String texture element.</summary>
+        <XmlElement("texture")> _
+       Public Property [Texture]() As System.String
+            Get
+                Return Me.p_element_texture
+            End Get
+            Set(ByVal Value As System.String)
+                Me.p_element_texture = Value
             End Set
         End Property
 
+        ' <summary>String studioname element.</summary>
+        <XmlElement("studioname")> _
+        Public Property [Studioname]() As System.String
+             Get
+                Return Me.p_element_studioname
+            End Get
+             Set(ByVal Value As System.String)
+                Me.p_element_studioname = Value
+            End Set
+        End Property
     End Class
     Public Class mystudios
-        Private p_element_studio As New List(Of String)
+        Private p_element_studio As New List(Of mystudio)
         Private p_element_version As Double = 0
         <XmlElement("version")> _
         Property version() As Double
@@ -42,11 +75,11 @@ Namespace thestudio
             End Set
         End Property
         <XmlElement("mystudio")> _
-        Property studios() As List(Of String)
+        Property studios() As List(Of mystudio)
             Get
                 Return p_element_studio
             End Get
-            Set(ByVal value As List(Of String))
+            Set(ByVal value As List(Of mystudio))
                 p_element_studio = value
             End Set
         End Property

@@ -11,7 +11,7 @@ Public Class dlgMovieStudioSelect
     Private curMovie As movie
     Private Sub loadmystudios(ByVal basefolder As String)
         'If there is no mystudios.xml, create the base version
-        Dim mystudiosxml As String = basefolder + "mystudios.xml"
+        Dim mystudiosxml As String = basefolder + "mystudios2.xml"
         If Not File.Exists(mystudiosxml) Then
             creatdefaultstudios(mystudiosxml)
         End If
@@ -20,7 +20,7 @@ Public Class dlgMovieStudioSelect
         Catch ex As Exception
             Debug.Print(ex.ToString)
         End Try
-        If gvMystudios Is Nothing Or Not gvMystudios.version = 1.01 Then
+        If gvMystudios Is Nothing Or Not gvMystudios.version = 1.02 Then
             'something must be wrong in the xml or it's an old version, back it up and generate a new one
             Try 'try to move it to the bakupfile
                 Dim t As TimeSpan = (DateTime.UtcNow - New DateTime(1970, 1, 1))
@@ -57,7 +57,9 @@ Public Class dlgMovieStudioSelect
         'Next
         Dim RowPosition As Integer = 0
         While RowPosition < dtIDA.Rows.Count
-            cdgmystudios.studios.Add(dtIDA.Rows(RowPosition)("Name").ToString)
+            Dim newstudio As New mystudio
+            newstudio.Studioname = dtIDA.Rows(RowPosition)("Name").ToString
+            cdgmystudios.studios.Add(newstudio) '(dtIDA.Rows(RowPosition)("Name").ToString)
             RowPosition += 1
 
         End While
@@ -75,17 +77,18 @@ Public Class dlgMovieStudioSelect
         Dim studioarray As New ArrayList
         For Each strObj As String In objDG
             Dim newstudio As New mystudio
-            newstudio.studio = strObj
+            newstudio.Studioname = strObj
             studioarray.Add(newstudio)
         Next
         studioarray.Sort()
 
         Dim obj As mystudio
         For Each obj In studioarray
-            'Console.WriteLine(obj.studio)
-            cdgmystudios.studios.Add(obj.studio)
+            Dim newstudio As New mystudio
+            newstudio.Studioname = obj.Studioname
+            cdgmystudios.studios.Add(newstudio) '(obj.Studioname)
         Next
-        cdgmystudios.version = 1.01
+        cdgmystudios.version = 1.02
         'Dim RowPosition As Integer = 0
         'While RowPosition < dtIDA.Rows.Count
         '    cdgmystudios.studios.Add(dtIDA.Rows(RowPosition)("Name").ToString)
@@ -125,17 +128,19 @@ Public Class dlgMovieStudioSelect
             End If
         Next
         'remove it from the gvmystudios list
-        For Each stockstudio As String In gvMystudios.studios
+        For Each stockstudio As mystudio In gvMystudios.studios
             Dim inuse As Boolean = False
             For Each usedstudio As String In strArrayListUsedstudio
                 'Debug.Print(stockgenre + " -- > " + usedgenre)
-                If stockstudio = usedstudio Then
-                    Debug.Print("---> Matched: " + stockstudio + " -- > " + usedstudio)
+                If stockstudio.Studioname = usedstudio Then
+                    Debug.Print("---> Matched: " + stockstudio.Studioname + " -- > " + usedstudio)
                     inuse = True
                 End If
             Next
             If Not inuse Then
-                lbAllStudio.Items.Add(stockstudio)
+                If Not stockstudio.Displayonly Then
+                    lbAllStudio.Items.Add(stockstudio.Studioname)
+                End If
             End If
         Next
     End Sub
@@ -169,8 +174,8 @@ Public Class dlgMovieStudioSelect
         Me.lbSelectedStudio.Items.Clear()
         Me.lbAllStudio.Items.Clear()
         'fill the all list
-        For Each stockgenre As String In gvMystudios.studios
-            Me.lbAllStudio.Items.Add(stockgenre)
+        For Each stockgenre As mystudio In gvMystudios.studios
+            If Not stockgenre.Displayonly Then Me.lbAllStudio.Items.Add(stockgenre.Studioname)
         Next
         'Me.lbAllGenre.Items.AddRange(New Object() {"Action", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary", "Drama", "Family", "Fantasy", "Film-Noir", "Game-Show", "History", "Horror", "Music", "Musical", "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller", "War", "Western"})
     End Sub
