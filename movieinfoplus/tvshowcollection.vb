@@ -1073,7 +1073,7 @@ Public Class tvshowcollection
                                 Dim multiepisode As Boolean = False
                                 Dim numofepisodes As Integer = 0
                                 Try
-                                    ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
+                                    ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,4})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
                                     If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Regex1 season resulted in :" + ctv_season
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "check to see if it's a multipart episode"
@@ -1380,7 +1380,7 @@ Public Class tvshowcollection
                 End While
                 If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-------------- 557 --------------"
                 Dim tcount As Integer = 0
-                While tcount <= 100 'handles 100 seasons
+                While tcount <= 2100 'handles 100 seasons
                     'If seasonsused.ContainsValue(CStr(tcount)) Or tcount = 0 Then
                     Dim tseasonholder As New seasons
                     tseasonholder.seasonnumber = CStr(tcount)
@@ -1925,7 +1925,7 @@ Public Class tvshowcollection
                                     Dim multiepisode As Boolean = False
                                     Dim numofepisodes As Integer = 0
                                     Try
-                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,2})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
+                                        ctv_season = Regex.Match(tfnameoffile, "(?<season>\d{1,4})[-EeXx](?<episode>[0-9]+)", RegexOptions.IgnoreCase).Groups("season").Value
                                         If Strings.Left(ctv_season, 1) = "0" And ctv_season.Length >= 1 Then ctv_season = Strings.Right(ctv_season, ctv_season.Length - 1)
 
                                         Try
@@ -2542,7 +2542,7 @@ Public Class tvshowcollection
                     curseasoncounter += 1
                 End While
                 Dim tcount As Integer = 0
-                While tcount <= 100 'handles 100 seasons
+                While tcount <= 2100 'handles 100 seasons
                     'If seasonsused.ContainsValue(CStr(tcount)) Or tcount = 0 Then
                     Dim tseasonholder As New seasons
                     tseasonholder.seasonnumber = CStr(tcount)

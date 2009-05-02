@@ -678,7 +678,7 @@ Me.tsmishows_posters_q80 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_posters_q90 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmishows_posters_q95 = New System.Windows.Forms.ToolStripMenuItem
 Me.ToolStripSeparator22 = New System.Windows.Forms.ToolStripSeparator
-Me.CreateThumbnailForEpisodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.tsl_shows_fanartsize = New System.Windows.Forms.ToolStripLabel
 Me.kpEpisodeData = New ComponentFactory.Krypton.Toolkit.KryptonPanel
 Me.khbEpisodeThumbGroup = New ComponentFactory.Krypton.Toolkit.KryptonHeaderGroup
@@ -794,6 +794,7 @@ Me.tsmimusic_fanart_q70 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmimusic_fanart_q80 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmimusic_fanart_q90 = New System.Windows.Forms.ToolStripMenuItem
 Me.tsmimusic_fanart_q95 = New System.Windows.Forms.ToolStripMenuItem
+Me.tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
 Me.pbMusicCurFanart = New System.Windows.Forms.PictureBox
 Me.tpFCDN = New Dotnetrix.Controls.TabPageEX
 Me.tcFCDN = New Dotnetrix.Controls.TabControlEX
@@ -6075,7 +6076,7 @@ Me.tcMain.Margin = New System.Windows.Forms.Padding(0)
 Me.tcMain.Multiline = true
 Me.tcMain.Name = "tcMain"
 Me.tcMain.Padding = New System.Drawing.Point(2, 2)
-Me.tcMain.SelectedIndex = 0
+Me.tcMain.SelectedIndex = 1
 Me.tcMain.SelectedTabColor = System.Drawing.Color.Gray
 Me.tcMain.Size = New System.Drawing.Size(822, 706)
 Me.tcMain.TabColor = System.Drawing.Color.RoyalBlue
@@ -6193,7 +6194,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(200, 300)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(210, 310)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6203,7 +6204,7 @@ Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 0)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(188, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(198, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -8843,7 +8844,7 @@ Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
 '
 Me.tsddshows_tools.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
 Me.tsddshows_tools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsddshows_tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator21, Me.tsmishows_currentBackgroundToModify, Me.tsmishows_currentBackgroundToModifyFileSize, Me.ResizeBackgroundImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem1, Me.ToolStripSeparator20, Me.tsmishows_currentImageToModify, Me.tsmishows_currentImageToModifyFileSize, Me.ResizeShowImageToolStripMenuItem, Me.CompressShowImageToolStripMenuItem, Me.ToolStripSeparator22, Me.CreateThumbnailForEpisodeToolStripMenuItem})
+Me.tsddshows_tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripSeparator21, Me.tsmishows_currentBackgroundToModify, Me.tsmishows_currentBackgroundToModifyFileSize, Me.ResizeBackgroundImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem1, Me.ToolStripSeparator20, Me.tsmishows_currentImageToModify, Me.tsmishows_currentImageToModifyFileSize, Me.ResizeShowImageToolStripMenuItem, Me.CompressShowImageToolStripMenuItem, Me.ToolStripSeparator22, Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem})
 Me.tsddshows_tools.Image = CType(resources.GetObject("tsddshows_tools.Image"),System.Drawing.Image)
 Me.tsddshows_tools.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddshows_tools.Name = "tsddshows_tools"
@@ -9036,11 +9037,11 @@ Me.tsmishows_posters_q95.Text = "95% Quality"
 Me.ToolStripSeparator22.Name = "ToolStripSeparator22"
 Me.ToolStripSeparator22.Size = New System.Drawing.Size(213, 6)
 '
-'CreateThumbnailForEpisodeToolStripMenuItem
+'tsmishows_CreateThumbnailForEpisodeToolStripMenuItem
 '
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Name = "CreateThumbnailForEpisodeToolStripMenuItem"
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-Me.CreateThumbnailForEpisodeToolStripMenuItem.Text = "Create Thumbnail for Episode"
+Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Name = "tsmishows_CreateThumbnailForEpisodeToolStripMenuItem"
+Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Text = "Create Thumbnail for Episode"
 '
 'tsl_shows_fanartsize
 '
@@ -10232,7 +10233,7 @@ Me.movtbar_tsb_SetupAndConfigurationToolStripMenuItem1.Text = "Setup and Configu
 '
 Me.tsddbTools.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
 Me.tsddbTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-Me.tsddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbMusicSortMyMusicToolStripMenuItem, Me.tsbMusicModifyAlbumDataToolStripMenuItem, Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem, Me.ResizeFanartImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem})
+Me.tsddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbMusicSortMyMusicToolStripMenuItem, Me.tsbMusicModifyAlbumDataToolStripMenuItem, Me.ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToArtistImageToolStripMenuItem, Me.tsb_music_ExtractImageFromMusicFileToAlbumImageToolStripMenuItem, Me.ResizeFanartImageToolStripMenuItem, Me.CompressBackgroundImageToolStripMenuItem, Me.tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem})
 Me.tsddbTools.Image = CType(resources.GetObject("tsddbTools.Image"),System.Drawing.Image)
 Me.tsddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddbTools.Name = "tsddbTools"
@@ -10330,6 +10331,12 @@ Me.tsmimusic_fanart_q90.Text = "90% Quality"
 Me.tsmimusic_fanart_q95.Name = "tsmimusic_fanart_q95"
 Me.tsmimusic_fanart_q95.Size = New System.Drawing.Size(132, 22)
 Me.tsmimusic_fanart_q95.Text = "95% Quality"
+'
+'tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem
+'
+Me.tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem.Name = "tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem"
+Me.tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem.Size = New System.Drawing.Size(428, 22)
+Me.tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem.Text = "Automatic Fanart from htbackdrops images"
 '
 'pbMusicCurFanart
 '
@@ -25002,6 +25009,7 @@ End Sub
     Friend WithEvents kgPickCorrectShow As ComponentFactory.Krypton.Toolkit.KryptonGroup
     Friend WithEvents lbsimnames2 As System.Windows.Forms.ListBox
     Friend WithEvents bw_loadmoviemediapreview As System.ComponentModel.BackgroundWorker
-    Friend WithEvents CreateThumbnailForEpisodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmishows_CreateThumbnailForEpisodeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents pbMovieStudio As System.Windows.Forms.PictureBox
+    Friend WithEvents tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -204,6 +204,10 @@ Module modFileUtils
                 Return False
             Case s.ToLower.Contains("system volume information")
                 Return False
+            Case s.ToUpper.Contains("CERTIFICAT")
+                Return False
+            Case s.ToUpper.Contains("BDMV")
+                Return False
             Case Else
                 Return True
         End Select

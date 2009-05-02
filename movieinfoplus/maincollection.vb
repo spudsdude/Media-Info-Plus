@@ -30473,9 +30473,18 @@ Public Class maincollection
         dlgModifyCurrentAlbum.tbArtistName.Text = currentartist.artistname
         dlgModifyCurrentAlbum.tbAlbumName.Text = currentalbum.albumname
         dlgModifyCurrentAlbum.ShowDialog()
-        If Not gvnewartistname = currentartist.artistname And Not gvnewalbumname = currentalbum.albumname Then
-            injectmodifiedalbumdata()
+        Dim changed As Boolean = False
+
+        If Not gvnewartistname = currentartist.artistname Then
+            changed = True
         End If
+
+        If Not gvnewalbumname = currentalbum.albumname Then
+            changed = True
+        End If
+
+        If changed Then injectmodifiedalbumdata()
+
     End Sub
 
     Private Sub ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ScanAllArtistsAndCheckForBackgroundslooksLocallyForBackgroundsToolStripMenuItem.Click
@@ -32449,6 +32458,14 @@ Public Class maincollection
 
 
         GC.Collect()
+
+        Dim thumbwhere As String = addfiletofolder(rconf.tempfolder, "thumbs\")
+        If Not Directory.Exists(thumbwhere) Then Directory.CreateDirectory(thumbwhere)
+
+        If Not File.Exists(addfiletofolder(rconf.basefolder, "ffmpeg.exe")) Then
+            MsgBox("ffmpeg is missing.. this needs to be in MIP's root directory.")
+            Exit Sub
+        End If
         'MsgBox("this takes a few minutes, it will create and then resize images from the video file")
         Dim thumbOrig As String = addfiletofolder(rconf.tempfolder, "thumbs\thumbOrig.jpg")
         deletefile(thumbOrig)
@@ -32467,8 +32484,7 @@ Public Class maincollection
             End Try
         End If
         'creation of thumbs
-        Dim thumbwhere As String = addfiletofolder(rconf.tempfolder, "thumbs\")
-        If Not Directory.Exists(thumbwhere) Then Directory.CreateDirectory(thumbwhere)
+      
 
         Dim thumb1 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-01.jpg")
         Dim thumb2 As String = addfiletofolder(rconf.tempfolder, "thumbs\thumb-03.jpg")
@@ -33908,9 +33924,67 @@ Public Class maincollection
 
     End Sub
 
-    Private Sub CreateThumbnailForEpisodeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CreateThumbnailForEpisodeToolStripMenuItem.Click
+    Private Sub CreateThumbnailForEpisodeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Click
         createepisodethumbnail()
 
+    End Sub
+    Private Function getmusicfanart_automatic_check_save(ByVal currentartistname As String) As ArrayList
+        Dim htdb As New htbackdrops
+        Dim dlitems As New ArrayList 'list of htbackdrops
+        Dim curdlobjects As New ArrayList
+        Dim displaylist As New ArrayList
+        If rbem.Checked Then
+            If rconf.pcbGetMusicFanartFromHTBackdrops Then
+                htdb.getdownloadlist(dlitems, Strings.Replace(currentartistname, "&", "%20"))
+                'download 
+                If Not dlitems.Count = 0 Then
+                    Dim countGrabOnly1 As Integer = 0
+                    For Each curdbitem As bditem In dlitems
+                        If countGrabOnly1 >= 1 Then Exit For
+                        Dim newdlo As New miplibfc.mip.dlobject
+                        newdlo.URL = curdbitem.url
+                        newdlo.misc = "HT Backdrops Item: " & currentartistname
+                        newdlo.Destination = curdbitem.destinationfolder
+                        displaylist.Add(newdlo.Destination)
+                        If Not File.Exists(newdlo.Destination) Then curdlobjects.Add(newdlo)
+                        countGrabOnly1 += 1
+                    Next
+                End If
+                If Not curdlobjects.Count = 0 Then
+                    'download the images
+                    dlgDownloadingFile.downloadingmutliimages = True
+                    dlgDownloadingFile.downloadlist = curdlobjects
+                    dlgDownloadingFile.ShowDialog()
+                End If
+            End If
+        End If
+        Return displaylist
+    End Function
+    Private Sub tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsb_music_AutomaticFanartFromHtbackdropsImagesToolStripMenuItem.Click
+        Me.Enabled = False
+        lblPbar.Visible = True
+        lblPbar.Text = "Starting Fanart Scan and assign"
+        For Each artname As String In mymusicbyartist
+            Dim tempartist As musicartist = CType(mymusiccollection.Item(artname), musicartist)
+            Dim destdir As String = tempartist.path
+            If Not File.Exists(destdir + "\fanart.jpg") Then
+                'if no fanart, then do the htbackdrops search and assign that image to newfafile
+                Dim newarraylist As New ArrayList
+                newarraylist = getmusicfanart_automatic_check_save(tempartist.artistname)
+                Dim newfafile As String = "" 'findsimmusicfanart(tempartist.artistname)
+                If messageprompts Then lblPbar.Text = "-- Downloading Fanart for " + tempartist.artistname + "--"
+                If messageprompts Then Me.Refresh()
+                If Not newarraylist.Count = 0 Then
+                    newfafile = newarraylist.Item(0).ToString
+                    If File.Exists(newfafile) Then
+                        File.Copy(newfafile, destdir + "\fanart.jpg")
+                    End If
+                End If
+            End If
+        Next
+        Me.Enabled = True
+        lblPbar.Text = ""
+        lblPbar.Visible = False
     End Sub
 End Class
 <Serializable()> Public Class posters
