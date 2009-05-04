@@ -26,6 +26,11 @@ Partial Class dlgPickThumbs
         Me.OK_Button = New System.Windows.Forms.Button
         Me.Cancel_Button = New System.Windows.Forms.Button
         Me.scMain = New System.Windows.Forms.SplitContainer
+        Me.pbThumb10 = New System.Windows.Forms.PictureBox
+        Me.pbThumb12 = New System.Windows.Forms.PictureBox
+        Me.pbThumb11 = New System.Windows.Forms.PictureBox
+        Me.pbThumb9 = New System.Windows.Forms.PictureBox
+        Me.btnUsePrevious = New ComponentFactory.Krypton.Toolkit.KryptonButton
         Me.pbThumb6 = New System.Windows.Forms.PictureBox
         Me.pbThumb8 = New System.Windows.Forms.PictureBox
         Me.pbThumb7 = New System.Windows.Forms.PictureBox
@@ -36,6 +41,11 @@ Partial Class dlgPickThumbs
         Me.pbThumb2 = New System.Windows.Forms.PictureBox
         Me.pbThumb1 = New System.Windows.Forms.PictureBox
         Me.pbThumbSelected = New System.Windows.Forms.PictureBox
+        Me.pbThumbOrig = New System.Windows.Forms.PictureBox
+        Me.pbThumb10f = New System.Windows.Forms.PictureBox
+        Me.pbThumb12f = New System.Windows.Forms.PictureBox
+        Me.pbThumb11f = New System.Windows.Forms.PictureBox
+        Me.pbThumb9f = New System.Windows.Forms.PictureBox
         Me.pbThumb6f = New System.Windows.Forms.PictureBox
         Me.pbThumb8f = New System.Windows.Forms.PictureBox
         Me.pbThumb7f = New System.Windows.Forms.PictureBox
@@ -47,20 +57,14 @@ Partial Class dlgPickThumbs
         Me.pbThumb2f = New System.Windows.Forms.PictureBox
         Me.pbThumb1f = New System.Windows.Forms.PictureBox
         Me.kgDlgMain = New ComponentFactory.Krypton.Toolkit.KryptonGroup
-        Me.btnUsePrevious = New ComponentFactory.Krypton.Toolkit.KryptonButton
-        Me.pbThumbOrig = New System.Windows.Forms.PictureBox
-        Me.pbThumb10 = New System.Windows.Forms.PictureBox
-        Me.pbThumb12 = New System.Windows.Forms.PictureBox
-        Me.pbThumb11 = New System.Windows.Forms.PictureBox
-        Me.pbThumb9 = New System.Windows.Forms.PictureBox
-        Me.pbThumb10f = New System.Windows.Forms.PictureBox
-        Me.pbThumb12f = New System.Windows.Forms.PictureBox
-        Me.pbThumb11f = New System.Windows.Forms.PictureBox
-        Me.pbThumb9f = New System.Windows.Forms.PictureBox
         Me.TableLayoutPanel1.SuspendLayout()
         Me.scMain.Panel1.SuspendLayout()
         Me.scMain.Panel2.SuspendLayout()
         Me.scMain.SuspendLayout()
+        CType(Me.pbThumb10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +74,11 @@ Partial Class dlgPickThumbs
         CType(Me.pbThumb2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumbSelected, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumbOrig, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb10f, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb12f, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb11f, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbThumb9f, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb6f, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb8f, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbThumb7f, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,15 +92,6 @@ Partial Class dlgPickThumbs
         CType(Me.kgDlgMain.Panel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.kgDlgMain.Panel.SuspendLayout()
         Me.kgDlgMain.SuspendLayout()
-        CType(Me.pbThumbOrig, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb10f, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb12f, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb11f, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbThumb9f, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -173,6 +173,57 @@ Partial Class dlgPickThumbs
         Me.scMain.Size = New System.Drawing.Size(908, 719)
         Me.scMain.SplitterDistance = 363
         Me.scMain.TabIndex = 1
+        '
+        'pbThumb10
+        '
+        Me.pbThumb10.Location = New System.Drawing.Point(247, 76)
+        Me.pbThumb10.Name = "pbThumb10"
+        Me.pbThumb10.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb10.TabIndex = 15
+        Me.pbThumb10.TabStop = False
+        '
+        'pbThumb12
+        '
+        Me.pbThumb12.Location = New System.Drawing.Point(247, 228)
+        Me.pbThumb12.Name = "pbThumb12"
+        Me.pbThumb12.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb12.TabIndex = 14
+        Me.pbThumb12.TabStop = False
+        '
+        'pbThumb11
+        '
+        Me.pbThumb11.Location = New System.Drawing.Point(247, 152)
+        Me.pbThumb11.Name = "pbThumb11"
+        Me.pbThumb11.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb11.TabIndex = 13
+        Me.pbThumb11.TabStop = False
+        '
+        'pbThumb9
+        '
+        Me.pbThumb9.Location = New System.Drawing.Point(247, 0)
+        Me.pbThumb9.Name = "pbThumb9"
+        Me.pbThumb9.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb9.TabIndex = 12
+        Me.pbThumb9.TabStop = False
+        '
+        'btnUsePrevious
+        '
+        Me.btnUsePrevious.Location = New System.Drawing.Point(41, 325)
+        Me.btnUsePrevious.Name = "btnUsePrevious"
+        Me.btnUsePrevious.Size = New System.Drawing.Size(288, 35)
+        Me.btnUsePrevious.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.btnUsePrevious.TabIndex = 10
+        Me.btnUsePrevious.Text = "Use Previous Episode Image Thumbnail Instead"
+        Me.btnUsePrevious.Values.ExtraText = ""
+        Me.btnUsePrevious.Values.Image = Nothing
+        Me.btnUsePrevious.Values.ImageStates.ImageCheckedNormal = Nothing
+        Me.btnUsePrevious.Values.ImageStates.ImageCheckedPressed = Nothing
+        Me.btnUsePrevious.Values.ImageStates.ImageCheckedTracking = Nothing
+        Me.btnUsePrevious.Values.Text = "Use Previous Episode Image Thumbnail Instead"
         '
         'pbThumb6
         '
@@ -267,6 +318,52 @@ Partial Class dlgPickThumbs
         Me.pbThumbSelected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbThumbSelected.TabIndex = 5
         Me.pbThumbSelected.TabStop = False
+        '
+        'pbThumbOrig
+        '
+        Me.pbThumbOrig.Location = New System.Drawing.Point(436, 152)
+        Me.pbThumbOrig.Name = "pbThumbOrig"
+        Me.pbThumbOrig.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumbOrig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumbOrig.TabIndex = 11
+        Me.pbThumbOrig.TabStop = False
+        Me.pbThumbOrig.Visible = False
+        '
+        'pbThumb10f
+        '
+        Me.pbThumb10f.Location = New System.Drawing.Point(247, 81)
+        Me.pbThumb10f.Name = "pbThumb10f"
+        Me.pbThumb10f.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb10f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb10f.TabIndex = 18
+        Me.pbThumb10f.TabStop = False
+        '
+        'pbThumb12f
+        '
+        Me.pbThumb12f.Location = New System.Drawing.Point(247, 233)
+        Me.pbThumb12f.Name = "pbThumb12f"
+        Me.pbThumb12f.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb12f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb12f.TabIndex = 17
+        Me.pbThumb12f.TabStop = False
+        '
+        'pbThumb11f
+        '
+        Me.pbThumb11f.Location = New System.Drawing.Point(247, 157)
+        Me.pbThumb11f.Name = "pbThumb11f"
+        Me.pbThumb11f.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb11f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb11f.TabIndex = 16
+        Me.pbThumb11f.TabStop = False
+        '
+        'pbThumb9f
+        '
+        Me.pbThumb9f.Location = New System.Drawing.Point(247, 5)
+        Me.pbThumb9f.Name = "pbThumb9f"
+        Me.pbThumb9f.Size = New System.Drawing.Size(116, 76)
+        Me.pbThumb9f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbThumb9f.TabIndex = 15
+        Me.pbThumb9f.TabStop = False
         '
         'pbThumb6f
         '
@@ -373,103 +470,6 @@ Partial Class dlgPickThumbs
         Me.kgDlgMain.Size = New System.Drawing.Size(920, 731)
         Me.kgDlgMain.TabIndex = 2
         '
-        'btnUsePrevious
-        '
-        Me.btnUsePrevious.Location = New System.Drawing.Point(41, 325)
-        Me.btnUsePrevious.Name = "btnUsePrevious"
-        Me.btnUsePrevious.Size = New System.Drawing.Size(288, 35)
-        Me.btnUsePrevious.StateCommon.Content.ShortText.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnUsePrevious.TabIndex = 10
-        Me.btnUsePrevious.Text = "Use Previous Episode Image Thumbnail Instead"
-        Me.btnUsePrevious.Values.ExtraText = ""
-        Me.btnUsePrevious.Values.Image = Nothing
-        Me.btnUsePrevious.Values.ImageStates.ImageCheckedNormal = Nothing
-        Me.btnUsePrevious.Values.ImageStates.ImageCheckedPressed = Nothing
-        Me.btnUsePrevious.Values.ImageStates.ImageCheckedTracking = Nothing
-        Me.btnUsePrevious.Values.Text = "Use Previous Episode Image Thumbnail Instead"
-        '
-        'pbThumbOrig
-        '
-        Me.pbThumbOrig.Location = New System.Drawing.Point(436, 152)
-        Me.pbThumbOrig.Name = "pbThumbOrig"
-        Me.pbThumbOrig.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumbOrig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumbOrig.TabIndex = 11
-        Me.pbThumbOrig.TabStop = False
-        Me.pbThumbOrig.Visible = False
-        '
-        'pbThumb10
-        '
-        Me.pbThumb10.Location = New System.Drawing.Point(247, 76)
-        Me.pbThumb10.Name = "pbThumb10"
-        Me.pbThumb10.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb10.TabIndex = 15
-        Me.pbThumb10.TabStop = False
-        '
-        'pbThumb12
-        '
-        Me.pbThumb12.Location = New System.Drawing.Point(247, 228)
-        Me.pbThumb12.Name = "pbThumb12"
-        Me.pbThumb12.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb12.TabIndex = 14
-        Me.pbThumb12.TabStop = False
-        '
-        'pbThumb11
-        '
-        Me.pbThumb11.Location = New System.Drawing.Point(247, 152)
-        Me.pbThumb11.Name = "pbThumb11"
-        Me.pbThumb11.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb11.TabIndex = 13
-        Me.pbThumb11.TabStop = False
-        '
-        'pbThumb9
-        '
-        Me.pbThumb9.Location = New System.Drawing.Point(247, 0)
-        Me.pbThumb9.Name = "pbThumb9"
-        Me.pbThumb9.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb9.TabIndex = 12
-        Me.pbThumb9.TabStop = False
-        '
-        'pbThumb10f
-        '
-        Me.pbThumb10f.Location = New System.Drawing.Point(247, 81)
-        Me.pbThumb10f.Name = "pbThumb10f"
-        Me.pbThumb10f.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb10f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb10f.TabIndex = 18
-        Me.pbThumb10f.TabStop = False
-        '
-        'pbThumb12f
-        '
-        Me.pbThumb12f.Location = New System.Drawing.Point(247, 233)
-        Me.pbThumb12f.Name = "pbThumb12f"
-        Me.pbThumb12f.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb12f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb12f.TabIndex = 17
-        Me.pbThumb12f.TabStop = False
-        '
-        'pbThumb11f
-        '
-        Me.pbThumb11f.Location = New System.Drawing.Point(247, 157)
-        Me.pbThumb11f.Name = "pbThumb11f"
-        Me.pbThumb11f.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb11f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb11f.TabIndex = 16
-        Me.pbThumb11f.TabStop = False
-        '
-        'pbThumb9f
-        '
-        Me.pbThumb9f.Location = New System.Drawing.Point(247, 5)
-        Me.pbThumb9f.Name = "pbThumb9f"
-        Me.pbThumb9f.Size = New System.Drawing.Size(116, 76)
-        Me.pbThumb9f.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbThumb9f.TabIndex = 15
-        Me.pbThumb9f.TabStop = False
-        '
         'dlgPickThumbs
         '
         Me.AcceptButton = Me.OK_Button
@@ -483,7 +483,6 @@ Partial Class dlgPickThumbs
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "dlgPickThumbs"
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Episode Thumbnail and Fanart Selection"
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -492,6 +491,10 @@ Partial Class dlgPickThumbs
         Me.scMain.Panel2.ResumeLayout(False)
         Me.scMain.Panel2.PerformLayout()
         Me.scMain.ResumeLayout(False)
+        CType(Me.pbThumb10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -501,6 +504,11 @@ Partial Class dlgPickThumbs
         CType(Me.pbThumb2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumbSelected, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumbOrig, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb10f, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb12f, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb11f, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbThumb9f, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb6f, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb8f, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbThumb7f, System.ComponentModel.ISupportInitialize).EndInit()
@@ -514,15 +522,6 @@ Partial Class dlgPickThumbs
         Me.kgDlgMain.Panel.ResumeLayout(False)
         CType(Me.kgDlgMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.kgDlgMain.ResumeLayout(False)
-        CType(Me.pbThumbOrig, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb10f, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb12f, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb11f, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbThumb9f, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

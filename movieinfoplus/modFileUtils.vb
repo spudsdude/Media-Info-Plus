@@ -174,6 +174,10 @@ Module modFileUtils
         Select Case True
             Case Strings.Right(s, 3).ToLower = "cd1"
                 Return False
+            Case Strings.Right(s, 11).ToLower = "extrathumbs"
+                Return False
+            Case Strings.Right(s, 6).ToLower = "extras"
+                Return False
             Case Strings.Right(s, 3).ToLower = "cd2"
                 Return False
             Case Strings.Right(s, 3).ToLower = "cd3"
@@ -181,8 +185,6 @@ Module modFileUtils
             Case Strings.Right(s, 4).ToLower = "subs"
                 Return False
             Case Strings.Right(s, 9).ToLower = "subtitles"
-                Return False
-            Case Strings.Right(s, 6).ToLower = "extras"
                 Return False
             Case Strings.Right(s, 8).ToLower = "video_ts"
                 Return False
@@ -196,11 +198,11 @@ Module modFileUtils
                 Return False
             Case Strings.Right(s, 6).ToLower = "sample"
                 Return False
-            Case Strings.Right(s, 8).ToUpper = "RECYCLER"
+            Case s.ToUpper.Contains("RECYCLER")
                 Return False
-            Case Strings.Right(s, 12).ToUpper = "$RECYCLE.BIN"
+            Case s.ToUpper.Contains("$RECYCLE.BIN")
                 Return False
-            Case Strings.Right(s, 10).ToUpper = "LOST+FOUND"
+            Case s.ToUpper.Contains("LOST+FOUND")
                 Return False
             Case s.ToLower.Contains("system volume information")
                 Return False

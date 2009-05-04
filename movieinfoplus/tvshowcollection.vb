@@ -445,6 +445,7 @@ Public Class tvshowcollection
 
         If rconf.debugtvshows Or debugon Then
             dbgTVShows = True
+            MsgBox("Notice: Debug Mode is enabled, this will slow things way down.")
         End If
         Dim boguscounter As Integer = 0
         'report progress test
@@ -3019,6 +3020,7 @@ Public Class tvshowcollection
         rconf = rconf.getconfig("config", True)
         If rconf.debugtvshows Or debugon Then
             dbgTVShows = True
+            MsgBox("Notice: Debug Mode is enabled, this will slow things way down.")
         End If
         Dim boguscounter As Integer = 0
         If dbgTVShows Then dlgTVShowCurStatus.Show()

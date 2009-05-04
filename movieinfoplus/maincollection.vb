@@ -17788,7 +17788,9 @@ Public Class maincollection
         'Dim secondsearch As String = "<actor><thumb>\1_SX"
         Try
             ' Debug.Print("actor parse starting")
-            Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            Dim RegexObjA As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char"">(?:<a href=""/character/ch\d{6,7}/"">)?(.{2,75})(?:</a>)?</td>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            'As New Regex("<img src=""(http://.{2,30}imdb.com/images/.{10,100}.(?:jpg)??(?:gif)??)"" width=""\d{1,3}"" height=""\d{1,3}"" border="".{1,3}"">(?:</a><br>)??</td><td class=""nm""><a href=""/name/nm\d{6,7}/"">(.{2,75})</a></td><td class="".{1,5}"">.{0,7}</td><td class=""char""><a href=""/character/ch\d{6,7}/"">(.{2,75})</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+
             'Dim RegexObjA As New Regex("<img src=""(.*?)"" width.*?<a href=""/name/nm.*?/"">(.*?)</a>.*?<a href=""/character/.*?"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
             ' Debug.Print("actor regex object started")
             Dim MatchResultsA As Match = RegexObjA.Match(tempactor)
@@ -24753,10 +24755,238 @@ Public Class maincollection
                     Catch ex As Exception
                         Debug.Print(ex.ToString)
                     End Try
+
+                Case 24
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb25.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb25.Visible = True
+                        Me.pbfatmdb25.ImageLocation = fanartfilename
+                        Me.pbfatmdb25.Enabled = True
+                        Me.pbfatmdb25.Visible = True
+                        Me.pbfatmdb25.AccessibleName = fanartfilename
+                        pbfatmdb25.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 25
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb26.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb26.Visible = True
+                        Me.pbfatmdb26.ImageLocation = fanartfilename
+                        Me.pbfatmdb26.Enabled = True
+                        Me.pbfatmdb26.Visible = True
+                        Me.pbfatmdb26.AccessibleName = fanartfilename
+                        pbfatmdb26.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 26
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb27.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb27.Visible = True
+                        Me.pbfatmdb27.ImageLocation = fanartfilename
+                        Me.pbfatmdb27.Enabled = True
+                        Me.pbfatmdb27.Visible = True
+                        Me.pbfatmdb27.AccessibleName = fanartfilename
+                        pbfatmdb27.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 27
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb28.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb28.Visible = True
+                        Me.pbfatmdb28.ImageLocation = fanartfilename
+                        Me.pbfatmdb28.Enabled = True
+                        Me.pbfatmdb28.Visible = True
+                        Me.pbfatmdb28.AccessibleName = fanartfilename
+                        pbfatmdb28.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 28
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb29.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb29.Visible = True
+                        Me.pbfatmdb29.ImageLocation = fanartfilename
+                        Me.pbfatmdb29.Enabled = True
+                        Me.pbfatmdb29.Visible = True
+                        Me.pbfatmdb29.AccessibleName = fanartfilename
+                        pbfatmdb29.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 29
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb30.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb30.Visible = True
+                        Me.pbfatmdb30.ImageLocation = fanartfilename
+                        Me.pbfatmdb30.Enabled = True
+                        Me.pbfatmdb30.Visible = True
+                        Me.pbfatmdb30.AccessibleName = fanartfilename
+                        pbfatmdb30.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 30
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb31.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb31.Visible = True
+                        Me.pbfatmdb31.ImageLocation = fanartfilename
+                        Me.pbfatmdb31.Enabled = True
+                        Me.pbfatmdb31.Visible = True
+                        Me.pbfatmdb31.AccessibleName = fanartfilename
+                        pbfatmdb31.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 31
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb32.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb32.Visible = True
+                        Me.pbfatmdb32.ImageLocation = fanartfilename
+                        Me.pbfatmdb32.Enabled = True
+                        Me.pbfatmdb32.Visible = True
+                        Me.pbfatmdb32.AccessibleName = fanartfilename
+                        pbfatmdb32.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 32
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb33.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb33.Visible = True
+                        Me.pbfatmdb33.ImageLocation = fanartfilename
+                        Me.pbfatmdb33.Enabled = True
+                        Me.pbfatmdb33.Visible = True
+                        Me.pbfatmdb33.AccessibleName = fanartfilename
+                        pbfatmdb33.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 33
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb34.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb34.Visible = True
+                        Me.pbfatmdb34.ImageLocation = fanartfilename
+                        Me.pbfatmdb34.Enabled = True
+                        Me.pbfatmdb34.Visible = True
+                        Me.pbfatmdb34.AccessibleName = fanartfilename
+                        pbfatmdb34.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+
+                Case 34
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb35.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb35.Visible = True
+                        Me.pbfatmdb35.ImageLocation = fanartfilename
+                        Me.pbfatmdb35.Enabled = True
+                        Me.pbfatmdb35.Visible = True
+                        Me.pbfatmdb35.AccessibleName = fanartfilename
+                        pbfatmdb35.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                Case 35
+                    Try
+                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                        klblfatmdb36.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                        'objImage = Nothing
+                        objImage.Dispose()
+                        klblfatmdb36.Visible = True
+                        Me.pbfatmdb36.ImageLocation = fanartfilename
+                        Me.pbfatmdb36.Enabled = True
+                        Me.pbfatmdb36.Visible = True
+                        Me.pbfatmdb36.AccessibleName = fanartfilename
+                        pbfatmdb36.Load()
+                    Catch ex As Exception
+                        Debug.Print(ex.ToString)
+                    End Try
+                    'Case 36
+                    '    Try
+                    '        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                    '        klblfatmdb37.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                    '        'objImage = Nothing
+                    '        objImage.Dispose()
+                    '        klblfatmdb37.Visible = True
+                    '        Me.pbfatmdb37.ImageLocation = fanartfilename
+                    '        Me.pbfatmdb37.Enabled = True
+                    '        Me.pbfatmdb37.Visible = True
+                    '        Me.pbfatmdb37.AccessibleName = fanartfilename
+                    '        pbfatmdb37.Load()
+                    '    Catch ex As Exception
+                    '        Debug.Print(ex.ToString)
+                    '    End Try
+                    'Case 37
+                    '    Try
+                    '        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                    '        klblfatmdb38.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                    '        'objImage = Nothing
+                    '        objImage.Dispose()
+                    '        klblfatmdb38.Visible = True
+                    '        Me.pbfatmdb38.ImageLocation = fanartfilename
+                    '        Me.pbfatmdb38.Enabled = True
+                    '        Me.pbfatmdb38.Visible = True
+                    '        Me.pbfatmdb38.AccessibleName = fanartfilename
+                    '        pbfatmdb38.Load()
+                    '    Catch ex As Exception
+                    '        Debug.Print(ex.ToString)
+                    '    End Try
+                    'Case 38
+                    '    Try
+                    '        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(fanartfilename)
+                    '        klblfatmdb39.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(fanartfilename)
+                    '        'objImage = Nothing
+                    '        objImage.Dispose()
+                    '        klblfatmdb39.Visible = True
+                    '        Me.pbfatmdb39.ImageLocation = fanartfilename
+                    '        Me.pbfatmdb39.Enabled = True
+                    '        Me.pbfatmdb39.Visible = True
+                    '        Me.pbfatmdb39.AccessibleName = fanartfilename
+                    '        pbfatmdb39.Load()
+                    '    Catch ex As Exception
+                    '        Debug.Print(ex.ToString)
+                    '    End Try
                 Case Else
                     Debug.Print("fanart image display greater then 24, nowhere to put the darn thing")
             End Select
         End If
+
         'tbdcou += 1
         ''break out of loop if running autopilot after the 1st item (counter = 1)
         'If autopilotrunning And tbdcou = 1 Then Exit Sub
@@ -32557,7 +32787,7 @@ Public Class maincollection
         Dim aspectnow As String = ""
         aspectnow = CStr(curtvshowiconsetting_episodeAspectRatio)
         If aspectnow = "" Then
-            MsgBox("guessing aspect ratio")
+            'MsgBox("guessing aspect ratio")
             aspectnow = "2.35"
         End If
         If File.Exists(gvcurrenttvepisode.fullfilenameandpath) Then
@@ -32596,10 +32826,10 @@ Public Class maincollection
         If File.Exists(thumb6f) Then resizeimage("1280x720", thumb6f)
         If File.Exists(thumb7f) Then resizeimage("1280x720", thumb7f)
         If File.Exists(thumb8f) Then resizeimage("1280x720", thumb8f)
-        If File.Exists(thumb9f) Then resizeimage("720x480", thumb9f)
-        If File.Exists(thumb10f) Then resizeimage("720x480", thumb10f)
-        If File.Exists(thumb11f) Then resizeimage("720x480", thumb11f)
-        If File.Exists(thumb12f) Then resizeimage("720x480", thumb12f)
+        If File.Exists(thumb9f) Then resizeimage("1280x720", thumb9f)
+        If File.Exists(thumb10f) Then resizeimage("1280x720", thumb10f)
+        If File.Exists(thumb11f) Then resizeimage("1280x720", thumb11f)
+        If File.Exists(thumb12f) Then resizeimage("1280x720", thumb12f)
 
 
         With dlgPickThumbs

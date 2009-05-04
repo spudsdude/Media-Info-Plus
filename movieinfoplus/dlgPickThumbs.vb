@@ -214,4 +214,8 @@ Public Class dlgPickThumbs
 
         End Try
     End Sub
+
+    Private Sub dlgPickThumbs_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Me.BringToFront()
+    End Sub
 End Class
