@@ -1512,14 +1512,14 @@ Public Class tvshowcollection
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
-                        Console.Out.WriteLine("Adding: " & currentdir.ToString)
+                        Console.Out.WriteLine("Adding Show: " & currentdir.ToString)
                     End If
                 Catch ex As Exception
                     Debug.Print(ex.ToString)
                 End Try
             Next
         Next
-        Console.Out.WriteLine("curdircontents finished")
+        Console.Out.WriteLine("Reading directory contents has completed.")
         While showcount < tvshowarray.Count
             'see if we have any info about the show
             'grab the latest zip file for show

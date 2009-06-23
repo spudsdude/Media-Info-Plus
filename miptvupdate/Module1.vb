@@ -9,13 +9,14 @@ Module Module1
     Dim showdebug As Boolean = False
 
     Sub Main()
-        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2884")
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2901")
         If Command.ToString.ToLower.Contains("help") Then
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")
             Console.Out.WriteLine("-check30   'checks for new items every 30 minutes")
             Console.Out.WriteLine("-check60   'checks for new items every 60 minutes")
             Console.Out.WriteLine("-nfoupdate   'overwrites all existing episode .nfo files with new data")
+            Console.Out.WriteLine("-fastimages   'download just the images as fast as possible")
             Console.Out.WriteLine("-debug   'show debug information about the commandline tool")
 
             Exit Sub
@@ -56,7 +57,7 @@ Module Module1
             Console.Out.WriteLine("Overwrite of .nfo files is set .. all information will be refreshed")
         End If
 
-        If Command.ToString.ToLower.Contains("-superdooper") Then
+        If Command.ToString.ToLower.Contains("-fastimages") Then
             If waittime = 0 Then multimageonly = True
             'Console.Out.WriteLine("Overwrite of .nfo files is set .. all information will be refreshed")
         End If
@@ -83,13 +84,14 @@ Module Module1
 
                     Dim binfilelocal As String = movieinfoplus.maincollection.rconf.wgetfolder + "wget.exe"
                     If Not curdllist.Count = 0 Then
+                        Console.Out.WriteLine("Processing " & curdllist.Count.ToString & " images.")
                         If showdebug Then Console.Out.WriteLine("Number of items to download: " & curdllist.Count.ToString)
                         Dim counter As Integer = 0
                         counter = curdllist.Count
                         Dim curitemcounter As Integer = 1
                         Try
                             For Each item As miplibfc.mip.dlobject In curdllist
-                                Console.Out.WriteLine("Processing Image " & curitemcounter.ToString & "/" & counter.ToString)
+                                If showdebug Then Console.Out.WriteLine("Processing Image " & curitemcounter.ToString & "/" & counter.ToString)
                                 curitemcounter += 1
                                 If Not File.Exists(item.Destination) Then
                                     If showdebug Then Console.Out.WriteLine("Downloading Image to: " & item.Destination)
@@ -100,9 +102,14 @@ Module Module1
                                     'pro1.StartInfo.RedirectStandardError = True
                                     'pro1.StartInfo.UseShellExecute = False
                                     'pro1.StartInfo.CreateNoWindow = True
+                                     If showdebug Then
+                                        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
+                                     Else
+                                        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
+                                     End If
                                     pro1.Start()
                                     If Not multimageonly Then pro1.WaitForExit()
-                                    If multimageonly Then System.Threading.Thread.Sleep(300)
+                                    If multimageonly Then System.Threading.Thread.Sleep(200)
                                     If showdebug Then Console.Out.WriteLine(item.URL.ToString)
                                 End If
                                 If File.Exists(item.Destination) Then

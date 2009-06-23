@@ -1240,13 +1240,13 @@ Public Class maincollection
     Private Sub EnumerateDirectory(ByVal RootDirectory As String)
 
         For Each s As String In Directory.GetDirectories(RootDirectory)
-            If Not (File.GetAttributes(s) And FileAttributes.ReparsePoint) = FileAttributes.ReparsePoint Then
-                dlist_count = dlist_count + 1
-                If validmoviedirc(s) Then
-                    dlist.Add(s)
-                End If
-                EnumerateDirectory(s)
+            'If Not (File.GetAttributes(s) And FileAttributes.ReparsePoint) = FileAttributes.ReparsePoint Then
+            dlist_count = dlist_count + 1
+            If validmoviedirc(s) Then
+                dlist.Add(s)
             End If
+            EnumerateDirectory(s)
+            'End If
         Next s
         'Return junk
     End Sub
