@@ -1475,7 +1475,8 @@ Public Class tvshowcollection
 
     Public Sub kbLoadTvShowsCmdLine(Optional ByVal overwritenfo As Boolean = False, Optional ByVal debugon As Boolean = False, Optional ByVal dlo As Boolean = False)
         gvNoShowsList = "" 'clear out the no show data list var
-        Console.Out.WriteLine("starting to load the episodes")
+        If debugon Then Console.Out.WriteLine("")
+        If debugon Then Console.Out.WriteLine("Searching for episodes in TV Show directorys.")
         'Dim stpw As New Stopwatch
         'stpw.Start()
         rconf = rconf.getconfig("config", True)
@@ -1512,14 +1513,14 @@ Public Class tvshowcollection
                         'dont add it
                     Else
                         If Not File.Exists(currentdir & "\noscan") Then tvshowarray.Add(currentdir)
-                        Console.Out.WriteLine("Adding Show: " & currentdir.ToString)
+                        If debugon Then Console.Out.WriteLine("  - Adding Show: " & currentdir.ToString)
                     End If
                 Catch ex As Exception
-                    Debug.Print(ex.ToString)
+                    Console.Out.WriteLine(ex.ToString)
                 End Try
             Next
         Next
-        Console.Out.WriteLine("Reading directory contents has completed.")
+        If debugon Then Console.Out.WriteLine("Reading directory contents has completed.")
         While showcount < tvshowarray.Count
             'see if we have any info about the show
             'grab the latest zip file for show
@@ -1573,7 +1574,7 @@ Public Class tvshowcollection
                     showcount += 1
                     Continue While
                 End If
-                Console.Out.WriteLine("counter during show loc loop: " & showcount.ToString)
+                If debugon Then Console.Out.WriteLine("Counter during show loc loop: " & showcount.ToString)
                 '    Dim dtIDA As New DataTable
                 '    dtIDA.Columns.Add("Path", GetType(System.String))
                 '    dtIDA.Columns.Add("Name")
@@ -1643,7 +1644,7 @@ Public Class tvshowcollection
                 Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
                 Debug.Print("unable to load xml file from cache folder")
                 showcount += 1
-                Console.Out.WriteLine("no xml file in cache folder for " & "-" & selectedshow & "-")
+                If debugon Then Console.Out.WriteLine("ERROR: No xml file in cache folder for " & "-" & selectedshow & "-")
 
                 Continue While 'break out of while loop, no data in banners 
             End Try
@@ -1865,7 +1866,7 @@ Public Class tvshowcollection
                 xbmctvshow1e.readXML(curtvshowpath + "\tvshow.nfo", xbmctvshow1e)
             Catch ex As Exception
                 'if no tvshow.nfo or it fails, goto next one
-                Console.Out.WriteLine("No show data for: " & curtvshowpath)
+                If debugon Then Console.Out.WriteLine("No show data for: " & curtvshowpath)
                 showcount2 += 1
                 Continue While
             End Try
@@ -1898,6 +1899,13 @@ Public Class tvshowcollection
             tarray2.Add(curtvshowpath)
             'get all files for all directorys in that path and put into arraylist
             Dim filelisting As New ArrayList
+            Dim episode_files_indirectory_count As Integer = 0
+            Console.Out.WriteLine("")
+            Console.Out.WriteLine("Current Show: " & xbmctvshow1e.Title)
+            If xbmctvshow1e.Title Is Nothing Then
+                Console.Out.WriteLine(curtvshowpath)
+            End If
+
             For Each tdirectory As String In tarray2
                 Try
                     For Each item In Directory.GetFiles(tdirectory)
@@ -1910,13 +1918,13 @@ Public Class tvshowcollection
                             Dim fnPeices2() As String = item.ToString.Split(CChar("\"))
                             Dim tfname2 As String = fnPeices2(fnPeices2.Length - 1)
                             Select Case Strings.Right(tfname2, 4).ToLower
-                                Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
-
+                                Case "m2ts", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                                    episode_files_indirectory_count += 1
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
-                                    If debugon Then Console.Out.WriteLine("Media file found, parsing: " & tfnameoffile)
+                                    If debugon Then Console.Out.WriteLine("  Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
                                     Dim haveseason As Boolean = False
@@ -2013,7 +2021,8 @@ Public Class tvshowcollection
                                     End If
                                     If (haveepisode And haveseason) And Not multiepisode Then
                                         If ctv_episode = "0" Then ctv_episode = "00"
-                                        If debugon Then Console.Out.WriteLine("Found Single Episode: Season " & ctv_season & " - Epsiode" & ctv_episode)
+                                        If debugon Then Console.Out.WriteLine("  - Found Single Episode: Season " & ctv_season & " - Epsiode" & ctv_episode)
+                                        If debugon Then Console.Out.WriteLine("")
                                         'numtvshowstotal += 1 'numofepisodes
                                         Dim tepisode1 As New tvdblangEpisode
                                         tepisode1.miptvdbkey = miptvdbkey
@@ -2094,7 +2103,8 @@ Public Class tvshowcollection
                                             Dim tepisode1 As New tvdblangEpisode
 
                                             If ctv_episodepiece = "0" Then ctv_episodepiece = "00"
-                                            If debugon Then Console.Out.WriteLine("Found Multipart Episode: Season " & ctv_season & " - Epsiode" & ctv_episodepiece)
+                                            If debugon Then Console.Out.WriteLine("  - Found Multipart Episode: Season " & ctv_season & " - Epsiode" & ctv_episodepiece)
+                                            If debugon Then Console.Out.WriteLine("")
                                             Try
                                                 tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
                                                 tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
@@ -2169,15 +2179,20 @@ Public Class tvshowcollection
                         Catch ex As Exception 'catch bad filename or location exception
                             Console.Out.WriteLine(ex.ToString)
                         End Try
+
                     Next
+
                 Catch ex As Exception 'catch bad parse of directory
                     Console.Out.WriteLine(ex.ToString)
                 End Try
             Next
-            Console.Out.WriteLine("Show Count: " & showcount2.ToString)
+            Console.Out.WriteLine("  " & episode_files_indirectory_count.ToString & " episodes found") ' for: " & xbmctvshow1e.Title)
             showcount2 += 1
         End While
+        If debugon Then Console.Out.WriteLine("")
+        If debugon Then Console.Out.WriteLine("TV Show Count: " & showcount2.ToString)
 
+        'episode_file_count
         'end episode level items
 
 
@@ -2665,9 +2680,9 @@ Public Class tvshowcollection
 
 
         While showcount < tvshowarray.Count
-            Console.Out.WriteLine("")
+            If debugon Then Console.Out.WriteLine("")
             Dim showfullpathname As String = tvshowarray(showcount).ToString
-            Console.Out.WriteLine("Processing: " & showfullpathname)
+            If debugon Then Console.Out.WriteLine("Processing: " & showfullpathname)
             Dim fnPeices1() As String = showfullpathname.ToString.Split(CChar("\"))
             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
 
@@ -2697,7 +2712,7 @@ Public Class tvshowcollection
                     Continue While
                 End If
             End If
-            Console.Out.WriteLine("Id found: " & selectedshow)
+            If debugon Then Console.Out.WriteLine("Id found: " & selectedshow)
             If selectedshow = "" Then
                 Try
                     If Strings.Left(tfname, 3).ToLower = "csi" Then
@@ -2793,7 +2808,7 @@ Public Class tvshowcollection
             End If
             Dim numtoaddfromconf As Integer = 5
             numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
-            Console.Out.WriteLine(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
+            If debugon Then Console.Out.WriteLine(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
 
             'check file size, remove 0k zip files
             If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then
@@ -2859,14 +2874,14 @@ Public Class tvshowcollection
             '--------------------------------------Section Start----------------------------------------
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             'read in banners.xml and then process it
-            Console.Out.WriteLine("Starting banner processing")
+            If debugon Then Console.Out.WriteLine("Starting banner.xml file processing, this is the image list for the show.")
             Dim tbanners As New Banners
             Try
                 tbanners.readBannerXML(rconf.tvdbcachefolder + selectedshow + "\banners.xml", tbanners)
             Catch ex As Exception
                 'MsgBox("Error in banner read, this means I could not read the file: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml" + vbNewLine + "It could be that I did not get the zip file from tvdb, or it's corrupted." + vbNewLine + "Moving on to the next show")
-                Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
-                Debug.Print("unable to load xml file from cache folder")
+                Console.Out.WriteLine(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+                Console.Out.WriteLine("Unable to load the xml file from cache folder, it's either missing or corrupted.")
                 showcount += 1
                 Continue While 'break out of while loop, no data in banners 
             End Try
@@ -2878,7 +2893,7 @@ Public Class tvshowcollection
             Dim seriescounter As Integer = 0
             'check for folders
             'rconf.tv_usewgetforimages = False
-            Console.Out.WriteLine("Image processing running")
+            If debugon Then Console.Out.WriteLine("Starting TV Show Image processing.")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart\original") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\fanart\original")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\graphical") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\graphical")
@@ -2956,7 +2971,7 @@ Public Class tvshowcollection
                 End If
                 'End If
             Next
-            Console.Out.WriteLine("BANNERS FANART POSTERS STARTING ") ' & selectedshow)
+            If debugon Then Console.Out.WriteLine("Finished with Images and banner.xml file processing.") ' & selectedshow)
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             '--------------------------------------Section END------------------------------------------
 
@@ -2985,14 +3000,14 @@ Public Class tvshowcollection
                     xbmctvshow.Rating = xbmctvshow.Studio
                 End If
                 xbmctvshow.writeXML(showfullpathname) '"c:\")
-                Console.Out.WriteLine("episode level images download setting: " & rconf.tv_episode_download_boolean.ToString)
+                If debugon Then Console.Out.WriteLine("Episode level images download setting: " & rconf.tv_episode_download_boolean.ToString)
                 If rconf.tv_episode_download_boolean Then
                     For Each curep As tvdblangEpisode In newtvdbData.Episodes
                         Dim switchpath As String = Strings.Replace(curep.Filename, "/", "\")
                         Dim parentdir As String = getparentdirectory(rconf.tvdbcachefolder + selectedshow + "\" + switchpath)
                         If Not Directory.Exists(parentdir) Then Directory.CreateDirectory(parentdir)
                         If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) And Not curep.Filename = "" Then
-                            Console.Out.WriteLine("no episode level image found.. download required")
+                            Console.Out.WriteLine("No episode level image found.. download of the file is required.")
                             mgettvepisodeimages(curep, selectedshow, switchpath, curarray)
                         End If
                     Next
@@ -3003,7 +3018,8 @@ Public Class tvshowcollection
             End Try
             showcount += 1
         End While
-        Console.Out.WriteLine("done")
+        Console.Out.WriteLine("")
+        Console.Out.WriteLine("Finished loading TV Show data, moving on to episode file processing.")
         'maincollection.lblPbar.Text = "Download Processing Completed"
         'maincollection.Refresh()
         'maincollection.lblPbar.Visible = False

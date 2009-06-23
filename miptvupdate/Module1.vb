@@ -62,18 +62,23 @@ Module Module1
             'Console.Out.WriteLine("Overwrite of .nfo files is set .. all information will be refreshed")
         End If
         If showdebug Then Console.Out.WriteLine("Waiting: " & waitforit.ToString & " ... SingleRun: " & singlerun.ToString & " ...Recheck Time: " & rechecktime.ToString)
-
+        'If Not showdebug Then Console.Out.Write("Waiting.")
         Dim alldone As Boolean = False
+
         Do Until alldone = True
             Do Until waittime = 0
                 System.Threading.Thread.Sleep(5000)
                 Try
                     waittime = waittime - 5000
-                    If showdebug Then Console.Out.WriteLine(waittime.ToString & ": until next update")
+                    If showdebug Then
+                        If waittime >= 0 Then Console.Out.WriteLine(waittime.ToString & ": until next update")
+                    Else
+                        'Console.Write(".")
+                    End If
 
                 Catch ex As Exception
                     waittime = 0
-                    Console.Out.WriteLine("error: " & ex.ToString)
+                    Console.Out.WriteLine("Error: " & ex.ToString)
                 End Try
                 If waittime <= 0 Then
                     waitforit = False
