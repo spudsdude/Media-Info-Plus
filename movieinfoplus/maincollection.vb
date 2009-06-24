@@ -21429,17 +21429,29 @@ Public Class maincollection
 
         musiclist.Clear()
         For Each musicfolder As String In rconf.pclb_checked_music_folders
-            EnumerateMusicDirectory(musicfolder)
+            Try
+                EnumerateMusicDirectory(musicfolder)
+            Catch ex As Exception
+                MsgBox("Error while Enumerating music folder: " & musicfolder & vbNewLine & vbNewLine & ex.ToString)
+            End Try
         Next
         Dim musicfilelist As New ArrayList
         'find each file
         For Each musicdir As String In musiclist
-            Dim musicfiles() As String = Directory.GetFiles(musicdir)
-            For Each fileitem In musicfiles
-                If checkmusicextension(fileitem) Then
-                    musicfilelist.Add(fileitem)
-                End If
-            Next
+            Try
+                Dim musicfiles() As String = Directory.GetFiles(musicdir)
+                For Each fileitem In musicfiles
+                    Try
+                        If checkmusicextension(fileitem) Then
+                            musicfilelist.Add(fileitem)
+                        End If
+                    Catch ex As Exception
+                        MsgBox("Error while checking name / adding to list" & ex.ToString)
+                    End Try
+                Next
+            Catch ex As Exception
+                MsgBox("Error while parsing music directory: " & musicdir.ToString & vbNewLine & vbNewLine & ex.ToString)
+            End Try
         Next
         prgThread.Value = 0
         prgThread.Maximum = musicfilelist.Count

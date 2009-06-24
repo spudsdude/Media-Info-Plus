@@ -122,7 +122,13 @@ Module modNfoData
                                 currentmovie.pimdbnumber = Regex.Match(strwork, "(tt\d{6,7})").Groups(1).Value
 
                                 haveidonly = True
-                            End If
+                            Else
+                                If Regex.IsMatch(strwork, "(itle?\d{6,7})") Then
+                                    currentmovie.pimdbnumber = Regex.Match(strwork, "(itle?\d{6,7})").Groups(1).Value
+                                    haveidonly = True
+                                End If
+
+                                End If
                         Catch ex As ArgumentException
                             'Syntax error in the regular expression
                         End Try

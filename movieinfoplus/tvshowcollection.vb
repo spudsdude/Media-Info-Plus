@@ -1047,7 +1047,7 @@ Public Class tvshowcollection
                             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
                             Dim validfile As Boolean = False
                             Select Case Strings.Right(tfname, 4).ToLower
-                                Case "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                                Case "rmvb", "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                     validfile = True
                                 Case Else
                                     validfile = False
@@ -1918,7 +1918,7 @@ Public Class tvshowcollection
                             Dim fnPeices2() As String = item.ToString.Split(CChar("\"))
                             Dim tfname2 As String = fnPeices2(fnPeices2.Length - 1)
                             Select Case Strings.Right(tfname2, 4).ToLower
-                                Case "m2ts", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                                Case "rmvb", "m2ts", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                     episode_files_indirectory_count += 1
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
@@ -2279,7 +2279,7 @@ Public Class tvshowcollection
                             Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
                             Dim validfile As Boolean = False
                             Select Case Strings.Right(tfname, 4).ToLower
-                                Case ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
+                                Case "rmvb", "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4", ".m4v"
                                     validfile = True
                                 Case Else
                                     validfile = False
