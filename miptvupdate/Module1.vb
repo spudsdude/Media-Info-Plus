@@ -9,7 +9,7 @@ Module Module1
     Dim showdebug As Boolean = False
 
     Sub Main()
-        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2901")
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2902")
         If Command.ToString.ToLower.Contains("help") Then
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")
@@ -58,7 +58,10 @@ Module Module1
         End If
 
         If Command.ToString.ToLower.Contains("-fastimages") Then
-            If waittime = 0 Then multimageonly = True
+            'If waittime = 0 Then
+
+            'End If
+            multimageonly = True
             'Console.Out.WriteLine("Overwrite of .nfo files is set .. all information will be refreshed")
         End If
         If showdebug Then Console.Out.WriteLine("Waiting: " & waitforit.ToString & " ... SingleRun: " & singlerun.ToString & " ...Recheck Time: " & rechecktime.ToString)
@@ -107,11 +110,11 @@ Module Module1
                                     'pro1.StartInfo.RedirectStandardError = True
                                     'pro1.StartInfo.UseShellExecute = False
                                     'pro1.StartInfo.CreateNoWindow = True
-                                     If showdebug Then
+                                    If showdebug Then
                                         pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
-                                     Else
+                                    Else
                                         pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
-                                     End If
+                                    End If
                                     pro1.Start()
                                     If Not multimageonly Then pro1.WaitForExit()
                                     If multimageonly Then System.Threading.Thread.Sleep(200)
