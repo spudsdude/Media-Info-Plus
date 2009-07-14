@@ -210,6 +210,8 @@ Module modFileUtils
                 Return False
             Case s.ToUpper.Contains("BDMV")
                 Return False
+            Case s.ToLower.Contains("jacket_p")
+                Return False
             Case Else
                 Return True
         End Select
