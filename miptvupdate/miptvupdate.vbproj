@@ -7,11 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4B43D2A1-20E1-4661-ACD8-712D9A5CDDFE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-<<<<<<< .mine
-    <StartupObject>miptvupdate.cmdlinetvupdate</StartupObject>
-=======
     <StartupObject>miptvupdate.cmdlinetvshowupdate</StartupObject>
->>>>>>> .r159
     <RootNamespace>miptvupdate</RootNamespace>
     <AssemblyName>miptvupdate</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -70,11 +66,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< .mine
-    <Compile Include="cmdlinetvupdate.vb" />
-=======
     <Compile Include="cmdlinetvshowupdate.vb" />
->>>>>>> .r159
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
