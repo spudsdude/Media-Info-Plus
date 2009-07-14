@@ -20439,6 +20439,8 @@ Public Class maincollection
         Return ""
     End Function
     Private Function checkmusicextension(ByRef filename As String) As Boolean
+        If filename Is Nothing Then Return False
+        If filename = "" Then Return False
         'check to see if the fileextension is valid
         If filename.Length <= 3 Then Return False 'this would be the shortest possible singlechar(x) where x.wv is valid
         Dim v2digit As String = ""
@@ -21439,8 +21441,14 @@ Public Class maincollection
         'find each file
         For Each musicdir As String In musiclist
             Try
-                Dim musicfiles() As String = Directory.GetFiles(musicdir)
-                For Each fileitem In musicfiles
+                Dim musicfiles() As String '= Directory.GetFiles(musicdir)
+                Try
+                    musicfiles = Directory.GetFiles(musicdir)
+                Catch ex As Exception
+                    MsgBox("Error: Invalid Path or incorrect permissions when attempting to read file list from directory: " & vbNewLine & musicdir.ToString)
+                End Try
+
+                For Each fileitem As String In musicfiles
                     Try
                         If checkmusicextension(fileitem) Then
                             musicfilelist.Add(fileitem)
@@ -37707,6 +37715,15 @@ Public Class configuration
     Private tv_zprivatevalue_usewgetforimages As Boolean '= True
     Private tv_zprivatevalue_wgetsleepinmilliseconds As Integer '= 100
     Private tv_pcbshows_UseStudioasRating As Boolean
+    Private tv_pcbshows_usedvdordertvshows As Boolean = False
+    Property pcbshows_usedvdordertvshows() As Boolean
+        Get
+            Return tv_pcbshows_usedvdordertvshows
+        End Get
+        Set(ByVal value As Boolean)
+            tv_pcbshows_usedvdordertvshows = value
+        End Set
+    End Property
     Property prbshows_show_usewide_false4poster() As Boolean
         Get
             Return tv_zprivatevalue_show_usewide_false4poster

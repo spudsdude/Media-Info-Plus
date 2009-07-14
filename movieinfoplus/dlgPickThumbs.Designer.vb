@@ -170,8 +170,8 @@ Partial Class dlgPickThumbs
         Me.scMain.Panel2.Controls.Add(Me.pbThumb3f)
         Me.scMain.Panel2.Controls.Add(Me.pbThumb2f)
         Me.scMain.Panel2.Controls.Add(Me.pbThumb1f)
-        Me.scMain.Size = New System.Drawing.Size(918, 729)
-        Me.scMain.SplitterDistance = 368
+        Me.scMain.Size = New System.Drawing.Size(908, 719)
+        Me.scMain.SplitterDistance = 362
         Me.scMain.TabIndex = 1
         '
         'pbThumb10
