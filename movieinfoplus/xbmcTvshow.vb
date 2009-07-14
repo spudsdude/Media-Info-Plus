@@ -49,7 +49,17 @@ Namespace xbmc
         Public Sub writeXML(ByRef folderlocation As String)
             Dim id As String = Me.Id
             Dim writefile As Boolean = True
+            Try
+                If Me.Episodeguide Is Nothing Then
+                    Me.Episodeguide = Me.Episodeguideurl
+                End If
+                If Me.Episodeguide = "" Then
+                    Me.Episodeguide = Me.Episodeguideurl
+                End If
+            Catch ex As Exception
 
+            End Try
+            
             'If File.Exists(mainform.rconf.imdbcachefolder + id + ".xml") Then writefile = False
             'If overwrite Then
             'writefile = True
@@ -146,7 +156,7 @@ Namespace xbmc
                 Me.p_element_episodeguideurl = Value
             End Set
         End Property
-        ' <summary>String episodeguideurl element.</summary>
+        ' <summary>String episodeguide element.</summary>
         <XmlElement("episodeguide")> _
         Public Property [Episodeguide]() As String
             Get
