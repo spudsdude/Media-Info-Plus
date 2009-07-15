@@ -1006,6 +1006,8 @@ Public Class tvshowcollection
             curCompleteShow.showpath = curtvshowpath + "\tvshow.nfo"
             Dim curseason As New seasons
             curseason.seasonnumber = "1" 'basic for now, later this will have to change
+            Dim usedvdorder As Boolean = False
+
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "-- read nfo for show completed --"
             Dim selectedshow As String = xbmctvshow1.Tvdbid
             Dim newtvdbdata As New tvdblangData
@@ -1014,7 +1016,13 @@ Public Class tvshowcollection
                 newtvdbdata.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbdata)
                 For Each tepisode In newtvdbdata.Episodes
                     Try
-                        theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        If useAiredOrder(curCompleteShow.tvshowname, curtvshowpath, tepisode.SeasonNumber) Then
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        Else
+                            If tepisode.DVDEpisodenumber Is Nothing Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            If tepisode.DVDEpisodenumber = "" Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.DVDEpisodenumber, tepisode)
+                        End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "duplicate or invalid episode" + ex.ToString
@@ -1472,7 +1480,40 @@ Public Class tvshowcollection
             dlgMessageboxOK.ShowDialog()
         End If
     End Sub
+    Public Function useAiredOrder(ByVal curshowname As String, ByVal curtvshowpath As String, ByVal curseason As String, Optional ByVal cmdline As Boolean = False) As Boolean
+        'Dim curseason_num As Integer
+        'curseason_num = CInt(curseason)
+        Dim nfopath As String
+        Dim tempSeason As New xbmc.xbmcTvSeries
+        If curseason.Length < 2 Then
+            curseason = "0" + curseason
+        End If
+        nfopath = addfiletofolder(curtvshowpath, "season" + curseason + ".nfo")
 
+        If File.Exists(nfopath) Then
+            tempSeason.readXML(nfopath, tempSeason)
+        Else
+            If Not cmdline Then 'no message prompts for command line version
+                If MessageBox.Show(" -= AIRED OR DVD ORDER? =- " + vbNewLine + vbNewLine + "Show Name: " + curshowname + vbNewLine + "Season: " + curseason + vbNewLine + vbNewLine + "Do you want to use the Aired order for this season?" + vbNewLine + "(If no is slected, DVD order is used)", curshowname + ": Season " + curseason + ". " + "Use aired order?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    tempSeason.xbmctvseriesUseAiredOrder = True
+                    tempSeason.xbmctvseriesUseDVDOrder = False
+                Else
+                    tempSeason.xbmctvseriesUseAiredOrder = False
+                    tempSeason.xbmctvseriesUseDVDOrder = True
+                End If
+                tempSeason.writeXML(nfopath)
+            Else
+                tempSeason.xbmctvseriesUseAiredOrder = True 'will return true (if no file exists) for the command line app, but won't write a perm .nfo for the season
+            End If
+        End If
+
+        If tempSeason.xbmctvseriesUseAiredOrder = True Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
     Public Sub kbLoadTvShowsCmdLine(Optional ByVal overwritenfo As Boolean = False, Optional ByVal debugon As Boolean = False, Optional ByVal dlo As Boolean = False)
         gvNoShowsList = "" 'clear out the no show data list var
         If debugon Then Console.Out.WriteLine("")
@@ -2247,7 +2288,14 @@ Public Class tvshowcollection
                 newtvdbdata.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbdata)
                 For Each tepisode In newtvdbdata.Episodes
                     Try
-                        theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        If useAiredOrder(curCompleteShow.tvshowname, curtvshowpath, tepisode.SeasonNumber) Then
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        Else
+                            If tepisode.DVDEpisodenumber Is Nothing Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            If tepisode.DVDEpisodenumber = "" Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.DVDEpisodenumber, tepisode)
+                        End If
+                        'theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
                     End Try
