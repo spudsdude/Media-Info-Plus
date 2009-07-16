@@ -6194,7 +6194,7 @@ Me.kgCurMovieImageFolderjpg.Name = "kgCurMovieImageFolderjpg"
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(240, 340)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(250, 350)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6204,7 +6204,7 @@ Me.klblImageSizeFolderJpg.Dock = System.Windows.Forms.DockStyle.Top
 Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 0)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(228, 16)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(238, 16)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""

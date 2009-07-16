@@ -17720,7 +17720,7 @@ Public Class maincollection
             End Try
             If Not writersTxt = "" Then
                 Try
-                    Dim robjWritersDetails As New Regex("a href=""/name/nm\d{6,8}/"">(.*?)</a>.*?valign=""top"">(.*?)</td>.*?</tr>", RegexOptions.Singleline)
+                    Dim robjWritersDetails As New Regex("a href=""/name/nm\d{6,8}/""(?: onclick=.*?;"")?>(.*?)</a>.*?valign=""top"">(.*?)</td>.*?</tr>", RegexOptions.Singleline)
                     Dim MatchResultsName As Match = robjWritersDetails.Match(writersTxt)
                     While MatchResultsName.Success
                         Dim curwriter As String = ""
@@ -17764,7 +17764,7 @@ Public Class maincollection
         'get initial text for parse or it will grab other names that are not directors
         Dim tempdirector As String = Regex.Match(imdbtxt, "<h5>Direct.*?</h5>(.*?)</div>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value
         Try
-            Dim RegexObjD As New Regex("<a href=""/name/nm.*?/"">(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
+            Dim RegexObjD As New Regex("<a href=""/name/nm.*?/""(?: onclick=.*?;"")?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline)
             Dim MatchResultsD As Match = RegexObjD.Match(tempdirector)
             While MatchResultsD.Success
                 nimdb.director += cleanimdbdata(MatchResultsD.Groups(1).Value) + " / "

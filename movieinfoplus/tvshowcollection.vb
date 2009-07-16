@@ -1021,7 +1021,22 @@ Public Class tvshowcollection
                         Else
                             If tepisode.DVDEpisodenumber Is Nothing Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
                             If tepisode.DVDEpisodenumber = "" Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
-                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.DVDEpisodenumber, tepisode)
+                            Dim cleannum As Integer
+                            Try 'try to convert string to int, then back to string, use regex if this fails (for speed)
+                                cleannum = CInt(tepisode.DVDEpisodenumber)
+                            Catch ex As Exception
+                                Dim strResult As String = ""
+                                Try
+                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
+                                Catch ex2 As ArgumentException
+                                    'Syntax error in the regular expression
+                                End Try
+                                cleannum = CInt(strResult)
+                            End Try
+
+
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
                         End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
@@ -1919,7 +1934,28 @@ Public Class tvshowcollection
                 newtvdbdata.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbdata)
                 For Each tepisode In newtvdbdata.Episodes
                     Try
-                        theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        If useAiredOrder(xbmctvshow1e.Title, curtvshowpath, tepisode.SeasonNumber, True) Then
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
+                        Else
+                            If tepisode.DVDEpisodenumber Is Nothing Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            If tepisode.DVDEpisodenumber = "" Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
+                            Dim cleannum As Integer
+                            Try 'try to convert string to int, then back to string, use regex if this fails (for speed)
+                                cleannum = CInt(tepisode.DVDEpisodenumber)
+                            Catch ex As Exception
+                                Dim strResult As String = ""
+                                Try
+                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
+                                Catch ex2 As ArgumentException
+                                    'Syntax error in the regular expression
+                                End Try
+                                cleannum = CInt(strResult)
+                            End Try
+
+
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
+                        End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "duplicate or invalid episode" + ex.ToString
@@ -2288,12 +2324,26 @@ Public Class tvshowcollection
                 newtvdbdata.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbdata)
                 For Each tepisode In newtvdbdata.Episodes
                     Try
-                        If useAiredOrder(curCompleteShow.tvshowname, curtvshowpath, tepisode.SeasonNumber) Then
+                        If useAiredOrder(curCompleteShow.tvshowname, curtvshowpath, tepisode.SeasonNumber, True) Then
                             theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
                         Else
                             If tepisode.DVDEpisodenumber Is Nothing Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
                             If tepisode.DVDEpisodenumber = "" Then tepisode.DVDEpisodenumber = tepisode.EpisodeNumber
-                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.DVDEpisodenumber, tepisode)
+                            Dim cleannum As Integer
+                            Try 'try to convert string to int, then back to string, use regex if this fails (for speed)
+                                cleannum = CInt(tepisode.DVDEpisodenumber)
+                            Catch ex As Exception
+                                Dim strResult As String = ""
+                                Try
+                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
+                                Catch ex2 As ArgumentException
+                                    'Syntax error in the regular expression
+                                End Try
+                                cleannum = CInt(strResult)
+                            End Try
+
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
                         End If
                         'theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
