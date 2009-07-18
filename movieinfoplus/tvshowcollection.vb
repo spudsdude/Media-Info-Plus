@@ -1204,6 +1204,7 @@ Public Class tvshowcollection
                                     Try
                                         tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
                                         tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                        tepisode1.EpisodeNumber = ctv_episode
                                     Catch ex As Exception
                                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
                                         'curepcou += 1
@@ -1290,6 +1291,7 @@ Public Class tvshowcollection
                                             tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
                                             tepisode1.miptvdbkey = miptvdbkey
                                             tepisode1.mutlipart = True
+                                            tepisode1.EpisodeNumber = ctv_episode
                                         Catch ex As Exception
                                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
                                             curepcou += 1
@@ -1512,9 +1514,11 @@ Public Class tvshowcollection
                 If MessageBox.Show(" -= AIRED OR DVD ORDER? =- " + vbNewLine + vbNewLine + "Show Name: " + curshowname + vbNewLine + "Season: " + curseason + vbNewLine + vbNewLine + "Do you want to use the Aired order for this season?" + vbNewLine + "(If no is slected, DVD order is used)", curshowname + ": Season " + curseason + ". " + "Use aired order?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     tempSeason.xbmctvseriesUseAiredOrder = True
                     tempSeason.xbmctvseriesUseDVDOrder = False
+                    tempSeason.xbmctvseriesNumber = curseason
                 Else
                     tempSeason.xbmctvseriesUseAiredOrder = False
                     tempSeason.xbmctvseriesUseDVDOrder = True
+                    tempSeason.xbmctvseriesNumber = curseason
                 End If
                 tempSeason.writeXML(nfopath)
             Else
@@ -2104,10 +2108,12 @@ Public Class tvshowcollection
                                         Dim tepisode1 As New tvdblangEpisode
                                         tepisode1.miptvdbkey = miptvdbkey
                                         tepisode1.mutlipart = False
+
                                         'get espisode data
                                         Try
                                             tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
                                             tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
+                                            tepisode1.EpisodeNumber = ctv_episode
                                         Catch ex As Exception
                                             'curepcou += 1
                                             Continue For 'next for'Continue While 'break out of loop
@@ -2186,6 +2192,7 @@ Public Class tvshowcollection
                                                 tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episodepiece), tvdblangEpisode)
                                                 tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
                                                 tepisode1.miptvdbkey = miptvdbkey
+                                                tepisode1.EpisodeNumber = ctv_episode
                                                 tepisode1.mutlipart = True
                                             Catch ex As Exception
                                                 curepcou += 1

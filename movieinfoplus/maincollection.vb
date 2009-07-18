@@ -6714,7 +6714,8 @@ Public Class maincollection
         'check for video_ts, if found, check md5 on images, recopy if needed
         If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
 
-
+        'populate cast information
+        populatemoviecast()
 
         'show video file information (video and audio)
         If rconf.pcbscanformoviemediainformation Then
@@ -33529,7 +33530,7 @@ Public Class maincollection
     End Sub
 
 
-    Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles KryptonButton1.Click
+    Private Sub KryptonButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         testofdbsearch()
     End Sub
     Public gvupdatestudiofromimdb As Boolean = False
@@ -34237,6 +34238,60 @@ Public Class maincollection
         lblPbar.Text = ""
         lblPbar.Visible = False
     End Sub
+    Private Sub populatemoviecast()
+        'clear actor pb
+        pbMovieSelectedCastMember.ImageLocation = Nothing
+        pbMovieSelectedCastMember.Image = Nothing
+        dgMovieCast.Rows.Clear()
+        'populate list
+        For Each curactor As mip.mov.Actor In currentmovie.Actors
+            dgMovieCast.Rows.Add(curactor.Name, curactor.Role, 1, curactor.Thumb)
+        Next
+        Try
+            If dgMovieCast.Rows.Count > 0 Then
+                pbMovieSelectedCastMember.Enabled = True
+            Else
+                pbMovieSelectedCastMember.Enabled = False
+            End If
+        Catch ex As Exception
+
+        End Try
+       
+    End Sub
+    Private Sub dgMovieCast_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgMovieCast.CellContentClick
+        'clear actor pb
+        pbMovieSelectedCastMember.ImageLocation = Nothing
+        pbMovieSelectedCastMember.Image = Nothing
+
+        Try
+            Dim currow As New DataGridViewRow
+            currow = dgMovieCast.CurrentRow
+            lblMovieCastRole.Text = currow.Cells(1).Value.ToString
+            pbMovieSelectedCastMember.ImageLocation = currow.Cells(3).Value.ToString
+            If Not pbMovieSelectedCastMember.ImageLocation = "" Then
+                pbMovieSelectedCastMember.Load()
+            End If
+        Catch ex As Exception
+
+        End Try
+     
+
+    End Sub
+
+    Private Sub pbMovieSelectedCastMember_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles pbMovieSelectedCastMember.Click
+        'If moviemode = "file" Then Exit Sub
+        'open up image in new borderless form, full sized
+        dlgCurrentIconUsed2.pbCurrentIconUsed2.Image = Nothing
+        dlgCurrentIconUsed2.pbCurrentIconUsed2.ImageLocation = Nothing
+        Dim curloc As String = ""
+        curloc = pbMovieSelectedCastMember.ImageLocation 'pbCurIconUsed2.ImageLocation
+        'If Not File.Exists(curloc) Then Exit Sub
+        dlgCurrentIconUsed2.pbCurrentIconUsed2.ImageLocation = curloc
+        dlgCurrentIconUsed2.Show()
+        dlgCurrentIconUsed2.pbCurrentIconUsed2.Load()
+
+    End Sub
+
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"

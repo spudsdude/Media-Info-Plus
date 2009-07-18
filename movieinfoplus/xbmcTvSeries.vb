@@ -4,15 +4,15 @@ Imports System.IO
 Namespace xbmc
     Public Class xbmcTvSeries
         Private p_element_seriesTVDBID As String
-        Private p_element_seriesNumber As Integer
+        Private p_element_seriesNumber As String
         Private p_element_seriesUseDVDOrder As Boolean = False
         Private p_element_seriesUseAiredOrder As Boolean = True
         Private p_element_series As New List(Of xbmc.xbmcEpisodedetails)
-        Property xbmctvseriesNumber() As Integer
+        Property xbmctvseriesNumber() As String
             Get
                 Return p_element_seriesNumber
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 p_element_seriesNumber = value
             End Set
         End Property
