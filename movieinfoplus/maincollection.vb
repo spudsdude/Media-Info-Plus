@@ -1892,6 +1892,7 @@ Public Class maincollection
 
         'Dim loadconfig As New configuration
         If Not Directory.Exists(rconf.basefolder) Then Directory.CreateDirectory(rconf.basefolder)
+
         If Not File.Exists(rconf.basefolder + "config.xml") Then
             Me.Hide()
             'SplashScreen1.Hide()
@@ -19960,6 +19961,89 @@ Public Class maincollection
         Return True
 
     End Function
+    Public Function check_movie_for_trailer(ByVal tmovie As movie) As Boolean
+        Dim filelisting As New ArrayList
+
+        For Each item In Directory.GetFiles(tmovie.getmoviepath)
+            filelisting.Add(item)
+        Next
+        Dim curmovienamebasedonmode As String = ""
+        If moviemode = "file" Then
+            curmovienamebasedonmode = stripstackforfilemode(removeextension(currentmovie.preservedmoviename))
+        Else
+            curmovienamebasedonmode = currentmovie.pmoviename
+        End If
+        If filelisting.Count = 0 Then Exit Function
+        For Each fileinlisting In filelisting
+            Dim fourr_ext As String = ""
+            Try
+                fourr_ext = Strings.Right(fileinlisting.ToString, 4).ToLower
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+
+            Dim fnPeices1() As String = fileinlisting.ToString.Split(CChar("\"))
+            Dim tfname As String = fnPeices1(fnPeices1.Length - 1)
+
+            Select Case fourr_ext
+                Case "m2ts", "divx", ".iso", ".img", ".dat", ".bin", ".cue", ".vob", ".dvb", ".m2t", ".mts", ".evo", ".mp4", ".avi", ".asf", ".asx", ".wmv", ".wma", ".mov", ".flv", ".swf", ".nut", ".avs", ".nsv", ".mp4", ".ram", ".ogg", ".ogm", ".ogv", ".mkv", ".viv", ".pva", ".mpg", ".mp4"
+                    If tfname.ToLower.Contains("-trailer") Then
+                        Return False
+                    End If
+                Case Else
+                    If Strings.Right(tfname.ToLower, 3) = ".ts" Then
+                        If tfname.ToLower.Contains("-trailer") Then
+                            Return False
+                        End If
+                    End If
+            End Select
+        Next
+        Return True
+    End Function
+    Private Sub rbMDNotrailers_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMDNoTrailer.Click
+        If tblofmovies.Rows.Count = 0 Then
+            'get folder data
+            Exit Sub
+            'readfolderdatafordropdown()
+        End If
+        autopilotrunning = True
+        lbMyMovies.Visible = False
+        lbMyMovies.Enabled = False
+        lbMyMovies.DataSource = Nothing
+        lbMyMovies.DataSource = tblofmovies.DefaultView
+        lbMyMovies.ValueMember = "Index"
+        lbMyMovies.DisplayMember = "Name"
+        Dim dtIDA As New DataTable
+        dtIDA.Columns.Add("Path", GetType(System.String))
+        dtIDA.Columns.Add("Name")
+        dtIDA.Columns.Add("Index")
+        Dim coulistedmovies As Integer = 0
+        While coulistedmovies < lbMyMovies.Items.Count
+            Dim movhasissues As Boolean = False
+            Dim whatissue As String = ""
+            Dim tempmovie As New movie
+            lbMyMovies.SelectedIndex = coulistedmovies
+            tempmovie = CType(Me.movies(CInt(lbMyMovies.SelectedValue)), movie)
+            'Dim tmpath As String = tempmovie.getmoviepath + "\" + tempmovie.pmoviename + ".nfo"
+            'If Not tempmovie.pfilemode Then
+            movhasissues = check_movie_for_trailer(tempmovie)
+            'Else
+            'movhasissues = False
+            'End If
+
+            If movhasissues Then
+                dtIDA.LoadDataRow(New Object() {tempmovie.getmoviepath, tempmovie.pmoviename, lbMyMovies.SelectedValue}, True)
+            End If
+            coulistedmovies += 1
+        End While
+        dtIDA.DefaultView.Sort = "Name"
+        lbMyMovies.DataSource = dtIDA.DefaultView
+        lbMyMovies.DisplayMember = "Name"
+        lbMyMovies.ValueMember = "Index"
+        lbMyMovies.Visible = True
+        lbMyMovies.Enabled = True
+        autopilotrunning = False
+    End Sub
     Private Sub rbMDNoMediaImages_click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbMDNoMediaImages.Click
         If tblofmovies.Rows.Count = 0 Then
             'get folder data
@@ -19990,7 +20074,7 @@ Public Class maincollection
             Else
                 movhasissues = False
             End If
-          
+
             If movhasissues Then
                 dtIDA.LoadDataRow(New Object() {tempmovie.getmoviepath, tempmovie.pmoviename, lbMyMovies.SelectedValue}, True)
             End If
@@ -34243,6 +34327,7 @@ Public Class maincollection
         pbMovieSelectedCastMember.ImageLocation = Nothing
         pbMovieSelectedCastMember.Image = Nothing
         dgMovieCast.Rows.Clear()
+        lblMovieCastRole.Text = ""
         'populate list
         For Each curactor As mip.mov.Actor In currentmovie.Actors
             dgMovieCast.Rows.Add(curactor.Name, curactor.Role, 1, curactor.Thumb)
@@ -34262,7 +34347,7 @@ Public Class maincollection
         'clear actor pb
         pbMovieSelectedCastMember.ImageLocation = Nothing
         pbMovieSelectedCastMember.Image = Nothing
-
+        lblMovieCastRole.Text = ""
         Try
             Dim currow As New DataGridViewRow
             currow = dgMovieCast.CurrentRow
