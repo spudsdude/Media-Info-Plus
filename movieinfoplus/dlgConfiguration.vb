@@ -834,6 +834,8 @@ Public Class dlgConfiguration
             cbnopromptfornewposters.Checked = trconf.pcbnopromptfornewposters
             cbscanformoviemediainformation.Checked = trconf.pcbscanformoviemediainformation
             cbcopyplotsummaryifnoplot.Checked = trconf.pcbcopyplotsummaryifnoplot
+            cbdisplaymoviefanartlabel.Checked = trconf.displaymoviefanartlabel
+            cbdisplaymovieposterlabel.Checked = trconf.displaymovieposterlabel
 
             '## File settings
             cbSaveNFO.Checked = trconf.pcbSaveNFO
@@ -1707,5 +1709,13 @@ Public Class dlgConfiguration
 
     Private Sub cbscanforepisodemediainformation_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cbscanforepisodemediainformation.Click
         rconf.pcbscanforepisodemediainformation = cbscanforepisodemediainformation.Checked
+    End Sub
+
+    Private Sub cbdisplaymoviefanartlabel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbdisplaymoviefanartlabel.CheckedChanged
+        rconf.displaymoviefanartlabel = cbdisplaymoviefanartlabel.Checked
+    End Sub
+
+    Private Sub cbdisplaymovieposterlabel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbdisplaymovieposterlabel.CheckedChanged
+        rconf.displaymovieposterlabel = cbdisplaymovieposterlabel.Checked
     End Sub
 End Class

@@ -6121,22 +6121,22 @@ Public Class maincollection
         End If
     End Sub
     Public Sub processdropdownitems()
-
+        Dim ais As Boolean = cbAllowIconSelection.Checked
         'reset curtmdbfacount
-        If messageprompts Then curtmdbfacount = 0
-        If messageprompts Then curtmdbpostercounter = 0
-        If messageprompts Then curtimppostercounter = 0
+        curtmdbfacount = 0
+        curtmdbpostercounter = 0
+        curtimppostercounter = 0
         'reset curtmdbpostercount
-        If messageprompts Then fanarttotal = 0
-        If messageprompts Then postertotal = 0
-        If messageprompts Then iconsboxshottotal = 0
-        If messageprompts Then newnicecovercounter = 0
-        Debug.Print("start: " + TimeString())
+        fanarttotal = 0
+        postertotal = 0
+        iconsboxshottotal = 0
+        newnicecovercounter = 0
+        'Debug.Print("start: " + TimeString())
         'set locals
         messageprompts = rbem.Checked 'rbem is online mode, if it's not checked, we want to turn off labels
         Dim skt As Boolean = rconf.pcbSkipTransparency '
 
-        Dim ais As Boolean = cbAllowIconSelection.Checked
+
         Dim maxDisplayedIcons As Integer = rconf.pcbMaxIconsToDisplay
         'Dim tmovie As movie
         Try
@@ -6693,25 +6693,25 @@ Public Class maincollection
                 MessageBox.Show(strNewMessage, "New Images are available", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
-        If messageprompts Then
-            If fanarttotal = 0 Then
-                tpFanart.Text = "Backgounds"
-            Else
-                tpFanart.Text = "Backgounds (" & fanarttotal.ToString & ")"
-            End If
-
-            If postertotal = 0 Then
-                tpTallImages.Text = "Posters"
-            Else
-                tpTallImages.Text = "Posters (" & postertotal.ToString & ")"
-            End If
-
-            If iconsboxshottotal = 0 Then
-                tpmipf.Text = "Wide Images / 3D Boxes"
-            Else
-                tpmipf.Text = "Wide Images / 3D Boxes (" & iconsboxshottotal.ToString & ")"
-            End If
+        'If ais Then 'messageprompts Then
+        If fanarttotal = 0 Then
+            tpFanart.Text = "Backgounds"
+        Else
+            tpFanart.Text = "Backgounds (" & fanarttotal.ToString & ")"
         End If
+
+        If postertotal = 0 Then
+            tpTallImages.Text = "Posters"
+        Else
+            tpTallImages.Text = "Posters (" & postertotal.ToString & ")"
+        End If
+
+        If iconsboxshottotal = 0 Then
+            tpmipf.Text = "Wide Images / 3D Boxes"
+        Else
+            tpmipf.Text = "Wide Images / 3D Boxes (" & iconsboxshottotal.ToString & ")"
+        End If
+        'End If
         'check for video_ts, if found, check md5 on images, recopy if needed
         If Not currentmovie.pfilemode Then checkVideoTSforcurrentmovie()
 
@@ -7631,7 +7631,42 @@ Public Class maincollection
         validatefoldercontents()
     End Sub
 
-    
+    Private Sub loadpbimage(ByRef currentpb As PictureBox, ByVal curlabel As KryptonLabel, ByVal filename As String, ByVal showlabel As Boolean, Optional ByVal displaypreviewimage As Boolean = False)
+        Try
+            Dim previewfilename As String = ""
+            If displaypreviewimage Then
+                previewfilename = Strings.Replace(filename, ".jpg", "_cover.jpg")
+                If Not File.Exists(previewfilename) Then
+                    previewfilename = filename
+                End If
+            Else
+                previewfilename = filename
+            End If
+
+            If showlabel Then
+                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(filename)
+                curlabel.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(filename)
+                'objImage = Nothing
+                curlabel.Visible = True
+                currentpb.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
+                currentpb.ImageLocation = filename
+                currentpb.Enabled = True
+                currentpb.Visible = True
+                currentpb.AccessibleName = filename
+            Else
+                curlabel.Text = "Size: " & getFileSize(filename)
+                curlabel.Visible = True
+                currentpb.ImageLocation = previewfilename
+                currentpb.Load()
+                currentpb.Enabled = True
+                currentpb.Visible = True
+                currentpb.AccessibleName = filename
+            End If
+        Catch ex As Exception
+            Debug.Print(ex.ToString)
+        End Try
+
+    End Sub
 
     Private Sub getfanart(ByRef tmovie As movie, ByRef ais As Boolean, ByRef singlefiledownload As Boolean, Optional ByVal linksonly As Boolean = False, Optional ByVal nonewdatacheck As Boolean = False)
         'get fanart
@@ -7653,7 +7688,7 @@ Public Class maincollection
         Else
             Debug.Print(tbdcount.ToString + ": is the count of backdrops")
         End If
-        If messageprompts Then fanarttotal = tbdcount
+        If ais Then fanarttotal = tbdcount
         If Not tbdcount = 0 Then
             'count is not 0, process items
             Dim tbdcou As Integer = 0
@@ -7701,519 +7736,81 @@ Public Class maincollection
                 'after downloading display the local file (better gui look)
                 If ais Then
                     'temp mod to fanart filename
-                    fanartfilename = tmovie.pimdbnumber + "\" + fanartfilesubfoldername + "\" + fanartfilename
+                    fanartfilename = rconf.tmdbfanartcachefolder + tmovie.pimdbnumber + "\" + fanartfilesubfoldername + "\" + fanartfilename + ".jpg"
                     Select Case tbdcou
                         'the try block is an attempt to load the image and set the sizelbl for it, this also validates the download of the full size image
                         Case 0
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb1.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb1.Visible = True
-                                Me.pbfatmdb1.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb1.ImageLocation = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                Me.pbfatmdb1.Enabled = True
-                                Me.pbfatmdb1.Visible = True
-                                Me.pbfatmdb1.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb1.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
-
+                            loadpbimage(pbfatmdb1, klblfatmdb1, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 1
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb2.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb2.Visible = True
-                                Me.pbfatmdb2.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb2.Enabled = True
-                                Me.pbfatmdb2.Visible = True
-                                Me.pbfatmdb2.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb2.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb2, klblfatmdb2, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 2
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb3.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb3.Visible = True
-                                Me.pbfatmdb3.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb3.Enabled = True
-                                Me.pbfatmdb3.Visible = True
-                                Me.pbfatmdb3.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb3.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb3, klblfatmdb3, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 3
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb4.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb4.Visible = True
-                                Me.pbfatmdb4.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb4.Enabled = True
-                                Me.pbfatmdb4.Visible = True
-                                Me.pbfatmdb4.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb4.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb4, klblfatmdb4, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 4
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb5.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb5.Visible = True
-                                Me.pbfatmdb5.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb5.Enabled = True
-                                Me.pbfatmdb5.Visible = True
-                                Me.pbfatmdb5.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb5.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb5, klblfatmdb5, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 5
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb6.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb6.Visible = True
-                                Me.pbfatmdb6.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb6.Enabled = True
-                                Me.pbfatmdb6.Visible = True
-                                Me.pbfatmdb6.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb6.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
-
+                            loadpbimage(pbfatmdb6, klblfatmdb6, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 6
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb7.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb7.Visible = True
-                                Me.pbfatmdb7.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb7.Enabled = True
-                                Me.pbfatmdb7.Visible = True
-                                Me.pbfatmdb7.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb7.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb7, klblfatmdb7, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 7
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb8.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb8.Visible = True
-                                Me.pbfatmdb8.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb8.Enabled = True
-                                Me.pbfatmdb8.Visible = True
-                                Me.pbfatmdb8.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb8.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb8, klblfatmdb8, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 8
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb9.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb9.Visible = True
-                                Me.pbfatmdb9.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb9.Enabled = True
-                                Me.pbfatmdb9.Visible = True
-                                Me.pbfatmdb9.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb9.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb9, klblfatmdb9, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 9
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb10.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb10.Visible = True
-                                Me.pbfatmdb10.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb10.Enabled = True
-                                Me.pbfatmdb10.Visible = True
-                                Me.pbfatmdb10.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb10.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb10, klblfatmdb10, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 10
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb11.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb11.Visible = True
-                                Me.pbfatmdb11.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb11.Enabled = True
-                                Me.pbfatmdb11.Visible = True
-                                Me.pbfatmdb11.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb11.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb11, klblfatmdb11, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 11
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb12.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb12.Visible = True
-                                Me.pbfatmdb12.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb12.Enabled = True
-                                Me.pbfatmdb12.Visible = True
-                                Me.pbfatmdb12.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb12.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb12, klblfatmdb12, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 12
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb13.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb13.Visible = True
-                                Me.pbfatmdb13.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb13.Enabled = True
-                                Me.pbfatmdb13.Visible = True
-                                Me.pbfatmdb13.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb13.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb13, klblfatmdb13, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 13
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb14.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb14.Visible = True
-                                Me.pbfatmdb14.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb14.Enabled = True
-                                Me.pbfatmdb14.Visible = True
-                                Me.pbfatmdb14.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb14.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb14, klblfatmdb14, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 14
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb15.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb15.Visible = True
-                                Me.pbfatmdb15.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb15.Enabled = True
-                                Me.pbfatmdb15.Visible = True
-                                Me.pbfatmdb15.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb16.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb15, klblfatmdb15, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 15
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb16.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb16.Visible = True
-                                Me.pbfatmdb16.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb16.Enabled = True
-                                Me.pbfatmdb16.Visible = True
-                                Me.pbfatmdb16.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb16.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb16, klblfatmdb16, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 16
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb17.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb17.Visible = True
-                                Me.pbfatmdb17.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb17.Enabled = True
-                                Me.pbfatmdb17.Visible = True
-                                Me.pbfatmdb17.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb17.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb17, klblfatmdb17, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 17
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb18.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb18.Visible = True
-                                Me.pbfatmdb18.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb18.Enabled = True
-                                Me.pbfatmdb18.Visible = True
-                                Me.pbfatmdb18.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb18.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb18, klblfatmdb18, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 18
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb19.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb19.Visible = True
-                                Me.pbfatmdb19.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb19.Enabled = True
-                                Me.pbfatmdb19.Visible = True
-                                Me.pbfatmdb19.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb19.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb19, klblfatmdb19, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 19
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb20.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb20.Visible = True
-                                Me.pbfatmdb20.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb20.Enabled = True
-                                Me.pbfatmdb20.Visible = True
-                                Me.pbfatmdb20.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb20.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
-
+                            loadpbimage(pbfatmdb20, klblfatmdb20, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 20
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb21.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb21.Visible = True
-                                Me.pbfatmdb21.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb21.Enabled = True
-                                Me.pbfatmdb21.Visible = True
-                                Me.pbfatmdb21.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb21.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb21, klblfatmdb21, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 21
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb22.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb22.Visible = True
-                                Me.pbfatmdb22.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb22.Enabled = True
-                                Me.pbfatmdb22.Visible = True
-                                Me.pbfatmdb22.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb22.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb22, klblfatmdb22, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 22
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb23.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb23.Visible = True
-                                Me.pbfatmdb23.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb23.Enabled = True
-                                Me.pbfatmdb23.Visible = True
-                                Me.pbfatmdb23.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb23.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb23, klblfatmdb23, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 23
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb24.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb24.Visible = True
-                                Me.pbfatmdb24.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb24.Enabled = True
-                                Me.pbfatmdb24.Visible = True
-                                Me.pbfatmdb24.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb24.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb24, klblfatmdb24, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 24
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb25.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb25.Visible = True
-                                Me.pbfatmdb25.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb25.Enabled = True
-                                Me.pbfatmdb25.Visible = True
-                                Me.pbfatmdb25.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb26.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb25, klblfatmdb25, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 25
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb26.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb26.Visible = True
-                                Me.pbfatmdb26.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb26.Enabled = True
-                                Me.pbfatmdb26.Visible = True
-                                Me.pbfatmdb26.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb26.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb26, klblfatmdb26, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 26
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb27.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb27.Visible = True
-                                Me.pbfatmdb27.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb27.Enabled = True
-                                Me.pbfatmdb27.Visible = True
-                                Me.pbfatmdb27.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb27.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb27, klblfatmdb27, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 27
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb28.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb28.Visible = True
-                                Me.pbfatmdb28.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb28.Enabled = True
-                                Me.pbfatmdb28.Visible = True
-                                Me.pbfatmdb28.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb28.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb28, klblfatmdb28, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 28
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb29.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb29.Visible = True
-                                Me.pbfatmdb29.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb29.Enabled = True
-                                Me.pbfatmdb29.Visible = True
-                                Me.pbfatmdb29.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb29.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb29, klblfatmdb29, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 29
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb30.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb30.Visible = True
-                                Me.pbfatmdb30.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb30.Enabled = True
-                                Me.pbfatmdb30.Visible = True
-                                Me.pbfatmdb30.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb20.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb30, klblfatmdb30, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 30
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb31.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb31.Visible = True
-                                Me.pbfatmdb31.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb31.Enabled = True
-                                Me.pbfatmdb31.Visible = True
-                                Me.pbfatmdb31.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb31.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb31, klblfatmdb31, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 31
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb32.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb32.Visible = True
-                                Me.pbfatmdb32.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb32.Enabled = True
-                                Me.pbfatmdb32.Visible = True
-                                Me.pbfatmdb32.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb32.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb32, klblfatmdb32, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 32
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb33.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb33.Visible = True
-                                Me.pbfatmdb33.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb33.Enabled = True
-                                Me.pbfatmdb33.Visible = True
-                                Me.pbfatmdb33.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb33.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb33, klblfatmdb33, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 33
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb34.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb34.Visible = True
-                                Me.pbfatmdb34.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb34.Enabled = True
-                                Me.pbfatmdb34.Visible = True
-                                Me.pbfatmdb34.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb34.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb34, klblfatmdb34, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 34
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb35.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb35.Visible = True
-                                Me.pbfatmdb35.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb35.Enabled = True
-                                Me.pbfatmdb35.Visible = True
-                                Me.pbfatmdb35.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb36.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
+                            loadpbimage(pbfatmdb35, klblfatmdb35, fanartfilename, rconf.displaymoviefanartlabel)
                         Case 35
-                            Try
-                                Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                klblfatmdb36.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(rconf.tmdbfanartcachefolder + fanartfilename + ".jpg")
-                                'objImage = Nothing
-                                klblfatmdb36.Visible = True
-                                Me.pbfatmdb36.Image = objImage 'Location = rconf.tmdbfanartcachefolder + fanartfilename + "_poster.jpg"
-                                Me.pbfatmdb36.Enabled = True
-                                Me.pbfatmdb36.Visible = True
-                                Me.pbfatmdb36.AccessibleName = rconf.tmdbfanartcachefolder + fanartfilename + ".jpg"
-                                'pbfatmdb36.Load()
-                            Catch ex As Exception
-                                Debug.Print(ex.ToString)
-                            End Try
-
-
+                            loadpbimage(pbfatmdb36, klblfatmdb36, fanartfilename, rconf.displaymoviefanartlabel)
                         Case Else
                             Debug.Print("fanart image display greater then 24, nowhere to put the darn thing")
                     End Select
@@ -8982,7 +8579,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If messageprompts Then curtmdbpostercounter += 1
+                    curtmdbpostercounter += 1
                 End If
 
                 'If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + tmovie.pimdbnumber + posterfilename + "_mid.jpg") Then 'normal rez
@@ -9125,7 +8722,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If messageprompts Then curtmdbpostercounter += 1
+                    curtmdbpostercounter += 1
                 End If
 
                 If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + tmovie.pimdbnumber + posterfilename + "_mid.jpg") Then 'normal rez
@@ -9652,7 +9249,7 @@ Public Class maincollection
                     End If
                     '
                     If rbem.Checked Then wgetpostertmdb(posterurl_cover, rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\", True, posterfilename + "_cover.jpg")
-                    If messageprompts Then curtmdbpostercounter += 1
+                    curtmdbpostercounter += 1
                 End If
 
                 If Not File.Exists(rconf.tmdbpostercachefolder + tmovie.pimdbnumber + "\" + posterfilesubfoldername + "\" + posterfilename + ".jpg") Then 'high rez
@@ -15373,13 +14970,13 @@ Public Class maincollection
 
         'saving the new files
         Try
-            If savefolderjpg And Not moviemode = "file" Then File.Copy(selectedicon.ImageLocation, addfiletofolder(cmpath, "folder.jpg"), True)
+            If savefolderjpg And Not moviemode = "file" Then File.Copy(selectedicon.AccessibleName, addfiletofolder(cmpath, "folder.jpg"), True)
             If savefolderjpg And Not moviemode = "file" Then Debug.Print("saved: " + addfiletofolder(cmpath, "folder.jpg"))
             If savemovienametbn Then
                 If moviemode = "file" Then
                     File.Copy(selectedicon.AccessibleName, addfiletofolder(cmpath, stripstackforfilemode(removeextension(currentmovie.preservedmoviename)) + ".tbn"), True)
                 Else
-                    File.Copy(selectedicon.ImageLocation, addfiletofolder(cmpath, cmname) + ".tbn", True)
+                    File.Copy(selectedicon.AccessibleName, addfiletofolder(cmpath, cmname) + ".tbn", True)
                 End If
                 stripstackforfilemode(removeextension(currentmovie.preservedmoviename))
             End If
@@ -16239,7 +15836,7 @@ Public Class maincollection
         Dim counter As Integer = 0
 
         'clean up invalid posters
-        If messageprompts Then postertotal += passedposter.pposters.Count
+
         Dim cleanupcount As Integer = 0
         While cleanupcount < passedposter.pposters.Count
             If singleMovieBeingDisplayed Then 'flag when using bw
@@ -16302,7 +15899,7 @@ Public Class maincollection
             If File.Exists(fullpath) Then File.SetAttributes(fullpath, FileAttributes.Normal)
         End If
         If Not File.Exists(addfiletofolder(rconf.calgorydotnetfolder, filename)) Then Exit Sub
-        If messageprompts Then postertotal += 1
+
 
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -16319,7 +15916,7 @@ Public Class maincollection
         End If
 
         Dim tbdcount As Integer = cposters.posters.Count 'tmovie.pbackdrops.backdrops.Count
-        If messageprompts Then postertotal += tbdcount
+
         If pclogging Then pclog.WriteLine(tbdcount.ToString + ": is the count of Posters from TMDB")
         If singleMovieBeingDisplayed Then
             bwcount += 1
@@ -16725,7 +16322,7 @@ Public Class maincollection
         poster.readxml(poster, rconf.xmlfolderposters)
         'MsgBox(poster.pposters.Count)
         Dim counter As Integer = 0
-        If messageprompts Then postertotal += poster.pposters.Count
+
         While counter < poster.pposters.Count
             Debug.Print(poster.pposters(counter).ToString)
             counter = counter + 1
@@ -16764,7 +16361,7 @@ Public Class maincollection
                     End If
                 Else
                     fromcache = False
-                    If messageprompts Then curtimppostercounter += 1
+                    curtimppostercounter += 1
                     Debug.Print(" -- NOT Cached: " + curposter.pmoviename.ToString)
                     If singleMovieBeingDisplayed Then 'flag when using bw
                         bwcounter += 1
@@ -22341,6 +21938,7 @@ Public Class maincollection
         Dim tbdcou As Integer = 0 'tbdcou is the counter for the pictureboxes and is incremented after a sucessfull image load
         If messageprompts Then lblPbar.Text = "Loading Poster into GUI"
         If messageprompts Then Me.Refresh()
+        postertotal = temparrayofposters.Count
         For Each curposter As String In temparrayofposters
             Dim posterfilename As String = curposter
             If posterfilename.Length <= 3 Then
@@ -22356,1314 +21954,149 @@ Public Class maincollection
 
             Select Case tbdcou
                 Case 0
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti1.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti1.Visible = True
-                        Me.pbti1.ImageLocation = posterfilename
-                        Me.pbti1.Enabled = True
-                        Me.pbti1.Visible = True
-                        Me.pbti1.AccessibleName = posterfilename
-                        Try
-                            pbti1.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti1, lpbti1, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 1
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti2.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti2.Visible = True
-                        Me.pbti2.ImageLocation = posterfilename
-                        Me.pbti2.Enabled = True
-                        Me.pbti2.Visible = True
-                        Me.pbti2.AccessibleName = posterfilename
-                        Try
-                            pbti2.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti2, lpbti2, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 2
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti3.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti3.Visible = True
-                        Me.pbti3.ImageLocation = posterfilename
-                        Me.pbti3.Enabled = True
-                        Me.pbti3.Visible = True
-                        Me.pbti3.AccessibleName = posterfilename
-                        Try
-                            pbti3.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti3, lpbti3, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 3
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti4.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti4.Visible = True
-                        Me.pbti4.ImageLocation = posterfilename
-                        Me.pbti4.Enabled = True
-                        Me.pbti4.Visible = True
-                        Me.pbti4.AccessibleName = posterfilename
-                        Try
-                            pbti4.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti4, lpbti4, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 4
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti5.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti5.Visible = True
-                        Me.pbti5.ImageLocation = posterfilename
-                        Me.pbti5.Enabled = True
-                        Me.pbti5.Visible = True
-                        Me.pbti5.AccessibleName = posterfilename
-                        Try
-                            pbti5.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti5, lpbti5, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 5
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti6.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti6.Visible = True
-                        Me.pbti6.ImageLocation = posterfilename
-                        Me.pbti6.AccessibleName = posterfilename
-                        Me.pbti6.Enabled = True
-                        Me.pbti6.Visible = True
-                        Try
-                            pbti6.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti6, lpbti6, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 6
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti7.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti7.Visible = True
-                        Me.pbti7.ImageLocation = posterfilename
-                        Me.pbti7.Enabled = True
-                        Me.pbti7.Visible = True
-                        Me.pbti7.AccessibleName = posterfilename
-                        Try
-                            pbti7.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti7, lpbti7, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 7
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti8.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti8.Visible = True
-                        Me.pbti8.ImageLocation = posterfilename
-                        Me.pbti8.Enabled = True
-                        Me.pbti8.Visible = True
-                        Me.pbti8.AccessibleName = posterfilename
-                        Try
-                            pbti8.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti8, lpbti8, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 8
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti9.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti9.Visible = True
-                        Me.pbti9.ImageLocation = posterfilename
-                        Me.pbti9.Enabled = True
-                        Me.pbti9.Visible = True
-                        Me.pbti9.AccessibleName = posterfilename
-                        Try
-                            pbti9.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti9, lpbti9, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 9
-
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti10.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti10.Visible = True
-                        Me.pbti10.ImageLocation = posterfilename
-                        Me.pbti10.Enabled = True
-                        Me.pbti10.Visible = True
-                        Me.pbti10.AccessibleName = posterfilename
-                        Try
-                            pbti10.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti10, lpbti10, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 10
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti11.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti11.Visible = True
-                        Me.pbti11.ImageLocation = posterfilename
-                        Me.pbti11.Enabled = True
-                        Me.pbti11.Visible = True
-                        Me.pbti11.AccessibleName = posterfilename
-                        Try
-                            pbti11.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti11, lpbti11, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 11
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti12.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti12.Visible = True
-                        Me.pbti12.ImageLocation = posterfilename
-                        Me.pbti12.Enabled = True
-                        Me.pbti12.Visible = True
-                        Me.pbti12.AccessibleName = posterfilename
-                        Try
-                            pbti12.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti12, lpbti12, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 12
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti13.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti13.Visible = True
-                        Me.pbti13.ImageLocation = posterfilename
-                        Me.pbti13.Enabled = True
-                        Me.pbti13.Visible = True
-                        Me.pbti13.AccessibleName = posterfilename
-                        Try
-                            pbti13.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti13, lpbti13, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 13
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti14.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti14.Visible = True
-                        Me.pbti14.ImageLocation = posterfilename
-                        Me.pbti14.Enabled = True
-                        Me.pbti14.Visible = True
-                        Me.pbti14.AccessibleName = posterfilename
-                        Try
-                            pbti14.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti14, lpbti14, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 14
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti15.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti15.Visible = True
-                        Me.pbti15.ImageLocation = posterfilename
-                        Me.pbti15.Enabled = True
-                        Me.pbti15.Visible = True
-                        Me.pbti15.AccessibleName = posterfilename
-                        Try
-                            pbti15.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti15, lpbti15, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 15
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti16.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti16.Visible = True
-                        Me.pbti16.ImageLocation = posterfilename
-                        Me.pbti16.AccessibleName = posterfilename
-                        Me.pbti16.Enabled = True
-                        Me.pbti16.Visible = True
-                        Try
-                            pbti16.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti16, lpbti16, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 16
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti17.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti17.Visible = True
-                        Me.pbti17.ImageLocation = posterfilename
-                        Me.pbti17.Enabled = True
-                        Me.pbti17.Visible = True
-                        Me.pbti17.AccessibleName = posterfilename
-                        Try
-                            pbti17.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti17, lpbti17, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 17
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti18.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti18.Visible = True
-                        Me.pbti18.ImageLocation = posterfilename
-                        Me.pbti18.Enabled = True
-                        Me.pbti18.Visible = True
-                        Me.pbti18.AccessibleName = posterfilename
-                        Try
-                            pbti18.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti18, lpbti18, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 18
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti19.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti19.Visible = True
-                        Me.pbti19.ImageLocation = posterfilename
-                        Me.pbti19.Enabled = True
-                        Me.pbti19.Visible = True
-                        Me.pbti19.AccessibleName = posterfilename
-                        Try
-                            pbti19.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti19, lpbti19, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 19
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti20.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti20.Visible = True
-                        Me.pbti20.ImageLocation = posterfilename
-                        Me.pbti20.Enabled = True
-                        Me.pbti20.Visible = True
-                        Me.pbti20.AccessibleName = posterfilename
-                        Try
-                            pbti20.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti20, lpbti20, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 20
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti21.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti21.Visible = True
-                        Me.pbti21.ImageLocation = posterfilename
-                        Me.pbti21.Enabled = True
-                        Me.pbti21.Visible = True
-                        Me.pbti21.AccessibleName = posterfilename
-                        Try
-                            pbti21.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti21, lpbti21, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 21
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti22.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti22.Visible = True
-                        Me.pbti22.ImageLocation = posterfilename
-                        Me.pbti22.AccessibleName = posterfilename
-                        Me.pbti22.Enabled = True
-                        Me.pbti22.Visible = True
-                        Try
-                            pbti22.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti22, lpbti22, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 22
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti23.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti23.Visible = True
-                        Me.pbti23.ImageLocation = posterfilename
-                        Me.pbti23.Enabled = True
-                        Me.pbti23.Visible = True
-                        Me.pbti23.AccessibleName = posterfilename
-                        Try
-                            pbti23.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti23, lpbti23, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 23
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti24.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti24.Visible = True
-                        Me.pbti24.ImageLocation = posterfilename
-                        Me.pbti24.Enabled = True
-                        Me.pbti24.Visible = True
-                        Me.pbti24.AccessibleName = posterfilename
-                        Try
-                            pbti24.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti24, lpbti24, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 24
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti25.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti25.Visible = True
-                        Me.pbti25.ImageLocation = posterfilename
-                        Me.pbti25.Enabled = True
-                        Me.pbti25.Visible = True
-                        Me.pbti25.AccessibleName = posterfilename
-                        Try
-                            pbti25.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti25, lpbti25, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 25
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti26.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti26.Visible = True
-                        Me.pbti26.ImageLocation = posterfilename
-                        Me.pbti26.AccessibleName = posterfilename
-                        Me.pbti26.Enabled = True
-                        Me.pbti26.Visible = True
-                        Try
-                            pbti26.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti26, lpbti26, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 26
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti27.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti27.Visible = True
-                        Me.pbti27.ImageLocation = posterfilename
-                        Me.pbti27.Enabled = True
-                        Me.pbti27.Visible = True
-                        Me.pbti27.AccessibleName = posterfilename
-                        Try
-                            pbti27.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti27, lpbti27, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 27
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti28.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti28.Visible = True
-                        Me.pbti28.ImageLocation = posterfilename
-                        Me.pbti28.Enabled = True
-                        Me.pbti28.Visible = True
-                        Me.pbti28.AccessibleName = posterfilename
-                        Try
-                            pbti28.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti28, lpbti28, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 28
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti29.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti29.Visible = True
-                        Me.pbti29.ImageLocation = posterfilename
-                        Me.pbti29.Enabled = True
-                        Me.pbti29.Visible = True
-                        Me.pbti29.AccessibleName = posterfilename
-                        Try
-                            pbti29.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti29, lpbti29, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 29
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti30.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti30.Visible = True
-                        Me.pbti30.ImageLocation = posterfilename
-                        Me.pbti30.Enabled = True
-                        Me.pbti30.Visible = True
-                        Me.pbti30.AccessibleName = posterfilename
-                        Try
-                            pbti30.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti30, lpbti30, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 30
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti31.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti31.Visible = True
-                        Me.pbti31.ImageLocation = posterfilename
-                        Me.pbti31.Enabled = True
-                        Me.pbti31.Visible = True
-                        Me.pbti31.AccessibleName = posterfilename
-                        Try
-                            pbti31.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti31, lpbti31, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 31
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti32.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti32.Visible = True
-                        Me.pbti32.ImageLocation = posterfilename
-                        Me.pbti32.Enabled = True
-                        Me.pbti32.Visible = True
-                        Me.pbti32.AccessibleName = posterfilename
-                        Try
-                            pbti32.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti32, lpbti32, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 32
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti33.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti33.Visible = True
-                        Me.pbti33.ImageLocation = posterfilename
-                        Me.pbti33.Enabled = True
-                        Me.pbti33.Visible = True
-                        Me.pbti33.AccessibleName = posterfilename
-                        Try
-                            pbti33.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti33, lpbti33, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 33
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti34.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti34.Visible = True
-                        Me.pbti34.ImageLocation = posterfilename
-                        Me.pbti34.Enabled = True
-                        Me.pbti34.Visible = True
-                        Me.pbti34.AccessibleName = posterfilename
-                        Try
-                            pbti34.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti34, lpbti34, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 34
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti35.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti35.Visible = True
-                        Me.pbti35.ImageLocation = posterfilename
-                        Me.pbti35.Enabled = True
-                        Me.pbti35.Visible = True
-                        Me.pbti35.AccessibleName = posterfilename
-                        Try
-                            pbti35.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti35, lpbti35, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 35
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti36.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti36.Visible = True
-                        Me.pbti36.ImageLocation = posterfilename
-                        Me.pbti36.AccessibleName = posterfilename
-                        Me.pbti36.Enabled = True
-                        Me.pbti36.Visible = True
-                        Try
-                            pbti36.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti36, lpbti36, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 36
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti37.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti37.Visible = True
-                        Me.pbti37.ImageLocation = posterfilename
-                        Me.pbti37.Enabled = True
-                        Me.pbti37.Visible = True
-                        Me.pbti37.AccessibleName = posterfilename
-                        Try
-                            pbti37.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti37, lpbti37, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 37
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti38.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti38.Visible = True
-                        Me.pbti38.ImageLocation = posterfilename
-                        Me.pbti38.Enabled = True
-                        Me.pbti38.Visible = True
-                        Me.pbti38.AccessibleName = posterfilename
-                        Try
-                            pbti38.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti38, lpbti38, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 38
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti39.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti39.Visible = True
-                        Me.pbti39.ImageLocation = posterfilename
-                        Me.pbti39.Enabled = True
-                        Me.pbti39.Visible = True
-                        Me.pbti39.AccessibleName = posterfilename
-                        Try
-                            pbti39.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti39, lpbti39, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 39
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti40.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti40.Visible = True
-                        Me.pbti40.ImageLocation = posterfilename
-                        Me.pbti40.Enabled = True
-                        Me.pbti40.Visible = True
-                        Me.pbti40.AccessibleName = posterfilename
-                        Try
-                            pbti40.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
-
+                    loadpbimage(pbti40, lpbti40, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 40
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti41.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti41.Visible = True
-                        Me.pbti41.ImageLocation = posterfilename
-                        Me.pbti41.Enabled = True
-                        Me.pbti41.Visible = True
-                        Me.pbti41.AccessibleName = posterfilename
-                        Try
-                            pbti41.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti41, lpbti41, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 41
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti42.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti42.Visible = True
-                        Me.pbti42.ImageLocation = posterfilename
-                        Me.pbti42.Enabled = True
-                        Me.pbti42.Visible = True
-                        Me.pbti42.AccessibleName = posterfilename
-                        Try
-                            pbti42.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti42, lpbti42, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 42
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti43.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti43.Visible = True
-                        Me.pbti43.ImageLocation = posterfilename
-                        Me.pbti43.Enabled = True
-                        Me.pbti43.Visible = True
-                        Me.pbti43.AccessibleName = posterfilename
-                        Try
-                            pbti43.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti43, lpbti43, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 43
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti44.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti44.Visible = True
-                        Me.pbti44.ImageLocation = posterfilename
-                        Me.pbti44.Enabled = True
-                        Me.pbti44.Visible = True
-                        Me.pbti44.AccessibleName = posterfilename
-                        Try
-                            pbti44.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti44, lpbti44, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 44
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti45.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti45.Visible = True
-                        Me.pbti45.ImageLocation = posterfilename
-                        Me.pbti45.Enabled = True
-                        Me.pbti45.Visible = True
-                        Me.pbti45.AccessibleName = posterfilename
-                        Try
-                            pbti45.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti45, lpbti45, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 45
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti46.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti46.Visible = True
-                        Me.pbti46.ImageLocation = posterfilename
-                        Me.pbti46.AccessibleName = posterfilename
-                        Me.pbti46.Enabled = True
-                        Me.pbti46.Visible = True
-                        Try
-                            pbti46.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti46, lpbti46, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 46
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti47.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti47.Visible = True
-                        Me.pbti47.ImageLocation = posterfilename
-                        Me.pbti47.Enabled = True
-                        Me.pbti47.Visible = True
-                        Me.pbti47.AccessibleName = posterfilename
-                        Try
-                            pbti47.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti47, lpbti47, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 47
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti48.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti48.Visible = True
-                        Me.pbti48.ImageLocation = posterfilename
-                        Me.pbti48.Enabled = True
-                        Me.pbti48.Visible = True
-                        Me.pbti48.AccessibleName = posterfilename
-                        Try
-                            pbti48.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti48, lpbti48, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 48
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti49.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti49.Visible = True
-                        Me.pbti49.ImageLocation = posterfilename
-                        Me.pbti49.Enabled = True
-                        Me.pbti49.Visible = True
-                        Me.pbti49.AccessibleName = posterfilename
-                        Try
-                            pbti49.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti49, lpbti49, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 49
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti50.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti50.Visible = True
-                        Me.pbti50.ImageLocation = posterfilename
-                        Me.pbti50.Enabled = True
-                        Me.pbti50.Visible = True
-                        Me.pbti50.AccessibleName = posterfilename
-                        Try
-                            pbti50.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
-
+                    loadpbimage(pbti50, lpbti50, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 50
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti51.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti51.Visible = True
-                        Me.pbti51.ImageLocation = posterfilename
-                        Me.pbti51.Enabled = True
-                        Me.pbti51.Visible = True
-                        Me.pbti51.AccessibleName = posterfilename
-                        Try
-                            pbti51.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti51, lpbti51, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 51
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti52.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti52.Visible = True
-                        Me.pbti52.ImageLocation = posterfilename
-                        Me.pbti52.Enabled = True
-                        Me.pbti52.Visible = True
-                        Me.pbti52.AccessibleName = posterfilename
-                        Try
-                            pbti52.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti52, lpbti52, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 52
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti53.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti53.Visible = True
-                        Me.pbti53.ImageLocation = posterfilename
-                        Me.pbti53.Enabled = True
-                        Me.pbti53.Visible = True
-                        Me.pbti53.AccessibleName = posterfilename
-                        Try
-                            pbti53.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti53, lpbti53, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 53
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti54.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti54.Visible = True
-                        Me.pbti54.ImageLocation = posterfilename
-                        Me.pbti54.Enabled = True
-                        Me.pbti54.Visible = True
-                        Me.pbti54.AccessibleName = posterfilename
-                        Try
-                            pbti54.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti54, lpbti54, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 54
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti55.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti55.Visible = True
-                        Me.pbti55.ImageLocation = posterfilename
-                        Me.pbti55.Enabled = True
-                        Me.pbti55.Visible = True
-                        Me.pbti55.AccessibleName = posterfilename
-                        Try
-                            pbti55.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti55, lpbti55, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 55
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti56.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti56.Visible = True
-                        Me.pbti56.ImageLocation = posterfilename
-                        Me.pbti56.AccessibleName = posterfilename
-                        Me.pbti56.Enabled = True
-                        Me.pbti56.Visible = True
-                        Try
-                            pbti56.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti56, lpbti56, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 56
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti57.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti57.Visible = True
-                        Me.pbti57.ImageLocation = posterfilename
-                        Me.pbti57.Enabled = True
-                        Me.pbti57.Visible = True
-                        Me.pbti57.AccessibleName = posterfilename
-                        Try
-                            pbti57.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti57, lpbti57, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 57
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti58.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti58.Visible = True
-                        Me.pbti58.ImageLocation = posterfilename
-                        Me.pbti58.Enabled = True
-                        Me.pbti58.Visible = True
-                        Me.pbti58.AccessibleName = posterfilename
-                        Try
-                            pbti58.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti58, lpbti58, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 58
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti59.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti59.Visible = True
-                        Me.pbti59.ImageLocation = posterfilename
-                        Me.pbti59.Enabled = True
-                        Me.pbti59.Visible = True
-                        Me.pbti59.AccessibleName = posterfilename
-                        Try
-                            pbti59.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti59, lpbti59, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 59
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti60.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti60.Visible = True
-                        Me.pbti60.ImageLocation = posterfilename
-                        Me.pbti60.Enabled = True
-                        Me.pbti60.Visible = True
-                        Me.pbti60.AccessibleName = posterfilename
-                        Try
-                            pbti60.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
-
+                    loadpbimage(pbti60, lpbti60, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 60
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti61.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti61.Visible = True
-                        Me.pbti61.ImageLocation = posterfilename
-                        Me.pbti61.Enabled = True
-                        Me.pbti61.Visible = True
-                        Me.pbti61.AccessibleName = posterfilename
-                        Try
-                            pbti61.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti61, lpbti61, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 61
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti62.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti62.Visible = True
-                        Me.pbti62.ImageLocation = posterfilename
-                        Me.pbti62.Enabled = True
-                        Me.pbti62.Visible = True
-                        Me.pbti62.AccessibleName = posterfilename
-                        Try
-                            pbti62.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti62, lpbti62, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 62
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti63.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti63.Visible = True
-                        Me.pbti63.ImageLocation = posterfilename
-                        Me.pbti63.Enabled = True
-                        Me.pbti63.Visible = True
-                        Me.pbti63.AccessibleName = posterfilename
-                        Try
-                            pbti63.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti63, lpbti63, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 63
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti64.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti64.Visible = True
-                        Me.pbti64.ImageLocation = posterfilename
-                        Me.pbti64.Enabled = True
-                        Me.pbti64.Visible = True
-                        Me.pbti64.AccessibleName = posterfilename
-                        Try
-                            pbti64.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti64, lpbti64, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 64
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti65.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti65.Visible = True
-                        Me.pbti65.ImageLocation = posterfilename
-                        Me.pbti65.Enabled = True
-                        Me.pbti65.Visible = True
-                        Me.pbti65.AccessibleName = posterfilename
-                        Try
-                            pbti65.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti65, lpbti65, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 65
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti66.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti66.Visible = True
-                        Me.pbti66.ImageLocation = posterfilename
-                        Me.pbti66.AccessibleName = posterfilename
-                        Me.pbti66.Enabled = True
-                        Me.pbti66.Visible = True
-                        Try
-                            pbti66.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti66, lpbti66, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 66
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti67.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti67.Visible = True
-                        Me.pbti67.ImageLocation = posterfilename
-                        Me.pbti67.Enabled = True
-                        Me.pbti67.Visible = True
-                        Me.pbti67.AccessibleName = posterfilename
-                        Try
-                            pbti67.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti67, lpbti67, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 67
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti68.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti68.Visible = True
-                        Me.pbti68.ImageLocation = posterfilename
-                        Me.pbti68.Enabled = True
-                        Me.pbti68.Visible = True
-                        Me.pbti68.AccessibleName = posterfilename
-                        Try
-                            pbti68.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti68, lpbti68, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 68
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti69.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti69.Visible = True
-                        Me.pbti69.ImageLocation = posterfilename
-                        Me.pbti69.Enabled = True
-                        Me.pbti69.Visible = True
-                        Me.pbti69.AccessibleName = posterfilename
-                        Try
-                            pbti69.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti69, lpbti69, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 69
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti70.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti70.Visible = True
-                        Me.pbti70.ImageLocation = posterfilename
-                        Me.pbti70.Enabled = True
-                        Me.pbti70.Visible = True
-                        Me.pbti70.AccessibleName = posterfilename
-                        Try
-                            pbti70.Load()
-
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti70, lpbti70, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 70
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti71.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti71.Visible = True
-                        Me.pbti71.ImageLocation = posterfilename
-                        Me.pbti71.Enabled = True
-                        Me.pbti71.Visible = True
-                        Me.pbti71.AccessibleName = posterfilename
-                        Try
-                            pbti71.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti71, lpbti71, posterfilename, rconf.displaymovieposterlabel, True)
                 Case 71
-                    Try
-                        Dim objImage As System.Drawing.Image = System.Drawing.Image.FromFile(posterfilename)
-                        lpbti72.Text = objImage.Width.ToString & "x" & objImage.Height.ToString & " Size: " & getFileSize(posterfilename)
-                        objImage.Dispose()
-                        lpbti72.Visible = True
-                        Me.pbti72.ImageLocation = posterfilename
-                        Me.pbti72.Enabled = True
-                        Me.pbti72.Visible = True
-                        Me.pbti72.AccessibleName = posterfilename
-                        Try
-                            pbti72.Load()
-                        Catch ex As Exception
-                            File.Delete(posterfilename)
-                        End Try
-                    Catch exerror As Exception
-                        Debug.Print(exerror.ToString)
-                    End Try
+                    loadpbimage(pbti72, lpbti72, posterfilename, rconf.displaymovieposterlabel, True)
                 Case Else
                     Debug.Print("Poster image that was set for display but is greater then the 64 allowed in the GUI, I have nowhere to put the darn thing so I'll act like it was never there!")
             End Select
@@ -37023,7 +35456,24 @@ Public Class configuration
             cbfilternameFileModeFilterUnderscoreDot = value
         End Set
     End Property
-
+    Private cbdisplaymovieposterlabel As Boolean = False
+    Property displaymovieposterlabel() As Boolean
+        Get
+            Return cbdisplaymovieposterlabel
+        End Get
+        Set(ByVal value As Boolean)
+            cbdisplaymovieposterlabel = value
+        End Set
+    End Property
+    Private cbdisplaymoviefanartlabel As Boolean = False
+    Property displaymoviefanartlabel() As Boolean
+        Get
+            Return cbdisplaymoviefanartlabel
+        End Get
+        Set(ByVal value As Boolean)
+            cbdisplaymoviefanartlabel = value
+        End Set
+    End Property
     Private cbMaxIconPerStyle, cbMaxIconsToDisplay As Integer 'int 0-23
     Private cbdlformat As Integer '0 (med), 1 (large), 2 (download)
     Private cbGetcaldnPosters As Boolean
@@ -38571,4 +37021,8 @@ Public Class configuration
             cbFilterXvid = value
         End Set
     End Property
+
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
 End Class
