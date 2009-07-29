@@ -230,4 +230,5 @@ Namespace thetvdb
             End Set
         End Property
     End Class
+
 End Namespace
