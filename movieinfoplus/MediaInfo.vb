@@ -1451,8 +1451,9 @@ Public Class MediaInfo
                 Return "zxx"
             Case "zaza", "dimili", "dimli", "kirdki", "kirmanjki", "zazaki"
                 Return "zza"
+            
         End Select
-
+        Return ""
     End Function
     Public Sub getdata(ByRef currentshow As tvdblang.tvdblangEpisode, ByVal nfofill As Boolean)
         'getdata function
