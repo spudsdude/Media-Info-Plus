@@ -9,7 +9,7 @@ Module cmdlinetvshowupdate
     Dim showdebug As Boolean = False
 
     Sub Main()
-        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2914")
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2916")
         If Command.ToString.ToLower.Contains("help") Then
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")

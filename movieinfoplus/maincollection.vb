@@ -17439,6 +17439,40 @@ Public Class maincollection
         'Me.TabControl2.UseVisualStyleBackColor = True
 
     End Sub
+    Private Sub updateImpaPosters()
+        Dim cou As Integer = 2007
+        'While cou < 2010
+        '    getimpapagesource(cou)
+        '    parseposters(cou, True)
+        '    cou = cou + 1
+        'End While
+        'use background worker
+        'turn off user controls
+        lbMyMovies.Enabled = False
+        tcMain.Enabled = False
+        gbAppMode.Enabled = False
+        gbDisplay.Enabled = False
+        tsbMoviesLoadMovies.Enabled = False
+        tsbMoviesAutoPilot.Enabled = False
+        'btnAutoPilot.Visible = False
+        kgMovieOrTVShow.Enabled = False
+        kgMyMovieInfoPicker.Enabled = False
+        btnPrev.Enabled = False
+        btnNext.Enabled = False
+        btnShowMovieInfo.Enabled = False
+
+        prgThread.Value = 0
+        prgThread.Maximum = 3000
+        prgThread.Visible = True
+        tsbMoviesPreCache.Enabled = False
+        'btnPrecache.Visible = False
+        lblPCWorking.Visible = True
+
+        bwUpdatePosters = New System.ComponentModel.BackgroundWorker
+        bwUpdatePosters.WorkerReportsProgress = True
+        bwUpdatePosters.WorkerSupportsCancellation = True
+        bwUpdatePosters.RunWorkerAsync()
+    End Sub
     Private Sub btnUpdatePosters_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUpdatePosters.Click
         'Dim cou As Integer = 2007
         'While cou < 2010
@@ -32810,6 +32844,9 @@ Public Class maincollection
 
     End Sub
 
+    Private Sub UpdateKnownPostersimpawardscomToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles UpdateKnownPostersimpawardscomToolStripMenuItem.Click
+        updateImpaPosters()
+    End Sub
 End Class
 <Serializable()> Public Class posters
     'Dim xmlfolderposters As String = mainform.rconf.xmlfolderposters '"c:\movieinfoplus\posterxmls\"
