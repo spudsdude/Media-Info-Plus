@@ -665,139 +665,145 @@ Public Class tvshowcollection
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasons") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasons")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes")
-            For Each tmbanner As BannersBanner In tbanners.Banners
-                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
-                    'See If the file already exsists
 
-                    Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
-                    'debug.Print(switchpath)
+            Try
+                For Each tmbanner As BannersBanner In tbanners.Banners
+                    If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
+                        'See If the file already exsists
 
-                    Select Case tmbanner.BannerType.ToLower
-                        Case "fanart"
-                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Fanart Items: " + switchpath
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvfanart(tmbanner, selectedshow, switchpath)
-                                    If fanartcounter = 1 Or Not File.Exists(showfullpathname + "\fanart.jpg") Then
-                                        If Not File.Exists(showfullpathname + "\fanart.jpg") Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\fanart.jpg") '-- copy fanart as fanart.jpg
+                        Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
+                        'debug.Print(switchpath)
+
+                        Select Case tmbanner.BannerType.ToLower
+                            Case "fanart"
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Fanart Items: " + switchpath
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvfanart(tmbanner, selectedshow, switchpath)
+                                        If fanartcounter = 1 Or Not File.Exists(showfullpathname + "\fanart.jpg") Then
+                                            If Not File.Exists(showfullpathname + "\fanart.jpg") Then
+                                                File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\fanart.jpg") '-- copy fanart as fanart.jpg
+                                            End If
                                         End If
                                     End If
                                 End If
-                            End If
 
-                            fanartcounter += 1
-                        Case "poster"
-                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Poster Items: " + switchpath
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvposters(tmbanner, selectedshow, switchpath)
-                                    If Not File.Exists(showfullpathname + "\season-all.tbn") Then
-                                        File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
-                                    End If
-                                    If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                        If rconf.prbshows_show_usewide_false4poster = False Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                fanartcounter += 1
+                            Case "poster"
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Poster Items: " + switchpath
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvposters(tmbanner, selectedshow, switchpath)
+                                        If Not File.Exists(showfullpathname + "\season-all.tbn") Then
+                                            File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
                                         End If
-                                    End If
-                                End If
-                            End If
-                            postercounter += 1
-                        Case "season"
-                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Season Items: " + switchpath
-                            Dim boolGetSeason As Boolean = False
-                            Dim boolGetSeasonwide As Boolean = False
-                            If rconf.tv_season_banners_download_type_string.ToLower Is Nothing Then
-                                rconf.tv_season_banners_download_type_string = "all"
-                            End If
-                            If rconf.tv_season_banners_download_type_string.ToLower = "" Then
-                                rconf.tv_season_banners_download_type_string = "all"
-                            End If
-                            Try
-                                If rconf.tv_season_banners_download_type_string.ToLower = "all" Then
-                                    boolGetSeason = True
-                                    boolGetSeasonwide = True
-                                ElseIf rconf.tv_season_banners_download_type_string.ToLower = "season" Then
-                                    boolGetSeason = True
-                                ElseIf rconf.tv_season_banners_download_type_string.ToLower = "seasonwide" Then
-                                    boolGetSeasonwide = True
-                                End If
-                                'workaround for busted configs where the value isn't entered correctly
-                                If boolGetSeason = False And boolGetSeasonwide = False Then boolGetSeason = True
-                            Catch ex As Exception
-                                boolGetSeason = True
-                                'debug.Print(ex.ToString)
-                                MsgBox("Configuration setting is missing for season selection, please report this bug and include a copy of your config.xml file")
-                            End Try
-
-
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
-                                'jive fix'If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'jive fix'If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'season auto creation
-
-                                'check series length
-                                Dim vSeasonLen As Integer = tmbanner.Season.Length
-                                Dim vSeasonPreText As String = ""
-
-                                If vSeasonLen = 1 Then vSeasonPreText = "season0"
-                                If vSeasonLen >= 2 Then vSeasonPreText = "season"
-
-                                Dim vSeasonNumConcat As String = vSeasonPreText + tmbanner.Season.ToString
-                                If tmbanner.BannerType2.ToLower = rconf.tv_season_banners_toapply_string Then
-
-                                    Dim tvSeasonPreText As String = ""
-                                    If vSeasonLen = 1 Then tvSeasonPreText = "Season"
-                                    If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
-                                    'this way, each numbered season gets a season banner
-                                    'add season image to folders
-                                    Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
-                                    Dim fnamet As String = "folder.jpg"
-                                    Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season.ToString + "\"
-                                    Dim filetocopy As String = ""
-                                    If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
-                                        filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
-                                    Else
-                                        filetocopy = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
-                                    End If
-
-                                    If Directory.Exists(curfolder) Then
-                                        If Not File.Exists(curfolder & fnamet) Then
-                                            File.Copy(filetocopy, curfolder & fnamet)
-                                        End If
-                                    End If
-
-                                    If Directory.Exists(curfolder2) Then
-                                        If Not File.Exists(curfolder2 & fnamet) Then
-                                            File.Copy(filetocopy, curfolder2 & fnamet)
-                                        End If
-                                    End If
-
-                                    If Not File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") And File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then
-                                        File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\" + vSeasonNumConcat + ".tbn")
-                                    End If
-                                    seasoncounter += 1
-                                End If
-                            End If
-
-                        Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
-                            If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Series Items: " + switchpath
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
-                                    If seriescounter = 1 Then
                                         If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                            If rconf.prbshows_show_usewide_false4poster = True Then
+                                            If rconf.prbshows_show_usewide_false4poster = False Then
                                                 File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
                                             End If
                                         End If
                                     End If
                                 End If
-                            End If
+                                postercounter += 1
+                            Case "season"
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Season Items: " + switchpath
+                                Dim boolGetSeason As Boolean = False
+                                Dim boolGetSeasonwide As Boolean = False
+                                If rconf.tv_season_banners_download_type_string.ToLower Is Nothing Then
+                                    rconf.tv_season_banners_download_type_string = "all"
+                                End If
+                                If rconf.tv_season_banners_download_type_string.ToLower = "" Then
+                                    rconf.tv_season_banners_download_type_string = "all"
+                                End If
+                                Try
+                                    If rconf.tv_season_banners_download_type_string.ToLower = "all" Then
+                                        boolGetSeason = True
+                                        boolGetSeasonwide = True
+                                    ElseIf rconf.tv_season_banners_download_type_string.ToLower = "season" Then
+                                        boolGetSeason = True
+                                    ElseIf rconf.tv_season_banners_download_type_string.ToLower = "seasonwide" Then
+                                        boolGetSeasonwide = True
+                                    End If
+                                    'workaround for busted configs where the value isn't entered correctly
+                                    If boolGetSeason = False And boolGetSeasonwide = False Then boolGetSeason = True
+                                Catch ex As Exception
+                                    boolGetSeason = True
+                                    'debug.Print(ex.ToString)
+                                    MsgBox("Configuration setting is missing for season selection, please report this bug and include a copy of your config.xml file")
+                                End Try
 
-                            seriescounter += 1
-                    End Select
-                End If
-                'End If
-            Next
+
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
+                                    'jive fix'If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'jive fix'If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'season auto creation
+
+                                    'check series length
+                                    Dim vSeasonLen As Integer = tmbanner.Season.Length
+                                    Dim vSeasonPreText As String = ""
+
+                                    If vSeasonLen = 1 Then vSeasonPreText = "season0"
+                                    If vSeasonLen >= 2 Then vSeasonPreText = "season"
+
+                                    Dim vSeasonNumConcat As String = vSeasonPreText + tmbanner.Season.ToString
+                                    If tmbanner.BannerType2.ToLower = rconf.tv_season_banners_toapply_string Then
+
+                                        Dim tvSeasonPreText As String = ""
+                                        If vSeasonLen = 1 Then tvSeasonPreText = "Season"
+                                        If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
+                                        'this way, each numbered season gets a season banner
+                                        'add season image to folders
+                                        Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
+                                        Dim fnamet As String = "folder.jpg"
+                                        Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season.ToString + "\"
+                                        Dim filetocopy As String = ""
+                                        If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
+                                            filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
+                                        Else
+                                            filetocopy = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+                                        End If
+
+                                        If Directory.Exists(curfolder) Then
+                                            If Not File.Exists(curfolder & fnamet) Then
+                                                File.Copy(filetocopy, curfolder & fnamet)
+                                            End If
+                                        End If
+
+                                        If Directory.Exists(curfolder2) Then
+                                            If Not File.Exists(curfolder2 & fnamet) Then
+                                                File.Copy(filetocopy, curfolder2 & fnamet)
+                                            End If
+                                        End If
+
+                                        If Not File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") And File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then
+                                            File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\" + vSeasonNumConcat + ".tbn")
+                                        End If
+                                        seasoncounter += 1
+                                    End If
+                                End If
+
+                            Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
+                                If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Series Items: " + switchpath
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
+                                        If seriescounter = 1 Then
+                                            If Not File.Exists(showfullpathname + "\folder.jpg") Then
+                                                If rconf.prbshows_show_usewide_false4poster = True Then
+                                                    File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                                End If
+                                            End If
+                                        End If
+                                    End If
+                                End If
+
+                                seriescounter += 1
+                        End Select
+                    End If
+                    'End If
+                Next
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             '--------------------------------------Section END------------------------------------------
             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Done with Banners Fanart and Posters"
@@ -805,7 +811,12 @@ Public Class tvshowcollection
             'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
             Dim newtvdbData As New tvdblangData
             Dim newactors As New Actors
-            newactors.readXML(rconf.tvdbcachefolder + selectedshow + "\Actors.xml", newactors)
+            Try
+                newactors.readXML(rconf.tvdbcachefolder + selectedshow + "\Actors.xml", newactors)
+            Catch ex As Exception
+                Debug.Print(ex.ToString)
+            End Try
+
             'tvdblangseries2xbmcTvshow()
             Dim xbmctvshow As New xbmc.xbmcTvshow
             Try
@@ -1601,15 +1612,17 @@ Public Class tvshowcollection
                     selectedshow = Strings.Replace(selectedshow, " ", "")
                     If Not selectedshow = "" Then tvshownfooverwrite = True
                 Catch ex As Exception
+                    If debugon Then Console.Out.WriteLine("1604" + ex.ToString())
                     selectedshow = ""
                 End Try
-
+                If debugon Then Console.Out.WriteLine("tvshow xml processing completed")
                 'maindttv.LoadDataRow(New Object() {showfullpathname, xbmctvshow1.Title, showcount}, True)
                 'showcount += 1
                 'Continue While 'break out of while loop, it's not needed
             End If
-
+            If debugon Then Console.Out.WriteLine("debug 1612 : selectedshow is " + selectedshow)
             If selectedshow = "" Then
+                If debugon Then Console.Out.WriteLine("debug 1614 : selectedshow is empty string")
                 getTVSeriesList(tfname)
                 'Dim tstring As String = httpget(curmirror + "/api/GetSeries.php?seriesname=" + kcbShowPicker.Items(showcount).ToString)
                 'Debug.Print(tstring)
@@ -1627,6 +1640,8 @@ Public Class tvshowcollection
                     gvNoShowsList += vbNewLine + tfname
                     'If dbgTVShows Then dlgTVShowCurStatus.Refresh()()
                     showcount += 1
+                    If debugon Then Console.Out.WriteLine("debug 1632 : " + ex.ToString())
+
                     Continue While
                 End Try
 
@@ -1684,7 +1699,13 @@ Public Class tvshowcollection
             'now that we have the showid, use the api to get the data
             'get the zip file (5 day updates, add gui option to set amount of days to check for updates)
             Dim numtoaddfromconf As Integer = 5
-            numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
+            Try
+                numtoaddfromconf = CInt(rconf.pcombolTVCheckForNewTVShowData)
+            Catch ex As Exception
+                Console.Out.WriteLine("debug 1694 :" + ex.ToString)
+                numtoaddfromconf = 5
+            End Try
+
             'If File.GetLastWriteTime(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip").AddDays(numtoaddfromconf) < Date.Now Then
             '    If File.Exists(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip") Then File.Delete(rconf.tvdbtempfolder + "everything\" + selectedshow + ".zip")
             '    If Not selectedshow = "" Then wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + selectedshow + "/all/" + curlang + ".zip", "everything", True, selectedshow)
@@ -1697,18 +1718,23 @@ Public Class tvshowcollection
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
             'read in banners.xml and then process it
             Dim tbanners As New Banners
+
+            If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\banners.xml") Then
+                Console.Out.WriteLine("banners.xml does not exist" + vbNewLine + "Loc: " + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+            End If
             Try
                 tbanners.readBannerXML(rconf.tvdbcachefolder + selectedshow + "\banners.xml", tbanners)
             Catch ex As Exception
                 'MsgBox("Error in banner read: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\banners.xml")
-                Debug.Print(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
-                Debug.Print("unable to load xml file from cache folder")
+                Console.Out.WriteLine(rconf.tvdbcachefolder + selectedshow + "\banners.xml")
+                Console.Out.WriteLine("unable to load xml file from cache folder")
                 showcount += 1
                 If debugon Then Console.Out.WriteLine("ERROR: No xml file in cache folder for " & "-" & selectedshow & "-")
 
                 Continue While 'break out of while loop, no data in banners 
             End Try
 
+            If debugon Then Console.Out.WriteLine("Banners starting")
             'download banners/fanarts/posters/etc
             Dim fanartcounter As Integer = 0
             Dim postercounter As Integer = 0
@@ -1729,144 +1755,162 @@ Public Class tvshowcollection
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasons") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasons")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\seasonswide")
             If Not Directory.Exists(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes") Then Directory.CreateDirectory(rconf.tvdbcachefolder + "\" + selectedshow + "\episodes")
-            For Each tmbanner As BannersBanner In tbanners.Banners
-                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
-                    'See If the file already exsists
 
-                    Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
-                    Debug.Print(switchpath)
+            Try
+                For Each tmbanner As BannersBanner In tbanners.Banners
+                    If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'check language and match it, if no match, skip it
+                        'See If the file already exsists
 
-                    Select Case tmbanner.BannerType.ToLower
-                        Case "fanart"
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvfanart(tmbanner, selectedshow, switchpath)
-                                    If fanartcounter = 1 Or Not File.Exists(showfullpathname + "\fanart.jpg") Then
-                                        If Not File.Exists(showfullpathname + "\fanart.jpg") Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\fanart.jpg") '-- copy fanart as fanart.jpg
+                        Dim switchpath As String = Strings.Replace(tmbanner.BannerPath, "/", "\")
+                        If debugon Then Console.Out.WriteLine(switchpath)
+
+                        Select Case tmbanner.BannerType.ToLower
+                            Case "fanart"
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_fanart_download_boolean And fanartcounter < rconf.tv_tvshow_fanart_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvfanart(tmbanner, selectedshow, switchpath)
+                                        If fanartcounter = 1 Or Not File.Exists(showfullpathname + "\fanart.jpg") Then
+                                            If Not File.Exists(showfullpathname + "\fanart.jpg") Then
+                                                File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\fanart.jpg") '-- copy fanart as fanart.jpg
+                                            End If
                                         End If
                                     End If
                                 End If
-                            End If
 
-                            fanartcounter += 1
-                        Case "poster"
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvposters(tmbanner, selectedshow, switchpath)
-                                    If Not File.Exists(showfullpathname + "\season-all.tbn") Then
-                                        File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
-                                    End If
-                                    If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                        If rconf.prbshows_show_usewide_false4poster = False Then
-                                            File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                fanartcounter += 1
+                            Case "poster"
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_posters_download_boolean And postercounter < rconf.tv_tvshow_posters_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvposters(tmbanner, selectedshow, switchpath)
+                                        If Not File.Exists(showfullpathname + "\season-all.tbn") Then
+                                            File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\season-all.tbn")
                                         End If
-                                    End If
-                                End If
-                            End If
-                            postercounter += 1
-                        Case "season"
-                            Dim boolGetSeason As Boolean = False
-                            Dim boolGetSeasonwide As Boolean = False
-                            If rconf.tv_season_banners_download_type_string.ToLower Is Nothing Then
-                                rconf.tv_season_banners_download_type_string = "all"
-                            End If
-                            If rconf.tv_season_banners_download_type_string.ToLower = "" Then
-                                rconf.tv_season_banners_download_type_string = "all"
-                            End If
-                            Try
-                                If rconf.tv_season_banners_download_type_string.ToLower = "all" Then
-                                    boolGetSeason = True
-                                    boolGetSeasonwide = True
-                                ElseIf rconf.tv_season_banners_download_type_string.ToLower = "season" Then
-                                    boolGetSeason = True
-                                ElseIf rconf.tv_season_banners_download_type_string.ToLower = "seasonwide" Then
-                                    boolGetSeasonwide = True
-                                End If
-                                'workaround for busted configs where the value isn't entered correctly
-                                If boolGetSeason = False And boolGetSeasonwide = False Then boolGetSeason = True
-                            Catch ex As Exception
-                                boolGetSeason = True
-                                Debug.Print(ex.ToString)
-                            End Try
-
-
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
-                                'jive fix'If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'jive fix'If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
-                                'season auto creation
-
-                                'check series length
-                                Dim vSeasonLen As Integer = tmbanner.Season.Length
-                                Dim vSeasonPreText As String = ""
-
-                                If vSeasonLen = 1 Then vSeasonPreText = "season0"
-                                If vSeasonLen >= 2 Then vSeasonPreText = "season"
-
-                                Dim vSeasonNumConcat As String = vSeasonPreText + tmbanner.Season.ToString
-                                If tmbanner.BannerType2.ToLower = rconf.tv_season_banners_toapply_string Then
-
-                                    Dim tvSeasonPreText As String = ""
-                                    If vSeasonLen = 1 Then tvSeasonPreText = "Season"
-                                    If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
-                                    'this way, each numbered season gets a season banner
-                                    'add season image to folders
-                                    Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
-                                    Dim fnamet As String = "folder.jpg"
-                                    Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season.ToString + "\"
-                                    Dim filetocopy As String = ""
-                                    If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
-                                        filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
-                                    Else
-                                        filetocopy = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
-                                    End If
-
-                                    If Directory.Exists(curfolder) Then
-                                        If Not File.Exists(curfolder & fnamet) Then
-                                            File.Copy(filetocopy, curfolder & fnamet)
-                                        End If
-                                    End If
-
-                                    If Directory.Exists(curfolder2) Then
-                                        If Not File.Exists(curfolder2 & fnamet) Then
-                                            File.Copy(filetocopy, curfolder2 & fnamet)
-                                        End If
-                                    End If
-
-                                    If Not File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") And File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then
-                                        File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\" + vSeasonNumConcat + ".tbn")
-                                    End If
-                                    seasoncounter += 1
-                                End If
-                            End If
-
-                        Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
-                            If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
-                                If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
-                                    If seriescounter = 1 Then
                                         If Not File.Exists(showfullpathname + "\folder.jpg") Then
-                                            If rconf.prbshows_show_usewide_false4poster = True Then
+                                            If rconf.prbshows_show_usewide_false4poster = False Then
                                                 File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
                                             End If
                                         End If
                                     End If
                                 End If
-                            End If
+                                postercounter += 1
+                            Case "season"
+                                Dim boolGetSeason As Boolean = False
+                                Dim boolGetSeasonwide As Boolean = False
+                                If rconf.tv_season_banners_download_type_string.ToLower Is Nothing Then
+                                    rconf.tv_season_banners_download_type_string = "all"
+                                End If
+                                If rconf.tv_season_banners_download_type_string.ToLower = "" Then
+                                    rconf.tv_season_banners_download_type_string = "all"
+                                End If
+                                Try
+                                    If rconf.tv_season_banners_download_type_string.ToLower = "all" Then
+                                        boolGetSeason = True
+                                        boolGetSeasonwide = True
+                                    ElseIf rconf.tv_season_banners_download_type_string.ToLower = "season" Then
+                                        boolGetSeason = True
+                                    ElseIf rconf.tv_season_banners_download_type_string.ToLower = "seasonwide" Then
+                                        boolGetSeasonwide = True
+                                    End If
+                                    'workaround for busted configs where the value isn't entered correctly
+                                    If boolGetSeason = False And boolGetSeasonwide = False Then boolGetSeason = True
+                                Catch ex As Exception
+                                    boolGetSeason = True
+                                    If debugon Then Console.Out.WriteLine(ex.ToString)
+                                End Try
 
-                            seriescounter += 1
-                    End Select
-                End If
-                'End If
-            Next
+
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) Then 'And rconf.tv_getseasonbanners And seasoncounter < rconf.tv_maxtvseasonbanners Then
+                                    'jive fix'If tmbanner.BannerType2.ToLower = "season" And boolGetSeason And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'jive fix'If tmbanner.BannerType2.ToLower = "seasonwide" And boolGetSeasonwide And Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'If Not File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then gettvseasonbanners(tmbanner, selectedshow, switchpath)
+                                    'season auto creation
+
+                                    'check series length
+                                    Dim vSeasonLen As Integer = tmbanner.Season.Length
+                                    Dim vSeasonPreText As String = ""
+
+                                    If vSeasonLen = 1 Then vSeasonPreText = "season0"
+                                    If vSeasonLen >= 2 Then vSeasonPreText = "season"
+
+                                    Dim vSeasonNumConcat As String = vSeasonPreText + tmbanner.Season.ToString
+                                    If tmbanner.BannerType2.ToLower = rconf.tv_season_banners_toapply_string Then
+
+                                        Dim tvSeasonPreText As String = ""
+                                        If vSeasonLen = 1 Then tvSeasonPreText = "Season"
+                                        If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
+                                        'this way, each numbered season gets a season banner
+                                        'add season image to folders
+                                        Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
+                                        Dim fnamet As String = "folder.jpg"
+                                        Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season.ToString + "\"
+                                        Dim filetocopy As String = ""
+                                        If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
+                                            filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
+                                        Else
+                                            filetocopy = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
+                                        End If
+
+                                        If Directory.Exists(curfolder) Then
+                                            If Not File.Exists(curfolder & fnamet) Then
+                                                File.Copy(filetocopy, curfolder & fnamet)
+                                            End If
+                                        End If
+
+                                        If Directory.Exists(curfolder2) Then
+                                            If Not File.Exists(curfolder2 & fnamet) Then
+                                                File.Copy(filetocopy, curfolder2 & fnamet)
+                                            End If
+                                        End If
+
+                                        If Not File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") And File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then
+                                            File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\" + vSeasonNumConcat + ".tbn")
+                                        End If
+                                        seasoncounter += 1
+                                    End If
+                                End If
+
+                            Case "series" 'note: series is the wide icons, with different text (or graphical version of text, or no text) for the tvshow
+                                If (curlang = tmbanner.Language Or rconf.pcbtvlangoverride) And rconf.tv_tvshow_wideicon_download_boolean And seriescounter < rconf.tv_tvshow_wideicon_download_maxnumber_integer Then
+                                    If File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then 'gettvseriesbanners(tmbanner, selectedshow, switchpath)
+                                        If seriescounter = 1 Then
+                                            If Not File.Exists(showfullpathname + "\folder.jpg") Then
+                                                If rconf.prbshows_show_usewide_false4poster = True Then
+                                                    File.Copy(rconf.tvdbcachefolder + "\" + selectedshow + "\" + switchpath, showfullpathname + "\folder.jpg") '-- copy fanart as fanart.jpg
+                                                End If
+                                            End If
+                                        End If
+                                    End If
+                                End If
+
+                                seriescounter += 1
+                        End Select
+                    End If
+                    'End If
+                Next
+            Catch ex As Exception
+                Debug.Print("Handled Exception: " + "1878, general banner error" + vbNewLine + ex.ToString)
+                Debug.Print(vbNewLine + "TRACE .........")
+                Debug.Print(ex.StackTrace.ToString)
+                Debug.Print(vbNewLine)
+                Debug.Print(vbNewLine + ".......... END TRACE")
+
+            End Try
+           
             '------------------------ BANNERS FANART POSTERS from banners.xml file ---------------------
+            If debugon Then Console.Out.WriteLine("banners finished up, moving to actors")
             '--------------------------------------Section END------------------------------------------
             Dim newtvdbData As New tvdblangData
             Dim newactors As New Actors
-            newactors.readXML(rconf.tvdbcachefolder + selectedshow + "\Actors.xml", newactors)
+            Try
+                newactors.readXML(rconf.tvdbcachefolder + selectedshow + "\Actors.xml", newactors)
+            Catch ex As Exception
+                If debugon Then Console.Out.WriteLine("CRIT ERROR 1882: bad actor data xml file." + vbNewLine + ex.ToString)
+            End Try
+            If debugon Then Console.Out.WriteLine("actors.xml finished up, moving to showdata")
+
             'tvdblangseries2xbmcTvshow()
             Dim xbmctvshow As New xbmc.xbmcTvshow
             Try
                 newtvdbData.readXML(rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml", newtvdbData)
-                Debug.Print("read completed")
+                If debugon Then Console.Out.WriteLine("read completed of: " + vbNewLine + rconf.tvdbcachefolder + selectedshow + "\" + curlang + ".xml")
                 newtvdbData.Series.tvdblangseries2xbmcTvshow(newtvdbData.Series, xbmctvshow, newactors)
                 xbmctvshow.Genre = Strings.Replace(xbmctvshow.Genre, "|", "/")
                 Try
@@ -1877,7 +1921,7 @@ Public Class tvshowcollection
                         xbmctvshow.Genre = Strings.Left(xbmctvshow.Genre, xbmctvshow.Genre.Length - 1)
                     End If
                 Catch ex As Exception
-                    Debug.Print(ex.ToString)
+                    If debugon Then Console.Out.WriteLine("1888 " + ex.ToString)
                 End Try
                 xbmctvshow.Episodeguideurl = "http://www.thetvdb.com/api/1D62F2F90030C444/series/" + selectedshow + "/all/" + curlang + ".zip"
                 If rconf.pcbshows_UseStudioasRating Then
@@ -1887,13 +1931,13 @@ Public Class tvshowcollection
                 'add show to datatable
                 maindttv.LoadDataRow(New Object() {showfullpathname + ":" + xbmctvshow.Tvdbid + ":", xbmctvshow.Title, xbmctvshow.Tvdbid, showcount}, True)
             Catch ex As Exception
-                Debug.Print(ex.ToString)
+                If debugon Then Console.Out.WriteLine(ex.ToString)
             End Try
 
             'wgetTVDB(curmirror + "/api/" + miptvdbkey + "/series/" + tseriesname.Id + "/all/" + curlang + ".zip", "everything", True)
             showcount += 1
         End While
-
+        If debugon Then Console.Out.WriteLine("finished show level items, moving to episodes.")
         ' --------------------------------
         'process episode level items
         ' --------------------------------
@@ -1947,6 +1991,7 @@ Public Class tvshowcollection
                             Try 'try to convert string to int, then back to string, use regex if this fails (for speed)
                                 cleannum = CInt(tepisode.DVDEpisodenumber)
                             Catch ex As Exception
+                                If debugon Then Console.Out.WriteLine(ex.ToString)
                                 Dim strResult As String = ""
                                 Try
                                     Dim robjDVDOrder As New Regex("(\d)\.")
@@ -1962,12 +2007,14 @@ Public Class tvshowcollection
                         End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
+                        If debugon Then Console.Out.WriteLine(ex.ToString)
                         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "duplicate or invalid episode" + ex.ToString
                     End Try
 
                 Next
 
             Catch ex As Exception
+                If debugon Then Console.Out.WriteLine(ex.ToString)
                 'MsgBox("No TV Shows found for: " + curtvshowpath)
                 'counter += 1
                 'Continue While
@@ -2195,6 +2242,7 @@ Public Class tvshowcollection
                                                 tepisode1.EpisodeNumber = ctv_episode
                                                 tepisode1.mutlipart = True
                                             Catch ex As Exception
+                                                Console.Out.WriteLine("Standard Error: 2209 " + ex.ToString())
                                                 curepcou += 1
                                                 Continue While
                                                 'Continue While 'break out of loop
@@ -2218,6 +2266,7 @@ Public Class tvshowcollection
                                                             Try
                                                                 If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
                                                             Catch ex As Exception
+                                                                Console.Out.WriteLine("2233 " + ex.ToString())
                                                                 'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                                 Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                             End Try
@@ -2261,13 +2310,13 @@ Public Class tvshowcollection
                             End Select
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
-                            Console.Out.WriteLine(ex.ToString)
+                            If debugon Then Console.Out.WriteLine("2275 " + ex.ToString)
                         End Try
 
                     Next
 
                 Catch ex As Exception 'catch bad parse of directory
-                    Console.Out.WriteLine(ex.ToString)
+                    If debugon Then Console.Out.WriteLine("2281 " + ex.ToString)
                 End Try
             Next
             Console.Out.WriteLine("  " & episode_files_indirectory_count.ToString & " episodes found") ' for: " & xbmctvshow1e.Title)
@@ -2313,7 +2362,7 @@ Public Class tvshowcollection
             Try
                 xbmctvshow1.readXML(curtvshowpath + "\tvshow.nfo", xbmctvshow1)
             Catch ex As Exception
-                Debug.Print(ex.ToString)
+                Console.Out.WriteLine("2327 " + ex.ToString)
                 counter += 1
                 Continue While
             End Try
@@ -2340,12 +2389,13 @@ Public Class tvshowcollection
                             Try 'try to convert string to int, then back to string, use regex if this fails (for speed)
                                 cleannum = CInt(tepisode.DVDEpisodenumber)
                             Catch ex As Exception
+                                Console.Out.WriteLine("2354 " + ex.ToString)
                                 Dim strResult As String = ""
                                 Try
                                     Dim robjDVDOrder As New Regex("(\d)\.")
                                     strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
                                 Catch ex2 As ArgumentException
-                                    'Syntax error in the regular expression
+                                    Console.Out.WriteLine("2360 " + ex.ToString)
                                 End Try
                                 cleannum = CInt(strResult)
                             End Try
@@ -2361,6 +2411,7 @@ Public Class tvshowcollection
 
             Catch ex As Exception
                 '      MsgBox("No TV Shows found for: " + curtvshowpath)
+                Console.Out.WriteLine(ex.ToString)
                 counter += 1
                 Continue While
             End Try
@@ -2425,7 +2476,8 @@ Public Class tvshowcollection
                                             End If
                                             MObj = MObj.NextMatch()
                                         End While
-                                    Catch ex As ArgumentException
+                                    Catch ex As Exception
+                                        Console.Out.WriteLine(ex.ToString)
                                     End Try
                                     If numofepisodes > 1 Then
                                         multiepisode = True
@@ -2457,7 +2509,8 @@ Public Class tvshowcollection
                                             haveseason = False
                                         End If
                                         multiepisode = False
-                                    Catch ex As ArgumentException
+                                    Catch ex As Exception
+                                        Console.Out.WriteLine(ex.ToString)
                                     End Try
                                     'if it has season and episode, then write nfo and tbn for it
 
@@ -2476,7 +2529,8 @@ Public Class tvshowcollection
                                             haveepisode = False
                                             haveseason = False
                                         End If
-                                    Catch ex As ArgumentException
+                                    Catch ex As Exception
+                                        Console.Out.WriteLine(ex.ToString)
                                     End Try
                                 End If
 
@@ -2503,6 +2557,7 @@ Public Class tvshowcollection
                                         tepisode1 = CType(theshows(selectedshow + "s" + ctv_season + "e" + ctv_episode), tvdblangEpisode)
                                         tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
                                     Catch ex As Exception
+                                        Console.Out.WriteLine(ex.ToString)
                                         'curepcou += 1
                                         Continue For 'next for'Continue While 'break out of loop
                                     End Try
@@ -2525,8 +2580,9 @@ Public Class tvshowcollection
                                                     Try
                                                         If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
                                                     Catch ex As Exception
+                                                        Console.Out.WriteLine(ex.ToString)
                                                         'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
-                                                        Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
+                                                        Console.Out.WriteLine("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                     End Try
 
                                                 End If
@@ -2576,6 +2632,7 @@ Public Class tvshowcollection
                                             tepisode1.miptvdbkey = miptvdbkey
                                             tepisode1.mutlipart = True
                                         Catch ex As Exception
+                                            Console.Out.WriteLine(ex.ToString)
                                             curepcou += 1
                                             Continue While
                                             'Continue While 'break out of loop
@@ -2599,7 +2656,8 @@ Public Class tvshowcollection
                                                         Try
                                                             If Not File.Exists(Strings.Left(item.ToString, item.Length - 4) + ".tbn") Then File.Copy(rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\"), Strings.Left(item.ToString, item.Length - 4) + ".tbn", False)
                                                         Catch ex As Exception
-                                                            'Debug.Print("exception handled, if overwrite episode tbn is not set, this is normal.")
+                                                            Console.Out.WriteLine(ex.ToString)
+                                                            Console.Out.WriteLine("exception handled, if overwrite episode tbn is not set, this is normal.")
                                                             Debug.Print("failed to copy episode image from: " + rconf.tvdbcachefolder + tepisode1.Seriesid + "\" + Strings.Replace(tepisode1.Filename, "/", "\") + vbNewLine + "to: " + Strings.Left(item.ToString, item.Length - 4) + ".tbn")
                                                         End Try
                                                     End If
@@ -2641,9 +2699,11 @@ Public Class tvshowcollection
                             End If 'Select
                             filelisting.Add(item)
                         Catch ex As Exception 'catch bad filename or location exception
+                            Console.Out.WriteLine(ex.ToString)
                         End Try
                     Next
                 Catch ex As Exception 'catch bad parse of directory
+                    Console.Out.WriteLine(ex.ToString)
                 End Try
             Next
 
@@ -2697,6 +2757,7 @@ Public Class tvshowcollection
                 'curCompleteShow.seasons.Add(curseason)
                 showarrayofallseasons.Add(curCompleteShow)
             Catch ex As Exception
+                Console.Out.WriteLine(ex.ToString)
             End Try
             counter += 1
         End While
@@ -3776,6 +3837,7 @@ Public Class tvshowcollection
         SaveBin(response, rconf.basefolder + "\themoviedbmirrors.xml")
     End Sub
     Private Sub getTVSeriesList(ByVal showname As String)
+        Console.Out.WriteLine("debug 3783 getTVSeriesList")
         Dim url As String = curmirror + "/api/GetSeries.php?seriesname=" + showname
         Debug.Print(url)
         'Dim url As String = "http://www.thetvdb.com/api/" + miptvdbkey + "/mirrors.xml"

@@ -9,7 +9,7 @@ Module cmdlinetvshowupdate
     Dim showdebug As Boolean = False
 
     Sub Main()
-        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2916")
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.01.2927 DEBUG")
         If Command.ToString.ToLower.Contains("help") Then
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")
@@ -91,64 +91,69 @@ Module cmdlinetvshowupdate
                     If showdebug Then Console.Out.WriteLine("done curtv.precacheTVShowsCmdLine(curdllist)")
 
                     Dim binfilelocal As String = movieinfoplus.maincollection.rconf.wgetfolder + "wget.exe"
-                    If Not curdllist.Count = 0 Then
-                        Console.Out.WriteLine("Processing " & curdllist.Count.ToString & " images.")
-                        If showdebug Then Console.Out.WriteLine("Number of items to download: " & curdllist.Count.ToString)
-                        Dim counter As Integer = 0
-                        counter = curdllist.Count
-                        Dim curitemcounter As Integer = 1
-                        Try
-                            For Each item As miplibfc.mip.dlobject In curdllist
-                                If showdebug Then Console.Out.WriteLine("Processing Image " & curitemcounter.ToString & "/" & counter.ToString)
-                                curitemcounter += 1
-                                If Not File.Exists(item.Destination) Then
-                                    If showdebug Then Console.Out.WriteLine("Downloading Image to: " & item.Destination)
-                                    Dim filenameuri As String = item.URL
-                                    Dim pro1 As Process = New Process()
-                                    pro1.StartInfo.FileName = binfilelocal
-                                    pro1.StartInfo.Arguments = filenameuri + " -t 3 -T 60 -O " + """" + item.Destination + """"
-                                    'pro1.StartInfo.RedirectStandardError = True
-                                    'pro1.StartInfo.UseShellExecute = False
-                                    'pro1.StartInfo.CreateNoWindow = True
-                                    If showdebug Then
-                                        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
-                                    Else
-                                        pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
-                                    End If
-                                    pro1.Start()
-                                    If Not multimageonly Then pro1.WaitForExit()
-                                    If multimageonly Then System.Threading.Thread.Sleep(200)
-                                    If showdebug Then Console.Out.WriteLine(item.URL.ToString)
-                                End If
-                                If File.Exists(item.Destination) Then
-                                    'check it's size, 0k files need to be removed
-                                    Try
-                                        File.SetAttributes(item.Destination, FileAttributes.Normal)
-                                    Catch ex As Exception
-                                        If showdebug Then Console.Out.WriteLine(ex.ToString)
-                                    End Try
-
-                                    Try
-                                        If getFileSizeExact(item.Destination) < 1 Then
-                                            If showdebug Then Console.Out.WriteLine("Image invalid - Deleteing " & item.Destination)
-                                            File.Delete(item.Destination)
+                    Try
+                        If Not curdllist.Count = 0 Then
+                            Console.Out.WriteLine("Processing " & curdllist.Count.ToString & " images.")
+                            If showdebug Then Console.Out.WriteLine("Number of items to download: " & curdllist.Count.ToString)
+                            Dim counter As Integer = 0
+                            counter = curdllist.Count
+                            Dim curitemcounter As Integer = 1
+                            Try
+                                For Each item As miplibfc.mip.dlobject In curdllist
+                                    If showdebug Then Console.Out.WriteLine("Processing Image " & curitemcounter.ToString & "/" & counter.ToString)
+                                    curitemcounter += 1
+                                    If Not File.Exists(item.Destination) Then
+                                        If showdebug Then Console.Out.WriteLine("Downloading Image to: " & item.Destination)
+                                        Dim filenameuri As String = item.URL
+                                        Dim pro1 As Process = New Process()
+                                        pro1.StartInfo.FileName = binfilelocal
+                                        pro1.StartInfo.Arguments = filenameuri + " -t 3 -T 60 -O " + """" + item.Destination + """"
+                                        'pro1.StartInfo.RedirectStandardError = True
+                                        'pro1.StartInfo.UseShellExecute = False
+                                        'pro1.StartInfo.CreateNoWindow = True
+                                        If showdebug Then
+                                            pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Normal
+                                        Else
+                                            pro1.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden
                                         End If
+                                        pro1.Start()
+                                        If Not multimageonly Then pro1.WaitForExit()
+                                        If multimageonly Then System.Threading.Thread.Sleep(200)
+                                        If showdebug Then Console.Out.WriteLine(item.URL.ToString)
+                                    End If
+                                    If File.Exists(item.Destination) Then
+                                        'check it's size, 0k files need to be removed
+                                        Try
+                                            File.SetAttributes(item.Destination, FileAttributes.Normal)
+                                        Catch ex As Exception
+                                            If showdebug Then Console.Out.WriteLine(ex.ToString)
+                                        End Try
 
-                                    Catch ex As Exception
-                                        If showdebug Then Console.Out.WriteLine(ex.ToString)
-                                    End Try
+                                        Try
+                                            If getFileSizeExact(item.Destination) < 1 Then
+                                                If showdebug Then Console.Out.WriteLine("Image invalid - Deleteing " & item.Destination)
+                                                File.Delete(item.Destination)
+                                            End If
 
-                                End If
+                                        Catch ex As Exception
+                                            If showdebug Then Console.Out.WriteLine(ex.ToString)
+                                        End Try
 
-                            Next
-                            Dim itemF As New miplibfc.mip.dlobject
-                            itemF.URL = "COMPLETED"
-                            itemF.Destination = "COMPLETED"
-                            System.Threading.Thread.Sleep(50)
-                        Catch ex As Exception
-                            Debug.Print(ex.ToString)
-                        End Try
-                    End If
+                                    End If
+
+                                Next
+                                Dim itemF As New miplibfc.mip.dlobject
+                                itemF.URL = "COMPLETED"
+                                itemF.Destination = "COMPLETED"
+                                System.Threading.Thread.Sleep(50)
+                            Catch ex As Exception
+                                Debug.Print(ex.ToString)
+                            End Try
+                        End If
+                    Catch ex As Exception
+                        Console.Out.WriteLine("Error in miptvupdate download loop" + vbNewLine + ex.ToString)
+                    End Try
+
                     If multimageonly Then Exit Sub
                     If showdebug Then Console.Out.WriteLine("Processing of episodes started")
                     curtv.kbLoadTvShowsCmdLine(currentoverwritesetting, showdebug)

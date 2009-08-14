@@ -776,7 +776,8 @@ Module modNfoData
                 Try
                     thashtable.Add(tcmitem.id, tcmitem)
                 Catch ex As Exception
-                    Debug.Print("duplicate: " & tcmitem.id)
+                    Debug.Print("Duplicate Match Found, using that for the id: " & tcmitem.id)
+                    Return tcmitem.id
                 End Try
                 cutcmIndex += 1
             Next
@@ -790,7 +791,7 @@ Module modNfoData
         dialogMovieSelect.klbPickTheMovie.DisplayMember = "Name"
         'dialogMovieSelect.displayshowdata()
         dialogMovieSelect.klblCurMovie.Text = "Name: " + pmname
-        dialogMovieSelect.klblCurMoviePath.Text = "Location on drive: " + addfiletofolder(tmovie.getmoviepath, tmovie.preservedmoviename)
+        dialogMovieSelect.klblCurMoviePath.Text = "Location on drive: " + tmovie.getmoviepath
         dialogMovieSelect.Refresh()
         dialogMovieSelect.ShowDialog()
         If dialogMovieSelect.DialogResult = System.Windows.Forms.DialogResult.Cancel Then
