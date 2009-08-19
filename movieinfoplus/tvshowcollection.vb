@@ -2449,6 +2449,8 @@ Public Class tvshowcollection
 
                             If validfile Then    'have a movie file, parse it for season and episode
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
+                                tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                 Debug.Print(tfnameoffile)
                                 'run regex on file name (without extension)
                                 Dim haveseason As Boolean = False
