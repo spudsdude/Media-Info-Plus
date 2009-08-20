@@ -1099,6 +1099,8 @@ Public Class tvshowcollection
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1).ToLower
                                 tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
                                 Debug.Print(tfnameoffile)
                                 'run regex on file name (without extension)
                                 Dim haveseason As Boolean = False
@@ -2052,6 +2054,8 @@ Public Class tvshowcollection
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
                                     If debugon Then Console.Out.WriteLine("  Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
@@ -2451,6 +2455,8 @@ Public Class tvshowcollection
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
                                 tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
                                 Debug.Print(tfnameoffile)
                                 'run regex on file name (without extension)
                                 Dim haveseason As Boolean = False
