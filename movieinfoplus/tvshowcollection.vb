@@ -709,10 +709,10 @@ Public Class tvshowcollection
                                     If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Checking Season Items: " + switchpath
                                     Dim boolGetSeason As Boolean = False
                                     Dim boolGetSeasonwide As Boolean = False
-                                    If rconf.tv_season_banners_download_type_string.ToLower Is Nothing Then
+                                    If rconf.tv_season_banners_download_type_string Is Nothing Then
                                         rconf.tv_season_banners_download_type_string = "all"
                                     End If
-                                    If rconf.tv_season_banners_download_type_string.ToLower = "" Then
+                                    If rconf.tv_season_banners_download_type_string = "" Then
                                         rconf.tv_season_banners_download_type_string = "all"
                                     End If
                                     Try
@@ -1308,7 +1308,7 @@ Public Class tvshowcollection
                                             tepisode1.episodefilepath = Strings.Left(item, item.Length - 4) + ".nfo"
                                             tepisode1.miptvdbkey = miptvdbkey
                                             tepisode1.mutlipart = True
-                                            tepisode1.EpisodeNumber = ctv_episode
+                                            tepisode1.EpisodeNumber = ctv_episodepiece
                                         Catch ex As Exception
                                             If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "error pulling episode from array theshows"
                                             curepcou += 1
@@ -2644,6 +2644,7 @@ Public Class tvshowcollection
                                             tepisode1.episodefilepath = Strings.Left(item.ToString, item.Length - 4) + ".nfo"
                                             tepisode1.miptvdbkey = miptvdbkey
                                             tepisode1.mutlipart = True
+                                            tepisode1.EpisodeNumber = ctv_episodepiece
                                         Catch ex As Exception
                                             Console.Out.WriteLine(ex.ToString)
                                             curepcou += 1
