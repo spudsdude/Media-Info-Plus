@@ -1042,7 +1042,7 @@ Public Class tvshowcollection
                             Catch ex As Exception
                                 Dim strResult As String = ""
                                 Try
-                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    Dim robjDVDOrder As New Regex("(\d{1,2})\.")
                                     strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
                                 Catch ex2 As ArgumentException
                                     'Syntax error in the regular expression
@@ -2001,7 +2001,7 @@ Public Class tvshowcollection
                                 If debugon Then Console.Out.WriteLine(ex.ToString)
                                 Dim strResult As String = ""
                                 Try
-                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    Dim robjDVDOrder As New Regex("(\d{1,2})\.")
                                     strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
                                 Catch ex2 As ArgumentException
                                     'Syntax error in the regular expression
@@ -2401,7 +2401,7 @@ Public Class tvshowcollection
                                 Console.Out.WriteLine("2354 " + ex.ToString)
                                 Dim strResult As String = ""
                                 Try
-                                    Dim robjDVDOrder As New Regex("(\d)\.")
+                                    Dim robjDVDOrder As New Regex("(\d{1,2})\.")
                                     strResult = robjDVDOrder.Match(tepisode.DVDEpisodenumber).Groups(1).Value
                                 Catch ex2 As ArgumentException
                                     Console.Out.WriteLine("2360 " + ex.ToString)
