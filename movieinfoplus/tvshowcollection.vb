@@ -1101,10 +1101,13 @@ Public Class tvshowcollection
                                 If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "parser for : " + item.ToString + " : Result was : " + tfname.ToString
                                 'have a movie file, parse it for season and episode
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1).ToLower
-                                tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
-                                tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "X264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "2Hd", "")
+
                                 Debug.Print(tfnameoffile)
                                 'run regex on file name (without extension)
                                 Dim haveseason As Boolean = False
@@ -2057,10 +2060,13 @@ Public Class tvshowcollection
                                     episode_files_indirectory_count += 1
                                     'have a movie file, parse it for season and episode
                                     Dim tfnameoffile As String = fnPeices2(fnPeices2.Length - 1).ToLower
-                                    tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
-                                    tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
                                     tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "x264", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "2hd", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "X264", "")
+                                    tfnameoffile = Strings.Replace(tfnameoffile, "2Hd", "")
+
                                     If debugon Then Console.Out.WriteLine("  Media file found, parsing: " & tfnameoffile)
                                     Debug.Print(tfnameoffile)
                                     'run regex on file name (without extension)
@@ -2458,10 +2464,13 @@ Public Class tvshowcollection
 
                             If validfile Then    'have a movie file, parse it for season and episode
                                 Dim tfnameoffile As String = fnPeices1(fnPeices1.Length - 1)
-                                tfnameoffile = Strings.Replace(tfnameoffile, ".x264", "")
-                                tfnameoffile = Strings.Replace(tfnameoffile, ".2hd", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, "-x264", "")
                                 tfnameoffile = Strings.Replace(tfnameoffile, "-2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "x264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "2hd", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "X264", "")
+                                tfnameoffile = Strings.Replace(tfnameoffile, "2Hd", "")
+
                                 Debug.Print(tfnameoffile)
                                 'run regex on file name (without extension)
                                 Dim haveseason As Boolean = False
