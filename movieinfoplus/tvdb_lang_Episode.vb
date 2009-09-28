@@ -146,10 +146,37 @@ Property fullfilenameandpath() As String
             xbmctvepisode.Actors = theactors
             xbmctvepisode.Aired = tls.FirstAired
             xbmctvepisode.Credits = Strings.Replace(tls.Writer, "|", "/")
-            xbmctvepisode.Director = tls.Director
+            'check for leading and trailing /
+
+            Try
+                xbmctvepisode.Credits = xbmctvepisode.Credits.Trim()
+                If Strings.Left(xbmctvepisode.Credits, 1) = "/" Then
+                    xbmctvepisode.Credits = Strings.Right(xbmctvepisode.Credits, xbmctvepisode.Credits.Length - 1)
+                End If
+                If Strings.Right(xbmctvepisode.Credits, 1) = "/" Then
+                    xbmctvepisode.Credits = Strings.Left(xbmctvepisode.Credits, xbmctvepisode.Credits.Length - 1)
+                End If
+            Catch ex As Exception
+
+            End Try
+
+            xbmctvepisode.Director = Strings.Replace(tls.Director, "|", "/")
+            'check for leading /
+            Try
+                xbmctvepisode.Director = xbmctvepisode.Director.Trim()
+                If Strings.Left(xbmctvepisode.Director, 1) = "/" Then
+                    xbmctvepisode.Director = Strings.Right(xbmctvepisode.Director, xbmctvepisode.Director.Length - 1)
+                End If
+                If Strings.Right(xbmctvepisode.Director, 1) = "/" Then
+                    xbmctvepisode.Director = Strings.Left(xbmctvepisode.Director, xbmctvepisode.Director.Length - 1)
+                End If
+            Catch ex As Exception
+
+            End Try
+
             'If maincollection.rconf.pcbGeneralSupportSkinBasedFlagging Then
             If Not curstudio = "" Then curstudio = "net" & curstudio
-            xbmctvepisode.Director = tls.Director '& " / " & curstudio & " / " & curmpaa & " / " & tls.fileinfo.toTagData(tls.fileinfo)
+            'xbmctvepisode.Director = tls.Director '& " / " & curstudio & " / " & curmpaa & " / " & tls.fileinfo.toTagData(tls.fileinfo)
             'End If
             xbmctvepisode.Episode = tls.EpisodeNumber
             xbmctvepisode.Plot = tls.Overview

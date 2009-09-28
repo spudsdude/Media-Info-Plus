@@ -15,9 +15,9 @@
     </ErrorReportUrlHistory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartWorkingDirectory>F:\Program Files\movieinfoplus\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Program Files\mediainfoplus\</StartWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <StartWorkingDirectory>F:\Program Files\movieinfoplus\</StartWorkingDirectory>
+    <StartWorkingDirectory>C:\Program Files\mediainfoplus\</StartWorkingDirectory>
   </PropertyGroup>
 </Project>

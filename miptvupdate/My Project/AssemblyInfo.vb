@@ -9,8 +9,8 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("miptvupdate")> 
-<Assembly: AssemblyDescription("DEBUG")> 
-<Assembly: AssemblyCompany("mdi")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("MDI")> 
 <Assembly: AssemblyProduct("miptvupdate")> 
 <Assembly: AssemblyCopyright("Copyright © MDI 2009")> 
 <Assembly: AssemblyTrademark("")> 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.1.1.2941")> 
-<Assembly: AssemblyFileVersion("2.1.1.2941")> 
+<Assembly: AssemblyVersion("2.1.1.2946")> 
+<Assembly: AssemblyFileVersion("2.1.1.2946")> 

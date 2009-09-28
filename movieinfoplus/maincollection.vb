@@ -1998,7 +1998,8 @@ Public Class maincollection
         'End Try
         'hide tv in movie mode
         setMode()
-
+        tsmishows_currentBackgroundToModifyFileSize.Visible = False
+        tsmishows_currentBackgroundToModify.Visible = False
     End Sub
     Private Sub setlookandfeel()
         Try
@@ -31981,6 +31982,16 @@ Public Class maincollection
                         End If
                     End If
                 End If
+                'If cmmode = "tv" Then
+                '    If Not currentpb.ImageLocation Is Nothing Then
+                '        Dim objImage2 As System.Drawing.Image = System.Drawing.Image.FromFile(currentpb.ImageLocation)
+                '        tsmishows_currentBackgroundToModifyFileSize.Text = "Current Background Size: " & objImage2.Width.ToString & "x" & objImage2.Height.ToString & " Size: " & getFileSize(fanartpb1.ImageLocation)
+                '        'tsl_movies_fanartsize.Text = CurrentBackgroundSizeToolStripMenuItem.Text
+                '        objImage2.Dispose()
+                '        tsmishows_currentBackgroundToModify.Text = currentpb.ImageLocation
+                '        'tsmishows_currentBackgroundToModifyFileSize.Text = 
+                '    End If
+                'End If
             Catch ex As Exception
 
             End Try

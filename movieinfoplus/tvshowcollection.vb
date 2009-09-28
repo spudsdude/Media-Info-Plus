@@ -754,9 +754,13 @@ Public Class tvshowcollection
                                             If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
                                             'this way, each numbered season gets a season banner
                                             'add season image to folders
-                                            Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season + "\"
                                             Dim fnamet As String = "folder.jpg"
+                                            Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season + "\"
                                             Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season + "\"
+                                            Dim curfolder3 As String = showfullpathname + "\" + "STAFFEL" + " " + tmbanner.Season + "\"
+                                            Dim curfolder4 As String = showfullpathname + "\" + "STAFFEL" + "_" + tmbanner.Season + "\"
+                                            Dim curfolder5 As String = showfullpathname + "\" + "Staffel" + " " + tmbanner.Season + "\"
+                                            Dim curfolder6 As String = showfullpathname + "\" + "Staffel" + "_" + tmbanner.Season + "\"
                                             Dim filetocopy As String = ""
                                             If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
                                                 filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
@@ -775,7 +779,27 @@ Public Class tvshowcollection
                                                     File.Copy(filetocopy, curfolder2 & fnamet)
                                                 End If
                                             End If
-
+                                            If Directory.Exists(curfolder3) Then
+                                                If Not File.Exists(curfolder3 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder3 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder4) Then
+                                                If Not File.Exists(curfolder4 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder4 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder5) Then
+                                                If Not File.Exists(curfolder5 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder5 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder6) Then
+                                                If Not File.Exists(curfolder6 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder6 & fnamet)
+                                                End If
+                                            End If
+                                           
                                             If Not File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") And File.Exists(rconf.tvdbcachefolder + selectedshow + "\" + switchpath) Then
                                                 File.Copy(rconf.tvdbcachefolder + selectedshow + "\" + switchpath, showfullpathname + "\" + vSeasonNumConcat + ".tbn")
                                             End If
@@ -1050,8 +1074,10 @@ Public Class tvshowcollection
                                 cleannum = CInt(strResult)
                             End Try
 
+                            'TODO: need to ensure 2 digit format 
+                            tepisode.SeasonNumber = tepisode.DVDSeason
 
-                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.DVDSeason + "e" + CStr(cleannum), tepisode)
                         End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
@@ -1848,15 +1874,22 @@ Public Class tvshowcollection
                                             If vSeasonLen >= 2 Then tvSeasonPreText = "Season"
                                             'this way, each numbered season gets a season banner
                                             'add season image to folders
-                                            Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
                                             Dim fnamet As String = "folder.jpg"
+                                            Dim curfolder As String = showfullpathname + "\" + tvSeasonPreText + " " + tmbanner.Season.ToString + "\"
                                             Dim curfolder2 As String = showfullpathname + "\" + tvSeasonPreText + "_" + tmbanner.Season.ToString + "\"
+                                            Dim curfolder3 As String = showfullpathname + "\" + "STAFFEL" + " " + tmbanner.Season + "\"
+                                            Dim curfolder4 As String = showfullpathname + "\" + "STAFFEL" + "_" + tmbanner.Season + "\"
+                                            Dim curfolder5 As String = showfullpathname + "\" + "Staffel" + " " + tmbanner.Season + "\"
+                                            Dim curfolder6 As String = showfullpathname + "\" + "Staffel" + "_" + tmbanner.Season + "\"
                                             Dim filetocopy As String = ""
                                             If File.Exists(showfullpathname + "\" + vSeasonNumConcat + ".tbn") Then
                                                 filetocopy = showfullpathname + "\" + vSeasonNumConcat + ".tbn"
                                             Else
                                                 filetocopy = rconf.tvdbcachefolder + selectedshow + "\" + switchpath
                                             End If
+                                            
+
+
 
                                             If Directory.Exists(curfolder) Then
                                                 If Not File.Exists(curfolder & fnamet) Then
@@ -1867,6 +1900,26 @@ Public Class tvshowcollection
                                             If Directory.Exists(curfolder2) Then
                                                 If Not File.Exists(curfolder2 & fnamet) Then
                                                     File.Copy(filetocopy, curfolder2 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder3) Then
+                                                If Not File.Exists(curfolder3 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder3 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder4) Then
+                                                If Not File.Exists(curfolder4 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder4 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder5) Then
+                                                If Not File.Exists(curfolder5 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder5 & fnamet)
+                                                End If
+                                            End If
+                                            If Directory.Exists(curfolder6) Then
+                                                If Not File.Exists(curfolder6 & fnamet) Then
+                                                    File.Copy(filetocopy, curfolder6 & fnamet)
                                                 End If
                                             End If
 
@@ -2012,8 +2065,8 @@ Public Class tvshowcollection
                                 cleannum = CInt(strResult)
                             End Try
 
-
-                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
+                            tepisode.SeasonNumber = tepisode.DVDSeason
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.DVDSeason + "e" + CStr(cleannum), tepisode)
                         End If
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
                     Catch ex As Exception
@@ -2414,8 +2467,8 @@ Public Class tvshowcollection
                                 End Try
                                 cleannum = CInt(strResult)
                             End Try
-
-                            theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + CStr(cleannum), tepisode)
+                            tepisode.SeasonNumber = tepisode.DVDSeason
+                            theshows.Add(tepisode.Seriesid + "s" + tepisode.DVDSeason + "e" + CStr(cleannum), tepisode)
                         End If
                         'theshows.Add(tepisode.Seriesid + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber, tepisode)
                         'Debug.Print("Known episodes from tvdb data in " + tepisode.Seriesid + "  are: " + "s" + tepisode.SeasonNumber + "e" + tepisode.EpisodeNumber)
@@ -4072,7 +4125,7 @@ Public Class tvshowcollection
     'mgettvepisodeimages
     Private Sub mgettvepisodeimages(ByRef tmepisode As tvdblangEpisode, ByRef selectedshow As String, ByRef switchpath As String, Optional ByRef specificarraylist As ArrayList = Nothing)
         If selectedshow = "80610" Then Exit Sub
-        Dim locmirror As String = "http://images.thetvdb.com" '"http://images.thetvdb.com.nyud.net:8080"
+        Dim locmirror As String = "http://thetvdb.com" '"http://images.thetvdb.com.nyud.net:8080"
         If dbgTVShows Then dlgTVShowCurStatus.krbStatus.Text += vbNewLine + "Downloading " + selectedshow + ": " + tmepisode.Filename
         Dim dlobj As New miplibfc.mip.dlobject
         dlobj.URL = locmirror + "/banners/" + tmepisode.Filename

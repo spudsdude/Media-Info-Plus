@@ -64,8 +64,10 @@ Partial Class dlgMessageboxOK
         '
         'btnOk
         '
+        Me.btnOk.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone
         Me.btnOk.Location = New System.Drawing.Point(397, 4)
         Me.btnOk.Name = "btnOk"
+        Me.btnOk.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         Me.btnOk.Size = New System.Drawing.Size(90, 41)
         Me.btnOk.TabIndex = 1
         Me.btnOk.Text = "OK"
@@ -80,8 +82,10 @@ Partial Class dlgMessageboxOK
         '
         Me.kgdlgMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.kgdlgMain.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
+        Me.kgdlgMain.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient
         Me.kgdlgMain.Location = New System.Drawing.Point(0, 0)
         Me.kgdlgMain.Name = "kgdlgMain"
+        Me.kgdlgMain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         '
         'kgdlgMain.Panel
         '
@@ -92,10 +96,11 @@ Partial Class dlgMessageboxOK
         'message
         '
         Me.message.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.message.InputControlStyle = ComponentFactory.Krypton.Toolkit.InputControlStyle.Standalone
         Me.message.Location = New System.Drawing.Point(0, 0)
         Me.message.Name = "message"
-        Me.message.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Both
-        Me.message.Size = New System.Drawing.Size(930, 141)
+        Me.message.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
+        Me.message.Size = New System.Drawing.Size(940, 151)
         Me.message.TabIndex = 2
         '
         'kscmain
@@ -107,15 +112,19 @@ Partial Class dlgMessageboxOK
         Me.kscmain.Location = New System.Drawing.Point(0, 0)
         Me.kscmain.Name = "kscmain"
         Me.kscmain.Orientation = System.Windows.Forms.Orientation.Horizontal
+        Me.kscmain.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         '
         'kscmain.Panel1
         '
         Me.kscmain.Panel1.Controls.Add(Me.kscTop)
+        Me.kscmain.Panel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
+        Me.kscmain.Panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
         '
         'kscmain.Panel2
         '
         Me.kscmain.Panel2.Controls.Add(Me.btnOk)
         Me.kscmain.Panel2.Controls.Add(Me.lblrescanrequired)
+        Me.kscmain.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         Me.kscmain.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelAlternate
         Me.kscmain.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.HighProfile
         Me.kscmain.Size = New System.Drawing.Size(942, 538)
@@ -124,19 +133,26 @@ Partial Class dlgMessageboxOK
         '
         'kscTop
         '
+        Me.kscTop.ContainerBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
         Me.kscTop.Dock = System.Windows.Forms.DockStyle.Fill
         Me.kscTop.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
         Me.kscTop.Location = New System.Drawing.Point(0, 0)
         Me.kscTop.Name = "kscTop"
         Me.kscTop.Orientation = System.Windows.Forms.Orientation.Horizontal
+        Me.kscTop.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         '
         'kscTop.Panel1
         '
         Me.kscTop.Panel1.Controls.Add(Me.kgdlgMain)
+        Me.kscTop.Panel1.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
+        Me.kscTop.Panel1.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
         '
         'kscTop.Panel2
         '
         Me.kscTop.Panel2.Controls.Add(Me.kgFiles)
+        Me.kscTop.Panel2.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
+        Me.kscTop.Panel2.PanelBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.PanelClient
+        Me.kscTop.SeparatorStyle = ComponentFactory.Krypton.Toolkit.SeparatorStyle.LowProfile
         Me.kscTop.Size = New System.Drawing.Size(942, 485)
         Me.kscTop.SplitterDistance = 153
         Me.kscTop.TabIndex = 5
@@ -144,6 +160,8 @@ Partial Class dlgMessageboxOK
         'kgFiles
         '
         Me.kgFiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.kgFiles.GroupBackStyle = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.ControlClient
+        Me.kgFiles.GroupBorderStyle = ComponentFactory.Krypton.Toolkit.PaletteBorderStyle.ControlClient
         Me.kgFiles.Location = New System.Drawing.Point(0, 0)
         Me.kgFiles.Name = "kgFiles"
         Me.kgFiles.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.SparkleBlue
@@ -160,9 +178,13 @@ Partial Class dlgMessageboxOK
         Me.dgFiles.AllowUserToDeleteRows = False
         Me.dgFiles.AllowUserToResizeRows = False
         Me.dgFiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgFiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgFiles.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TVShow, Me.FileLocation, Me.curfilename, Me.newFileName, Me.changeFileName, Me.season, Me.Episode, Me.Multipart})
         Me.dgFiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgFiles.GridStyles.Style = ComponentFactory.Krypton.Toolkit.DataGridViewStyle.List
+        Me.dgFiles.GridStyles.StyleBackground = ComponentFactory.Krypton.Toolkit.PaletteBackStyle.GridBackgroundList
+        Me.dgFiles.GridStyles.StyleColumn = ComponentFactory.Krypton.Toolkit.GridStyle.List
+        Me.dgFiles.GridStyles.StyleDataCells = ComponentFactory.Krypton.Toolkit.GridStyle.List
+        Me.dgFiles.GridStyles.StyleRow = ComponentFactory.Krypton.Toolkit.GridStyle.List
         Me.dgFiles.Location = New System.Drawing.Point(0, 0)
         Me.dgFiles.Name = "dgFiles"
         Me.dgFiles.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2007Black
@@ -265,6 +287,7 @@ Partial Class dlgMessageboxOK
         Me.lblrescanrequired.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
         Me.lblrescanrequired.Location = New System.Drawing.Point(0, 0)
         Me.lblrescanrequired.Name = "lblrescanrequired"
+        Me.lblrescanrequired.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
         Me.lblrescanrequired.Size = New System.Drawing.Size(942, 48)
         Me.lblrescanrequired.TabIndex = 2
         Me.lblrescanrequired.Values.ExtraText = ""

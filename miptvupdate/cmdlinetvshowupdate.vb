@@ -9,7 +9,7 @@ Module cmdlinetvshowupdate
     Dim showdebug As Boolean = False
 
     Sub Main()
-        Console.Out.WriteLine("MIP TV Show Update - Version 2.1.1.2941")
+        Console.Out.WriteLine("MIP TV Show Update - Version 2.1.1.2946")
         If Command.ToString.ToLower.Contains("help") Then
             Console.Out.WriteLine("Optional Parameters")
             Console.Out.WriteLine("-check10   'checks for new items every 10 minutes")
@@ -18,7 +18,6 @@ Module cmdlinetvshowupdate
             Console.Out.WriteLine("-nfoupdate   'overwrites all existing episode .nfo files with new data")
             Console.Out.WriteLine("-fastimages   'download just the images as fast as possible")
             Console.Out.WriteLine("-debug   'show debug information about the commandline tool")
-
             Exit Sub
         End If
         If Command.ToString.ToLower.Contains("-debug") Then
