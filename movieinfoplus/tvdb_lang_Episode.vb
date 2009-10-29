@@ -185,7 +185,11 @@ Property fullfilenameandpath() As String
             xbmctvepisode.Title = tls.EpisodeName
             xbmctvepisode.Rating = tls.Rating
             xbmctvepisode.Watched = ""
-            xbmctvepisode.fileinfo = tls.fileinfo
+            If maincollection.rconf.pcbscanforepisodemediainformation Then
+                xbmctvepisode.fileinfo = tls.fileinfo
+            Else
+                xbmctvepisode.fileinfo = Nothing
+            End If
             xbmctvepisode.episodeid = tls.Id
             xbmctvepisode.seriesid = tls.Seriesid
             xbmctvepisode.seasonid = tls.Seasonid

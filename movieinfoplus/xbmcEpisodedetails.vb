@@ -128,13 +128,20 @@ Namespace xbmc
             'writefile = True
             'End If
 
+            'copy obj and check for media scan option
+            Dim curEP As New xbmcEpisodedetails
+            curEP = Me
+
+            If maincollection.rconf.pcbscanforepisodemediainformation = False Then
+                curEP.fileinfo = Nothing
+            End If
 
             If writefile Then
                 'System.Xml.Serialization.XmlSerialize
                 Dim serializer As New XmlSerializer(Me.GetType())
                 Try
                     Dim writer As New StreamWriter(folderlocationandname) ' + "\tvshow.nfo") 'mainform.rconf.imdbcachefolder + "\" + id + ".xml")
-                    serializer.Serialize(writer, Me)
+                    serializer.Serialize(writer, curEP)
                     writer.Close()
                     'IMDBITEM.imdbtostring()
                 Catch ex As Exception

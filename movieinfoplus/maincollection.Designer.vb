@@ -25,9 +25,9 @@ Partial Class maincollection
     Private Sub InitializeComponent()
 Me.components = New System.ComponentModel.Container
 Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(maincollection))
-Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
 Me.btnGetXML = New ComponentFactory.Krypton.Toolkit.KryptonButton
 Me.rtbDebug = New System.Windows.Forms.RichTextBox
 Me.ListBox1 = New System.Windows.Forms.ListBox
@@ -6269,7 +6269,7 @@ Me.kgCurMovieImageFolderjpg.PaletteMode = ComponentFactory.Krypton.Toolkit.Palet
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.klblImageSizeFolderJpg)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurIconUsed2)
 Me.kgCurMovieImageFolderjpg.Panel.Controls.Add(Me.pbCurrentIconUsedNT)
-Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(310, 310)
+Me.kgCurMovieImageFolderjpg.Size = New System.Drawing.Size(330, 330)
 Me.kgCurMovieImageFolderjpg.TabIndex = 112
 Me.kgCurMovieImageFolderjpg.Visible = false
 '
@@ -6280,7 +6280,7 @@ Me.klblImageSizeFolderJpg.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelSty
 Me.klblImageSizeFolderJpg.Location = New System.Drawing.Point(0, 0)
 Me.klblImageSizeFolderJpg.Name = "klblImageSizeFolderJpg"
 Me.klblImageSizeFolderJpg.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(298, 21)
+Me.klblImageSizeFolderJpg.Size = New System.Drawing.Size(318, 21)
 Me.klblImageSizeFolderJpg.TabIndex = 90
 Me.klblImageSizeFolderJpg.Text = "Image Size: "
 Me.klblImageSizeFolderJpg.Values.ExtraText = ""
@@ -7081,32 +7081,32 @@ Me.dgMovieCast.AllowUserToAddRows = false
 Me.dgMovieCast.AllowUserToDeleteRows = false
 Me.dgMovieCast.AllowUserToResizeColumns = false
 Me.dgMovieCast.AllowUserToResizeRows = false
-DataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver
-DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-Me.dgMovieCast.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+DataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver
+DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+Me.dgMovieCast.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
 Me.dgMovieCast.BackgroundColor = System.Drawing.Color.White
 Me.dgMovieCast.BorderStyle = System.Windows.Forms.BorderStyle.None
-DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-Me.dgMovieCast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+Me.dgMovieCast.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
 Me.dgMovieCast.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
 Me.dgMovieCast.ColumnHeadersVisible = false
 Me.dgMovieCast.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CastMemberName, Me.CastMemberRole, Me.CastMemberUID, Me.CastMemberImage})
-DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-Me.dgMovieCast.DefaultCellStyle = DataGridViewCellStyle6
+DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+Me.dgMovieCast.DefaultCellStyle = DataGridViewCellStyle3
 Me.dgMovieCast.GridColor = System.Drawing.Color.Silver
 Me.dgMovieCast.Location = New System.Drawing.Point(0, 4)
 Me.dgMovieCast.MultiSelect = false
@@ -8268,7 +8268,7 @@ Me.ToolStripSeparator19.Size = New System.Drawing.Size(6, 29)
 'tsl_movies_fanartsize
 '
 Me.tsl_movies_fanartsize.Name = "tsl_movies_fanartsize"
-Me.tsl_movies_fanartsize.Size = New System.Drawing.Size(132, 13)
+Me.tsl_movies_fanartsize.Size = New System.Drawing.Size(139, 15)
 Me.tsl_movies_fanartsize.Text = "Background Size: 0x0 0kb"
 '
 'gbThanks
@@ -8292,10 +8292,10 @@ Me.gbThanks.Text = "Thanks to:"
 Me.kllFreecovers.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllFreecovers.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllFreecovers.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllFreecovers.Location = New System.Drawing.Point(447, 14)
+Me.kllFreecovers.Location = New System.Drawing.Point(447, 15)
 Me.kllFreecovers.Name = "kllFreecovers"
 Me.kllFreecovers.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllFreecovers.Size = New System.Drawing.Size(75, 21)
+Me.kllFreecovers.Size = New System.Drawing.Size(69, 20)
 Me.kllFreecovers.TabIndex = 105
 Me.kllFreecovers.Text = "Freecovers"
 Me.kllFreecovers.Values.ExtraText = ""
@@ -8307,10 +8307,10 @@ Me.kllFreecovers.Values.Text = "Freecovers"
 Me.kllxbmc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllxbmc.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllxbmc.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllxbmc.Location = New System.Drawing.Point(6, 14)
+Me.kllxbmc.Location = New System.Drawing.Point(6, 15)
 Me.kllxbmc.Name = "kllxbmc"
 Me.kllxbmc.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllxbmc.Size = New System.Drawing.Size(46, 21)
+Me.kllxbmc.Size = New System.Drawing.Size(44, 20)
 Me.kllxbmc.TabIndex = 100
 Me.kllxbmc.Text = "XBMC"
 Me.kllxbmc.Values.ExtraText = ""
@@ -8322,10 +8322,10 @@ Me.kllxbmc.Values.Text = "XBMC"
 Me.kllMediaIcons.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllMediaIcons.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllMediaIcons.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllMediaIcons.Location = New System.Drawing.Point(71, 14)
+Me.kllMediaIcons.Location = New System.Drawing.Point(71, 15)
 Me.kllMediaIcons.Name = "kllMediaIcons"
 Me.kllMediaIcons.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllMediaIcons.Size = New System.Drawing.Size(81, 21)
+Me.kllMediaIcons.Size = New System.Drawing.Size(76, 20)
 Me.kllMediaIcons.TabIndex = 101
 Me.kllMediaIcons.Text = "Media Icons"
 Me.kllMediaIcons.Values.ExtraText = ""
@@ -8337,10 +8337,10 @@ Me.kllMediaIcons.Values.Text = "Media Icons"
 Me.kllTheTVDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheTVDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllTheTVDB.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllTheTVDB.Location = New System.Drawing.Point(169, 14)
+Me.kllTheTVDB.Location = New System.Drawing.Point(169, 15)
 Me.kllTheTVDB.Name = "kllTheTVDB"
 Me.kllTheTVDB.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllTheTVDB.Size = New System.Drawing.Size(66, 21)
+Me.kllTheTVDB.Size = New System.Drawing.Size(60, 20)
 Me.kllTheTVDB.TabIndex = 103
 Me.kllTheTVDB.Text = "TheTVDB"
 Me.kllTheTVDB.Values.ExtraText = ""
@@ -8352,10 +8352,10 @@ Me.kllTheTVDB.Values.Text = "TheTVDB"
 Me.kllimpawards.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllimpawards.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllimpawards.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllimpawards.Location = New System.Drawing.Point(249, 14)
+Me.kllimpawards.Location = New System.Drawing.Point(249, 15)
 Me.kllimpawards.Name = "kllimpawards"
 Me.kllimpawards.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllimpawards.Size = New System.Drawing.Size(74, 21)
+Me.kllimpawards.Size = New System.Drawing.Size(70, 20)
 Me.kllimpawards.TabIndex = 104
 Me.kllimpawards.Text = "Impawards"
 Me.kllimpawards.Values.ExtraText = ""
@@ -8367,10 +8367,10 @@ Me.kllimpawards.Values.Text = "Impawards"
 Me.kllTheMovieDB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
 Me.kllTheMovieDB.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalPanel
 Me.kllTheMovieDB.LinkBehavior = ComponentFactory.Krypton.Toolkit.KryptonLinkBehavior.AlwaysUnderline
-Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 14)
+Me.kllTheMovieDB.Location = New System.Drawing.Point(338, 15)
 Me.kllTheMovieDB.Name = "kllTheMovieDB"
 Me.kllTheMovieDB.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.[Global]
-Me.kllTheMovieDB.Size = New System.Drawing.Size(87, 21)
+Me.kllTheMovieDB.Size = New System.Drawing.Size(83, 20)
 Me.kllTheMovieDB.TabIndex = 102
 Me.kllTheMovieDB.Text = "The MovieDB"
 Me.kllTheMovieDB.Values.ExtraText = ""
@@ -8685,7 +8685,7 @@ Me.pbTVWide.Visible = false
 '
 'tsCurrentTVShowTools
 '
-Me.tsCurrentTVShowTools.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+Me.tsCurrentTVShowTools.Font = New System.Drawing.Font("Segoe UI", 9!)
 Me.tsCurrentTVShowTools.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
 Me.tsCurrentTVShowTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbShowsLoadShows, Me.ToolStripSeparator3, Me.tsbShowsUpdateShows, Me.ToolStripSeparator5, Me.tsbtvPreCache, Me.ToolStripSeparator6, Me.tsmi_btn_addShowFanart, Me.ToolStripSeparator7, Me.tsmi_btn_AddShowImage, Me.ToolStripSeparator8, Me.tsddbtvshowstag, Me.tsddTVShows_OptionsAndSettings, Me.tsbShowsOpenTVDBPage, Me.tsbShowsOpenFolder, Me.tsddshows_tools, Me.tsl_shows_fanartsize})
 Me.tsCurrentTVShowTools.Location = New System.Drawing.Point(0, 0)
@@ -8701,7 +8701,7 @@ Me.tsbShowsLoadShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplaySty
 Me.tsbShowsLoadShows.Image = CType(resources.GetObject("tsbShowsLoadShows.Image"),System.Drawing.Image)
 Me.tsbShowsLoadShows.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbShowsLoadShows.Name = "tsbShowsLoadShows"
-Me.tsbShowsLoadShows.Size = New System.Drawing.Size(70, 29)
+Me.tsbShowsLoadShows.Size = New System.Drawing.Size(74, 29)
 Me.tsbShowsLoadShows.Text = "Load Shows"
 Me.tsbShowsLoadShows.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 '
@@ -8716,7 +8716,7 @@ Me.tsbShowsUpdateShows.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayS
 Me.tsbShowsUpdateShows.Image = CType(resources.GetObject("tsbShowsUpdateShows.Image"),System.Drawing.Image)
 Me.tsbShowsUpdateShows.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbShowsUpdateShows.Name = "tsbShowsUpdateShows"
-Me.tsbShowsUpdateShows.Size = New System.Drawing.Size(81, 29)
+Me.tsbShowsUpdateShows.Size = New System.Drawing.Size(86, 29)
 Me.tsbShowsUpdateShows.Text = "Update Shows"
 '
 'ToolStripSeparator5
@@ -8730,7 +8730,7 @@ Me.tsbtvPreCache.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.T
 Me.tsbtvPreCache.Enabled = false
 Me.tsbtvPreCache.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbtvPreCache.Name = "tsbtvPreCache"
-Me.tsbtvPreCache.Size = New System.Drawing.Size(61, 29)
+Me.tsbtvPreCache.Size = New System.Drawing.Size(66, 29)
 Me.tsbtvPreCache.Text = "Pre-Cache"
 '
 'ToolStripSeparator6
@@ -8743,7 +8743,7 @@ Me.ToolStripSeparator6.Size = New System.Drawing.Size(6, 32)
 Me.tsmi_btn_addShowFanart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
 Me.tsmi_btn_addShowFanart.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsmi_btn_addShowFanart.Name = "tsmi_btn_addShowFanart"
-Me.tsmi_btn_addShowFanart.Size = New System.Drawing.Size(91, 29)
+Me.tsmi_btn_addShowFanart.Size = New System.Drawing.Size(100, 29)
 Me.tsmi_btn_addShowFanart.Text = "Add Background"
 '
 'ToolStripSeparator7
@@ -8756,7 +8756,7 @@ Me.ToolStripSeparator7.Size = New System.Drawing.Size(6, 32)
 Me.tsmi_btn_AddShowImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
 Me.tsmi_btn_AddShowImage.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsmi_btn_AddShowImage.Name = "tsmi_btn_AddShowImage"
-Me.tsmi_btn_AddShowImage.Size = New System.Drawing.Size(62, 29)
+Me.tsmi_btn_AddShowImage.Size = New System.Drawing.Size(69, 29)
 Me.tsmi_btn_AddShowImage.Text = "Add Image"
 '
 'ToolStripSeparator8
@@ -8770,405 +8770,405 @@ Me.tsddbtvshowstag.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem
 Me.tsddbtvshowstag.Image = Global.movieinfoplus.My.Resources.Resources.tag
 Me.tsddbtvshowstag.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddbtvshowstag.Name = "tsddbtvshowstag"
-Me.tsddbtvshowstag.Size = New System.Drawing.Size(55, 29)
+Me.tsddbtvshowstag.Size = New System.Drawing.Size(56, 29)
 Me.tsddbtvshowstag.Text = "Tag"
 '
 'Tagdivxtv
 '
 Me.Tagdivxtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.divxSmonotv, Me.divxSStereotv, Me.divxSDD51tv, Me.divxSDD71tv, Me.divxSDTStv, Me.divxSDTSEStv, Me.divxSHDAudiotv})
 Me.Tagdivxtv.Name = "Tagdivxtv"
-Me.Tagdivxtv.Size = New System.Drawing.Size(153, 22)
+Me.Tagdivxtv.Size = New System.Drawing.Size(158, 22)
 Me.Tagdivxtv.Text = "Divx"
 '
 'divxSmonotv
 '
 Me.divxSmonotv.Name = "divxSmonotv"
-Me.divxSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.divxSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.divxSmonotv.Text = "Mono"
 '
 'divxSStereotv
 '
 Me.divxSStereotv.Name = "divxSStereotv"
-Me.divxSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.divxSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.divxSStereotv.Text = "Stereo"
 '
 'divxSDD51tv
 '
 Me.divxSDD51tv.Name = "divxSDD51tv"
-Me.divxSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.divxSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.divxSDD51tv.Text = "DD 5.1"
 '
 'divxSDD71tv
 '
 Me.divxSDD71tv.Name = "divxSDD71tv"
-Me.divxSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.divxSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.divxSDD71tv.Text = "DD 7.1"
 '
 'divxSDTStv
 '
 Me.divxSDTStv.Name = "divxSDTStv"
-Me.divxSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.divxSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.divxSDTStv.Text = "DTS"
 '
 'divxSDTSEStv
 '
 Me.divxSDTSEStv.Name = "divxSDTSEStv"
-Me.divxSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.divxSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.divxSDTSEStv.Text = "DTS ES"
 '
 'divxSHDAudiotv
 '
 Me.divxSHDAudiotv.Name = "divxSHDAudiotv"
-Me.divxSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.divxSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.divxSHDAudiotv.Text = "HD Audio"
 '
 'Tagxvidtv
 '
 Me.Tagxvidtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.xvidSmonotv, Me.xvidSStereotv, Me.xvidSDD51tv, Me.xvidSDD71tv, Me.xvidSDTStv, Me.xvidSDTSEStv, Me.xvidSHDAudiotv})
 Me.Tagxvidtv.Name = "Tagxvidtv"
-Me.Tagxvidtv.Size = New System.Drawing.Size(153, 22)
+Me.Tagxvidtv.Size = New System.Drawing.Size(158, 22)
 Me.Tagxvidtv.Text = "Xvid"
 '
 'xvidSmonotv
 '
 Me.xvidSmonotv.Name = "xvidSmonotv"
-Me.xvidSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSmonotv.Text = "Mono"
 '
 'xvidSStereotv
 '
 Me.xvidSStereotv.Name = "xvidSStereotv"
-Me.xvidSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSStereotv.Text = "Stereo"
 '
 'xvidSDD51tv
 '
 Me.xvidSDD51tv.Name = "xvidSDD51tv"
-Me.xvidSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSDD51tv.Text = "DD 5.1"
 '
 'xvidSDD71tv
 '
 Me.xvidSDD71tv.Name = "xvidSDD71tv"
-Me.xvidSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSDD71tv.Text = "DD 7.1"
 '
 'xvidSDTStv
 '
 Me.xvidSDTStv.Name = "xvidSDTStv"
-Me.xvidSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSDTStv.Text = "DTS"
 '
 'xvidSDTSEStv
 '
 Me.xvidSDTSEStv.Name = "xvidSDTSEStv"
-Me.xvidSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSDTSEStv.Text = "DTS ES"
 '
 'xvidSHDAudiotv
 '
 Me.xvidSHDAudiotv.Name = "xvidSHDAudiotv"
-Me.xvidSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.xvidSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.xvidSHDAudiotv.Text = "HD Audio"
 '
 'Tagdvdtv
 '
 Me.Tagdvdtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.dvdSmonotv, Me.dvdSStereotv, Me.dvdSDD51tv, Me.dvdSDD71tv, Me.dvdSDTStv, Me.DVDSDTSEStv, Me.DVDSHDAudiotv})
 Me.Tagdvdtv.Name = "Tagdvdtv"
-Me.Tagdvdtv.Size = New System.Drawing.Size(153, 22)
+Me.Tagdvdtv.Size = New System.Drawing.Size(158, 22)
 Me.Tagdvdtv.Text = "DVD"
 '
 'dvdSmonotv
 '
 Me.dvdSmonotv.Name = "dvdSmonotv"
-Me.dvdSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.dvdSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.dvdSmonotv.Text = "Mono"
 '
 'dvdSStereotv
 '
 Me.dvdSStereotv.Name = "dvdSStereotv"
-Me.dvdSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.dvdSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.dvdSStereotv.Text = "Stereo"
 '
 'dvdSDD51tv
 '
 Me.dvdSDD51tv.Name = "dvdSDD51tv"
-Me.dvdSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.dvdSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.dvdSDD51tv.Text = "DD 5.1"
 '
 'dvdSDD71tv
 '
 Me.dvdSDD71tv.Name = "dvdSDD71tv"
-Me.dvdSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.dvdSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.dvdSDD71tv.Text = "DD 7.1"
 '
 'dvdSDTStv
 '
 Me.dvdSDTStv.Name = "dvdSDTStv"
-Me.dvdSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.dvdSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.dvdSDTStv.Text = "DTS"
 '
 'DVDSDTSEStv
 '
 Me.DVDSDTSEStv.Name = "DVDSDTSEStv"
-Me.DVDSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.DVDSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.DVDSDTSEStv.Text = "DTS ES"
 '
 'DVDSHDAudiotv
 '
 Me.DVDSHDAudiotv.Name = "DVDSHDAudiotv"
-Me.DVDSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.DVDSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.DVDSHDAudiotv.Text = "HD Audio"
 '
 'SDTagtv
 '
 Me.SDTagtv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SDSmonotv, Me.SDSStereotv, Me.SDSDD51tv, Me.SDSDD71tv, Me.SDSDTStv, Me.SDSDTSEStv, Me.SDSHDAudiotv})
 Me.SDTagtv.Name = "SDTagtv"
-Me.SDTagtv.Size = New System.Drawing.Size(153, 22)
+Me.SDTagtv.Size = New System.Drawing.Size(158, 22)
 Me.SDTagtv.Text = "SD"
 '
 'SDSmonotv
 '
 Me.SDSmonotv.Name = "SDSmonotv"
-Me.SDSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.SDSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.SDSmonotv.Text = "Mono"
 '
 'SDSStereotv
 '
 Me.SDSStereotv.Name = "SDSStereotv"
-Me.SDSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.SDSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.SDSStereotv.Text = "Stereo"
 '
 'SDSDD51tv
 '
 Me.SDSDD51tv.Name = "SDSDD51tv"
-Me.SDSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.SDSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.SDSDD51tv.Text = "DD 5.1"
 '
 'SDSDD71tv
 '
 Me.SDSDD71tv.Name = "SDSDD71tv"
-Me.SDSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.SDSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.SDSDD71tv.Text = "DD 7.1"
 '
 'SDSDTStv
 '
 Me.SDSDTStv.Name = "SDSDTStv"
-Me.SDSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.SDSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.SDSDTStv.Text = "DTS"
 '
 'SDSDTSEStv
 '
 Me.SDSDTSEStv.Name = "SDSDTSEStv"
-Me.SDSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.SDSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.SDSDTSEStv.Text = "DTS ES"
 '
 'SDSHDAudiotv
 '
 Me.SDSHDAudiotv.Name = "SDSHDAudiotv"
-Me.SDSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.SDSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.SDSHDAudiotv.Text = "HD Audio"
 '
 'Tag720ptv
 '
 Me.Tag720ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd720pSmonotv, Me.hd720pSStereotv, Me.hd720pSDD51tv, Me.hd720pSDD71tv, Me.hd720pSDTStv, Me.hd720pSDTSEStv, Me.hd720pSHDAudiotv})
 Me.Tag720ptv.Name = "Tag720ptv"
-Me.Tag720ptv.Size = New System.Drawing.Size(153, 22)
+Me.Tag720ptv.Size = New System.Drawing.Size(158, 22)
 Me.Tag720ptv.Text = "720p"
 '
 'hd720pSmonotv
 '
 Me.hd720pSmonotv.Name = "hd720pSmonotv"
-Me.hd720pSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSmonotv.Text = "Mono"
 '
 'hd720pSStereotv
 '
 Me.hd720pSStereotv.Name = "hd720pSStereotv"
-Me.hd720pSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSStereotv.Text = "Stereo"
 '
 'hd720pSDD51tv
 '
 Me.hd720pSDD51tv.Name = "hd720pSDD51tv"
-Me.hd720pSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSDD51tv.Text = "DD 5.1"
 '
 'hd720pSDD71tv
 '
 Me.hd720pSDD71tv.Name = "hd720pSDD71tv"
-Me.hd720pSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSDD71tv.Text = "DD 7.1"
 '
 'hd720pSDTStv
 '
 Me.hd720pSDTStv.Name = "hd720pSDTStv"
-Me.hd720pSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSDTStv.Text = "DTS"
 '
 'hd720pSDTSEStv
 '
 Me.hd720pSDTSEStv.Name = "hd720pSDTSEStv"
-Me.hd720pSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSDTSEStv.Text = "DTS ES"
 '
 'hd720pSHDAudiotv
 '
 Me.hd720pSHDAudiotv.Name = "hd720pSHDAudiotv"
-Me.hd720pSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.hd720pSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.hd720pSHDAudiotv.Text = "HD Audio"
 '
 'Tag1080itv
 '
 Me.Tag1080itv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080iSmonotv, Me.hd1080iSStereotv, Me.hd1080iSDD51tv, Me.hd1080iSDD71tv, Me.hd1080iSDTStv, Me.hd1080iSDTSEStv, Me.hd1080iSHDAudiotv})
 Me.Tag1080itv.Name = "Tag1080itv"
-Me.Tag1080itv.Size = New System.Drawing.Size(153, 22)
+Me.Tag1080itv.Size = New System.Drawing.Size(158, 22)
 Me.Tag1080itv.Text = "1080i"
 '
 'hd1080iSmonotv
 '
 Me.hd1080iSmonotv.Name = "hd1080iSmonotv"
-Me.hd1080iSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSmonotv.Text = "Mono"
 '
 'hd1080iSStereotv
 '
 Me.hd1080iSStereotv.Name = "hd1080iSStereotv"
-Me.hd1080iSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSStereotv.Text = "Stereo"
 '
 'hd1080iSDD51tv
 '
 Me.hd1080iSDD51tv.Name = "hd1080iSDD51tv"
-Me.hd1080iSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSDD51tv.Text = "DD 5.1"
 '
 'hd1080iSDD71tv
 '
 Me.hd1080iSDD71tv.Name = "hd1080iSDD71tv"
-Me.hd1080iSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSDD71tv.Text = "DD 7.1"
 '
 'hd1080iSDTStv
 '
 Me.hd1080iSDTStv.Name = "hd1080iSDTStv"
-Me.hd1080iSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSDTStv.Text = "DTS"
 '
 'hd1080iSDTSEStv
 '
 Me.hd1080iSDTSEStv.Name = "hd1080iSDTSEStv"
-Me.hd1080iSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSDTSEStv.Text = "DTS ES"
 '
 'hd1080iSHDAudiotv
 '
 Me.hd1080iSHDAudiotv.Name = "hd1080iSHDAudiotv"
-Me.hd1080iSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080iSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080iSHDAudiotv.Text = "HD Audio"
 '
 'Tag1080ptv
 '
 Me.Tag1080ptv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.hd1080pSmonotv, Me.hd1080pSStereotv, Me.hd1080pSDD51tv, Me.hd1080pSDD71tv, Me.hd1080pSDTStv, Me.hd1080pSDTSEStv, Me.hd1080pSHDAudiotv})
 Me.Tag1080ptv.Name = "Tag1080ptv"
-Me.Tag1080ptv.Size = New System.Drawing.Size(153, 22)
+Me.Tag1080ptv.Size = New System.Drawing.Size(158, 22)
 Me.Tag1080ptv.Text = "1080p"
 '
 'hd1080pSmonotv
 '
 Me.hd1080pSmonotv.Name = "hd1080pSmonotv"
-Me.hd1080pSmonotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSmonotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSmonotv.Text = "Mono"
 '
 'hd1080pSStereotv
 '
 Me.hd1080pSStereotv.Name = "hd1080pSStereotv"
-Me.hd1080pSStereotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSStereotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSStereotv.Text = "Stereo"
 '
 'hd1080pSDD51tv
 '
 Me.hd1080pSDD51tv.Name = "hd1080pSDD51tv"
-Me.hd1080pSDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSDD51tv.Text = "DD 5.1"
 '
 'hd1080pSDD71tv
 '
 Me.hd1080pSDD71tv.Name = "hd1080pSDD71tv"
-Me.hd1080pSDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSDD71tv.Text = "DD 7.1"
 '
 'hd1080pSDTStv
 '
 Me.hd1080pSDTStv.Name = "hd1080pSDTStv"
-Me.hd1080pSDTStv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSDTStv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSDTStv.Text = "DTS"
 '
 'hd1080pSDTSEStv
 '
 Me.hd1080pSDTSEStv.Name = "hd1080pSDTSEStv"
-Me.hd1080pSDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSDTSEStv.Text = "DTS ES"
 '
 'hd1080pSHDAudiotv
 '
 Me.hd1080pSHDAudiotv.Name = "hd1080pSHDAudiotv"
-Me.hd1080pSHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.hd1080pSHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.hd1080pSHDAudiotv.Text = "HD Audio"
 '
 'TagBluRaytv
 '
 Me.TagBluRaytv.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BluRaySmonotv, Me.BluRaySStereotv, Me.BluRaySDD51tv, Me.BluRaySDD71tv, Me.BluRaySDTStv, Me.BluRaySDTSEStv, Me.BluRaySHDAudiotv})
 Me.TagBluRaytv.Name = "TagBluRaytv"
-Me.TagBluRaytv.Size = New System.Drawing.Size(153, 22)
+Me.TagBluRaytv.Size = New System.Drawing.Size(158, 22)
 Me.TagBluRaytv.Text = "Blu-Ray"
 '
 'BluRaySmonotv
 '
 Me.BluRaySmonotv.Name = "BluRaySmonotv"
-Me.BluRaySmonotv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySmonotv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySmonotv.Text = "Mono"
 '
 'BluRaySStereotv
 '
 Me.BluRaySStereotv.Name = "BluRaySStereotv"
-Me.BluRaySStereotv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySStereotv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySStereotv.Text = "Stereo"
 '
 'BluRaySDD51tv
 '
 Me.BluRaySDD51tv.Name = "BluRaySDD51tv"
-Me.BluRaySDD51tv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySDD51tv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySDD51tv.Text = "DD 5.1"
 '
 'BluRaySDD71tv
 '
 Me.BluRaySDD71tv.Name = "BluRaySDD71tv"
-Me.BluRaySDD71tv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySDD71tv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySDD71tv.Text = "DD 7.1"
 '
 'BluRaySDTStv
 '
 Me.BluRaySDTStv.Name = "BluRaySDTStv"
-Me.BluRaySDTStv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySDTStv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySDTStv.Text = "DTS"
 '
 'BluRaySDTSEStv
 '
 Me.BluRaySDTSEStv.Name = "BluRaySDTSEStv"
-Me.BluRaySDTSEStv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySDTSEStv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySDTSEStv.Text = "DTS ES"
 '
 'BluRaySHDAudiotv
 '
 Me.BluRaySHDAudiotv.Name = "BluRaySHDAudiotv"
-Me.BluRaySHDAudiotv.Size = New System.Drawing.Size(120, 22)
+Me.BluRaySHDAudiotv.Size = New System.Drawing.Size(126, 22)
 Me.BluRaySHDAudiotv.Text = "HD Audio"
 '
 'SetupTagIconsToolStripMenuItemtv
 '
 Me.SetupTagIconsToolStripMenuItemtv.Name = "SetupTagIconsToolStripMenuItemtv"
-Me.SetupTagIconsToolStripMenuItemtv.Size = New System.Drawing.Size(153, 22)
+Me.SetupTagIconsToolStripMenuItemtv.Size = New System.Drawing.Size(158, 22)
 Me.SetupTagIconsToolStripMenuItemtv.Text = "Setup Tag Icons"
 '
 'tsddTVShows_OptionsAndSettings
@@ -9178,31 +9178,31 @@ Me.tsddTVShows_OptionsAndSettings.DropDownItems.AddRange(New System.Windows.Form
 Me.tsddTVShows_OptionsAndSettings.Image = CType(resources.GetObject("tsddTVShows_OptionsAndSettings.Image"),System.Drawing.Image)
 Me.tsddTVShows_OptionsAndSettings.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddTVShows_OptionsAndSettings.Name = "tsddTVShows_OptionsAndSettings"
-Me.tsddTVShows_OptionsAndSettings.Size = New System.Drawing.Size(74, 29)
+Me.tsddTVShows_OptionsAndSettings.Size = New System.Drawing.Size(78, 29)
 Me.tsddTVShows_OptionsAndSettings.Text = "Settings"
 '
 'tsbTVShows_SetupAndConfigurationToolStripMenuItem
 '
 Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Name = "tsbTVShows_SetupAndConfigurationToolStripMenuItem"
-Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Size = New System.Drawing.Size(282, 22)
+Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Size = New System.Drawing.Size(308, 22)
 Me.tsbTVShows_SetupAndConfigurationToolStripMenuItem.Text = "Setup and Configuration"
 '
 'tsmiTVDebug
 '
 Me.tsmiTVDebug.Name = "tsmiTVDebug"
-Me.tsmiTVDebug.Size = New System.Drawing.Size(282, 22)
+Me.tsmiTVDebug.Size = New System.Drawing.Size(308, 22)
 Me.tsmiTVDebug.Text = "Debug Mode Enabled"
 '
 'tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem
 '
 Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Name = "tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem"
-Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(282, 22)
+Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Size = New System.Drawing.Size(308, 22)
 Me.tsmiTVAllowMediaImageSelectionToAnyTypeToolStripMenuItem.Text = "Allow Media Image Selection to any type"
 '
 'tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem
 '
 Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Name = "tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem"
-Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Size = New System.Drawing.Size(282, 22)
+Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Size = New System.Drawing.Size(308, 22)
 Me.tsmiTVDontChangeTabsAfterPickingMediaImageToolStripMenuItem.Text = "Dont change tabs after picking media image"
 '
 'tsbShowsOpenTVDBPage
@@ -9220,7 +9220,7 @@ Me.tsbShowsOpenTVDBPage.Text = "Open thetvdb.com page for this show"
 Me.tsbShowsOpenFolder.Image = CType(resources.GetObject("tsbShowsOpenFolder.Image"),System.Drawing.Image)
 Me.tsbShowsOpenFolder.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsbShowsOpenFolder.Name = "tsbShowsOpenFolder"
-Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(85, 29)
+Me.tsbShowsOpenFolder.Size = New System.Drawing.Size(92, 29)
 Me.tsbShowsOpenFolder.Text = "Open Folder"
 Me.tsbShowsOpenFolder.ToolTipText = "Open the current TV Show Folder"
 '
@@ -9232,30 +9232,30 @@ Me.tsddshows_tools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem
 Me.tsddshows_tools.Image = CType(resources.GetObject("tsddshows_tools.Image"),System.Drawing.Image)
 Me.tsddshows_tools.ImageTransparentColor = System.Drawing.Color.Magenta
 Me.tsddshows_tools.Name = "tsddshows_tools"
-Me.tsddshows_tools.Size = New System.Drawing.Size(46, 29)
+Me.tsddshows_tools.Size = New System.Drawing.Size(49, 29)
 Me.tsddshows_tools.Text = "Tools"
 Me.tsddshows_tools.ToolTipText = "Resize or Compress Background"
 '
 'ToolStripSeparator21
 '
 Me.ToolStripSeparator21.Name = "ToolStripSeparator21"
-Me.ToolStripSeparator21.Size = New System.Drawing.Size(210, 6)
+Me.ToolStripSeparator21.Size = New System.Drawing.Size(228, 6)
 '
 'tsmishows_currentBackgroundToModify
 '
 Me.tsmishows_currentBackgroundToModify.Name = "tsmishows_currentBackgroundToModify"
-Me.tsmishows_currentBackgroundToModify.Size = New System.Drawing.Size(213, 22)
+Me.tsmishows_currentBackgroundToModify.Size = New System.Drawing.Size(231, 22)
 '
 'tsmishows_currentBackgroundToModifyFileSize
 '
 Me.tsmishows_currentBackgroundToModifyFileSize.Name = "tsmishows_currentBackgroundToModifyFileSize"
-Me.tsmishows_currentBackgroundToModifyFileSize.Size = New System.Drawing.Size(213, 22)
+Me.tsmishows_currentBackgroundToModifyFileSize.Size = New System.Drawing.Size(231, 22)
 '
 'ResizeBackgroundImageToolStripMenuItem
 '
 Me.ResizeBackgroundImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_fanart_r960x540, Me.tsmishows_fanart_r1280x720, Me.tsmishows_fanart_r1920x1080})
 Me.ResizeBackgroundImageToolStripMenuItem.Name = "ResizeBackgroundImageToolStripMenuItem"
-Me.ResizeBackgroundImageToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+Me.ResizeBackgroundImageToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
 Me.ResizeBackgroundImageToolStripMenuItem.Text = "Resize Background Image"
 '
 'tsmishows_fanart_r960x540
@@ -9280,61 +9280,61 @@ Me.tsmishows_fanart_r1920x1080.Text = "1920x1080"
 '
 Me.CompressBackgroundImageToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_fanart_q60, Me.tsmishows_fanart_q70, Me.tsmishows_fanart_q80, Me.tsmishows_fanart_q900, Me.tsmishows_fanart_q95})
 Me.CompressBackgroundImageToolStripMenuItem1.Name = "CompressBackgroundImageToolStripMenuItem1"
-Me.CompressBackgroundImageToolStripMenuItem1.Size = New System.Drawing.Size(213, 22)
+Me.CompressBackgroundImageToolStripMenuItem1.Size = New System.Drawing.Size(231, 22)
 Me.CompressBackgroundImageToolStripMenuItem1.Text = "Compress Background Image"
 '
 'tsmishows_fanart_q60
 '
 Me.tsmishows_fanart_q60.Name = "tsmishows_fanart_q60"
-Me.tsmishows_fanart_q60.Size = New System.Drawing.Size(94, 22)
+Me.tsmishows_fanart_q60.Size = New System.Drawing.Size(96, 22)
 Me.tsmishows_fanart_q60.Text = "60%"
 '
 'tsmishows_fanart_q70
 '
 Me.tsmishows_fanart_q70.Name = "tsmishows_fanart_q70"
-Me.tsmishows_fanart_q70.Size = New System.Drawing.Size(94, 22)
+Me.tsmishows_fanart_q70.Size = New System.Drawing.Size(96, 22)
 Me.tsmishows_fanart_q70.Text = "70%"
 '
 'tsmishows_fanart_q80
 '
 Me.tsmishows_fanart_q80.Name = "tsmishows_fanart_q80"
-Me.tsmishows_fanart_q80.Size = New System.Drawing.Size(94, 22)
+Me.tsmishows_fanart_q80.Size = New System.Drawing.Size(96, 22)
 Me.tsmishows_fanart_q80.Text = "80%"
 '
 'tsmishows_fanart_q900
 '
 Me.tsmishows_fanart_q900.Name = "tsmishows_fanart_q900"
-Me.tsmishows_fanart_q900.Size = New System.Drawing.Size(94, 22)
+Me.tsmishows_fanart_q900.Size = New System.Drawing.Size(96, 22)
 Me.tsmishows_fanart_q900.Text = "90%"
 '
 'tsmishows_fanart_q95
 '
 Me.tsmishows_fanart_q95.Name = "tsmishows_fanart_q95"
-Me.tsmishows_fanart_q95.Size = New System.Drawing.Size(94, 22)
+Me.tsmishows_fanart_q95.Size = New System.Drawing.Size(96, 22)
 Me.tsmishows_fanart_q95.Text = "95%"
 '
 'ToolStripSeparator20
 '
 Me.ToolStripSeparator20.Name = "ToolStripSeparator20"
-Me.ToolStripSeparator20.Size = New System.Drawing.Size(210, 6)
+Me.ToolStripSeparator20.Size = New System.Drawing.Size(228, 6)
 '
 'tsmishows_currentImageToModify
 '
 Me.tsmishows_currentImageToModify.Name = "tsmishows_currentImageToModify"
-Me.tsmishows_currentImageToModify.Size = New System.Drawing.Size(213, 22)
+Me.tsmishows_currentImageToModify.Size = New System.Drawing.Size(231, 22)
 Me.tsmishows_currentImageToModify.Text = "Current image to modify"
 '
 'tsmishows_currentImageToModifyFileSize
 '
 Me.tsmishows_currentImageToModifyFileSize.Name = "tsmishows_currentImageToModifyFileSize"
-Me.tsmishows_currentImageToModifyFileSize.Size = New System.Drawing.Size(213, 22)
+Me.tsmishows_currentImageToModifyFileSize.Size = New System.Drawing.Size(231, 22)
 Me.tsmishows_currentImageToModifyFileSize.Text = "Current image size (h x w)"
 '
 'ResizeShowImageToolStripMenuItem
 '
 Me.ResizeShowImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_poster_r320x480, Me.tsmishows_poster_r360x540, Me.tsmishows_poster_r384x576, Me.tsmishows_poster_r480x720, Me.tsmishows_poster_r720x1080, Me.tsmishows_poster_r800x1200, Me.tsmishows_poster_r1000x1500})
 Me.ResizeShowImageToolStripMenuItem.Name = "ResizeShowImageToolStripMenuItem"
-Me.ResizeShowImageToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+Me.ResizeShowImageToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
 Me.ResizeShowImageToolStripMenuItem.Text = "Resize Show Image"
 '
 'tsmishows_poster_r320x480
@@ -9383,48 +9383,48 @@ Me.tsmishows_poster_r1000x1500.Text = "1000x1500"
 '
 Me.CompressShowImageToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmishows_posters_q60, Me.tsmishows_posters_q70, Me.tsmishows_posters_q80, Me.tsmishows_posters_q90, Me.tsmishows_posters_q95})
 Me.CompressShowImageToolStripMenuItem.Name = "CompressShowImageToolStripMenuItem"
-Me.CompressShowImageToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+Me.CompressShowImageToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
 Me.CompressShowImageToolStripMenuItem.Text = "Compress Show Image"
 '
 'tsmishows_posters_q60
 '
 Me.tsmishows_posters_q60.Name = "tsmishows_posters_q60"
-Me.tsmishows_posters_q60.Size = New System.Drawing.Size(129, 22)
+Me.tsmishows_posters_q60.Size = New System.Drawing.Size(137, 22)
 Me.tsmishows_posters_q60.Text = "60% Quality"
 '
 'tsmishows_posters_q70
 '
 Me.tsmishows_posters_q70.Name = "tsmishows_posters_q70"
-Me.tsmishows_posters_q70.Size = New System.Drawing.Size(129, 22)
+Me.tsmishows_posters_q70.Size = New System.Drawing.Size(137, 22)
 Me.tsmishows_posters_q70.Text = "70% Quality"
 '
 'tsmishows_posters_q80
 '
 Me.tsmishows_posters_q80.Name = "tsmishows_posters_q80"
-Me.tsmishows_posters_q80.Size = New System.Drawing.Size(129, 22)
+Me.tsmishows_posters_q80.Size = New System.Drawing.Size(137, 22)
 Me.tsmishows_posters_q80.Text = "80% Quality"
 '
 'tsmishows_posters_q90
 '
 Me.tsmishows_posters_q90.Name = "tsmishows_posters_q90"
-Me.tsmishows_posters_q90.Size = New System.Drawing.Size(129, 22)
+Me.tsmishows_posters_q90.Size = New System.Drawing.Size(137, 22)
 Me.tsmishows_posters_q90.Text = "90% Quality"
 '
 'tsmishows_posters_q95
 '
 Me.tsmishows_posters_q95.Name = "tsmishows_posters_q95"
-Me.tsmishows_posters_q95.Size = New System.Drawing.Size(129, 22)
+Me.tsmishows_posters_q95.Size = New System.Drawing.Size(137, 22)
 Me.tsmishows_posters_q95.Text = "95% Quality"
 '
 'ToolStripSeparator22
 '
 Me.ToolStripSeparator22.Name = "ToolStripSeparator22"
-Me.ToolStripSeparator22.Size = New System.Drawing.Size(210, 6)
+Me.ToolStripSeparator22.Size = New System.Drawing.Size(228, 6)
 '
 'tsmishows_CreateThumbnailForEpisodeToolStripMenuItem
 '
 Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Name = "tsmishows_CreateThumbnailForEpisodeToolStripMenuItem"
-Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(213, 22)
+Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Size = New System.Drawing.Size(231, 22)
 Me.tsmishows_CreateThumbnailForEpisodeToolStripMenuItem.Text = "Create Thumbnail for Episode"
 '
 'tsl_shows_fanartsize

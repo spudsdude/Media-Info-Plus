@@ -448,7 +448,7 @@ Namespace xbmcMediaInfo
             End Set
         End Property
 
-        <XmlElement("aspectdisplayratio")> _
+        <XmlElement("aspect")> _
         Public Property Aspectdisplayratio() As System.String
             Get
                 Return Me.p_element_aspectdisplayratio

@@ -390,6 +390,11 @@ Namespace mip.mov
         End Property
 
         Public Sub writeMovXML(ByVal folder As String, ByVal filename As String)
+            If maincollection.rconf.pcbscanformoviemediainformation Then
+                'do not change data
+            Else
+                Me.fileinfo = Nothing
+            End If
             Dim id As String = Me.Id
             Dim ms As New movieinfoplus.mip.movieserial.MovieSerializer
             ' ms.Serialize(Me)

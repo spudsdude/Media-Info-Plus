@@ -14696,7 +14696,92 @@ Public Class maincollection
         Dim savemovienametbn As Boolean = False
         Dim savemovietbn As Boolean = False
         Dim tbnpath As String = ""
-        tbnpath = addfiletofolder(cmpath, "season" + curseasonas2digitid + ".tbn")
+        Dim imagelocationandname As String = ""
+        'display dialog to choose which item we are saving, tbn or folder.jpg
+        savetvfanartaswhat.rbTvShowFanart.Text = "season-all.tbn"
+        savetvfanartaswhat.rbSeason1.Text = "season01.tbn"
+        savetvfanartaswhat.rbSeason2.Text = "season02.tbn"
+        savetvfanartaswhat.rbSeason3.Text = "season03.tbn"
+        savetvfanartaswhat.rbSeason4.Text = "season04.tbn"
+        savetvfanartaswhat.rbSeason5.Text = "season05.tbn"
+        savetvfanartaswhat.rbSeason6.Text = "season06.tbn"
+        savetvfanartaswhat.rbSeason7.Text = "season07.tbn"
+        savetvfanartaswhat.rbSeason8.Text = "season08.tbn"
+        savetvfanartaswhat.rbSeason9.Text = "season09.tbn"
+        savetvfanartaswhat.rbSeason10.Text = "season10.tbn"
+        savetvfanartaswhat.rbSeason11.Text = "season11.tbn"
+        savetvfanartaswhat.rbSeason12.Text = "season12.tbn"
+        savetvfanartaswhat.rbSeason13.Text = "season13.tbn"
+        savetvfanartaswhat.rbSeason14.Text = "season14.tbn"
+        savetvfanartaswhat.rbSeason15.Text = "season15.tbn"
+        savetvfanartaswhat.rbSeason16.Text = "season16.tbn"
+        savetvfanartaswhat.rbSeason17.Text = "season17.tbn"
+        savetvfanartaswhat.rbSeason18.Text = "season18.tbn"
+        savetvfanartaswhat.rbSeason19.Text = "season19.tbn"
+        savetvfanartaswhat.rbSeason20.Text = "season20.tbn"
+        savetvfanartaswhat.rbSeason21.Text = "season21.tbn"
+        savetvfanartaswhat.rbSeason22.Text = "season22.tbn"
+        savetvfanartaswhat.rbSeason23.Text = "season23.tbn"
+        savetvfanartaswhat.rbSeason24.Text = "season24.tbn"
+        savetvfanartaswhat.ShowDialog()
+        If savetvfanartaswhat.rbTvShowFanart.Checked Then imagelocationandname = addfiletofolder(cmpath, "season_all.tbn")
+        If savetvfanartaswhat.rbSeason1.Checked Then imagelocationandname = addfiletofolder(cmpath, "season01.tbn")
+        If savetvfanartaswhat.rbSeason2.Checked Then imagelocationandname = addfiletofolder(cmpath, "season02.tbn")
+        If savetvfanartaswhat.rbSeason3.Checked Then imagelocationandname = addfiletofolder(cmpath, "season03.tbn")
+        If savetvfanartaswhat.rbSeason4.Checked Then imagelocationandname = addfiletofolder(cmpath, "season04.tbn")
+        If savetvfanartaswhat.rbSeason5.Checked Then imagelocationandname = addfiletofolder(cmpath, "season05.tbn")
+        If savetvfanartaswhat.rbSeason6.Checked Then imagelocationandname = addfiletofolder(cmpath, "season06.tbn")
+        If savetvfanartaswhat.rbSeason7.Checked Then imagelocationandname = addfiletofolder(cmpath, "season07.tbn")
+        If savetvfanartaswhat.rbSeason8.Checked Then imagelocationandname = addfiletofolder(cmpath, "season08.tbn")
+        If savetvfanartaswhat.rbSeason9.Checked Then imagelocationandname = addfiletofolder(cmpath, "season09.tbn")
+        If savetvfanartaswhat.rbSeason10.Checked Then imagelocationandname = addfiletofolder(cmpath, "season10.tbn")
+        If savetvfanartaswhat.rbSeason11.Checked Then imagelocationandname = addfiletofolder(cmpath, "season11.tbn")
+        If savetvfanartaswhat.rbSeason12.Checked Then imagelocationandname = addfiletofolder(cmpath, "season12.tbn")
+        If savetvfanartaswhat.rbSeason13.Checked Then imagelocationandname = addfiletofolder(cmpath, "season13.tbn")
+        If savetvfanartaswhat.rbSeason14.Checked Then imagelocationandname = addfiletofolder(cmpath, "season14.tbn")
+        If savetvfanartaswhat.rbSeason15.Checked Then imagelocationandname = addfiletofolder(cmpath, "season15.tbn")
+        If savetvfanartaswhat.rbSeason16.Checked Then imagelocationandname = addfiletofolder(cmpath, "season16.tbn")
+        If savetvfanartaswhat.rbSeason17.Checked Then imagelocationandname = addfiletofolder(cmpath, "season17.tbn")
+        If savetvfanartaswhat.rbSeason18.Checked Then imagelocationandname = addfiletofolder(cmpath, "season18.tbn")
+        If savetvfanartaswhat.rbSeason19.Checked Then imagelocationandname = addfiletofolder(cmpath, "season19.tbn")
+        If savetvfanartaswhat.rbSeason20.Checked Then imagelocationandname = addfiletofolder(cmpath, "season20.tbn")
+        If savetvfanartaswhat.rbSeason21.Checked Then imagelocationandname = addfiletofolder(cmpath, "season21.tbn")
+        If savetvfanartaswhat.rbSeason22.Checked Then imagelocationandname = addfiletofolder(cmpath, "season22.tbn")
+        If savetvfanartaswhat.rbSeason23.Checked Then imagelocationandname = addfiletofolder(cmpath, "season23.tbn")
+        If savetvfanartaswhat.rbSeason24.Checked Then imagelocationandname = addfiletofolder(cmpath, "season24.tbn")
+        If Not Directory.Exists(getparentdirectory(imagelocationandname)) Then Directory.CreateDirectory(getparentdirectory(imagelocationandname))
+
+        
+        'reset text
+        savetvfanartaswhat.rbTvShowFanart.Text = "TV Show Background"
+        savetvfanartaswhat.rbSeason1.Text = "Season 1 Background"
+        savetvfanartaswhat.rbSeason2.Text = "Season 2 Background"
+        savetvfanartaswhat.rbSeason3.Text = "Season 3 Background"
+        savetvfanartaswhat.rbSeason4.Text = "Season 4 Background"
+        savetvfanartaswhat.rbSeason5.Text = "Season 5 Background"
+        savetvfanartaswhat.rbSeason6.Text = "Season 6 Background"
+        savetvfanartaswhat.rbSeason7.Text = "Season 7 Background"
+        savetvfanartaswhat.rbSeason8.Text = "Season 8 Background"
+        savetvfanartaswhat.rbSeason9.Text = "Season 9 Background"
+        savetvfanartaswhat.rbSeason10.Text = "Season 10 Background"
+        savetvfanartaswhat.rbSeason11.Text = "Season 11 Background"
+        savetvfanartaswhat.rbSeason12.Text = "Season 12 Background"
+        savetvfanartaswhat.rbSeason13.Text = "Season 13 Background"
+        savetvfanartaswhat.rbSeason14.Text = "Season 14 Background"
+        savetvfanartaswhat.rbSeason15.Text = "Season 15 Background"
+        savetvfanartaswhat.rbSeason16.Text = "Season 16 Background"
+        savetvfanartaswhat.rbSeason17.Text = "Season 17 Background"
+        savetvfanartaswhat.rbSeason18.Text = "Season 18 Background"
+        savetvfanartaswhat.rbSeason19.Text = "Season 19 Background"
+        savetvfanartaswhat.rbSeason20.Text = "Season 20 Background"
+        savetvfanartaswhat.rbSeason21.Text = "Season 21 Background"
+        savetvfanartaswhat.rbSeason22.Text = "Season 22 Background"
+        savetvfanartaswhat.rbSeason23.Text = "Season 23 Background"
+        savetvfanartaswhat.rbSeason24.Text = "Season 24 Background"
+
+        saveaswhaticontype.Dispose()
+        tbnpath = imagelocationandname 'addfiletofolder(cmpath, "season" + curseasonas2digitid + ".tbn")
+
 
         pbTVSeasonPoster.ImageLocation = Nothing
         pbTVSeasonPoster.Image = Nothing
@@ -14724,9 +14809,9 @@ Public Class maincollection
         End Try
 
         If savefolderjpg Then 'refresh all as start point may have shifted
-            pbTVSeasonPoster.ImageLocation = tbnpath
-            pbTVSeasonPoster.Visible = True
-            pbTVSeasonPoster.Load()
+            'pbTVSeasonPoster.ImageLocation = tbnpath
+            'pbTVSeasonPoster.Visible = True
+            'pbTVSeasonPoster.Load()
             'showfolderjpginmainwindow(cmpath, False)
             'showtbninmainwindow(cmpath, False)
             tcMain.SelectTab(1)
@@ -27677,7 +27762,11 @@ Public Class maincollection
 
         Dim xbmced1 As New xbmc.xbmcEpisodedetails
         gvcurrenttvepisode.tvdblangepisode2xbmcTvepisodeManualFromGUI(gvcurrenttvepisode, xbmced1) ', xbmctvshow1.Actors, curmirror)
-        xbmced1.writeNfo(removeextension(gvcurrenttvepisode.episodefilepath) + ".nfo")
+        Dim newname As String = removeextension(gvcurrenttvepisode.episodefilepath) + ".nfo"
+        If (newname.Contains("..nfo")) Then
+            newname = newname.Replace("..nfo", ".nfo")
+        End If
+        xbmced1.writeNfo(newname)
 
         'gvcurrenttvepisode()
         'xbmctvepisode.Actors = theactors
@@ -34914,6 +35003,10 @@ Public Property [Actors]() As List(Of Actor)
         'rev 2401 generate the nfo files
         Dim nfonamepath As String = tmovie.getmoviepath + "\"
         Dim filename As String = ""
+
+        If maincollection.rconf.pcbscanformoviemediainformation = False Then
+            nm.fileinfo = Nothing
+        End If
 
         If writemovienamedotnfo And Not tmovie.pfilemode Then 'maincollection.moviemode = "file" Then
             filename = tmovie.pmoviename + ".nfo"
