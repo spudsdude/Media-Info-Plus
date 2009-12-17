@@ -100,6 +100,9 @@ Module modStringUtils
         If Not strClean Is Nothing Then
             If strClean.Contains("</div>") Then strClean = Regex.Match(strClean, "(.*?)</div>").Groups(1).Value
         End If
+        If Not strClean Is Nothing Then
+            If strClean.Contains("<div") Then strClean = Regex.Match(strClean, "<div[^>].*?>(.*)").Groups(1).Value
+        End If
         strClean = Trim(strClean)
         Return strClean
     End Function

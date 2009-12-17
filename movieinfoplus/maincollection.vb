@@ -17246,7 +17246,7 @@ Public Class maincollection
         'Debug.Print("ID is: " + nimdb.id)
 
         'studio
-        nimdb.studio = cleanimdbdata(clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
+        nimdb.studio = cleanimdbdata(clb(Regex.Match(imdbtxt, "<h.>Company:</h.>.*?.{0,3}<a href=./company/.*?>(.*?)</a>", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("Studio is: " + nimdb.studio) '<h.>Company:</h.>.{0,3}<a href="/company/.*?>(.*?)</a>
 
         'title
@@ -17295,7 +17295,7 @@ Public Class maincollection
         'Debug.Print("Thumb is: " + nimdb.thumb)
 
         'mpaa
-        nimdb.mpaa = cleanimdbdata(clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>(.[^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
+        nimdb.mpaa = cleanimdbdata(clb(Regex.Match(imdbtxt, "MPAA</a>:</h5>[^>]*>([^<]*)", RegexOptions.Singleline Or RegexOptions.IgnoreCase Or RegexOptions.Multiline).Groups(1).Value))
         'Debug.Print("MPAA is: " + nimdb.mpaa)
 
         'Certification()
